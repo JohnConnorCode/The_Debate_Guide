@@ -522,6 +522,507 @@
     }
 
     // ==========================================
+    // SCROLL TO TOP BUTTON
+    // ==========================================
+
+    function initScrollToTop() {
+        const btn = document.querySelector('.scroll-to-top');
+        if (!btn) return;
+
+        let ticking = false;
+
+        function updateButtonVisibility() {
+            if (window.scrollY > 400) {
+                btn.classList.add('is-visible');
+            } else {
+                btn.classList.remove('is-visible');
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateButtonVisibility();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        btn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Initial check
+        updateButtonVisibility();
+    }
+
+    // ==========================================
+    // CHAPTER PROGRESS TRACKING
+    // ==========================================
+
+    function initChapterProgress() {
+        // Track visited chapters in localStorage
+        const chapterMatch = window.location.pathname.match(/chapter-(\d+)/);
+        if (chapterMatch) {
+            const chapterNum = chapterMatch[1];
+            let visited = [];
+            try {
+                visited = JSON.parse(safeGetItem('visitedChapters') || '[]');
+            } catch (e) {
+                visited = [];
+            }
+            if (!visited.includes(chapterNum)) {
+                visited.push(chapterNum);
+                safeSetItem('visitedChapters', JSON.stringify(visited));
+            }
+        }
+
+        // Mark visited chapters in TOC
+        let visited = [];
+        try {
+            visited = JSON.parse(safeGetItem('visitedChapters') || '[]');
+        } catch (e) {
+            visited = [];
+        }
+        document.querySelectorAll('.toc-chapter a').forEach(link => {
+            const match = link.href.match(/chapter-(\d+)/);
+            if (match && visited.includes(match[1])) {
+                link.closest('.toc-chapter').classList.add('is-visited');
+            }
+        });
+    }
+
+    // ==========================================
+    // READING TIME ESTIMATE
+    // ==========================================
+
+    function initReadingTime() {
+        const content = document.querySelector('.chapter-content');
+        const readingTimeEl = document.querySelector('.reading-time');
+        if (!content || !readingTimeEl) return;
+
+        const text = content.textContent || '';
+        const wordCount = text.trim().split(/\s+/).length;
+        // Use 175 wpm for educational content with terminology
+        const readingTime = Math.ceil(wordCount / 175);
+        readingTimeEl.textContent = readingTime + ' min read';
+    }
+
+    // ==========================================
+    // MOBILE SWIPE GESTURES
+    // ==========================================
+
+    function initSwipeNavigation() {
+        const prevLink = document.querySelector('.chapter-nav-prev');
+        const nextLink = document.querySelector('.chapter-nav-next');
+
+        if (!prevLink && !nextLink) return;
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartTime = 0;
+        let touchStartElement = null;
+
+        const minSwipeDistance = 100; // Increased for less accidental triggers
+        const maxVerticalDistance = 75; // Ignore diagonal swipes
+        const maxSwipeTime = 500; // Must complete within 500ms
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+            touchStartTime = Date.now();
+            touchStartElement = e.target;
+        }, { passive: true });
+
+        document.addEventListener('touchend', function(e) {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const touchEndTime = Date.now();
+
+            // Check if swipe started on horizontally-scrollable element
+            let el = touchStartElement;
+            while (el && el !== document.body) {
+                if (el.scrollWidth > el.clientWidth) {
+                    // Element has horizontal scroll, don't intercept
+                    return;
+                }
+                el = el.parentElement;
+            }
+
+            // Calculate distances
+            const horizontalDistance = touchEndX - touchStartX;
+            const verticalDistance = Math.abs(touchEndY - touchStartY);
+            const swipeTime = touchEndTime - touchStartTime;
+
+            // Validate swipe: must be mostly horizontal, fast enough, and long enough
+            if (verticalDistance > maxVerticalDistance) return;
+            if (swipeTime > maxSwipeTime) return;
+            if (Math.abs(horizontalDistance) < minSwipeDistance) return;
+
+            // Swipe right (prev chapter)
+            if (horizontalDistance > 0 && prevLink && prevLink.href) {
+                window.location.href = prevLink.href;
+            }
+            // Swipe left (next chapter)
+            if (horizontalDistance < 0 && nextLink && nextLink.href) {
+                window.location.href = nextLink.href;
+            }
+        }, { passive: true });
+    }
+
+    // ==========================================
+    // SAFE LOCALSTORAGE HELPERS
+    // ==========================================
+
+    function safeGetItem(key) {
+        try {
+            return localStorage.getItem(key);
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function safeSetItem(key, value) {
+        try {
+            localStorage.setItem(key, value);
+        } catch (e) {
+            // Storage unavailable or quota exceeded
+        }
+    }
+
+    // ==========================================
+    // THEME TOGGLE (DARK/LIGHT MODE)
+    // ==========================================
+
+    function initThemeToggle() {
+        const toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+
+        // Get saved theme or system preference
+        function getPreferredTheme() {
+            const saved = safeGetItem('theme');
+            if (saved) return saved;
+            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+
+        // Apply theme
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            safeSetItem('theme', theme);
+            // Update button to show what clicking it will DO (target state)
+            const targetTheme = theme === 'dark' ? 'light' : 'dark';
+            toggle.setAttribute('aria-label', 'Switch to ' + targetTheme + ' mode');
+            toggle.setAttribute('title', 'Switch to ' + targetTheme + ' mode');
+        }
+
+        // Initialize (theme may already be set by inline script in head)
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (!currentTheme) {
+            setTheme(getPreferredTheme());
+        } else {
+            // Just update button state to match current theme
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            toggle.setAttribute('aria-label', 'Switch to ' + targetTheme + ' mode');
+            toggle.setAttribute('title', 'Switch to ' + targetTheme + ' mode');
+        }
+
+        // Toggle on click
+        toggle.addEventListener('click', function() {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // Listen for system preference changes
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+            if (!safeGetItem('theme')) {
+                setTheme(e.matches ? 'light' : 'dark');
+            }
+        });
+    }
+
+    // ==========================================
+    // FONT SIZE CONTROLS
+    // ==========================================
+
+    function initFontSizeControls() {
+        const buttons = document.querySelectorAll('.font-btn');
+        if (!buttons.length) return;
+
+        // Get saved font size
+        function getSavedFontSize() {
+            return safeGetItem('fontSize') || 'normal';
+        }
+
+        // Apply font size
+        function setFontSize(size) {
+            document.documentElement.setAttribute('data-font-size', size);
+            safeSetItem('fontSize', size);
+
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.toggle('is-active', btn.dataset.size === size);
+                btn.setAttribute('aria-pressed', btn.dataset.size === size);
+            });
+        }
+
+        // Initialize - check if already set by inline script
+        const currentSize = document.documentElement.getAttribute('data-font-size');
+        if (currentSize) {
+            // Just update button states
+            buttons.forEach(btn => {
+                btn.classList.toggle('is-active', btn.dataset.size === currentSize);
+                btn.setAttribute('aria-pressed', btn.dataset.size === currentSize);
+            });
+        } else {
+            setFontSize(getSavedFontSize());
+        }
+
+        // Button clicks
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                setFontSize(this.dataset.size);
+            });
+        });
+    }
+
+    // ==========================================
+    // READING TOOLBAR VISIBILITY
+    // ==========================================
+
+    function initReadingToolbar() {
+        const toolbar = document.querySelector('.reading-toolbar');
+        if (!toolbar) return;
+
+        let ticking = false;
+
+        function updateToolbarVisibility() {
+            if (window.scrollY > 200) {
+                toolbar.classList.add('is-visible');
+            } else {
+                toolbar.classList.remove('is-visible');
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateToolbarVisibility();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Initial check
+        updateToolbarVisibility();
+    }
+
+    // ==========================================
+    // CHAPTER TABLE OF CONTENTS SIDEBAR
+    // ==========================================
+
+    function initChapterToc() {
+        const tocToggle = document.getElementById('toc-toggle');
+        const content = document.querySelector('.chapter-content');
+        if (!tocToggle || !content) return;
+
+        // Generate TOC from headings
+        const headings = content.querySelectorAll('h2, h3');
+        if (!headings.length) return;
+
+        // Create backdrop overlay
+        const backdrop = document.createElement('div');
+        backdrop.className = 'chapter-toc-backdrop';
+        backdrop.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(backdrop);
+
+        // Create sidebar
+        const sidebar = document.createElement('aside');
+        sidebar.className = 'chapter-toc-sidebar';
+        sidebar.setAttribute('aria-label', 'Chapter table of contents');
+        sidebar.setAttribute('aria-hidden', 'true');
+
+        const sidebarHeader = document.createElement('div');
+        sidebarHeader.className = 'chapter-toc-header';
+        sidebarHeader.innerHTML = '<span class="chapter-toc-title">In this chapter</span><button class="chapter-toc-close" aria-label="Close table of contents"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>';
+
+        const nav = document.createElement('nav');
+        nav.className = 'chapter-toc-nav';
+
+        const list = document.createElement('ul');
+        list.className = 'chapter-toc-list';
+
+        headings.forEach((heading, index) => {
+            // Ensure heading has an ID
+            if (!heading.id) {
+                heading.id = 'section-' + index;
+            }
+
+            const li = document.createElement('li');
+            li.className = 'chapter-toc-item' + (heading.tagName === 'H3' ? ' is-sub' : '');
+
+            const link = document.createElement('a');
+            link.href = '#' + heading.id;
+            link.textContent = heading.textContent;
+            link.className = 'chapter-toc-link';
+
+            li.appendChild(link);
+            list.appendChild(li);
+        });
+
+        nav.appendChild(list);
+        sidebar.appendChild(sidebarHeader);
+        sidebar.appendChild(nav);
+        document.body.appendChild(sidebar);
+
+        const closeBtn = sidebar.querySelector('.chapter-toc-close');
+        const firstLink = sidebar.querySelector('.chapter-toc-link');
+        const allLinks = sidebar.querySelectorAll('.chapter-toc-link');
+        const lastLink = allLinks[allLinks.length - 1];
+
+        // Toggle sidebar
+        function openToc() {
+            sidebar.classList.add('is-open');
+            sidebar.setAttribute('aria-hidden', 'false');
+            backdrop.classList.add('is-visible');
+            tocToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            // Focus first link after transition
+            setTimeout(function() {
+                if (firstLink) firstLink.focus();
+            }, 100);
+        }
+
+        function closeToc() {
+            sidebar.classList.remove('is-open');
+            sidebar.setAttribute('aria-hidden', 'true');
+            backdrop.classList.remove('is-visible');
+            tocToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            tocToggle.focus();
+        }
+
+        tocToggle.addEventListener('click', function() {
+            if (sidebar.classList.contains('is-open')) {
+                closeToc();
+            } else {
+                openToc();
+            }
+        });
+
+        // Close button
+        closeBtn.addEventListener('click', closeToc);
+
+        // Close on backdrop click
+        backdrop.addEventListener('click', closeToc);
+
+        // Close on escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+                e.stopPropagation(); // Prevent conflict with other Escape handlers
+                closeToc();
+            }
+        });
+
+        // Focus trap
+        sidebar.addEventListener('keydown', function(e) {
+            if (e.key !== 'Tab') return;
+            if (!sidebar.classList.contains('is-open')) return;
+
+            if (e.shiftKey && document.activeElement === closeBtn) {
+                e.preventDefault();
+                lastLink.focus();
+            } else if (!e.shiftKey && document.activeElement === lastLink) {
+                e.preventDefault();
+                closeBtn.focus();
+            }
+        });
+
+        // Close on link click and scroll to section
+        sidebar.querySelectorAll('.chapter-toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    closeToc();
+                    const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 72;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerOffset - 20;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight current section
+        const observerOptions = {
+            rootMargin: '-20% 0px -70% 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sidebar.querySelectorAll('.chapter-toc-link').forEach(link => {
+                        link.classList.remove('is-active');
+                        if (link.getAttribute('href') === '#' + entry.target.id) {
+                            link.classList.add('is-active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        headings.forEach(heading => sectionObserver.observe(heading));
+    }
+
+    // ==========================================
+    // PAGE TRANSITIONS
+    // ==========================================
+
+    function initPageTransitions() {
+        // Add entrance animation on page load (skip for back/forward navigation)
+        if (performance.navigation && performance.navigation.type !== 2) {
+            document.body.classList.add('page-transition-enter');
+        } else if (performance.getEntriesByType) {
+            const navEntry = performance.getEntriesByType('navigation')[0];
+            if (navEntry && navEntry.type !== 'back_forward') {
+                document.body.classList.add('page-transition-enter');
+            }
+        }
+
+        // Handle internal navigation with fade-out effect
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a');
+            if (!link) return;
+
+            // Only handle internal links
+            const href = link.getAttribute('href');
+            if (!href) return;
+            if (href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+            if (link.hasAttribute('target')) return;
+            if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+
+            e.preventDefault();
+
+            // CSS-based exit transition
+            document.body.classList.remove('page-transition-enter');
+            document.body.classList.add('page-transition-exit');
+
+            setTimeout(function() {
+                window.location.href = href;
+            }, 180);
+        });
+    }
+
+    // ==========================================
     // INITIALIZE ALL FEATURES
     // ==========================================
 
@@ -544,6 +1045,15 @@
         initExternalLinks();
         initHeaderScroll();
         initMobileNav();
+        initScrollToTop();
+        initChapterProgress();
+        initReadingTime();
+        initSwipeNavigation();
+        initThemeToggle();
+        initFontSizeControls();
+        initReadingToolbar();
+        initChapterToc();
+        initPageTransitions();
     }
 
     // Run when DOM is ready

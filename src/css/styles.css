@@ -400,7 +400,7 @@ h1, h2, h3, h4 {
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: background var(--transition-fast);
+    transition: background 0.2s ease-out, transform 0.2s ease-out;
     position: relative;
 }
 
@@ -413,15 +413,20 @@ h1, h2, h3, h4 {
     bottom: -3px;
     border: var(--border-width) solid var(--accent);
     opacity: var(--opacity-50);
-    transition: opacity var(--transition-fast);
+    transition: opacity 0.2s ease-out;
 }
 
 .btn-primary:hover {
     background: var(--accent-hover);
+    transform: translateY(-1px);
 }
 
 .btn-primary:hover::before {
     opacity: var(--opacity-100);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
 }
 
 .btn-secondary {
@@ -439,12 +444,17 @@ h1, h2, h3, h4 {
     text-decoration: none;
     border: var(--border-width) solid rgba(var(--color-white-rgb), 0.25);
     cursor: pointer;
-    transition: var(--transition-colors), background var(--transition-fast);
+    transition: border-color 0.2s ease-out, background 0.2s ease-out, transform 0.2s ease-out;
 }
 
 .btn-secondary:hover {
     border-color: var(--accent);
     background: rgba(var(--color-gold-rgb), 0.1);
+    transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
 }
 
 .btn-outline-dark {
@@ -598,12 +608,13 @@ h1, h2, h3, h4 {
     background: var(--color-warm-white);
     border: var(--border-width) solid var(--color-cream);
     padding: var(--space-md);
-    transition: var(--transition-all);
+    transition: border-color 0.2s ease-out, transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.25s ease-out;
 }
 
 .card:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .card-dark {
@@ -613,6 +624,7 @@ h1, h2, h3, h4 {
 
 .card-dark:hover {
     border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================
@@ -745,6 +757,92 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================
+   SCROLL TO TOP BUTTON
+   ========================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: var(--space-md);
+    right: var(--space-md);
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    color: var(--color-ink);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity 0.25s ease-out, visibility 0.25s ease-out, transform 0.25s ease-out, background 0.2s ease-out;
+    z-index: var(--z-fixed);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.scroll-to-top:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: var(--space-sm);
+        right: var(--space-sm);
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* ==========================================
+   FOCUS STATES (Accessibility)
+   ========================================== */
+
+/* Global focus visible outline */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Button focus states */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-outline-dark:focus-visible,
+.btn-outline-gold:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Link focus states */
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Nav link focus */
+.nav a:focus-visible {
+    opacity: var(--opacity-100);
+    outline-offset: 4px;
+}
+
+/* Skip focus outline for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ==========================================
    UTILITY CLASSES
    ========================================== */
 
@@ -836,7 +934,7 @@ h1, h2, h3, h4 {
     height: 100dvh;
     background: var(--bg-primary);
     transform: translateX(100%);
-    transition: transform var(--transition-slow);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
     z-index: calc(var(--z-header) + 2);
     display: flex;
     flex-direction: column;
@@ -846,10 +944,15 @@ h1, h2, h3, h4 {
     padding-top: env(safe-area-inset-top);
     padding-right: env(safe-area-inset-right);
     padding-bottom: env(safe-area-inset-bottom);
+    /* Ensure fully hidden when closed */
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .mobile-nav.is-active {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .mobile-nav-header {

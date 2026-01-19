@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="view-transition" content="same-origin">
     <title>{{ title }}{% if title != site.title %} — {{ site.title }}{% endif %}</title>
 
     {# Fonts #}
@@ -16,6 +17,24 @@
 
     {# SEO Meta Tags #}
     {% include "seo.njk" %}
+
+    {# Prevent theme/font flash - runs before render #}
+    <script>
+    (function() {
+        try {
+            var theme = localStorage.getItem('theme');
+            if (!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+
+            var fontSize = localStorage.getItem('fontSize');
+            if (fontSize) {
+                document.documentElement.setAttribute('data-font-size', fontSize);
+            }
+        } catch (e) {}
+    })();
+    </script>
 </head>
 <body>
     {% block progressBar %}{% endblock %}
@@ -27,6 +46,13 @@
     {% endblock %}
 
     {% include "footer.njk" %}
+
+    {# Scroll to top button #}
+    <button class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 4L3 11L4.4 12.4L9 7.8V16H11V7.8L15.6 12.4L17 11L10 4Z" fill="currentColor"/>
+        </svg>
+    </button>
 
     {% block extras %}{% endblock %}
 
