@@ -1,0 +1,38 @@
+{# Footer component #}
+<footer class="footer">
+    <div class="footer-main">
+        <div>
+            <div class="footer-brand-wrap">
+                <div class="footer-logo-mark"><span>D</span></div>
+                <span class="footer-brand">THE DEBATE GUIDE</span>
+            </div>
+            <p class="footer-tagline">Master the timeless art of persuasion.{% if pageType == "home" %} A companion guide to SuperDebate.{% endif %}</p>
+        </div>
+        <div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>The Book</h4>
+                    {% if pageType == "home" %}
+                        <a href="{{ '/introduction/' | url }}">Introduction</a>
+                    {% else %}
+                        <a href="{{ '/' | url }}">Table of Contents</a>
+                    {% endif %}
+                    <a href="{{ '/' | url }}#part-1">Part I: Foundations</a>
+                    <a href="{{ '/' | url }}#part-2">Part II: Appeals</a>
+                    <a href="{{ '/' | url }}#part-3">Part III: Argument</a>
+                    <a href="{{ '/' | url }}#part-4">Part IV: Applications</a>
+                    <a href="{{ '/' | url }}#part-5">Part V: Mastery</a>
+                </div>
+                <div class="footer-col">
+                    <h4>SuperDebate</h4>
+                    <a href="https://superdebate.net" target="_blank">Find Clubs</a>
+                    <a href="https://superdebate.net" target="_blank">Events</a>
+                    <a href="https://superdebate.net" target="_blank">Join Free</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span class="footer-copyright">© {{ site.currentYear }} The Debate Guide{% if pageType == "home" %}. Part of the SuperDebate project.{% endif %}</span>
+    </div>
+</footer>

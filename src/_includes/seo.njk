@@ -1,0 +1,87 @@
+{# SEO Meta Tags - Open Graph, Twitter Cards, JSON-LD #}
+
+{# Basic SEO #}
+<meta name="description" content="{{ description or site.description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+{# Open Graph (Facebook, LinkedIn) #}
+<meta property="og:title" content="{{ title }} — {{ site.title }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:image" content="{{ site.url }}{{ ogImage or site.ogImage }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="{% if pageType == 'chapter' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+
+{# Twitter Cards #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }} — {{ site.title }}">
+<meta name="twitter:description" content="{{ description or site.description }}">
+<meta name="twitter:image" content="{{ site.url }}{{ ogImage or site.ogImage }}">
+{% if site.twitterHandle %}
+<meta name="twitter:site" content="{{ site.twitterHandle }}">
+{% endif %}
+
+{# JSON-LD Structured Data #}
+{% if pageType == 'chapter' or pageType == 'introduction' %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ title }}",
+    "description": "{{ description or site.description }}",
+    "image": "{{ site.url }}{{ ogImage or site.ogImage }}",
+    "author": {
+        "@type": "Organization",
+        "name": "{{ site.author }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.author }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}/assets/logo.png"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ page.url }}"
+    },
+    "isPartOf": {
+        "@type": "Book",
+        "name": "{{ site.title }}",
+        "author": {
+            "@type": "Organization",
+            "name": "{{ site.author }}"
+        }
+    }
+    {% if chapterNumber %},
+    "position": {{ chapterNumber }}
+    {% endif %}
+}
+</script>
+{% else %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "author": {
+        "@type": "Organization",
+        "name": "{{ site.author }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.author }}"
+    },
+    "inLanguage": "en",
+    "genre": ["Education", "Philosophy", "Rhetoric"],
+    "about": [
+        {"@type": "Thing", "name": "Rhetoric"},
+        {"@type": "Thing", "name": "Debate"},
+        {"@type": "Thing", "name": "Persuasion"},
+        {"@type": "Thing", "name": "Classical Philosophy"}
+    ]
+}
+</script>
+{% endif %}

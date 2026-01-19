@@ -1,0 +1,52 @@
+---
+layout: base.njk
+pageType: chapter
+---
+{% block styles %}
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+{% endblock %}
+
+{% block progressBar %}
+{# Reading Progress Bar #}
+<div class="progress-bar">
+    <div class="progress-bar-fill"></div>
+</div>
+{% endblock %}
+
+{% block content %}
+{# Chapter Hero #}
+<section class="chapter-hero section-dark">
+    {% include "sunburst.njk" %}
+
+    <p class="chapter-part">{{ partTitle }}</p>
+    <div class="chapter-number">{{ chapterNumber | padZero }}</div>
+    <h1 class="chapter-title">{{ chapterTitle | upper }}</h1>
+    <p class="chapter-subtitle">{{ subtitle }}</p>
+</section>
+
+{% if chapterImage %}
+<div class="chapter-image">
+    <div class="image-placeholder" data-chapter="{{ chapterNumber | padZero }}">
+        <!-- {{ chapterImageAlt or 'Chapter illustration' }} -->
+    </div>
+</div>
+{% endif %}
+
+<div class="deco-border"></div>
+
+{# Chapter Content - includes article, exercises, and navigation #}
+<main class="section section-dark">
+    {{ content | safe }}
+</main>
+
+<div class="deco-border"></div>
+{% endblock %}
+
+{% block extras %}
+{# Keyboard Hint #}
+<div class="keyboard-hint">
+    {% if prevChapter %}<kbd>←</kbd> Previous{% endif %}
+    {% if nextChapter %}<kbd>→</kbd> Next{% endif %}
+    <kbd>Esc</kbd> Contents
+</div>
+{% endblock %}

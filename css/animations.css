@@ -1,0 +1,456 @@
+/* ==========================================
+   ANIMATION SYSTEM
+   Centralized, scalable scroll-triggered animations
+   ========================================== */
+
+/* ==========================================
+   KEYFRAME DEFINITIONS
+   ========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes shimmer {
+    from {
+        background-position: -200% 0;
+    }
+    to {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ==========================================
+   BASE ANIMATION CLASSES
+   Elements with these classes are hidden until
+   the .is-visible class is added via JS
+   ========================================== */
+
+/* Base state for all animated elements */
+[data-animate] {
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+/* When element becomes visible */
+[data-animate].is-visible {
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--ease-out);
+}
+
+/* ==========================================
+   ANIMATION TYPE MODIFIERS
+   Use data-animate="fade-up" etc.
+   ========================================== */
+
+[data-animate="fade"].is-visible {
+    animation-name: fadeIn;
+    animation-duration: var(--duration-slow);
+}
+
+[data-animate="fade-up"].is-visible {
+    animation-name: fadeInUp;
+    animation-duration: var(--duration-slower);
+}
+
+[data-animate="fade-down"].is-visible {
+    animation-name: fadeInDown;
+    animation-duration: var(--duration-slower);
+}
+
+[data-animate="fade-left"].is-visible {
+    animation-name: fadeInLeft;
+    animation-duration: var(--duration-slower);
+}
+
+[data-animate="fade-right"].is-visible {
+    animation-name: fadeInRight;
+    animation-duration: var(--duration-slower);
+}
+
+[data-animate="scale"].is-visible {
+    animation-name: scaleIn;
+    animation-duration: var(--duration-slower);
+}
+
+/* ==========================================
+   STAGGER DELAYS
+   Use data-stagger="1" through data-stagger="10"
+   for sequential animations within a group
+   ========================================== */
+
+[data-stagger="1"].is-visible { animation-delay: var(--stagger-1); }
+[data-stagger="2"].is-visible { animation-delay: var(--stagger-2); }
+[data-stagger="3"].is-visible { animation-delay: var(--stagger-3); }
+[data-stagger="4"].is-visible { animation-delay: var(--stagger-4); }
+[data-stagger="5"].is-visible { animation-delay: var(--stagger-5); }
+[data-stagger="6"].is-visible { animation-delay: var(--stagger-6); }
+[data-stagger="7"].is-visible { animation-delay: var(--stagger-7); }
+[data-stagger="8"].is-visible { animation-delay: var(--stagger-8); }
+[data-stagger="9"].is-visible { animation-delay: var(--stagger-9); }
+[data-stagger="10"].is-visible { animation-delay: var(--stagger-10); }
+
+/* ==========================================
+   ANIMATION GROUPS
+   Parent containers that trigger children
+   ========================================== */
+
+/* When a group becomes visible, animate all children */
+[data-animate-group].is-visible > [data-animate] {
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--ease-out);
+}
+
+/* Auto-stagger children within a group */
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(1) { animation-delay: var(--stagger-1); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(2) { animation-delay: var(--stagger-2); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(3) { animation-delay: var(--stagger-3); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(4) { animation-delay: var(--stagger-4); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(5) { animation-delay: var(--stagger-5); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(6) { animation-delay: var(--stagger-6); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(7) { animation-delay: var(--stagger-7); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(8) { animation-delay: var(--stagger-8); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(9) { animation-delay: var(--stagger-9); }
+[data-animate-group="stagger"].is-visible > [data-animate]:nth-child(10) { animation-delay: var(--stagger-10); }
+
+/* ==========================================
+   CHAPTER CONTENT AUTO-ANIMATION
+   Paragraphs and elements auto-animate in sequence
+   ========================================== */
+
+.chapter-content [data-animate].is-visible {
+    animation-name: fadeInUp;
+    animation-duration: var(--duration-slower);
+}
+
+/* Sequential delay for chapter paragraphs */
+.chapter-content > p[data-animate]:nth-of-type(1).is-visible { animation-delay: 0ms; }
+.chapter-content > p[data-animate]:nth-of-type(2).is-visible { animation-delay: 100ms; }
+.chapter-content > p[data-animate]:nth-of-type(3).is-visible { animation-delay: 200ms; }
+
+/* Reset delay for elements after headings (new section) */
+.chapter-content > h2 + p[data-animate].is-visible,
+.chapter-content > h3 + p[data-animate].is-visible {
+    animation-delay: 100ms;
+}
+
+/* ==========================================
+   SPECIAL COMPONENT ANIMATIONS
+   ========================================== */
+
+/* Hero elements stagger */
+.chapter-hero [data-animate="fade-up"]:nth-child(1).is-visible { animation-delay: 0ms; }
+.chapter-hero [data-animate="fade-up"]:nth-child(2).is-visible { animation-delay: 150ms; }
+.chapter-hero [data-animate="fade-up"]:nth-child(3).is-visible { animation-delay: 300ms; }
+.chapter-hero [data-animate="fade-up"]:nth-child(4).is-visible { animation-delay: 450ms; }
+
+/* Vocabulary box */
+.vocabulary-box[data-animate].is-visible {
+    animation-name: fadeInLeft;
+    animation-duration: var(--duration-slower);
+}
+
+/* Featured quote */
+.featured-quote[data-animate].is-visible {
+    animation-name: fadeIn;
+    animation-duration: var(--duration-slowest);
+}
+
+/* Exercises stagger */
+.exercises [data-animate="fade-up"]:nth-child(1).is-visible { animation-delay: 0ms; }
+.exercises [data-animate="fade-up"]:nth-child(2).is-visible { animation-delay: 150ms; }
+.exercises [data-animate="fade-up"]:nth-child(3).is-visible { animation-delay: 300ms; }
+.exercises [data-animate="fade-up"]:nth-child(4).is-visible { animation-delay: 450ms; }
+
+/* ==========================================
+   DECORATIVE ELEMENT ANIMATIONS
+   ========================================== */
+
+/* Deco border reveal */
+.deco-border[data-animate].is-visible {
+    animation-name: expandWidth;
+    animation-duration: var(--duration-slowest);
+    animation-timing-function: var(--ease-in-out);
+}
+
+/* ==========================================
+   SUNBURST ANIMATIONS
+   ========================================== */
+
+/* Subtle rotation keyframes for SVG inside sunburst */
+@keyframes sunburstRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Floating movement */
+@keyframes sunburstFloat {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, calc(-50% - 15px)) scale(1.02);
+    }
+}
+
+/* Entrance animation */
+@keyframes sunburstEntrance {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: var(--opacity-5);
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Pulse glow effect */
+@keyframes sunburstGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0));
+    }
+    50% {
+        filter: drop-shadow(0 0 40px rgba(201, 162, 39, 0.15));
+    }
+}
+
+/* Combined sunburst animation */
+.sunburst {
+    animation:
+        sunburstEntrance 1.5s var(--ease-out) forwards,
+        sunburstFloat 20s var(--ease-in-out) 1.5s infinite,
+        sunburstGlow 8s var(--ease-in-out) 2s infinite;
+}
+
+/* Hero sunburst with subtle rotation */
+.sunburst-hero {
+    animation:
+        sunburstEntrance 1.5s var(--ease-out) forwards,
+        sunburstFloat 25s var(--ease-in-out) 1.5s infinite,
+        sunburstGlow 10s var(--ease-in-out) 2s infinite;
+}
+
+/* Add rotation to the SVG inside for extra elegance */
+.sunburst-hero svg {
+    animation: sunburstRotate 180s linear infinite;
+}
+
+/* Chapter sunbursts - slightly faster, more subtle */
+.chapter-hero .sunburst svg {
+    animation: sunburstRotate 240s linear infinite;
+}
+
+/* ==========================================
+   LINE/DIVIDER ANIMATIONS
+   ========================================== */
+
+.section-divider[data-animate].is-visible .line {
+    animation: expandWidth var(--duration-slower) var(--ease-out) forwards;
+}
+
+.section-divider[data-animate].is-visible .diamond {
+    animation: scaleIn var(--duration-slow) var(--ease-out) var(--stagger-3) forwards;
+    opacity: 0;
+}
+
+/* ==========================================
+   HOVER ANIMATIONS (always active)
+   ========================================== */
+
+.hover-lift {
+    transition: transform var(--transition-normal);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+.hover-glow {
+    transition: box-shadow var(--transition-normal);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(var(--color-gold-rgb), 0.3);
+}
+
+.hover-underline {
+    position: relative;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-gold);
+    transition: width var(--transition-normal);
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   LOADING STATES
+   ========================================== */
+
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(var(--color-white-rgb), 0.1),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+/* ==========================================
+   REDUCED MOTION
+   Respect user preferences
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .sunburst,
+    .sunburst svg,
+    .sunburst-hero,
+    .sunburst-hero svg {
+        animation: none !important;
+        opacity: var(--opacity-5);
+    }
+}
+
+/* ==========================================
+   PRINT - Disable all animations
+   ========================================== */
+
+@media print {
+    [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}

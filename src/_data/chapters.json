@@ -1,0 +1,179 @@
+{
+  "parts": [
+    {
+      "number": "I",
+      "id": "part-1",
+      "title": "THE FOUNDATIONS",
+      "chapters": [
+        {
+          "number": 1,
+          "slug": "why-debate-matters",
+          "title": "Why Debate Matters",
+          "subtitle": "The case for structured disagreement",
+          "description": "Discover why debate is the most undervalued skill in modern life and how the Greeks invented the technology for productive disagreement."
+        },
+        {
+          "number": 2,
+          "slug": "the-greek-legacy",
+          "title": "The Greek Legacy",
+          "subtitle": "Where rhetoric was born",
+          "description": "Explore the origins of rhetoric in ancient Greece and how it became the foundation of Western education."
+        },
+        {
+          "number": 3,
+          "slug": "the-rhetorical-triangle",
+          "title": "The Rhetorical Triangle",
+          "subtitle": "Ethos, pathos, logos—the three pillars",
+          "description": "Learn Aristotle's framework for understanding persuasion through the three appeals: character, emotion, and logic."
+        },
+        {
+          "number": 4,
+          "slug": "kairos",
+          "title": "Kairos",
+          "subtitle": "The art of perfect timing",
+          "description": "Master the Greek concept of kairos—the opportune moment for speech and action."
+        }
+      ]
+    },
+    {
+      "number": "II",
+      "id": "part-2",
+      "title": "THE THREE APPEALS",
+      "chapters": [
+        {
+          "number": 5,
+          "slug": "ethos",
+          "title": "Ethos: Building Credibility",
+          "subtitle": "Why trust matters more than truth",
+          "description": "Understand how credibility works and why audiences trust some speakers more than others."
+        },
+        {
+          "number": 6,
+          "slug": "character-in-action",
+          "title": "Character in Action",
+          "subtitle": "Demonstrating virtue through argument",
+          "description": "Learn to demonstrate character through your arguments rather than merely claiming it."
+        },
+        {
+          "number": 7,
+          "slug": "pathos",
+          "title": "Pathos: Moving Hearts",
+          "subtitle": "The ethical use of emotion",
+          "description": "Discover how to use emotional appeals ethically and effectively in persuasion."
+        },
+        {
+          "number": 8,
+          "slug": "the-emotions-catalog",
+          "title": "The Emotions Catalog",
+          "subtitle": "Aristotle's map of human feeling",
+          "description": "Explore Aristotle's systematic analysis of human emotions and their role in persuasion."
+        },
+        {
+          "number": 9,
+          "slug": "logos",
+          "title": "Logos: Constructing Reason",
+          "subtitle": "The architecture of logical argument",
+          "description": "Build arguments with solid logical structure using enthymemes and syllogisms."
+        },
+        {
+          "number": 10,
+          "slug": "evidence-and-proof",
+          "title": "Evidence and Proof",
+          "subtitle": "What counts as support",
+          "description": "Learn what counts as evidence and how to use different types of proof effectively."
+        }
+      ]
+    },
+    {
+      "number": "III",
+      "id": "part-3",
+      "title": "THE ART OF ARGUMENT",
+      "chapters": [
+        {
+          "number": 11,
+          "slug": "building-your-case",
+          "title": "Building Your Case",
+          "subtitle": "Structure, claims, and warrants",
+          "description": "Master the Toulmin model and other frameworks for constructing compelling arguments."
+        },
+        {
+          "number": 12,
+          "slug": "the-art-of-refutation",
+          "title": "The Art of Refutation",
+          "subtitle": "Dismantling arguments with precision",
+          "description": "Learn to identify weaknesses in opposing arguments and refute them systematically."
+        },
+        {
+          "number": 13,
+          "slug": "fallacies-and-traps",
+          "title": "Fallacies and Traps",
+          "subtitle": "Recognizing bad arguments",
+          "description": "Identify and avoid logical fallacies that undermine arguments."
+        },
+        {
+          "number": 14,
+          "slug": "the-socratic-method",
+          "title": "The Socratic Method",
+          "subtitle": "Questions as weapons and tools",
+          "description": "Master the art of strategic questioning to expose assumptions and guide discovery."
+        },
+        {
+          "number": 15,
+          "slug": "steelmanning",
+          "title": "Steelmanning",
+          "subtitle": "Strengthening your opponent's case",
+          "description": "Learn the art of presenting the strongest version of opposing arguments."
+        }
+      ]
+    },
+    {
+      "number": "IV",
+      "id": "part-4",
+      "title": "MODERN APPLICATIONS",
+      "chapters": [
+        {
+          "number": 16,
+          "slug": "debate-in-the-workplace",
+          "title": "Debate in the Workplace",
+          "subtitle": "Persuasion in professional settings",
+          "description": "Apply rhetorical skills in meetings, presentations, and professional disagreements."
+        },
+        {
+          "number": 17,
+          "slug": "debate-in-education",
+          "title": "Debate in Education",
+          "subtitle": "Teaching and learning through argument",
+          "description": "Use debate as a tool for deeper learning and critical thinking."
+        },
+        {
+          "number": 18,
+          "slug": "digital-discourse",
+          "title": "Digital Discourse",
+          "subtitle": "Rhetoric in the age of social media",
+          "description": "Navigate online arguments and apply classical rhetoric to digital communication."
+        },
+        {
+          "number": 19,
+          "slug": "debate-as-civic-duty",
+          "title": "Debate as Civic Duty",
+          "subtitle": "Democracy and the public forum",
+          "description": "Understand debate's role in democratic citizenship and public discourse."
+        }
+      ]
+    },
+    {
+      "number": "V",
+      "id": "part-5",
+      "title": "MASTERY",
+      "chapters": [
+        {
+          "number": 20,
+          "slug": "the-philosophers-victory",
+          "title": "The Philosopher's Victory",
+          "subtitle": "Winning by seeking truth",
+          "description": "Discover what winning really means and how the Greeks understood true victory."
+        }
+      ]
+    }
+  ]
+}

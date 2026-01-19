@@ -1,0 +1,65 @@
+---
+layout: home.njk
+title: "The Debate Guide: Win Like the Greeks"
+description: "Master the timeless art of persuasion. Twenty chapters on rhetoric, logic, and the philosophy of winning arguments with honor."
+permalink: /
+---
+{# HERO #}
+<section class="toc-hero section-dark">
+    {% include "sunburst.njk" %}
+
+    <div class="toc-hero-inner">
+        <div class="toc-badge">
+            <span class="diamond"></span>
+            <span>A Complete Guide to Classical Rhetoric</span>
+            <span class="diamond"></span>
+        </div>
+        <h1 class="toc-title">
+            THE DEBATE GUIDE<br>
+            <span class="accent">WIN LIKE THE GREEKS</span>
+        </h1>
+        <p class="toc-subtitle">
+            Master the timeless art of persuasion. Twenty chapters on rhetoric, logic, and the philosophy of winning arguments with honor.
+        </p>
+    </div>
+</section>
+
+<div class="deco-border"></div>
+
+{# TABLE OF CONTENTS #}
+<main class="section section-dark">
+    <div id="contents" class="toc-container">
+
+        {# Introduction #}
+        <div class="toc-intro">
+            <a href="{{ '/introduction/' | url }}" class="toc-intro-link">
+                <span>Begin Here</span>
+                INTRODUCTION: THE AGORA AWAITS
+            </a>
+        </div>
+
+        {# Dynamic Parts and Chapters from Data #}
+        {% for part in chapters.parts %}
+        <div id="{{ part.id }}" class="toc-part">
+            <div class="toc-part-header">
+                <span class="toc-part-number">{{ part.number }}</span>
+                <h2 class="toc-part-title">{{ part.title }}</h2>
+            </div>
+            <ul class="toc-chapters">
+                {% for chapter in part.chapters %}
+                <li class="toc-chapter">
+                    <a href="{{ '/chapters/' + part.id + '/chapter-' + (chapter.number | padZero) + '-' + chapter.slug + '/' | url }}">
+                        <span class="toc-chapter-number">{{ chapter.number | padZero }}</span>
+                        <span class="toc-chapter-title">{{ chapter.title }}</span>
+                        <span class="toc-chapter-subtitle">{{ chapter.subtitle }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+
+    </div>
+</main>
+
+<div class="deco-border"></div>

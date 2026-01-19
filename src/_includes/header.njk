@@ -1,0 +1,23 @@
+{# Header component - configurable nav based on page type #}
+<header class="header">
+    <div class="header-inner">
+        <a href="{{ '/' | url }}" class="logo">
+            <div class="logo-mark"><span>D</span></div>
+            <span class="logo-text">THE DEBATE GUIDE</span>
+        </a>
+        <nav class="nav">
+            {% if pageType == "home" %}
+                <a href="{{ '/introduction/' | url }}">Introduction</a>
+                <a href="#contents">Contents</a>
+            {% elif pageType == "introduction" %}
+                <a href="{{ '/' | url }}">Contents</a>
+                <a href="#part-1">Begin Reading</a>
+            {% else %}
+                <a href="{{ '/' | url }}">Contents</a>
+                <a href="{{ '/introduction/' | url }}">Introduction</a>
+            {% endif %}
+            <a href="https://superdebate.net" target="_blank" class="nav-cta">Join SuperDebate</a>
+        </nav>
+    </div>
+    <div class="header-line"></div>
+</header>

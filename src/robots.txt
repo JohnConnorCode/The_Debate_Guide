@@ -1,0 +1,6 @@
+# The Debate Guide - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thedebateguide.com/sitemap.xml

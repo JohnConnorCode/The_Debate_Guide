@@ -1,0 +1,252 @@
+/* ==========================================
+   DESIGN TOKENS
+   Single source of truth for all design values
+   ========================================== */
+
+:root {
+    /* ==========================================
+       COLORS - Core Palette
+       ========================================== */
+    --color-ink: #0d0d0d;
+    --color-paper: #f8f6f1;
+    --color-cream: #eae6dd;
+    --color-gold: #c9a227;
+    --color-gold-dark: #a68521;
+    --color-gold-light: #d4b44a;
+    --color-warm-white: #fdfcf9;
+    --color-muted: #737373;
+    --color-error: #8b2635;
+
+    /* Colors with Alpha - derived from core */
+    --color-ink-rgb: 13, 13, 13;
+    --color-paper-rgb: 248, 246, 241;
+    --color-gold-rgb: 201, 162, 39;
+    --color-white-rgb: 255, 255, 255;
+    --color-black-rgb: 0, 0, 0;
+
+    /* Semantic Color Aliases */
+    --bg-primary: var(--color-ink);
+    --bg-secondary: var(--color-paper);
+    --bg-tertiary: var(--color-cream);
+    --text-primary: var(--color-paper);
+    --text-secondary: var(--color-ink);
+    --text-muted: var(--color-muted);
+    --accent: var(--color-gold);
+    --accent-hover: var(--color-gold-light);
+    --accent-dark: var(--color-gold-dark);
+
+    /* ==========================================
+       TYPOGRAPHY
+       ========================================== */
+
+    /* Font Families */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Source Serif 4', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    /* Font Sizes - Modular Scale (1.25) */
+    --text-xs: 0.64rem;      /* 10.24px */
+    --text-sm: 0.8rem;       /* 12.8px */
+    --text-base: 1rem;       /* 16px */
+    --text-md: 1.125rem;     /* 18px - reading */
+    --text-lg: 1.25rem;      /* 20px */
+    --text-xl: 1.5rem;       /* 24px */
+    --text-2xl: 2rem;        /* 32px */
+    --text-3xl: 2.5rem;      /* 40px */
+    --text-4xl: 3rem;        /* 48px */
+    --text-5xl: 4rem;        /* 64px */
+    --text-6xl: 5rem;        /* 80px */
+    --text-7xl: 6rem;        /* 96px */
+    --text-8xl: 8rem;        /* 128px */
+
+    /* Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.1;
+    --leading-snug: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.6;
+    --leading-loose: 1.8;
+
+    /* Letter Spacing */
+    --tracking-tight: -0.02em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.02em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.08em;
+    --tracking-display: 0.1em;
+    --tracking-mono: 0.12em;
+    --tracking-caps: 0.15em;
+
+    /* Font Weights */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* ==========================================
+       SPACING
+       ========================================== */
+    --space-px: 1px;
+    --space-0: 0;
+    --space-1: 0.25rem;    /* 4px */
+    --space-2: 0.5rem;     /* 8px */
+    --space-3: 0.75rem;    /* 12px */
+    --space-4: 1rem;       /* 16px */
+    --space-5: 1.25rem;    /* 20px */
+    --space-6: 1.5rem;     /* 24px */
+    --space-8: 2rem;       /* 32px */
+    --space-10: 2.5rem;    /* 40px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-20: 5rem;      /* 80px */
+    --space-24: 6rem;      /* 96px */
+
+    /* Semantic Spacing Aliases */
+    --space-xs: var(--space-2);
+    --space-sm: var(--space-4);
+    --space-md: var(--space-8);
+    --space-lg: var(--space-16);
+    --space-xl: var(--space-24);
+
+    /* ==========================================
+       LAYOUT
+       ========================================== */
+
+    /* Max Widths */
+    --max-w-reading: 70ch;
+    --max-w-narrow: 900px;
+    --max-w-content: 1200px;
+    --max-w-wide: 1400px;
+
+    /* Header */
+    --header-height: 72px;
+
+    /* ==========================================
+       BORDERS & RADII
+       ========================================== */
+    --border-width: 1px;
+    --border-width-2: 2px;
+    --border-width-3: 3px;
+    --border-width-4: 4px;
+
+    --radius-none: 0;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --radius-full: 9999px;
+
+    /* ==========================================
+       SHADOWS
+       ========================================== */
+    --shadow-sm: 0 1px 2px rgba(var(--color-black-rgb), 0.05);
+    --shadow-md: 0 4px 6px rgba(var(--color-black-rgb), 0.1);
+    --shadow-lg: 0 10px 15px rgba(var(--color-black-rgb), 0.1);
+    --shadow-xl: 0 20px 25px rgba(var(--color-black-rgb), 0.15);
+
+    /* ==========================================
+       Z-INDEX SCALE
+       ========================================== */
+    --z-base: 0;
+    --z-dropdown: 10;
+    --z-sticky: 20;
+    --z-fixed: 30;
+    --z-modal-backdrop: 40;
+    --z-modal: 50;
+    --z-popover: 60;
+    --z-tooltip: 70;
+    --z-header: 100;
+    --z-progress: 101;
+    --z-max: 9999;
+
+    /* ==========================================
+       TRANSITIONS & ANIMATIONS
+       ========================================== */
+
+    /* Durations */
+    --duration-instant: 0ms;
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --duration-slower: 500ms;
+    --duration-slowest: 700ms;
+
+    /* Easings */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    /* Common Transitions */
+    --transition-fast: var(--duration-fast) var(--ease-out);
+    --transition-normal: var(--duration-normal) var(--ease-out);
+    --transition-slow: var(--duration-slow) var(--ease-out);
+    --transition-colors: color var(--duration-normal) var(--ease-out),
+                         background-color var(--duration-normal) var(--ease-out),
+                         border-color var(--duration-normal) var(--ease-out);
+    --transition-opacity: opacity var(--duration-normal) var(--ease-out);
+    --transition-transform: transform var(--duration-normal) var(--ease-out);
+    --transition-all: all var(--duration-normal) var(--ease-out);
+
+    /* ==========================================
+       ANIMATION DELAYS (for sequential reveals)
+       ========================================== */
+    --stagger-1: 0ms;
+    --stagger-2: 100ms;
+    --stagger-3: 200ms;
+    --stagger-4: 300ms;
+    --stagger-5: 400ms;
+    --stagger-6: 500ms;
+    --stagger-7: 600ms;
+    --stagger-8: 700ms;
+    --stagger-9: 800ms;
+    --stagger-10: 900ms;
+
+    /* ==========================================
+       OPACITY SCALE
+       ========================================== */
+    --opacity-0: 0;
+    --opacity-5: 0.05;
+    --opacity-10: 0.1;
+    --opacity-15: 0.15;
+    --opacity-20: 0.2;
+    --opacity-25: 0.25;
+    --opacity-30: 0.3;
+    --opacity-40: 0.4;
+    --opacity-50: 0.5;
+    --opacity-60: 0.6;
+    --opacity-70: 0.7;
+    --opacity-80: 0.8;
+    --opacity-90: 0.9;
+    --opacity-100: 1;
+
+    /* ==========================================
+       BREAKPOINTS (for reference in JS)
+       ========================================== */
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1000px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1400px;
+}
+
+/* ==========================================
+   MEDIA QUERY CUSTOM PROPERTIES
+   Using container queries where supported
+   ========================================== */
+
+@media (max-width: 1000px) {
+    :root {
+        --space-lg: var(--space-12);
+        --space-xl: var(--space-16);
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --space-lg: var(--space-8);
+        --space-xl: var(--space-12);
+        --header-height: 60px;
+    }
+}

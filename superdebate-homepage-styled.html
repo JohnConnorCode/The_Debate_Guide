@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperDebate - Bring Debate Back to Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0d0d0d;
+            --paper: #f8f6f1;
+            --cream: #eae6dd;
+            --gold: #c9a227;
+            --gold-dark: #a68521;
+            --gold-light: #d4b44a;
+            --warm-white: #fdfcf9;
+            --muted: #737373;
+            
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background: var(--ink);
+            color: var(--paper);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           ART DECO ELEMENTS
+           ========================================== */
+
+        .sunburst {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .sunburst svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sunburst-hero {
+            width: 1000px;
+            height: 1000px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.06;
+        }
+
+        .sunburst-section {
+            width: 700px;
+            height: 700px;
+            opacity: 0.04;
+        }
+
+        .deco-border {
+            height: 16px;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    var(--gold) 0px,
+                    var(--gold) 8px,
+                    transparent 8px,
+                    transparent 16px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0px,
+                    transparent 8px,
+                    var(--gold) 8px,
+                    var(--gold) 16px
+                );
+            background-size: 32px 4px, 32px 4px;
+            background-position: 0 0, 16px 6px;
+            background-repeat: repeat-x;
+            position: relative;
+        }
+
+        .deco-border::before,
+        .deco-border::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .deco-border::before { top: 0; }
+        .deco-border::after { bottom: 0; }
+
+        .corner-ornament {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--gold);
+            opacity: 0.3;
+        }
+
+        .corner-ornament::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--gold);
+        }
+
+        .corner-tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+        .corner-tl::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+        .corner-tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+        .corner-tr::before { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+        .corner-bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+        .corner-bl::before { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+        .corner-br { bottom: 0; right: 0; border-left: none; border-top: none; }
+        .corner-br::before { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+        /* ==========================================
+           HEADER
+           ========================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(13,13,13,0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm) var(--space-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .logo-mark span {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.15em;
+            color: var(--paper);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .nav a {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--paper);
+            text-decoration: none;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .nav a:hover { opacity: 1; }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--ink) !important;
+            opacity: 1 !important;
+            padding: 0.6rem 1.5rem;
+            font-weight: 500;
+            transition: background 0.2s !important;
+        }
+
+        .nav-cta:hover { background: var(--gold-dark) !important; }
+
+        .header-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        /* ==========================================
+           LAYOUT
+           ========================================== */
+
+        .section { position: relative; z-index: 10; }
+        .section-dark { background: var(--ink); color: var(--paper); }
+        .section-light { background: var(--paper); color: var(--ink); }
+        .section-cream { background: var(--cream); color: var(--ink); }
+        .section-padding { padding: var(--space-xl) 0; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            position: relative;
+        }
+
+        .section-number {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.1;
+            line-height: 1;
+            margin-bottom: -1.5rem;
+        }
+
+        .section-number-light {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            letter-spacing: 0.1em;
+            position: relative;
+        }
+
+        .section-title-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-sm);
+        }
+
+        .line-segment {
+            height: 1px;
+            width: 60px;
+            background: var(--gold);
+        }
+
+        .line-diamond {
+            width: 10px;
+            height: 10px;
+            border: 2px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .section-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: var(--space-lg);
+        }
+
+        .section-link {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-link::after {
+            content: '→';
+            transition: transform 0.2s;
+        }
+
+        .section-link:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* ==========================================
+           BUTTONS
+           ========================================== */
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gold);
+            color: var(--ink);
+            padding: 1rem 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 1px solid var(--gold);
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary:hover { background: var(--gold-light); }
+        .btn-primary:hover::before { opacity: 1; }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--paper);
+            padding: 1rem 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.25);
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .btn-outline-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--ink);
+            padding: 1rem 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .btn-outline-dark::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .btn-outline-dark:hover {
+            border-color: var(--ink);
+        }
+
+        .btn-outline-dark:hover::before {
+            border-color: rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--gold);
+            padding: 0.75rem 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--gold);
+            color: var(--ink);
+        }
+
+        /* ==========================================
+           HERO
+           ========================================== */
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--gold);
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-badge span {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .hero-badge .diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .hero-headline {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 12vw, 9rem);
+            line-height: 0.9;
+            letter-spacing: 0.02em;
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero-headline .line {
+            display: block;
+        }
+
+        .hero-headline .accent {
+            color: var(--gold);
+            position: relative;
+        }
+
+        .hero-sub {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--paper);
+            opacity: 0.7;
+            margin: var(--space-md) auto;
+            max-width: 50ch;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+            margin-top: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================
+           CLUBS SECTION
+           ========================================== */
+
+        .clubs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .club-card {
+            background: var(--warm-white);
+            border: 1px solid var(--cream);
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .club-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .club-banner {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .club-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 10px,
+                rgba(201, 162, 39, 0.03) 10px,
+                rgba(201, 162, 39, 0.03) 20px
+            );
+        }
+
+        .club-city-code {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            letter-spacing: 0.2em;
+            color: var(--paper);
+            opacity: 0.15;
+        }
+
+        .club-location {
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-sm);
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--paper);
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .club-content {
+            padding: var(--space-sm);
+        }
+
+        .club-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-xs);
+            color: var(--ink);
+        }
+
+        .club-description {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: var(--space-sm);
+        }
+
+        .club-link {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .club-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ==========================================
+           THREE WAYS / ROLES
+           ========================================== */
+
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--gold);
+        }
+
+        .role-card {
+            background: var(--ink);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            position: relative;
+        }
+
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: var(--space-sm);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .role-icon {
+            width: 64px;
+            height: 64px;
+            margin: var(--space-sm) auto var(--space-sm);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .role-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+        }
+
+        .role-icon::after {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid var(--gold);
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        .role-icon span {
+            font-size: 1.5rem;
+        }
+
+        .role-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-xs);
+            color: var(--gold);
+        }
+
+        .role-subtitle {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--paper);
+            opacity: 0.7;
+            margin-bottom: var(--space-sm);
+            max-width: 30ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .role-list {
+            list-style: none;
+            margin-bottom: var(--space-md);
+        }
+
+        .role-list li {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--paper);
+            opacity: 0.6;
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .role-list li::before {
+            content: '◆';
+            font-size: 0.5rem;
+            color: var(--gold);
+        }
+
+        /* ==========================================
+           WHY DEBATE
+           ========================================== */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(201, 162, 39, 0.3);
+        }
+
+        .why-card {
+            background: var(--paper);
+            padding: var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+
+        .why-card:hover {
+            background: var(--warm-white);
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 16px solid var(--gold);
+            opacity: 0.15;
+        }
+
+        .why-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--space-sm);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--gold-dark);
+            border-radius: 50%;
+        }
+
+        .why-icon::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border: 1px solid var(--gold-dark);
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        .why-icon span {
+            font-size: 1.1rem;
+        }
+
+        .why-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-xs);
+            color: var(--ink);
+        }
+
+        .why-card p {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* ==========================================
+           EVENTS
+           ========================================== */
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .event-card {
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .event-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .event-banner {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: #141414;
+            overflow: hidden;
+        }
+
+        .event-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 10px,
+                rgba(201, 162, 39, 0.03) 10px,
+                rgba(201, 162, 39, 0.03) 20px
+            );
+        }
+
+        .event-city-code {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            letter-spacing: 0.2em;
+            opacity: 0.12;
+        }
+
+        .event-badges {
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-sm);
+            right: var(--space-sm);
+            display: flex;
+            justify-content: space-between;
+            z-index: 1;
+        }
+
+        .event-date {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            background: var(--gold);
+            color: var(--ink);
+            padding: 0.35rem 0.6rem;
+        }
+
+        .event-type {
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--paper);
+            opacity: 0.5;
+            background: rgba(0,0,0,0.5);
+            padding: 0.35rem 0.6rem;
+        }
+
+        .event-info {
+            padding: var(--space-sm);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            margin-bottom: var(--space-xs);
+            line-height: 1.2;
+        }
+
+        .event-description {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--paper);
+            opacity: 0.6;
+            line-height: 1.5;
+            margin-bottom: var(--space-sm);
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .event-meta {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .event-meta strong {
+            display: block;
+            color: var(--paper);
+            opacity: 0.8;
+        }
+
+        .event-link {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .event-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ==========================================
+           TOPICS
+           ========================================== */
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .topic-card {
+            background: var(--warm-white);
+            border: 1px solid var(--cream);
+            padding: var(--space-md);
+            position: relative;
+            transition: border-color 0.2s;
+        }
+
+        .topic-card:hover {
+            border-color: var(--gold);
+        }
+
+        .topic-card::before {
+            content: '"';
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-sm);
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .topic-category {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: var(--space-xs);
+        }
+
+        .topic-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            letter-spacing: 0.03em;
+            color: var(--ink);
+            margin-bottom: var(--space-sm);
+            line-height: 1.2;
+        }
+
+        .topic-description {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* ==========================================
+           SUPPORT / CTA CARDS
+           ========================================== */
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--gold);
+        }
+
+        .support-card {
+            background: var(--ink);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .support-card:hover {
+            background: #151515;
+        }
+
+        .support-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto var(--space-sm);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+        }
+
+        .support-icon span {
+            font-size: 1.5rem;
+        }
+
+        .support-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-xs);
+        }
+
+        .support-description {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--paper);
+            opacity: 0.6;
+            margin-bottom: var(--space-md);
+            max-width: 28ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ==========================================
+           CHAMPIONSHIP
+           ========================================== */
+
+        .championship {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .championship-card {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .championship-content {
+            background: var(--ink);
+            padding: var(--space-lg);
+            border: 2px solid var(--gold);
+            border-right: none;
+            position: relative;
+        }
+
+        .championship-content::before {
+            content: '';
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-sm);
+            right: var(--space-sm);
+            bottom: var(--space-sm);
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            pointer-events: none;
+        }
+
+        .championship-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: var(--space-xs);
+        }
+
+        .championship-content h2 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-xs);
+        }
+
+        .championship-content h2 .gold {
+            color: var(--gold);
+        }
+
+        .championship-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--paper);
+            opacity: 0.65;
+            margin-bottom: var(--space-md);
+            max-width: 40ch;
+        }
+
+        .championship-details {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .championship-detail {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+        }
+
+        .championship-detail strong {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .championship-tags {
+            display: flex;
+            gap: var(--space-xs);
+            flex-wrap: wrap;
+            margin-bottom: var(--space-md);
+        }
+
+        .championship-tag {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.05em;
+            color: var(--paper);
+            opacity: 0.6;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .championship-visual {
+            background: linear-gradient(135deg, #1a1508 0%, #0d0d0d 100%);
+            border: 2px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .championship-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(
+                from 0deg at 50% 50%,
+                var(--gold) 0deg 1deg,
+                transparent 1deg 15deg
+            );
+            opacity: 0.06;
+        }
+
+        .countdown {
+            display: flex;
+            gap: var(--space-sm);
+            position: relative;
+            z-index: 1;
+            margin-bottom: var(--space-md);
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .champ-stats {
+            display: flex;
+            gap: var(--space-sm);
+            position: relative;
+            z-index: 1;
+        }
+
+        .champ-stat {
+            text-align: center;
+            padding: var(--space-sm);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            background: rgba(0,0,0,0.3);
+            min-width: 80px;
+        }
+
+        .champ-stat-value {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .champ-stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 0.25rem;
+        }
+
+        /* ==========================================
+           MISSION / JOIN MOVEMENT
+           ========================================== */
+
+        .mission-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-sm);
+        }
+
+        .mission-text {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: var(--paper);
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+
+        .mission-ctas {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================
+           FINAL CTA
+           ========================================== */
+
+        .final-cta {
+            text-align: center;
+            padding: var(--space-xl) var(--space-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-xs);
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta p {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--paper);
+            opacity: 0.55;
+            margin-bottom: var(--space-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+
+        .footer {
+            background: var(--ink);
+            color: var(--paper);
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-lg);
+            display: grid;
+            grid-template-columns: 1.5fr 2fr;
+            gap: var(--space-lg);
+        }
+
+        .footer-brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-logo-mark {
+            width: 28px;
+            height: 28px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-mark::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .footer-logo-mark span {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--gold);
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            letter-spacing: 0.12em;
+        }
+
+        .footer-tagline {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            opacity: 0.4;
+            max-width: 32ch;
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .footer-cta:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.35;
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-col a {
+            display: block;
+            color: var(--paper);
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            opacity: 0.55;
+            margin-bottom: 0.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+        }
+
+        .footer-newsletter {
+            margin-top: var(--space-md);
+        }
+
+        .footer-newsletter h4 {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.35;
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-newsletter p {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            opacity: 0.55;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            opacity: 0.3;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer-legal a {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--paper);
+            opacity: 0.3;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .footer-legal a:hover {
+            opacity: 0.6;
+        }
+
+        /* ==========================================
+           RESPONSIVE
+           ========================================== */
+
+        @media (max-width: 1000px) {
+            .clubs-grid,
+            .events-grid,
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .roles-grid,
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .championship-card {
+                grid-template-columns: 1fr;
+            }
+
+            .championship-content {
+                border-right: 2px solid var(--gold);
+                border-bottom: none;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav a:not(.nav-cta) {
+                display: none;
+            }
+
+            .container {
+                padding: 0 var(--space-sm);
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--space-sm);
+                text-align: center;
+            }
+
+            .countdown {
+                gap: var(--space-xs);
+            }
+
+            .countdown-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-mark"><span>S</span></div>
+                <span class="logo-text">SUPERDEBATE</span>
+            </a>
+            <nav class="nav">
+                <a href="#clubs">Clubs</a>
+                <a href="#events">Events</a>
+                <a href="#topics">Topics</a>
+                <a href="#">Podcast</a>
+                <a href="#" class="nav-cta">Join Free</a>
+            </nav>
+        </div>
+        <div class="header-line"></div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero section-dark">
+        <div class="sunburst sunburst-hero">
+            <svg viewBox="0 0 400 400">
+                <g transform="translate(200,200)">
+                    <g fill="none" stroke="#c9a227" stroke-width="1">
+                        <line x1="0" y1="0" x2="0" y2="-200" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(10)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(20)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(30)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(40)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(50)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(60)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(70)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(80)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(90)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(100)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(110)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(120)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(130)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(140)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(150)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(160)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(170)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(180)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(190)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(200)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(210)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(220)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(230)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(240)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(250)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(260)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(270)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(280)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(290)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(300)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(310)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(320)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(330)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(340)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(350)" />
+                        <circle r="50" />
+                        <circle r="100" />
+                        <circle r="150" />
+                        <circle r="200" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <span class="diamond"></span>
+                <span>The Only Platform for Adult Debate Clubs</span>
+                <span class="diamond"></span>
+            </div>
+            <h1 class="hero-headline">
+                <span class="line">Bring Debate</span>
+                <span class="line"><span class="accent">Back to Life</span></span>
+            </h1>
+            <p class="hero-sub">
+                Find debate clubs in your city, or start your own. Host events and connect with people who want to argue intelligently.
+            </p>
+            <div class="hero-ctas">
+                <a href="#" class="btn-primary">Join a Club</a>
+                <a href="#" class="btn-secondary">Host a Debate</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="deco-border"></div>
+
+    <!-- POPULAR CLUBS -->
+    <section id="clubs" class="section section-light section-padding">
+        <div class="container">
+            <div class="section-header-row">
+                <div>
+                    <div class="section-number section-number-light">01</div>
+                    <h2 class="section-title">POPULAR CLUBS</h2>
+                    <p style="font-family: var(--font-body); color: var(--muted); margin-top: var(--space-xs);">Find your tribe. Join clubs near you and start debating.</p>
+                </div>
+                <a href="#" class="section-link" style="color: var(--gold-dark);">Explore All Clubs</a>
+            </div>
+
+            <div class="clubs-grid">
+                <div class="club-card">
+                    <div class="club-banner">
+                        <span class="club-location">New York, NY</span>
+                        <span class="club-city-code">NYC</span>
+                    </div>
+                    <div class="club-content">
+                        <h3 class="club-title">NEW YORK DEBATE CLUB</h3>
+                        <p class="club-description">From Wall Street to Washington Heights, NYC's premier debate society brings together the city's sharpest minds. Join us for intellectually stimulating discussions in the city that never sleeps.</p>
+                        <a href="#" class="club-link">View Club →</a>
+                    </div>
+                </div>
+
+                <div class="club-card">
+                    <div class="club-banner">
+                        <span class="club-location">Austin, TX</span>
+                        <span class="club-city-code">ATX</span>
+                    </div>
+                    <div class="club-content">
+                        <h3 class="club-title">AUSTIN DEBATE CLUB</h3>
+                        <p class="club-description">Keep Austin Weird, Keep Austin Thinking! Where live music meets lively discourse, Austin's debate scene is as vibrant as its culture. From tech policy to tacos, no topic is off limits.</p>
+                        <a href="#" class="club-link">View Club →</a>
+                    </div>
+                </div>
+
+                <div class="club-card">
+                    <div class="club-banner">
+                        <span class="club-location">San Jose, CA</span>
+                        <span class="club-city-code">SJC</span>
+                    </div>
+                    <div class="club-content">
+                        <h3 class="club-title">SAN JOSE DEBATE CLUB</h3>
+                        <p class="club-description">In the heart of Silicon Valley, we debug arguments and optimize reasoning. Join tech innovators and entrepreneurs debating the future of technology, ethics in AI, and startup culture.</p>
+                        <a href="#" class="club-link">View Club →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THREE WAYS TO PARTICIPATE -->
+    <section class="section section-dark section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2 class="section-title">THREE WAYS TO PARTICIPATE</h2>
+                <div class="section-title-line">
+                    <span class="line-segment"></span>
+                    <span class="line-diamond"></span>
+                    <span class="line-segment"></span>
+                </div>
+                <p style="font-family: var(--font-body); color: var(--paper); opacity: 0.6; margin-top: var(--space-sm); max-width: 50ch; margin-left: auto; margin-right: auto;">Whether you want to organize events, engage in debates, or evaluate arguments, there's a perfect role for you in our community.</p>
+            </div>
+
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-icon"><span>🎯</span></div>
+                    <h3 class="role-title">ORGANIZER</h3>
+                    <p class="role-subtitle">Lead your own debate club. Build community around thoughtful argument and shared learning.</p>
+                    <ul class="role-list">
+                        <li>Schedule debates and local events</li>
+                        <li>Manage members and topics</li>
+                        <li>Grow a space for open discourse</li>
+                    </ul>
+                    <a href="#" class="btn-outline-gold">Start Organizing</a>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon"><span>⚔️</span></div>
+                    <h3 class="role-title">DEBATER</h3>
+                    <p class="role-subtitle">Challenge yourself through structured competition.</p>
+                    <ul class="role-list">
+                        <li>Join live debates</li>
+                        <li>Train with practice tools</li>
+                        <li>Compete and improve over time</li>
+                    </ul>
+                    <a href="#" class="btn-outline-gold">Start Debating</a>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-icon"><span>⚖️</span></div>
+                    <h3 class="role-title">JUDGE OR SPECTATOR</h3>
+                    <p class="role-subtitle">Support the next generation of thinkers by observing and evaluating debates.</p>
+                    <ul class="role-list">
+                        <li>Score performances</li>
+                        <li>Offer feedback and mentorship</li>
+                        <li>Learn from the best</li>
+                    </ul>
+                    <a href="#" class="btn-outline-gold">Become a Judge</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-lg);">
+                <p style="font-family: var(--font-body); color: var(--paper); opacity: 0.5; margin-bottom: var(--space-sm);">Not sure which role is right for you?</p>
+                <a href="#" class="btn-secondary">Learn How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="deco-border"></div>
+
+    <!-- WHY DEBATE MATTERS -->
+    <section class="section section-light section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number section-number-light">03</div>
+                <h2 class="section-title">WHY DEBATE MATTERS</h2>
+                <div class="section-title-line">
+                    <span class="line-segment"></span>
+                    <span class="line-diamond"></span>
+                    <span class="line-segment"></span>
+                </div>
+                <p style="font-family: var(--font-body); color: var(--muted); margin-top: var(--space-sm); max-width: 55ch; margin-left: auto; margin-right: auto;">Structured debate transforms disagreement into understanding. Learn to argue with logic, listen with empathy, and defend ideas with courage.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><span>◐</span></div>
+                    <h3>SEE EVERY ANGLE</h3>
+                    <p>The best way to understand an idea is to argue both sides. You'll discover insights you never knew existed.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><span>◈</span></div>
+                    <h3>WIN WITH LOGIC</h3>
+                    <p>No shouting matches here. Victory goes to whoever builds the strongest case with evidence and reasoning.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><span>◉</span></div>
+                    <h3>THINK ON YOUR FEET</h3>
+                    <p>Every debate sharpens your ability to organize thoughts under pressure. It's a workout for your brain.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><span>◎</span></div>
+                    <h3>FIND YOUR PEOPLE</h3>
+                    <p>Meet others who love ideas as much as you do. Build friendships through respectful intellectual combat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED EVENTS -->
+    <section id="events" class="section section-dark section-padding">
+        <div class="container">
+            <div class="section-header-row">
+                <div>
+                    <div class="section-number">04</div>
+                    <h2 class="section-title">FEATURED EVENTS</h2>
+                    <p style="font-family: var(--font-body); color: var(--paper); opacity: 0.6; margin-top: var(--space-xs);">Join upcoming debate events and tournaments near you.</p>
+                </div>
+                <a href="#" class="section-link">Explore All Events</a>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-banner">
+                        <span class="event-city-code">NYC</span>
+                        <div class="event-badges">
+                            <span class="event-date">FEB 13, 2026</span>
+                            <span class="event-type">Debate</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">SUPERDEBATE NEW YORK CITY AT NEUEHOUSE MADISON SQUARE</h3>
+                        <p class="event-description">This SuperDebate event brings a modern intellectual arena to one of New York's most iconic creative spaces. Participants will take part in up to six structured debate rounds during this three hour session.</p>
+                        <div class="event-meta">
+                            <strong>7:00 AM - 10:00 AM</strong>
+                            NeueHouse Madison Square, 110 E 25th St, New York NY
+                        </div>
+                        <a href="#" class="event-link">View Details →</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-banner">
+                        <span class="event-city-code">PDX</span>
+                        <div class="event-badges">
+                            <span class="event-date">FEB 13, 2026</span>
+                            <span class="event-type">Debate</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">SUPERDEBATE PORTLAND AT KILN PORTLAND</h3>
+                        <p class="event-description">This SuperDebate Portland event is a three hour structured debate session hosted inside the beautifully designed Kiln workspace. Participants will engage in up to six competitive debate rounds.</p>
+                        <div class="event-meta">
+                            <strong>10:00 AM - 1:00 PM</strong>
+                            Kiln Portland, 1125 SE Division St, Portland OR
+                        </div>
+                        <a href="#" class="event-link">View Details →</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-banner">
+                        <span class="event-city-code">HND</span>
+                        <div class="event-badges">
+                            <span class="event-date">FEB 18-20</span>
+                            <span class="event-type">Tournament</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">SUPERDEBATE × INFINITE GAMES INVITATIONAL</h3>
+                        <p class="event-description">The inaugural debate event of the Infinite Games Festival at Infinita City, Prospera, Roatán, Honduras. A 12-team tournament featuring peer-based judging and a championship bracket.</p>
+                        <div class="event-meta">
+                            <strong>February 18 - 20, 2026</strong>
+                            Infinita City, Prospera, Roatán, Honduras
+                        </div>
+                        <a href="#" class="event-link">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="deco-border"></div>
+
+    <!-- TRENDING TOPICS -->
+    <section id="topics" class="section section-light section-padding">
+        <div class="container">
+            <div class="section-header-row">
+                <div>
+                    <div class="section-number section-number-light">05</div>
+                    <h2 class="section-title">TRENDING TOPICS</h2>
+                    <p style="font-family: var(--font-body); color: var(--muted); margin-top: var(--space-xs);">Explore the most popular debate topics across different categories. Join the conversation.</p>
+                </div>
+                <a href="#" class="section-link" style="color: var(--gold-dark);">Explore All Topics</a>
+            </div>
+
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <span class="topic-category">Technology</span>
+                    <h3 class="topic-title">Is cryptocurrency the future of money?</h3>
+                    <p class="topic-description">Examining whether digital currencies will replace traditional financial systems.</p>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-category">Psychology</span>
+                    <h3 class="topic-title">Deep focus is becoming a superpower in the attention economy</h3>
+                    <p class="topic-description">Some argue that as distractions multiply, the ability to concentrate deeply becomes increasingly rare and valuable, giving focused individuals competitive advantage.</p>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-category">Health</span>
+                    <h3 class="topic-title">Social isolation should be treated as a public health emergency</h3>
+                    <p class="topic-description">Proponents argue that loneliness causes health impacts equivalent to smoking 15 cigarettes daily, affecting millions globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT THE MOVEMENT -->
+    <section class="section section-dark section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h2 class="section-title">SUPPORT THE MOVEMENT</h2>
+                <div class="section-title-line">
+                    <span class="line-segment"></span>
+                    <span class="line-diamond"></span>
+                    <span class="line-segment"></span>
+                </div>
+                <p style="font-family: var(--font-body); color: var(--paper); opacity: 0.6; margin-top: var(--space-sm); max-width: 50ch; margin-left: auto; margin-right: auto;">Debate culture grows when people show up. Sponsor an event, volunteer your time, or open your space to local debates.</p>
+            </div>
+
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon"><span>🏛️</span></div>
+                    <h3 class="support-title">PROVIDE A SPACE</h3>
+                    <p class="support-description">Open your venue, coworking space, or café for local debates and connect with engaged audiences.</p>
+                    <a href="#" class="btn-outline-gold">Offer Your Venue</a>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon"><span>🤝</span></div>
+                    <h3 class="support-title">VOLUNTEER YOUR TIME</h3>
+                    <p class="support-description">Assist with event setup, registration, or judging. Every role helps create more opportunities for dialogue.</p>
+                    <a href="#" class="btn-outline-gold">Volunteer Now</a>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon"><span>💎</span></div>
+                    <h3 class="support-title">SPONSOR A DEBATE</h3>
+                    <p class="support-description">Support your city's debate culture through sponsorships that help fund prizes, venues, and promotion.</p>
+                    <a href="#" class="btn-outline-gold">Become a Sponsor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="deco-border"></div>
+
+    <!-- CHAMPIONSHIP -->
+    <section class="section section-dark section-padding championship">
+        <div class="container">
+            <div class="championship-card">
+                <div class="championship-content">
+                    <span class="championship-eyebrow">Infinite Games</span>
+                    <h2>DEBATE <span class="gold">CHAMPIONSHIP</span></h2>
+                    <p class="championship-subtitle">Where crypto builders and master debaters converge for 3 days of intellectual combat in Caribbean paradise</p>
+                    <div class="championship-details">
+                        <div class="championship-detail">
+                            <strong>When</strong>
+                            Feb 18–20, 2026
+                        </div>
+                        <div class="championship-detail">
+                            <strong>Where</strong>
+                            Roatán, Honduras
+                        </div>
+                    </div>
+                    <div class="championship-tags">
+                        <span class="championship-tag">$150 Team Entry</span>
+                        <span class="championship-tag">Blockchain Trophies</span>
+                        <span class="championship-tag">Live Audience</span>
+                    </div>
+                    <a href="#" class="btn-primary">Register Your Team</a>
+                </div>
+                <div class="championship-visual">
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <div class="countdown-value">39</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value">02</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value">19</div>
+                            <div class="countdown-label">Min</div>
+                        </div>
+                    </div>
+                    <div class="champ-stats">
+                        <div class="champ-stat">
+                            <div class="champ-stat-value">32</div>
+                            <div class="champ-stat-label">Teams</div>
+                        </div>
+                        <div class="champ-stat">
+                            <div class="champ-stat-value">3</div>
+                            <div class="champ-stat-label">Days</div>
+                        </div>
+                        <div class="champ-stat">
+                            <div class="champ-stat-value">6</div>
+                            <div class="champ-stat-label">Rounds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN THE MOVEMENT -->
+    <section class="section section-dark section-padding mission-section">
+        <div class="sunburst sunburst-section" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <svg viewBox="0 0 400 400">
+                <g transform="translate(200,200)">
+                    <g fill="none" stroke="#c9a227" stroke-width="0.5">
+                        <line x1="0" y1="0" x2="0" y2="-200" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(15)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(30)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(45)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(60)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(75)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(90)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(105)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(120)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(135)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(150)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(165)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(180)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(195)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(210)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(225)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(240)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(255)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(270)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(285)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(300)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(315)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(330)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(345)" />
+                        <circle r="60" />
+                        <circle r="120" />
+                        <circle r="180" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="mission-content">
+                <h2 class="mission-title">JOIN THE SUPERDEBATE MOVEMENT</h2>
+                <p class="mission-text">SuperDebate is rebuilding the modern Agora — a living network of debate clubs for adults everywhere. We help people host events, grow communities, and restore the lost art of reasoned disagreement.</p>
+                <div class="mission-ctas">
+                    <a href="#" class="btn-primary">Join a Club</a>
+                    <a href="#" class="btn-secondary">Host a Debate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section-dark final-cta">
+        <div class="sunburst sunburst-section" style="top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.03;">
+            <svg viewBox="0 0 400 400">
+                <g transform="translate(200,200)">
+                    <g fill="none" stroke="#c9a227" stroke-width="0.5">
+                        <line x1="0" y1="0" x2="0" y2="-200" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(12)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(24)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(36)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(48)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(60)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(72)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(84)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(96)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(108)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(120)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(132)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(144)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(156)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(168)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(180)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(192)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(204)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(216)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(228)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(240)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(252)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(264)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(276)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(288)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(300)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(312)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(324)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(336)" />
+                        <line x1="0" y1="0" x2="0" y2="-200" transform="rotate(348)" />
+                        <circle r="80" />
+                        <circle r="160" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <h2>MAKE ARGUING FUN AGAIN</h2>
+        <p>The infrastructure for competitive debate. Join clubs, compete in events, and climb the ranks.</p>
+        <a href="#" class="btn-primary">Get Started Free</a>
+    </section>
+
+    <div class="deco-border"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div>
+                <div class="footer-brand-wrap">
+                    <div class="footer-logo-mark"><span>S</span></div>
+                    <span class="footer-brand">SUPERDEBATE</span>
+                </div>
+                <p class="footer-tagline">The infrastructure for competitive debate. Join clubs, host events, and climb the ranks.</p>
+                <a href="#" class="footer-cta">Get Started Free →</a>
+            </div>
+            <div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <a href="#">Find Clubs</a>
+                        <a href="#">Events</a>
+                        <a href="#">Topics</a>
+                        <a href="#">Best Point</a>
+                        <a href="#">How It Works</a>
+                        <a href="#">Training</a>
+                        <a href="#">Debate Guide</a>
+                        <a href="#">Championship</a>
+                        <a href="#">Leaderboard</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Founder</a>
+                        <a href="#">Ambassadors</a>
+                        <a href="#">Sponsors</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-newsletter">
+                            <h4>Stay Updated</h4>
+                            <p>Get notified about new events and championship announcements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copyright">© 2026 SuperDebate. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookies</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
