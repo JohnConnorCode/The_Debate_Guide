@@ -216,16 +216,40 @@ Type: Reflection | Practice | Challenge
 </div>
 ```
 
+### Quick Tactic Boxes
+Include 1-2 per chapter — immediately actionable advice for modern debaters:
+```html
+<div class="quick-tactic">
+    <div class="tactic-header">Quick Tactic</div>
+    <div class="tactic-title">The 30-Second Check</div>
+    <p>Before responding to any argument, quickly ask yourself three questions:</p>
+    <ol>
+        <li>What's the strongest version of this claim?</li>
+        <li>What evidence would change my mind?</li>
+        <li>What's the common ground here?</li>
+    </ol>
+</div>
+```
+
+**Quick Tactic Guidelines:**
+- Keep tactics concrete and immediately usable
+- Focus on actions, not abstract principles
+- Include numbered steps or checklists when helpful
+- Connect to modern contexts: social media, workplace, classrooms
+- Balance Greek wisdom with contemporary application
+
 ---
 
 ## Quality Checklist
 
 Before completing any chapter, verify:
 
-- [ ] Word count within 2,400–3,000 range
+- [ ] Word count within 2,400–4,000 range (enhanced chapters may be longer)
 - [ ] Opens with engaging hook (not "In this chapter...")
 - [ ] Contains 2-3 historical examples, naturally integrated
+- [ ] Contains 1-3 modern examples, woven alongside classical ones
 - [ ] Includes 2-4 vocabulary boxes with Greek terms
+- [ ] Includes 1-2 Quick Tactic boxes with actionable advice
 - [ ] Features 3-5 relevant blockquotes with attribution
 - [ ] Ends with 3 exercises (Reflection, Practice, Challenge)
 - [ ] Contains appropriate cross-references to other chapters

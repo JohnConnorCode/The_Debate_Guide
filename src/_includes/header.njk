@@ -5,7 +5,9 @@
             <div class="logo-mark"><span>D</span></div>
             <span class="logo-text">THE DEBATE GUIDE</span>
         </a>
-        <nav class="nav">
+
+        {# Desktop navigation #}
+        <nav class="nav nav-desktop">
             {% if pageType == "home" %}
                 <a href="{{ '/introduction/' | url }}">Introduction</a>
                 <a href="#contents">Contents</a>
@@ -16,8 +18,42 @@
                 <a href="{{ '/' | url }}">Contents</a>
                 <a href="{{ '/introduction/' | url }}">Introduction</a>
             {% endif %}
-            <a href="https://superdebate.net" target="_blank" class="nav-cta">Join SuperDebate</a>
+            <a href="https://superdebate.org" target="_blank" class="nav-cta">Join SuperDebate</a>
         </nav>
+
+        {# Mobile hamburger button #}
+        <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </div>
     <div class="header-line"></div>
 </header>
+
+{# Mobile navigation drawer #}
+<div class="mobile-nav-overlay" aria-hidden="true"></div>
+<nav class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-header">
+        <span class="mobile-nav-title">Menu</span>
+        <button class="mobile-nav-close" aria-label="Close menu">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="mobile-nav-links">
+        {% if pageType == "home" %}
+            <a href="{{ '/introduction/' | url }}">Introduction</a>
+            <a href="#contents" class="mobile-nav-anchor">Contents</a>
+        {% elif pageType == "introduction" %}
+            <a href="{{ '/' | url }}">Contents</a>
+            <a href="#part-1" class="mobile-nav-anchor">Begin Reading</a>
+        {% else %}
+            <a href="{{ '/' | url }}">Contents</a>
+            <a href="{{ '/introduction/' | url }}">Introduction</a>
+        {% endif %}
+    </div>
+    <div class="mobile-nav-cta">
+        <a href="https://superdebate.org" target="_blank" class="btn-primary">Join SuperDebate</a>
+    </div>
+</nav>
