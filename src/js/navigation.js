@@ -186,35 +186,104 @@
     }
 
     // ==========================================
-    // PROGRESS BAR
+    // UNIFIED SCROLL HANDLER
+    // Single rAF-throttled handler for all scroll-based features
     // ==========================================
 
-    function initProgressBar() {
-        const progressFill = document.querySelector('.progress-bar-fill');
-        if (!progressFill) return;
+    function initUnifiedScrollHandler() {
+        // Collect all elements that need scroll updates
+        const elements = {
+            progressFill: document.querySelector('.progress-bar-fill'),
+            header: document.querySelector('.header'),
+            scrollToTop: document.querySelector('.scroll-to-top'),
+            toolbar: document.querySelector('.reading-toolbar'),
+            keyboardHint: document.querySelector('.keyboard-hint')
+        };
 
         let ticking = false;
+        let lastScrollTop = 0;
+        let keyboardHintTimeout = null;
 
-        function updateProgress() {
+        function handleScroll() {
+            const scrollTop = window.scrollY;
             const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight - windowHeight;
-            const scrolled = window.scrollY;
-            const progress = Math.min((scrolled / documentHeight) * 100, 100);
-            progressFill.style.width = progress + '%';
+            const documentHeight = document.documentElement.scrollHeight;
+
+            // 1. Progress bar update
+            if (elements.progressFill) {
+                const scrollableHeight = documentHeight - windowHeight;
+                const progress = Math.min((scrollTop / scrollableHeight) * 100, 100);
+                elements.progressFill.style.width = progress + '%';
+            }
+
+            // 2. Header show/hide
+            if (elements.header) {
+                const threshold = 100;
+                if (scrollTop > threshold) {
+                    elements.header.classList.add('scrolled');
+                } else {
+                    elements.header.classList.remove('scrolled');
+                }
+
+                // Hide on scroll down, show on scroll up
+                if (scrollTop > lastScrollTop && scrollTop > 300 && !document.body.classList.contains('mobile-nav-open')) {
+                    elements.header.classList.add('header-hidden');
+                } else {
+                    elements.header.classList.remove('header-hidden');
+                }
+            }
+
+            // 3. Scroll to top button visibility
+            if (elements.scrollToTop) {
+                if (scrollTop > 400) {
+                    elements.scrollToTop.classList.add('is-visible');
+                } else {
+                    elements.scrollToTop.classList.remove('is-visible');
+                }
+            }
+
+            // 4. Reading toolbar visibility
+            if (elements.toolbar) {
+                if (scrollTop > 200) {
+                    elements.toolbar.classList.add('is-visible');
+                } else {
+                    elements.toolbar.classList.remove('is-visible');
+                }
+            }
+
+            // 5. Keyboard hint at bottom
+            if (elements.keyboardHint && scrollTop + windowHeight > documentHeight - 200) {
+                elements.keyboardHint.classList.add('visible');
+                clearTimeout(keyboardHintTimeout);
+                keyboardHintTimeout = setTimeout(function() {
+                    elements.keyboardHint.classList.remove('visible');
+                }, CONFIG.keyboardHint.hideDelay);
+            }
+
+            lastScrollTop = scrollTop;
         }
 
         window.addEventListener('scroll', function() {
             if (!ticking) {
                 window.requestAnimationFrame(function() {
-                    updateProgress();
+                    handleScroll();
                     ticking = false;
                 });
                 ticking = true;
             }
         }, { passive: true });
 
-        // Initial update
-        updateProgress();
+        // Initial call
+        handleScroll();
+    }
+
+    // ==========================================
+    // PROGRESS BAR (legacy - now handled by unified handler)
+    // ==========================================
+
+    function initProgressBar() {
+        // Progress bar is now handled by initUnifiedScrollHandler
+        // This function is kept for backwards compatibility
     }
 
     // ==========================================
@@ -263,29 +332,14 @@
         const hint = document.querySelector('.keyboard-hint');
         if (!hint) return;
 
-        let hideTimeout;
-
-        function showHint() {
+        // Show hint briefly on page load
+        // Scroll-based showing is now handled by initUnifiedScrollHandler
+        setTimeout(function() {
             hint.classList.add('visible');
-            clearTimeout(hideTimeout);
-            hideTimeout = setTimeout(function() {
+            setTimeout(function() {
                 hint.classList.remove('visible');
             }, CONFIG.keyboardHint.hideDelay);
-        }
-
-        // Show hint briefly on page load
-        setTimeout(showHint, CONFIG.keyboardHint.showDelay);
-
-        // Show hint when near bottom
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-
-            if (scrollTop + windowHeight > documentHeight - 200) {
-                showHint();
-            }
-        }, { passive: true });
+        }, CONFIG.keyboardHint.showDelay);
     }
 
     // ==========================================
@@ -335,31 +389,8 @@
     // ==========================================
 
     function initHeaderScroll() {
-        const header = document.querySelector('.header');
-        if (!header) return;
-
-        let lastScrollTop = 0;
-        const threshold = 100;
-
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.scrollY;
-
-            if (scrollTop > threshold) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            // Optional: hide header on scroll down, show on scroll up
-            // Don't hide if mobile nav is open
-            if (scrollTop > lastScrollTop && scrollTop > 300 && !document.body.classList.contains('mobile-nav-open')) {
-                header.classList.add('header-hidden');
-            } else {
-                header.classList.remove('header-hidden');
-            }
-
-            lastScrollTop = scrollTop;
-        }, { passive: true });
+        // Header scroll behavior is now handled by initUnifiedScrollHandler
+        // This function is kept for backwards compatibility
     }
 
     // ==========================================
@@ -529,35 +560,14 @@
         const btn = document.querySelector('.scroll-to-top');
         if (!btn) return;
 
-        let ticking = false;
-
-        function updateButtonVisibility() {
-            if (window.scrollY > 400) {
-                btn.classList.add('is-visible');
-            } else {
-                btn.classList.remove('is-visible');
-            }
-        }
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    updateButtonVisibility();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }, { passive: true });
-
+        // Visibility is now handled by initUnifiedScrollHandler
+        // Just set up the click handler
         btn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-
-        // Initial check
-        updateButtonVisibility();
     }
 
     // ==========================================
@@ -794,31 +804,8 @@
     // ==========================================
 
     function initReadingToolbar() {
-        const toolbar = document.querySelector('.reading-toolbar');
-        if (!toolbar) return;
-
-        let ticking = false;
-
-        function updateToolbarVisibility() {
-            if (window.scrollY > 200) {
-                toolbar.classList.add('is-visible');
-            } else {
-                toolbar.classList.remove('is-visible');
-            }
-        }
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    updateToolbarVisibility();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }, { passive: true });
-
-        // Initial check
-        updateToolbarVisibility();
+        // Visibility is now handled by initUnifiedScrollHandler
+        // This function is kept for backwards compatibility
     }
 
     // ==========================================
@@ -1037,13 +1024,16 @@
         // Initialize animation observer
         initScrollAnimations();
 
+        // Initialize unified scroll handler (handles progress bar, header, scroll-to-top, toolbar)
+        initUnifiedScrollHandler();
+
         // Initialize other features
-        initProgressBar();
+        initProgressBar();      // Legacy - now handled by unified handler
         initKeyboardNav();
         initKeyboardHint();
         initSmoothScroll();
         initExternalLinks();
-        initHeaderScroll();
+        initHeaderScroll();     // Legacy - now handled by unified handler
         initMobileNav();
         initScrollToTop();
         initChapterProgress();
@@ -1051,7 +1041,7 @@
         initSwipeNavigation();
         initThemeToggle();
         initFontSizeControls();
-        initReadingToolbar();
+        initReadingToolbar();   // Legacy - now handled by unified handler
         initChapterToc();
         initPageTransitions();
     }

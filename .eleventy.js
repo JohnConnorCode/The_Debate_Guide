@@ -8,6 +8,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/manifest.json");
+  eleventyConfig.addPassthroughCopy("src/service-worker.js");
+
+  // Copy quiz data files to /quizzes/ directory
+  eleventyConfig.addPassthroughCopy({ "src/_data/quizzes": "quizzes" });
 
   // Watch CSS and JS for changes during development
   eleventyConfig.addWatchTarget("src/css/");

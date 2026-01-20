@@ -1,0 +1,86 @@
+{
+  "chapterId": 9,
+  "chapterTitle": "Logos: The Power of Reason",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch9-q1",
+      "type": "multiple-choice",
+      "question": "What is an enthymeme?",
+      "options": [
+        "A logical fallacy",
+        "A rhetorical syllogism with an implied premise",
+        "An emotional appeal disguised as logic",
+        "A type of evidence"
+      ],
+      "correct": 1,
+      "explanation": "An enthymeme is a syllogism where one premise is left unstated because it's assumed the audience already accepts it. Example: 'She's a politician, so she can't be trusted' implies the unstated premise that all politicians are untrustworthy."
+    },
+    {
+      "id": "ch9-q2",
+      "type": "true-false",
+      "question": "Deductive reasoning moves from specific observations to general conclusions.",
+      "correct": false,
+      "explanation": "Deductive reasoning moves from general principles to specific conclusions. Inductive reasoning moves from specific observations to general conclusions."
+    },
+    {
+      "id": "ch9-q3",
+      "type": "multiple-choice",
+      "question": "Which of the following is the strongest form of evidence for a logos-based argument?",
+      "options": [
+        "A celebrity endorsement",
+        "An emotional anecdote",
+        "Peer-reviewed research data",
+        "A popular opinion poll"
+      ],
+      "correct": 2,
+      "explanation": "Peer-reviewed research represents systematically gathered and verified evidence, making it the strongest foundation for logical arguments."
+    },
+    {
+      "id": "ch9-q4",
+      "type": "multiple-choice",
+      "question": "'All men are mortal. Socrates is a man. Therefore, Socrates is mortal.' This is an example of:",
+      "options": [
+        "Inductive reasoning",
+        "Deductive reasoning (syllogism)",
+        "Analogical reasoning",
+        "Abductive reasoning"
+      ],
+      "correct": 1,
+      "explanation": "This is a classic deductive syllogism: a major premise, a minor premise, and a conclusion that necessarily follows if both premises are true."
+    },
+    {
+      "id": "ch9-q5",
+      "type": "true-false",
+      "question": "A logically valid argument always has true conclusions.",
+      "correct": false,
+      "explanation": "Validity refers to the structure of an argument—whether the conclusion follows from the premises. An argument can be valid but have false premises, leading to a false conclusion. Soundness requires both validity AND true premises."
+    },
+    {
+      "id": "ch9-q6",
+      "type": "multiple-choice",
+      "question": "When you argue that 'just as exercise strengthens the body, reading strengthens the mind,' you are using:",
+      "options": [
+        "Deductive reasoning",
+        "Inductive reasoning",
+        "Analogical reasoning",
+        "Circular reasoning"
+      ],
+      "correct": 2,
+      "explanation": "Analogical reasoning draws parallels between two things to suggest that what's true of one is likely true of the other. The strength depends on how similar the compared things actually are."
+    },
+    {
+      "id": "ch9-q7",
+      "type": "multiple-choice",
+      "question": "What is the main weakness of relying solely on logos in persuasion?",
+      "options": [
+        "Logic is too complicated for audiences",
+        "Humans are not purely rational decision-makers",
+        "Evidence is always biased",
+        "Syllogisms take too long to construct"
+      ],
+      "correct": 1,
+      "explanation": "While logos provides the rational foundation, humans make decisions based on emotions, identity, and social factors too. Effective persuasion combines logos with ethos and pathos."
+    }
+  ]
+}

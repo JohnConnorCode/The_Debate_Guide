@@ -1,0 +1,119 @@
+{
+  "chapterId": 17,
+  "chapterTitle": "The Classroom Debate",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch17-q1",
+      "type": "multiple-choice",
+      "question": "What is the primary educational value of classroom debate beyond learning about specific topics?",
+      "options": [
+        "It prepares students for careers in law",
+        "It develops transferable critical thinking and communication skills",
+        "It identifies the smartest students in the class",
+        "It teaches students to win arguments at all costs"
+      ],
+      "correct": 1,
+      "explanation": "Classroom debate develops skills that transfer across domains: analyzing arguments, evaluating evidence, articulating positions clearly, responding to challenges, and considering multiple perspectives. These capacities serve students in any field, not just debate or law."
+    },
+    {
+      "id": "ch17-q2",
+      "type": "multiple-choice",
+      "question": "Why is being assigned to argue a position you disagree with educationally valuable?",
+      "options": [
+        "It teaches you to be dishonest effectively",
+        "It forces deep engagement with perspectives different from your own",
+        "It has no value—students should only argue their genuine beliefs",
+        "It prepares students for careers in advertising"
+      ],
+      "correct": 1,
+      "explanation": "Arguing an unfamiliar or opposed position requires understanding it deeply enough to advocate for it. This develops intellectual flexibility, empathy for other viewpoints, and the ability to see beyond one's initial assumptions—core critical thinking skills."
+    },
+    {
+      "id": "ch17-q3",
+      "type": "true-false",
+      "question": "In academic debate, the strength of your argument matters more than your delivery and presentation.",
+      "correct": false,
+      "explanation": "Both matter. A brilliant argument poorly delivered may not persuade; a weak argument excellently delivered shouldn't win. Academic debate evaluates the integration of content (logos) with effective communication (ethos and delivery). Separating them creates an incomplete picture."
+    },
+    {
+      "id": "ch17-q4",
+      "type": "multiple-choice",
+      "question": "What distinguishes a productive classroom debate from a hostile argument?",
+      "options": [
+        "Productive debates avoid all disagreement",
+        "Productive debates focus on ideas and evidence rather than personal attacks",
+        "Productive debates are always calm and unemotional",
+        "Productive debates end with everyone agreeing"
+      ],
+      "correct": 1,
+      "explanation": "Productive debate involves vigorous disagreement but keeps focus on the substance of arguments rather than attacking people. Participants can be passionate and direct while respecting each other's dignity and right to hold different views."
+    },
+    {
+      "id": "ch17-q5",
+      "type": "multiple-choice",
+      "question": "How should a student respond when a peer makes an argument they find offensive or wrong?",
+      "options": [
+        "Refuse to engage and demand the argument be retracted",
+        "Attack the peer's character or motives",
+        "Engage with the argument's substance and explain why it fails",
+        "Ignore it to avoid conflict"
+      ],
+      "correct": 2,
+      "explanation": "Engaging with challenging arguments is how we sharpen our own thinking and potentially change minds. If an argument is wrong, explaining why is more effective than refusing to engage. This models productive discourse and respects the classroom as a space for intellectual exploration."
+    },
+    {
+      "id": "ch17-q6",
+      "type": "true-false",
+      "question": "Research is optional in classroom debate since the goal is developing speaking skills, not demonstrating knowledge.",
+      "correct": false,
+      "explanation": "Research is fundamental to substantive debate. Speaking skills without substance produce empty rhetoric. Thorough research provides the evidence and depth needed to argue effectively, teaches information literacy, and ensures debates engage with real complexity rather than uninformed opinion."
+    },
+    {
+      "id": "ch17-q7",
+      "type": "multiple-choice",
+      "question": "What is 'flowing' in competitive debate?",
+      "options": [
+        "A smooth, natural speaking style",
+        "A systematic note-taking method that tracks arguments and responses",
+        "Moving gracefully around the room while speaking",
+        "Speaking without preparation"
+      ],
+      "correct": 1,
+      "explanation": "Flowing is a note-taking system that maps arguments and responses across a debate. It tracks what each side said, what was answered, and what was 'dropped.' This organized approach enables effective refutation and ensures all arguments are addressed."
+    },
+    {
+      "id": "ch17-q8",
+      "type": "multiple-choice",
+      "question": "Why might a classroom debate include a role for non-debating students?",
+      "options": [
+        "Only to give everyone a grade",
+        "Active observation, questioning, and evaluation develops critical thinking too",
+        "It's only necessary when there are too many students",
+        "Non-debaters cannot learn from debate"
+      ],
+      "correct": 1,
+      "explanation": "Observers who actively evaluate arguments, prepare questions, or serve as judges develop critical thinking skills too. They practice analysis without performance pressure, and their questions often reveal assumptions the debaters missed."
+    },
+    {
+      "id": "ch17-q9",
+      "type": "multiple-choice",
+      "question": "How does debate preparation differ from studying for a traditional exam?",
+      "options": [
+        "Debate requires memorization; exams require understanding",
+        "Debate preparation must anticipate counterarguments and prepare responses",
+        "Exam preparation is more rigorous than debate preparation",
+        "They're essentially the same process"
+      ],
+      "correct": 1,
+      "explanation": "Debate preparation requires knowing not just your own arguments but anticipating challenges and preparing responses. This dialectical thinking—considering how your ideas will be tested—develops deeper understanding than simply memorizing material for recall."
+    },
+    {
+      "id": "ch17-q10",
+      "type": "true-false",
+      "question": "The goal of educational debate should be to identify who is 'right' about controversial issues.",
+      "correct": false,
+      "explanation": "Educational debate develops skills and understanding regardless of who 'wins.' On genuinely controversial issues, reasonable people may disagree. The educational value lies in understanding multiple perspectives, evaluating arguments, and articulating positions—not in resolving debates definitively."
+    }
+  ]
+}

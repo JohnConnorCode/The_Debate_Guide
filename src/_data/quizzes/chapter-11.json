@@ -1,0 +1,125 @@
+{
+  "chapterId": 11,
+  "chapterTitle": "Argument Structures",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch11-q1",
+      "type": "multiple-choice",
+      "question": "In a standard syllogism, if both premises are true and the form is valid, the conclusion is:",
+      "options": [
+        "Probably true",
+        "Necessarily true",
+        "True if the audience accepts it",
+        "True unless contradicted by other evidence"
+      ],
+      "correct": 1,
+      "explanation": "This is the power of deductive validity: if the premises are true and the form is valid, the conclusion must be true. The conclusion's truth is guaranteed by the logical structure, not by audience acceptance or external factors."
+    },
+    {
+      "id": "ch11-q2",
+      "type": "multiple-choice",
+      "question": "What distinguishes an enthymeme from a complete syllogism?",
+      "options": [
+        "Enthymemes are always invalid",
+        "Enthymemes leave one or more premises unstated because the audience supplies them",
+        "Enthymemes only deal with emotions, not logic",
+        "Enthymemes are used only in written arguments"
+      ],
+      "correct": 1,
+      "explanation": "Aristotle identified the enthymeme as rhetoric's characteristic form of reasoning. By leaving premises implicit, enthymemes engage the audience as co-reasoners and make arguments more concise. The risk is that unstated premises may be false or contested."
+    },
+    {
+      "id": "ch11-q3",
+      "type": "multiple-choice",
+      "question": "In the Toulmin model, what is the function of a 'warrant'?",
+      "options": [
+        "To provide evidence for the claim",
+        "To bridge the gap between evidence and claim by expressing the underlying principle",
+        "To qualify how certain the conclusion is",
+        "To anticipate counterarguments"
+      ],
+      "correct": 1,
+      "explanation": "The warrant is the often-unstated principle that connects grounds (evidence) to claim. If your evidence is 'She has a medical degree' and your claim is 'She's qualified to diagnose illness,' the warrant is 'Medical degrees qualify people to diagnose illness.'"
+    },
+    {
+      "id": "ch11-q4",
+      "type": "true-false",
+      "question": "Inductive arguments can be valid in the same sense that deductive arguments can be valid.",
+      "correct": false,
+      "explanation": "Validity is a property of deductive arguments only—it means the conclusion follows necessarily from premises. Inductive arguments are evaluated by strength: how probable they make the conclusion. Even strong inductive arguments don't guarantee conclusions."
+    },
+    {
+      "id": "ch11-q5",
+      "type": "multiple-choice",
+      "question": "A speaker argues: 'Every democracy we've studied has protected free speech; therefore, all democracies protect free speech.' This is:",
+      "options": [
+        "Deductive reasoning from general to specific",
+        "Inductive reasoning from specific instances to general conclusion",
+        "Analogical reasoning comparing democracies",
+        "Circular reasoning"
+      ],
+      "correct": 1,
+      "explanation": "This moves from observed cases to a generalization about all cases. It's inductive—the conclusion goes beyond the evidence. Its strength depends on how representative the studied democracies are and whether exceptions exist."
+    },
+    {
+      "id": "ch11-q6",
+      "type": "multiple-choice",
+      "question": "What is a 'reductio ad absurdum' argument?",
+      "options": [
+        "Mocking an opponent's position",
+        "Showing that a position leads to absurd or contradictory conclusions",
+        "Reducing a complex argument to its simplest form",
+        "Dismissing arguments as absurd without engagement"
+      ],
+      "correct": 1,
+      "explanation": "Reductio demonstrates that accepting a premise leads to conclusions that are clearly false, contradictory, or absurd. If position P implies absurd conclusion Q, and Q is clearly unacceptable, then P must be false. It's a legitimate form of indirect proof."
+    },
+    {
+      "id": "ch11-q7",
+      "type": "true-false",
+      "question": "The order in which you present arguments has no effect on their logical strength.",
+      "correct": true,
+      "explanation": "Logically, argument order is irrelevant—validity depends on structure, not sequence. However, rhetorically, order matters greatly for persuasiveness. Primacy effects, recency effects, and strategic arrangement influence how audiences process and remember arguments."
+    },
+    {
+      "id": "ch11-q8",
+      "type": "multiple-choice",
+      "question": "When is argument from analogy strongest?",
+      "options": [
+        "When the compared cases are similar in all respects",
+        "When the similarities are relevant to the conclusion being drawn",
+        "When the analogy is unexpected and creative",
+        "When the compared case is more familiar than the target case"
+      ],
+      "correct": 1,
+      "explanation": "Analogies depend on relevant similarity. Two things may differ in many ways but be analogous for the argument's purpose. A legal precedent might involve different people, times, and amounts but be relevantly similar in the principle at stake."
+    },
+    {
+      "id": "ch11-q9",
+      "type": "multiple-choice",
+      "question": "In the classical arrangement of a speech, the 'refutatio' section serves to:",
+      "options": [
+        "Summarize your main arguments",
+        "Introduce your topic and establish ethos",
+        "Anticipate and address opposing arguments",
+        "Provide emotional appeal in the conclusion"
+      ],
+      "correct": 2,
+      "explanation": "Refutatio (refutation) is the section where you engage with counterarguments. By addressing objections, you strengthen your position, demonstrate thorough understanding, and show respect for opposing views—all of which enhance both logos and ethos."
+    },
+    {
+      "id": "ch11-q10",
+      "type": "multiple-choice",
+      "question": "What is the main advantage of structuring an argument as 'problem-solution'?",
+      "options": [
+        "It's the only valid argument structure",
+        "It creates a clear need before proposing action, mirroring how decisions are made",
+        "It requires less evidence than other structures",
+        "It works only for policy arguments"
+      ],
+      "correct": 1,
+      "explanation": "Problem-solution structure mirrors practical reasoning: we seek solutions when we recognize problems. By establishing a problem's existence and significance first, you create receptivity for your proposed solution. It's particularly effective for persuading audiences to action."
+    }
+  ]
+}

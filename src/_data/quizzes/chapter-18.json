@@ -1,0 +1,119 @@
+{
+  "chapterId": 18,
+  "chapterTitle": "Digital Discourse",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch18-q1",
+      "type": "multiple-choice",
+      "question": "How does the asynchronous nature of online communication affect rhetorical strategy?",
+      "options": [
+        "It has no effect—rhetoric works the same in all media",
+        "It allows more time for careful composition but reduces real-time feedback",
+        "It makes rhetoric impossible since you can't see your audience",
+        "It only affects written, not video, communication"
+      ],
+      "correct": 1,
+      "explanation": "Asynchronous communication allows drafting, revision, and research before responding—opportunities rarely available in live debate. But it also means you can't adjust to real-time feedback, misunderstandings can compound, and tone is easily misread without vocal cues."
+    },
+    {
+      "id": "ch18-q2",
+      "type": "multiple-choice",
+      "question": "Why is 'context collapse' a particular challenge for online rhetoric?",
+      "options": [
+        "Internet connections frequently drop during important conversations",
+        "A single message may reach diverse audiences with different backgrounds and norms",
+        "Online platforms compress messages to save bandwidth",
+        "Digital natives don't understand historical context"
+      ],
+      "correct": 1,
+      "explanation": "Online, your message may be seen by your intended audience, their friends, strangers, future employers, and critics—simultaneously. A joke appropriate for friends may offend strangers; professional communication may seem stiff to friends. Managing multiple audiences at once is uniquely challenging."
+    },
+    {
+      "id": "ch18-q3",
+      "type": "true-false",
+      "question": "The permanence of digital communication should make people more careful about what they write online.",
+      "correct": true,
+      "explanation": "Digital communication creates lasting records. Tweets from years ago resurface; emails can be forwarded indefinitely; screenshots preserve deleted posts. This permanence means rhetorical choices have long-term consequences that ephemeral speech doesn't face."
+    },
+    {
+      "id": "ch18-q4",
+      "type": "multiple-choice",
+      "question": "How do algorithmic feeds affect online discourse?",
+      "options": [
+        "They neutrally present all viewpoints equally",
+        "They tend to amplify engaging content, which often means conflict and outrage",
+        "They have been proven to reduce polarization",
+        "They only affect advertising, not organic content"
+      ],
+      "correct": 1,
+      "explanation": "Algorithms optimize for engagement, which outrage, conflict, and extreme content tend to generate. This creates incentives for inflammatory rhetoric and amplifies divisive voices. Understanding these systemic pressures helps explain why online discourse often seems worse than face-to-face conversation."
+    },
+    {
+      "id": "ch18-q5",
+      "type": "multiple-choice",
+      "question": "What is 'sealioning' in online discourse?",
+      "options": [
+        "A creative metaphor using marine life",
+        "Persistently demanding evidence and explanation in bad faith to exhaust opponents",
+        "A legitimate debate technique for testing claims",
+        "Using aquarium backgrounds on video calls"
+      ],
+      "correct": 1,
+      "explanation": "Sealioning involves performative civility—politely asking endless questions with no genuine interest in understanding, designed to exhaust and frustrate rather than learn. Recognizing this tactic helps distinguish good-faith inquiry from harassment disguised as debate."
+    },
+    {
+      "id": "ch18-q6",
+      "type": "true-false",
+      "question": "Ethos is less important in online communication because audiences can't see your credentials.",
+      "correct": false,
+      "explanation": "Ethos remains crucial but is established differently online. Profile bios, posting history, institutional affiliations, how you engage with others, and the quality of your previous contributions all build or damage online credibility. Digital footprints create their own form of reputation."
+    },
+    {
+      "id": "ch18-q7",
+      "type": "multiple-choice",
+      "question": "What is the 'principle of minimal force' in online disagreement?",
+      "options": [
+        "Using as few words as possible",
+        "Responding with only as much intensity as necessary for the situation",
+        "Never arguing online",
+        "Always letting the other person have the last word"
+      ],
+      "correct": 1,
+      "explanation": "Minimal force means calibrating response intensity to the situation. Not every disagreement warrants a detailed rebuttal; not every error requires public correction. Over-responding wastes energy and can escalate conflicts unnecessarily. Rhetorical judgment includes knowing when and how much to engage."
+    },
+    {
+      "id": "ch18-q8",
+      "type": "multiple-choice",
+      "question": "How does the public nature of most online discourse affect debate dynamics?",
+      "options": [
+        "It has no effect since all debate is essentially public",
+        "Participants often perform for observers rather than genuinely trying to persuade each other",
+        "It makes people more likely to change their minds publicly",
+        "It eliminates the possibility of productive exchange"
+      ],
+      "correct": 1,
+      "explanation": "When debates have audiences, participants often aim to impress observers or signal group loyalty rather than genuinely engage with opponents. This performance aspect can undermine truth-seeking. Awareness of this dynamic helps maintain focus on substance over spectacle."
+    },
+    {
+      "id": "ch18-q9",
+      "type": "multiple-choice",
+      "question": "Why might private messages be more effective than public arguments for changing someone's mind?",
+      "options": [
+        "Private messages allow longer word counts",
+        "People can reconsider without publicly admitting error",
+        "Private communication is always superior to public",
+        "Algorithms boost private messages"
+      ],
+      "correct": 1,
+      "explanation": "Public disagreement often triggers defensive reactions—people defend positions to maintain face before observers. Private communication allows reconsideration without the social cost of public reversal. If genuine persuasion is your goal, private engagement often works better than public debate."
+    },
+    {
+      "id": "ch18-q10",
+      "type": "true-false",
+      "question": "The brevity required by some social media platforms makes nuanced argument impossible.",
+      "correct": false,
+      "explanation": "Brevity challenges nuance but doesn't eliminate it. Skilled communicators adapt to constraints—using threads, linking to longer pieces, or crafting precise statements. Short-form rhetoric requires different skills than long-form, but thoughtful argument is possible in any format."
+    }
+  ]
+}

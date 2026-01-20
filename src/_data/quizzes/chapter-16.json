@@ -1,0 +1,119 @@
+{
+  "chapterId": 16,
+  "chapterTitle": "Concession and Pivot",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch16-q1",
+      "type": "multiple-choice",
+      "question": "Strategic concession in debate is most effective when you concede points that are:",
+      "options": [
+        "Central to your opponent's argument",
+        "True but not essential to the main dispute",
+        "False but popular with the audience",
+        "Emotionally charged to show empathy"
+      ],
+      "correct": 1,
+      "explanation": "Strategic concession acknowledges valid points that don't undermine your core argument. This builds credibility by showing intellectual honesty while keeping focus on issues that actually distinguish your positions. Conceding central points defeats yourself; conceding false points is dishonest."
+    },
+    {
+      "id": "ch16-q2",
+      "type": "multiple-choice",
+      "question": "The 'Yes, and...' technique involves:",
+      "options": [
+        "Simply agreeing with everything your opponent says",
+        "Acknowledging a valid point and then adding information that reframes the issue",
+        "Asking the opponent to repeat their point",
+        "Agreeing sarcastically to mock the opponent"
+      ],
+      "correct": 1,
+      "explanation": "'Yes, and...' accepts what's true in an opponent's point, then adds context, nuance, or additional considerations that shift the conclusion. It's collaborative rather than combative while still advancing your argument."
+    },
+    {
+      "id": "ch16-q3",
+      "type": "true-false",
+      "question": "Conceding a point always weakens your overall position in a debate.",
+      "correct": false,
+      "explanation": "Strategic concession often strengthens your position by building credibility, focusing the debate on genuine disagreements, and preventing opponents from dwelling on points you've already acknowledged. Audiences respect honest acknowledgment of complexity."
+    },
+    {
+      "id": "ch16-q4",
+      "type": "multiple-choice",
+      "question": "A 'pivot' in debate refers to:",
+      "options": [
+        "Physically turning to face different audience sections",
+        "Changing your position entirely mid-debate",
+        "Transitioning from an opponent's point to your own preferred framing or topic",
+        "Refusing to answer direct questions"
+      ],
+      "correct": 2,
+      "explanation": "A pivot acknowledges an opponent's point, then redirects attention to your own frame or emphasis. 'That's a fair concern, but the more fundamental issue is...' It's a way of being responsive without being trapped in your opponent's framing."
+    },
+    {
+      "id": "ch16-q5",
+      "type": "multiple-choice",
+      "question": "When might full concession (admitting you were wrong) be the best strategic choice?",
+      "options": [
+        "Never—admitting error always damages credibility",
+        "When the error is obvious and defending it would damage credibility more",
+        "Only in private, never in public debate",
+        "When you want to end the debate quickly"
+      ],
+      "correct": 1,
+      "explanation": "When an error is clear, doubling down damages credibility more than honest admission. Audiences respect those who can acknowledge mistakes. A well-handled concession—'You're right, I was wrong about that, but my main point still holds because...'—can actually enhance ethos."
+    },
+    {
+      "id": "ch16-q6",
+      "type": "true-false",
+      "question": "The phrase 'I understand why you might think that, but...' is an example of a qualified concession.",
+      "correct": true,
+      "explanation": "This phrase acknowledges the reasonableness of the opponent's perspective without fully endorsing it. It's a form of qualified concession that shows empathy and understanding while setting up a redirect or counter-argument."
+    },
+    {
+      "id": "ch16-q7",
+      "type": "multiple-choice",
+      "question": "What makes a pivot feel manipulative rather than legitimate?",
+      "options": [
+        "Pivoting more than once in a debate",
+        "Failing to address the substance of the original point before changing subject",
+        "Pivoting to a stronger argument",
+        "Using transitional phrases like 'however'"
+      ],
+      "correct": 1,
+      "explanation": "Pivots feel evasive when they're transparent attempts to avoid difficult questions. Legitimate pivots acknowledge the original point's validity before redirecting; illegitimate pivots simply change the subject without engagement. The difference is whether you've earned the transition."
+    },
+    {
+      "id": "ch16-q8",
+      "type": "multiple-choice",
+      "question": "How does concession relate to the concept of 'common ground'?",
+      "options": [
+        "Concession eliminates common ground by admitting disagreement",
+        "Concession can establish shared premises from which to argue remaining differences",
+        "Common ground and concession are unrelated concepts",
+        "Finding common ground means conceding your core position"
+      ],
+      "correct": 1,
+      "explanation": "Strategic concession helps identify where you and your opponent actually agree, creating a foundation of shared premises. From this common ground, the genuine points of disagreement become clearer and debate becomes more productive."
+    },
+    {
+      "id": "ch16-q9",
+      "type": "multiple-choice",
+      "question": "In the 'concede-counter-conclude' pattern, what does the 'counter' step accomplish?",
+      "options": [
+        "It attacks the opponent personally",
+        "It presents information or framing that limits the impact of the conceded point",
+        "It withdraws the concession made in step one",
+        "It summarizes the opponent's argument"
+      ],
+      "correct": 1,
+      "explanation": "After conceding a valid point, the counter provides context, additional evidence, or reframing that shows why the conceded point doesn't determine the overall issue. 'Yes, X is true, but it's outweighed by Y' or 'Yes, but X applies less than you suggest because...'"
+    },
+    {
+      "id": "ch16-q10",
+      "type": "true-false",
+      "question": "Effective debaters decide before the debate exactly which points they will concede.",
+      "correct": false,
+      "explanation": "While you might anticipate some concessions, effective debate requires responsiveness. You should be ready to concede points that prove valid during the exchange, not just those you predicted. Rigidly refusing to concede unexpected valid points damages credibility."
+    }
+  ]
+}

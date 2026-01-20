@@ -1,0 +1,119 @@
+{
+  "chapterId": 8,
+  "chapterTitle": "The Ethical Use of Emotion",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch8-q1",
+      "type": "multiple-choice",
+      "question": "What is the key distinction between ethical emotional persuasion and manipulation?",
+      "options": [
+        "Ethical persuasion uses positive emotions; manipulation uses negative ones",
+        "Ethical persuasion helps people feel what accurate understanding warrants",
+        "Ethical persuasion never involves strong emotions",
+        "The distinction depends entirely on the speaker's intentions"
+      ],
+      "correct": 1,
+      "explanation": "Ethical pathos helps audiences feel emotions that are proportionate to reality—appropriate fear of real dangers, justified anger at genuine injustice. Manipulation creates disproportionate emotional responses or emotions based on false premises."
+    },
+    {
+      "id": "ch8-q2",
+      "type": "multiple-choice",
+      "question": "A speaker who exaggerates a threat to increase audience fear is engaging in:",
+      "options": [
+        "Effective rhetoric, since persuasion requires emphasis",
+        "Emotional manipulation that misrepresents reality",
+        "Pathos that Aristotle would approve",
+        "A technique only unethical in political contexts"
+      ],
+      "correct": 1,
+      "explanation": "Exaggerating threats creates disproportionate fear—emotion that doesn't match reality. This is manipulation because the emotional response is calibrated to false information. Ethical persuasion may emphasize real threats but shouldn't fabricate or inflate them."
+    },
+    {
+      "id": "ch8-q3",
+      "type": "true-false",
+      "question": "If an emotional appeal leads to a good outcome, it was ethically justified regardless of the method.",
+      "correct": false,
+      "explanation": "Consequentialist ethics faces problems here: manipulation that happens to lead to good outcomes still treats audiences as means rather than ends, undermines their autonomy, and sets dangerous precedents. The means matter, not just the ends."
+    },
+    {
+      "id": "ch8-q4",
+      "type": "multiple-choice",
+      "question": "How should a speaker handle statistical evidence that contradicts an emotionally compelling anecdote?",
+      "options": [
+        "Suppress the statistics to preserve emotional impact",
+        "Present both, acknowledging the tension honestly",
+        "Choose whichever evidence better supports the desired conclusion",
+        "Individual stories always trump statistics morally"
+      ],
+      "correct": 1,
+      "explanation": "Ethical rhetoric requires honesty about conflicting evidence. Anecdotes illuminate but can mislead about broader patterns; statistics reveal patterns but can obscure human reality. The ethical speaker presents both, helping audiences navigate the tension thoughtfully."
+    },
+    {
+      "id": "ch8-q5",
+      "type": "multiple-choice",
+      "question": "Why is exploiting grief or trauma in an audience ethically problematic even when the cause is worthy?",
+      "options": [
+        "Grief makes people unable to process information",
+        "It treats vulnerable people as instruments rather than respecting their dignity",
+        "Emotional audiences make poor decisions",
+        "It only works temporarily"
+      ],
+      "correct": 1,
+      "explanation": "Using someone's vulnerable emotional state as a lever for persuasion—even for good causes—treats them as a means to an end rather than respecting their autonomy and dignity. Ethical persuasion supports rather than exploits the vulnerable."
+    },
+    {
+      "id": "ch8-q6",
+      "type": "true-false",
+      "question": "Creating false urgency ('Act now or it will be too late!') is acceptable if the underlying cause is genuinely important.",
+      "correct": false,
+      "explanation": "False urgency is a form of manipulation—it creates pressure based on fabricated time constraints. Even important causes deserve honest advocacy. When urgency is real, it can be communicated honestly; manufactured urgency undermines trust when discovered."
+    },
+    {
+      "id": "ch8-q7",
+      "type": "multiple-choice",
+      "question": "What role does audience consent play in the ethics of emotional persuasion?",
+      "options": [
+        "Audiences always consent implicitly by listening",
+        "Consent is irrelevant to persuasion ethics",
+        "Audiences deserve transparency about persuasive intentions and methods",
+        "Only written consent makes emotional appeals ethical"
+      ],
+      "correct": 2,
+      "explanation": "While audiences don't sign consent forms, they deserve to know what they're participating in. Hidden cameras, undisclosed agendas, and covert manipulation violate implicit norms of honest discourse. Transparent advocacy respects audience autonomy."
+    },
+    {
+      "id": "ch8-q8",
+      "type": "multiple-choice",
+      "question": "A charity showing images of suffering children to solicit donations is ethically justifiable when:",
+      "options": [
+        "It maximizes donations regardless of accuracy",
+        "The images accurately represent the situation and donations genuinely help",
+        "The children have given written permission",
+        "Such images are never ethically justifiable"
+      ],
+      "correct": 1,
+      "explanation": "Emotional appeals for charitable causes are ethical when they accurately represent reality and the proposed action genuinely addresses the problem. Staging, exaggeration, or misuse of funds would make such appeals manipulative regardless of emotional power."
+    },
+    {
+      "id": "ch8-q9",
+      "type": "true-false",
+      "question": "Speakers have an obligation to consider whether their emotional appeals might cause harm to audience members with trauma histories.",
+      "correct": true,
+      "explanation": "Ethical speakers consider the welfare of their audiences. Graphic content, certain trigger topics, or intense emotional manipulation might harm vulnerable individuals. Content warnings and thoughtful framing show respect for audience well-being without eliminating meaningful emotional engagement."
+    },
+    {
+      "id": "ch8-q10",
+      "type": "multiple-choice",
+      "question": "What is the 'emotional check' an ethical speaker should apply to their own pathos appeals?",
+      "options": [
+        "Would I want this emotional technique used on me with accurate information?",
+        "Will this make the audience cry?",
+        "Is this the most powerful emotional appeal available?",
+        "Have famous speakers used similar techniques?"
+      ],
+      "correct": 0,
+      "explanation": "A version of the golden rule: if the emotional appeal would seem fair and appropriate when you're the audience—given accurate information—it's likely ethical. If it depends on manipulation, exaggeration, or exploitation you'd resent receiving, it fails the test."
+    }
+  ]
+}

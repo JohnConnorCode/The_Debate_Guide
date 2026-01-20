@@ -1,0 +1,119 @@
+{
+  "chapterId": 7,
+  "chapterTitle": "Pathos: Emotional Connection",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch7-q1",
+      "type": "multiple-choice",
+      "question": "According to Aristotle, why is pathos a legitimate mode of persuasion rather than mere manipulation?",
+      "options": [
+        "Emotions are irrational, so they're easier to exploit",
+        "Emotions are cognitive responses that reflect genuine values and judgments",
+        "Pathos only works on uneducated audiences",
+        "Aristotle actually condemned all use of emotional appeals"
+      ],
+      "correct": 1,
+      "explanation": "Aristotle understood emotions as containing cognitive judgments. Fear involves a judgment that something threatens what we value; anger involves a judgment that we've been wronged. Appealing to emotions means engaging with the audience's values, not bypassing their reason."
+    },
+    {
+      "id": "ch7-q2",
+      "type": "multiple-choice",
+      "question": "What makes a personal story (narrative) particularly effective for creating emotional connection?",
+      "options": [
+        "Stories are easier to understand than abstract arguments",
+        "Narrative engages empathy and makes abstract issues concrete and human",
+        "Audiences prefer entertainment to education",
+        "Stories can't be fact-checked like statistics"
+      ],
+      "correct": 1,
+      "explanation": "Stories engage mirror neurons and empathetic imagination. When we hear about a specific person's experience, we mentally simulate it, creating emotional resonance that abstractions can't achieve. Stories make policies and principles feel real and consequential."
+    },
+    {
+      "id": "ch7-q3",
+      "type": "true-false",
+      "question": "Pathos appeals are most effective when they overwhelm the audience's capacity for rational evaluation.",
+      "correct": false,
+      "explanation": "While manipulation might seek to overwhelm judgment, effective ethical pathos works with logos, not against it. The goal is to help audiences feel the significance of what they understand rationally—emotional engagement that illuminates rather than obscures."
+    },
+    {
+      "id": "ch7-q4",
+      "type": "multiple-choice",
+      "question": "Why might a speaker deliberately evoke negative emotions like fear or anger?",
+      "options": [
+        "Negative emotions always produce stronger responses than positive ones",
+        "Fear and anger can motivate action when complacency is the problem",
+        "Audiences enjoy feeling scared or angry",
+        "Negative emotions are easier to produce than positive ones"
+      ],
+      "correct": 1,
+      "explanation": "Fear and anger serve legitimate persuasive functions when the situation warrants them. If genuine dangers exist or injustices have occurred, helping audiences feel appropriate fear or anger can motivate necessary action. The ethics depend on accuracy, not valence."
+    },
+    {
+      "id": "ch7-q5",
+      "type": "multiple-choice",
+      "question": "What is the risk of relying too heavily on pathos without sufficient logos?",
+      "options": [
+        "The audience will become too emotional to act",
+        "Emotional persuasion without rational grounding leads to poor decisions",
+        "Audiences will recognize the speaker as manipulative",
+        "Both B and C"
+      ],
+      "correct": 3,
+      "explanation": "Pure emotional appeal without logical foundation is both ethically problematic (it can lead to bad decisions) and rhetorically risky (sophisticated audiences often recognize and resist manipulation). Effective persuasion integrates all three appeals."
+    },
+    {
+      "id": "ch7-q6",
+      "type": "true-false",
+      "question": "The 'identifiable victim effect' suggests that stories of individuals are more emotionally compelling than statistics about many people.",
+      "correct": true,
+      "explanation": "Research confirms that we respond more emotionally to one identified person than to statistics about thousands. This 'collapse of compassion' presents ethical challenges: important issues affecting many may get less attention than dramatic individual cases. Skilled communicators use both."
+    },
+    {
+      "id": "ch7-q7",
+      "type": "multiple-choice",
+      "question": "How does vivid, sensory language contribute to pathos?",
+      "options": [
+        "It makes the speaker sound more educated",
+        "It activates imagination and creates vicarious experience",
+        "It distracts from weak arguments",
+        "It only works in written, not spoken, rhetoric"
+      ],
+      "correct": 1,
+      "explanation": "Concrete, sensory language (enargeia) creates mental images and simulated experiences. Rather than telling audiences that something was 'bad,' showing them through vivid detail allows them to feel it themselves, creating emotional engagement through imaginative participation."
+    },
+    {
+      "id": "ch7-q8",
+      "type": "multiple-choice",
+      "question": "What is 'emotional contagion' and why does it matter for public speaking?",
+      "options": [
+        "A disease spread through large gatherings",
+        "The tendency for emotions to spread from speaker to audience",
+        "The manipulation of audience members by each other",
+        "An outdated theory rejected by modern psychology"
+      ],
+      "correct": 1,
+      "explanation": "Emotions are socially contagious—a speaker's genuine passion, conviction, or concern tends to spread to audiences. This means a speaker's own emotional state matters: authentic feeling resonates differently than performed emotion."
+    },
+    {
+      "id": "ch7-q9",
+      "type": "multiple-choice",
+      "question": "When is humor an effective emotional tool in persuasion?",
+      "options": [
+        "Never—serious topics require serious treatment",
+        "When it builds rapport, disarms resistance, or illuminates absurdity",
+        "Only in informal settings like after-dinner speeches",
+        "When you want to distract from weak arguments"
+      ],
+      "correct": 1,
+      "explanation": "Humor can break tension, build goodwill, make audiences receptive, and sometimes reveal truth more effectively than direct assertion (as satire demonstrates). The key is appropriateness to context and purpose—humor that serves the argument rather than undermining it."
+    },
+    {
+      "id": "ch7-q10",
+      "type": "true-false",
+      "question": "Pathos appeals should be confined to the introduction and conclusion of a speech, with logos dominating the body.",
+      "correct": false,
+      "explanation": "While introductions often establish emotional connection and conclusions often provide emotional closure, pathos should be woven throughout. The most effective arguments integrate emotional significance with logical development continuously, not in segregated sections."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "chapterId": 5,
+  "chapterTitle": "Ethos: The Art of Credibility",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch5-q1",
+      "type": "multiple-choice",
+      "question": "According to Aristotle, ethos is established through three qualities. Which is NOT one of them?",
+      "options": [
+        "Phronesis (practical wisdom)",
+        "Arete (virtue/moral character)",
+        "Eunoia (goodwill toward audience)",
+        "Dynamis (personal power)"
+      ],
+      "correct": 3,
+      "explanation": "Aristotle identified phronesis (practical wisdom), arete (virtue), and eunoia (goodwill) as the three components of ethos. Dynamis is not part of his framework."
+    },
+    {
+      "id": "ch5-q2",
+      "type": "true-false",
+      "question": "Ethos only comes from your reputation before you speak; you cannot build it during a speech.",
+      "correct": false,
+      "explanation": "While prior reputation helps, Aristotle emphasized that ethos is primarily built through the speech itself—through demonstrated knowledge, fair treatment of opposing views, and genuine concern for the audience."
+    },
+    {
+      "id": "ch5-q3",
+      "type": "multiple-choice",
+      "question": "Which technique helps build ethos by showing you understand counterarguments?",
+      "options": [
+        "Ad hominem attacks",
+        "Emotional manipulation",
+        "Steelmanning opposing views",
+        "Ignoring objections"
+      ],
+      "correct": 2,
+      "explanation": "Steelmanning—presenting the strongest version of opposing arguments before addressing them—demonstrates intellectual honesty and builds credibility."
+    },
+    {
+      "id": "ch5-q4",
+      "type": "multiple-choice",
+      "question": "A doctor citing their medical degree when giving health advice is an example of:",
+      "options": [
+        "Intrinsic ethos",
+        "Extrinsic ethos",
+        "Pathos",
+        "Logos"
+      ],
+      "correct": 1,
+      "explanation": "Extrinsic ethos comes from external credentials, reputation, or status that exists before the speech. A medical degree is an external qualification."
+    },
+    {
+      "id": "ch5-q5",
+      "type": "true-false",
+      "question": "Admitting uncertainty or limitations in your knowledge can actually strengthen your ethos.",
+      "correct": true,
+      "explanation": "Intellectual humility signals honesty and self-awareness. Audiences trust speakers who acknowledge what they don't know more than those who claim to know everything."
+    },
+    {
+      "id": "ch5-q6",
+      "type": "multiple-choice",
+      "question": "Demosthenes overcame his speech impediment by practicing with pebbles in his mouth. This story illustrates:",
+      "options": [
+        "The unimportance of natural talent",
+        "That ethos can be developed through dedicated practice",
+        "That physical challenges prevent persuasion",
+        "The superiority of written over spoken rhetoric"
+      ],
+      "correct": 1,
+      "explanation": "Demosthenes's story shows that credibility and skill can be developed through persistent effort. He became ancient Greece's greatest orator despite initial disadvantages."
+    },
+    {
+      "id": "ch5-q7",
+      "type": "multiple-choice",
+      "question": "Which action would most damage a speaker's ethos?",
+      "options": [
+        "Acknowledging a valid point from an opponent",
+        "Using technical language the audience understands",
+        "Being caught in a factual inaccuracy",
+        "Showing emotion about the topic"
+      ],
+      "correct": 2,
+      "explanation": "Factual inaccuracies directly undermine the perception of competence and honesty—two core components of ethos. Once trust is broken, it's difficult to rebuild."
+    }
+  ]
+}

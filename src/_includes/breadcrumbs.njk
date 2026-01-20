@@ -1,0 +1,25 @@
+{# Breadcrumb navigation component #}
+{% if pageType == 'chapter' or pageType == 'introduction' %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ '/' | url }}" itemprop="item">
+                <span itemprop="name">Contents</span>
+            </a>
+            <meta itemprop="position" content="1" />
+        </li>
+        {% if partTitle %}
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+            <span itemprop="name">{{ partTitle }}</span>
+            <meta itemprop="position" content="2" />
+        </li>
+        {% endif %}
+        <li class="breadcrumb-item breadcrumb-current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+            <span itemprop="name">{{ chapterTitle or title }}</span>
+            <meta itemprop="position" content="{{ '3' if partTitle else '2' }}" />
+        </li>
+    </ol>
+</nav>
+{% endif %}

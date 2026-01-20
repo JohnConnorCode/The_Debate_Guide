@@ -1,0 +1,119 @@
+{
+  "chapterId": 1,
+  "chapterTitle": "Why Debate Matters",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch1-q1",
+      "type": "multiple-choice",
+      "question": "According to the classical tradition, what is the primary purpose of learning to debate?",
+      "options": [
+        "To win arguments and defeat opponents",
+        "To develop clearer thinking and discover truth",
+        "To gain social status and influence",
+        "To memorize persuasive techniques"
+      ],
+      "correct": 1,
+      "explanation": "The classical tradition viewed debate not as combat but as a collaborative search for truth. Socrates, Aristotle, and other Greek thinkers saw dialectic and rhetoric as tools for refining thought and reaching better conclusions—not merely winning."
+    },
+    {
+      "id": "ch1-q2",
+      "type": "multiple-choice",
+      "question": "Why did the ancient Athenians consider rhetoric essential to democracy?",
+      "options": [
+        "It helped politicians manipulate voters",
+        "Citizens needed to argue their own cases in courts and assemblies",
+        "Only trained speakers were allowed to vote",
+        "It was required for graduation from the Academy"
+      ],
+      "correct": 1,
+      "explanation": "In Athenian democracy, citizens represented themselves in court and spoke in the assembly. There were no professional lawyers. Every citizen needed rhetorical skill to participate in civic life, defend their interests, and shape policy."
+    },
+    {
+      "id": "ch1-q3",
+      "type": "true-false",
+      "question": "The ability to argue multiple sides of an issue was viewed by classical thinkers as morally suspect.",
+      "correct": false,
+      "explanation": "Aristotle explicitly taught that understanding all sides of an argument was essential for discovering truth. He wrote that we should be able to argue both sides—not to advocate for wrong, but to understand the full landscape of an issue and recognize weak arguments."
+    },
+    {
+      "id": "ch1-q4",
+      "type": "multiple-choice",
+      "question": "What distinguishes debate from mere argument or quarreling?",
+      "options": [
+        "Debate requires formal rules and a judge",
+        "Debate involves structured reasoning, evidence, and a willingness to be persuaded",
+        "Debate must occur in academic settings",
+        "Debate always has a clear winner and loser"
+      ],
+      "correct": 1,
+      "explanation": "While formal debates have rules, the essence of debate is structured discourse with reasoning and evidence, where participants remain open to changing their minds. Quarrels are about winning; debates are about discovering who has the better argument."
+    },
+    {
+      "id": "ch1-q5",
+      "type": "multiple-choice",
+      "question": "The Sophists were criticized by Plato primarily because they:",
+      "options": [
+        "Charged money for teaching rhetoric",
+        "Claimed to teach virtue while focusing only on persuasive technique",
+        "Were foreigners in Athens",
+        "Refused to engage in public debate"
+      ],
+      "correct": 1,
+      "explanation": "Plato's critique of the Sophists centered on their relativism and their teaching of persuasion without concern for truth or virtue. While they charged fees (unusual at the time), the deeper issue was their apparent indifference to whether their students argued for just or unjust causes."
+    },
+    {
+      "id": "ch1-q6",
+      "type": "true-false",
+      "question": "According to classical rhetorical theory, a skilled debater should be able to defend a position they personally disagree with.",
+      "correct": true,
+      "explanation": "This capacity was considered essential training. Understanding how to construct the strongest case for any position helps you anticipate objections, find weaknesses in your own thinking, and ultimately arrive at more defensible conclusions. It's intellectual flexibility, not moral relativism."
+    },
+    {
+      "id": "ch1-q7",
+      "type": "multiple-choice",
+      "question": "How does structured debate differ from everyday disagreement in terms of cognitive benefits?",
+      "options": [
+        "Debate requires memorization, improving memory",
+        "Debate forces articulation of assumptions and examination of evidence",
+        "Debate teaches emotional control through suppression",
+        "Debate primarily improves vocabulary and pronunciation"
+      ],
+      "correct": 1,
+      "explanation": "The cognitive benefit of debate lies in making implicit reasoning explicit. When you must articulate and defend a position, you're forced to examine your assumptions, evaluate evidence quality, and identify gaps in your reasoning—skills that transfer to all areas of thinking."
+    },
+    {
+      "id": "ch1-q8",
+      "type": "multiple-choice",
+      "question": "Isocrates argued that rhetorical education was essential because:",
+      "options": [
+        "It was the only path to political office in Athens",
+        "The ability to speak well and think clearly were inseparable",
+        "Written communication was considered inferior to speech",
+        "The gods favored eloquent speakers"
+      ],
+      "correct": 1,
+      "explanation": "Isocrates saw rhetoric and philosophy as unified. He believed that learning to speak well required learning to think well—you cannot articulate a clear argument without first having clear thoughts. Rhetorical training was thus training in reasoning itself."
+    },
+    {
+      "id": "ch1-q9",
+      "type": "true-false",
+      "question": "In the classical view, the goal of winning a debate is more important than the process of reasoned exchange.",
+      "correct": false,
+      "explanation": "The classical tradition prioritized the process over the outcome. A debate where both parties sharpen their thinking and move closer to truth—even without a clear 'winner'—was considered more valuable than a victory achieved through tricks or emotional manipulation."
+    },
+    {
+      "id": "ch1-q10",
+      "type": "multiple-choice",
+      "question": "What is the relationship between debate skills and ethical decision-making according to classical thinkers?",
+      "options": [
+        "They are unrelated—debate is amoral technique",
+        "Debate skills can be used for good or evil, so ethics must be taught separately",
+        "The practice of reasoned argument itself cultivates practical wisdom",
+        "Ethical people don't need debate skills because truth is self-evident"
+      ],
+      "correct": 2,
+      "explanation": "Aristotle argued that practical wisdom (phronesis) develops through practice in deliberation. By regularly examining arguments, weighing evidence, and considering multiple perspectives, we develop the judgment needed for ethical decision-making. The process shapes character."
+    }
+  ]
+}

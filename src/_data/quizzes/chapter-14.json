@@ -1,0 +1,86 @@
+{
+  "chapterId": 14,
+  "chapterTitle": "The Socratic Method",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch14-q1",
+      "type": "multiple-choice",
+      "question": "What is the Greek term for the Socratic method of refutation through questioning?",
+      "options": [
+        "Aporia",
+        "Elenchus",
+        "Enthymeme",
+        "Kairos"
+      ],
+      "correct": 1,
+      "explanation": "Elenchus (ἔλεγχος) is the Socratic method of cross-examination through systematic questioning, designed to expose contradictions and clarify thinking."
+    },
+    {
+      "id": "ch14-q2",
+      "type": "multiple-choice",
+      "question": "What is 'aporia' in Socratic dialogue?",
+      "options": [
+        "A type of logical fallacy",
+        "The moment of confident conclusion",
+        "A state of puzzlement or impasse",
+        "The final answer to a question"
+      ],
+      "correct": 2,
+      "explanation": "Aporia is the productive state of confusion that arises when Socratic questioning reveals that our initial beliefs were poorly founded. It's the starting point for genuine inquiry."
+    },
+    {
+      "id": "ch14-q3",
+      "type": "true-false",
+      "question": "Socrates claimed to possess wisdom and used questioning to share his knowledge with others.",
+      "correct": false,
+      "explanation": "Socrates famously claimed to know nothing ('I know that I know nothing'). His questioning wasn't meant to share knowledge but to help others discover the limits and contradictions in their own beliefs."
+    },
+    {
+      "id": "ch14-q4",
+      "type": "multiple-choice",
+      "question": "The Socratic method is best described as:",
+      "options": [
+        "Lecturing with occasional questions",
+        "Winning arguments through clever rhetoric",
+        "Collaborative inquiry through questioning",
+        "Memorizing and reciting correct answers"
+      ],
+      "correct": 2,
+      "explanation": "The Socratic method is a cooperative dialogue where the questioner helps the respondent examine their beliefs, discover contradictions, and arrive at deeper understanding together."
+    },
+    {
+      "id": "ch14-q5",
+      "type": "multiple-choice",
+      "question": "When using the Socratic method, what should you do if someone gives an answer you disagree with?",
+      "options": [
+        "Immediately correct them",
+        "Ask follow-up questions to explore their reasoning",
+        "Present counter-evidence",
+        "Change the subject"
+      ],
+      "correct": 1,
+      "explanation": "The Socratic method avoids direct contradiction. Instead, you ask questions that help the person examine their own reasoning and discover inconsistencies themselves."
+    },
+    {
+      "id": "ch14-q6",
+      "type": "true-false",
+      "question": "The goal of Socratic questioning is always to prove the other person wrong.",
+      "correct": false,
+      "explanation": "The goal is truth-seeking and mutual understanding, not 'winning.' Socrates was as willing to discover his own errors as those of his interlocutors. The method aims at clarity, not defeat."
+    },
+    {
+      "id": "ch14-q7",
+      "type": "multiple-choice",
+      "question": "Which is an example of a good Socratic question?",
+      "options": [
+        "'Don't you think that's obviously wrong?'",
+        "'What do you mean by that term?'",
+        "'Why would anyone believe that?'",
+        "'Have you even read the research?'"
+      ],
+      "correct": 1,
+      "explanation": "Good Socratic questions are genuinely curious, non-judgmental, and seek clarification. 'What do you mean by that?' invites the person to examine and articulate their thinking."
+    }
+  ]
+}

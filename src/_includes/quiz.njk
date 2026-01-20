@@ -1,0 +1,108 @@
+{# Chapter Quiz Component #}
+{% if chapterNumber %}
+<section class="quiz-section" id="chapter-quiz" data-chapter="{{ chapterNumber }}">
+    <div class="quiz-header">
+        <div class="quiz-badge">
+            <span class="diamond"></span>
+            <span>Test Your Knowledge</span>
+            <span class="diamond"></span>
+        </div>
+        <h2 class="quiz-title">Chapter {{ chapterNumber }} Quiz</h2>
+        <p class="quiz-subtitle">Review what you've learned about {{ chapterTitle | lower }}</p>
+    </div>
+
+    <div class="quiz-container">
+        {# Quiz states: start, active, complete #}
+        <div class="quiz-state quiz-start" id="quiz-start">
+            <div class="quiz-info">
+                <div class="quiz-stat">
+                    <span class="quiz-stat-value" id="quiz-question-count">—</span>
+                    <span class="quiz-stat-label">Questions</span>
+                </div>
+                <div class="quiz-stat">
+                    <span class="quiz-stat-value" id="quiz-passing-score">—</span>
+                    <span class="quiz-stat-label">To Pass</span>
+                </div>
+                <div class="quiz-stat">
+                    <span class="quiz-stat-value" id="quiz-best-score">—</span>
+                    <span class="quiz-stat-label">Your Best</span>
+                </div>
+            </div>
+            <button class="quiz-btn quiz-btn-start" id="quiz-start-btn">
+                <span>Start Quiz</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+            </button>
+        </div>
+
+        <div class="quiz-state quiz-active" id="quiz-active" hidden>
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                </div>
+                <span class="quiz-progress-text" id="quiz-progress-text">Question 1 of 7</span>
+            </div>
+
+            <div class="quiz-question-container" id="quiz-question-container">
+                {# Questions rendered dynamically by JS #}
+            </div>
+
+            <div class="quiz-actions">
+                <button class="quiz-btn quiz-btn-secondary" id="quiz-prev-btn" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Previous</span>
+                </button>
+                <button class="quiz-btn quiz-btn-primary" id="quiz-next-btn" disabled>
+                    <span>Next</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                <button class="quiz-btn quiz-btn-primary" id="quiz-submit-btn" hidden>
+                    <span>Submit Quiz</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-state quiz-complete" id="quiz-complete" hidden>
+            <div class="quiz-result" id="quiz-result">
+                <div class="quiz-result-icon" id="quiz-result-icon">
+                    {# Icon rendered by JS based on pass/fail #}
+                </div>
+                <div class="quiz-result-score">
+                    <span class="quiz-score-value" id="quiz-score-value">0%</span>
+                    <span class="quiz-score-label">Score</span>
+                </div>
+                <p class="quiz-result-message" id="quiz-result-message"></p>
+            </div>
+
+            <div class="quiz-review" id="quiz-review">
+                {# Review of answers rendered by JS #}
+            </div>
+
+            <div class="quiz-complete-actions">
+                <button class="quiz-btn quiz-btn-secondary" id="quiz-review-toggle">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    <span>Review Answers</span>
+                </button>
+                <button class="quiz-btn quiz-btn-primary" id="quiz-retry-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                    <span>Try Again</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

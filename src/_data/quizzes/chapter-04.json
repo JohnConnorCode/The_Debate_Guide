@@ -1,0 +1,119 @@
+{
+  "chapterId": 4,
+  "chapterTitle": "Kairos: The Right Moment",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch4-q1",
+      "type": "multiple-choice",
+      "question": "How does kairos differ from chronos in Greek conceptions of time?",
+      "options": [
+        "Kairos is past time; chronos is future time",
+        "Chronos is quantitative clock-time; kairos is qualitative opportune time",
+        "Kairos refers to hours; chronos refers to days",
+        "They are synonyms with no meaningful distinction"
+      ],
+      "correct": 1,
+      "explanation": "Chronos is sequential, measurable time—minutes, hours, years. Kairos is the qualitative dimension: the right moment, the opportune occasion when action becomes particularly effective. A skilled rhetor recognizes when conditions align for maximum impact."
+    },
+    {
+      "id": "ch4-q2",
+      "type": "multiple-choice",
+      "question": "A speaker who adjusts their prepared remarks after sensing the audience's mood is demonstrating:",
+      "options": [
+        "Poor preparation and lack of confidence",
+        "Kairotic awareness and rhetorical flexibility",
+        "Manipulation and dishonesty",
+        "Disrespect for the audience's time"
+      ],
+      "correct": 1,
+      "explanation": "Kairos requires reading the situation and adapting. The best speakers remain responsive to audience energy, current events, and contextual factors. Rigid adherence to a script, regardless of circumstances, ignores the temporal dimension of rhetoric."
+    },
+    {
+      "id": "ch4-q3",
+      "type": "true-false",
+      "question": "Kairos can be fully planned and controlled through careful preparation.",
+      "correct": false,
+      "explanation": "While preparation increases your ability to recognize and seize kairotic moments, kairos inherently involves contingency and responsiveness to unfolding circumstances. You cannot script the opportune moment—you must cultivate the judgment to recognize and act on it."
+    },
+    {
+      "id": "ch4-q4",
+      "type": "multiple-choice",
+      "question": "Why might the same argument succeed in one context but fail in another?",
+      "options": [
+        "Arguments are either valid or invalid regardless of context",
+        "Audiences are irrational and unpredictable",
+        "The kairotic conditions—timing, audience state, cultural moment—affect receptivity",
+        "Speakers perform inconsistently from day to day"
+      ],
+      "correct": 2,
+      "explanation": "Arguments don't exist in a vacuum. An audience's readiness to hear a message depends on current events, emotional state, prior exposure to ideas, and countless contextual factors. Effective rhetoric accounts for these temporal and situational variables."
+    },
+    {
+      "id": "ch4-q5",
+      "type": "multiple-choice",
+      "question": "In classical rhetoric, what is the relationship between kairos and decorum (to prepon)?",
+      "options": [
+        "They are unrelated concepts from different rhetorical traditions",
+        "Decorum concerns what is fitting; kairos concerns when it is fitting",
+        "Kairos replaced decorum in later rhetorical theory",
+        "Decorum applies only to written texts; kairos only to speeches"
+      ],
+      "correct": 1,
+      "explanation": "Decorum addresses appropriateness of style and content to audience and occasion; kairos addresses timing and opportunity. Together they capture the rhetorical imperative to say the right thing, in the right way, at the right time."
+    },
+    {
+      "id": "ch4-q6",
+      "type": "multiple-choice",
+      "question": "A politician who announces a policy reform immediately after a relevant crisis is leveraging kairos by:",
+      "options": [
+        "Exploiting tragedy, which is always unethical",
+        "Recognizing when public attention and receptivity are heightened",
+        "Avoiding the hard work of building gradual support",
+        "Distracting from more important issues"
+      ],
+      "correct": 1,
+      "explanation": "Crises often create openings for change that wouldn't exist otherwise. While exploitation is possible, recognizing when conditions favor action is legitimate rhetorical awareness. The ethics depend on whether the proposed action genuinely addresses the crisis."
+    },
+    {
+      "id": "ch4-q7",
+      "type": "true-false",
+      "question": "Kairos suggests that being too early with an argument can be just as ineffective as being too late.",
+      "correct": true,
+      "explanation": "An argument presented before its audience is ready may be dismissed or ignored; the same argument presented after the moment has passed may seem irrelevant. Kairos is about finding the window when receptivity is optimal—neither premature nor belated."
+    },
+    {
+      "id": "ch4-q8",
+      "type": "multiple-choice",
+      "question": "How does understanding kairos change the way we evaluate historical speeches?",
+      "options": [
+        "It doesn't—great speeches work in any era",
+        "It helps explain why speeches that moved contemporaries may seem less powerful today",
+        "It proves that historical speeches were less sophisticated than modern ones",
+        "It shows that rhetoric has declined since ancient times"
+      ],
+      "correct": 1,
+      "explanation": "Speeches are interventions in specific historical moments. Understanding the kairotic context—what the audience knew, feared, hoped for—helps us appreciate why certain words had such impact then, even if they seem less urgent now."
+    },
+    {
+      "id": "ch4-q9",
+      "type": "multiple-choice",
+      "question": "What skill is most essential for recognizing kairotic opportunities?",
+      "options": [
+        "Extensive vocabulary and grammatical precision",
+        "Situational awareness and empathetic understanding of audience",
+        "Loud, confident delivery",
+        "Memorization of classical speeches"
+      ],
+      "correct": 1,
+      "explanation": "Kairos requires reading the room—sensing where an audience is emotionally and intellectually, understanding the broader cultural moment, and recognizing when conditions favor particular messages. This is perceptual and empathetic skill, not just technical ability."
+    },
+    {
+      "id": "ch4-q10",
+      "type": "true-false",
+      "question": "In debate, responding immediately to every point is always better than waiting for a more strategic moment.",
+      "correct": false,
+      "explanation": "Effective debaters exercise kairotic judgment about when to address points. Sometimes immediate response is best; other times, waiting allows you to address multiple points together, build to a stronger rebuttal, or let a weak argument expose itself."
+    }
+  ]
+}

@@ -4,6 +4,7 @@ pageType: chapter
 ---
 {% block styles %}
 <link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/quiz.css' | url }}">
 {% endblock %}
 
 {% block progressBar %}
@@ -14,6 +15,9 @@ pageType: chapter
 {% endblock %}
 
 {% block content %}
+{# Breadcrumb Navigation #}
+{% include "breadcrumbs.njk" %}
+
 {# Reading Toolbar #}
 <div class="reading-toolbar">
     <div class="reading-toolbar-inner">
@@ -70,9 +74,15 @@ pageType: chapter
 <div class="deco-border"></div>
 
 {# Chapter Content - includes article, exercises, and navigation #}
-<main class="section section-dark">
+<article class="section section-dark">
     {{ content | safe }}
-</main>
+</article>
+
+{# Social Sharing #}
+{% include "share-buttons.njk" %}
+
+{# Chapter Quiz #}
+{% include "quiz.njk" %}
 
 <div class="deco-border"></div>
 {% endblock %}

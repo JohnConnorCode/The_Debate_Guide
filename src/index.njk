@@ -45,6 +45,18 @@ permalink: /
                 <span class="toc-part-number">{{ part.number }}</span>
                 <h2 class="toc-part-title">{{ part.title }}</h2>
             </div>
+            {# Part Introductions #}
+            {% if part.id == "part-1" %}
+            <p class="toc-part-description">Before you can argue well, you need to understand what argument is and where it comes from. Part I establishes the foundations: why structured disagreement matters, how the Greeks invented rhetoric, and the core frameworks—the rhetorical triangle and kairos—that underpin everything that follows. Master these concepts and you'll see persuasion differently forever.</p>
+            {% elif part.id == "part-2" %}
+            <p class="toc-part-description">Aristotle identified three paths to persuasion: ethos (character), pathos (emotion), and logos (logic). Part II explores each in depth. You'll learn why credibility matters more than truth, how to use emotion ethically, and how to construct arguments that actually hold together. These are the building blocks of every persuasive act.</p>
+            {% elif part.id == "part-3" %}
+            <p class="toc-part-description">Theory becomes practice. Part III covers the craft of argument: how to build cases, dismantle opposing ones, spot fallacies, deploy the Socratic method, and steelman positions you disagree with. These are the skills that separate those who talk about ideas from those who can actually move minds.</p>
+            {% elif part.id == "part-4" %}
+            <p class="toc-part-description">Ancient skills meet modern contexts. Part IV applies classical rhetoric to the challenges of contemporary life: workplace disagreements, educational settings, digital discourse, and civic engagement. The Greeks didn't have Slack or Twitter, but their techniques work in both.</p>
+            {% elif part.id == "part-5" %}
+            <p class="toc-part-description">What does it mean to win? Part V steps back from technique to examine the philosophy of argument itself. The Greeks pursued something deeper than victory in debate—they sought truth, wisdom, and the examined life. So should you.</p>
+            {% endif %}
             <ul class="toc-chapters">
                 {% for chapter in part.chapters %}
                 <li class="toc-chapter">
@@ -58,6 +70,38 @@ permalink: /
             </ul>
         </div>
         {% endfor %}
+
+        {# Reference Section #}
+        <div id="reference" class="toc-part">
+            <div class="toc-part-header">
+                <span class="toc-part-number">◆</span>
+                <h2 class="toc-part-title">REFERENCE</h2>
+            </div>
+            <p class="toc-part-description">Supplementary materials for continued learning and quick reference. Bookmark these pages.</p>
+            <ul class="toc-chapters">
+                <li class="toc-chapter">
+                    <a href="{{ '/quick-tactics/' | url }}">
+                        <span class="toc-chapter-number">◆</span>
+                        <span class="toc-chapter-title">Quick Tactics Summary</span>
+                        <span class="toc-chapter-subtitle">All twenty tactics on one page</span>
+                    </a>
+                </li>
+                <li class="toc-chapter">
+                    <a href="{{ '/glossary/' | url }}">
+                        <span class="toc-chapter-number">◆</span>
+                        <span class="toc-chapter-title">Glossary of Terms</span>
+                        <span class="toc-chapter-subtitle">Greek and Latin vocabulary</span>
+                    </a>
+                </li>
+                <li class="toc-chapter">
+                    <a href="{{ '/resources/' | url }}">
+                        <span class="toc-chapter-number">◆</span>
+                        <span class="toc-chapter-title">Further Reading & What's Next</span>
+                        <span class="toc-chapter-subtitle">Continue the journey</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
     </div>
 </main>

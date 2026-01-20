@@ -1,0 +1,119 @@
+{
+  "chapterId": 12,
+  "chapterTitle": "Refutation",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch12-q1",
+      "type": "multiple-choice",
+      "question": "What is the most effective approach to refuting an opponent's argument?",
+      "options": [
+        "Attack the weakest points they made",
+        "Attack their character to undermine credibility",
+        "Address their strongest points directly and thoroughly",
+        "Ignore their arguments and restate your own position"
+      ],
+      "correct": 2,
+      "explanation": "Engaging with an opponent's best arguments shows intellectual honesty and demonstrates that your position can withstand the strongest challenges. Attacking weak points or ignoring arguments suggests you can't handle the real challenges to your position."
+    },
+    {
+      "id": "ch12-q2",
+      "type": "multiple-choice",
+      "question": "The 'Four-Point Refutation' pattern involves: 'They say... But... Because... Therefore...' What does the 'Because' element provide?",
+      "options": [
+        "An emotional appeal to the audience",
+        "Evidence or reasoning that supports your counter-claim",
+        "A personal attack on the opponent",
+        "A summary of the opponent's argument"
+      ],
+      "correct": 1,
+      "explanation": "The 'Because' step provides the warrant or evidence for your refutation. Simply contradicting an opponent ('But...') is insufficient; you must explain why your counter-claim is correct, providing reasoning or evidence that justifies the refutation."
+    },
+    {
+      "id": "ch12-q3",
+      "type": "true-false",
+      "question": "Refuting an opponent's evidence is sufficient to refute their entire argument.",
+      "correct": false,
+      "explanation": "Arguments have multiple components: claims, evidence, and warrants. Challenging evidence only addresses one element. The opponent might produce different evidence or the underlying reasoning might still be sound. Thorough refutation addresses the argument's logical structure, not just its support."
+    },
+    {
+      "id": "ch12-q4",
+      "type": "multiple-choice",
+      "question": "What is 'turning' an argument in debate?",
+      "options": [
+        "Ignoring it and moving to a new topic",
+        "Showing that the opponent's own reasoning actually supports your position",
+        "Restating the argument in your own words",
+        "Asking the opponent to repeat their argument"
+      ],
+      "correct": 1,
+      "explanation": "A 'turn' is one of the most powerful refutation moves: demonstrating that the opponent's evidence, example, or principle actually leads to your conclusion rather than theirs. It uses their own argument against them, which is particularly persuasive."
+    },
+    {
+      "id": "ch12-q5",
+      "type": "multiple-choice",
+      "question": "When your opponent makes a factual error, what is the most effective response?",
+      "options": [
+        "Ignore it if it's minor",
+        "Correct it briefly with evidence, then show how it affects their argument",
+        "Spend extensive time emphasizing their incompetence",
+        "Save it for a dramatic reveal in your conclusion"
+      ],
+      "correct": 1,
+      "explanation": "Factual errors should be corrected clearly but efficiently, with the focus on how the error affects the argument's validity. Dwelling on mistakes appears petty; ignoring them lets false information stand. Efficient correction maintains focus on substantive issues."
+    },
+    {
+      "id": "ch12-q6",
+      "type": "true-false",
+      "question": "An argument can be logically valid even if it leads to a conclusion that contradicts common sense or intuition.",
+      "correct": true,
+      "explanation": "Validity concerns only whether conclusions follow from premises. A valid argument with questionable premises might lead to counterintuitive conclusions. When this happens, we face a choice: accept the conclusion, reject a premise, or question our intuitions. This is how reasoning refines our views."
+    },
+    {
+      "id": "ch12-q7",
+      "type": "multiple-choice",
+      "question": "What is the 'drop' problem in debate refutation?",
+      "options": [
+        "Speaking too quietly for the audience to hear",
+        "Failing to respond to an opponent's argument, allowing it to stand unchallenged",
+        "Using informal language in a formal debate",
+        "Dropping notes during the speech"
+      ],
+      "correct": 1,
+      "explanation": "A 'dropped' argument is one that goes unaddressed. In formal debate, dropped arguments are often considered conceded. Even outside formal debate, failing to address key opposing points weakens your position by suggesting you have no response."
+    },
+    {
+      "id": "ch12-q8",
+      "type": "multiple-choice",
+      "question": "Prolepsis (anticipatory refutation) is most effective when:",
+      "options": [
+        "You want to avoid engaging with your opponent entirely",
+        "You can predict objections and address them before they're raised",
+        "You have more speaking time than your opponent",
+        "The objections are too complex to address after they're made"
+      ],
+      "correct": 1,
+      "explanation": "Prolepsis demonstrates thorough understanding of the issue and takes the wind out of opponents' sails by addressing objections before they're voiced. It shows confidence and prevents the audience from wondering 'but what about...' during your speech."
+    },
+    {
+      "id": "ch12-q9",
+      "type": "multiple-choice",
+      "question": "When should you concede a point in debate?",
+      "options": [
+        "Never—any concession shows weakness",
+        "When the point is correct but doesn't undermine your overall argument",
+        "Only when your opponent demands a concession",
+        "When you want to appear fair even if the point is wrong"
+      ],
+      "correct": 1,
+      "explanation": "Strategic concession of valid points enhances credibility and focuses the debate on genuine disagreements. Conceding minor or irrelevant points while showing they don't affect your main argument demonstrates intellectual honesty and sophisticated understanding."
+    },
+    {
+      "id": "ch12-q10",
+      "type": "true-false",
+      "question": "The goal of refutation is to destroy the opponent's argument completely, leaving nothing standing.",
+      "correct": false,
+      "explanation": "Complete destruction is often neither possible nor desirable. Effective refutation might show an argument is overstated, doesn't apply in certain cases, or is outweighed by other considerations. Nuanced refutation is often more credible than claims of total victory."
+    }
+  ]
+}

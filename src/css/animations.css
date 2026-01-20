@@ -460,6 +460,82 @@
    Respect user preferences
    ========================================== */
 
+/* ==========================================
+   MOBILE ANIMATION OPTIMIZATIONS
+   Faster, simpler animations on mobile
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Faster animations on mobile */
+    [data-animate="fade-up"].is-visible {
+        animation-duration: 0.35s;
+    }
+
+    [data-animate="fade"].is-visible {
+        animation-duration: 0.3s;
+    }
+
+    /* Reduce movement distance on mobile */
+    @keyframes fadeInUpMobile {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    [data-animate="fade-up"].is-visible {
+        animation-name: fadeInUpMobile;
+    }
+
+    /* Faster stagger delays on mobile */
+    [data-stagger="1"].is-visible { animation-delay: 0ms; }
+    [data-stagger="2"].is-visible { animation-delay: 30ms; }
+    [data-stagger="3"].is-visible { animation-delay: 60ms; }
+    [data-stagger="4"].is-visible { animation-delay: 90ms; }
+    [data-stagger="5"].is-visible { animation-delay: 120ms; }
+
+    /* Simplify hero animations */
+    .chapter-hero [data-animate="fade-up"]:nth-child(1).is-visible { animation-delay: 0ms; }
+    .chapter-hero [data-animate="fade-up"]:nth-child(2).is-visible { animation-delay: 50ms; }
+    .chapter-hero [data-animate="fade-up"]:nth-child(3).is-visible { animation-delay: 100ms; }
+    .chapter-hero [data-animate="fade-up"]:nth-child(4).is-visible { animation-delay: 150ms; }
+    .chapter-hero [data-animate="fade-up"]:nth-child(5).is-visible { animation-delay: 200ms; }
+
+    /* Disable sunburst rotation on mobile for performance */
+    .sunburst-hero svg,
+    .chapter-hero .sunburst svg {
+        animation: none;
+    }
+
+    /* Scale down sunburst */
+    .sunburst-hero {
+        width: 500px;
+        height: 500px;
+        opacity: 0.03;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even faster on small phones */
+    [data-animate].is-visible {
+        animation-duration: 0.25s !important;
+    }
+
+    /* Remove stagger on very small screens - animate immediately */
+    [data-stagger].is-visible {
+        animation-delay: 0ms !important;
+    }
+
+    /* Hide sunburst on small phones */
+    .sunburst-hero {
+        display: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

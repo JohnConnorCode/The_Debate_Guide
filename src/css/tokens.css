@@ -17,6 +17,16 @@
     --color-muted: #737373;
     --color-error: #8b2635;
 
+    /* Exercise Type Colors */
+    --color-exercise-reflection: var(--color-gold-dark);
+    --color-exercise-practice: var(--color-ink);
+    --color-exercise-challenge: var(--color-error);
+    --color-exercise-timed-drill: #2d7a4f;
+    --color-exercise-transcript: #6b4c9a;
+    --color-exercise-dialogue: #2a7d7d;
+    --color-exercise-position: #c75c2c;
+    --color-exercise-peer: #2c5c9e;
+
     /* Colors with Alpha - derived from core */
     --color-ink-rgb: 13, 13, 13;
     --color-paper-rgb: 248, 246, 241;

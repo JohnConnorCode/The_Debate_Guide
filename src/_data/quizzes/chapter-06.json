@@ -1,0 +1,119 @@
+{
+  "chapterId": 6,
+  "chapterTitle": "Building Your Ethos",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch6-q1",
+      "type": "multiple-choice",
+      "question": "What is the most effective way to establish ethos when speaking to an unfamiliar audience?",
+      "options": [
+        "List all your credentials and achievements at the start",
+        "Demonstrate knowledge and fairness through the speech itself",
+        "Have someone else introduce you with your qualifications",
+        "Dress more formally than the audience"
+      ],
+      "correct": 1,
+      "explanation": "While introductions and credentials help, Aristotle emphasized that ethos is primarily built through the speech itself—by demonstrating competence, treating opposing views fairly, and showing genuine concern for the audience's interests. Actions within the discourse matter most."
+    },
+    {
+      "id": "ch6-q2",
+      "type": "multiple-choice",
+      "question": "Why does acknowledging the limits of your knowledge often strengthen rather than weaken ethos?",
+      "options": [
+        "It makes the audience feel smarter than you",
+        "It signals intellectual honesty and builds trust",
+        "It lowers expectations so you can exceed them",
+        "Audiences prefer speakers who seem uncertain"
+      ],
+      "correct": 1,
+      "explanation": "Audiences are attuned to overconfidence. When a speaker acknowledges uncertainty appropriately, it signals that their confident claims can be trusted. Intellectual humility demonstrates the self-awareness and honesty that are core components of credibility."
+    },
+    {
+      "id": "ch6-q3",
+      "type": "true-false",
+      "question": "Ethos established in one context automatically transfers to all other contexts.",
+      "correct": false,
+      "explanation": "Ethos is context-dependent. A respected physician has high ethos on medical questions but not necessarily on economic policy. Credibility must be established anew in each domain, though a reputation for general integrity can provide a foundation."
+    },
+    {
+      "id": "ch6-q4",
+      "type": "multiple-choice",
+      "question": "How does citing sources and evidence contribute to ethos?",
+      "options": [
+        "It shows you can use a library or search engine",
+        "It demonstrates that your claims rest on more than personal opinion",
+        "It makes your speech longer and more impressive",
+        "It allows you to avoid taking personal responsibility for claims"
+      ],
+      "correct": 1,
+      "explanation": "Citing credible sources shows you've done the work to verify claims and are willing to be held accountable to external standards. It signals intellectual rigor and respect for evidence—key components of the practical wisdom (phronesis) aspect of ethos."
+    },
+    {
+      "id": "ch6-q5",
+      "type": "multiple-choice",
+      "question": "A speaker who addresses counterarguments before the audience raises them is demonstrating:",
+      "options": [
+        "Nervousness about potential objections",
+        "Prolepsis—a technique that builds ethos through anticipation",
+        "Inability to stay focused on their main argument",
+        "Disrespect for the audience's ability to think of objections"
+      ],
+      "correct": 1,
+      "explanation": "Prolepsis (anticipating and addressing objections) demonstrates thorough understanding of the issue and respect for the audience's intelligence. It shows you've considered the strongest challenges to your position, building credibility through intellectual comprehensiveness."
+    },
+    {
+      "id": "ch6-q6",
+      "type": "true-false",
+      "question": "Finding common ground with an audience before presenting a controversial claim is a manipulation tactic that ethical speakers should avoid.",
+      "correct": false,
+      "explanation": "Establishing common ground (homonoia) is a legitimate rhetorical strategy that reflects genuine respect. Starting from shared values or experiences creates connection and helps the audience see you as someone who understands their perspective, not an outsider imposing foreign ideas."
+    },
+    {
+      "id": "ch6-q7",
+      "type": "multiple-choice",
+      "question": "What is the relationship between consistency over time and ethos?",
+      "options": [
+        "Changing your mind always damages credibility",
+        "Consistency builds trust, but principled revision based on evidence can enhance it",
+        "Audiences don't remember past statements, so consistency doesn't matter",
+        "Only written statements count toward long-term ethos"
+      ],
+      "correct": 1,
+      "explanation": "Consistent principles build trust over time. However, changing your position when presented with compelling evidence—while explaining your reasoning—can actually enhance ethos by demonstrating intellectual honesty and genuine truth-seeking rather than rigid ideology."
+    },
+    {
+      "id": "ch6-q8",
+      "type": "multiple-choice",
+      "question": "Why is attacking an opponent's character (ad hominem) generally a poor strategy for building your own ethos?",
+      "options": [
+        "It's illegal in formal debates",
+        "It makes you appear petty and diverts attention from substantive arguments",
+        "Audiences always side with the person being attacked",
+        "Character is never relevant to credibility"
+      ],
+      "correct": 1,
+      "explanation": "Ad hominem attacks often backfire by making the attacker seem more focused on winning than truth-seeking. They also signal inability or unwillingness to engage with substantive arguments. The exception is when character is genuinely relevant to the claims being made."
+    },
+    {
+      "id": "ch6-q9",
+      "type": "multiple-choice",
+      "question": "How does showing genuine engagement with an audience's questions affect ethos?",
+      "options": [
+        "It wastes time that could be spent on the main argument",
+        "It demonstrates respect, adaptability, and command of the material",
+        "It shows weakness by departing from the prepared script",
+        "It only matters in informal settings"
+      ],
+      "correct": 1,
+      "explanation": "Thoughtful responses to questions show you understand the material deeply (not just memorized a script), respect the audience enough to engage with their concerns, and can think on your feet. These qualities directly reinforce all three components of Aristotelian ethos."
+    },
+    {
+      "id": "ch6-q10",
+      "type": "true-false",
+      "question": "Technical jargon and complex vocabulary always enhance a speaker's perceived expertise.",
+      "correct": false,
+      "explanation": "While appropriate technical language can signal expertise to knowledgeable audiences, unnecessary jargon often signals insecurity or an attempt to obscure rather than clarify. True expertise is demonstrated by the ability to explain complex ideas clearly and accessibly."
+    }
+  ]
+}

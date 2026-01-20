@@ -1,0 +1,86 @@
+{
+  "chapterId": 3,
+  "chapterTitle": "The Rhetoric Triangle",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch3-q1",
+      "type": "multiple-choice",
+      "question": "What are the three appeals that form Aristotle's rhetorical triangle?",
+      "options": [
+        "Logos, pathos, kairos",
+        "Ethos, pathos, logos",
+        "Ethos, kairos, topos",
+        "Logos, stasis, ethos"
+      ],
+      "correct": 1,
+      "explanation": "Aristotle identified ethos (credibility), pathos (emotion), and logos (logic) as the three fundamental modes of persuasion."
+    },
+    {
+      "id": "ch3-q2",
+      "type": "multiple-choice",
+      "question": "Which appeal is primarily concerned with the speaker's credibility and character?",
+      "options": [
+        "Logos",
+        "Pathos",
+        "Ethos",
+        "Kairos"
+      ],
+      "correct": 2,
+      "explanation": "Ethos refers to the credibility, character, and trustworthiness of the speaker. It answers the question: 'Why should I believe you?'"
+    },
+    {
+      "id": "ch3-q3",
+      "type": "true-false",
+      "question": "According to Aristotle, logos (logical appeal) is always the most important of the three appeals.",
+      "correct": false,
+      "explanation": "Aristotle argued that effective persuasion requires a balance of all three appeals. The most effective approach depends on the audience, context, and purpose."
+    },
+    {
+      "id": "ch3-q4",
+      "type": "multiple-choice",
+      "question": "A lawyer citing legal precedents and statistical evidence is primarily using which appeal?",
+      "options": [
+        "Ethos",
+        "Pathos",
+        "Logos",
+        "All three equally"
+      ],
+      "correct": 2,
+      "explanation": "Logos is the appeal to logic and reason, which includes evidence, facts, statistics, and logical arguments."
+    },
+    {
+      "id": "ch3-q5",
+      "type": "multiple-choice",
+      "question": "When a speaker shares a personal story of hardship to connect with the audience, they are primarily using:",
+      "options": [
+        "Ethos",
+        "Pathos",
+        "Logos",
+        "Stasis"
+      ],
+      "correct": 1,
+      "explanation": "Pathos appeals to the audience's emotions. Personal stories create emotional connections and help audiences feel invested in the message."
+    },
+    {
+      "id": "ch3-q6",
+      "type": "true-false",
+      "question": "The three appeals work independently and should be used separately for maximum effect.",
+      "correct": false,
+      "explanation": "The most persuasive arguments weave all three appeals together. Ethos establishes trust, pathos creates connection, and logos provides the rational foundation."
+    },
+    {
+      "id": "ch3-q7",
+      "type": "multiple-choice",
+      "question": "Which Greek philosopher systematically categorized the three modes of persuasion?",
+      "options": [
+        "Socrates",
+        "Plato",
+        "Aristotle",
+        "Demosthenes"
+      ],
+      "correct": 2,
+      "explanation": "While earlier rhetoricians discussed these concepts, Aristotle systematically categorized them in his treatise 'Rhetoric' around 350 BCE."
+    }
+  ]
+}

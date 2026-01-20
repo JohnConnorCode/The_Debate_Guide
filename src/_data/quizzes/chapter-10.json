@@ -1,0 +1,119 @@
+{
+  "chapterId": 10,
+  "chapterTitle": "Evidence and Examples",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch10-q1",
+      "type": "multiple-choice",
+      "question": "What is the crucial difference between anecdotal evidence and systematic evidence?",
+      "options": [
+        "Anecdotes are false; systematic evidence is true",
+        "Systematic evidence uses representative samples; anecdotes may be exceptional cases",
+        "Anecdotes are spoken; systematic evidence is written",
+        "There is no meaningful difference in evidentiary value"
+      ],
+      "correct": 1,
+      "explanation": "Anecdotes may be true but unrepresentative—the memorable exception rather than the typical case. Systematic evidence (studies, surveys, comprehensive data) attempts to capture patterns across many cases, reducing the risk of cherry-picking outliers."
+    },
+    {
+      "id": "ch10-q2",
+      "type": "multiple-choice",
+      "question": "When evaluating a statistic cited in an argument, what is the FIRST question you should ask?",
+      "options": [
+        "Is the number large or small?",
+        "What is the source, and what methodology produced this number?",
+        "Does the statistic support the speaker's conclusion?",
+        "Is the speaker trustworthy?"
+      ],
+      "correct": 1,
+      "explanation": "Numbers without context are meaningless. Understanding who produced the data, how they collected it, and what they measured is essential before evaluating whether the statistic supports any conclusion. Methodology determines reliability."
+    },
+    {
+      "id": "ch10-q3",
+      "type": "true-false",
+      "question": "A single well-documented example can sometimes be more persuasive than weak statistics.",
+      "correct": true,
+      "explanation": "Evidence quality matters more than type. A thoroughly documented case study can be more compelling than poorly designed surveys or cherry-picked statistics. The key is matching evidence type to the claim being supported and acknowledging limitations."
+    },
+    {
+      "id": "ch10-q4",
+      "type": "multiple-choice",
+      "question": "What is 'cherry-picking' in the context of evidence use?",
+      "options": [
+        "Using the freshest, most current data available",
+        "Selecting only evidence that supports your conclusion while ignoring contradictory data",
+        "Preferring primary over secondary sources",
+        "Citing the most prestigious academic journals"
+      ],
+      "correct": 1,
+      "explanation": "Cherry-picking creates a misleading picture by presenting only favorable evidence. Honest argumentation requires acknowledging the full evidence landscape, including data that complicates or challenges your position."
+    },
+    {
+      "id": "ch10-q5",
+      "type": "multiple-choice",
+      "question": "Why is expert testimony considered valuable evidence?",
+      "options": [
+        "Experts are never wrong",
+        "Audiences are unable to evaluate complex issues themselves",
+        "Experts have specialized training and access to evidence ordinary people lack",
+        "Expert credentials are easy to verify"
+      ],
+      "correct": 2,
+      "explanation": "Experts spend years mastering domains most people can't study deeply. We rely on expert testimony not because experts are infallible, but because their training and access to evidence makes their judgments more reliable than lay opinion on technical matters."
+    },
+    {
+      "id": "ch10-q6",
+      "type": "multiple-choice",
+      "question": "When can hypothetical examples legitimately function as evidence?",
+      "options": [
+        "Never—only real examples count as evidence",
+        "When they illustrate logical relationships or explore implications of principles",
+        "When real examples are too difficult to find",
+        "Only in philosophical, not practical, arguments"
+      ],
+      "correct": 1,
+      "explanation": "Thought experiments and hypotheticals can reveal logical implications: 'If we accept principle X, we must also accept Y.' They test the consistency and consequences of positions even without real-world examples. They're evidence of logical relationship, not empirical fact."
+    },
+    {
+      "id": "ch10-q7",
+      "type": "true-false",
+      "question": "Correlation between two phenomena is sufficient evidence to claim that one causes the other.",
+      "correct": false,
+      "explanation": "Correlation is not causation. Ice cream sales and drowning deaths correlate (both increase in summer), but ice cream doesn't cause drowning. Establishing causation requires eliminating alternative explanations, demonstrating mechanism, and often experimental evidence."
+    },
+    {
+      "id": "ch10-q8",
+      "type": "multiple-choice",
+      "question": "What makes a historical example particularly strong evidence for an argument?",
+      "options": [
+        "It happened long ago, so no one can dispute it",
+        "The historical context parallels the current situation in relevant ways",
+        "It involves famous people or events",
+        "It's from the speaker's own national history"
+      ],
+      "correct": 1,
+      "explanation": "Historical analogies are only as strong as the parallels between then and now. Speakers must establish that the similarities are relevant to the argument and that key differences don't undermine the comparison."
+    },
+    {
+      "id": "ch10-q9",
+      "type": "multiple-choice",
+      "question": "How should a speaker handle evidence that partially supports and partially undermines their argument?",
+      "options": [
+        "Present only the supportive portion",
+        "Ignore the evidence entirely if it's mixed",
+        "Present the full picture and explain why the supportive elements outweigh concerns",
+        "Wait for better evidence before making the argument"
+      ],
+      "correct": 2,
+      "explanation": "Honest advocacy acknowledges complexity. Presenting mixed evidence transparently and explaining your interpretation builds credibility and respects audience intelligence. Concealing complications invites later challenges that damage your credibility."
+    },
+    {
+      "id": "ch10-q10",
+      "type": "true-false",
+      "question": "Primary sources are always more reliable than secondary sources.",
+      "correct": false,
+      "explanation": "Primary sources (original documents, direct data) require interpretation. Secondary sources (scholarly analysis, reviews) add expert interpretation but may introduce bias. Each has strengths: primaries provide directness, secondaries provide context and analysis. Neither is inherently superior."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "chapterId": 19,
+  "chapterTitle": "Public Speaking",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch19-q1",
+      "type": "multiple-choice",
+      "question": "According to classical rhetorical theory, what is the relationship between preparation and seemingly spontaneous eloquence?",
+      "options": [
+        "True eloquence cannot be prepared—it must be purely spontaneous",
+        "Thorough preparation enables the appearance of effortless spontaneity",
+        "Preparation and spontaneity are opposites that cannot coexist",
+        "Audiences prefer obviously prepared speeches"
+      ],
+      "correct": 1,
+      "explanation": "The Roman concept of 'sprezzatura' (studied carelessness) captures this: the best speakers prepare so thoroughly that their delivery seems natural and spontaneous. Deep familiarity with material enables responsive, conversational delivery rather than rigid recitation."
+    },
+    {
+      "id": "ch19-q2",
+      "type": "multiple-choice",
+      "question": "What is the primary purpose of an exordium (introduction) in classical speech structure?",
+      "options": [
+        "To summarize the entire speech",
+        "To establish ethos and make the audience receptive",
+        "To present the strongest evidence",
+        "To refute anticipated counterarguments"
+      ],
+      "correct": 1,
+      "explanation": "The exordium's job is to capture attention, establish credibility, and create goodwill before the substantive argument begins. Without this foundation, even strong arguments may fall on unreceptive ears. First impressions shape how everything else is received."
+    },
+    {
+      "id": "ch19-q3",
+      "type": "true-false",
+      "question": "Nervous energy before speaking should be completely suppressed for best performance.",
+      "correct": false,
+      "explanation": "Some nervous energy actually enhances performance by increasing alertness and engagement. The goal is channeling anxiety into energy rather than eliminating it. Completely flat speakers often seem disengaged. Managed nervousness can become dynamic delivery."
+    },
+    {
+      "id": "ch19-q4",
+      "type": "multiple-choice",
+      "question": "What does 'knowing your audience' primarily mean in rhetorical terms?",
+      "options": [
+        "Researching their personal lives before speaking",
+        "Understanding their values, knowledge level, and concerns to adapt your message",
+        "Addressing each audience member by name",
+        "Telling them what they want to hear"
+      ],
+      "correct": 1,
+      "explanation": "Audience analysis means understanding what your listeners value, what they already know, what concerns them, and what will make your message relevant to them. This enables adaptation in content, examples, and framing—not to pander, but to communicate effectively."
+    },
+    {
+      "id": "ch19-q5",
+      "type": "multiple-choice",
+      "question": "Why is the 'rule of three' (tricolon) effective in speeches?",
+      "options": [
+        "It's arbitrary tradition with no psychological basis",
+        "Three items create a pattern that's memorable and feels complete",
+        "Audiences can only remember three things",
+        "It only works in English-language speeches"
+      ],
+      "correct": 1,
+      "explanation": "Three items establish a pattern: the first sets up, the second develops, the third completes. This creates rhythm and a sense of closure. 'Life, liberty, and the pursuit of happiness' or 'government of the people, by the people, for the people' demonstrate this principle's power."
+    },
+    {
+      "id": "ch19-q6",
+      "type": "multiple-choice",
+      "question": "What is the purpose of a peroration (conclusion) in classical speech structure?",
+      "options": [
+        "To introduce new arguments",
+        "To summarize key points and create emotional closure or call to action",
+        "To acknowledge the opposing view",
+        "To provide detailed evidence"
+      ],
+      "correct": 1,
+      "explanation": "The peroration reinforces what audiences should remember and feel. It summarizes without simply repeating, and often intensifies emotional appeal—since it's the last thing heard, it shapes what lingers. It's where you crystallize your message and move audiences toward response."
+    },
+    {
+      "id": "ch19-q7",
+      "type": "true-false",
+      "question": "Reading from a manuscript is always inferior to speaking from memory or notes.",
+      "correct": false,
+      "explanation": "Different contexts require different approaches. Formal addresses where precise wording matters (presidential speeches, legal arguments) may appropriately use manuscripts. Conversational settings benefit from notes or memory. The best approach depends on context, content, and the speaker's abilities."
+    },
+    {
+      "id": "ch19-q8",
+      "type": "multiple-choice",
+      "question": "How does pausing function rhetorically in a speech?",
+      "options": [
+        "Pausing indicates the speaker has forgotten their lines",
+        "Strategic pauses create emphasis, allow absorption, and build anticipation",
+        "Pausing wastes the audience's time",
+        "Pauses should only occur between sentences"
+      ],
+      "correct": 1,
+      "explanation": "Silence is a powerful rhetorical tool. Pauses before key points create anticipation; pauses after allow absorption. They give audiences time to process, signal importance, and demonstrate speaker confidence. Rushing suggests nervousness; strategic pausing suggests command."
+    },
+    {
+      "id": "ch19-q9",
+      "type": "multiple-choice",
+      "question": "What is 'impromptu speaking' and what skills does it require?",
+      "options": [
+        "Speaking after minimal or no preparation, requiring quick thinking and rhetorical flexibility",
+        "Speaking while reading from a prompter",
+        "Speaking only about topics you already know well",
+        "Speaking without any structure or organization"
+      ],
+      "correct": 0,
+      "explanation": "Impromptu speaking requires organizing thoughts quickly, drawing on existing knowledge, and maintaining composure without preparation time. It's the most challenging form of public speaking but develops through practice with structural frameworks and broad knowledge cultivation."
+    },
+    {
+      "id": "ch19-q10",
+      "type": "true-false",
+      "question": "The most important factor in effective public speaking is natural talent rather than learned skill.",
+      "correct": false,
+      "explanation": "The classical tradition consistently emphasized that rhetoric is an art that can be learned. Demosthenes overcame a speech impediment through practice; Cicero studied intensively. Natural aptitude helps, but systematic training and practice are more important for developing speaking ability."
+    }
+  ]
+}

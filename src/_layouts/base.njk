@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="view-transition" content="same-origin">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ title }}{% if title != site.title %} — {{ site.title }}{% endif %}</title>
+
+    {# Site-wide keywords #}
+    {% if not keywords %}
+    <meta name="keywords" content="{{ site.keywords | join(', ') }}">
+    {% endif %}
 
     {# Fonts #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +23,19 @@
 
     {# SEO Meta Tags #}
     {% include "seo.njk" %}
+
+    {# PWA Manifest #}
+    <link rel="manifest" href="{{ '/manifest.json' | url }}">
+    <meta name="theme-color" content="#c9a227">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Debate Guide">
+
+    {# Favicon #}
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/icon-32x32.png' | url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icons/icon-16x16.png' | url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icons/apple-touch-icon.png' | url }}">
 
     {# Prevent theme/font flash - runs before render #}
     <script>
@@ -37,13 +56,18 @@
     </script>
 </head>
 <body>
+    {# Skip link for keyboard navigation #}
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     {% block progressBar %}{% endblock %}
 
     {% include "header.njk" %}
 
+    <main id="main-content">
     {% block content %}
     {{ content | safe }}
     {% endblock %}
+</main>
 
     {% include "footer.njk" %}
 
@@ -56,6 +80,26 @@
 
     {% block extras %}{% endblock %}
 
+    {# Search Modal #}
+    {% include "search.njk" %}
+
     <script src="{{ '/js/navigation.js' | url }}"></script>
+    <script src="{{ '/js/search.js' | url }}"></script>
+    <script src="{{ '/js/quiz.js' | url }}"></script>
+
+    {# Service Worker Registration #}
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('SW registered:', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('SW registration failed:', error);
+                });
+        });
+    }
+    </script>
 </body>
 </html>

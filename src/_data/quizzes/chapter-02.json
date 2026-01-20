@@ -1,0 +1,119 @@
+{
+  "chapterId": 2,
+  "chapterTitle": "The Greek Inheritance",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch2-q1",
+      "type": "multiple-choice",
+      "question": "What historical conditions in 5th-century BCE Athens made the development of rhetoric particularly urgent?",
+      "options": [
+        "The rise of written literature replaced oral tradition",
+        "Democratic institutions required citizens to speak persuasively in courts and assemblies",
+        "Foreign invasion created a need for military propaganda",
+        "The decline of religion left a void that philosophy filled"
+      ],
+      "correct": 1,
+      "explanation": "Athenian democracy was participatory—citizens spoke for themselves in courts (no lawyers) and voted on policy in the assembly after hearing debates. This created immediate, practical demand for rhetorical training that the Sophists and later Aristotle would systematize."
+    },
+    {
+      "id": "ch2-q2",
+      "type": "multiple-choice",
+      "question": "Corax and Tisias are credited with developing early rhetorical theory in Syracuse primarily to help citizens:",
+      "options": [
+        "Compose epic poetry for religious festivals",
+        "Reclaim property after the overthrow of tyrants",
+        "Negotiate treaties with neighboring city-states",
+        "Train for Olympic oratory competitions"
+      ],
+      "correct": 1,
+      "explanation": "After Syracuse's tyrants were deposed around 467 BCE, citizens needed to argue property claims in court. Corax and Tisias developed systematic approaches to argumentation for these legal contexts, creating some of the first rhetorical handbooks."
+    },
+    {
+      "id": "ch2-q3",
+      "type": "true-false",
+      "question": "Gorgias demonstrated that rhetoric could make the weaker argument appear stronger, which he presented as proof of rhetoric's power rather than its danger.",
+      "correct": true,
+      "explanation": "Gorgias celebrated rhetoric's power to transform perception—famously defending Helen of Troy by arguing she was blameless. While Plato saw this as dangerous, Gorgias viewed it as demonstrating the almost magical power of logos (word/reason) to shape reality."
+    },
+    {
+      "id": "ch2-q4",
+      "type": "multiple-choice",
+      "question": "What was Plato's primary objection to rhetoric as practiced by the Sophists?",
+      "options": [
+        "It was taught by foreigners rather than Athenian citizens",
+        "It prioritized persuasion over truth and could serve unjust ends",
+        "It was too difficult for ordinary citizens to learn",
+        "It relied too heavily on written texts rather than memory"
+      ],
+      "correct": 1,
+      "explanation": "In dialogues like Gorgias and Phaedrus, Plato argued that Sophistic rhetoric was mere 'cookery'—flattery that gave audiences what they wanted rather than what was true or good. He worried that persuasive power without philosophical grounding was dangerous."
+    },
+    {
+      "id": "ch2-q5",
+      "type": "multiple-choice",
+      "question": "How did Aristotle's approach to rhetoric differ fundamentally from Plato's critique?",
+      "options": [
+        "Aristotle rejected rhetoric entirely as corrupt",
+        "Aristotle treated rhetoric as a neutral art that could be studied systematically",
+        "Aristotle believed only philosophers should practice rhetoric",
+        "Aristotle focused exclusively on written rather than oral discourse"
+      ],
+      "correct": 1,
+      "explanation": "Aristotle took an empirical approach, treating rhetoric as a techne (art/skill) that could be analyzed and taught. Rather than condemning it morally, he systematized its principles. His Rhetoric remains the foundational text in the field 2,400 years later."
+    },
+    {
+      "id": "ch2-q6",
+      "type": "multiple-choice",
+      "question": "Demosthenes is remembered as ancient Greece's greatest orator partly because he:",
+      "options": [
+        "Was born with exceptional natural speaking ability",
+        "Overcame a speech impediment through rigorous self-training",
+        "Invented the three appeals of ethos, pathos, and logos",
+        "Wrote speeches for Aristotle to deliver"
+      ],
+      "correct": 1,
+      "explanation": "Demosthenes reportedly overcame a stammer by practicing with pebbles in his mouth and reciting while running uphill. His story embodies the Greek belief that rhetorical excellence comes through dedicated practice (askesis), not just natural talent."
+    },
+    {
+      "id": "ch2-q7",
+      "type": "true-false",
+      "question": "The Greek term 'logos' refers exclusively to logical argumentation and rational proof.",
+      "correct": false,
+      "explanation": "Logos has a remarkably broad semantic range in Greek: word, speech, reason, argument, account, ratio, principle. This richness reflects the Greek insight that language, thought, and reality are deeply interconnected—speaking well and thinking well cannot be separated."
+    },
+    {
+      "id": "ch2-q8",
+      "type": "multiple-choice",
+      "question": "Why did the Romans consider Greek rhetorical education essential for their elite?",
+      "options": [
+        "Greek was the only written language in the ancient world",
+        "Roman law required speeches to be delivered in Greek",
+        "Rhetorical skill was necessary for political advancement in the Republic and Empire",
+        "The Romans had no native tradition of public speaking"
+      ],
+      "correct": 2,
+      "explanation": "Roman political and legal life—like Athenian—required persuasive speaking. Figures like Cicero studied Greek rhetoric intensively because success in the Senate, courts, and public life depended on oratorical skill. The Romans adapted and transmitted Greek rhetorical tradition."
+    },
+    {
+      "id": "ch2-q9",
+      "type": "multiple-choice",
+      "question": "Quintilian's definition of the ideal orator as 'a good man speaking well' (vir bonus dicendi peritus) emphasizes:",
+      "options": [
+        "Technical skill is more important than moral character",
+        "Character and competence are inseparable in true eloquence",
+        "Only morally perfect people should be allowed to speak publicly",
+        "Speaking ability is an inborn trait of virtuous people"
+      ],
+      "correct": 1,
+      "explanation": "Quintilian synthesized the Greek tradition with Roman values, arguing that genuine eloquence requires both technical mastery and moral integrity. An immoral person might be clever, but cannot be truly eloquent because eloquence serves truth and the common good."
+    },
+    {
+      "id": "ch2-q10",
+      "type": "true-false",
+      "question": "The Greek rhetorical tradition was largely forgotten in the medieval period and only rediscovered during the Renaissance.",
+      "correct": false,
+      "explanation": "While some texts were lost, rhetorical education continued throughout the medieval period, particularly in the Church and universities. The trivium (grammar, logic, rhetoric) remained foundational to education. The Renaissance saw renewed interest in classical sources, but the tradition never fully disappeared."
+    }
+  ]
+}

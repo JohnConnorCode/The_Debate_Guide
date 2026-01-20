@@ -3,6 +3,7 @@ layout: base.njk
 pageType: home
 ---
 {% block styles %}
+<link rel="stylesheet" href="{{ '/css/quiz.css' | url }}">
 <style>
     /* Table of Contents Specific Styles */
     .toc-hero {
@@ -138,6 +139,17 @@ pageType: home
         color: var(--accent);
     }
 
+    .toc-part-description {
+        font-family: var(--font-body);
+        font-size: var(--text-sm);
+        line-height: var(--leading-relaxed);
+        color: var(--text-muted);
+        margin: 0 0 var(--space-md) 0;
+        padding-left: var(--space-sm);
+        border-left: 2px solid rgba(var(--color-gold-rgb), 0.3);
+        max-width: 65ch;
+    }
+
     .toc-chapters {
         list-style: none;
     }
@@ -261,12 +273,22 @@ pageType: home
     /* Tablet breakpoint */
     @media (max-width: 768px) {
         .toc-hero {
-            padding: calc(var(--header-height) + var(--space-lg)) var(--space-md) var(--space-md);
-            min-height: 40vh;
+            padding: calc(var(--header-height) + var(--space-lg)) var(--space-md) var(--space-lg);
+            min-height: auto;
+        }
+
+        .toc-title {
+            font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl));
+            margin-bottom: var(--space-xs);
         }
 
         .toc-subtitle {
             font-size: var(--text-md);
+            line-height: var(--leading-relaxed);
+        }
+
+        .toc-badge {
+            margin-bottom: var(--space-sm);
         }
 
         .toc-container {
@@ -279,10 +301,18 @@ pageType: home
             min-height: 56px;
         }
 
+        .toc-part-number {
+            font-size: var(--text-3xl);
+        }
+
+        .toc-part-title {
+            font-size: var(--text-lg);
+        }
+
         .toc-chapter a {
-            padding: var(--space-md) 0;
+            padding: var(--space-sm) 0;
             padding-left: var(--space-sm);
-            min-height: 56px;
+            min-height: 52px;
         }
 
         .toc-chapter-title {
@@ -298,17 +328,20 @@ pageType: home
         }
 
         .toc-title {
-            font-size: clamp(var(--text-2xl), 10vw, var(--text-4xl));
+            font-size: clamp(var(--text-2xl), 9vw, var(--text-3xl));
+            margin-bottom: var(--space-xs);
+            line-height: var(--leading-tight);
         }
 
         .toc-subtitle {
             font-size: var(--text-base);
+            line-height: var(--leading-normal);
             margin-top: var(--space-xs);
         }
 
         .toc-badge {
             padding: var(--space-1) var(--space-xs);
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--space-xs);
         }
 
         .toc-badge span {
@@ -316,19 +349,19 @@ pageType: home
         }
 
         .toc-container {
-            padding: 0 var(--space-sm) var(--space-lg);
+            padding: 0 var(--space-sm) var(--space-md);
         }
 
         .toc-intro {
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
         }
 
         .toc-intro-link {
             width: 100%;
             justify-content: center;
-            font-size: var(--text-md);
+            font-size: var(--text-base);
             padding: var(--space-sm);
-            min-height: 56px;
+            min-height: 52px;
         }
 
         .toc-part {
@@ -336,25 +369,25 @@ pageType: home
         }
 
         .toc-part-header {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0;
-            margin-bottom: var(--space-sm);
+            flex-direction: row;
+            align-items: baseline;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-xs);
+            padding-bottom: var(--space-xs);
         }
 
         .toc-part-number {
-            font-size: var(--text-2xl);
+            font-size: var(--text-xl);
         }
 
         .toc-part-title {
-            font-size: var(--text-lg);
+            font-size: var(--text-base);
         }
 
         .toc-chapter a {
-            padding: var(--space-sm) 0;
+            padding: var(--space-xs) 0;
             padding-left: var(--space-xs);
-            flex-wrap: wrap;
-            min-height: 56px;
+            min-height: 48px;
             align-items: center;
         }
 
@@ -364,19 +397,17 @@ pageType: home
 
         .toc-chapter-number {
             font-size: var(--text-xs);
-            min-width: 2.5rem;
+            min-width: 2.25rem;
         }
 
         .toc-chapter-title {
-            font-size: var(--text-base);
+            font-size: var(--text-sm);
             line-height: var(--leading-snug);
         }
 
         .toc-chapter.coming-soon .toc-chapter-title::after {
-            display: block;
-            margin-left: 0;
-            margin-top: var(--space-1);
-            width: fit-content;
+            font-size: 0.5rem;
+            padding: 2px 4px;
         }
     }
 
@@ -399,4 +430,56 @@ pageType: home
 
 {% block content %}
 {{ content | safe }}
+{% endblock %}
+
+{% block extras %}
+{# Quiz progress badges for TOC #}
+<script>
+(function() {
+    // Wait for quiz.js to load
+    function updateTocProgress() {
+        if (!window.DebateGuideQuiz) return;
+
+        const progress = window.DebateGuideQuiz.getProgress();
+
+        document.querySelectorAll('.toc-chapter a').forEach(function(link) {
+            const match = link.href.match(/chapter-(\d+)/);
+            if (!match) return;
+
+            const chapterId = match[1];
+            const chapterProgress = progress[chapterId];
+
+            if (chapterProgress) {
+                const chapter = link.closest('.toc-chapter');
+                const passed = chapterProgress.percentage >= 70;
+
+                if (passed) {
+                    chapter.classList.add('quiz-passed');
+                }
+
+                // Add score badge
+                const existingBadge = link.querySelector('.quiz-score-badge');
+                if (!existingBadge) {
+                    const badge = document.createElement('span');
+                    badge.className = 'quiz-score-badge';
+                    badge.textContent = chapterProgress.percentage + '%';
+                    badge.title = 'Quiz score: ' + chapterProgress.percentage + '%';
+                    link.appendChild(badge);
+                }
+            }
+        });
+    }
+
+    // Run on load and when quiz is completed
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(updateTocProgress, 100);
+        });
+    } else {
+        setTimeout(updateTocProgress, 100);
+    }
+
+    window.addEventListener('quizCompleted', updateTocProgress);
+})();
+</script>
 {% endblock %}

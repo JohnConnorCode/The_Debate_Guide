@@ -1,0 +1,125 @@
+{
+  "chapterId": 13,
+  "chapterTitle": "Logical Fallacies",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "ch13-q1",
+      "type": "multiple-choice",
+      "question": "What distinguishes a formal fallacy from an informal fallacy?",
+      "options": [
+        "Formal fallacies occur in academic settings; informal fallacies in everyday speech",
+        "Formal fallacies are errors in logical structure; informal fallacies are errors in content or context",
+        "Formal fallacies are more serious than informal fallacies",
+        "Formal fallacies are intentional; informal fallacies are accidental"
+      ],
+      "correct": 1,
+      "explanation": "Formal fallacies (like affirming the consequent) have invalid logical form regardless of content. Informal fallacies (like ad hominem) may have valid form but fail due to content, context, or relevance. Both are errors, but they fail in different ways."
+    },
+    {
+      "id": "ch13-q2",
+      "type": "multiple-choice",
+      "question": "'You can't trust her arguments about climate policy—she drives an SUV.' This commits which fallacy?",
+      "options": [
+        "Straw man",
+        "Ad hominem (tu quoque)",
+        "Slippery slope",
+        "False dilemma"
+      ],
+      "correct": 1,
+      "explanation": "This is tu quoque ('you too')—a type of ad hominem that attacks the person's consistency rather than their argument. Her personal choices don't determine whether her arguments are sound. Even hypocrites can make valid arguments."
+    },
+    {
+      "id": "ch13-q3",
+      "type": "true-false",
+      "question": "An argument that contains a fallacy may still have a true conclusion.",
+      "correct": true,
+      "explanation": "Fallacies mean the reasoning is flawed, not that the conclusion is false. 'The sky is blue because grass is green' is fallacious reasoning, but the conclusion is still true. Fallacies tell us the argument doesn't establish its conclusion, not that the conclusion is wrong."
+    },
+    {
+      "id": "ch13-q4",
+      "type": "multiple-choice",
+      "question": "'We must either ban all immigration or have completely open borders.' This exemplifies which fallacy?",
+      "options": [
+        "Appeal to authority",
+        "Circular reasoning",
+        "False dilemma (false dichotomy)",
+        "Post hoc ergo propter hoc"
+      ],
+      "correct": 2,
+      "explanation": "False dilemma presents only extreme options when a spectrum of positions exists. Immigration policy includes many possibilities between total ban and open borders. The fallacy forecloses nuanced positions by artificially limiting the options."
+    },
+    {
+      "id": "ch13-q5",
+      "type": "multiple-choice",
+      "question": "The straw man fallacy involves:",
+      "options": [
+        "Using emotional appeals instead of logic",
+        "Misrepresenting an opponent's argument to make it easier to attack",
+        "Attacking the person rather than their argument",
+        "Assuming what you're trying to prove"
+      ],
+      "correct": 1,
+      "explanation": "Straw man arguments distort the opponent's position—exaggerating, oversimplifying, or misrepresenting it—then attack the distortion. It's called 'straw man' because you're fighting something easier to knock down than the real position."
+    },
+    {
+      "id": "ch13-q6",
+      "type": "multiple-choice",
+      "question": "'Post hoc ergo propter hoc' translates as 'after this, therefore because of this.' Why is this reasoning fallacious?",
+      "options": [
+        "Latin phrases have no place in modern argumentation",
+        "Temporal sequence doesn't establish causal connection",
+        "It appeals to tradition rather than evidence",
+        "It requires too much prior knowledge to understand"
+      ],
+      "correct": 1,
+      "explanation": "Just because B follows A doesn't mean A caused B. The rooster crows before sunrise, but doesn't cause it. Establishing causation requires more than temporal sequence—mechanism, controlled comparison, or elimination of alternatives."
+    },
+    {
+      "id": "ch13-q7",
+      "type": "true-false",
+      "question": "Appealing to expert opinion is always a fallacy because it substitutes authority for argument.",
+      "correct": false,
+      "explanation": "Appeal to authority is fallacious when the authority isn't actually expert on the topic at hand, or when we accept their word uncritically. But citing genuine experts in their field of expertise is legitimate—we can't verify everything ourselves."
+    },
+    {
+      "id": "ch13-q8",
+      "type": "multiple-choice",
+      "question": "Which scenario best illustrates the slippery slope fallacy?",
+      "options": [
+        "Arguing that a policy will be expensive",
+        "Claiming that one small change will inevitably lead to extreme consequences without justifying the chain",
+        "Pointing out that a proposed solution won't fully solve a problem",
+        "Suggesting that compromise is possible on a contentious issue"
+      ],
+      "correct": 1,
+      "explanation": "Slippery slope asserts that A will inevitably lead to Z through a chain of consequences, without demonstrating why each step necessarily follows. It's not fallacious to argue for causal chains if you can justify each link; it's fallacious to assume the slide is inevitable without argument."
+    },
+    {
+      "id": "ch13-q9",
+      "type": "multiple-choice",
+      "question": "Circular reasoning (begging the question) is problematic because:",
+      "options": [
+        "It uses circles instead of straight lines in diagrams",
+        "The conclusion is assumed in the premises, so the argument doesn't establish anything new",
+        "It takes too long to explain",
+        "It's only invalid in formal logic contexts"
+      ],
+      "correct": 1,
+      "explanation": "Circular arguments assume what they're trying to prove. 'God exists because the Bible says so, and the Bible is true because it's God's word' assumes God exists in order to prove God exists. No new knowledge is established; the argument spins in place."
+    },
+    {
+      "id": "ch13-q10",
+      "type": "multiple-choice",
+      "question": "What is the best response when you identify a fallacy in an opponent's argument?",
+      "options": [
+        "Simply say 'that's a fallacy' and move on",
+        "Name the specific fallacy in Latin to show expertise",
+        "Explain specifically why the reasoning is flawed and how it fails to support the conclusion",
+        "Ignore it because fallacy-calling seems pedantic"
+      ],
+      "correct": 2,
+      "explanation": "Naming fallacies without explanation is unhelpful and can seem pedantic. Effective refutation explains precisely how the reasoning fails: why the analogy is weak, why the dilemma is false, why the evidence doesn't support the conclusion. Substance matters more than labels."
+    }
+  ]
+}
