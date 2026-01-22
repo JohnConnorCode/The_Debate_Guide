@@ -4,6 +4,7 @@ pageType: chapter
 ---
 {% block styles %}
 <link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter-illustrations.css' | url }}">
 <link rel="stylesheet" href="{{ '/css/quiz.css' | url }}">
 {% endblock %}
 
@@ -65,8 +66,7 @@ pageType: chapter
 
 {% if chapterImage %}
 <div class="chapter-image">
-    <div class="image-placeholder" data-chapter="{{ chapterNumber | padZero }}">
-        <!-- {{ chapterImageAlt or 'Chapter illustration' }} -->
+    <div class="image-placeholder" data-chapter="{{ chapterNumber | padZero }}" role="img" aria-label="{{ chapterImageAlt or 'Decorative illustration for Chapter ' + chapterNumber }}">
     </div>
 </div>
 {% endif %}
@@ -94,4 +94,7 @@ pageType: chapter
     {% if nextChapter %}<kbd>→</kbd> Next{% endif %}
     <kbd>Esc</kbd> Contents
 </div>
+
+{# Chapter Illustrations #}
+<script src="{{ '/js/chapter-illustrations.js' | url }}"></script>
 {% endblock %}

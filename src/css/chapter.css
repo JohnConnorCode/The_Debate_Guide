@@ -1447,29 +1447,119 @@
    ========================================== */
 
 @media print {
+    /* Page setup */
+    @page {
+        size: letter;
+        margin: 1in;
+    }
+
+    /* Hide interactive/navigation elements */
     .header,
+    .footer,
     .progress-bar,
     .chapter-nav,
     .keyboard-hint,
     .reading-toolbar,
     .chapter-toc-sidebar,
-    .scroll-to-top {
-        display: none;
+    .chapter-toc-backdrop,
+    .scroll-to-top,
+    .share-section,
+    .quiz-section,
+    .mobile-nav,
+    .mobile-nav-overlay,
+    .skip-link,
+    .breadcrumbs,
+    .sunburst {
+        display: none !important;
+    }
+
+    /* Reset backgrounds and colors for printing */
+    body,
+    .section-dark,
+    .chapter-hero {
+        background: white !important;
+        color: black !important;
     }
 
     .chapter-hero {
-        padding-top: var(--space-lg);
+        padding-top: 0.5in;
+        text-align: center;
     }
 
+    .chapter-title,
+    .chapter-subtitle,
+    .chapter-part,
+    .chapter-number {
+        color: black !important;
+    }
+
+    .chapter-number {
+        opacity: 0.2;
+    }
+
+    /* Content sizing */
     .chapter-content {
         max-width: 100%;
         font-size: 11pt;
-        line-height: var(--leading-relaxed);
+        line-height: 1.6;
+        color: black !important;
     }
 
+    .chapter-content h2 {
+        font-size: 14pt;
+        color: black !important;
+        margin-top: 1.5em;
+        page-break-after: avoid;
+    }
+
+    .chapter-content h3 {
+        font-size: 12pt;
+        color: black !important;
+        page-break-after: avoid;
+    }
+
+    /* Links - show URLs */
+    .chapter-content a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #666;
+    }
+
+    /* Prevent awkward breaks */
     .vocabulary-box,
     .featured-quote,
-    .exercises {
+    .exercises,
+    .exercise,
+    .quick-tactic,
+    .insight-box {
         break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* Style adjustments for print */
+    .vocabulary-box,
+    .featured-quote,
+    .quick-tactic,
+    .insight-box {
+        border: 1px solid #ccc !important;
+        background: #f9f9f9 !important;
+    }
+
+    .deco-border {
+        display: none;
+    }
+
+    /* Reading time - hide in print */
+    .reading-time {
+        display: none;
     }
 }

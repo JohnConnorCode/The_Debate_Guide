@@ -1,0 +1,129 @@
+---
+layout: base.njk
+title: "Privacy Policy — The Debate Guide"
+description: "How The Debate Guide handles your data. We respect your privacy and collect minimal information."
+permalink: /privacy/
+---
+{% block styles %}
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+{% endblock %}
+
+{# Page Hero #}
+<section class="chapter-hero section-dark">
+    {% include "sunburst.njk" %}
+    <p class="chapter-part">Legal</p>
+    <div class="chapter-number" style="opacity: 0.05;">◆</div>
+    <h1 class="chapter-title">PRIVACY POLICY</h1>
+    <p class="chapter-subtitle">How we handle your data</p>
+</section>
+
+<div class="deco-border"></div>
+
+<main class="section section-dark">
+    <article class="chapter-content">
+
+        <p><strong>Last updated:</strong> January 2025</p>
+
+        <p>
+            The Debate Guide is committed to protecting your privacy. This policy explains what data we collect, why we collect it, and how we use it.
+        </p>
+
+        <h2>THE SHORT VERSION</h2>
+
+        <p>
+            We collect minimal data. We don't sell your information. We don't use invasive tracking. We respect your privacy as we'd want ours respected.
+        </p>
+
+        <h2>WHAT WE COLLECT</h2>
+
+        <h3>Information You Provide</h3>
+        <p>
+            If you contact us via email or social media, we receive whatever information you choose to share. We use this only to respond to your inquiry.
+        </p>
+
+        <h3>Automatic Information</h3>
+        <p>
+            <strong>Local Storage:</strong> We store your reading preferences (theme, font size) and reading progress locally in your browser. This data never leaves your device and is not transmitted to any server.
+        </p>
+
+        <p>
+            <strong>Analytics:</strong> {% if site.analyticsEnabled %}We use Plausible Analytics, a privacy-focused analytics service that doesn't use cookies, doesn't track individuals, and is fully GDPR compliant. We see aggregate data like page views and referral sources—we cannot identify individual visitors.{% else %}We do not currently use any analytics or tracking services.{% endif %}
+        </p>
+
+        <p>
+            <strong>Service Worker:</strong> We use a service worker to enable offline reading. This caches pages you visit on your device for faster loading and offline access. No data is sent to our servers.
+        </p>
+
+        <h2>WHAT WE DON'T DO</h2>
+
+        <ul>
+            <li>We don't sell or share your personal information with third parties</li>
+            <li>We don't use advertising trackers or retargeting</li>
+            <li>We don't collect or store personally identifiable information</li>
+            <li>We don't use invasive fingerprinting techniques</li>
+            <li>We don't send marketing emails (we don't collect your email)</li>
+        </ul>
+
+        <h2>THIRD-PARTY SERVICES</h2>
+
+        <p>
+            <strong>Google Fonts:</strong> We load fonts from Google Fonts. Google may collect anonymized usage data. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+        </p>
+
+        <p>
+            <strong>Hosting:</strong> This site is hosted on Vercel. Vercel may collect server logs including IP addresses for security purposes. See <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel's Privacy Policy</a>.
+        </p>
+
+        <h2>YOUR RIGHTS</h2>
+
+        <p>
+            Since we don't collect personal data, there's nothing to delete, correct, or export. Your reading preferences are stored only in your browser—clear your browser's local storage to remove them.
+        </p>
+
+        <h2>COOKIES</h2>
+
+        <p>
+            We do not use cookies. Your preferences are stored in your browser's local storage, which is not transmitted to our servers.
+        </p>
+
+        <h2>CHILDREN'S PRIVACY</h2>
+
+        <p>
+            This site is educational content suitable for all ages. We do not knowingly collect any information from anyone, including children.
+        </p>
+
+        <h2>CHANGES TO THIS POLICY</h2>
+
+        <p>
+            If we make significant changes to this policy, we'll update the "Last updated" date at the top. Material changes will be noted prominently.
+        </p>
+
+        <h2>CONTACT</h2>
+
+        <p>
+            Questions about this privacy policy? Contact us at <a href="https://superdebate.org" target="_blank" rel="noopener">SuperDebate.org</a>.
+        </p>
+
+        <div class="insight-box">
+            <p>Privacy is a right, not a privilege. We build accordingly.</p>
+        </div>
+
+    </article>
+
+    {# Navigation #}
+    <nav class="chapter-nav">
+        <a href="{{ '/' | url }}" class="chapter-nav-prev">
+            <span class="chapter-nav-label">← Back</span>
+            <span class="chapter-nav-title">Contents</span>
+        </a>
+        <div class="chapter-nav-contents">
+            <a href="/">Contents</a>
+        </div>
+        <a href="{{ '/terms/' | url }}" class="chapter-nav-next">
+            <span class="chapter-nav-label">Next →</span>
+            <span class="chapter-nav-title">Terms of Service</span>
+        </a>
+    </nav>
+</main>
+
+<div class="deco-border"></div>

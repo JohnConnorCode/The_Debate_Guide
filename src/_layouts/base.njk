@@ -12,9 +12,10 @@
     <meta name="keywords" content="{{ site.keywords | join(', ') }}">
     {% endif %}
 
-    {# Fonts #}
+    {# Fonts - preconnect and preload for performance #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
 
     {# Stylesheets #}
@@ -83,21 +84,53 @@
     {# Search Modal #}
     {% include "search.njk" %}
 
-    <script src="{{ '/js/navigation.js' | url }}"></script>
-    <script src="{{ '/js/search.js' | url }}"></script>
-    <script src="{{ '/js/quiz.js' | url }}"></script>
+    {# Keyboard Shortcuts Help Modal #}
+    {% include "keyboard-help.njk" %}
 
-    {# Service Worker Registration #}
+    <script src="{{ '/js/navigation.js' | url }}"></script>
+    <script src="{{ '/js/search.js' | url }}" defer></script>
+    <script src="{{ '/js/quiz.js' | url }}" defer></script>
+
+    {# Analytics - Privacy-conscious, no cookies, GDPR compliant #}
+    {# Replace YOUR_DOMAIN with your Plausible domain or remove if not using analytics #}
+    {% if site.analyticsEnabled %}
+    <script defer data-domain="{{ site.domain }}" src="https://plausible.io/js/script.js"></script>
+    {% endif %}
+
+    {# Service Worker Registration with Update Handling #}
     <script>
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
             navigator.serviceWorker.register('/service-worker.js')
                 .then(function(registration) {
                     console.log('SW registered:', registration.scope);
+
+                    // Check for updates periodically
+                    setInterval(function() {
+                        registration.update();
+                    }, 60 * 60 * 1000); // Check every hour
                 })
                 .catch(function(error) {
                     console.log('SW registration failed:', error);
                 });
+
+            // Listen for SW update messages
+            navigator.serviceWorker.addEventListener('message', function(event) {
+                if (event.data && event.data.type === 'SW_UPDATED') {
+                    // Show subtle update notification
+                    var toast = document.createElement('div');
+                    toast.className = 'sw-update-toast';
+                    toast.innerHTML = '<span>New content available.</span><button onclick="window.location.reload()">Refresh</button>';
+                    toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:12px 20px;border:1px solid #c9a227;display:flex;align-items:center;gap:12px;z-index:9999;font-size:14px;';
+                    toast.querySelector('button').style.cssText = 'background:#c9a227;color:#0d0d0d;border:none;padding:6px 12px;cursor:pointer;font-weight:600;';
+                    document.body.appendChild(toast);
+
+                    // Auto-dismiss after 10 seconds
+                    setTimeout(function() {
+                        toast.remove();
+                    }, 10000);
+                }
+            });
         });
     }
     </script>

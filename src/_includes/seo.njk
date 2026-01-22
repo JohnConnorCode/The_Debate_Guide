@@ -156,7 +156,9 @@
     "inLanguage": "en",
     "keywords": "{{ partTitle or 'rhetoric' }}, debate, persuasion, {{ chapterTitle or title | lower }}",
     "articleSection": "{{ partTitle or 'Foundations' }}",
-    "learningResourceType": "chapter"
+    "learningResourceType": "chapter",
+    "datePublished": "{{ datePublished or site.publishDate or '2025-01-01' }}",
+    "dateModified": "{{ dateModified or site.lastModified or '2025-01-22' }}"
     {% if chapterNumber %},
     "position": {{ chapterNumber }}
     {% endif %}
