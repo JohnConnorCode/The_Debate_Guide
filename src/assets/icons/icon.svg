@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background for maskable icon safe zone -->
+  <rect width="512" height="512" fill="#0d0d0d"/>
+
+  <!-- Decorative diamond border -->
+  <rect x="96" y="96" width="320" height="320" transform="rotate(45 256 256)" fill="none" stroke="#c9a227" stroke-width="8"/>
+
+  <!-- Inner diamond -->
+  <rect x="136" y="136" width="240" height="240" transform="rotate(45 256 256)" fill="none" stroke="#c9a227" stroke-width="3" opacity="0.4"/>
+
+  <!-- Letter D - centered in safe zone -->
+  <text x="256" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="180" font-weight="bold" fill="#c9a227" text-anchor="middle">D</text>
+
+  <!-- Decorative corner accents -->
+  <path d="M256 64 L264 72 L256 80 L248 72 Z" fill="#c9a227"/>
+  <path d="M256 432 L264 440 L256 448 L248 440 Z" fill="#c9a227"/>
+  <path d="M64 256 L72 264 L80 256 L72 248 Z" fill="#c9a227"/>
+  <path d="M432 256 L440 264 L448 256 L440 248 Z" fill="#c9a227"/>
+</svg>

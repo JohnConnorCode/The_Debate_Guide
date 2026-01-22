@@ -1,16 +1,16 @@
 {# Header component - configurable nav based on page type #}
 <header class="header">
     <div class="header-inner">
-        <a href="{{ '/' | url }}" class="logo">
+        <a href="{{ '/' | url }}" class="logo"{% if pageType == "home" %} aria-current="page"{% endif %}>
             <div class="logo-mark"><span>D</span></div>
             <span class="logo-text">THE DEBATE GUIDE</span>
         </a>
 
         {# Desktop navigation #}
-        <nav class="nav nav-desktop">
+        <nav class="nav nav-desktop" aria-label="Main navigation">
             {% if pageType == "home" %}
                 <a href="{{ '/introduction/' | url }}">Introduction</a>
-                <a href="#contents">Contents</a>
+                <a href="#contents" aria-current="true">Contents</a>
             {% elif pageType == "introduction" %}
                 <a href="{{ '/' | url }}">Contents</a>
                 <a href="#part-1">Begin Reading</a>
@@ -24,7 +24,7 @@
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
             </button>
-            <a href="https://superdebate.org" target="_blank" class="nav-cta">Join SuperDebate</a>
+            <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer" class="nav-cta">Join SuperDebate</a>
         </nav>
 
         {# Mobile hamburger button #}
@@ -39,18 +39,25 @@
 
 {# Mobile navigation drawer #}
 <div class="mobile-nav-overlay" aria-hidden="true"></div>
-<nav class="mobile-nav" aria-hidden="true">
+<nav class="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-nav-header">
-        <span class="mobile-nav-title">Menu</span>
+        <span class="mobile-nav-title">Navigate</span>
         <button class="mobile-nav-close" aria-label="Close menu">
             <span></span>
             <span></span>
         </button>
     </div>
+    <button class="mobile-nav-search" id="mobile-search-trigger" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>Search chapters...</span>
+    </button>
     <div class="mobile-nav-links">
         {% if pageType == "home" %}
             <a href="{{ '/introduction/' | url }}">Introduction</a>
-            <a href="#contents" class="mobile-nav-anchor">Contents</a>
+            <a href="#contents" class="mobile-nav-anchor" aria-current="true">Contents</a>
         {% elif pageType == "introduction" %}
             <a href="{{ '/' | url }}">Contents</a>
             <a href="#part-1" class="mobile-nav-anchor">Begin Reading</a>
@@ -60,6 +67,6 @@
         {% endif %}
     </div>
     <div class="mobile-nav-cta">
-        <a href="https://superdebate.org" target="_blank" class="btn-primary">Join SuperDebate</a>
+        <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer" class="btn-primary">Join SuperDebate</a>
     </div>
 </nav>

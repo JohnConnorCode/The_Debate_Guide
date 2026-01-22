@@ -81,6 +81,39 @@
       ],
       "correct": 1,
       "explanation": "While logos provides the rational foundation, humans make decisions based on emotions, identity, and social factors too. Effective persuasion combines logos with ethos and pathos."
+    },
+    {
+      "id": "ch9-q8",
+      "type": "multiple-choice",
+      "question": "The difference between validity and soundness in an argument is:",
+      "options": [
+        "Validity refers to evidence quality; soundness refers to structure",
+        "Valid arguments have true conclusions; sound arguments have false ones",
+        "Validity concerns structure; soundness requires both valid structure AND true premises",
+        "There is no meaningful difference"
+      ],
+      "correct": 2,
+      "explanation": "A valid argument has correct logical structure (conclusion follows from premises). A sound argument is valid AND has true premises. You can have a valid argument with false premises that leads to a false conclusion."
+    },
+    {
+      "id": "ch9-q9",
+      "type": "true-false",
+      "question": "Abductive reasoning, or 'inference to the best explanation,' gives us certain conclusions like deductive reasoning.",
+      "correct": false,
+      "explanation": "Abductive reasoning identifies the most likely explanation for observed facts but doesn't guarantee certainty. Unlike deduction, which is conclusive when valid, abduction produces probable conclusions that could be wrong if a better explanation emerges."
+    },
+    {
+      "id": "ch9-q10",
+      "type": "multiple-choice",
+      "question": "When constructing a logical argument, what should you do with the unstated premises your audience must accept?",
+      "options": [
+        "Avoid relying on any unstated premises",
+        "Choose structures that rely on premises the audience already holds",
+        "State every premise explicitly, no matter how obvious",
+        "Use premises the audience will likely reject to challenge them"
+      ],
+      "correct": 1,
+      "explanation": "Effective rhetorical logic builds on beliefs the audience already accepts. Enthymemes work by leaving widely-accepted premises unstated. If your argument depends on premises your audience rejects, you must establish those premises first."
     }
   ]
 }

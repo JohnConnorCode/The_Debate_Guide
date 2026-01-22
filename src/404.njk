@@ -1,0 +1,154 @@
+---
+title: Page Not Found
+layout: base.njk
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+
+<style>
+    .error-page {
+        min-height: calc(100vh - var(--header-height) - 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-xl) var(--space-lg);
+        text-align: center;
+    }
+
+    .error-content {
+        max-width: 600px;
+    }
+
+    .error-code {
+        font-family: var(--font-display);
+        font-size: clamp(6rem, 20vw, 12rem);
+        line-height: 1;
+        color: var(--accent);
+        opacity: 0.3;
+        margin-bottom: var(--space-md);
+    }
+
+    .error-title {
+        font-family: var(--font-display);
+        font-size: var(--text-3xl);
+        letter-spacing: var(--tracking-wider);
+        margin-bottom: var(--space-sm);
+    }
+
+    .error-message {
+        font-family: var(--font-body);
+        font-size: var(--text-lg);
+        color: var(--text-muted);
+        line-height: var(--leading-relaxed);
+        margin-bottom: var(--space-lg);
+    }
+
+    .error-quote {
+        font-family: var(--font-body);
+        font-style: italic;
+        font-size: var(--text-md);
+        color: var(--text-muted);
+        padding: var(--space-md);
+        border-left: 3px solid var(--accent);
+        margin: var(--space-lg) 0;
+        text-align: left;
+    }
+
+    .error-quote cite {
+        display: block;
+        font-style: normal;
+        font-size: var(--text-sm);
+        color: var(--accent);
+        margin-top: var(--space-xs);
+    }
+
+    .error-actions {
+        display: flex;
+        gap: var(--space-md);
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .error-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-xs);
+        padding: var(--space-sm) var(--space-lg);
+        font-family: var(--font-display);
+        font-size: var(--text-md);
+        letter-spacing: var(--tracking-wider);
+        text-decoration: none;
+        border: var(--border-width) solid var(--accent);
+        color: var(--text-primary);
+        transition: all 0.2s ease-out;
+        min-height: 48px;
+    }
+
+    .error-btn:hover {
+        background: var(--accent);
+        color: var(--bg-primary);
+    }
+
+    .error-btn--secondary {
+        border-color: rgba(var(--color-white-rgb), 0.2);
+    }
+
+    .error-btn--secondary:hover {
+        border-color: var(--accent);
+        background: rgba(var(--color-gold-rgb), 0.1);
+        color: var(--text-primary);
+    }
+
+    .error-search {
+        margin-top: var(--space-lg);
+    }
+
+    .error-search p {
+        font-size: var(--text-sm);
+        color: var(--text-muted);
+        margin-bottom: var(--space-xs);
+    }
+
+    .error-search button {
+        font-family: var(--font-mono);
+        font-size: var(--text-sm);
+        color: var(--accent);
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    .error-search button:hover {
+        color: var(--accent-hover);
+    }
+</style>
+
+<div class="error-page">
+    <div class="error-content">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-message">
+            The page you're looking for seems to have wandered off, much like Socrates through the agora.
+            Perhaps it never existed, or perhaps it's been moved.
+        </p>
+
+        <blockquote class="error-quote">
+            "The only true wisdom is in knowing you know nothing."
+            <cite>— Socrates</cite>
+        </blockquote>
+
+        <div class="error-actions">
+            <a href="/" class="error-btn">Return Home</a>
+            <a href="/chapters/introduction/" class="error-btn error-btn--secondary">Start Reading</a>
+        </div>
+
+        <div class="error-search">
+            <p>Looking for something specific?</p>
+            <button type="button" onclick="window.toggleSearch && window.toggleSearch()">
+                Open search (Ctrl+K)
+            </button>
+        </div>
+    </div>
+</div>

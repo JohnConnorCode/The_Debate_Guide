@@ -9,7 +9,7 @@
   "currentYear": "2026",
   "publishDate": "2025-01-01",
   "lastModified": "2025-01-22",
-  "analyticsEnabled": false,
+  "analyticsEnabled": true,
   "ogImage": "/assets/og-image.png",
   "twitterHandle": "@superdebate",
   "language": "en",

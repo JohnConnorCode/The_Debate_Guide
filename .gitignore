@@ -22,3 +22,6 @@ npm-debug.log*
 .env
 .env.local
 .vercel
+
+# Reports
+lighthouse-report.json

@@ -5,12 +5,23 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
-    "dev": "eleventy --serve --watch"
+    "dev": "eleventy --serve --watch",
+    "generate-icons": "node scripts/generate-icons.js",
+    "generate-og": "node scripts/generate-og-image.js",
+    "generate-assets": "npm run generate-icons && npm run generate-og",
+    "prebuild:icons": "npm run generate-icons"
   },
-  "keywords": ["rhetoric", "debate", "persuasion", "classical", "greek"],
+  "keywords": [
+    "rhetoric",
+    "debate",
+    "persuasion",
+    "classical",
+    "greek"
+  ],
   "author": "SuperDebate",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "sharp": "^0.33.5"
   }
 }

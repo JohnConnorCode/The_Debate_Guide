@@ -1,21 +1,29 @@
 /**
  * The Debate Guide - Service Worker
  * Enables offline reading and improved performance
+ *
+ * Cache versioning: Update the version number when making changes
+ * that should invalidate the cache.
  */
 
-const CACHE_NAME = 'debate-guide-v1';
+const CACHE_VERSION = '2';
+const CACHE_NAME = `debate-guide-v${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline/';
 
 // Assets to cache immediately on install
 const PRECACHE_ASSETS = [
     '/',
     '/introduction/',
+    '/offline/',
     '/css/styles.css',
     '/css/chapter.css',
+    '/css/quiz.css',
     '/css/tokens.css',
     '/css/animations.css',
     '/js/navigation.js',
     '/js/search.js',
+    '/js/quiz.js',
+    '/search-index.json',
     '/manifest.json'
 ];
 
@@ -133,4 +141,15 @@ self.addEventListener('message', event => {
     if (event.data === 'skipWaiting') {
         self.skipWaiting();
     }
+});
+
+// Notify clients about updates
+self.addEventListener('activate', event => {
+    event.waitUntil(
+        self.clients.matchAll().then(clients => {
+            clients.forEach(client => {
+                client.postMessage({ type: 'SW_UPDATED', version: CACHE_VERSION });
+            });
+        })
+    );
 });

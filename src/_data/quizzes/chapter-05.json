@@ -81,6 +81,39 @@
       ],
       "correct": 2,
       "explanation": "Factual inaccuracies directly undermine the perception of competence and honesty—two core components of ethos. Once trust is broken, it's difficult to rebuild."
+    },
+    {
+      "id": "ch5-q8",
+      "type": "multiple-choice",
+      "question": "Eunoia, one of Aristotle's three components of ethos, refers to:",
+      "options": [
+        "Practical wisdom and expertise",
+        "Moral virtue and good character",
+        "Goodwill toward the audience",
+        "Logical reasoning ability"
+      ],
+      "correct": 2,
+      "explanation": "Eunoia (goodwill) means the audience believes you genuinely care about their interests, not just your own. Combined with phronesis (wisdom) and arete (virtue), it forms the foundation of credibility."
+    },
+    {
+      "id": "ch5-q9",
+      "type": "true-false",
+      "question": "Intrinsic ethos is more important than extrinsic ethos because it's built through the speech itself.",
+      "correct": false,
+      "explanation": "Both forms of ethos matter. Extrinsic ethos (credentials, reputation) gets you in the door, while intrinsic ethos (demonstrated through the speech) sustains and deepens trust. Relying on either alone is insufficient."
+    },
+    {
+      "id": "ch5-q10",
+      "type": "multiple-choice",
+      "question": "Why does 'borrowing credibility' from respected sources strengthen ethos?",
+      "options": [
+        "It allows you to avoid making your own arguments",
+        "It associates you with established authority and expertise",
+        "It makes your speech longer and more impressive",
+        "It proves you have done extensive research"
+      ],
+      "correct": 1,
+      "explanation": "When you cite respected sources, their credibility transfers to your argument. This is why appeals to authority work—but only when the authority is genuinely relevant to the topic at hand."
     }
   ]
 }

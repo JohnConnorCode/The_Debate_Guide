@@ -1,0 +1,51 @@
+---
+permalink: /search-index.json
+eleventyExcludeFromCollections: true
+---
+{%- set searchData = [] -%}
+{%- for part in chapters.parts -%}
+  {%- for chapter in part.chapters -%}
+    {%- set chapterUrl = '/chapters/' + part.id + '/chapter-' + (chapter.number | padZero) + '-' + chapter.slug + '/' -%}
+    {%- set item = {
+      "title": chapter.title,
+      "subtitle": chapter.subtitle,
+      "url": chapterUrl,
+      "chapter": chapter.number,
+      "part": part.number,
+      "partTitle": part.title,
+      "type": "chapter"
+    } -%}
+    {%- set searchData = (searchData.push(item), searchData) -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- set introItem = {
+  "title": "Introduction: The Agora Awaits",
+  "subtitle": "Begin your journey into classical rhetoric",
+  "url": "/introduction/",
+  "chapter": 0,
+  "part": 0,
+  "partTitle": "Introduction",
+  "type": "introduction"
+} -%}
+{%- set searchData = (searchData.push(introItem), searchData) -%}
+{%- set glossaryItem = {
+  "title": "Glossary of Terms",
+  "subtitle": "Key vocabulary and definitions",
+  "url": "/glossary/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Reference",
+  "type": "reference"
+} -%}
+{%- set searchData = (searchData.push(glossaryItem), searchData) -%}
+{%- set resourcesItem = {
+  "title": "Resources & Further Reading",
+  "subtitle": "Books, articles, and materials for continued study",
+  "url": "/resources/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Reference",
+  "type": "reference"
+} -%}
+{%- set searchData = (searchData.push(resourcesItem), searchData) -%}
+{{ searchData | dump | safe }}

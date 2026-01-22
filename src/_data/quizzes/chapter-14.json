@@ -81,6 +81,39 @@
       ],
       "correct": 1,
       "explanation": "Good Socratic questions are genuinely curious, non-judgmental, and seek clarification. 'What do you mean by that?' invites the person to examine and articulate their thinking."
+    },
+    {
+      "id": "ch14-q8",
+      "type": "multiple-choice",
+      "question": "The 'Socratic irony' refers to:",
+      "options": [
+        "Using sarcasm to win arguments",
+        "Pretending not to know in order to help others discover their own ignorance",
+        "Making fun of opponents' logical errors",
+        "Refusing to answer any questions directly"
+      ],
+      "correct": 1,
+      "explanation": "Socratic irony is the feigned ignorance Socrates employed when questioning others. By claiming not to know, he encouraged his interlocutors to explain their beliefs fully, often revealing contradictions in the process."
+    },
+    {
+      "id": "ch14-q9",
+      "type": "true-false",
+      "question": "The Socratic method works best when used to embarrass opponents in front of an audience.",
+      "correct": false,
+      "explanation": "Using Socratic questioning to humiliate people misses its purpose entirely. The method is meant to be a collaborative search for truth, not a weapon. When used aggressively, it damages relationships and closes minds rather than opening them."
+    },
+    {
+      "id": "ch14-q10",
+      "type": "multiple-choice",
+      "question": "In a Socratic dialogue, what role does 'following the argument wherever it leads' play?",
+      "options": [
+        "It's a way to avoid reaching conclusions",
+        "It demonstrates commitment to truth over winning",
+        "It allows the questioner to control the conversation",
+        "It's used to confuse the other person"
+      ],
+      "correct": 1,
+      "explanation": "This principle means being willing to accept conclusions you didn't expect or even wanted to avoid. It demonstrates intellectual honesty and makes the dialogue a genuine search for truth rather than a debate to win."
     }
   ]
 }

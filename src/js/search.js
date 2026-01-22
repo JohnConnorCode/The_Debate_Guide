@@ -2,229 +2,138 @@
  * The Debate Guide - Client-Side Search
  *
  * Simple search implementation that indexes chapters and vocabulary.
- * For larger sites, consider Pagefind or Lunr.js.
+ * Search index is dynamically loaded from /search-index.json (built by Eleventy).
  */
 
 (function() {
     'use strict';
 
-    // Search index - populated from chapters
-    let searchIndex = [];
-    let isIndexed = false;
+    // Search data - loaded dynamically
+    let searchData = [];
+    let isLoaded = false;
+    let loadPromise = null;
 
     // DOM elements
     let modal, input, results, backdrop, closeBtn;
 
     // ==========================================
-    // SEARCH INDEX BUILDING
+    // SEARCH INDEX LOADING
     // ==========================================
 
-    // Static search data - built from chapters at build time
-    // This will be populated by Eleventy during build
-    const searchData = [
-        {
-            title: "Introduction: The Lost Art",
-            url: "/introduction/",
-            type: "chapter",
-            part: "Introduction",
-            excerpt: "Master the ancient art of persuasion that built democracies, swayed empires, and shaped the modern world."
-        },
-        {
-            title: "Why Debate Matters",
-            url: "/chapters/part-1/chapter-01-why-debate-matters/",
-            type: "chapter",
-            part: "Part I: Foundations",
-            excerpt: "The first skill of civilization. Understanding why structured argument shapes clear thinking."
-        },
-        {
-            title: "The Greek Inheritance",
-            url: "/chapters/part-1/chapter-02-the-greek-inheritance/",
-            type: "chapter",
-            part: "Part I: Foundations",
-            excerpt: "The 2,500-year-old toolkit for persuasion, developed in ancient Athens."
-        },
-        {
-            title: "The Rhetoric Triangle",
-            url: "/chapters/part-1/chapter-03-the-rhetoric-triangle/",
-            type: "chapter",
-            part: "Part I: Foundations",
-            excerpt: "Ethos, pathos, logos - the three pillars of persuasive speech."
-        },
-        {
-            title: "Kairos: The Right Moment",
-            url: "/chapters/part-1/chapter-04-kairos/",
-            type: "chapter",
-            part: "Part I: Foundations",
-            excerpt: "Timing is everything. Learning to seize the opportune moment."
-        },
-        {
-            title: "Ethos: The Art of Credibility",
-            url: "/chapters/part-2/chapter-05-ethos/",
-            type: "chapter",
-            part: "Part II: The Three Appeals",
-            excerpt: "Building trust and authority through character and competence."
-        },
-        {
-            title: "Building Your Ethos",
-            url: "/chapters/part-2/chapter-06-building-ethos/",
-            type: "chapter",
-            part: "Part II: The Three Appeals",
-            excerpt: "Practical techniques for establishing credibility before you speak."
-        },
-        {
-            title: "Pathos: Emotional Connection",
-            url: "/chapters/part-2/chapter-07-pathos/",
-            type: "chapter",
-            part: "Part II: The Three Appeals",
-            excerpt: "Moving hearts as well as minds through emotional resonance."
-        },
-        {
-            title: "The Ethical Use of Emotion",
-            url: "/chapters/part-2/chapter-08-ethical-emotion/",
-            type: "chapter",
-            part: "Part II: The Three Appeals",
-            excerpt: "When emotional appeals illuminate versus when they manipulate."
-        },
-        {
-            title: "Logos: The Power of Reason",
-            url: "/chapters/part-2/chapter-09-logos/",
-            type: "chapter",
-            part: "Part II: The Three Appeals",
-            excerpt: "Constructing logical arguments that withstand scrutiny."
-        },
-        {
-            title: "Evidence and Examples",
-            url: "/chapters/part-2/chapter-10-evidence/",
-            type: "chapter",
-            part: "Part II: The Three Appeals",
-            excerpt: "Finding and presenting proof that supports your claims."
-        },
-        {
-            title: "Argument Structures",
-            url: "/chapters/part-2/chapter-11-argument-structures/",
-            type: "chapter",
-            part: "Part II: The Three Appeals",
-            excerpt: "Organizing reasoning for maximum impact and clarity."
-        },
-        {
-            title: "Refutation",
-            url: "/chapters/part-3/chapter-12-refutation/",
-            type: "chapter",
-            part: "Part III: Advanced Techniques",
-            excerpt: "Dismantling opposing arguments while maintaining respect."
-        },
-        {
-            title: "Logical Fallacies",
-            url: "/chapters/part-3/chapter-13-fallacies/",
-            type: "chapter",
-            part: "Part III: Advanced Techniques",
-            excerpt: "Recognizing and avoiding flawed reasoning patterns."
-        },
-        {
-            title: "The Socratic Method",
-            url: "/chapters/part-3/chapter-14-the-socratic-method/",
-            type: "chapter",
-            part: "Part III: Advanced Techniques",
-            excerpt: "The art of questioning that reveals truth through dialogue."
-        },
-        {
-            title: "Steelmanning",
-            url: "/chapters/part-3/chapter-15-steelmanning/",
-            type: "chapter",
-            part: "Part III: Advanced Techniques",
-            excerpt: "Strengthening opposing arguments to strengthen your own."
-        },
-        {
-            title: "Concession and Pivot",
-            url: "/chapters/part-3/chapter-16-concession/",
-            type: "chapter",
-            part: "Part III: Advanced Techniques",
-            excerpt: "Strategic agreement as a path to stronger positions."
-        },
-        {
-            title: "The Classroom Debate",
-            url: "/chapters/part-4/chapter-17-classroom/",
-            type: "chapter",
-            part: "Part IV: Practical Application",
-            excerpt: "Applying rhetorical skills in academic settings."
-        },
-        {
-            title: "Digital Discourse",
-            url: "/chapters/part-4/chapter-18-digital/",
-            type: "chapter",
-            part: "Part IV: Practical Application",
-            excerpt: "Rhetoric in the age of social media and online discussion."
-        },
-        {
-            title: "Public Speaking",
-            url: "/chapters/part-4/chapter-19-public-speaking/",
-            type: "chapter",
-            part: "Part IV: Practical Application",
-            excerpt: "From prepared speeches to impromptu addresses."
-        },
-        {
-            title: "The Philosopher's Victory",
-            url: "/chapters/part-4/chapter-20-victory/",
-            type: "chapter",
-            part: "Part IV: Practical Application",
-            excerpt: "Winning arguments while winning minds - the ultimate goal."
-        },
-        // Vocabulary terms
+    // Vocabulary terms (static, always available)
+    const vocabularyData = [
         {
             title: "Rhetoric",
-            url: "/chapters/part-1/chapter-03-the-rhetoric-triangle/",
+            url: "/glossary/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "The art of persuasive speaking and writing."
         },
         {
             title: "Ethos",
             url: "/chapters/part-2/chapter-05-ethos/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "Appeal based on the credibility and character of the speaker."
         },
         {
             title: "Pathos",
             url: "/chapters/part-2/chapter-07-pathos/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "Appeal to the audience's emotions."
         },
         {
             title: "Logos",
             url: "/chapters/part-2/chapter-09-logos/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "Appeal based on logic and reason."
         },
         {
             title: "Kairos",
             url: "/chapters/part-1/chapter-04-kairos/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "The opportune moment for speech or action."
         },
         {
             title: "Enthymeme",
             url: "/chapters/part-2/chapter-11-argument-structures/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "A rhetorical syllogism with an implied premise."
         },
         {
             title: "Elenchus",
             url: "/chapters/part-3/chapter-14-the-socratic-method/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "Socratic method of refutation through questioning."
         },
         {
             title: "Aporia",
             url: "/chapters/part-3/chapter-14-the-socratic-method/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "A state of puzzlement or impasse in argument."
         },
         {
             title: "Prolepsis",
             url: "/chapters/part-3/chapter-12-refutation/",
             type: "vocabulary",
+            part: "Glossary",
             excerpt: "Anticipating and addressing objections before they're raised."
+        },
+        {
+            title: "Stasis",
+            url: "/glossary/",
+            type: "vocabulary",
+            part: "Glossary",
+            excerpt: "The central point of disagreement in an argument."
+        },
+        {
+            title: "Topos",
+            url: "/glossary/",
+            type: "vocabulary",
+            part: "Glossary",
+            excerpt: "A commonplace or standard argument pattern."
         }
     ];
+
+    // Load search index from JSON file
+    function loadSearchIndex() {
+        if (loadPromise) return loadPromise;
+
+        loadPromise = fetch('/search-index.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load search index');
+                return response.json();
+            })
+            .then(data => {
+                // Transform loaded data to match expected format
+                const chapterData = data.map(item => ({
+                    title: item.title,
+                    url: item.url,
+                    type: item.type || 'chapter',
+                    part: item.partTitle ? 'Part ' + item.part + ': ' + item.partTitle : item.partTitle,
+                    excerpt: item.subtitle || ''
+                }));
+
+                // Combine chapter data with vocabulary
+                searchData = [...chapterData, ...vocabularyData];
+                isLoaded = true;
+                return searchData;
+            })
+            .catch(err => {
+                console.warn('Search index load failed, using vocabulary only:', err);
+                searchData = vocabularyData;
+                isLoaded = true;
+                return searchData;
+            });
+
+        return loadPromise;
+    }
 
     // ==========================================
     // SEARCH FUNCTIONS
@@ -279,6 +188,11 @@
 
     function openSearch() {
         if (!modal) return;
+
+        // Load search index if not already loaded
+        if (!isLoaded) {
+            loadSearchIndex();
+        }
 
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
@@ -426,10 +340,35 @@
         backdrop = modal.querySelector('.search-backdrop');
         closeBtn = modal.querySelector('.search-close');
 
+        // Preload search index for faster first search
+        loadSearchIndex();
+
         // Search trigger button in header (if exists)
         const searchTrigger = document.getElementById('search-trigger');
         if (searchTrigger) {
             searchTrigger.addEventListener('click', openSearch);
+        }
+
+        // Mobile search trigger
+        const mobileSearchTrigger = document.getElementById('mobile-search-trigger');
+        if (mobileSearchTrigger) {
+            mobileSearchTrigger.addEventListener('click', function() {
+                // Close mobile nav first
+                const mobileNav = document.querySelector('.mobile-nav');
+                const menuBtn = document.querySelector('.mobile-menu-btn');
+                const overlay = document.querySelector('.mobile-nav-overlay');
+                if (mobileNav && mobileNav.classList.contains('is-active')) {
+                    menuBtn.classList.remove('is-active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    overlay.classList.remove('is-active');
+                    overlay.setAttribute('aria-hidden', 'true');
+                    mobileNav.classList.remove('is-active');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('mobile-nav-open');
+                }
+                // Then open search
+                setTimeout(openSearch, 100);
+            });
         }
 
         // Input events
@@ -459,6 +398,15 @@
                 result.classList.add('is-active');
             }
         });
+
+        // Expose toggleSearch for external use (e.g., 404 page)
+        window.toggleSearch = function() {
+            if (modal.classList.contains('is-open')) {
+                closeSearch();
+            } else {
+                openSearch();
+            }
+        };
     }
 
     // Run when DOM is ready

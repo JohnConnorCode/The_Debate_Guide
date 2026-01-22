@@ -14,10 +14,8 @@ permalink: /
             <span>A Complete Guide to Classical Rhetoric</span>
             <span class="diamond"></span>
         </div>
-        <h1 class="toc-title">
-            THE DEBATE GUIDE<br>
-            <span class="accent">WIN LIKE THE GREEKS</span>
-        </h1>
+        <h1 class="toc-title">THE DEBATE GUIDE</h1>
+        <p class="toc-tagline">Win Like the Greeks</p>
         <p class="toc-subtitle">
             Master the timeless art of persuasion. Twenty chapters on rhetoric, logic, and the philosophy of winning arguments with honor.
         </p>
@@ -36,6 +34,29 @@ permalink: /
                 <span>Begin Here</span>
                 INTRODUCTION: THE AGORA AWAITS
             </a>
+        </div>
+
+        {# Continue Reading - shown via JS if user has reading history #}
+        <div id="continue-reading" class="continue-reading" style="display: none;">
+            <div class="continue-reading-header">
+                <span class="continue-reading-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 2h12v12H2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M5 5h6M5 8h6M5 11h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="continue-reading-label">Continue Reading</span>
+            </div>
+            <a href="#" class="continue-reading-link">
+                <span class="continue-reading-chapter">Chapter 1</span>
+                <span class="continue-reading-title">Chapter Title</span>
+                <span class="continue-reading-arrow">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </a>
+            <div class="continue-reading-progress">0 of 20 chapters read</div>
         </div>
 
         {# Dynamic Parts and Chapters from Data #}

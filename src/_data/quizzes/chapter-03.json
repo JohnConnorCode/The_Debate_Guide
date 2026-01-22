@@ -81,6 +81,39 @@
       ],
       "correct": 2,
       "explanation": "While earlier rhetoricians discussed these concepts, Aristotle systematically categorized them in his treatise 'Rhetoric' around 350 BCE."
+    },
+    {
+      "id": "ch3-q8",
+      "type": "multiple-choice",
+      "question": "Cicero's First Catilinarian Oration demonstrates the rhetorical triangle by:",
+      "options": [
+        "Using only logos to present evidence",
+        "Relying solely on his reputation (ethos)",
+        "Weaving ethos, pathos, and logos together strategically",
+        "Avoiding emotional appeals entirely"
+      ],
+      "correct": 2,
+      "explanation": "Cicero opened with ethos (his position and integrity), moved to pathos (fear and outrage), then presented logos (evidence). This demonstrates how master orators balance all three appeals."
+    },
+    {
+      "id": "ch3-q9",
+      "type": "true-false",
+      "question": "According to Aristotle, emotional appeals (pathos) are inherently manipulative and should be avoided.",
+      "correct": false,
+      "explanation": "Aristotle devoted an entire book to analyzing emotions as legitimate persuasive tools. The ethical use of pathos means evoking emotions appropriate to the situation—it becomes manipulative only when divorced from truth."
+    },
+    {
+      "id": "ch3-q10",
+      "type": "multiple-choice",
+      "question": "An enthymeme differs from a regular syllogism because it:",
+      "options": [
+        "Contains more premises",
+        "Leaves one premise unstated, relying on the audience to supply it",
+        "Is always logically invalid",
+        "Avoids using examples"
+      ],
+      "correct": 1,
+      "explanation": "An enthymeme is a rhetorical syllogism where one premise is unstated because the audience is expected to accept it. For example: 'She's a politician, so she can't be trusted' implies the hidden premise that all politicians are untrustworthy."
     }
   ]
 }

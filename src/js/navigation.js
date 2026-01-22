@@ -589,6 +589,16 @@
                 visited.push(chapterNum);
                 safeSetItem('visitedChapters', JSON.stringify(visited));
             }
+
+            // Save last visited chapter for "Continue Reading" feature
+            const chapterTitle = document.querySelector('.chapter-title');
+            const lastRead = {
+                number: chapterNum,
+                title: chapterTitle ? chapterTitle.textContent.trim() : 'Chapter ' + chapterNum,
+                url: window.location.pathname,
+                timestamp: Date.now()
+            };
+            safeSetItem('lastReadChapter', JSON.stringify(lastRead));
         }
 
         // Mark visited chapters in TOC
@@ -604,6 +614,42 @@
                 link.closest('.toc-chapter').classList.add('is-visited');
             }
         });
+
+        // Populate "Continue Reading" section on homepage
+        initContinueReading(visited);
+    }
+
+    function initContinueReading(visited) {
+        const continueSection = document.getElementById('continue-reading');
+        if (!continueSection) return;
+
+        let lastRead;
+        try {
+            lastRead = JSON.parse(safeGetItem('lastReadChapter') || 'null');
+        } catch (e) {
+            lastRead = null;
+        }
+
+        if (lastRead && lastRead.url) {
+            const link = continueSection.querySelector('.continue-reading-link');
+            const title = continueSection.querySelector('.continue-reading-title');
+            const chapter = continueSection.querySelector('.continue-reading-chapter');
+            const progress = continueSection.querySelector('.continue-reading-progress');
+
+            if (link) link.href = lastRead.url;
+            if (title) title.textContent = lastRead.title;
+            if (chapter) chapter.textContent = 'Chapter ' + lastRead.number;
+
+            // Calculate reading progress
+            if (progress && visited.length > 0) {
+                const percentage = Math.round((visited.length / 20) * 100);
+                progress.textContent = visited.length + ' of 20 chapters read (' + percentage + '%)';
+            }
+
+            continueSection.style.display = 'block';
+        } else {
+            continueSection.style.display = 'none';
+        }
     }
 
     // ==========================================
@@ -1010,6 +1056,139 @@
     }
 
     // ==========================================
+    // KEYBOARD SHORTCUTS HELP MODAL
+    // ==========================================
+
+    function initKeyboardHelp() {
+        const modal = document.getElementById('keyboard-help');
+        if (!modal) return;
+
+        const backdrop = modal.querySelector('.keyboard-help-backdrop');
+        const closeBtn = modal.querySelector('.keyboard-help-close');
+
+        function openHelp() {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            if (closeBtn) {
+                setTimeout(function() {
+                    closeBtn.focus();
+                }, 100);
+            }
+        }
+
+        function closeHelp() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function isHelpOpen() {
+            return modal.classList.contains('is-open');
+        }
+
+        // Global keyboard shortcut: ? to open help
+        document.addEventListener('keydown', function(e) {
+            // Don't trigger if typing in an input
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) {
+                return;
+            }
+
+            // ? key (with or without shift, depending on keyboard layout)
+            if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+                e.preventDefault();
+                if (isHelpOpen()) {
+                    closeHelp();
+                } else {
+                    openHelp();
+                }
+                return;
+            }
+
+            // Escape to close
+            if (e.key === 'Escape' && isHelpOpen()) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeHelp();
+                return;
+            }
+
+            // Additional shortcuts mentioned in help
+            // D for dark mode toggle
+            if (e.key === 'd' || e.key === 'D') {
+                if (isHelpOpen()) return;
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    themeToggle.click();
+                }
+                return;
+            }
+
+            // T for table of contents
+            if (e.key === 't' || e.key === 'T') {
+                if (isHelpOpen()) return;
+                const tocToggle = document.getElementById('toc-toggle');
+                if (tocToggle) {
+                    tocToggle.click();
+                }
+                return;
+            }
+
+            // + / - for font size
+            if (e.key === '+' || e.key === '=') {
+                if (isHelpOpen()) return;
+                const largeBtn = document.querySelector('.font-btn[data-size="large"]');
+                if (largeBtn) largeBtn.click();
+                return;
+            }
+
+            if (e.key === '-' || e.key === '_') {
+                if (isHelpOpen()) return;
+                const smallBtn = document.querySelector('.font-btn[data-size="small"]');
+                if (smallBtn) smallBtn.click();
+                return;
+            }
+        });
+
+        // Close on backdrop click
+        if (backdrop) {
+            backdrop.addEventListener('click', closeHelp);
+        }
+
+        // Close button
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeHelp);
+        }
+
+        // Focus trap
+        modal.addEventListener('keydown', function(e) {
+            if (e.key !== 'Tab') return;
+            if (!isHelpOpen()) return;
+
+            const focusable = modal.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
+
+        // Expose globally for potential external triggers
+        window.toggleKeyboardHelp = function() {
+            if (isHelpOpen()) {
+                closeHelp();
+            } else {
+                openHelp();
+            }
+        };
+    }
+
+    // ==========================================
     // INITIALIZE ALL FEATURES
     // ==========================================
 
@@ -1044,6 +1223,7 @@
         initReadingToolbar();   // Legacy - now handled by unified handler
         initChapterToc();
         initPageTransitions();
+        initKeyboardHelp();
     }
 
     // Run when DOM is ready
