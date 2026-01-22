@@ -1,0 +1,95 @@
+{
+  "title": "Why Debate Matters",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, what is the primary reason people argue poorly?",
+      "options": [
+        "Lack of skill and training in productive disagreement",
+        "Fundamental differences in intelligence",
+        "Bad intentions and desire to hurt others",
+        "Social media algorithms"
+      ],
+      "correct": 0,
+      "explanation": "The chapter argues that argument is an art requiring training. Without that training, people fight, avoid, or talk past each other. The failures are failures of skill, not intelligence or goodwill.",
+      "hints": [
+        "Think about whether the chapter treats arguing as natural or learned.",
+        "The chapter compares argument to something that requires training."
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "The Greeks believed that exposure to opposing views was a problem to be solved.",
+      "correct": false,
+      "explanation": "The opposite is true. The chapter states that 'for the Greeks, exposure to opposing views wasn't a bug but a feature.' The Athenian Assembly deliberately gathered citizens who disagreed, viewing this as the heart of democracy.",
+      "hints": [
+        "Consider how the Athenian Assembly functioned.",
+        "Did they expect consensus or argument?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What distinguishes debate from both fighting and discussion?",
+      "options": [
+        "Structure and formal rules that create safety for genuine engagement",
+        "The presence of a moderator",
+        "Being conducted in writing rather than speech",
+        "Having a clear winner declared at the end"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that debate 'takes the intensity of fighting and the goodwill of discussion and combines them through structure.' Formal rules, time limits, and required responses create safety that allows genuine engagement.",
+      "hints": [
+        "The chapter describes debate as sitting 'between extremes.'",
+        "What makes the constraints 'liberating' rather than limiting?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each Greek term with its correct meaning:",
+      "pairs": [
+        {"left": "Rhetoric", "right": "The art of persuasion through language"},
+        {"left": "Dialectic", "right": "A method of argument through dialogue and questioning"},
+        {"left": "Paideia", "right": "The formation of a citizen capable of self-governance"}
+      ],
+      "explanation": "Rhetoric is the art of persuasion that Aristotle called the counterpart of logic. Dialectic is the Socratic method of question and answer that seeks truth. Paideia is the broader Greek concept of citizen education.",
+      "hints": [
+        "Rhetoric relates to persuading audiences.",
+        "Dialectic involves back-and-forth exchange."
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's framework, what would be the most effective response?",
+      "scenario": "Your team at work is debating whether to adopt a new project management tool. One colleague dismisses the idea entirely, saying 'We've always done it this way.' Another responds with 'You just don't like change.' The discussion is getting personal.",
+      "options": [
+        "Suggest each person get two minutes to make their case without interruption, then respond",
+        "Change the subject to avoid further conflict",
+        "Side with whoever has more authority in the room",
+        "Let them argue it out until someone wins"
+      ],
+      "correct": 0,
+      "explanation": "The chapter's 'Quick Tactic' and discussion of structure both point to introducing formal rules when disagreements become unproductive. Structure creates safety and channels conflict toward resolution.",
+      "hints": [
+        "Remember what the chapter says about how structure changes conflict.",
+        "The exercises suggest a specific technique for this situation."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, what is the 'deepest victory in argument'?",
+      "options": [
+        "Getting closer to truth",
+        "Defeating your opponent decisively",
+        "Maintaining your original position",
+        "Gaining social approval from observers"
+      ],
+      "correct": 0,
+      "explanation": "The chapter concludes that 'the deepest victory in argument isn't defeating your opponent. It's getting closer to truth.' This reflects the Greek understanding that Socrates 'won' even though he lost his trial.",
+      "hints": [
+        "Consider what the chapter says about Socrates and his trial.",
+        "The title promises to teach you to 'win like the Greeks.'"
+      ]
+    }
+  ]
+}

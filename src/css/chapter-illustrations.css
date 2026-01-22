@@ -4,6 +4,22 @@
    ========================================== */
 
 /* ==========================================
+   DESIGN TOKENS FOR ILLUSTRATIONS
+   ========================================== */
+
+.image-placeholder[data-chapter] {
+    /* Animation timing - standardized durations */
+    --anim-fast: 2s;
+    --anim-medium: 4s;
+    --anim-slow: 6s;
+
+    /* Standard easing */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================
    BASE STYLES & CONTAINER
    ========================================== */
 
@@ -29,12 +45,27 @@
     pointer-events: none;
 }
 
+/* Scroll-triggered visibility - elements start hidden */
+.image-placeholder[data-chapter] > div {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+/* Reveal when in viewport */
+.image-placeholder[data-chapter].is-visible > div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-    .chapter-illustration,
-    .chapter-illustration * {
+    .image-placeholder[data-chapter] > div,
+    .image-placeholder[data-chapter] * {
         animation: none !important;
         transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 
@@ -1213,7 +1244,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(var(--color-gold-rgb), 0.3);
 }
 
 .ch11-block:nth-child(1) { animation-delay: 0s; }

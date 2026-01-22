@@ -1,0 +1,95 @@
+{
+  "title": "Debate as Civic Duty",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is 'isegoria' in the Athenian democratic tradition?",
+      "options": [
+        "The equal right of all citizens to speak in the assembly",
+        "A type of voting system",
+        "The right to hold public office",
+        "A religious ritual"
+      ],
+      "correct": 0,
+      "explanation": "Isegoria was a foundational principle of Athenian democracy: every citizen had an equal right to address the assembly. This wasn't just permission to speak—it was a recognition that democracy requires citizens to participate in public deliberation.",
+      "hints": [
+        "What made Athenian democracy participatory?",
+        "Think about the root 'iso-' meaning equal."
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, 'parrhesia' means speaking only when you're certain you're right.",
+      "correct": false,
+      "explanation": "Parrhesia means frank, fearless speech—saying what you believe to be true even when it's unpopular or risky. It's about courage in speaking, not certainty. The parrhesiast speaks their honest view and takes responsibility for it, even without guarantees of being correct.",
+      "hints": [
+        "Does parrhesia require certainty or courage?",
+        "What's the relationship between honesty and popularity in parrhesia?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'deliberative democracy' as the chapter describes it?",
+      "options": [
+        "A model where legitimate decisions emerge from open discussion among citizens, not just voting",
+        "A system where only experts make decisions",
+        "Democracy that moves slowly and carefully",
+        "Voting only after long waiting periods"
+      ],
+      "correct": 0,
+      "explanation": "Deliberative democracy holds that legitimacy comes not just from majority vote but from the quality of deliberation preceding it. Citizens must have opportunity to hear arguments, ask questions, and reason together—not simply register pre-formed preferences.",
+      "hints": [
+        "What makes democratic decisions legitimate beyond just counting votes?",
+        "What role does discussion play before voting?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each civic discourse principle with its description:",
+      "pairs": [
+        {"left": "Isegoria", "right": "Equal right to speak in public forums"},
+        {"left": "Parrhesia", "right": "Courage to speak truth even when unpopular"},
+        {"left": "Deliberation", "right": "Reasoning together before decisions are made"}
+      ],
+      "explanation": "These three concepts form the foundation of democratic discourse. Isegoria ensures everyone can participate, parrhesia encourages honest expression, and deliberation transforms individual opinions into reasoned collective judgments.",
+      "hints": [
+        "Which concept is about access to speaking?",
+        "Which is about courage in speaking?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Why does the chapter argue that debate skills are a 'civic duty'?",
+      "options": [
+        "Because democracy depends on citizens who can reason together, not just vote their preferences",
+        "Because everyone should win arguments",
+        "Because the government requires it",
+        "Because debate competitions need participants"
+      ],
+      "correct": 0,
+      "explanation": "The chapter argues that democracy isn't just about voting—it's about deliberation. Citizens who can articulate positions, understand opposing views, and reason toward common ground are essential to democratic health. Debate skills aren't optional extras; they're civic necessities.",
+      "hints": [
+        "What does democracy require beyond just voting?",
+        "How does citizen discourse affect democratic outcomes?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's principles, what approach reflects good civic discourse?",
+      "scenario": "At a town hall meeting about a local development project, you strongly oppose the proposal. Many of your neighbors support it. You have a chance to speak.",
+      "options": [
+        "State your concerns clearly while acknowledging the legitimate interests of those who disagree",
+        "Attack supporters of the project personally",
+        "Stay silent to avoid conflict",
+        "Speak only to those who already agree with you"
+      ],
+      "correct": 0,
+      "explanation": "The chapter emphasizes that civic discourse requires both parrhesia (courage to speak your view) and respect for fellow citizens. Effective civic participation means advocating your position while treating opponents as people with legitimate interests, not enemies to be defeated.",
+      "hints": [
+        "How can you advocate strongly while remaining constructive?",
+        "What's the difference between civic opponents and enemies?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "title": "Debate in Education",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'trivium' in classical education?",
+      "options": [
+        "The three foundational arts: grammar, logic, and rhetoric",
+        "A three-person debate format",
+        "The three types of logical fallacies",
+        "A Roman teaching certificate"
+      ],
+      "correct": 0,
+      "explanation": "The trivium was the foundation of classical education: grammar (understanding language), logic (understanding reasoning), and rhetoric (understanding persuasion). These three arts built upon each other to create educated citizens capable of public discourse.",
+      "hints": [
+        "What subjects did classical education prioritize?",
+        "Think about the root 'tri-' meaning three."
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, debate should only be introduced to students at the college level.",
+      "correct": false,
+      "explanation": "The chapter argues that debate skills can and should be taught from an early age. Children can learn to disagree respectfully, support claims with reasons, and consider other viewpoints—these are foundational skills that grow more sophisticated over time.",
+      "hints": [
+        "What does the chapter say about teaching children to disagree?",
+        "Are debate skills only for advanced students?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What was 'disputatio' in medieval universities?",
+      "options": [
+        "A formal debate practice where students argued both sides of theological or philosophical questions",
+        "A type of final examination",
+        "A punishment for academic misconduct",
+        "A student social club"
+      ],
+      "correct": 0,
+      "explanation": "Disputatio was central to medieval university education. Students were required to argue positions—often positions they disagreed with—and respond to objections. This practice built intellectual flexibility and deep understanding of complex issues.",
+      "hints": [
+        "How did medieval students learn to think critically?",
+        "What's the educational value of arguing positions you disagree with?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each educational debate format with its description:",
+      "pairs": [
+        {"left": "Lincoln-Douglas", "right": "One-on-one debate focused on values and philosophical questions"},
+        {"left": "Policy debate", "right": "Two-on-two debate examining proposed changes to current systems"},
+        {"left": "Parliamentary debate", "right": "Format modeled on British Parliament with government and opposition sides"}
+      ],
+      "explanation": "Different debate formats serve different educational purposes. Lincoln-Douglas emphasizes philosophical reasoning, policy debate develops research and evidence skills, and parliamentary debate builds quick thinking and adaptability.",
+      "hints": [
+        "Which format involves teams of two?",
+        "Which is named after a famous series of American debates?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the difference between 'critical thinking' and 'critical argument' as the chapter describes them?",
+      "options": [
+        "Critical thinking analyzes claims; critical argument also constructs and defends positions",
+        "They are identical concepts",
+        "Critical argument is easier than critical thinking",
+        "Critical thinking is only for experts"
+      ],
+      "correct": 0,
+      "explanation": "The chapter distinguishes between critical thinking (analyzing and evaluating claims) and critical argument (the additional skill of constructing, defending, and responding to arguments). Debate education develops both—you learn to analyze others' arguments AND build your own.",
+      "hints": [
+        "What skills does debate add beyond analysis?",
+        "Is evaluating an argument the same as making one?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's teaching principles, what approach works best here?",
+      "scenario": "You're teaching debate to beginners. A student makes an argument that's logically flawed but shows genuine effort and engagement with the topic.",
+      "options": [
+        "Acknowledge the effort, then guide them to discover the flaw through questions",
+        "Immediately point out every logical error in front of the class",
+        "Ignore the flaw to avoid discouraging them",
+        "Tell them to start over from scratch"
+      ],
+      "correct": 0,
+      "explanation": "The chapter emphasizes that good debate pedagogy balances rigor with encouragement. Acknowledging effort builds confidence, while using questions (Socratic method) helps students discover errors themselves—leading to deeper learning than simply being told what's wrong.",
+      "hints": [
+        "How does the Socratic method apply to teaching?",
+        "What's the balance between rigor and encouragement?"
+      ]
+    }
+  ]
+}

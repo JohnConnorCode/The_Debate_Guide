@@ -1,0 +1,91 @@
+{
+  "title": "Kairos: The Art of Timing",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the key difference between 'chronos' and 'kairos'?",
+      "options": [
+        "Chronos is clock time; kairos is the opportune moment for action",
+        "Chronos is Greek; kairos is Roman",
+        "Chronos is for speaking; kairos is for listening",
+        "They are the same concept with different spellings"
+      ],
+      "correct": 0,
+      "explanation": "The Greeks distinguished between chronos (sequential, measurable time) and kairos (the right or opportune moment). A skilled rhetorician knows not just what to say, but when to say it.",
+      "hints": [
+        "Think about the difference between 'what time is it?' and 'is this the right time?'",
+        "One can be measured by a clock; the other requires judgment."
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "Kairos can only be recognized in retrospect, never in the moment.",
+      "correct": false,
+      "explanation": "While kairos can be subtle, the chapter teaches that it can be cultivated through practice. 'Reading the room,' anticipating audience receptivity, and sensing when conditions align are all learnable skills.",
+      "hints": [
+        "Would the Greeks have taught kairos if it couldn't be learned?",
+        "Think about what 'reading the room' means."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, what does 'reading the room' involve?",
+      "options": [
+        "Sensing the audience's mood, energy, and receptivity to your message",
+        "Counting how many people are present",
+        "Finding the best seat in a meeting",
+        "Preparing your notes before speaking"
+      ],
+      "correct": 0,
+      "explanation": "Reading the room is the practical application of kairos—perceiving the emotional temperature, identifying what the audience needs to hear, and adapting your approach accordingly.",
+      "hints": [
+        "This skill relates to knowing when, not just what.",
+        "Think about what a skilled speaker notices before speaking."
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's teaching about kairos, what should you do?",
+      "scenario": "You've prepared a pitch for a new project, but when you arrive at the meeting, you learn that your company just announced layoffs. Your colleagues are distracted and anxious.",
+      "options": [
+        "Recognize this is not the right moment; reschedule or adapt your pitch significantly",
+        "Proceed as planned since you've already prepared",
+        "Use the negative mood to create urgency for your project",
+        "Ignore the emotional context and focus only on your data"
+      ],
+      "correct": 0,
+      "explanation": "Kairos requires recognizing when conditions are unfavorable. An audience preoccupied with job security won't be receptive to new initiatives. Pressing forward ignores the kairotic moment—or rather, its absence.",
+      "hints": [
+        "Is the audience in a state to receive your message?",
+        "What would 'reading the room' tell you here?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'cultural kairos' as described in the chapter?",
+      "options": [
+        "The broader social and historical moment that shapes what arguments can succeed",
+        "Speaking only in your native language",
+        "Using cultural references in speeches",
+        "Timing speeches to cultural holidays"
+      ],
+      "correct": 0,
+      "explanation": "Cultural kairos refers to the larger zeitgeist—the social, political, and historical context that makes certain arguments timely or untimely. MLK's 'I Have a Dream' succeeded partly because the cultural moment was ready for it.",
+      "hints": [
+        "Think beyond the immediate audience to the broader moment in history.",
+        "Why do some messages resonate in one era but not another?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "A perfectly logical argument (strong logos) can fail if delivered at the wrong moment.",
+      "correct": true,
+      "explanation": "The chapter emphasizes that even the best-constructed argument will fall flat if the timing is wrong. Kairos reminds us that persuasion is contextual—the same words can succeed or fail depending on when and where they're spoken.",
+      "hints": [
+        "Think about the relationship between timing and receptivity.",
+        "Can you think of examples where good ideas failed due to bad timing?"
+      ]
+    }
+  ]
+}

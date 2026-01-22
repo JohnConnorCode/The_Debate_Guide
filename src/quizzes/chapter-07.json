@@ -1,0 +1,95 @@
+{
+  "title": "Pathos: Moving Hearts",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "According to Aristotle, what is the legitimate role of emotional appeal in argument?",
+      "options": [
+        "Emotions carry information about values and help surface what the audience already believes",
+        "Emotions should replace logical reasoning entirely",
+        "Emotions are contaminants that should be eliminated from argument",
+        "Emotions are only useful for manipulating unintelligent audiences"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that emotions 'carry information' — fear tells you something is dangerous, anger signals injustice, pity recognizes undeserved suffering. Emotional appeal surfaces value judgments the audience already holds.",
+      "hints": [
+        "How did Aristotle view emotions compared to Plato?",
+        "The chapter asks: 'Is it manipulation to make people feel?'"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "The chapter argues that the ethics of pathos depend entirely on whether the emotions fit the facts.",
+      "correct": true,
+      "explanation": "The chapter distinguishes between 'evoking' (making people feel what the situation genuinely warrants) and 'exploiting' (making people feel things that distort their judgment). The ethical standard is whether emotions reflect reality.",
+      "hints": [
+        "Think about the evoking vs. exploiting distinction.",
+        "What test does the chapter propose for ethical emotional appeal?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'narrative' in the context of pathos?",
+      "options": [
+        "The delivery system through which emotional content reaches audiences",
+        "A type of logical fallacy to be avoided",
+        "A technique for hiding weak arguments",
+        "Another word for manipulation"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that 'Emotion rarely arrives through abstract statement' — narrative, story, and concrete detail are how pathos is delivered. The story of Maria with cancer moves people in ways statistics about healthcare cannot.",
+      "hints": [
+        "Why do specific stories move us more than statistics?",
+        "How do effective speakers deliver emotional content?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's teaching, which approach is more ethically sound?",
+      "scenario": "You're preparing a presentation about a genuine problem in your community. You have both statistics showing the scope of the problem AND a personal story from someone affected.",
+      "options": [
+        "Use both — the story creates emotional engagement, the statistics provide intellectual justification",
+        "Use only statistics to appear more rational",
+        "Use only the story to maximize emotional impact",
+        "Avoid both and stick to abstract principles"
+      ],
+      "correct": 0,
+      "explanation": "The chapter emphasizes integration: 'Pathos works best when it's woven together with ethos and logos.' The pattern that works is 'lead with narrative, follow with data' — the story creates engagement, the statistics prevent dismissing the story as an anomaly.",
+      "hints": [
+        "What does the chapter say about combining emotional and logical appeal?",
+        "Think about the dual-process theory discussed in the chapter."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the test the chapter proposes for distinguishing ethical emotional appeal from manipulation?",
+      "options": [
+        "Would someone with complete information still feel this emotion?",
+        "Does the emotion make people agree with me?",
+        "Is the emotion as intense as possible?",
+        "Does the appeal avoid any use of facts?"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'If the emotion depends on ignorance, distortion, or misdirection, it's exploitation. If the emotion would survive full knowledge of the facts, it's legitimate evocation.'",
+      "hints": [
+        "What distinguishes evoking from exploiting?",
+        "Think about what manipulation requires."
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each technique with its function in emotional appeal:",
+      "pairs": [
+        {"left": "Specificity", "right": "Makes situations vivid and imaginable"},
+        {"left": "Identification", "right": "Helps audience see themselves in the situation"},
+        {"left": "Contrast", "right": "Heightens emotion by juxtaposition"}
+      ],
+      "explanation": "The chapter identifies these as key techniques: specificity makes things concrete ('a six-year-old girl with braids'), identification creates personal connection ('imagine this happened to your daughter'), and contrast heightens emotion (King's 'promissory note' vs. 'bad check').",
+      "hints": [
+        "Why does 'a child' move us less than 'a six-year-old girl with braids'?",
+        "How did MLK use contrast in his 'I Have a Dream' speech?"
+      ]
+    }
+  ]
+}

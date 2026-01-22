@@ -1,0 +1,95 @@
+{
+  "title": "The Philosopher's Victory",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What does Socrates's behavior at his trial teach about the 'philosopher's victory'?",
+      "options": [
+        "That some victories of principle matter more than outcomes—he chose integrity over survival",
+        "That you should always fight to win at any cost",
+        "That legal trials are always unfair",
+        "That philosophy is impractical"
+      ],
+      "correct": 0,
+      "explanation": "Socrates could have escaped or argued merely for acquittal, but chose instead to defend philosophy itself. He lost the trial but won something larger—demonstrating that some commitments are worth more than winning. This redefines what 'victory' means.",
+      "hints": [
+        "Did Socrates prioritize winning his case or something else?",
+        "What did Socrates preserve by not compromising?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the ultimate goal of learning debate is to win every argument you enter.",
+      "correct": false,
+      "explanation": "The chapter concludes that the true purpose of debate mastery is wisdom (eudaimonia), not victory. The philosopher's victory comes from thinking more clearly, understanding more deeply, and holding beliefs that are genuinely well-supported—even when that means changing your mind.",
+      "hints": [
+        "What does the chapter say about the relationship between debate and wisdom?",
+        "Is changing your mind a defeat or can it be a victory?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'eudaimonia' as it relates to debate?",
+      "options": [
+        "Human flourishing—the good life achieved through wisdom and virtue, not just winning",
+        "A winning debate strategy",
+        "A type of logical fallacy",
+        "A Greek debate tournament"
+      ],
+      "correct": 0,
+      "explanation": "Eudaimonia is the Greek concept of flourishing or 'the good life.' The chapter argues that debate skills ultimately serve eudaimonia—not by helping you win arguments, but by helping you think clearly, examine your beliefs, and live according to reason.",
+      "hints": [
+        "What did the Greeks consider the ultimate goal of a good life?",
+        "How does wisdom relate to flourishing?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each concept with its meaning for the 'philosopher's victory':",
+      "pairs": [
+        {"left": "The examined life", "right": "A life spent questioning assumptions and pursuing truth"},
+        {"left": "Changing your mind", "right": "A sign of intellectual growth, not defeat"},
+        {"left": "Winning vs. being right", "right": "You can win an argument while being wrong, or lose while being right"}
+      ],
+      "explanation": "The philosopher's victory reconceives success. The examined life is worth living precisely because it pursues truth. Changing your mind through good argument is growth. And the relationship between winning and being right is more complex than it appears.",
+      "hints": [
+        "What did Socrates say about the unexamined life?",
+        "Is winning the same as being correct?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'four-dimensional scorecard' for evaluating debate success?",
+      "options": [
+        "Measuring outcomes across argument quality, relationship preservation, truth discovery, and personal growth",
+        "A judging system for formal debate tournaments",
+        "A technique for tracking opponent weaknesses",
+        "A method for scoring points in parliamentary debate"
+      ],
+      "correct": 0,
+      "explanation": "The chapter suggests evaluating debate success on multiple dimensions: Did you argue well? Did you preserve the relationship? Did you get closer to truth? Did you grow? A 'loss' on one dimension can be a 'win' on others—and vice versa.",
+      "hints": [
+        "What matters besides who 'won' the argument?",
+        "Can you lose an argument but still succeed overall?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's teaching about the philosopher's victory, what perspective should you take?",
+      "scenario": "You've had a long debate with a friend. By the end, you realize they were right and you were wrong. You've changed your position based on their arguments.",
+      "options": [
+        "Consider this a victory—you've come closer to truth through honest engagement",
+        "Feel defeated because you 'lost' the argument",
+        "Pretend you agreed with them all along",
+        "Resolve to never admit being wrong again"
+      ],
+      "correct": 0,
+      "explanation": "The philosopher's victory means recognizing that changing your mind through good argument is winning, not losing. You've gained truth. Your previous error has been corrected. This is exactly what debate at its best should accomplish—moving everyone closer to understanding.",
+      "hints": [
+        "Is holding onto a wrong belief 'winning'?",
+        "What's the purpose of debate according to this chapter?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "title": "The Art of Refutation",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "According to Quintilian, what is refutation's role in a speech?",
+      "options": [
+        "It is 'the very life and soul of a speech'",
+        "It should be avoided whenever possible",
+        "It's only necessary when your case is weak",
+        "It should come at the very beginning"
+      ],
+      "correct": 0,
+      "explanation": "Quintilian said refutation is 'the very life and soul of a speech. All the rest is mere preparation.' You can build the most elegant case imaginable, but if you can't respond to your opponent, you'll lose.",
+      "hints": [
+        "What did the Roman orator believe about responding to opponents?",
+        "Is building your own case sufficient?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the hierarchy of refutation, directly addressing the central point of an argument is more effective than ad hominem attacks.",
+      "correct": true,
+      "explanation": "Paul Graham's hierarchy ranks responses from least to most effective: name-calling at the bottom, then ad hominem, then contradiction, then counterargument, with genuine refutation (directly addressing the central point) at the top.",
+      "hints": [
+        "Which responses are at the bottom of the hierarchy?",
+        "What does 'genuine refutation' require?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'reductio ad absurdum'?",
+      "options": [
+        "A technique that accepts an argument's premises then shows they lead to absurd conclusions",
+        "A fallacy involving personal attacks",
+        "A way of summarizing your opponent's position",
+        "A technique for building emotional appeal"
+      ],
+      "correct": 0,
+      "explanation": "Reductio ad absurdum ('reduction to absurdity') shows that following an argument's premises to their logical conclusion produces nonsense. If the conclusion is absurd, the original argument must be flawed.",
+      "hints": [
+        "How did Socrates use this against Thrasymachus?",
+        "This technique uses the opponent's own logic against them."
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each stock issue with its challenge to an argument:",
+      "pairs": [
+        {"left": "Topicality", "right": "Does the proposal actually address the problem?"},
+        {"left": "Significance", "right": "Is the problem big enough to warrant action?"},
+        {"left": "Inherency", "right": "Is the current system actually causing the problem?"},
+        {"left": "Solvency", "right": "Will the proposed solution actually work?"}
+      ],
+      "explanation": "The four stock issues are checkpoints every policy argument must pass. If an argument fails on any one, it fails entirely—meaning you only need to win one to defeat a case.",
+      "hints": [
+        "Think about what questions a skeptic would ask about any proposal.",
+        "Which issue relates to whether the problem is big enough to care about?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'turning' an argument?",
+      "options": [
+        "Using your opponent's own logic or evidence to support your position instead of theirs",
+        "Changing the subject to avoid difficult points",
+        "Repeating your argument more loudly",
+        "Attacking your opponent's character"
+      ],
+      "correct": 0,
+      "explanation": "Turning is devastating when executed well because it makes defense impossible. The more your opponent proves their original point, the more they hurt themselves. You accept their evidence or logic but show it supports your side.",
+      "hints": [
+        "Why is this technique so powerful?",
+        "Think about Daniel Webster's Reply to Hayne."
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's 'five refutation moves,' which approach would be most effective here?",
+      "scenario": "Your opponent argues: 'We should cut the marketing budget because sales have been declining.' You know sales declined due to supply chain issues, not marketing effectiveness.",
+      "options": [
+        "Expose the missing link: 'How does sales decline prove marketing caused it?'",
+        "Simply deny the claim without explanation",
+        "Attack your opponent's qualifications",
+        "Change the subject to a different budget item"
+      ],
+      "correct": 0,
+      "explanation": "The chapter's 'Five Refutation Moves' include: deny the claim, minimize impact, turn the argument, expose the missing link, or outweigh. Here, the logical connection between evidence (sales decline) and conclusion (cut marketing) is broken—supply chain, not marketing, caused the decline.",
+      "hints": [
+        "Is the evidence actually supporting the conclusion?",
+        "What's the gap between the sales data and the marketing budget decision?"
+      ]
+    }
+  ]
+}

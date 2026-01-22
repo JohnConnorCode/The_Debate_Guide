@@ -1,0 +1,95 @@
+{
+  "title": "The Rhetorical Triangle",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What are the three appeals of Aristotle's rhetorical triangle?",
+      "options": [
+        "Ethos (credibility), Pathos (emotion), Logos (logic)",
+        "Introduction, Body, Conclusion",
+        "Speaker, Audience, Message",
+        "Truth, Beauty, Goodness"
+      ],
+      "correct": 0,
+      "explanation": "Aristotle identified three fundamental modes of persuasion: ethos (the speaker's character and credibility), pathos (emotional appeal to the audience), and logos (logical reasoning and evidence).",
+      "hints": [
+        "These are Greek terms you'll see throughout the book.",
+        "Think about what makes an argument convincing."
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "Effective persuasion requires all three appeals working together in balance.",
+      "correct": true,
+      "explanation": "The chapter emphasizes that the three appeals are not alternatives but work in harmony. An argument relying on only one appeal will be weaker than one that integrates ethos, pathos, and logos appropriately.",
+      "hints": [
+        "Think about the 'triangle' metaphor.",
+        "What happens when a three-legged stool loses a leg?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each appeal with its primary function:",
+      "pairs": [
+        {"left": "Ethos", "right": "Establishes why the audience should trust the speaker"},
+        {"left": "Pathos", "right": "Engages the audience's feelings and values"},
+        {"left": "Logos", "right": "Provides reasoning and evidence for the claim"}
+      ],
+      "explanation": "Ethos answers 'Why should I listen to you?' Pathos answers 'Why should I care?' Logos answers 'Why should I believe this is true?'",
+      "hints": [
+        "Think about what question each appeal answers for the audience.",
+        "Consider the Greek roots of each word."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is an 'enthymeme' according to the chapter?",
+      "options": [
+        "A rhetorical syllogism with an unstated premise the audience fills in",
+        "A logical fallacy to be avoided",
+        "A type of emotional appeal",
+        "A Greek word for credibility"
+      ],
+      "correct": 0,
+      "explanation": "An enthymeme is a powerful rhetorical tool—a logical argument where one premise is left unstated because the audience already accepts it. This creates a sense of shared understanding and participation.",
+      "hints": [
+        "It's related to logos but involves the audience actively.",
+        "Think about what makes an argument feel like common ground."
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Which appeal is this speaker primarily using?",
+      "scenario": "A climate scientist begins her presentation: 'I've spent 25 years studying Arctic ice patterns, published over 100 peer-reviewed papers, and led three international research expeditions.'",
+      "options": [
+        "Ethos — establishing credibility and expertise",
+        "Pathos — creating an emotional connection",
+        "Logos — presenting logical evidence",
+        "None of the above"
+      ],
+      "correct": 0,
+      "explanation": "This is a classic ethos appeal. By establishing her qualifications, experience, and track record, the scientist is building credibility so the audience will trust her subsequent claims.",
+      "hints": [
+        "What is the speaker trying to establish about herself?",
+        "Which appeal deals with the speaker's character?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Why does the chapter describe the rhetorical triangle as a 'framework' rather than a 'formula'?",
+      "options": [
+        "Because skilled rhetoricians adapt the balance of appeals to each situation",
+        "Because the appeals must always be used in a specific order",
+        "Because only one appeal should be used at a time",
+        "Because the framework is outdated for modern use"
+      ],
+      "correct": 0,
+      "explanation": "The triangle is a framework for analysis and adaptation, not a rigid formula. Different situations call for different emphases—a eulogy emphasizes pathos, a legal brief emphasizes logos, a recommendation letter emphasizes ethos.",
+      "hints": [
+        "Think about how different contexts might require different approaches.",
+        "Does one size fit all in persuasion?"
+      ]
+    }
+  ]
+}

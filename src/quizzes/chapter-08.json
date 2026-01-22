@@ -1,0 +1,96 @@
+{
+  "title": "The Emotions Catalog",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "According to Aristotle, what causes anger (orgē)?",
+      "options": [
+        "A perceived slight from someone who lacks the standing to judge you",
+        "Any disagreement with another person",
+        "Physical pain or discomfort",
+        "Being ignored in any situation"
+      ],
+      "correct": 0,
+      "explanation": "Aristotle defines anger as arising from 'a conspicuous slight at the hands of men who have no call to slight oneself.' The key elements are: the slight must be undeserved, and the person committing it must lack standing to judge.",
+      "hints": [
+        "What's the difference between feeling shame and feeling anger at criticism?",
+        "Why do we get angrier at peers who condescend than at teachers who correct us?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, fear requires certainty that something bad will happen.",
+      "correct": false,
+      "explanation": "The opposite is true. The chapter states that 'fear requires uncertainty—if the bad thing is certain and immediate, you don't feel fear but something closer to despair. Fear lives in the space between safety and doom.'",
+      "hints": [
+        "What emotional state replaces fear when disaster is certain?",
+        "Fear is about anticipated evil, not certain evil."
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each Greek term with the emotion it represents:",
+      "pairs": [
+        {"left": "Orgē", "right": "Anger"},
+        {"left": "Praotēs", "right": "Calmness"},
+        {"left": "Aischunē", "right": "Shame"},
+        {"left": "Eleos", "right": "Pity"}
+      ],
+      "explanation": "Aristotle cataloged emotions systematically. Orgē (anger) arises from slights. Praotēs (calmness) is anger's opposite. Aischunē (shame) requires an audience. Eleos (pity) responds to undeserved suffering.",
+      "hints": [
+        "Which emotions are opposites of each other?",
+        "Which emotion specifically requires being seen by others?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does pity (eleos) require according to Aristotle?",
+      "options": [
+        "The suffering must be undeserved and the audience must be able to imagine it happening to them",
+        "The suffering must be extreme and violent",
+        "The sufferer must be personally known to the audience",
+        "The audience must feel guilty for causing the suffering"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that 'Pity is the pain we feel at undeserved suffering' and 'requires imaginative identification: we feel pity when we can imagine ourselves or our loved ones in the same situation.'",
+      "hints": [
+        "Why do specific stories generate more pity than statistics?",
+        "What role does imagination play in pity?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on Aristotle's analysis, how could you help calm an angry colleague?",
+      "scenario": "A colleague is furious because they felt publicly dismissed by a manager in a meeting. They believe the dismissal was unfair and are considering a confrontational response.",
+      "options": [
+        "Help them see the dismissal might have been unintentional, or show consequences the manager is already facing",
+        "Tell them their anger is irrational and they should get over it",
+        "Encourage them to immediately confront the manager while still angry",
+        "Dismiss their concerns entirely and change the subject"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that people calm down 'when they realize the slight wasn't intentional, when they see the offender suffering, when time passes and the pain fades.' Reframing the offense as unintentional or showing consequences already suffered can defuse anger.",
+      "hints": [
+        "What conditions does Aristotle say reduce anger?",
+        "Think about changing the perception of the slight."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What distinguishes envy from emulation according to the chapter?",
+      "options": [
+        "Envy wants the rival to fail; emulation wants to rise to the rival's level",
+        "Envy is always unethical; emulation is always ethical",
+        "Envy is about equals; emulation is about superiors",
+        "They are the same emotion with different names"
+      ],
+      "correct": 0,
+      "explanation": "The chapter quotes Aristotle: 'Emulation makes us take steps to secure the good things in question, envy makes us take steps to stop our neighbour having them.' Both arise from comparison, but envy is destructive while emulation is constructive.",
+      "hints": [
+        "What does the envious person want?",
+        "How can a skilled speaker transform envy into emulation?"
+      ]
+    }
+  ]
+}

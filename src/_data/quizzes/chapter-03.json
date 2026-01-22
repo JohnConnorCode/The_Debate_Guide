@@ -5,36 +5,46 @@
   "questions": [
     {
       "id": "ch3-q1",
-      "type": "multiple-choice",
-      "question": "What are the three appeals that form Aristotle's rhetorical triangle?",
-      "options": [
-        "Logos, pathos, kairos",
-        "Ethos, pathos, logos",
-        "Ethos, kairos, topos",
-        "Logos, stasis, ethos"
+      "type": "matching",
+      "question": "Match each rhetorical appeal to its definition:",
+      "pairs": [
+        {"left": "Ethos", "right": "Appeal to credibility and character"},
+        {"left": "Pathos", "right": "Appeal to emotion"},
+        {"left": "Logos", "right": "Appeal to logic and reason"}
       ],
-      "correct": 1,
-      "explanation": "Aristotle identified ethos (credibility), pathos (emotion), and logos (logic) as the three fundamental modes of persuasion."
+      "explanation": "Aristotle identified ethos (credibility), pathos (emotion), and logos (logic) as the three fundamental modes of persuasion. Together they form the rhetorical triangle.",
+      "hints": [
+        "Ethos relates to ethics and character.",
+        "Pathos is related to empathy and passion."
+      ]
     },
     {
       "id": "ch3-q2",
-      "type": "multiple-choice",
-      "question": "Which appeal is primarily concerned with the speaker's credibility and character?",
+      "type": "scenario",
+      "scenario": "A doctor is explaining to a patient why they need to change their diet. The doctor mentions their 20 years of medical experience, shares a story about another patient who improved dramatically, and presents recent research studies on nutrition.",
+      "question": "Which rhetorical appeal is the doctor using when mentioning their 20 years of experience?",
       "options": [
-        "Logos",
-        "Pathos",
-        "Ethos",
-        "Kairos"
+        "Logos - it's factual information",
+        "Pathos - it creates emotional connection",
+        "Ethos - it establishes credibility",
+        "Kairos - it's about timing"
       ],
       "correct": 2,
-      "explanation": "Ethos refers to the credibility, character, and trustworthiness of the speaker. It answers the question: 'Why should I believe you?'"
+      "explanation": "Citing professional experience establishes ethos (credibility). It answers the patient's implicit question: 'Why should I trust your advice?' The research studies represent logos, and the patient story appeals to pathos.",
+      "hints": [
+        "Think about what this information tells the patient about the doctor.",
+        "Consider which appeal relates to trustworthiness and expertise."
+      ]
     },
     {
       "id": "ch3-q3",
       "type": "true-false",
       "question": "According to Aristotle, logos (logical appeal) is always the most important of the three appeals.",
       "correct": false,
-      "explanation": "Aristotle argued that effective persuasion requires a balance of all three appeals. The most effective approach depends on the audience, context, and purpose."
+      "explanation": "Aristotle argued that effective persuasion requires a balance of all three appeals. The most effective approach depends on the audience, context, and purpose. Sometimes ethos matters most; other times pathos is key.",
+      "hints": [
+        "Consider whether different situations might call for different emphases."
+      ]
     },
     {
       "id": "ch3-q4",
@@ -47,60 +57,74 @@
         "All three equally"
       ],
       "correct": 2,
-      "explanation": "Logos is the appeal to logic and reason, which includes evidence, facts, statistics, and logical arguments."
+      "explanation": "Logos is the appeal to logic and reason, which includes evidence, facts, statistics, and logical arguments. Legal precedents and statistics are forms of logical evidence.",
+      "hints": [
+        "Which appeal relates to evidence and rational argument?",
+        "Think about what type of persuasion relies on facts and data."
+      ]
     },
     {
       "id": "ch3-q5",
-      "type": "multiple-choice",
-      "question": "When a speaker shares a personal story of hardship to connect with the audience, they are primarily using:",
+      "type": "scenario",
+      "scenario": "A charity advertisement shows images of children in poverty, uses sad music, and includes testimonials from families who have been helped. The narrator speaks with a trembling voice about urgent needs.",
+      "question": "This advertisement is primarily leveraging which rhetorical appeal?",
       "options": [
-        "Ethos",
-        "Pathos",
-        "Logos",
-        "Stasis"
+        "Ethos - through organizational credibility",
+        "Pathos - through emotional engagement",
+        "Logos - through logical arguments",
+        "Kairos - through timing considerations"
       ],
       "correct": 1,
-      "explanation": "Pathos appeals to the audience's emotions. Personal stories create emotional connections and help audiences feel invested in the message."
+      "explanation": "Pathos appeals to the audience's emotions. The images, music, testimonials, and emotional delivery are all designed to create emotional connection and motivate action through feeling rather than analysis.",
+      "hints": [
+        "What is the primary response these elements are designed to evoke?",
+        "Consider what the sad music and images are trying to make you feel."
+      ]
     },
     {
       "id": "ch3-q6",
       "type": "true-false",
       "question": "The three appeals work independently and should be used separately for maximum effect.",
       "correct": false,
-      "explanation": "The most persuasive arguments weave all three appeals together. Ethos establishes trust, pathos creates connection, and logos provides the rational foundation."
+      "explanation": "The most persuasive arguments weave all three appeals together. Ethos establishes trust, pathos creates connection, and logos provides the rational foundation. They reinforce each other."
     },
     {
       "id": "ch3-q7",
-      "type": "multiple-choice",
-      "question": "Which Greek philosopher systematically categorized the three modes of persuasion?",
-      "options": [
-        "Socrates",
-        "Plato",
-        "Aristotle",
-        "Demosthenes"
-      ],
-      "correct": 2,
-      "explanation": "While earlier rhetoricians discussed these concepts, Aristotle systematically categorized them in his treatise 'Rhetoric' around 350 BCE."
+      "type": "fill-blank",
+      "question": "The Greek word 'ethos' is the root of our modern word '_____', reflecting its connection to character and values.",
+      "answer": "ethics",
+      "acceptableAnswers": ["ethics", "ethical"],
+      "explanation": "Ethos gives us 'ethics' and 'ethical.' This etymology reminds us that credibility isn't just about expertise—it's fundamentally about character and trustworthiness.",
+      "hints": [
+        "Think about modern words related to moral character.",
+        "The word describes principles of right conduct."
+      ]
     },
     {
       "id": "ch3-q8",
-      "type": "multiple-choice",
-      "question": "Cicero's First Catilinarian Oration demonstrates the rhetorical triangle by:",
-      "options": [
-        "Using only logos to present evidence",
-        "Relying solely on his reputation (ethos)",
-        "Weaving ethos, pathos, and logos together strategically",
-        "Avoiding emotional appeals entirely"
+      "type": "ordering",
+      "question": "Arrange Cicero's approach in his First Catilinarian Oration in the order he used the appeals:",
+      "items": [
+        "Present evidence of the conspiracy (logos)",
+        "Establish his authority as consul (ethos)",
+        "Evoke fear and outrage about the threat to Rome (pathos)"
       ],
-      "correct": 2,
-      "explanation": "Cicero opened with ethos (his position and integrity), moved to pathos (fear and outrage), then presented logos (evidence). This demonstrates how master orators balance all three appeals."
+      "correctOrder": [1, 2, 0],
+      "explanation": "Cicero opened with ethos (his position and integrity as consul), moved to pathos (fear and outrage about the conspiracy), then presented logos (specific evidence). This demonstrates how master orators strategically sequence their appeals.",
+      "hints": [
+        "A speaker typically establishes their right to speak first.",
+        "Emotional appeals often come before detailed evidence to create receptivity."
+      ]
     },
     {
       "id": "ch3-q9",
       "type": "true-false",
       "question": "According to Aristotle, emotional appeals (pathos) are inherently manipulative and should be avoided.",
       "correct": false,
-      "explanation": "Aristotle devoted an entire book to analyzing emotions as legitimate persuasive tools. The ethical use of pathos means evoking emotions appropriate to the situation—it becomes manipulative only when divorced from truth."
+      "explanation": "Aristotle devoted an entire book to analyzing emotions as legitimate persuasive tools. The ethical use of pathos means evoking emotions appropriate to the situation—it becomes manipulative only when divorced from truth.",
+      "hints": [
+        "Aristotle wrote extensively about emotions in rhetoric. Would he have done so if they were always wrong to use?"
+      ]
     },
     {
       "id": "ch3-q10",
@@ -113,7 +137,45 @@
         "Avoids using examples"
       ],
       "correct": 1,
-      "explanation": "An enthymeme is a rhetorical syllogism where one premise is unstated because the audience is expected to accept it. For example: 'She's a politician, so she can't be trusted' implies the hidden premise that all politicians are untrustworthy."
+      "explanation": "An enthymeme is a rhetorical syllogism where one premise is unstated because the audience is expected to accept it. For example: 'She's a politician, so she can't be trusted' implies the hidden premise that all politicians are untrustworthy.",
+      "hints": [
+        "The key difference is about what's explicitly stated versus implied.",
+        "Consider why a speaker might leave something unsaid."
+      ]
+    },
+    {
+      "id": "ch3-q11",
+      "type": "scenario",
+      "scenario": "You're preparing a presentation to convince your company to adopt a new software system. You have data showing 40% efficiency gains, but you know some colleagues are resistant to change and worried about learning new technology.",
+      "question": "Which combination of appeals would likely be most effective?",
+      "options": [
+        "Focus only on logos—the data speaks for itself",
+        "Lead with pathos—emphasize the frustration of the current system",
+        "Balance all three: acknowledge concerns (pathos), present credentials and pilot results (ethos), show data (logos)",
+        "Rely on ethos only—your position gives you authority"
+      ],
+      "correct": 2,
+      "explanation": "Effective persuasion balances all three appeals. Acknowledging emotional concerns shows respect and reduces resistance. Establishing credibility through successful pilots builds trust. Data provides the rational justification. Together, they address different aspects of decision-making.",
+      "hints": [
+        "Consider why people resist change—is it always about logic?",
+        "Think about what Aristotle would say about using appeals in isolation."
+      ]
+    },
+    {
+      "id": "ch3-q12",
+      "type": "matching",
+      "question": "Match each rhetorical technique to its primary appeal:",
+      "pairs": [
+        {"left": "Citing statistics", "right": "Logos"},
+        {"left": "Sharing personal experience", "right": "Pathos"},
+        {"left": "Mentioning credentials", "right": "Ethos"},
+        {"left": "Using deductive reasoning", "right": "Logos"}
+      ],
+      "explanation": "Different techniques serve different appeals. Statistics and deductive reasoning support logical arguments (logos). Personal stories evoke emotional responses (pathos). Credentials establish trustworthiness (ethos). Recognizing these connections helps you craft balanced persuasion.",
+      "hints": [
+        "Think about what each technique is primarily designed to accomplish.",
+        "Ask: does this make me feel, think, or trust?"
+      ]
     }
   ]
 }

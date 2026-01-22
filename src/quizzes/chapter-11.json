@@ -1,0 +1,96 @@
+{
+  "title": "Building Your Case",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is 'stasis' in rhetoric?",
+      "options": [
+        "The central point of clash—the key issue on which a dispute turns",
+        "The opening statement of a speech",
+        "A technique for calming an angry audience",
+        "The conclusion of an argument"
+      ],
+      "correct": 0,
+      "explanation": "Stasis theory identifies where disagreements actually lie. There are four possible stasis points: fact (did it happen?), definition (what should we call it?), quality (was it justified?), and procedure (are we handling it correctly?).",
+      "hints": [
+        "The chapter says many debates fail because participants 'argue past each other.'",
+        "Think about the Greek meaning—it refers to a 'standing point.'"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each stasis type with its central question:",
+      "pairs": [
+        {"left": "Fact", "right": "Did the thing actually happen?"},
+        {"left": "Definition", "right": "What should we call this?"},
+        {"left": "Quality", "right": "Was it justified or wrong?"},
+        {"left": "Procedure", "right": "Are we addressing this properly?"}
+      ],
+      "explanation": "Each stasis requires a different type of case. Building a great case about the wrong stasis is worse than useless—it makes you look like you're evading the real question.",
+      "hints": [
+        "Think about the harassment example in the chapter.",
+        "Which type of argument focuses on whether something was right or wrong?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In the Toulmin model, what is a 'warrant'?",
+      "options": [
+        "The logical bridge between evidence and conclusion",
+        "The main claim being made",
+        "The evidence supporting a claim",
+        "The qualification showing degree of certainty"
+      ],
+      "correct": 0,
+      "explanation": "The warrant answers: 'Why does this evidence support this claim?' Warrants are often unstated (like enthymeme premises), but identifying them is crucial for understanding and attacking arguments.",
+      "hints": [
+        "Think about what connects grounds to claims.",
+        "The chapter says warrants are like 'unstated premises.'"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, you should always lead with your strongest argument first.",
+      "correct": false,
+      "explanation": "The chapter describes three approaches: strongest first (captures attention), strongest last (builds to climax), and strong-weak-strong (Nestorian order, burying weaker arguments in the middle). The best approach depends on context.",
+      "hints": [
+        "What are the three ordering strategies the chapter describes?",
+        "What is the Nestorian order?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'one-sentence test' described in the chapter?",
+      "options": [
+        "You should be able to state your case's central claim in a single sentence",
+        "Each argument should be exactly one sentence long",
+        "Opponents should be defeated with just one sentence",
+        "Introductions should be limited to one sentence"
+      ],
+      "correct": 0,
+      "explanation": "The one-sentence test forces precision. 'If you can't do this, your case isn't clear enough yet.' This core sentence becomes your thesis—the organizing principle for everything else.",
+      "hints": [
+        "Think about what clarifies your argument for yourself and the audience.",
+        "The chapter quotes Einstein on simplicity."
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's teaching about stasis, what should you do first?",
+      "scenario": "You're preparing to argue against a new company policy requiring return-to-office. Before building your case, you realize people disagree about different aspects: some dispute that remote work hurts productivity (fact), some argue about what counts as 'collaboration' (definition), some debate whether any productivity gain justifies the employee burden (quality).",
+      "options": [
+        "Identify which stasis is the real point of disagreement before building your case",
+        "Address all three points equally in your presentation",
+        "Pick whichever point is easiest to win",
+        "Ignore the disagreement and focus only on your preferred argument"
+      ],
+      "correct": 0,
+      "explanation": "The chapter emphasizes that 'building a great case about the wrong stasis is worse than useless.' You must first identify where the real disagreement lies—then build a case that addresses that specific stasis.",
+      "hints": [
+        "What happens when participants argue about different questions?",
+        "Why does stasis matter before case construction?"
+      ]
+    }
+  ]
+}

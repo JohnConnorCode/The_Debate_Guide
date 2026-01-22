@@ -1,0 +1,95 @@
+{
+  "title": "Digital Discourse",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is a 'filter bubble' in digital discourse?",
+      "options": [
+        "An algorithmic environment that shows you content matching your existing views, limiting exposure to opposing perspectives",
+        "A spam filter for email",
+        "A debate technique for online forums",
+        "A type of social media account"
+      ],
+      "correct": 0,
+      "explanation": "Filter bubbles occur when algorithms curate content based on your past behavior, creating an echo chamber that reinforces existing beliefs. This makes online discourse particularly challenging—people may never encounter strong versions of opposing arguments.",
+      "hints": [
+        "How do social media algorithms choose what to show you?",
+        "What happens when you only see views you already agree with?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the attention economy rewards nuanced, carefully reasoned arguments.",
+      "correct": false,
+      "explanation": "The chapter argues the opposite: the attention economy rewards outrage, simplification, and emotional provocation. Algorithms optimize for engagement, and inflammatory content generates more engagement than nuanced analysis. This creates structural pressure against good rhetoric online.",
+      "hints": [
+        "What kind of content gets the most clicks and shares?",
+        "Do algorithms reward nuance or provocation?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'viral rhetoric' as the chapter describes it?",
+      "options": [
+        "Arguments designed to spread quickly by triggering emotional responses rather than careful reasoning",
+        "Debate techniques invented during the COVID pandemic",
+        "A type of computer virus",
+        "Persuasion that only works in person"
+      ],
+      "correct": 0,
+      "explanation": "Viral rhetoric prioritizes shareability over soundness. It uses emotional triggers, oversimplification, and tribal signaling to spread rapidly—often sacrificing accuracy and nuance. Understanding this helps you recognize and resist manipulative online content.",
+      "hints": [
+        "What makes content spread quickly online?",
+        "Is viral content usually nuanced or simplified?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each digital discourse challenge with its description:",
+      "pairs": [
+        {"left": "Context collapse", "right": "Your message reaches audiences with vastly different backgrounds simultaneously"},
+        {"left": "Permanence", "right": "Online statements can be screenshot and resurface years later"},
+        {"left": "Asynchronous communication", "right": "Time gaps between messages allow misunderstandings to escalate"}
+      ],
+      "explanation": "Digital platforms create unique challenges for discourse. Context collapse means you can't tailor arguments to specific audiences. Permanence means careless words haunt you. Asynchronous communication removes the real-time feedback that helps in-person conversation self-correct.",
+      "hints": [
+        "How is arguing online different from arguing in person?",
+        "What happens when your tweet reaches very different audiences?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'two-hour rule' suggested in the chapter?",
+      "options": [
+        "Wait at least two hours before responding to something that angered you online",
+        "Spend no more than two hours per day on social media",
+        "Delete posts after two hours if they get no engagement",
+        "Block users who take more than two hours to respond"
+      ],
+      "correct": 0,
+      "explanation": "The two-hour rule is a practical tactic for digital discourse: when something online makes you angry, wait at least two hours before responding. This cooling-off period helps you craft a more thoughtful response rather than reacting emotionally—which usually makes things worse.",
+      "hints": [
+        "Why might immediate responses to inflammatory content be problematic?",
+        "What's the benefit of delaying your response?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's guidance, what's the best response here?",
+      "scenario": "Someone posts a political take on social media that you strongly disagree with. The post has hundreds of comments, mostly people attacking each other. You have a well-reasoned counterargument.",
+      "options": [
+        "Consider whether engaging will be productive—a heated thread rarely changes minds",
+        "Jump in immediately with your counterargument",
+        "Attack the person's character to discredit them",
+        "Share the post to mock it with your followers"
+      ],
+      "correct": 0,
+      "explanation": "The chapter emphasizes strategic restraint online. Heated comment threads rarely produce genuine persuasion—they reward performance for one's own side, not actual discourse. Sometimes the wisest choice is not to engage, or to reach out privately rather than publicly.",
+      "hints": [
+        "Do public argument threads usually change anyone's mind?",
+        "What are the alternatives to public engagement?"
+      ]
+    }
+  ]
+}

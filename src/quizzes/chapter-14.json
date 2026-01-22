@@ -1,0 +1,95 @@
+{
+  "title": "The Socratic Method",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'elenchus'?",
+      "options": [
+        "Socrates's method of cross-examination through systematic questioning until contradictions emerge",
+        "A formal debate format from ancient Rome",
+        "A type of logical fallacy",
+        "A concluding statement in Greek rhetoric"
+      ],
+      "correct": 0,
+      "explanation": "The elenchus is Socrates's signature technique: probing a person's beliefs through systematic inquiry until internal contradictions emerge. The goal isn't to win but to reveal the limits of knowledge—including one's own.",
+      "hints": [
+        "How did Socrates engage with Thrasymachus's claim about justice?",
+        "What happens when contradictions in a position are revealed?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, Socrates claimed to possess great wisdom about ethics and justice.",
+      "correct": false,
+      "explanation": "Socrates famously claimed to know only one thing: 'that he knew nothing.' This wasn't false modesty but a methodological commitment—if you start from certainty, you have no reason to inquire.",
+      "hints": [
+        "What did Socrates say about his own knowledge?",
+        "How does acknowledged ignorance enable learning?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each Greek term with its meaning:",
+      "pairs": [
+        {"left": "Elenchus", "right": "Cross-examination through questioning"},
+        {"left": "Aporia", "right": "A state of productive puzzlement or perplexity"},
+        {"left": "Maieutic", "right": "Like midwifery—helping others give birth to ideas"}
+      ],
+      "explanation": "The elenchus reveals contradictions. Aporia is the resulting confusion—the recognition that you don't know what you thought you knew. The maieutic method helps people discover knowledge they already possess through questioning.",
+      "hints": [
+        "Which term relates to Socrates's mother being a midwife?",
+        "Which describes feeling confused after questioning?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the difference between 'questions that reveal' and 'questions that trap'?",
+      "options": [
+        "Revealing questions genuinely seek understanding; trapping questions are designed to damage the respondent",
+        "Revealing questions are long; trapping questions are short",
+        "They are the same thing with different names",
+        "Revealing questions are easier to answer"
+      ],
+      "correct": 0,
+      "explanation": "Questions that reveal are open-ended and genuinely seek information. Questions that trap are leading and designed to produce a specific answer that damages the respondent's position—they're 'accusations disguised as questions.'",
+      "hints": [
+        "What's the difference in intention behind each type?",
+        "Which type closes down thought rather than opening it up?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's teaching about the Socratic method, what approach demonstrates good faith questioning?",
+      "scenario": "A colleague presents a proposal you're skeptical about. You want to understand their reasoning better.",
+      "options": [
+        "Ask 'What's the strongest evidence for your view?' and 'What would change your mind?'",
+        "Ask 'So you're saying we should waste company money?'",
+        "Immediately explain why they're wrong",
+        "Stay silent to avoid confrontation"
+      ],
+      "correct": 0,
+      "explanation": "The chapter distinguishes good-faith questioning from rhetorical weapons. Open questions like 'What's the strongest evidence for your view?' genuinely seek understanding and give the other person room to think, while leading questions like the second option are 'accusations disguised as questions.'",
+      "hints": [
+        "What kind of questions advance understanding?",
+        "Which response sounds like it's genuinely curious?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, when should you stop using the Socratic method?",
+      "options": [
+        "When someone needs direct answers, when power dynamics are unequal, or when the other person argues in bad faith",
+        "Never—it should always be used",
+        "Only in formal debate settings",
+        "Whenever questions become difficult"
+      ],
+      "correct": 0,
+      "explanation": "The chapter identifies limits: when people just need information (not endless questioning), when power dynamics make questioning inappropriate (a boss 'questioning' an employee's review), or when the interlocutor isn't engaging in good faith.",
+      "hints": [
+        "Is questioning appropriate in every situation?",
+        "What happens when power dynamics are unequal?"
+      ]
+    }
+  ]
+}

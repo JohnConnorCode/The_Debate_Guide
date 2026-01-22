@@ -1,0 +1,95 @@
+{
+  "title": "Evidence and Proof",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is Aristotle's distinction between 'artistic' and 'inartistic' proofs?",
+      "options": [
+        "Artistic proofs are created by the speaker; inartistic proofs exist independently (documents, statistics, witnesses)",
+        "Artistic proofs use creativity; inartistic proofs are boring",
+        "Artistic proofs are for artists; inartistic proofs are for scientists",
+        "Artistic proofs are ethical; inartistic proofs are manipulative"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Artistic proofs are constructed through rhetoric: the arguments you build, the emotions you evoke, the credibility you establish. Inartistic proofs exist independently: documents, statistics, witness testimony.'",
+      "hints": [
+        "What's the difference between evidence you find and evidence you create?",
+        "Which type of proof did Aristotle say involves ethos, pathos, and logos?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, presenting facts to someone who disagrees always changes their mind.",
+      "correct": false,
+      "explanation": "The chapter opens by noting that 'studies show something different. Present someone with facts that contradict their existing views, and they often dig in harder.' This is known as the backfire effect.",
+      "hints": [
+        "What is the 'backfire effect'?",
+        "Why do facts sometimes 'provoke' rather than persuade?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is a 'tekmerion' in Aristotle's framework?",
+      "options": [
+        "An infallible sign—evidence so strong it amounts to proof",
+        "A weak piece of evidence",
+        "A type of logical fallacy",
+        "An emotional appeal"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that 'tekmerion' is 'an infallible sign—evidence so strong it amounts to proof.' The example given is that if a woman has given birth, that's tekmerion she's had intercourse. Most evidence is weaker (semeion, fallible signs).",
+      "hints": [
+        "What's the difference between tekmerion and semeion?",
+        "How rare are truly infallible signs?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's teaching about choosing evidence, what would be most effective?",
+      "scenario": "You're presenting a proposal to two different groups: a group of data-driven executives and a group of frontline employees who distrust corporate statistics.",
+      "options": [
+        "Use data and methodology for executives; use stories and personal testimony for employees",
+        "Use the same evidence for both groups to be consistent",
+        "Use only emotional appeals for both groups",
+        "Avoid evidence entirely and rely on your authority"
+      ],
+      "correct": 0,
+      "explanation": "The chapter emphasizes that 'Different audiences respond to different types of evidence.' Experts want data; laypeople want stories. Choosing 'evidence that connects truth to action' means matching evidence type to your specific audience.",
+      "hints": [
+        "What does the chapter say about why experts and laypeople respond differently?",
+        "Why might frontline employees distrust corporate statistics?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, when does evidence fail to persuade?",
+      "options": [
+        "When it threatens identity, when trust in sources is gone, in zero-sum conflicts, or when values diverge",
+        "Only when the evidence is factually wrong",
+        "Evidence always works if presented clearly enough",
+        "Only when the audience is unintelligent"
+      ],
+      "correct": 0,
+      "explanation": "The chapter identifies four conditions where evidence fails: identity threat ('beliefs central to sense of who they are'), trust deficit ('institutions that produce evidence are corrupt'), zero-sum conflicts, and divergent values.",
+      "hints": [
+        "Why might vaccine data backfire with vaccine-skeptical parents?",
+        "What role does trust play in evaluating evidence?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each evidence type with its primary strength:",
+      "pairs": [
+        {"left": "Statistics", "right": "Summarize many cases and seem authoritative"},
+        {"left": "Testimony", "right": "Depends on witness credibility and directness"},
+        {"left": "Examples", "right": "Memorable and emotionally engaging"}
+      ],
+      "explanation": "Each evidence type has distinct properties. Statistics feel authoritative but can be manipulated. Testimony relies on credibility. Examples are vivid but can be dismissed as atypical. The best arguments use multiple types together.",
+      "hints": [
+        "Why does 'Eighty percent of doctors recommend this' sound compelling?",
+        "What makes a single example insufficient proof?"
+      ]
+    }
+  ]
+}

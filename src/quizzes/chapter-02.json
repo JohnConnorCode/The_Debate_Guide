@@ -1,0 +1,95 @@
+{
+  "title": "The Greek Legacy",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, what was revolutionary about the Greek approach to persuasion?",
+      "options": [
+        "They treated persuasion as a teachable art with principles",
+        "They believed only philosophers could persuade",
+        "They relied entirely on emotional appeals",
+        "They avoided public speaking whenever possible"
+      ],
+      "correct": 0,
+      "explanation": "The Greeks' revolutionary insight was that persuasion follows patterns that can be studied, taught, and practiced. They transformed rhetoric from a mysterious gift into a systematic discipline.",
+      "hints": [
+        "Think about how the chapter describes Aristotle's contribution.",
+        "Consider what made Greek education distinctive."
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "The Sophists were universally condemned by all Greek philosophers as charlatans.",
+      "correct": false,
+      "explanation": "While Plato famously criticized the Sophists, Aristotle took a more nuanced view, synthesizing their practical insights with philosophical rigor. The chapter presents the Sophists as important innovators who made rhetoric accessible.",
+      "hints": [
+        "Consider how Aristotle differed from Plato.",
+        "Did the chapter present a one-sided view of the Sophists?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What was the Greek 'polis' and why was it important to rhetoric?",
+      "options": [
+        "The city-state where citizens debated and decided public matters together",
+        "A school where philosophers taught in isolation",
+        "A military formation used in battle",
+        "A written constitution governing speech"
+      ],
+      "correct": 0,
+      "explanation": "The polis was the Greek city-state—a community where citizens gathered to debate and make collective decisions. This political context made skilled public speaking essential for civic participation.",
+      "hints": [
+        "Think about where Greeks would have used rhetorical skills.",
+        "Consider the connection between democracy and debate."
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each figure with their contribution to rhetoric:",
+      "pairs": [
+        {"left": "Aristotle", "right": "Systematized rhetoric into a comprehensive art"},
+        {"left": "The Sophists", "right": "Made rhetorical training available for payment"},
+        {"left": "Plato", "right": "Criticized rhetoric divorced from truth-seeking"}
+      ],
+      "explanation": "Aristotle created the systematic study of rhetoric we still use today. The Sophists were traveling teachers who democratized rhetorical education. Plato worried that rhetoric without philosophy could manipulate rather than enlighten.",
+      "hints": [
+        "Who wrote the famous work called 'Rhetoric'?",
+        "Who charged fees for teaching persuasion?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the Greek approach described in this chapter, what would be the best response?",
+      "scenario": "A friend says, 'Some people are just naturally good at arguing. You either have it or you don't.' How would you respond based on the Greek view?",
+      "options": [
+        "Explain that the Greeks proved persuasion is a skill anyone can learn through study and practice",
+        "Agree that rhetoric is an inborn talent",
+        "Suggest they avoid arguments entirely",
+        "Tell them natural ability is all that matters"
+      ],
+      "correct": 0,
+      "explanation": "The central Greek insight was that rhetoric is an 'art' (techne)—a systematic discipline with learnable principles. Demosthenes himself overcame a speech impediment through dedicated practice.",
+      "hints": [
+        "What did the Greeks believe about the nature of rhetorical skill?",
+        "Think about what the chapter says about practice and training."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What did Aristotle mean by calling rhetoric 'the counterpart of dialectic'?",
+      "options": [
+        "Rhetoric and dialectic are complementary methods of reasoning and inquiry",
+        "Rhetoric is the opposite of logical thinking",
+        "Dialectic should replace rhetoric entirely",
+        "They are identical practices with different names"
+      ],
+      "correct": 0,
+      "explanation": "Aristotle saw rhetoric and dialectic as partners: dialectic seeks truth through philosophical dialogue, while rhetoric applies those truths to persuade broader audiences. Neither is complete without the other.",
+      "hints": [
+        "Think about the relationship between finding truth and communicating it.",
+        "Aristotle valued both methods—why?"
+      ]
+    }
+  ]
+}

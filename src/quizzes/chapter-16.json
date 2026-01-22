@@ -1,0 +1,95 @@
+{
+  "title": "Debate in the Workplace",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is 'stakeholder analysis' in workplace persuasion?",
+      "options": [
+        "Mapping out who has decision power, who will implement, and who will be affected by a proposal",
+        "Analyzing company stock prices",
+        "Counting how many people attend meetings",
+        "Evaluating employee performance reviews"
+      ],
+      "correct": 0,
+      "explanation": "Stakeholder analysis means understanding your audience before making your case. You need to identify who decides, who implements, who's affected, and what each group values—the same argument rarely works equally well for all stakeholders.",
+      "hints": [
+        "Think about the different roles people play in organizational decisions.",
+        "Why might different people need different versions of the same argument?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, disagreeing with your boss is always inappropriate in professional settings.",
+      "correct": false,
+      "explanation": "The chapter provides specific guidance on how to disagree with authority productively—framing disagreement as seeking understanding, using hedging language appropriately, and choosing private settings. The key is how you disagree, not whether you do.",
+      "hints": [
+        "Does the chapter suggest never disagreeing, or does it offer strategies?",
+        "What role does 'how' play versus 'whether'?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the Greek concept 'phronesis' as applied to workplace debate?",
+      "options": [
+        "Practical wisdom—knowing what to say, when, and to whom",
+        "Speaking loudly to command attention",
+        "Always agreeing with superiors",
+        "Using technical jargon to impress colleagues"
+      ],
+      "correct": 0,
+      "explanation": "Phronesis is practical wisdom—the judgment to know what argument to make to which person at what moment. In the workplace, this means reading the room, understanding organizational dynamics, and timing your persuasion appropriately.",
+      "hints": [
+        "This is an Aristotelian virtue about practical judgment.",
+        "How does context affect persuasion?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'devil's advocate' technique?",
+      "options": [
+        "Deliberately arguing against a position to test its strength and find weaknesses",
+        "Always opposing every idea presented",
+        "Arguing in bad faith to win",
+        "Supporting only unpopular positions"
+      ],
+      "correct": 0,
+      "explanation": "The devil's advocate role originated in Catholic canonization proceedings. In workplace settings, it means deliberately arguing against a proposal—even one you might support—to stress-test the idea and surface potential problems before implementation.",
+      "hints": [
+        "What's the purpose of arguing against something you might actually support?",
+        "How does this help improve decision-making?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's advice, what's the best approach here?",
+      "scenario": "Your team has debated a decision for weeks. You disagreed with the chosen direction, but the decision has been made by leadership. Now it's time to implement.",
+      "options": [
+        "Practice 'disagree and commit'—execute the decision wholeheartedly even though you disagreed",
+        "Continue arguing against the decision during implementation",
+        "Implement half-heartedly to prove you were right",
+        "Refuse to participate in the implementation"
+      ],
+      "correct": 0,
+      "explanation": "The chapter describes 'disagree and commit' as a crucial workplace skill. Once a decision is made, you commit fully to its success—even if you argued against it. This builds trust and organizational effectiveness while preserving your right to disagree in future discussions.",
+      "hints": [
+        "What happens to team trust if people sabotage decisions they disagreed with?",
+        "How can you maintain integrity while supporting a decision you opposed?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each workplace persuasion principle with its application:",
+      "pairs": [
+        {"left": "Written vs. verbal persuasion", "right": "Complex arguments may need documentation; simple asks work better in person"},
+        {"left": "Timing your pitch", "right": "The same proposal can succeed or fail based on when you present it"},
+        {"left": "Building coalitions", "right": "Gather support from key stakeholders before the formal decision"}
+      ],
+      "explanation": "Effective workplace persuasion requires strategic thinking about medium (written vs. spoken), timing (organizational readiness), and coalition-building (pre-meeting alignment). These practical skills turn good arguments into successful outcomes.",
+      "hints": [
+        "When might you choose email over a meeting?",
+        "Why talk to stakeholders before the big meeting?"
+      ]
+    }
+  ]
+}

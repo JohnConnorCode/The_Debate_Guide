@@ -1,0 +1,95 @@
+{
+  "title": "Logos: Constructing Reason",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is an enthymeme?",
+      "options": [
+        "A rhetorical syllogism with an unstated premise the audience fills in",
+        "A type of logical fallacy",
+        "A complete three-part syllogism",
+        "An emotional appeal disguised as logic"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that an enthymeme is 'a syllogism with one premise left unstated—usually because the audience already believes it.' This compression is powerful because it makes the audience participants in the reasoning.",
+      "hints": [
+        "Why doesn't Aristotle recommend using full formal syllogisms in rhetoric?",
+        "What role does the audience play in completing an enthymeme?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, inductive arguments provide the same level of certainty as deductive arguments.",
+      "correct": false,
+      "explanation": "The chapter clearly distinguishes them: deductive arguments 'lock shut' — if premises are true and form is valid, the conclusion is forced. Inductive arguments only provide probability: 'the next observation might break the pattern.'",
+      "hints": [
+        "What happened to the conclusion 'all swans are white'?",
+        "What word does the chapter say is 'doing crucial work' in inductive reasoning?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the difference between a 'valid' argument and a 'sound' argument?",
+      "options": [
+        "Valid means the conclusion follows from premises; sound means it's also built on true premises",
+        "Valid means the argument is ethical; sound means it's persuasive",
+        "They mean the same thing",
+        "Valid is for spoken arguments; sound is for written arguments"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Validity is purely structural. It asks: if the premises were true, would the conclusion have to follow?' Soundness 'combines structure and content'—a sound argument is valid AND built on true premises.",
+      "hints": [
+        "Can an argument be valid but have false premises?",
+        "Think about the 'all fish are mammals' example."
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's framework, what's the hidden premise in this argument?",
+      "scenario": "A political ad says: 'She's been a small business owner for 20 years—she understands what working families need.'",
+      "options": [
+        "Small business owners understand working families' needs better than non-business owners",
+        "Twenty years is the ideal amount of business experience",
+        "All politicians should own small businesses",
+        "Working families only care about business issues"
+      ],
+      "correct": 0,
+      "explanation": "Every enthymeme has a hidden premise. Here, the ad assumes the audience already believes that running a small business gives insight into working families' needs. If the audience doesn't share this assumption, the argument fails.",
+      "hints": [
+        "What would you have to already believe for this reason to support this conclusion?",
+        "The chapter says to ask: 'What's the bridge between premise and conclusion?'"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter recommend when audiences don't share your unstated premises?",
+      "options": [
+        "Find deeper premises where you converge, make your assumptions explicit, or choose your audience",
+        "Use more emotional appeals instead",
+        "Abandon logical argument entirely",
+        "Simply assert your conclusion more forcefully"
+      ],
+      "correct": 0,
+      "explanation": "The chapter offers three strategies: 'Find deeper premises' (almost everyone agrees on some level), 'Make your premises explicit' (show your work), or 'Choose your audience' (focus on people who share relevant assumptions).",
+      "hints": [
+        "What made Aristotle's approach easier than modern communication?",
+        "How does audience fragmentation affect enthymemes?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each concept with its definition:",
+      "pairs": [
+        {"left": "Syllogism", "right": "A deductive argument with two premises and a conclusion"},
+        {"left": "Enthymeme", "right": "A compressed argument with an unstated premise"},
+        {"left": "Maxim", "right": "A general statement of principle audiences already accept"}
+      ],
+      "explanation": "A syllogism is the formal logical structure. An enthymeme compresses it by leaving out what the audience already believes. A maxim represents shared wisdom that can serve as an unstated premise.",
+      "hints": [
+        "Which form is 'rhetoric's syllogism'?",
+        "What do proverbs like 'You reap what you sow' function as?"
+      ]
+    }
+  ]
+}

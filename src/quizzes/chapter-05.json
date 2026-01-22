@@ -1,0 +1,95 @@
+{
+  "title": "Ethos: The Art of Credibility",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "According to Aristotle, what are the three components of ethos?",
+      "options": [
+        "Phronesis (practical wisdom), Arete (virtue), Eunoia (goodwill)",
+        "Logic, emotion, and timing",
+        "Introduction, argument, and conclusion",
+        "Speaking, listening, and responding"
+      ],
+      "correct": 0,
+      "explanation": "Aristotle identified three pillars of credibility: phronesis (demonstrating practical wisdom and competence), arete (displaying moral virtue and character), and eunoia (showing goodwill toward the audience).",
+      "hints": [
+        "These are Greek terms specific to ethos.",
+        "Think about what makes someone trustworthy."
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each component of ethos with what it demonstrates:",
+      "pairs": [
+        {"left": "Phronesis", "right": "The speaker knows what they're talking about"},
+        {"left": "Arete", "right": "The speaker is a person of good character"},
+        {"left": "Eunoia", "right": "The speaker has the audience's best interests at heart"}
+      ],
+      "explanation": "Phronesis establishes expertise and competence. Arete establishes moral standing. Eunoia establishes that the speaker genuinely cares about the audience, not just their own agenda.",
+      "hints": [
+        "Think about the questions an audience asks about a speaker.",
+        "Which quality relates to caring about the listener?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "Ethos is established once at the beginning of a speech and cannot be gained or lost afterward.",
+      "correct": false,
+      "explanation": "The chapter emphasizes that ethos is dynamic—it can be built, damaged, or repaired throughout a speech or over time. Every word and action either adds to or subtracts from your credibility.",
+      "hints": [
+        "Think about speakers who lost credibility during a speech.",
+        "Can a single mistake damage years of built-up trust?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "How did Demosthenes build his ethos according to the chapter?",
+      "options": [
+        "Through years of dedicated practice to overcome his natural limitations",
+        "By being born into an influential family",
+        "By avoiding public speaking until he was naturally skilled",
+        "Through formal education at an elite academy"
+      ],
+      "correct": 0,
+      "explanation": "Demosthenes famously overcame a speech impediment through rigorous self-training—speaking with pebbles in his mouth, practicing against the sound of waves. His ethos came from demonstrated perseverance, not natural gifts.",
+      "hints": [
+        "The chapter presents Demosthenes as an example of earned credibility.",
+        "What did he have to overcome?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Which component of ethos is this speaker primarily trying to establish?",
+      "scenario": "A financial advisor begins a client meeting by saying: 'I'm not going to recommend anything I wouldn't put in my own portfolio. My goal is your long-term financial health, even if that means I earn less in commissions today.'",
+      "options": [
+        "Eunoia — demonstrating goodwill toward the audience",
+        "Phronesis — demonstrating expertise",
+        "Arete — demonstrating moral virtue",
+        "None of the above"
+      ],
+      "correct": 0,
+      "explanation": "By emphasizing that they prioritize the client's interests over their own profit, the advisor is establishing eunoia—genuine care for the audience. This addresses the audience's natural question: 'Are you looking out for me or yourself?'",
+      "hints": [
+        "What concern is the advisor addressing?",
+        "Which component relates to the audience's well-being?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "How did Frederick Douglass establish ethos according to the chapter?",
+      "options": [
+        "Through the power of his self-education and moral authority as one who experienced slavery",
+        "By citing his formal university credentials",
+        "By avoiding emotional appeals and using only logic",
+        "By speaking only to audiences who already agreed with him"
+      ],
+      "correct": 0,
+      "explanation": "Douglass's credibility came from his lived experience and his remarkable self-education despite being denied formal schooling. His moral authority as someone who had experienced slavery firsthand was unassailable.",
+      "hints": [
+        "Consider what made Douglass uniquely qualified to speak on slavery.",
+        "His ethos combined arete with personal witness."
+      ]
+    }
+  ]
+}

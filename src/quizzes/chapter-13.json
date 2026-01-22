@@ -1,0 +1,96 @@
+{
+  "title": "Fallacies and Traps",
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the key difference between formal and informal fallacies?",
+      "options": [
+        "Formal fallacies have broken structure; informal fallacies have flawed content",
+        "Formal fallacies are more serious; informal fallacies are minor",
+        "Formal fallacies are intentional; informal fallacies are accidental",
+        "They are the same thing with different names"
+      ],
+      "correct": 0,
+      "explanation": "Formal fallacies are structural errors—the argument's form is broken regardless of content. Informal fallacies are content errors—the structure might be fine, but something has gone wrong in how the premises relate to the conclusion.",
+      "hints": [
+        "Think about the 'all dogs are mammals / my cat is a mammal' example.",
+        "Which type has a broken logical form?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each fallacy with its description:",
+      "pairs": [
+        {"left": "Ad hominem", "right": "Attacking the person rather than the argument"},
+        {"left": "Straw man", "right": "Misrepresenting an opponent's position to make it easier to attack"},
+        {"left": "False dilemma", "right": "Presenting only two options when more exist"},
+        {"left": "Slippery slope", "right": "Claiming one step will inevitably lead to extreme consequences"}
+      ],
+      "explanation": "These are the 'greatest hits' of fallacies that appear frequently in everyday argument. Ad hominem attacks the person, straw man distorts the position, false dilemma limits options artificially, and slippery slope assumes an inevitable chain of consequences.",
+      "hints": [
+        "Which fallacy involves misrepresenting what someone said?",
+        "Which one presents a false 'either/or' choice?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, citing an expert in their field of expertise is always a fallacy.",
+      "correct": false,
+      "explanation": "The chapter distinguishes between legitimate and illegitimate appeals to authority. Citing a climate scientist on climate change is reasonable; citing that same scientist on unrelated topics isn't. The fallacy occurs when authority is used to shut down inquiry rather than inform it.",
+      "hints": [
+        "What makes an appeal to authority legitimate?",
+        "When does the chapter say expert citation is appropriate?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'fallacy fallacy'?",
+      "options": [
+        "Assuming that because an argument contains a fallacy, its conclusion must be wrong",
+        "Committing multiple fallacies at once",
+        "Naming a fallacy incorrectly",
+        "Using fallacies intentionally"
+      ],
+      "correct": 0,
+      "explanation": "The chapter warns that a weak argument can still have a correct conclusion. 'Smoking is bad because my grandfather smoked and died young' is a hasty generalization, but smoking IS bad—we have mountains of evidence to prove it. The conclusion might be true even if the argument is flawed.",
+      "hints": [
+        "Can a conclusion be correct even if the argument for it is weak?",
+        "Why is fallacy-hunting not enough?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's advice on countering fallacies gracefully, what's the best response?",
+      "scenario": "In a discussion about healthcare policy, your colleague says: 'You want universal healthcare? So you think the government should control every aspect of our lives?'",
+      "options": [
+        "Clarify your actual position: 'That's not quite what I said. I support healthcare coverage, not government control of everything. Does that change your response?'",
+        "Shout 'Straw man!' and refuse to continue",
+        "Accept the mischaracterization and try to defend it",
+        "Attack your colleague's character"
+      ],
+      "correct": 0,
+      "explanation": "The chapter advises: 'Don't name the fallacy. Instead, use redirects.' For a straw man, calmly restate your actual position and ask if that changes their response. This 'sounds like genuine curiosity while making the fallacy impossible to continue.'",
+      "hints": [
+        "What does the 'Quick Tactic' say about calling out fallacies?",
+        "Why is shouting 'Straw man!' ineffective?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, what should be the ultimate goal of knowing about fallacies?",
+      "options": [
+        "Thinking more clearly and holding beliefs that are actually supported by evidence",
+        "Winning every argument through superior technique",
+        "Making opponents look foolish",
+        "Avoiding all disagreements"
+      ],
+      "correct": 0,
+      "explanation": "The chapter concludes: 'The goal isn't winning arguments through superior technique. It's thinking more clearly—holding beliefs that are actually supported by evidence.' When you catch yourself reaching for a fallacious argument, it signals your position might be weaker than you thought.",
+      "hints": [
+        "What does the chapter say about self-scrutiny?",
+        "Is the goal to win or to understand?"
+      ]
+    }
+  ]
+}
