@@ -1,119 +1,154 @@
 {
-  "chapterId": 17,
-  "chapterTitle": "The Classroom Debate",
+  "title": "Debate in Education",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch17-q1",
       "type": "multiple-choice",
-      "question": "What is the primary educational value of classroom debate beyond learning about specific topics?",
+      "question": "What was 'disputatio' in medieval universities?",
       "options": [
-        "It prepares students for careers in law",
-        "It develops transferable critical thinking and communication skills",
-        "It identifies the smartest students in the class",
-        "It teaches students to win arguments at all costs"
+        "A formal debate where students defended theses against all challengers to earn their degrees",
+        "A type of final written examination",
+        "A punishment for academic misconduct",
+        "A student social club"
       ],
-      "correct": 1,
-      "explanation": "Classroom debate develops skills that transfer across domains: analyzing arguments, evaluating evidence, articulating positions clearly, responding to challenges, and considering multiple perspectives. These capacities serve students in any field, not just debate or law."
+      "correct": 0,
+      "explanation": "Disputatio was central to medieval university education. Students like Thomas Aquinas had to defend their ideas against structured objections, sometimes for hours. No degree was awarded without surviving this trial—knowledge that couldn't withstand scrutiny wasn't knowledge at all.",
+      "hints": [
+        "How did medieval students prove they could think?",
+        "What happened if you couldn't defend your thesis?"
+      ]
     },
     {
-      "id": "ch17-q2",
       "type": "multiple-choice",
-      "question": "Why is being assigned to argue a position you disagree with educationally valuable?",
+      "question": "What is the 'trivium' in classical education?",
       "options": [
-        "It teaches you to be dishonest effectively",
-        "It forces deep engagement with perspectives different from your own",
-        "It has no value—students should only argue their genuine beliefs",
-        "It prepares students for careers in advertising"
+        "The three foundational arts: grammar, logic, and rhetoric",
+        "A three-person debate format",
+        "The three types of logical fallacies",
+        "A Roman teaching certificate"
       ],
-      "correct": 1,
-      "explanation": "Arguing an unfamiliar or opposed position requires understanding it deeply enough to advocate for it. This develops intellectual flexibility, empathy for other viewpoints, and the ability to see beyond one's initial assumptions—core critical thinking skills."
+      "correct": 0,
+      "explanation": "The trivium was the foundation of classical education: grammar (understanding language), logic (reasoning correctly), and rhetoric (persuading effectively). These weren't separate subjects but stages of development—you learned to understand, then to analyze, then to communicate.",
+      "hints": [
+        "What subjects did classical education prioritize?",
+        "Think about the root 'tri-' meaning three."
+      ]
     },
     {
-      "id": "ch17-q3",
       "type": "true-false",
-      "question": "In academic debate, the strength of your argument matters more than your delivery and presentation.",
+      "question": "According to the chapter, teaching children to argue makes them more combative and damages their relationships.",
       "correct": false,
-      "explanation": "Both matter. A brilliant argument poorly delivered may not persuade; a weak argument excellently delivered shouldn't win. Academic debate evaluates the integration of content (logos) with effective communication (ethos and delivery). Separating them creates an incomplete picture."
+      "explanation": "The opposite is true. Children who learn to disagree well are actually less likely to escalate conflicts because they have tools others lack. They can articulate positions, listen to opposing views, and seek solutions. Kids without these skills have only two options: capitulate or fight.",
+      "hints": [
+        "What options do children have when they lack debate skills?",
+        "How does learning to argue give children a third option?"
+      ]
     },
     {
-      "id": "ch17-q4",
       "type": "multiple-choice",
-      "question": "What distinguishes a productive classroom debate from a hostile argument?",
+      "question": "What is the difference between 'critical thinking' and 'critical argument'?",
       "options": [
-        "Productive debates avoid all disagreement",
-        "Productive debates focus on ideas and evidence rather than personal attacks",
-        "Productive debates are always calm and unemotional",
-        "Productive debates end with everyone agreeing"
+        "Critical thinking analyzes claims; critical argument also constructs and defends positions",
+        "They are identical concepts",
+        "Critical argument is easier than critical thinking",
+        "Critical thinking is only for experts"
       ],
-      "correct": 1,
-      "explanation": "Productive debate involves vigorous disagreement but keeps focus on the substance of arguments rather than attacking people. Participants can be passionate and direct while respecting each other's dignity and right to hold different views."
+      "correct": 0,
+      "explanation": "Critical thinking (evaluating information, detecting fallacies) is passive and defensive. Critical argument goes further—it's the ability to construct sound reasoning yourself, not just spot problems in others'. Real-world challenges require building and defending positions, not just identifying fallacies.",
+      "hints": [
+        "What skills does debate add beyond analysis?",
+        "Is evaluating an argument the same as making one?"
+      ]
     },
     {
-      "id": "ch17-q5",
+      "type": "matching",
+      "question": "Match each educational debate format with its focus:",
+      "pairs": [
+        {"left": "Lincoln-Douglas", "right": "One-on-one debate focused on values and philosophical questions"},
+        {"left": "Policy debate", "right": "Two-on-two debate examining proposed changes to current systems"},
+        {"left": "Parliamentary debate", "right": "Improvisation and quick thinking with minimal preparation time"},
+        {"left": "Public Forum", "right": "Arguments judged by what ordinary citizens would find persuasive"}
+      ],
+      "explanation": "Different formats serve different educational purposes. Lincoln-Douglas emphasizes philosophical reasoning, Policy develops research skills, Parliamentary builds quick thinking, and Public Forum teaches communicating with real audiences.",
+      "hints": [
+        "Which format involves teams of two researching one topic for months?",
+        "Which emphasizes improvisation over research?"
+      ]
+    },
+    {
       "type": "multiple-choice",
-      "question": "How should a student respond when a peer makes an argument they find offensive or wrong?",
+      "question": "What does the Quick Tactic 'Five-Minute Debrief' recommend asking first after a classroom debate?",
       "options": [
-        "Refuse to engage and demand the argument be retracted",
-        "Attack the peer's character or motives",
-        "Engage with the argument's substance and explain why it fails",
-        "Ignore it to avoid conflict"
+        "'What was the strongest argument you heard from the side you disagreed with?'",
+        "'Who won the debate?'",
+        "'What mistakes did the losing team make?'",
+        "'What grade does each speaker deserve?'"
       ],
-      "correct": 2,
-      "explanation": "Engaging with challenging arguments is how we sharpen our own thinking and potentially change minds. If an argument is wrong, explaining why is more effective than refusing to engage. This models productive discourse and respects the classroom as a space for intellectual exploration."
+      "correct": 0,
+      "explanation": "The Five-Minute Debrief asks students to identify strong arguments from the opposing side first. This forces them to listen to opponents, not just wait for their turn. The tactic also emphasizes never announcing a winner—the goal is thinking, not victory.",
+      "hints": [
+        "What skill does this question develop?",
+        "Why not ask who won?"
+      ]
     },
     {
-      "id": "ch17-q6",
+      "type": "scenario",
+      "question": "Based on the chapter's teaching principles, what approach works best here?",
+      "scenario": "You're teaching debate to beginners. A student makes an argument that's logically flawed but shows genuine effort and engagement with the topic.",
+      "options": [
+        "Acknowledge the effort, then guide them to discover the flaw through questions",
+        "Immediately point out every logical error in front of the class",
+        "Ignore the flaw to avoid discouraging them",
+        "Tell them to start over from scratch"
+      ],
+      "correct": 0,
+      "explanation": "Good debate pedagogy balances rigor with encouragement. Acknowledging effort builds confidence, while using questions (Socratic method) helps students discover errors themselves—leading to deeper learning than simply being told what's wrong.",
+      "hints": [
+        "How does the Socratic method apply to teaching?",
+        "What's the balance between rigor and encouragement?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, why is it essential that students argue BOTH sides of an issue?",
+      "options": [
+        "Because arguing both sides builds intellectual flexibility and genuine understanding",
+        "Because it's faster than researching one side thoroughly",
+        "Because teachers can't decide which side is correct",
+        "Because it reduces the amount of preparation needed"
+      ],
+      "correct": 0,
+      "explanation": "The chapter insists that arguing both sides isn't wishy-washy—it's essential for genuine understanding. When you have to argue positions you disagree with, you discover that reasonable people can hold different views, and you understand the issue more deeply.",
+      "hints": [
+        "What happens when students only prepare one side?",
+        "What does the chapter say about intellectual flexibility?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "How did Abraham Lincoln educate himself in argument, according to the chapter?",
+      "options": [
+        "He studied grammar until he could parse any sentence, studied Euclid for logical proof, and practiced rhetoric constantly",
+        "He attended the best debate schools in Illinois",
+        "He memorized famous speeches without understanding them",
+        "He avoided all formal study and relied on natural talent"
+      ],
+      "correct": 0,
+      "explanation": "Lincoln had perhaps eighteen months of formal schooling but educated himself through a method resembling the classical trivium. He mastered grammar, studied Euclid's logical structure, and practiced rhetoric in courtrooms, debates, and speeches—developing 'arguments of devastating clarity.'",
+      "hints": [
+        "What three areas did Lincoln study?",
+        "How does this relate to the trivium?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "Research is optional in classroom debate since the goal is developing speaking skills, not demonstrating knowledge.",
+      "question": "According to the chapter, the goal of classroom debates is to produce clear winners and losers.",
       "correct": false,
-      "explanation": "Research is fundamental to substantive debate. Speaking skills without substance produce empty rhetoric. Thorough research provides the evidence and depth needed to argue effectively, teaches information literacy, and ensures debates engage with real complexity rather than uninformed opinion."
-    },
-    {
-      "id": "ch17-q7",
-      "type": "multiple-choice",
-      "question": "What is 'flowing' in competitive debate?",
-      "options": [
-        "A smooth, natural speaking style",
-        "A systematic note-taking method that tracks arguments and responses",
-        "Moving gracefully around the room while speaking",
-        "Speaking without preparation"
-      ],
-      "correct": 1,
-      "explanation": "Flowing is a note-taking system that maps arguments and responses across a debate. It tracks what each side said, what was answered, and what was 'dropped.' This organized approach enables effective refutation and ensures all arguments are addressed."
-    },
-    {
-      "id": "ch17-q8",
-      "type": "multiple-choice",
-      "question": "Why might a classroom debate include a role for non-debating students?",
-      "options": [
-        "Only to give everyone a grade",
-        "Active observation, questioning, and evaluation develops critical thinking too",
-        "It's only necessary when there are too many students",
-        "Non-debaters cannot learn from debate"
-      ],
-      "correct": 1,
-      "explanation": "Observers who actively evaluate arguments, prepare questions, or serve as judges develop critical thinking skills too. They practice analysis without performance pressure, and their questions often reveal assumptions the debaters missed."
-    },
-    {
-      "id": "ch17-q9",
-      "type": "multiple-choice",
-      "question": "How does debate preparation differ from studying for a traditional exam?",
-      "options": [
-        "Debate requires memorization; exams require understanding",
-        "Debate preparation must anticipate counterarguments and prepare responses",
-        "Exam preparation is more rigorous than debate preparation",
-        "They're essentially the same process"
-      ],
-      "correct": 1,
-      "explanation": "Debate preparation requires knowing not just your own arguments but anticipating challenges and preparing responses. This dialectical thinking—considering how your ideas will be tested—develops deeper understanding than simply memorizing material for recall."
-    },
-    {
-      "id": "ch17-q10",
-      "type": "true-false",
-      "question": "The goal of educational debate should be to identify who is 'right' about controversial issues.",
-      "correct": false,
-      "explanation": "Educational debate develops skills and understanding regardless of who 'wins.' On genuinely controversial issues, reasonable people may disagree. The educational value lies in understanding multiple perspectives, evaluating arguments, and articulating positions—not in resolving debates definitively."
+      "explanation": "The chapter explicitly states: 'Never announce a winner in classroom debates. The goal is thinking, not victory. Students who \"lost\" may have learned more.' The debrief matters more than declaring victory—it's where learning consolidates.",
+      "hints": [
+        "What does the Quick Tactic say about announcing winners?",
+        "What's the actual goal of classroom debates?"
+      ]
     }
   ]
 }

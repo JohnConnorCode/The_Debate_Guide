@@ -1,119 +1,154 @@
 {
-  "chapterId": 8,
-  "chapterTitle": "The Ethical Use of Emotion",
+  "title": "The Emotions Catalog",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch8-q1",
       "type": "multiple-choice",
-      "question": "What is the key distinction between ethical emotional persuasion and manipulation?",
+      "question": "According to Aristotle, what causes anger (orgē)?",
       "options": [
-        "Ethical persuasion uses positive emotions; manipulation uses negative ones",
-        "Ethical persuasion helps people feel what accurate understanding warrants",
-        "Ethical persuasion never involves strong emotions",
-        "The distinction depends entirely on the speaker's intentions"
-      ],
-      "correct": 1,
-      "explanation": "Ethical pathos helps audiences feel emotions that are proportionate to reality—appropriate fear of real dangers, justified anger at genuine injustice. Manipulation creates disproportionate emotional responses or emotions based on false premises."
-    },
-    {
-      "id": "ch8-q2",
-      "type": "multiple-choice",
-      "question": "A speaker who exaggerates a threat to increase audience fear is engaging in:",
-      "options": [
-        "Effective rhetoric, since persuasion requires emphasis",
-        "Emotional manipulation that misrepresents reality",
-        "Pathos that Aristotle would approve",
-        "A technique only unethical in political contexts"
-      ],
-      "correct": 1,
-      "explanation": "Exaggerating threats creates disproportionate fear—emotion that doesn't match reality. This is manipulation because the emotional response is calibrated to false information. Ethical persuasion may emphasize real threats but shouldn't fabricate or inflate them."
-    },
-    {
-      "id": "ch8-q3",
-      "type": "true-false",
-      "question": "If an emotional appeal leads to a good outcome, it was ethically justified regardless of the method.",
-      "correct": false,
-      "explanation": "Consequentialist ethics faces problems here: manipulation that happens to lead to good outcomes still treats audiences as means rather than ends, undermines their autonomy, and sets dangerous precedents. The means matter, not just the ends."
-    },
-    {
-      "id": "ch8-q4",
-      "type": "multiple-choice",
-      "question": "How should a speaker handle statistical evidence that contradicts an emotionally compelling anecdote?",
-      "options": [
-        "Suppress the statistics to preserve emotional impact",
-        "Present both, acknowledging the tension honestly",
-        "Choose whichever evidence better supports the desired conclusion",
-        "Individual stories always trump statistics morally"
-      ],
-      "correct": 1,
-      "explanation": "Ethical rhetoric requires honesty about conflicting evidence. Anecdotes illuminate but can mislead about broader patterns; statistics reveal patterns but can obscure human reality. The ethical speaker presents both, helping audiences navigate the tension thoughtfully."
-    },
-    {
-      "id": "ch8-q5",
-      "type": "multiple-choice",
-      "question": "Why is exploiting grief or trauma in an audience ethically problematic even when the cause is worthy?",
-      "options": [
-        "Grief makes people unable to process information",
-        "It treats vulnerable people as instruments rather than respecting their dignity",
-        "Emotional audiences make poor decisions",
-        "It only works temporarily"
-      ],
-      "correct": 1,
-      "explanation": "Using someone's vulnerable emotional state as a lever for persuasion—even for good causes—treats them as a means to an end rather than respecting their autonomy and dignity. Ethical persuasion supports rather than exploits the vulnerable."
-    },
-    {
-      "id": "ch8-q6",
-      "type": "true-false",
-      "question": "Creating false urgency ('Act now or it will be too late!') is acceptable if the underlying cause is genuinely important.",
-      "correct": false,
-      "explanation": "False urgency is a form of manipulation—it creates pressure based on fabricated time constraints. Even important causes deserve honest advocacy. When urgency is real, it can be communicated honestly; manufactured urgency undermines trust when discovered."
-    },
-    {
-      "id": "ch8-q7",
-      "type": "multiple-choice",
-      "question": "What role does audience consent play in the ethics of emotional persuasion?",
-      "options": [
-        "Audiences always consent implicitly by listening",
-        "Consent is irrelevant to persuasion ethics",
-        "Audiences deserve transparency about persuasive intentions and methods",
-        "Only written consent makes emotional appeals ethical"
-      ],
-      "correct": 2,
-      "explanation": "While audiences don't sign consent forms, they deserve to know what they're participating in. Hidden cameras, undisclosed agendas, and covert manipulation violate implicit norms of honest discourse. Transparent advocacy respects audience autonomy."
-    },
-    {
-      "id": "ch8-q8",
-      "type": "multiple-choice",
-      "question": "A charity showing images of suffering children to solicit donations is ethically justifiable when:",
-      "options": [
-        "It maximizes donations regardless of accuracy",
-        "The images accurately represent the situation and donations genuinely help",
-        "The children have given written permission",
-        "Such images are never ethically justifiable"
-      ],
-      "correct": 1,
-      "explanation": "Emotional appeals for charitable causes are ethical when they accurately represent reality and the proposed action genuinely addresses the problem. Staging, exaggeration, or misuse of funds would make such appeals manipulative regardless of emotional power."
-    },
-    {
-      "id": "ch8-q9",
-      "type": "true-false",
-      "question": "Speakers have an obligation to consider whether their emotional appeals might cause harm to audience members with trauma histories.",
-      "correct": true,
-      "explanation": "Ethical speakers consider the welfare of their audiences. Graphic content, certain trigger topics, or intense emotional manipulation might harm vulnerable individuals. Content warnings and thoughtful framing show respect for audience well-being without eliminating meaningful emotional engagement."
-    },
-    {
-      "id": "ch8-q10",
-      "type": "multiple-choice",
-      "question": "What is the 'emotional check' an ethical speaker should apply to their own pathos appeals?",
-      "options": [
-        "Would I want this emotional technique used on me with accurate information?",
-        "Will this make the audience cry?",
-        "Is this the most powerful emotional appeal available?",
-        "Have famous speakers used similar techniques?"
+        "A perceived undeserved slight from someone who lacks the standing to judge you",
+        "Any disagreement with another person",
+        "Physical pain or discomfort",
+        "Being ignored in any situation"
       ],
       "correct": 0,
-      "explanation": "A version of the golden rule: if the emotional appeal would seem fair and appropriate when you're the audience—given accurate information—it's likely ethical. If it depends on manipulation, exaggeration, or exploitation you'd resent receiving, it fails the test."
+      "explanation": "Aristotle defines anger as arising from 'a conspicuous revenge for a conspicuous slight at the hands of men who have no call to slight oneself.' The key elements are: the slight must be undeserved, public, and from someone who lacks standing to judge.",
+      "hints": [
+        "Why do we get angrier at peers who condescend than at teachers who correct us?",
+        "What's the difference between feeling shame and feeling anger at criticism?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each Greek term with the emotion it represents:",
+      "pairs": [
+        {"left": "Orgē", "right": "Anger—arising from undeserved slights"},
+        {"left": "Praotēs", "right": "Calmness—the opposite of anger"},
+        {"left": "Aischunē", "right": "Shame—requiring an audience who witnesses failure"},
+        {"left": "Eleos", "right": "Pity—pain at undeserved suffering"}
+      ],
+      "explanation": "Aristotle cataloged emotions systematically. Orgē (anger) arises from slights. Praotēs (calmness) is anger's opposite. Aischunē (shame) requires being seen badly. Eleos (pity) responds to undeserved suffering and requires imaginative identification.",
+      "hints": [
+        "Which emotions are opposites of each other?",
+        "Which emotion specifically requires being seen by others?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, fear requires certainty that something bad will happen.",
+      "correct": false,
+      "explanation": "The opposite is true. The chapter states: 'fear requires uncertainty—if the bad thing is certain and immediate, you don't feel fear but something closer to despair. Fear lives in the space between safety and doom.'",
+      "hints": [
+        "What emotional state replaces fear when disaster is certain?",
+        "Fear is about anticipated evil, not certain evil."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "How does the chapter explain FDR's famous line 'The only thing we have to fear is fear itself'?",
+      "options": [
+        "He redirected fear away from the economy and toward fear itself—making paralysis the enemy, not the Depression",
+        "He told people not to feel any emotions",
+        "He denied that the economic crisis was real",
+        "He argued that fear is never useful"
+      ],
+      "correct": 0,
+      "explanation": "The chapter analyzes: 'Roosevelt's famous line is a masterful use of fear against itself... He redirects that fear away from the economy and toward fear itself. The enemy isn't the Depression; the enemy is paralysis. This reframing gave Americans permission to act rather than cower.'",
+      "hints": [
+        "What was the rhetorical move FDR made?",
+        "What did he want Americans to do instead of fear?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does pity (eleos) require according to Aristotle?",
+      "options": [
+        "The suffering must be undeserved and the audience must be able to imagine it happening to them",
+        "The suffering must be extreme and violent",
+        "The sufferer must be personally known to the audience",
+        "The audience must feel guilty for causing the suffering"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Pity is the pain we feel at undeserved suffering' and 'requires imaginative identification: we feel pity when we can imagine ourselves or our loved ones in the same situation.'",
+      "hints": [
+        "Why do specific stories generate more pity than statistics?",
+        "What role does imagination play in pity?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What distinguishes shame (aischunē) from other negative emotions?",
+      "options": [
+        "Shame requires an audience—the pain of being seen badly by people whose opinion matters",
+        "Shame is always about moral failures",
+        "Shame only occurs in private",
+        "Shame is identical to guilt"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Shame is the pain of being seen badly. Not just criticized—seen. Shame requires an audience, real or imagined. You feel shame when people whose opinion matters to you witness your failure.'",
+      "hints": [
+        "What makes shame different from guilt?",
+        "Why does public commitment change behavior?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on Aristotle's analysis, how could you help calm an angry colleague?",
+      "scenario": "A colleague is furious because they felt publicly dismissed by a manager in a meeting. They believe the dismissal was unfair and are considering a confrontational response.",
+      "options": [
+        "Help them see the dismissal might have been unintentional, or show consequences the manager is already facing",
+        "Tell them their anger is irrational and they should get over it",
+        "Encourage them to immediately confront the manager while still angry",
+        "Dismiss their concerns entirely and change the subject"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that people calm down 'when they realize the slight wasn't intentional, when they see the offender suffering, when time passes and the pain fades.' Reframing the offense as unintentional or showing consequences already suffered can defuse anger.",
+      "hints": [
+        "What conditions does Aristotle say reduce anger?",
+        "Think about changing the perception of the slight."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What distinguishes envy from emulation according to Aristotle?",
+      "options": [
+        "Envy wants the rival to fail; emulation wants to rise to the rival's level",
+        "Envy is always unethical; emulation is always ethical",
+        "Envy is about equals; emulation is about superiors",
+        "They are the same emotion with different names"
+      ],
+      "correct": 0,
+      "explanation": "The chapter quotes Aristotle: 'Emulation makes us take steps to secure the good things in question, envy makes us take steps to stop our neighbour having them.' Both arise from comparison, but envy is destructive while emulation is constructive.",
+      "hints": [
+        "What does the envious person want?",
+        "How can a skilled speaker transform envy into emulation?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, people get less angry at friends than at strangers.",
+      "correct": false,
+      "explanation": "The chapter states the opposite: 'They get angrier at friends than strangers because friends should know better.' The expectation of care from friends makes their slights feel more like betrayals.",
+      "hints": [
+        "What expectation do we have of friends that we don't have of strangers?",
+        "Why would friendship raise the stakes of a slight?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the relationship between pity and indignation according to Aristotle?",
+      "options": [
+        "They're paired moral emotions—pity responds to undeserved misfortune, indignation to undeserved good fortune",
+        "They are opposites that cannot coexist",
+        "Pity is moral; indignation is immoral",
+        "They are unrelated emotions"
+      ],
+      "correct": 0,
+      "explanation": "The chapter quotes Aristotle: 'Pity is occasioned by undeserved misfortune, and indignation by undeserved good fortune.' Both presuppose that the world should be fair and respond with pain when it isn't.",
+      "hints": [
+        "What do both emotions share in common?",
+        "What assumption about the world underlies both emotions?"
+      ]
     }
   ]
 }

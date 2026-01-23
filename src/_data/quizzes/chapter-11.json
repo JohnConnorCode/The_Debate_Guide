@@ -1,125 +1,159 @@
 {
-  "chapterId": 11,
-  "chapterTitle": "Argument Structures",
+  "title": "Building Your Case",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch11-q1",
       "type": "multiple-choice",
-      "question": "In a standard syllogism, if both premises are true and the form is valid, the conclusion is:",
+      "question": "What is 'stasis' in rhetoric?",
       "options": [
-        "Probably true",
-        "Necessarily true",
-        "True if the audience accepts it",
-        "True unless contradicted by other evidence"
+        "The point of clash—the central issue on which a dispute turns",
+        "The opening statement of a speech",
+        "A technique for calming an angry audience",
+        "The conclusion of an argument"
       ],
-      "correct": 1,
-      "explanation": "This is the power of deductive validity: if the premises are true and the form is valid, the conclusion must be true. The conclusion's truth is guaranteed by the logical structure, not by audience acceptance or external factors."
+      "correct": 0,
+      "explanation": "Stasis theory, developed by Hermagoras, identifies where disagreements actually lie. There are four possible stasis points: fact (did it happen?), definition (what should we call it?), quality (was it justified?), and procedure (are we handling it correctly?).",
+      "hints": [
+        "The chapter says many debates fail because participants 'argue past each other.'",
+        "Think about the Greek meaning—it refers to a 'standing point.'"
+      ]
     },
     {
-      "id": "ch11-q2",
-      "type": "multiple-choice",
-      "question": "What distinguishes an enthymeme from a complete syllogism?",
-      "options": [
-        "Enthymemes are always invalid",
-        "Enthymemes leave one or more premises unstated because the audience supplies them",
-        "Enthymemes only deal with emotions, not logic",
-        "Enthymemes are used only in written arguments"
+      "type": "matching",
+      "question": "Match each stasis type with its central question:",
+      "pairs": [
+        {"left": "Fact", "right": "Did the thing actually happen?"},
+        {"left": "Definition", "right": "What should we call this?"},
+        {"left": "Quality", "right": "Was it justified or wrong?"},
+        {"left": "Procedure", "right": "Are we addressing this properly?"}
       ],
-      "correct": 1,
-      "explanation": "Aristotle identified the enthymeme as rhetoric's characteristic form of reasoning. By leaving premises implicit, enthymemes engage the audience as co-reasoners and make arguments more concise. The risk is that unstated premises may be false or contested."
+      "explanation": "Each stasis requires a different type of case. Building a great case about the wrong stasis is worse than useless—it makes you look like you're evading the real question.",
+      "hints": [
+        "Think about the harassment example in the chapter.",
+        "Which type of argument focuses on whether something was right or wrong?"
+      ]
     },
     {
-      "id": "ch11-q3",
       "type": "multiple-choice",
-      "question": "In the Toulmin model, what is the function of a 'warrant'?",
+      "question": "In the Toulmin model, what is a 'warrant'?",
       "options": [
-        "To provide evidence for the claim",
-        "To bridge the gap between evidence and claim by expressing the underlying principle",
-        "To qualify how certain the conclusion is",
-        "To anticipate counterarguments"
+        "The logical bridge between evidence and conclusion—why this evidence supports this claim",
+        "The main claim being made",
+        "The evidence supporting a claim",
+        "The qualification showing degree of certainty"
       ],
-      "correct": 1,
-      "explanation": "The warrant is the often-unstated principle that connects grounds (evidence) to claim. If your evidence is 'She has a medical degree' and your claim is 'She's qualified to diagnose illness,' the warrant is 'Medical degrees qualify people to diagnose illness.'"
+      "correct": 0,
+      "explanation": "The warrant answers: 'Why does this evidence support this claim?' Warrants are often unstated (like enthymeme premises), but identifying them is crucial for understanding and attacking arguments.",
+      "hints": [
+        "Think about what connects grounds to claims.",
+        "The chapter says warrants are like 'unstated premises.'"
+      ]
     },
     {
-      "id": "ch11-q4",
+      "type": "multiple-choice",
+      "question": "What are the six components of the Toulmin model?",
+      "options": [
+        "Claim, grounds, warrant, backing, qualifier, and rebuttal",
+        "Introduction, body, and conclusion",
+        "Ethos, pathos, and logos",
+        "Fact, definition, quality, and procedure"
+      ],
+      "correct": 0,
+      "explanation": "The Toulmin model includes: claim (what you're asserting), grounds (evidence), warrant (logical connection), backing (support for the warrant), qualifier (degree of certainty), and rebuttal (conditions under which the claim might not hold).",
+      "hints": [
+        "This is Stephen Toulmin's model of practical argument.",
+        "How does the model handle complexity and uncertainty?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "Inductive arguments can be valid in the same sense that deductive arguments can be valid.",
+      "question": "According to the chapter, you should always lead with your strongest argument first.",
       "correct": false,
-      "explanation": "Validity is a property of deductive arguments only—it means the conclusion follows necessarily from premises. Inductive arguments are evaluated by strength: how probable they make the conclusion. Even strong inductive arguments don't guarantee conclusions."
+      "explanation": "The chapter describes three approaches: strongest first (captures attention), strongest last (builds to climax), and strong-weak-strong (Nestorian order, burying weaker arguments in the middle). The best approach depends on context.",
+      "hints": [
+        "What are the three ordering strategies the chapter describes?",
+        "What is the Nestorian order?"
+      ]
     },
     {
-      "id": "ch11-q5",
       "type": "multiple-choice",
-      "question": "A speaker argues: 'Every democracy we've studied has protected free speech; therefore, all democracies protect free speech.' This is:",
+      "question": "What is the 'one-sentence test' described in the chapter?",
       "options": [
-        "Deductive reasoning from general to specific",
-        "Inductive reasoning from specific instances to general conclusion",
-        "Analogical reasoning comparing democracies",
-        "Circular reasoning"
+        "You should be able to state your case's central claim in a single sentence",
+        "Each argument should be exactly one sentence long",
+        "Opponents should be defeated with just one sentence",
+        "Introductions should be limited to one sentence"
       ],
-      "correct": 1,
-      "explanation": "This moves from observed cases to a generalization about all cases. It's inductive—the conclusion goes beyond the evidence. Its strength depends on how representative the studied democracies are and whether exceptions exist."
+      "correct": 0,
+      "explanation": "The one-sentence test forces precision: 'If you can't do this, your case isn't clear enough yet.' This core sentence becomes your thesis—the organizing principle for everything else.",
+      "hints": [
+        "Think about what clarifies your argument for yourself and the audience.",
+        "The chapter quotes Einstein on simplicity."
+      ]
     },
     {
-      "id": "ch11-q6",
+      "type": "scenario",
+      "question": "Based on the chapter's teaching about stasis, what should you do first?",
+      "scenario": "You're preparing to argue against a new company policy. Some colleagues dispute the facts behind it, others argue about what it should be called, and others debate whether any productivity gain justifies the employee burden.",
+      "options": [
+        "Identify which stasis is the real point of disagreement before building your case",
+        "Address all three points equally in your presentation",
+        "Pick whichever point is easiest to win",
+        "Ignore the disagreement and focus only on your preferred argument"
+      ],
+      "correct": 0,
+      "explanation": "The chapter emphasizes: 'building a great case about the wrong stasis is worse than useless.' You must first identify where the real disagreement lies—then build a case that addresses that specific stasis.",
+      "hints": [
+        "What happens when participants argue about different questions?",
+        "Why does stasis matter before case construction?"
+      ]
+    },
+    {
       "type": "multiple-choice",
-      "question": "What is a 'reductio ad absurdum' argument?",
+      "question": "What does the 'Nestorian order' refer to?",
       "options": [
-        "Mocking an opponent's position",
-        "Showing that a position leads to absurd or contradictory conclusions",
-        "Reducing a complex argument to its simplest form",
-        "Dismissing arguments as absurd without engagement"
+        "Strong-weak-strong arrangement—bury weaker arguments in the middle, open and close strong",
+        "Strongest arguments first",
+        "Weakest arguments first",
+        "Random ordering of arguments"
       ],
-      "correct": 1,
-      "explanation": "Reductio demonstrates that accepting a premise leads to conclusions that are clearly false, contradictory, or absurd. If position P implies absurd conclusion Q, and Q is clearly unacceptable, then P must be false. It's a legitimate form of indirect proof."
+      "correct": 0,
+      "explanation": "The chapter explains: 'Strong-weak-strong (the Nestorian order) buries weaker arguments in the middle where they're less noticeable. Open strong to capture attention, let middle arguments do necessary but less exciting work, close strong to leave a lasting impression.'",
+      "hints": [
+        "What do audiences remember most—beginnings and endings, or middles?",
+        "How can you minimize the impact of weaker arguments?"
+      ]
     },
     {
-      "id": "ch11-q7",
-      "type": "true-false",
-      "question": "The order in which you present arguments has no effect on their logical strength.",
-      "correct": true,
-      "explanation": "Logically, argument order is irrelevant—validity depends on structure, not sequence. However, rhetorically, order matters greatly for persuasiveness. Primacy effects, recency effects, and strategic arrangement influence how audiences process and remember arguments."
-    },
-    {
-      "id": "ch11-q8",
       "type": "multiple-choice",
-      "question": "When is argument from analogy strongest?",
+      "question": "What example does the chapter use to show effective case structure?",
       "options": [
-        "When the compared cases are similar in all respects",
-        "When the similarities are relevant to the conclusion being drawn",
-        "When the analogy is unexpected and creative",
-        "When the compared case is more familiar than the target case"
+        "Johnnie Cochran's 'If it doesn't fit, you must acquit'—compressing complex debates into a memorable principle",
+        "A scientific research paper",
+        "A political debate",
+        "A social media post"
       ],
-      "correct": 1,
-      "explanation": "Analogies depend on relevant similarity. Two things may differ in many ways but be analogous for the argument's purpose. A legal precedent might involve different people, times, and amounts but be relevantly similar in the principle at stake."
+      "correct": 0,
+      "explanation": "The chapter opens: '\"If it doesn't fit, you must acquit\"—Johnnie Cochran's famous line worked because it compressed complex forensic debates into a memorable principle. Structure gave his argument staying power.'",
+      "hints": [
+        "What made this legal argument memorable?",
+        "How does compression aid persuasion?"
+      ]
     },
     {
-      "id": "ch11-q9",
-      "type": "multiple-choice",
-      "question": "In the classical arrangement of a speech, the 'refutatio' section serves to:",
-      "options": [
-        "Summarize your main arguments",
-        "Introduce your topic and establish ethos",
-        "Anticipate and address opposing arguments",
-        "Provide emotional appeal in the conclusion"
+      "type": "matching",
+      "question": "Match each classical speech component with its function:",
+      "pairs": [
+        {"left": "Exordium", "right": "Introduction—capturing attention"},
+        {"left": "Narratio", "right": "Background and statement of facts"},
+        {"left": "Confirmatio", "right": "Arguments for your position"},
+        {"left": "Refutatio", "right": "Responses to counterarguments"}
       ],
-      "correct": 2,
-      "explanation": "Refutatio (refutation) is the section where you engage with counterarguments. By addressing objections, you strengthen your position, demonstrate thorough understanding, and show respect for opposing views—all of which enhance both logos and ethos."
-    },
-    {
-      "id": "ch11-q10",
-      "type": "multiple-choice",
-      "question": "What is the main advantage of structuring an argument as 'problem-solution'?",
-      "options": [
-        "It's the only valid argument structure",
-        "It creates a clear need before proposing action, mirroring how decisions are made",
-        "It requires less evidence than other structures",
-        "It works only for policy arguments"
-      ],
-      "correct": 1,
-      "explanation": "Problem-solution structure mirrors practical reasoning: we seek solutions when we recognize problems. By establishing a problem's existence and significance first, you create receptivity for your proposed solution. It's particularly effective for persuading audiences to action."
+      "explanation": "Classical rhetoric recommended a structure that still works today: exordium (introduction), narratio (background), divisio (outline), confirmatio (your arguments), refutatio (addressing opposition), and peroratio (conclusion).",
+      "hints": [
+        "This Latin structure has survived for centuries.",
+        "What order do these components naturally follow?"
+      ]
     }
   ]
 }

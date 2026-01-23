@@ -1,119 +1,154 @@
 {
-  "chapterId": 2,
-  "chapterTitle": "The Greek Inheritance",
+  "title": "The Greek Legacy",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch2-q1",
       "type": "multiple-choice",
-      "question": "What historical conditions in 5th-century BCE Athens made the development of rhetoric particularly urgent?",
+      "question": "According to the chapter, why did the Greeks invent rhetoric?",
       "options": [
-        "The rise of written literature replaced oral tradition",
-        "Democratic institutions required citizens to speak persuasively in courts and assemblies",
-        "Foreign invasion created a need for military propaganda",
-        "The decline of religion left a void that philosophy filled"
+        "Democracy created a system where words, not violence, decided outcomes—citizens needed to speak persuasively",
+        "Philosophers were bored and needed new subjects to study",
+        "They wanted to train professional lawyers",
+        "Greek religion required elaborate ritual speeches"
       ],
-      "correct": 1,
-      "explanation": "Athenian democracy was participatory—citizens spoke for themselves in courts (no lawyers) and voted on policy in the assembly after hearing debates. This created immediate, practical demand for rhetorical training that the Sophists and later Aristotle would systematize."
+      "correct": 0,
+      "explanation": "The chapter explains: 'When the Greeks invented democracy, they also invented a problem: how do you make decisions when thousands of citizens get an equal vote? Swords wouldn't work. Bribery was illegal. The only weapon left was words.'",
+      "hints": [
+        "Consider what changed when citizens gained equal voting rights.",
+        "What replaced physical force in determining outcomes?"
+      ]
     },
     {
-      "id": "ch2-q2",
-      "type": "multiple-choice",
-      "question": "Corax and Tisias are credited with developing early rhetorical theory in Syracuse primarily to help citizens:",
-      "options": [
-        "Compose epic poetry for religious festivals",
-        "Reclaim property after the overthrow of tyrants",
-        "Negotiate treaties with neighboring city-states",
-        "Train for Olympic oratory competitions"
+      "type": "matching",
+      "question": "Match each Greek thinker with their contribution or view:",
+      "pairs": [
+        {"left": "Protagoras", "right": "'Man is the measure of all things'—truth is relative to perception"},
+        {"left": "Gorgias", "right": "Master stylist who saw persuasion as the greatest form of power"},
+        {"left": "Plato", "right": "Attacked rhetoric as flattery; wanted philosophy seeking truth instead"},
+        {"left": "Aristotle", "right": "Systematized rhetoric in a neutral framework; identified ethos, pathos, logos"}
       ],
-      "correct": 1,
-      "explanation": "After Syracuse's tyrants were deposed around 467 BCE, citizens needed to argue property claims in court. Corax and Tisias developed systematic approaches to argumentation for these legal contexts, creating some of the first rhetorical handbooks."
+      "explanation": "Protagoras taught relativism and arguing both sides. Gorgias dazzled with stylistic performance. Plato condemned Sophistic rhetoric in dialogues like the Gorgias. Aristotle synthesized both concerns, creating systematic rhetorical theory that acknowledged both utility and ethics.",
+      "hints": [
+        "Who was famous for the claim about 'man' as the measure?",
+        "Which philosopher wrote the Rhetoric?"
+      ]
     },
     {
-      "id": "ch2-q3",
+      "type": "multiple-choice",
+      "question": "What does the chapter say about the Sophists' reputation as 'dishonest intellectuals'?",
+      "options": [
+        "The reputation comes largely from Plato, but the historical picture is more complicated and fairer to them",
+        "They were genuinely fraudulent and deserved their bad reputation",
+        "They had an excellent reputation in ancient times",
+        "Modern scholars have completely rehabilitated them"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'This reputation comes largely from Plato, who made the Sophists his philosophical villains. But the historical picture is more complicated, and fairer to the Sophists themselves.' They were practical educators who 'delivered results' and raised important philosophical questions about relativism.",
+      "hints": [
+        "Who wrote dialogues attacking the Sophists?",
+        "Does the chapter present a simple villain narrative?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "Gorgias demonstrated that rhetoric could make the weaker argument appear stronger, which he presented as proof of rhetoric's power rather than its danger.",
+      "question": "According to Aristotle's definition, rhetoric IS persuasion itself.",
+      "correct": false,
+      "explanation": "The chapter quotes Aristotle: 'Rhetoric is the faculty of observing in any given case the available means of persuasion.' It emphasizes the distinction: 'Rhetoric isn't persuasion; it's observing the means of persuasion.' This framing allows neutral study—like a doctor understanding disease without wishing to spread it.",
+      "hints": [
+        "Read Aristotle's definition carefully—what verb does he use?",
+        "How does the chapter explain this distinction?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is an 'enthymeme' according to the chapter?",
+      "options": [
+        "Rhetoric's version of a syllogism, with one premise left unstated for the audience to supply",
+        "A type of emotional appeal",
+        "A formal logical proof with all steps shown",
+        "A Greek debate format"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Aristotle gave us the concept of the enthymeme, rhetoric's version of the logical syllogism... arguments that leave some premises unstated, relying on the audience to fill in the gaps.' Example: 'He's a politician, so he's probably dishonest'—the unstated premise is 'Politicians are usually dishonest.'",
+      "hints": [
+        "What's different about rhetorical logic vs. formal logic?",
+        "What role does the audience play in completing the argument?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the Quick Tactic 'Evaluating Online Experts,' which check is being applied?",
+      "scenario": "You're evaluating a YouTube economics commentator who posts daily hot takes. You notice they've never publicly changed their position despite being wrong about several predictions.",
+      "options": [
+        "'Watch over time'—do they update their views when presented with good evidence?",
+        "'Follow the money'—checking their business model",
+        "'Check the steelman'—seeing if they can argue both sides",
+        "'Look for Plato's concern'—checking if they flatten complexity"
+      ],
+      "correct": 0,
+      "explanation": "The Quick Tactic includes: 'Watch over time. Do they update their views when presented with good evidence? Intellectual honesty shows in the corrections.' Never changing position despite being wrong is a red flag for intellectual honesty.",
+      "hints": [
+        "Which criterion relates to how someone handles being wrong?",
+        "What does intellectual honesty look like over time?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter identify as the 'digital sophists'?",
+      "options": [
+        "Modern podcast hosts, TED speakers, and video essayists who teach through online platforms",
+        "AI language models",
+        "Social media algorithms",
+        "Ancient Greek texts translated online"
+      ],
+      "correct": 0,
+      "explanation": "The chapter draws parallels: 'Protagoras would recognize them instantly. He traveled from city to city, built audiences through reputation, charged for access to wisdom... The modern version does the same, except the travel happens through fiber optic cables.' Examples include Joe Rogan, TED speakers, and creators like ContraPoints.",
+      "hints": [
+        "Who does the chapter compare to traveling teachers?",
+        "What's the modern equivalent of the Sophist circuit?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, Plato's dialogues were themselves masterpieces of rhetoric even while attacking rhetoric.",
       "correct": true,
-      "explanation": "Gorgias celebrated rhetoric's power to transform perception—famously defending Helen of Troy by arguing she was blameless. While Plato saw this as dangerous, Gorgias viewed it as demonstrating the almost magical power of logos (word/reason) to shape reality."
+      "explanation": "The chapter identifies this irony: 'Plato's position had problems. For one thing, his dialogues themselves were masterpieces of rhetoric. The way he framed the arguments, the personalities he gave his characters, the literary techniques he employed to guide readers toward his conclusions. All of this was persuasion. Plato was attacking rhetoric with rhetoric's own weapons.'",
+      "hints": [
+        "How did Plato communicate his ideas?",
+        "Did he use persuasive techniques in his own writing?"
+      ]
     },
     {
-      "id": "ch2-q4",
       "type": "multiple-choice",
-      "question": "What was Plato's primary objection to rhetoric as practiced by the Sophists?",
+      "question": "What does the chapter say happened to rhetorical education over the past century?",
       "options": [
-        "It was taught by foreigners rather than Athenian citizens",
-        "It prioritized persuasion over truth and could serve unjust ends",
-        "It was too difficult for ordinary citizens to learn",
-        "It relied too heavily on written texts rather than memory"
+        "It has largely vanished—we teach students to write essays but not to argue in public",
+        "It has dramatically expanded in schools",
+        "It shifted from Greek to Roman models",
+        "It became mandatory in all democracies"
       ],
-      "correct": 1,
-      "explanation": "In dialogues like Gorgias and Phaedrus, Plato argued that Sophistic rhetoric was mere 'cookery'—flattery that gave audiences what they wanted rather than what was true or good. He worried that persuasive power without philosophical grounding was dangerous."
+      "correct": 0,
+      "explanation": "The chapter states: 'Over the past century, rhetoric has largely vanished from education. We teach students to write essays, but we don't teach them to argue in public. We expect them to participate in democracy, but we don't give them the tools the Greeks developed for exactly that purpose.'",
+      "hints": [
+        "What does the chapter say students are and aren't taught?",
+        "How does this connect to Chapter 1's concerns about discourse?"
+      ]
     },
     {
-      "id": "ch2-q5",
       "type": "multiple-choice",
-      "question": "How did Aristotle's approach to rhetoric differ fundamentally from Plato's critique?",
+      "question": "What was the 'polis' to the Greeks?",
       "options": [
-        "Aristotle rejected rhetoric entirely as corrupt",
-        "Aristotle treated rhetoric as a neutral art that could be studied systematically",
-        "Aristotle believed only philosophers should practice rhetoric",
-        "Aristotle focused exclusively on written rather than oral discourse"
+        "More than a city-state—a community of citizens bound by participation in shared governance",
+        "A type of debate format",
+        "A Greek temple",
+        "A philosophical school"
       ],
-      "correct": 1,
-      "explanation": "Aristotle took an empirical approach, treating rhetoric as a techne (art/skill) that could be analyzed and taught. Rather than condemning it morally, he systematized its principles. His Rhetoric remains the foundational text in the field 2,400 years later."
-    },
-    {
-      "id": "ch2-q6",
-      "type": "multiple-choice",
-      "question": "Demosthenes is remembered as ancient Greece's greatest orator partly because he:",
-      "options": [
-        "Was born with exceptional natural speaking ability",
-        "Overcame a speech impediment through rigorous self-training",
-        "Invented the three appeals of ethos, pathos, and logos",
-        "Wrote speeches for Aristotle to deliver"
-      ],
-      "correct": 1,
-      "explanation": "Demosthenes reportedly overcame a stammer by practicing with pebbles in his mouth and reciting while running uphill. His story embodies the Greek belief that rhetorical excellence comes through dedicated practice (askesis), not just natural talent."
-    },
-    {
-      "id": "ch2-q7",
-      "type": "true-false",
-      "question": "The Greek term 'logos' refers exclusively to logical argumentation and rational proof.",
-      "correct": false,
-      "explanation": "Logos has a remarkably broad semantic range in Greek: word, speech, reason, argument, account, ratio, principle. This richness reflects the Greek insight that language, thought, and reality are deeply interconnected—speaking well and thinking well cannot be separated."
-    },
-    {
-      "id": "ch2-q8",
-      "type": "multiple-choice",
-      "question": "Why did the Romans consider Greek rhetorical education essential for their elite?",
-      "options": [
-        "Greek was the only written language in the ancient world",
-        "Roman law required speeches to be delivered in Greek",
-        "Rhetorical skill was necessary for political advancement in the Republic and Empire",
-        "The Romans had no native tradition of public speaking"
-      ],
-      "correct": 2,
-      "explanation": "Roman political and legal life—like Athenian—required persuasive speaking. Figures like Cicero studied Greek rhetoric intensively because success in the Senate, courts, and public life depended on oratorical skill. The Romans adapted and transmitted Greek rhetorical tradition."
-    },
-    {
-      "id": "ch2-q9",
-      "type": "multiple-choice",
-      "question": "Quintilian's definition of the ideal orator as 'a good man speaking well' (vir bonus dicendi peritus) emphasizes:",
-      "options": [
-        "Technical skill is more important than moral character",
-        "Character and competence are inseparable in true eloquence",
-        "Only morally perfect people should be allowed to speak publicly",
-        "Speaking ability is an inborn trait of virtuous people"
-      ],
-      "correct": 1,
-      "explanation": "Quintilian synthesized the Greek tradition with Roman values, arguing that genuine eloquence requires both technical mastery and moral integrity. An immoral person might be clever, but cannot be truly eloquent because eloquence serves truth and the common good."
-    },
-    {
-      "id": "ch2-q10",
-      "type": "true-false",
-      "question": "The Greek rhetorical tradition was largely forgotten in the medieval period and only rediscovered during the Renaissance.",
-      "correct": false,
-      "explanation": "While some texts were lost, rhetorical education continued throughout the medieval period, particularly in the Church and universities. The trivium (grammar, logic, rhetoric) remained foundational to education. The Renaissance saw renewed interest in classical sources, but the tradition never fully disappeared."
+      "correct": 0,
+      "explanation": "The vocabulary box explains: 'The Greek city-state, but the word meant more than geography. The polis was a community of citizens bound by participation in shared governance. To be part of a polis was to have a voice, and using that voice well was the essence of citizenship.'",
+      "hints": [
+        "How does the chapter define citizenship in the polis?",
+        "What made the polis different from just a city?"
+      ]
     }
   ]
 }

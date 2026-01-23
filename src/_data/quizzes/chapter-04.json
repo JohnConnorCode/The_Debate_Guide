@@ -1,119 +1,152 @@
 {
-  "chapterId": 4,
-  "chapterTitle": "Kairos: The Right Moment",
+  "title": "Kairos: The Art of Perfect Timing",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch4-q1",
       "type": "multiple-choice",
-      "question": "How does kairos differ from chronos in Greek conceptions of time?",
+      "question": "What is kairos?",
       "options": [
-        "Kairos is past time; chronos is future time",
-        "Chronos is quantitative clock-time; kairos is qualitative opportune time",
-        "Kairos refers to hours; chronos refers to days",
-        "They are synonyms with no meaningful distinction"
+        "The opportune moment for speech or action—the right time when conditions align to make persuasion possible",
+        "The length of time a speech should last",
+        "The Greek word for clock",
+        "A type of logical argument"
       ],
-      "correct": 1,
-      "explanation": "Chronos is sequential, measurable time—minutes, hours, years. Kairos is the qualitative dimension: the right moment, the opportune occasion when action becomes particularly effective. A skilled rhetor recognizes when conditions align for maximum impact."
+      "correct": 0,
+      "explanation": "The vocabulary box explains: 'The opportune moment for speech or action. Not clock time (chronos) but the right time, the moment when conditions align to make persuasion possible. Kairos includes reading the audience, the context, and the cultural moment to know when to speak and what to say.'",
+      "hints": [
+        "Kairos is about quality of time, not quantity.",
+        "How does the chapter distinguish it from chronos?"
+      ]
     },
     {
-      "id": "ch4-q2",
-      "type": "multiple-choice",
-      "question": "A speaker who adjusts their prepared remarks after sensing the audience's mood is demonstrating:",
-      "options": [
-        "Poor preparation and lack of confidence",
-        "Kairotic awareness and rhetorical flexibility",
-        "Manipulation and dishonesty",
-        "Disrespect for the audience's time"
+      "type": "matching",
+      "question": "Match each Greek time concept with its meaning:",
+      "pairs": [
+        {"left": "Kairos", "right": "Qualitative time—the moment that matters, the opening that appears and vanishes"},
+        {"left": "Chronos", "right": "Sequential, quantitative time—the steady tick of the clock"}
       ],
-      "correct": 1,
-      "explanation": "Kairos requires reading the situation and adapting. The best speakers remain responsive to audience energy, current events, and contextual factors. Rigid adherence to a script, regardless of circumstances, ignores the temporal dimension of rhetoric."
+      "explanation": "Chronos is measurable, indifferent to human affairs—'an hour at the DMV is the same length as an hour with someone you love.' Kairos is the instant when action is possible, like 'the instant when the target presents itself and the wind dies and the breath is still.'",
+      "hints": [
+        "Which concept gives us the word 'chronology'?",
+        "Which is about the 'right' time rather than clock time?"
+      ]
     },
     {
-      "id": "ch4-q3",
+      "type": "multiple-choice",
+      "question": "What example does the chapter use to show how the same speech became legendary through timing?",
+      "options": [
+        "Martin Luther King Jr.'s 'I Have a Dream' speech—given earlier versions for years, but the March on Washington provided the kairos",
+        "Lincoln's Gettysburg Address",
+        "Churchill's 'We shall fight on the beaches'",
+        "Obama's 2008 victory speech"
+      ],
+      "correct": 0,
+      "explanation": "The chapter opens: 'Martin Luther King Jr. had been giving versions of the \"I Have a Dream\" speech for years... But none of those versions entered history. The version that did was delivered on August 28, 1963, to a quarter million people gathered at the Lincoln Memorial... The content hadn't changed. The moment had.'",
+      "hints": [
+        "Which speech does the chapter use as its opening example?",
+        "What was different about the Washington version?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "Kairos can be fully planned and controlled through careful preparation.",
+      "question": "According to the chapter, kairos is only about waiting passively for the right moment to arrive.",
       "correct": false,
-      "explanation": "While preparation increases your ability to recognize and seize kairotic moments, kairos inherently involves contingency and responsiveness to unfolding circumstances. You cannot script the opportune moment—you must cultivate the judgment to recognize and act on it."
+      "explanation": "The chapter states: 'Here's the counterintuitive part: kairos isn't just about waiting for the right moment. It's also about creating that moment. The skilled speaker doesn't passively hope conditions will align. They actively shape conditions to make their argument land.'",
+      "hints": [
+        "Can speakers create favorable conditions?",
+        "What does the Obama 2004 convention example show?"
+      ]
     },
     {
-      "id": "ch4-q4",
       "type": "multiple-choice",
-      "question": "Why might the same argument succeed in one context but fail in another?",
+      "question": "What does the chapter say about Frederick Douglass and cultural kairos?",
       "options": [
-        "Arguments are either valid or invalid regardless of context",
-        "Audiences are irrational and unpredictable",
-        "The kairotic conditions—timing, audience state, cultural moment—affect receptivity",
-        "Speakers perform inconsistently from day to day"
+        "He kept speaking for decades, building audience and refining arguments, so that when cultural kairos arrived in the 1850s-60s, he and his message were ready",
+        "He waited silently until the moment was perfect",
+        "He only spoke once, at exactly the right moment",
+        "Cultural kairos was irrelevant to his success"
       ],
-      "correct": 2,
-      "explanation": "Arguments don't exist in a vacuum. An audience's readiness to hear a message depends on current events, emotional state, prior exposure to ideas, and countless contextual factors. Effective rhetoric accounts for these temporal and situational variables."
+      "correct": 0,
+      "explanation": "The chapter explains: 'Douglass didn't stop speaking because the time wasn't right. He kept speaking, building an audience and refining his arguments, so that when the time came, both he and his message were ready.' His arguments eventually 'became the language in which the debate was conducted.'",
+      "hints": [
+        "Did Douglass wait passively or prepare actively?",
+        "What happened when the cultural moment arrived?"
+      ]
     },
     {
-      "id": "ch4-q5",
+      "type": "scenario",
+      "question": "Based on the Quick Tactic 'Should-I-Engage Test,' which criterion is being evaluated?",
+      "scenario": "You're considering responding to someone online who seems more interested in attacking people than finding truth. You realize your goals for the conversation are completely different from theirs.",
+      "options": [
+        "'Are your objectives compatible?'—if you want truth and they want dominance, the kairos for productive debate doesn't exist",
+        "'Is it real?'—checking if it's an actual disagreement",
+        "'Is it specific?'—checking if the conflict is well-defined",
+        "'Is it worth the cost?'—checking if it matters enough"
+      ],
+      "correct": 0,
+      "explanation": "The Quick Tactic includes: 'Are your objectives compatible? If you want truth and they want dominance, the kairos for productive debate doesn't exist.' The chapter advises: 'If their objectives and yours are fundamentally incompatible, the kairos for productive debate may never arrive.'",
+      "hints": [
+        "What happens when two people have incompatible goals?",
+        "Can productive debate occur without shared objectives?"
+      ]
+    },
+    {
       "type": "multiple-choice",
-      "question": "In classical rhetoric, what is the relationship between kairos and decorum (to prepon)?",
+      "question": "What does the chapter identify as the three scales at which kairos operates?",
       "options": [
-        "They are unrelated concepts from different rhetorical traditions",
-        "Decorum concerns what is fitting; kairos concerns when it is fitting",
-        "Kairos replaced decorum in later rhetorical theory",
-        "Decorum applies only to written texts; kairos only to speeches"
+        "Conversational (when a dialogue partner is ready), organizational (when a company is open), and cultural (when society is primed)",
+        "Past, present, and future",
+        "Local, national, and global",
+        "Speaking, writing, and listening"
       ],
-      "correct": 1,
-      "explanation": "Decorum addresses appropriateness of style and content to audience and occasion; kairos addresses timing and opportunity. Together they capture the rhetorical imperative to say the right thing, in the right way, at the right time."
+      "correct": 0,
+      "explanation": "The chapter states: 'Kairos operates at multiple scales. There's the kairos of a particular conversation: knowing when your dialogue partner is ready to hear a difficult truth. There's the kairos of an organization: sensing when the company is open to a new initiative. And there's cultural kairos: understanding when society is primed for certain ideas.'",
+      "hints": [
+        "The chapter describes three different contexts for timing.",
+        "Which scale relates to societal readiness for ideas?"
+      ]
     },
     {
-      "id": "ch4-q6",
       "type": "multiple-choice",
-      "question": "A politician who announces a policy reform immediately after a relevant crisis is leveraging kairos by:",
+      "question": "What does the Digital Timing Check Quick Tactic recommend about posting during major news events?",
       "options": [
-        "Exploiting tragedy, which is always unethical",
-        "Recognizing when public attention and receptivity are heightened",
-        "Avoiding the hard work of building gradual support",
-        "Distracting from more important issues"
+        "Wait unless your content directly connects to it—major events drown smaller conversations",
+        "Always post immediately to ride the wave",
+        "Never post during news events under any circumstances",
+        "Post more frequently to compete for attention"
       ],
-      "correct": 1,
-      "explanation": "Crises often create openings for change that wouldn't exist otherwise. While exploitation is possible, recognizing when conditions favor action is legitimate rhetorical awareness. The ethics depend on whether the proposed action genuinely addresses the crisis."
+      "correct": 0,
+      "explanation": "The Quick Tactic advises: 'News cycle: Major events drown smaller conversations. If something big just broke, wait unless your content directly connects to it.' The chapter notes that 'the window for influencing interpretation is often measured in minutes' for connected content.",
+      "hints": [
+        "What happens to smaller conversations during big news?",
+        "When might you post during major events?"
+      ]
     },
     {
-      "id": "ch4-q7",
       "type": "true-false",
-      "question": "Kairos suggests that being too early with an argument can be just as ineffective as being too late.",
+      "question": "According to the chapter, pauses in speech are examples of kairos in action.",
       "correct": true,
-      "explanation": "An argument presented before its audience is ready may be dismissed or ignored; the same argument presented after the moment has passed may seem irrelevant. Kairos is about finding the window when receptivity is optimal—neither premature nor belated."
+      "explanation": "The chapter states: 'Pauses are pure kairos. A pause before your main point creates anticipation. A pause after creates space for absorption. Rushing through your argument violates chronological efficiency, but it often destroys kairotic effectiveness.'",
+      "hints": [
+        "What do pauses create in a speech?",
+        "Can silence be rhetorically powerful?"
+      ]
     },
     {
-      "id": "ch4-q8",
       "type": "multiple-choice",
-      "question": "How does understanding kairos change the way we evaluate historical speeches?",
+      "question": "According to the chapter, what is the difference between rhetoric and manipulation when creating kairos?",
       "options": [
-        "It doesn't—great speeches work in any era",
-        "It helps explain why speeches that moved contemporaries may seem less powerful today",
-        "It proves that historical speeches were less sophisticated than modern ones",
-        "It shows that rhetoric has declined since ancient times"
+        "Rhetoric uses transparency of purpose and honest concerns; manipulation uses manufactured fears to stampede people",
+        "There is no difference",
+        "Rhetoric is always manipulation",
+        "Manipulation is more effective"
       ],
-      "correct": 1,
-      "explanation": "Speeches are interventions in specific historical moments. Understanding the kairotic context—what the audience knew, feared, hoped for—helps us appreciate why certain words had such impact then, even if they seem less urgent now."
-    },
-    {
-      "id": "ch4-q9",
-      "type": "multiple-choice",
-      "question": "What skill is most essential for recognizing kairotic opportunities?",
-      "options": [
-        "Extensive vocabulary and grammatical precision",
-        "Situational awareness and empathetic understanding of audience",
-        "Loud, confident delivery",
-        "Memorization of classical speeches"
-      ],
-      "correct": 1,
-      "explanation": "Kairos requires reading the room—sensing where an audience is emotionally and intellectually, understanding the broader cultural moment, and recognizing when conditions favor particular messages. This is perceptual and empathetic skill, not just technical ability."
-    },
-    {
-      "id": "ch4-q10",
-      "type": "true-false",
-      "question": "In debate, responding immediately to every point is always better than waiting for a more strategic moment.",
-      "correct": false,
-      "explanation": "Effective debaters exercise kairotic judgment about when to address points. Sometimes immediate response is best; other times, waiting allows you to address multiple points together, build to a stronger rebuttal, or let a weak argument expose itself."
+      "correct": 0,
+      "explanation": "The chapter explains: 'The difference between manipulation and rhetoric is transparency of purpose. If your groundwork consists of genuine concerns shared honestly, you're practicing rhetoric. If it consists of manufactured fears designed to stampede people toward your preferred conclusion, you're manipulating.'",
+      "hints": [
+        "What makes the difference according to the chapter?",
+        "Can you honestly prepare an audience for your argument?"
+      ]
     }
   ]
 }

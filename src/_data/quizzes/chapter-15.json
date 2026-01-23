@@ -1,119 +1,153 @@
 {
-  "chapterId": 15,
-  "chapterTitle": "Steelmanning",
+  "title": "Steelmanning",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch15-q1",
       "type": "multiple-choice",
-      "question": "What is the essential difference between steelmanning and strawmanning?",
+      "question": "What is 'steelmanning'?",
       "options": [
-        "Steelmanning uses statistics; strawmanning uses anecdotes",
-        "Steelmanning reconstructs the strongest version of an argument; strawmanning distorts it to be weaker",
-        "Steelmanning is used in formal debates; strawmanning in casual arguments",
-        "Steelmanning attacks character; strawmanning attacks logic"
+        "Articulating your opponent's argument in its strongest possible form before responding",
+        "Attacking the weakest version of an argument",
+        "Refusing to engage with opposing views",
+        "Using metal metaphors in debate"
       ],
-      "correct": 1,
-      "explanation": "Steelmanning is the opposite of strawmanning. While strawmanning weakens an opponent's argument to make it easier to defeat, steelmanning strengthens it to ensure you're engaging with the best version. This leads to more productive discourse and stronger conclusions."
+      "correct": 0,
+      "explanation": "Steelmanning is the opposite of strawmanning. Instead of weakening your opponent's argument, you strengthen it—articulating their position better than they did, filling gaps, removing ambiguities—then addressing that improved version.",
+      "hints": [
+        "What's the opposite of a 'straw man'?",
+        "Why would you help your opponent make their case?"
+      ]
     },
     {
-      "id": "ch15-q2",
-      "type": "multiple-choice",
-      "question": "Why does steelmanning an opponent's argument actually strengthen your own position?",
-      "options": [
-        "It confuses the opponent and makes them lose focus",
-        "It demonstrates you can defeat the strongest version, not just a weak caricature",
-        "It makes your speech longer and more impressive",
-        "It avoids the need to provide your own evidence"
-      ],
-      "correct": 1,
-      "explanation": "If you can refute the strongest version of an opposing argument, you've truly engaged with the challenge. Defeating a weak version proves nothing—the opponent can simply say 'that's not what I meant.' Steelmanning ensures genuine engagement with substantive disagreement."
-    },
-    {
-      "id": "ch15-q3",
       "type": "true-false",
-      "question": "Steelmanning requires you to agree with your opponent's position.",
+      "question": "According to the chapter, defeating a weak version of an opponent's argument proves you've won the debate.",
       "correct": false,
-      "explanation": "Steelmanning is about understanding, not agreement. You're reconstructing the strongest case for a position you may ultimately reject. This intellectual exercise—inhabiting an opposing view to understand its best form—enhances critical thinking regardless of your conclusion."
+      "explanation": "The chapter emphasizes: 'Beating a weak version proves nothing except that your opponent argued poorly. Beating a strong version—the best case that could be made for the other side—proves the position itself has problems. The victory is real.'",
+      "hints": [
+        "What does defeating a strawman actually prove?",
+        "Why does the strength of the opposed argument matter?"
+      ]
     },
     {
-      "id": "ch15-q4",
       "type": "multiple-choice",
-      "question": "The 'principle of charity' in argumentation requires:",
+      "question": "What is the 'principle of charity' in argumentation?",
       "options": [
-        "Being generous with praise for opponents",
-        "Interpreting ambiguous statements in the most reasonable way",
-        "Donating to your opponent's preferred cause",
-        "Avoiding all criticism of opposing views"
+        "Interpreting others' statements in the most reasonable way possible, filling gaps generously",
+        "Donating to philosophical causes",
+        "Being kind to your opponent regardless of their argument",
+        "Avoiding all criticism"
       ],
-      "correct": 1,
-      "explanation": "The principle of charity means interpreting unclear or ambiguous statements in the most reasonable light before criticizing them. If an argument can be read two ways—one sensible, one absurd—assume the sensible reading. This prevents attacking positions no one actually holds."
+      "correct": 0,
+      "explanation": "The principle of charity means assuming the most reasonable interpretation when something is ambiguous, filling gaps generously, and giving the benefit of the doubt. It distinguishes stated arguments from intended arguments.",
+      "hints": [
+        "How should you handle ambiguous statements?",
+        "What's the alternative—'interpretive hostility'?"
+      ]
     },
     {
-      "id": "ch15-q5",
       "type": "multiple-choice",
-      "question": "A skilled debater says, 'The strongest case for my opponent's view is...' before refuting it. This technique:",
+      "question": "What is the 'Ideological Turing Test' mentioned in the chapter?",
       "options": [
-        "Wastes valuable speaking time",
-        "Builds credibility by demonstrating fairness and comprehension",
-        "Shows weakness by acknowledging opposing strengths",
-        "Is only appropriate in academic philosophy"
+        "Articulating your opponent's position so well that a neutral observer can't tell if you believe it",
+        "A computer program that generates arguments",
+        "A test for logical fallacies",
+        "A formal debate scoring system"
       ],
-      "correct": 1,
-      "explanation": "Articulating your opponent's best case builds ethos—audiences recognize intellectual honesty and respect it. It also inoculates against claims that you've misrepresented the opposition and makes your subsequent refutation more convincing."
+      "correct": 0,
+      "explanation": "Bryan Caplan's Ideological Turing Test asks: can you articulate your opponent's position well enough that a neutral observer couldn't tell whether you believe it? If your summary is obviously hostile, you haven't done the intellectual work.",
+      "hints": [
+        "What would passing this test prove?",
+        "How can you tell if your summary is hostile?"
+      ]
     },
     {
-      "id": "ch15-q6",
+      "type": "scenario",
+      "question": "Based on the chapter's steelmanning process, what should you do first?",
+      "scenario": "A family member shares a political view you strongly disagree with. You want to engage productively rather than just argue.",
+      "options": [
+        "Really listen, articulate their position back to them, then strengthen it before responding",
+        "Immediately explain why they're wrong with your best arguments",
+        "Find the weakest point in what they said and attack it",
+        "Change the subject to avoid conflict"
+      ],
+      "correct": 0,
+      "explanation": "The chapter outlines a process: (1) Really listen, (2) Articulate their position back to check understanding, (3) Strengthen the argument by filling gaps, then (4) Respond to the steelmanned version. 'Ninety seconds of steelmanning saves ninety minutes of talking past each other.'",
+      "hints": [
+        "What are the steps in the steelmanning process?",
+        "What should happen before you critique?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each reason for steelmanning with its benefit:",
+      "pairs": [
+        {"left": "If you defeat the strongest version, you've proven something real", "right": "The victory means more"},
+        {"left": "Demonstrating you understand the opposition", "right": "Builds credibility and earns respect"},
+        {"left": "Looking for ways you might be wrong", "right": "Protects against self-deception"}
+      ],
+      "explanation": "The chapter gives three reasons: (1) defeating the strongest version proves the position itself is flawed, (2) understanding opponents builds ethos and earns respect, (3) actively seeking flaws in your own reasoning protects against self-deception.",
+      "hints": [
+        "What happens when you only beat a weak argument?",
+        "How does steelmanning relate to intellectual honesty?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to Daniel Dennett's rules quoted in the chapter, what should you do before criticizing?",
+      "options": [
+        "Re-express your target's position so clearly that they say 'Thanks, I wish I'd thought of putting it that way'",
+        "Find their weakest point immediately",
+        "Ignore their strongest arguments",
+        "Focus only on what you disagree with"
+      ],
+      "correct": 0,
+      "explanation": "Dennett's first rule: 'You should attempt to re-express your target's position so clearly, vividly, and fairly that your target says, \"Thanks, I wish I'd thought of putting it that way.\"' Only then are you prepared to criticize.",
+      "hints": [
+        "What standard does Dennett set for understanding opponents?",
+        "How do you know you've understood well enough?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "Steelmanning is inappropriate when your opponent has explicitly stated a weak version of their argument.",
+      "question": "According to the chapter, steelmanning means you must agree with your opponent's conclusion.",
       "correct": false,
-      "explanation": "Even when opponents articulate weak versions of their position, engaging with the strongest version is often more productive. You might say, 'I think there's an even stronger case for your view...' This generosity advances genuine understanding rather than scoring easy points."
+      "explanation": "Steelmanning doesn't require agreement—it requires understanding. You articulate the strongest version of their argument, then respond to that version. You may still disagree, but your disagreement will be with their actual position, not a caricature.",
+      "hints": [
+        "What's the difference between understanding and agreeing?",
+        "Can you steelman something you ultimately reject?"
+      ]
     },
     {
-      "id": "ch15-q7",
       "type": "multiple-choice",
-      "question": "How does steelmanning relate to Socratic inquiry?",
+      "question": "What does the chapter say about people who only engage with weak versions of opposing arguments?",
       "options": [
-        "They are opposites—Socrates attacked arguments, steelmanning defends them",
-        "Both involve genuine curiosity about the strongest case for different positions",
-        "Steelmanning replaces Socratic questioning in modern rhetoric",
-        "Socrates invented the term 'steelmanning'"
+        "They may be signaling tribal loyalty rather than seeking truth",
+        "They are always acting in bad faith",
+        "They have superior debate skills",
+        "They are more efficient debaters"
       ],
-      "correct": 1,
-      "explanation": "Both steelmanning and Socratic inquiry stem from genuine intellectual curiosity—wanting to understand the best case for positions, including those you might disagree with. Socrates often reconstructed and explored views sympathetically before examining them critically."
+      "correct": 0,
+      "explanation": "The chapter notes that attacking strawmen often signals tribal loyalty—showing your side you're on their team—rather than genuine truth-seeking. This may win social approval but doesn't advance understanding.",
+      "hints": [
+        "What social function might strawmanning serve?",
+        "What's the difference between truth-seeking and signaling?"
+      ]
     },
     {
-      "id": "ch15-q8",
       "type": "multiple-choice",
-      "question": "When steelmanning, you discover your opponent's position is stronger than you initially thought. What should you do?",
+      "question": "According to the chapter, what happens when you successfully steelman an opponent?",
       "options": [
-        "Abandon steelmanning to avoid strengthening their case",
-        "Pretend you didn't notice and attack the weaker version",
-        "Honestly acknowledge the strength and either modify your position or find a stronger response",
-        "Change the subject to avoid the difficulty"
+        "They're more likely to listen to your response because you've shown you understand them",
+        "They immediately agree with you",
+        "The debate ends",
+        "You lose the argument"
       ],
-      "correct": 2,
-      "explanation": "This is a feature, not a bug. If steelmanning reveals genuine strength in an opposing view, intellectual honesty requires acknowledging it. You might modify your position, find more compelling counterarguments, or recognize legitimate disagreement. Truth-seeking requires following arguments where they lead."
-    },
-    {
-      "id": "ch15-q9",
-      "type": "multiple-choice",
-      "question": "What is the relationship between steelmanning and intellectual humility?",
-      "options": [
-        "Steelmanning requires arrogance to presume you can improve on your opponent's argument",
-        "Steelmanning embodies humility by acknowledging that opponents may have insights you lack",
-        "Intellectual humility is irrelevant to debate technique",
-        "Only humble people should steelman; confident debaters should attack directly"
-      ],
-      "correct": 1,
-      "explanation": "Steelmanning requires the humility to recognize that you might be wrong, that opponents might have insights you've missed, and that understanding before refuting is more important than quick victories. It's incompatible with the assumption that you already have all the answers."
-    },
-    {
-      "id": "ch15-q10",
-      "type": "true-false",
-      "question": "Steelmanning can sometimes reveal that an apparent disagreement is actually a misunderstanding.",
-      "correct": true,
-      "explanation": "When you articulate the strongest version of an opposing view, you sometimes discover that the disagreement was semantic or based on talking past each other. Steelmanning clarifies what's actually at stake, sometimes dissolving apparent conflicts and focusing attention on genuine disagreements."
+      "correct": 0,
+      "explanation": "The chapter explains that demonstrating understanding earns goodwill: 'When you've shown you can argue their side as well as they can, they know you're not dismissing them out of ignorance. That makes them more willing to consider your actual response.'",
+      "hints": [
+        "How does understanding affect the other person's receptivity?",
+        "Why does showing you've listened matter?"
+      ]
     }
   ]
 }

@@ -1,119 +1,153 @@
 {
-  "chapterId": 19,
-  "chapterTitle": "Public Speaking",
+  "title": "Debate as Civic Duty",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch19-q1",
       "type": "multiple-choice",
-      "question": "According to classical rhetorical theory, what is the relationship between preparation and seemingly spontaneous eloquence?",
+      "question": "What is 'isegoria' in the Athenian democratic tradition?",
       "options": [
-        "True eloquence cannot be prepared—it must be purely spontaneous",
-        "Thorough preparation enables the appearance of effortless spontaneity",
-        "Preparation and spontaneity are opposites that cannot coexist",
-        "Audiences prefer obviously prepared speeches"
-      ],
-      "correct": 1,
-      "explanation": "The Roman concept of 'sprezzatura' (studied carelessness) captures this: the best speakers prepare so thoroughly that their delivery seems natural and spontaneous. Deep familiarity with material enables responsive, conversational delivery rather than rigid recitation."
-    },
-    {
-      "id": "ch19-q2",
-      "type": "multiple-choice",
-      "question": "What is the primary purpose of an exordium (introduction) in classical speech structure?",
-      "options": [
-        "To summarize the entire speech",
-        "To establish ethos and make the audience receptive",
-        "To present the strongest evidence",
-        "To refute anticipated counterarguments"
-      ],
-      "correct": 1,
-      "explanation": "The exordium's job is to capture attention, establish credibility, and create goodwill before the substantive argument begins. Without this foundation, even strong arguments may fall on unreceptive ears. First impressions shape how everything else is received."
-    },
-    {
-      "id": "ch19-q3",
-      "type": "true-false",
-      "question": "Nervous energy before speaking should be completely suppressed for best performance.",
-      "correct": false,
-      "explanation": "Some nervous energy actually enhances performance by increasing alertness and engagement. The goal is channeling anxiety into energy rather than eliminating it. Completely flat speakers often seem disengaged. Managed nervousness can become dynamic delivery."
-    },
-    {
-      "id": "ch19-q4",
-      "type": "multiple-choice",
-      "question": "What does 'knowing your audience' primarily mean in rhetorical terms?",
-      "options": [
-        "Researching their personal lives before speaking",
-        "Understanding their values, knowledge level, and concerns to adapt your message",
-        "Addressing each audience member by name",
-        "Telling them what they want to hear"
-      ],
-      "correct": 1,
-      "explanation": "Audience analysis means understanding what your listeners value, what they already know, what concerns them, and what will make your message relevant to them. This enables adaptation in content, examples, and framing—not to pander, but to communicate effectively."
-    },
-    {
-      "id": "ch19-q5",
-      "type": "multiple-choice",
-      "question": "Why is the 'rule of three' (tricolon) effective in speeches?",
-      "options": [
-        "It's arbitrary tradition with no psychological basis",
-        "Three items create a pattern that's memorable and feels complete",
-        "Audiences can only remember three things",
-        "It only works in English-language speeches"
-      ],
-      "correct": 1,
-      "explanation": "Three items establish a pattern: the first sets up, the second develops, the third completes. This creates rhythm and a sense of closure. 'Life, liberty, and the pursuit of happiness' or 'government of the people, by the people, for the people' demonstrate this principle's power."
-    },
-    {
-      "id": "ch19-q6",
-      "type": "multiple-choice",
-      "question": "What is the purpose of a peroration (conclusion) in classical speech structure?",
-      "options": [
-        "To introduce new arguments",
-        "To summarize key points and create emotional closure or call to action",
-        "To acknowledge the opposing view",
-        "To provide detailed evidence"
-      ],
-      "correct": 1,
-      "explanation": "The peroration reinforces what audiences should remember and feel. It summarizes without simply repeating, and often intensifies emotional appeal—since it's the last thing heard, it shapes what lingers. It's where you crystallize your message and move audiences toward response."
-    },
-    {
-      "id": "ch19-q7",
-      "type": "true-false",
-      "question": "Reading from a manuscript is always inferior to speaking from memory or notes.",
-      "correct": false,
-      "explanation": "Different contexts require different approaches. Formal addresses where precise wording matters (presidential speeches, legal arguments) may appropriately use manuscripts. Conversational settings benefit from notes or memory. The best approach depends on context, content, and the speaker's abilities."
-    },
-    {
-      "id": "ch19-q8",
-      "type": "multiple-choice",
-      "question": "How does pausing function rhetorically in a speech?",
-      "options": [
-        "Pausing indicates the speaker has forgotten their lines",
-        "Strategic pauses create emphasis, allow absorption, and build anticipation",
-        "Pausing wastes the audience's time",
-        "Pauses should only occur between sentences"
-      ],
-      "correct": 1,
-      "explanation": "Silence is a powerful rhetorical tool. Pauses before key points create anticipation; pauses after allow absorption. They give audiences time to process, signal importance, and demonstrate speaker confidence. Rushing suggests nervousness; strategic pausing suggests command."
-    },
-    {
-      "id": "ch19-q9",
-      "type": "multiple-choice",
-      "question": "What is 'impromptu speaking' and what skills does it require?",
-      "options": [
-        "Speaking after minimal or no preparation, requiring quick thinking and rhetorical flexibility",
-        "Speaking while reading from a prompter",
-        "Speaking only about topics you already know well",
-        "Speaking without any structure or organization"
+        "The equal right of all citizens to speak in the assembly",
+        "A type of voting system",
+        "The right to hold public office",
+        "A religious ritual"
       ],
       "correct": 0,
-      "explanation": "Impromptu speaking requires organizing thoughts quickly, drawing on existing knowledge, and maintaining composure without preparation time. It's the most challenging form of public speaking but develops through practice with structural frameworks and broad knowledge cultivation."
+      "explanation": "Isegoria was a foundational principle of Athenian democracy: every citizen had an equal right to address the assembly, regardless of wealth, birth, or status. The marketplace of ideas meant nothing without equal access to the marketplace.",
+      "hints": [
+        "What made Athenian democracy participatory?",
+        "Think about the root 'iso-' meaning equal."
+      ]
     },
     {
-      "id": "ch19-q10",
+      "type": "multiple-choice",
+      "question": "What is 'parrhesia' in Greek political thought?",
+      "options": [
+        "Frank, fearless speech—the courage to speak truth even when it's dangerous or unwelcome",
+        "Speaking only when you're certain you're right",
+        "The art of flattering powerful people",
+        "A formal debate format"
+      ],
+      "correct": 0,
+      "explanation": "Parrhesia means frank or fearless speech—saying what you believe to be true even when it's unpopular or risky. It's about courage in speaking, not certainty. The parrhesiast speaks their honest view and takes responsibility for it.",
+      "hints": [
+        "Does parrhesia require certainty or courage?",
+        "What's the relationship between honesty and popularity in parrhesia?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'deliberative democracy' as the chapter describes it?",
+      "options": [
+        "A model where legitimate decisions emerge from open discussion among citizens, not just voting",
+        "A system where only experts make decisions",
+        "Democracy that moves slowly and carefully",
+        "Voting only after long waiting periods"
+      ],
+      "correct": 0,
+      "explanation": "Deliberative democracy holds that legitimacy comes not just from majority vote but from the quality of deliberation preceding it. Citizens must have opportunity to hear arguments, ask questions, and reason together—not simply register pre-formed preferences.",
+      "hints": [
+        "What makes democratic decisions legitimate beyond just counting votes?",
+        "What role does discussion play before voting?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each civic discourse principle with its description:",
+      "pairs": [
+        {"left": "Isegoria", "right": "Equal right to speak in public forums"},
+        {"left": "Parrhesia", "right": "Courage to speak truth even when unpopular"},
+        {"left": "Deliberation", "right": "Reasoning together before decisions are made"}
+      ],
+      "explanation": "These three concepts form the foundation of democratic discourse. Isegoria ensures everyone can participate, parrhesia encourages honest expression, and deliberation transforms individual opinions into reasoned collective judgments.",
+      "hints": [
+        "Which concept is about access to speaking?",
+        "Which is about courage in speaking?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "The most important factor in effective public speaking is natural talent rather than learned skill.",
+      "question": "According to the chapter, Athenian democracy was a perfect model that we should replicate exactly.",
       "correct": false,
-      "explanation": "The classical tradition consistently emphasized that rhetoric is an art that can be learned. Demosthenes overcame a speech impediment through practice; Cicero studied intensively. Natural aptitude helps, but systematic training and practice are more important for developing speaking ability."
+      "explanation": "The chapter explicitly acknowledges Athens was 'deeply flawed.' Women couldn't participate, slaves had no standing, decisions were sometimes swayed by demagogues, and Socrates was executed by democratic vote. The model deserves criticism, not nostalgia—but its core insight about debate and democracy remains powerful.",
+      "hints": [
+        "Who was excluded from Athenian democracy?",
+        "What does the chapter say about Socrates's execution?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the Quick Tactic 'Town Hall Preparation,' what should you do before speaking at a public forum?",
+      "options": [
+        "Know your one point, speak to the undecided, name a specific action, and acknowledge complexity",
+        "Prepare a 30-minute speech covering all your concerns",
+        "Target your comments only to those who already agree",
+        "Avoid acknowledging any opposing viewpoints"
+      ],
+      "correct": 0,
+      "explanation": "The Town Hall Preparation advises: you'll have 2-3 minutes at most, so make one clear argument. Speak to the undecided—reasonable, specific, measured voices stand out. Name a specific action you want. And acknowledge complexity to show you've listened.",
+      "hints": [
+        "How much time do you typically get at a town hall?",
+        "Why speak to the undecided rather than allies?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's principles, what approach reflects good civic discourse?",
+      "scenario": "At a town hall meeting about a local development project, you strongly oppose the proposal. Many of your neighbors support it. You have a chance to speak.",
+      "options": [
+        "State your concerns clearly while acknowledging the legitimate interests of those who disagree",
+        "Attack supporters of the project personally",
+        "Stay silent to avoid conflict",
+        "Speak only to those who already agree with you"
+      ],
+      "correct": 0,
+      "explanation": "Civic discourse requires both parrhesia (courage to speak your view) and respect for fellow citizens. Effective civic participation means advocating your position while treating opponents as people with legitimate interests, not enemies to be defeated.",
+      "hints": [
+        "How can you advocate strongly while remaining constructive?",
+        "What's the difference between civic opponents and enemies?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What made the Maria and Tom dialogue in the chapter (mostly) work?",
+      "options": [
+        "They had met before, had coffee, and built a relationship beyond the disagreement itself",
+        "They were both professional debaters",
+        "They agreed on all the fundamentals",
+        "A moderator forced them to reach consensus"
+      ],
+      "correct": 0,
+      "explanation": "The chapter reveals that Maria and Tom had been introduced by a mutual friend and had coffee before the public conversation. This relationship allowed them to be more candid, not less—they could attack positions because they had a relationship to fall back on.",
+      "hints": [
+        "What context made their public disagreement possible?",
+        "Why do relationships matter before difficult conversations?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, why does civic engagement feel exhausting?",
+      "options": [
+        "Because staying informed, engaging across difference, and speaking up all take real energy, and results are often invisible",
+        "Because democracy is fundamentally broken",
+        "Because most people are unreasonable",
+        "Because civic engagement serves no purpose"
+      ],
+      "correct": 0,
+      "explanation": "The chapter acknowledges the emotional toll: 'Staying informed takes time. Engaging across difference takes emotional energy. Speaking up risks relationships. And the results are often invisible.' Sustainable engagement requires realistic expectations and pacing yourself.",
+      "hints": [
+        "What costs does the chapter identify?",
+        "Why is sustainable engagement important?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to J. William Fulbright, quoted in the chapter, 'In a democracy, dissent is an act of faith.'",
+      "correct": true,
+      "explanation": "The chapter quotes Senator Fulbright: 'In a democracy, dissent is an act of faith.' This captures the idea that speaking up when you disagree—practicing parrhesia—is fundamental to democratic health, not a disruption of it.",
+      "hints": [
+        "What does the quote suggest about the role of disagreement?",
+        "Is dissent destructive or essential to democracy?"
+      ]
     }
   ]
 }

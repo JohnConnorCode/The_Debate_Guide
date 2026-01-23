@@ -1,119 +1,153 @@
 {
-  "chapterId": 16,
-  "chapterTitle": "Concession and Pivot",
+  "title": "Debate in the Workplace",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch16-q1",
       "type": "multiple-choice",
-      "question": "Strategic concession in debate is most effective when you concede points that are:",
+      "question": "What question did Andy Grove ask at Intel that changed the company's direction?",
       "options": [
-        "Central to your opponent's argument",
-        "True but not essential to the main dispute",
-        "False but popular with the audience",
-        "Emotionally charged to show empathy"
+        "'If we got kicked out and the board brought in a new CEO, what would he do?'",
+        "'How can we cut costs to compete with Japan?'",
+        "'What new products should we develop?'",
+        "'Who should we fire to improve performance?'"
       ],
-      "correct": 1,
-      "explanation": "Strategic concession acknowledges valid points that don't undermine your core argument. This builds credibility by showing intellectual honesty while keeping focus on issues that actually distinguish your positions. Conceding central points defeats yourself; conceding false points is dishonest."
+      "correct": 0,
+      "explanation": "Grove's question forced him and Gordon Moore to argue with themselves—to see their situation from an outsider's perspective. This led Intel to abandon memory chips and bet on microprocessors, transforming the company.",
+      "hints": [
+        "The question involved imagining a change in leadership.",
+        "It was about seeing the problem from a fresh perspective."
+      ]
     },
     {
-      "id": "ch16-q2",
       "type": "multiple-choice",
-      "question": "The 'Yes, and...' technique involves:",
+      "question": "What is 'stakeholder analysis' in workplace persuasion?",
       "options": [
-        "Simply agreeing with everything your opponent says",
-        "Acknowledging a valid point and then adding information that reframes the issue",
-        "Asking the opponent to repeat their point",
-        "Agreeing sarcastically to mock the opponent"
+        "Mapping out who has decision power, who will implement, and who will be affected by a proposal",
+        "Analyzing company stock prices",
+        "Counting how many people attend meetings",
+        "Evaluating employee performance reviews"
       ],
-      "correct": 1,
-      "explanation": "'Yes, and...' accepts what's true in an opponent's point, then adds context, nuance, or additional considerations that shift the conclusion. It's collaborative rather than combative while still advancing your argument."
+      "correct": 0,
+      "explanation": "Stakeholder analysis means understanding your audience before making your case. You need to identify who decides, who implements, who's affected, and what each group values—the same argument rarely works equally well for all stakeholders.",
+      "hints": [
+        "Think about the different roles people play in organizational decisions.",
+        "Why might different people need different versions of the same argument?"
+      ]
     },
     {
-      "id": "ch16-q3",
+      "type": "multiple-choice",
+      "question": "What is the Greek concept 'phronesis' as applied to workplace debate?",
+      "options": [
+        "Practical wisdom—knowing what to say, when, and to whom",
+        "Speaking loudly to command attention",
+        "Always agreeing with superiors",
+        "Using technical jargon to impress colleagues"
+      ],
+      "correct": 0,
+      "explanation": "Phronesis is practical wisdom—the judgment to know what argument to make to which person at what moment. In the workplace, this means reading the room, understanding organizational dynamics, and timing your persuasion appropriately.",
+      "hints": [
+        "This is an Aristotelian virtue about practical judgment.",
+        "How does context affect persuasion?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "Conceding a point always weakens your overall position in a debate.",
+      "question": "According to the chapter, Jeff Bezos banned PowerPoint at Amazon because he preferred oral presentations.",
       "correct": false,
-      "explanation": "Strategic concession often strengthens your position by building credibility, focusing the debate on genuine disagreements, and preventing opponents from dwelling on points you've already acknowledged. Audiences respect honest acknowledgment of complexity."
+      "explanation": "Bezos banned PowerPoint and required six-page narrative memos instead. His reasoning: slides encourage superficial thinking, while prose forces rigor. You can't hide behind bullet points when you have to write coherent paragraphs.",
+      "hints": [
+        "What did Bezos require instead of slides?",
+        "What was his concern about PowerPoint?"
+      ]
     },
     {
-      "id": "ch16-q4",
-      "type": "multiple-choice",
-      "question": "A 'pivot' in debate refers to:",
-      "options": [
-        "Physically turning to face different audience sections",
-        "Changing your position entirely mid-debate",
-        "Transitioning from an opponent's point to your own preferred framing or topic",
-        "Refusing to answer direct questions"
+      "type": "matching",
+      "question": "Match each workplace principle with its application:",
+      "pairs": [
+        {"left": "Anchor effect", "right": "Arguments made early in meetings disproportionately shape discussion"},
+        {"left": "Recency effect", "right": "Arguments made last stay freshest in memory when decisions are made"},
+        {"left": "Build alliances before the meeting", "right": "Gather support from key stakeholders before the formal decision"}
       ],
-      "correct": 2,
-      "explanation": "A pivot acknowledges an opponent's point, then redirects attention to your own frame or emphasis. 'That's a fair concern, but the more fundamental issue is...' It's a way of being responsive without being trapped in your opponent's framing."
+      "explanation": "Effective meeting rhetoric requires understanding these dynamics. Speaking order matters: anchoring the discussion versus having the final word involves different trade-offs. And the best time to persuade is often before the meeting, not during it.",
+      "hints": [
+        "When in a meeting does each effect matter most?",
+        "Why talk to stakeholders before the big meeting?"
+      ]
     },
     {
-      "id": "ch16-q5",
       "type": "multiple-choice",
-      "question": "When might full concession (admitting you were wrong) be the best strategic choice?",
+      "question": "What is the 'devil's advocate' technique?",
       "options": [
-        "Never—admitting error always damages credibility",
-        "When the error is obvious and defending it would damage credibility more",
-        "Only in private, never in public debate",
-        "When you want to end the debate quickly"
+        "Deliberately arguing against a position to test its strength and find weaknesses",
+        "Always opposing every idea presented",
+        "Arguing in bad faith to win",
+        "Supporting only unpopular positions"
       ],
-      "correct": 1,
-      "explanation": "When an error is clear, doubling down damages credibility more than honest admission. Audiences respect those who can acknowledge mistakes. A well-handled concession—'You're right, I was wrong about that, but my main point still holds because...'—can actually enhance ethos."
+      "correct": 0,
+      "explanation": "The devil's advocate role originated in Catholic canonization proceedings. In workplace settings, it means deliberately arguing against a proposal—even one you might support—to stress-test the idea and surface potential problems before implementation.",
+      "hints": [
+        "What's the purpose of arguing against something you might actually support?",
+        "How does this help improve decision-making?"
+      ]
     },
     {
-      "id": "ch16-q6",
+      "type": "scenario",
+      "question": "Based on the chapter's advice, what's the best approach here?",
+      "scenario": "Your team has debated a decision for weeks. You disagreed with the chosen direction, but the decision has been made by leadership. Now it's time to implement.",
+      "options": [
+        "Practice 'disagree and commit'—execute the decision wholeheartedly even though you disagreed",
+        "Continue arguing against the decision during implementation",
+        "Implement half-heartedly to prove you were right",
+        "Refuse to participate in the implementation"
+      ],
+      "correct": 0,
+      "explanation": "The chapter describes 'disagree and commit' as a crucial workplace skill. Once a decision is made, you commit fully to its success—even if you argued against it. This builds trust and organizational effectiveness while preserving your right to disagree in future discussions.",
+      "hints": [
+        "What happens to team trust if people sabotage decisions they disagreed with?",
+        "How can you maintain integrity while supporting a decision you opposed?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the Quick Tactic 'Pre-Meeting Check,' what four questions should you answer before making a significant argument?",
+      "options": [
+        "Who decides? Who influences? Who fears? What's the ask?",
+        "What's the budget? Who's presenting? When's lunch? Who's taking notes?",
+        "Is this legal? Is this ethical? Is this profitable? Is this popular?",
+        "Who's oldest? Who's loudest? Who's newest? Who's smartest?"
+      ],
+      "correct": 0,
+      "explanation": "The Pre-Meeting Check advises: identify who has authority to approve (who decides), whose opinion the decider trusts (who influences), whose territory might feel threatened (who fears), and what specific action you want (what's the ask).",
+      "hints": [
+        "The questions focus on understanding stakeholders and your own goal.",
+        "Why is knowing 'who fears' important?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is Ed Catmull's 'Braintrust' at Pixar designed to accomplish?",
+      "options": [
+        "Allow frank feedback on films with the crucial rule that the director doesn't have to follow any of it",
+        "Make all creative decisions by committee vote",
+        "Replace directors who receive negative feedback",
+        "Keep feedback anonymous to prevent hurt feelings"
+      ],
+      "correct": 0,
+      "explanation": "The Braintrust separates feedback from authority. Directors receive frank feedback from peers, but they're not required to follow it. This allows genuine disagreement—people can speak honestly because they're not fighting for control, and directors can listen openly because they're not defending territory.",
+      "hints": [
+        "What makes people willing to give honest feedback?",
+        "What makes people willing to receive it?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "The phrase 'I understand why you might think that, but...' is an example of a qualified concession.",
-      "correct": true,
-      "explanation": "This phrase acknowledges the reasonableness of the opponent's perspective without fully endorsing it. It's a form of qualified concession that shows empathy and understanding while setting up a redirect or counter-argument."
-    },
-    {
-      "id": "ch16-q7",
-      "type": "multiple-choice",
-      "question": "What makes a pivot feel manipulative rather than legitimate?",
-      "options": [
-        "Pivoting more than once in a debate",
-        "Failing to address the substance of the original point before changing subject",
-        "Pivoting to a stronger argument",
-        "Using transitional phrases like 'however'"
-      ],
-      "correct": 1,
-      "explanation": "Pivots feel evasive when they're transparent attempts to avoid difficult questions. Legitimate pivots acknowledge the original point's validity before redirecting; illegitimate pivots simply change the subject without engagement. The difference is whether you've earned the transition."
-    },
-    {
-      "id": "ch16-q8",
-      "type": "multiple-choice",
-      "question": "How does concession relate to the concept of 'common ground'?",
-      "options": [
-        "Concession eliminates common ground by admitting disagreement",
-        "Concession can establish shared premises from which to argue remaining differences",
-        "Common ground and concession are unrelated concepts",
-        "Finding common ground means conceding your core position"
-      ],
-      "correct": 1,
-      "explanation": "Strategic concession helps identify where you and your opponent actually agree, creating a foundation of shared premises. From this common ground, the genuine points of disagreement become clearer and debate becomes more productive."
-    },
-    {
-      "id": "ch16-q9",
-      "type": "multiple-choice",
-      "question": "In the 'concede-counter-conclude' pattern, what does the 'counter' step accomplish?",
-      "options": [
-        "It attacks the opponent personally",
-        "It presents information or framing that limits the impact of the conceded point",
-        "It withdraws the concession made in step one",
-        "It summarizes the opponent's argument"
-      ],
-      "correct": 1,
-      "explanation": "After conceding a valid point, the counter provides context, additional evidence, or reframing that shows why the conceded point doesn't determine the overall issue. 'Yes, X is true, but it's outweighed by Y' or 'Yes, but X applies less than you suggest because...'"
-    },
-    {
-      "id": "ch16-q10",
-      "type": "true-false",
-      "question": "Effective debaters decide before the debate exactly which points they will concede.",
+      "question": "According to the chapter, the workplace is a meritocracy where the best arguments always win.",
       "correct": false,
-      "explanation": "While you might anticipate some concessions, effective debate requires responsiveness. You should be ready to concede points that prove valid during the exchange, not just those you predicted. Rigidly refusing to concede unexpected valid points damages credibility."
+      "explanation": "The chapter explicitly states: 'The workplace is not a meritocracy where the best arguments automatically win.' Sometimes power trumps argument—the CEO's pet project gets funded even when analysis shows it will fail. Recognizing when you're in a real argument versus a power ritual is a survival skill.",
+      "hints": [
+        "What does the chapter say about when 'power trumps argument'?",
+        "What are signs you're facing power, not persuasion?"
+      ]
     }
   ]
 }

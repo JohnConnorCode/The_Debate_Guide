@@ -1,119 +1,153 @@
 {
-  "chapterId": 10,
-  "chapterTitle": "Evidence and Examples",
+  "title": "Evidence and Proof",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch10-q1",
       "type": "multiple-choice",
-      "question": "What is the crucial difference between anecdotal evidence and systematic evidence?",
+      "question": "What is Aristotle's distinction between 'artistic' and 'inartistic' proofs?",
       "options": [
-        "Anecdotes are false; systematic evidence is true",
-        "Systematic evidence uses representative samples; anecdotes may be exceptional cases",
-        "Anecdotes are spoken; systematic evidence is written",
-        "There is no meaningful difference in evidentiary value"
+        "Artistic proofs are created by the speaker through rhetoric; inartistic proofs exist independently (documents, statistics, witnesses)",
+        "Artistic proofs use creativity; inartistic proofs are boring",
+        "Artistic proofs are for artists; inartistic proofs are for scientists",
+        "Artistic proofs are ethical; inartistic proofs are manipulative"
       ],
-      "correct": 1,
-      "explanation": "Anecdotes may be true but unrepresentative—the memorable exception rather than the typical case. Systematic evidence (studies, surveys, comprehensive data) attempts to capture patterns across many cases, reducing the risk of cherry-picking outliers."
+      "correct": 0,
+      "explanation": "The chapter explains: 'Artistic proofs are constructed through rhetoric: the arguments you build, the emotions you evoke, the credibility you establish. Inartistic proofs exist independently: documents, statistics, witness testimony.'",
+      "hints": [
+        "What's the difference between evidence you find and evidence you create?",
+        "Which type of proof did Aristotle say involves ethos, pathos, and logos?"
+      ]
     },
     {
-      "id": "ch10-q2",
-      "type": "multiple-choice",
-      "question": "When evaluating a statistic cited in an argument, what is the FIRST question you should ask?",
-      "options": [
-        "Is the number large or small?",
-        "What is the source, and what methodology produced this number?",
-        "Does the statistic support the speaker's conclusion?",
-        "Is the speaker trustworthy?"
-      ],
-      "correct": 1,
-      "explanation": "Numbers without context are meaningless. Understanding who produced the data, how they collected it, and what they measured is essential before evaluating whether the statistic supports any conclusion. Methodology determines reliability."
-    },
-    {
-      "id": "ch10-q3",
       "type": "true-false",
-      "question": "A single well-documented example can sometimes be more persuasive than weak statistics.",
-      "correct": true,
-      "explanation": "Evidence quality matters more than type. A thoroughly documented case study can be more compelling than poorly designed surveys or cherry-picked statistics. The key is matching evidence type to the claim being supported and acknowledging limitations."
-    },
-    {
-      "id": "ch10-q4",
-      "type": "multiple-choice",
-      "question": "What is 'cherry-picking' in the context of evidence use?",
-      "options": [
-        "Using the freshest, most current data available",
-        "Selecting only evidence that supports your conclusion while ignoring contradictory data",
-        "Preferring primary over secondary sources",
-        "Citing the most prestigious academic journals"
-      ],
-      "correct": 1,
-      "explanation": "Cherry-picking creates a misleading picture by presenting only favorable evidence. Honest argumentation requires acknowledging the full evidence landscape, including data that complicates or challenges your position."
-    },
-    {
-      "id": "ch10-q5",
-      "type": "multiple-choice",
-      "question": "Why is expert testimony considered valuable evidence?",
-      "options": [
-        "Experts are never wrong",
-        "Audiences are unable to evaluate complex issues themselves",
-        "Experts have specialized training and access to evidence ordinary people lack",
-        "Expert credentials are easy to verify"
-      ],
-      "correct": 2,
-      "explanation": "Experts spend years mastering domains most people can't study deeply. We rely on expert testimony not because experts are infallible, but because their training and access to evidence makes their judgments more reliable than lay opinion on technical matters."
-    },
-    {
-      "id": "ch10-q6",
-      "type": "multiple-choice",
-      "question": "When can hypothetical examples legitimately function as evidence?",
-      "options": [
-        "Never—only real examples count as evidence",
-        "When they illustrate logical relationships or explore implications of principles",
-        "When real examples are too difficult to find",
-        "Only in philosophical, not practical, arguments"
-      ],
-      "correct": 1,
-      "explanation": "Thought experiments and hypotheticals can reveal logical implications: 'If we accept principle X, we must also accept Y.' They test the consistency and consequences of positions even without real-world examples. They're evidence of logical relationship, not empirical fact."
-    },
-    {
-      "id": "ch10-q7",
-      "type": "true-false",
-      "question": "Correlation between two phenomena is sufficient evidence to claim that one causes the other.",
+      "question": "According to the chapter, presenting facts to someone who disagrees always changes their mind.",
       "correct": false,
-      "explanation": "Correlation is not causation. Ice cream sales and drowning deaths correlate (both increase in summer), but ice cream doesn't cause drowning. Establishing causation requires eliminating alternative explanations, demonstrating mechanism, and often experimental evidence."
+      "explanation": "The chapter opens: 'Present someone with facts that contradict their existing views, and they often dig in harder. The evidence doesn't persuade; it provokes. People experience factual challenges to their beliefs as personal attacks.'",
+      "hints": [
+        "What is the 'backfire effect'?",
+        "Why do facts sometimes 'provoke' rather than persuade?"
+      ]
     },
     {
-      "id": "ch10-q8",
       "type": "multiple-choice",
-      "question": "What makes a historical example particularly strong evidence for an argument?",
+      "question": "What is a 'tekmerion' in Aristotle's framework?",
       "options": [
-        "It happened long ago, so no one can dispute it",
-        "The historical context parallels the current situation in relevant ways",
-        "It involves famous people or events",
-        "It's from the speaker's own national history"
+        "An infallible sign—evidence so strong it amounts to proof",
+        "A weak piece of evidence",
+        "A type of logical fallacy",
+        "An emotional appeal"
       ],
-      "correct": 1,
-      "explanation": "Historical analogies are only as strong as the parallels between then and now. Speakers must establish that the similarities are relevant to the argument and that key differences don't undermine the comparison."
+      "correct": 0,
+      "explanation": "The chapter explains that tekmerion is 'an infallible sign—evidence so strong it amounts to proof.' The example: if a woman has given birth, that's tekmerion she's had intercourse. Most evidence is weaker (semeion, fallible signs).",
+      "hints": [
+        "What's the difference between tekmerion and semeion?",
+        "How rare are truly infallible signs?"
+      ]
     },
     {
-      "id": "ch10-q9",
+      "type": "matching",
+      "question": "Match each evidence type with its primary characteristic:",
+      "pairs": [
+        {"left": "Statistics", "right": "Summarize many cases and seem authoritative, but can be manipulated"},
+        {"left": "Testimony", "right": "Depends on witness credibility and directness"},
+        {"left": "Examples", "right": "Memorable and emotionally engaging, but can be dismissed as atypical"}
+      ],
+      "explanation": "Each evidence type has distinct properties. Statistics feel authoritative but can be cherry-picked. Testimony relies on credibility. Examples are vivid but critics can dismiss them. The best arguments combine multiple types.",
+      "hints": [
+        "Why does 'Eighty percent of doctors recommend this' sound compelling?",
+        "What makes a single example insufficient proof?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the chapter's teaching about choosing evidence, what would be most effective?",
+      "scenario": "You're presenting a proposal to two different groups: data-driven executives and frontline employees who distrust corporate statistics.",
+      "options": [
+        "Use data and methodology for executives; use stories and personal testimony for employees",
+        "Use the same evidence for both groups to be consistent",
+        "Use only emotional appeals for both groups",
+        "Avoid evidence entirely and rely on your authority"
+      ],
+      "correct": 0,
+      "explanation": "The chapter emphasizes: 'Different audiences respond to different types of evidence.' Experts want data and methodology; laypeople want stories. 'Understanding what counts as evidence for your audience is as important as knowing the hierarchy itself.'",
+      "hints": [
+        "Why might frontline employees distrust corporate statistics?",
+        "What does the chapter say about matching evidence to audience?"
+      ]
+    },
+    {
       "type": "multiple-choice",
-      "question": "How should a speaker handle evidence that partially supports and partially undermines their argument?",
+      "question": "According to the chapter, when does evidence fail to persuade?",
       "options": [
-        "Present only the supportive portion",
-        "Ignore the evidence entirely if it's mixed",
-        "Present the full picture and explain why the supportive elements outweigh concerns",
-        "Wait for better evidence before making the argument"
+        "When it threatens identity, when trust in sources is gone, in zero-sum conflicts, or when values diverge",
+        "Only when the evidence is factually wrong",
+        "Evidence always works if presented clearly enough",
+        "Only when the audience is unintelligent"
       ],
-      "correct": 2,
-      "explanation": "Honest advocacy acknowledges complexity. Presenting mixed evidence transparently and explaining your interpretation builds credibility and respects audience intelligence. Concealing complications invites later challenges that damage your credibility."
+      "correct": 0,
+      "explanation": "The chapter identifies four conditions where evidence fails: identity threat ('beliefs central to sense of who they are'), trust deficit ('institutions that produce evidence are corrupt'), zero-sum conflicts, and divergent values.",
+      "hints": [
+        "Why might vaccine data backfire with vaccine-skeptical parents?",
+        "What role does trust play in evaluating evidence?"
+      ]
     },
     {
-      "id": "ch10-q10",
+      "type": "multiple-choice",
+      "question": "What does the chapter say about social media and evidence hierarchies?",
+      "options": [
+        "Social media inverts hierarchies—a viral personal story routinely outperforms peer-reviewed studies in persuasive power",
+        "Social media makes people more respectful of scientific evidence",
+        "Social media has eliminated the need for evidence",
+        "Social media only shares high-quality evidence"
+      ],
+      "correct": 0,
+      "explanation": "The chapter notes: 'Social media inverts these hierarchies. A viral personal story—lowest tier in scientific terms—routinely outperforms peer-reviewed meta-analyses in persuasive power... narrative stickiness and emotional resonance operate on different channels than epistemic rigor.'",
+      "hints": [
+        "Why does a nurse's TikTok spread further than a JAMA study?",
+        "What determines persuasive power on social media?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "Primary sources are always more reliable than secondary sources.",
+      "question": "According to the chapter, inartistic proofs (like documents and statistics) are completely objective.",
       "correct": false,
-      "explanation": "Primary sources (original documents, direct data) require interpretation. Secondary sources (scholarly analysis, reviews) add expert interpretation but may introduce bias. Each has strengths: primaries provide directness, secondaries provide context and analysis. Neither is inherently superior."
+      "explanation": "The chapter states: 'This appearance of objectivity gives inartistic proofs rhetorical power—they feel independent of the speaker's bias. But that objectivity is partly illusion. Someone chose which statistics to cite, which documents to present, which witnesses to call. The selection itself is rhetorical.'",
+      "hints": [
+        "Who decides which evidence to present?",
+        "Is selection itself a rhetorical act?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'motivated reasoning' according to the chapter?",
+      "options": [
+        "Accepting confirming evidence with minimal scrutiny while subjecting disconfirming evidence to intense criticism",
+        "Being motivated to find the truth",
+        "Using evidence to motivate others",
+        "A technique for building better arguments"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'We accept evidence that confirms our beliefs with minimal scrutiny. We subject disconfirming evidence to intense criticism, looking for any flaw that would let us dismiss it. The same evidence encounters different standards depending on whether it supports or challenges what we already think.'",
+      "hints": [
+        "Do people apply equal scrutiny to all evidence?",
+        "What determines how critically we evaluate evidence?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter recommend as the best approach to using evidence?",
+      "options": [
+        "Combine inartistic proofs (raw evidence) with artistic proofs (structure and interpretation) to create persuasive arguments",
+        "Use only statistics for maximum credibility",
+        "Avoid evidence and rely solely on emotional appeals",
+        "Present evidence without any interpretation"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'The best arguments combine both types. Inartistic proofs provide the raw material; artistic proofs shape that material into persuasive form. A lawyer doesn't just dump documents on a jury. She explains what they mean, why they matter, how they connect.'",
+      "hints": [
+        "What does a lawyer do beyond presenting documents?",
+        "What roles do evidence and argument each play?"
+      ]
     }
   ]
 }

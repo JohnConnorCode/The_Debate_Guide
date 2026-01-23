@@ -1,119 +1,153 @@
 {
-  "chapterId": 7,
-  "chapterTitle": "Pathos: Emotional Connection",
+  "title": "Pathos: Moving Hearts",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch7-q1",
       "type": "multiple-choice",
-      "question": "According to Aristotle, why is pathos a legitimate mode of persuasion rather than mere manipulation?",
+      "question": "How did Aristotle view emotional appeal in rhetoric?",
       "options": [
-        "Emotions are irrational, so they're easier to exploit",
-        "Emotions are cognitive responses that reflect genuine values and judgments",
-        "Pathos only works on uneducated audiences",
-        "Aristotle actually condemned all use of emotional appeals"
+        "As a legitimate tool of persuasion on equal footing with character and logic, because emotions carry information",
+        "As a necessary evil to be used sparingly",
+        "As a contaminant that should be eliminated from serious argument",
+        "As something only for manipulating unintelligent audiences"
       ],
-      "correct": 1,
-      "explanation": "Aristotle understood emotions as containing cognitive judgments. Fear involves a judgment that something threatens what we value; anger involves a judgment that we've been wronged. Appealing to emotions means engaging with the audience's values, not bypassing their reason."
+      "correct": 0,
+      "explanation": "The chapter explains: 'Aristotle analyzed emotion as one of three coordinate means of persuasion, on equal footing with character and logic.' His reasoning: 'emotions carry information. Fear tells you something is dangerous. Anger signals injustice. Pity recognizes undeserved suffering.'",
+      "hints": [
+        "How did Aristotle's view differ from Plato's concerns about rhetoric?",
+        "What did Aristotle devote an entire book of his Rhetoric to?"
+      ]
     },
     {
-      "id": "ch7-q2",
       "type": "multiple-choice",
-      "question": "What makes a personal story (narrative) particularly effective for creating emotional connection?",
+      "question": "What is the difference between 'evoking' and 'exploiting' emotion according to the chapter?",
       "options": [
-        "Stories are easier to understand than abstract arguments",
-        "Narrative engages empathy and makes abstract issues concrete and human",
-        "Audiences prefer entertainment to education",
-        "Stories can't be fact-checked like statistics"
+        "Evoking makes people feel what the situation genuinely warrants; exploiting makes them feel things that distort their judgment",
+        "Evoking is weaker than exploiting",
+        "Exploiting is always more effective",
+        "There is no meaningful difference"
       ],
-      "correct": 1,
-      "explanation": "Stories engage mirror neurons and empathetic imagination. When we hear about a specific person's experience, we mentally simulate it, creating emotional resonance that abstractions can't achieve. Stories make policies and principles feel real and consequential."
+      "correct": 0,
+      "explanation": "The chapter states: 'Evoking emotion means making people feel what the situation genuinely warrants. Exploiting emotion means making people feel things that distort their judgment—fear of dangers that aren't real, pity for those who don't deserve it, hatred directed at innocent targets.'",
+      "hints": [
+        "What determines whether emotional appeal is ethical?",
+        "Does the emotion depend on ignorance or truth?"
+      ]
     },
     {
-      "id": "ch7-q3",
       "type": "true-false",
-      "question": "Pathos appeals are most effective when they overwhelm the audience's capacity for rational evaluation.",
-      "correct": false,
-      "explanation": "While manipulation might seek to overwhelm judgment, effective ethical pathos works with logos, not against it. The goal is to help audiences feel the significance of what they understand rationally—emotional engagement that illuminates rather than obscures."
-    },
-    {
-      "id": "ch7-q4",
-      "type": "multiple-choice",
-      "question": "Why might a speaker deliberately evoke negative emotions like fear or anger?",
-      "options": [
-        "Negative emotions always produce stronger responses than positive ones",
-        "Fear and anger can motivate action when complacency is the problem",
-        "Audiences enjoy feeling scared or angry",
-        "Negative emotions are easier to produce than positive ones"
-      ],
-      "correct": 1,
-      "explanation": "Fear and anger serve legitimate persuasive functions when the situation warrants them. If genuine dangers exist or injustices have occurred, helping audiences feel appropriate fear or anger can motivate necessary action. The ethics depend on accuracy, not valence."
-    },
-    {
-      "id": "ch7-q5",
-      "type": "multiple-choice",
-      "question": "What is the risk of relying too heavily on pathos without sufficient logos?",
-      "options": [
-        "The audience will become too emotional to act",
-        "Emotional persuasion without rational grounding leads to poor decisions",
-        "Audiences will recognize the speaker as manipulative",
-        "Both B and C"
-      ],
-      "correct": 3,
-      "explanation": "Pure emotional appeal without logical foundation is both ethically problematic (it can lead to bad decisions) and rhetorically risky (sophisticated audiences often recognize and resist manipulation). Effective persuasion integrates all three appeals."
-    },
-    {
-      "id": "ch7-q6",
-      "type": "true-false",
-      "question": "The 'identifiable victim effect' suggests that stories of individuals are more emotionally compelling than statistics about many people.",
+      "question": "According to the chapter's test for ethical emotional appeal, if an emotion would survive full knowledge of the facts, it's legitimate.",
       "correct": true,
-      "explanation": "Research confirms that we respond more emotionally to one identified person than to statistics about thousands. This 'collapse of compassion' presents ethical challenges: important issues affecting many may get less attention than dramatic individual cases. Skilled communicators use both."
+      "explanation": "The chapter provides this test: 'If the emotion depends on ignorance, distortion, or misdirection, it's exploitation. If the emotion would survive full knowledge of the facts, it's legitimate evocation.'",
+      "hints": [
+        "What distinguishes evoking from exploiting?",
+        "What role does information play in ethical pathos?"
+      ]
     },
     {
-      "id": "ch7-q7",
       "type": "multiple-choice",
-      "question": "How does vivid, sensory language contribute to pathos?",
+      "question": "What does the chapter identify as the 'delivery system' for pathos?",
       "options": [
-        "It makes the speaker sound more educated",
-        "It activates imagination and creates vicarious experience",
-        "It distracts from weak arguments",
-        "It only works in written, not spoken, rhetoric"
+        "Narrative—story and concrete detail, not abstract statements",
+        "Statistics and data charts",
+        "Formal logical proofs",
+        "Credentials and authority"
       ],
-      "correct": 1,
-      "explanation": "Concrete, sensory language (enargeia) creates mental images and simulated experiences. Rather than telling audiences that something was 'bad,' showing them through vivid detail allows them to feel it themselves, creating emotional engagement through imaginative participation."
+      "correct": 0,
+      "explanation": "The chapter explains: 'Emotion rarely arrives through abstract statement... Narrative is the delivery system that carries pathos from speaker to audience.' The example of Maria's story moves people in ways that 'Thousands of people die each year' cannot.",
+      "hints": [
+        "How do effective speakers deliver emotional content?",
+        "Why do specific stories move us more than statistics?"
+      ]
     },
     {
-      "id": "ch7-q8",
+      "type": "scenario",
+      "question": "Based on the chapter's analysis of Mark Antony's speech, when is his emotional appeal ethical?",
+      "scenario": "In Shakespeare's Julius Caesar, Mark Antony makes the crowd feel grief and rage about Caesar's death without directly blaming the conspirators.",
+      "options": [
+        "It depends on whether Caesar deserved grief and the conspirators deserved anger—ethics depends on relationship to truth",
+        "It's always manipulation because it uses emotion",
+        "It's always ethical because the crowd freely chose to feel",
+        "It's always unethical because Antony promised not to blame the conspirators"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Is Antony manipulating? It depends on whether Caesar deserved grief and the conspirators deserved anger. If Caesar was a tyrant... the appeal is exploitation. If Caesar was a benefactor... the appeal is evocation. The ethics of pathos depend entirely on its relationship to truth.'",
+      "hints": [
+        "What determines whether emotional appeal is ethical?",
+        "Does truth or falsity of the underlying situation matter?"
+      ]
+    },
+    {
       "type": "multiple-choice",
-      "question": "What is 'emotional contagion' and why does it matter for public speaking?",
+      "question": "According to Daniel Kahneman's dual-process theory as described in the chapter, what is System 1?",
       "options": [
-        "A disease spread through large gatherings",
-        "The tendency for emotions to spread from speaker to audience",
-        "The manipulation of audience members by each other",
-        "An outdated theory rejected by modern psychology"
+        "Fast, automatic, emotional—a pattern-recognition engine that often reaches correct conclusions quickly",
+        "Slow, deliberate, logical",
+        "A primitive holdover from evolution that should be ignored",
+        "The part of the brain that processes only language"
       ],
-      "correct": 1,
-      "explanation": "Emotions are socially contagious—a speaker's genuine passion, conviction, or concern tends to spread to audiences. This means a speaker's own emotional state matters: authentic feeling resonates differently than performed emotion."
+      "correct": 0,
+      "explanation": "The chapter explains: 'System 1 is fast, automatic, emotional—it generates impressions and feelings without conscious effort... The key insight: System 1 isn't some primitive holdover from our evolutionary past. It's a sophisticated pattern-recognition engine.'",
+      "hints": [
+        "What does modern cognitive science say about emotion and reason?",
+        "Is emotional response a failure of rationality?"
+      ]
     },
     {
-      "id": "ch7-q9",
       "type": "multiple-choice",
-      "question": "When is humor an effective emotional tool in persuasion?",
+      "question": "What example does the chapter use to show how MLK used emotional appeal as argument?",
       "options": [
-        "Never—serious topics require serious treatment",
-        "When it builds rapport, disarms resistance, or illuminates absurdity",
-        "Only in informal settings like after-dinner speeches",
-        "When you want to distract from weak arguments"
+        "'The Negro lives on a lonely island of poverty in the midst of a vast ocean of material prosperity'—making a claim about injustice through imagery",
+        "A list of statistics about economic inequality",
+        "A formal logical syllogism",
+        "An attack on his opponents' character"
       ],
-      "correct": 1,
-      "explanation": "Humor can break tension, build goodwill, make audiences receptive, and sometimes reveal truth more effectively than direct assertion (as satire demonstrates). The key is appropriateness to context and purpose—humor that serves the argument rather than undermining it."
+      "correct": 0,
+      "explanation": "The chapter explains: 'When he spoke of \"the Negro lives on a lonely island of poverty in the midst of a vast ocean of material prosperity,\" he was making a claim about injustice. The shame and indignation the image provoked weren't distractions from the argument—they were the audience's recognition that yes, this is unjust.'",
+      "hints": [
+        "How did King make arguments in emotional form?",
+        "What does the imagery about 'lonely island' communicate?"
+      ]
     },
     {
-      "id": "ch7-q10",
+      "type": "matching",
+      "question": "Match each technique with its function in emotional appeal:",
+      "pairs": [
+        {"left": "Specificity", "right": "Makes situations vivid and imaginable with concrete details"},
+        {"left": "Identification", "right": "Helps audience see themselves in the situation"},
+        {"left": "Contrast", "right": "Heightens emotion by juxtaposition of opposites"}
+      ],
+      "explanation": "The chapter identifies these as key techniques: specificity makes things concrete ('a six-year-old girl with braids'), identification creates personal connection ('imagine this happened to your daughter'), and contrast heightens emotion (King's 'promissory note' vs. 'bad check').",
+      "hints": [
+        "Why does 'a child' move us less than 'a six-year-old girl with braids'?",
+        "How did MLK use contrast in his speeches?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "Pathos appeals should be confined to the introduction and conclusion of a speech, with logos dominating the body.",
+      "question": "According to research by Antonio Damasio mentioned in the chapter, patients with damage to emotional brain regions made better decisions because they weren't distracted by feelings.",
       "correct": false,
-      "explanation": "While introductions often establish emotional connection and conclusions often provide emotional closure, pathos should be woven throughout. The most effective arguments integrate emotional significance with logical development continuously, not in segregated sections."
+      "explanation": "The chapter describes the opposite: 'These patients could reason logically—they performed normally on IQ tests—but they made disastrous life decisions. Without emotional signals to guide them, they couldn't prioritize among options or sense when something was wrong.'",
+      "hints": [
+        "What happened to patients who lost emotional processing?",
+        "Is emotion an obstacle to good decisions?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter say about the relationship between emotion and reason?",
+      "options": [
+        "Emotion isn't the enemy of reason but its partner—both are needed for good judgment",
+        "Emotion should always override reason",
+        "Reason should always override emotion",
+        "They operate completely independently"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'Modern cognitive science has confirmed what Aristotle intuited: emotion isn't the enemy of reason but its partner.' The chapter argues for integration: 'Pathos works best when it's woven together with ethos and logos.'",
+      "hints": [
+        "How does the chapter resolve the tension between feeling and thinking?",
+        "What does dual-process theory reveal about cognition?"
+      ]
     }
   ]
 }

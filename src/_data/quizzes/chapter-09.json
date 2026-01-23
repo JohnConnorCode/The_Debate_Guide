@@ -1,119 +1,153 @@
 {
-  "chapterId": 9,
-  "chapterTitle": "Logos: The Power of Reason",
+  "title": "Logos: Constructing Reason",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch9-q1",
       "type": "multiple-choice",
       "question": "What is an enthymeme?",
       "options": [
-        "A logical fallacy",
-        "A rhetorical syllogism with an implied premise",
-        "An emotional appeal disguised as logic",
-        "A type of evidence"
+        "A rhetorical syllogism with an unstated premise the audience fills in from their own beliefs",
+        "A type of logical fallacy",
+        "A complete three-part syllogism with all premises stated",
+        "An emotional appeal disguised as logic"
       ],
-      "correct": 1,
-      "explanation": "An enthymeme is a syllogism where one premise is left unstated because it's assumed the audience already accepts it. Example: 'She's a politician, so she can't be trusted' implies the unstated premise that all politicians are untrustworthy."
+      "correct": 0,
+      "explanation": "The chapter explains: 'An enthymeme is a syllogism with one premise left unstated—usually because the audience already believes it.' This compression makes audiences participants in the reasoning, investing them in the conclusion.",
+      "hints": [
+        "Why doesn't Aristotle recommend using full formal syllogisms in rhetoric?",
+        "What role does the audience play in completing an enthymeme?"
+      ]
     },
     {
-      "id": "ch9-q2",
       "type": "true-false",
-      "question": "Deductive reasoning moves from specific observations to general conclusions.",
+      "question": "According to the chapter, inductive arguments provide the same level of certainty as deductive arguments.",
       "correct": false,
-      "explanation": "Deductive reasoning moves from general principles to specific conclusions. Inductive reasoning moves from specific observations to general conclusions."
+      "explanation": "The chapter clearly distinguishes them: deductive arguments 'lock shut'—if premises are true and form is valid, the conclusion is forced. Inductive arguments only provide probability: 'the next observation might break the pattern' (as black swans did).",
+      "hints": [
+        "What happened to the conclusion 'all swans are white'?",
+        "What word does the chapter say is 'doing crucial work' in inductive reasoning?"
+      ]
     },
     {
-      "id": "ch9-q3",
       "type": "multiple-choice",
-      "question": "Which of the following is the strongest form of evidence for a logos-based argument?",
+      "question": "What is the difference between a 'valid' argument and a 'sound' argument?",
       "options": [
-        "A celebrity endorsement",
-        "An emotional anecdote",
-        "Peer-reviewed research data",
-        "A popular opinion poll"
+        "Valid means the conclusion follows from premises; sound means it's valid AND built on true premises",
+        "Valid means the argument is ethical; sound means it's persuasive",
+        "They mean the same thing",
+        "Valid is for spoken arguments; sound is for written arguments"
       ],
-      "correct": 2,
-      "explanation": "Peer-reviewed research represents systematically gathered and verified evidence, making it the strongest foundation for logical arguments."
+      "correct": 0,
+      "explanation": "The chapter explains: 'Validity is purely structural. It asks: if the premises were true, would the conclusion have to follow?' Soundness 'combines structure and content'—a sound argument is valid AND has true premises.",
+      "hints": [
+        "Can an argument be valid but have false premises?",
+        "Think about the 'all fish are mammals' example."
+      ]
     },
     {
-      "id": "ch9-q4",
+      "type": "scenario",
+      "question": "Based on the chapter's framework, what's the hidden premise in this argument?",
+      "scenario": "A political ad says: 'She's been a small business owner for 20 years—she understands what working families need.'",
+      "options": [
+        "Small business owners understand working families' needs better than non-business owners",
+        "Twenty years is the ideal amount of business experience",
+        "All politicians should own small businesses",
+        "Working families only care about business issues"
+      ],
+      "correct": 0,
+      "explanation": "Every enthymeme has a hidden premise. Here, the ad assumes the audience already believes that running a small business gives insight into working families' needs. If the audience doesn't share this assumption, the argument fails.",
+      "hints": [
+        "What would you have to already believe for this reason to support this conclusion?",
+        "The chapter says to ask: 'What's the bridge between premise and conclusion?'"
+      ]
+    },
+    {
       "type": "multiple-choice",
-      "question": "'All men are mortal. Socrates is a man. Therefore, Socrates is mortal.' This is an example of:",
+      "question": "What three strategies does the chapter recommend when audiences don't share your unstated premises?",
       "options": [
-        "Inductive reasoning",
-        "Deductive reasoning (syllogism)",
-        "Analogical reasoning",
-        "Abductive reasoning"
+        "Find deeper premises where you converge, make your premises explicit, or choose your audience",
+        "Use more emotional appeals, repeat yourself, or speak louder",
+        "Abandon logical argument, attack their premises, or give up",
+        "Use simpler words, add more data, or change the topic"
       ],
-      "correct": 1,
-      "explanation": "This is a classic deductive syllogism: a major premise, a minor premise, and a conclusion that necessarily follows if both premises are true."
+      "correct": 0,
+      "explanation": "The chapter offers three strategies: 'Find deeper premises' (almost everyone agrees on some level), 'Make your premises explicit' (show your work), or 'Choose your audience' (focus on people who share relevant assumptions).",
+      "hints": [
+        "What made Aristotle's approach easier than modern communication?",
+        "How does audience fragmentation affect enthymemes?"
+      ]
     },
     {
-      "id": "ch9-q5",
+      "type": "matching",
+      "question": "Match each concept with its definition:",
+      "pairs": [
+        {"left": "Syllogism", "right": "A deductive argument with two premises and a conclusion"},
+        {"left": "Enthymeme", "right": "A compressed argument with an unstated premise the audience supplies"},
+        {"left": "Maxim", "right": "A general statement of principle audiences already accept"}
+      ],
+      "explanation": "A syllogism is the formal logical structure. An enthymeme compresses it by leaving out what the audience already believes. A maxim represents shared wisdom that can serve as an unstated premise (like proverbs).",
+      "hints": [
+        "Which form is 'rhetoric's syllogism'?",
+        "What do proverbs like 'You reap what you sow' function as?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Why are enthymemes rhetorically powerful according to the chapter?",
+      "options": [
+        "When audiences supply premises themselves, they become invested in the conclusion as co-constructors",
+        "Because they're longer than syllogisms",
+        "Because they hide weak arguments",
+        "Because they eliminate the need for evidence"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'When audiences supply premises themselves, they become invested in the conclusion. They've participated in the reasoning. They're not just hearing your argument; they're co-constructing it. This makes the conclusion feel like their own discovery.'",
+      "hints": [
+        "What role does the audience play in an enthymeme?",
+        "Why does participation increase persuasion?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "A logically valid argument always has true conclusions.",
+      "question": "According to the chapter, the person who announces 'I'm just being logical here' is frequently about to make a strong argument.",
       "correct": false,
-      "explanation": "Validity refers to the structure of an argument—whether the conclusion follows from the premises. An argument can be valid but have false premises, leading to a false conclusion. Soundness requires both validity AND true premises."
+      "explanation": "The chapter opens: 'Most \"logical\" arguments are nothing of the sort. People claim to be reasoning when they're actually rationalizing... The person who announces \"I'm just being logical here\" is frequently about to commit a howler.'",
+      "hints": [
+        "What's the difference between reasoning and rationalizing?",
+        "Does claiming to be logical make you logical?"
+      ]
     },
     {
-      "id": "ch9-q6",
       "type": "multiple-choice",
-      "question": "When you argue that 'just as exercise strengthens the body, reading strengthens the mind,' you are using:",
+      "question": "What problem does the chapter identify with using enthymemes in modern fragmented audiences?",
       "options": [
-        "Deductive reasoning",
-        "Inductive reasoning",
-        "Analogical reasoning",
-        "Circular reasoning"
+        "Different audience members hold contradictory unstated premises, so the same words become different arguments",
+        "Modern audiences are too logical for enthymemes",
+        "Enthymemes only work in written form",
+        "Social media has eliminated all shared premises"
       ],
-      "correct": 2,
-      "explanation": "Analogical reasoning draws parallels between two things to suggest that what's true of one is likely true of the other. The strength depends on how similar the compared things actually are."
+      "correct": 0,
+      "explanation": "The chapter explains: 'Your Thanksgiving table might include people whose unstated premises contradict each other absolutely... The same words, received by different unstated premises, become different arguments. One half hears an obvious truth; the other half hears a dogmatic assertion.'",
+      "hints": [
+        "How did Aristotle's audience differ from modern audiences?",
+        "What happens when premises aren't shared?"
+      ]
     },
     {
-      "id": "ch9-q7",
       "type": "multiple-choice",
-      "question": "What is the main weakness of relying solely on logos in persuasion?",
+      "question": "According to the chapter, what is the difference between how mathematicians and lawyers use logic?",
       "options": [
-        "Logic is too complicated for audiences",
-        "Humans are not purely rational decision-makers",
-        "Evidence is always biased",
-        "Syllogisms take too long to construct"
+        "Mathematicians prove theorems with certainty; lawyers argue cases with probability",
+        "Mathematicians use induction; lawyers use deduction",
+        "There is no difference",
+        "Mathematicians avoid logic; lawyers require it"
       ],
-      "correct": 1,
-      "explanation": "While logos provides the rational foundation, humans make decisions based on emotions, identity, and social factors too. Effective persuasion combines logos with ethos and pathos."
-    },
-    {
-      "id": "ch9-q8",
-      "type": "multiple-choice",
-      "question": "The difference between validity and soundness in an argument is:",
-      "options": [
-        "Validity refers to evidence quality; soundness refers to structure",
-        "Valid arguments have true conclusions; sound arguments have false ones",
-        "Validity concerns structure; soundness requires both valid structure AND true premises",
-        "There is no meaningful difference"
-      ],
-      "correct": 2,
-      "explanation": "A valid argument has correct logical structure (conclusion follows from premises). A sound argument is valid AND has true premises. You can have a valid argument with false premises that leads to a false conclusion."
-    },
-    {
-      "id": "ch9-q9",
-      "type": "true-false",
-      "question": "Abductive reasoning, or 'inference to the best explanation,' gives us certain conclusions like deductive reasoning.",
-      "correct": false,
-      "explanation": "Abductive reasoning identifies the most likely explanation for observed facts but doesn't guarantee certainty. Unlike deduction, which is conclusive when valid, abduction produces probable conclusions that could be wrong if a better explanation emerges."
-    },
-    {
-      "id": "ch9-q10",
-      "type": "multiple-choice",
-      "question": "When constructing a logical argument, what should you do with the unstated premises your audience must accept?",
-      "options": [
-        "Avoid relying on any unstated premises",
-        "Choose structures that rely on premises the audience already holds",
-        "State every premise explicitly, no matter how obvious",
-        "Use premises the audience will likely reject to challenge them"
-      ],
-      "correct": 1,
-      "explanation": "Effective rhetorical logic builds on beliefs the audience already accepts. Enthymemes work by leaving widely-accepted premises unstated. If your argument depends on premises your audience rejects, you must establish those premises first."
+      "correct": 0,
+      "explanation": "The chapter states: 'Mathematicians prove theorems with certainty. Lawyers argue cases with probability. The rhetorical syllogism isn't a watered-down version of the real thing. It's a different tool for a different job.'",
+      "hints": [
+        "What level of certainty can rhetoric achieve?",
+        "Why is rhetorical logic different from formal logic?"
+      ]
     }
   ]
 }

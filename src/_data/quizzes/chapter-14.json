@@ -1,119 +1,153 @@
 {
-  "chapterId": 14,
-  "chapterTitle": "The Socratic Method",
+  "title": "The Socratic Method",
   "passingScore": 70,
   "questions": [
     {
-      "id": "ch14-q1",
       "type": "multiple-choice",
-      "question": "What is the Greek term for the Socratic method of refutation through questioning?",
+      "question": "What is the 'elenchus'?",
       "options": [
-        "Aporia",
-        "Elenchus",
-        "Enthymeme",
-        "Kairos"
-      ],
-      "correct": 1,
-      "explanation": "Elenchus (ἔλεγχος) is the Socratic method of cross-examination through systematic questioning, designed to expose contradictions and clarify thinking."
-    },
-    {
-      "id": "ch14-q2",
-      "type": "multiple-choice",
-      "question": "What is 'aporia' in Socratic dialogue?",
-      "options": [
+        "Socrates's method of cross-examination through systematic questioning until contradictions emerge",
+        "A formal debate format from ancient Rome",
         "A type of logical fallacy",
-        "The moment of confident conclusion",
-        "A state of puzzlement or impasse",
-        "The final answer to a question"
+        "A concluding statement in Greek rhetoric"
       ],
-      "correct": 2,
-      "explanation": "Aporia is the productive state of confusion that arises when Socratic questioning reveals that our initial beliefs were poorly founded. It's the starting point for genuine inquiry."
+      "correct": 0,
+      "explanation": "The elenchus is Socrates's signature technique: probing a person's beliefs through systematic inquiry until internal contradictions emerge. The goal isn't to win but to reveal the limits of knowledge—including one's own.",
+      "hints": [
+        "How did Socrates engage with Thrasymachus's claim about justice?",
+        "What happens when contradictions in a position are revealed?"
+      ]
     },
     {
-      "id": "ch14-q3",
       "type": "true-false",
-      "question": "Socrates claimed to possess wisdom and used questioning to share his knowledge with others.",
+      "question": "According to the chapter, Socrates claimed to possess great wisdom about ethics and justice.",
       "correct": false,
-      "explanation": "Socrates famously claimed to know nothing ('I know that I know nothing'). His questioning wasn't meant to share knowledge but to help others discover the limits and contradictions in their own beliefs."
+      "explanation": "Socrates famously claimed to know only one thing: 'that he knew nothing.' This wasn't false modesty but a methodological commitment—if you start from certainty, you have no reason to inquire.",
+      "hints": [
+        "What did Socrates say about his own knowledge?",
+        "How does acknowledged ignorance enable learning?"
+      ]
     },
     {
-      "id": "ch14-q4",
-      "type": "multiple-choice",
-      "question": "The Socratic method is best described as:",
-      "options": [
-        "Lecturing with occasional questions",
-        "Winning arguments through clever rhetoric",
-        "Collaborative inquiry through questioning",
-        "Memorizing and reciting correct answers"
+      "type": "matching",
+      "question": "Match each Greek term with its meaning:",
+      "pairs": [
+        {"left": "Elenchus", "right": "Cross-examination through questioning to reveal contradictions"},
+        {"left": "Aporia", "right": "A state of productive puzzlement or perplexity"},
+        {"left": "Maieutic", "right": "Like midwifery—helping others give birth to ideas"}
       ],
-      "correct": 2,
-      "explanation": "The Socratic method is a cooperative dialogue where the questioner helps the respondent examine their beliefs, discover contradictions, and arrive at deeper understanding together."
+      "explanation": "The elenchus reveals contradictions. Aporia is the resulting confusion—the recognition that you don't know what you thought you knew. The maieutic method helps people discover knowledge they already possess through questioning.",
+      "hints": [
+        "Which term relates to Socrates's mother being a midwife?",
+        "Which describes feeling confused after questioning?"
+      ]
     },
     {
-      "id": "ch14-q5",
       "type": "multiple-choice",
-      "question": "When using the Socratic method, what should you do if someone gives an answer you disagree with?",
+      "question": "What is the difference between 'questions that reveal' and 'questions that trap'?",
       "options": [
-        "Immediately correct them",
-        "Ask follow-up questions to explore their reasoning",
-        "Present counter-evidence",
-        "Change the subject"
+        "Revealing questions genuinely seek understanding; trapping questions are designed to damage the respondent",
+        "Revealing questions are long; trapping questions are short",
+        "They are the same thing with different names",
+        "Revealing questions are easier to answer"
       ],
-      "correct": 1,
-      "explanation": "The Socratic method avoids direct contradiction. Instead, you ask questions that help the person examine their own reasoning and discover inconsistencies themselves."
+      "correct": 0,
+      "explanation": "Questions that reveal are open-ended and genuinely seek information. Questions that trap are leading and designed to produce a specific answer that damages the respondent—they're 'accusations disguised as questions.'",
+      "hints": [
+        "What's the difference in intention behind each type?",
+        "Which type closes down thought rather than opening it up?"
+      ]
     },
     {
-      "id": "ch14-q6",
+      "type": "scenario",
+      "question": "Based on the chapter's teaching about the Socratic method, what approach demonstrates good faith questioning?",
+      "scenario": "A colleague presents a proposal you're skeptical about. You want to understand their reasoning better.",
+      "options": [
+        "Ask 'What's the strongest evidence for your view?' and 'What would change your mind?'",
+        "Ask 'So you're saying we should waste company money?'",
+        "Immediately explain why they're wrong",
+        "Stay silent to avoid confrontation"
+      ],
+      "correct": 0,
+      "explanation": "The chapter distinguishes good-faith questioning from rhetorical weapons. Open questions like 'What's the strongest evidence for your view?' genuinely seek understanding, while leading questions like the second option are 'accusations disguised as questions.'",
+      "hints": [
+        "What kind of questions advance understanding?",
+        "Which response sounds like it's genuinely curious?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, when should you stop using the Socratic method?",
+      "options": [
+        "When someone needs direct answers, when power dynamics are unequal, or when the other person argues in bad faith",
+        "Never—it should always be used",
+        "Only in formal debate settings",
+        "Whenever questions become difficult"
+      ],
+      "correct": 0,
+      "explanation": "The chapter identifies limits: when people just need information (not endless questioning), when power dynamics make questioning inappropriate (a boss 'questioning' an employee's review), or when the interlocutor isn't engaging in good faith.",
+      "hints": [
+        "Is questioning appropriate in every situation?",
+        "What happens when power dynamics are unequal?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'aporia' in the Socratic method?",
+      "options": [
+        "The state of productive puzzlement when you realize you don't know what you thought you knew",
+        "The final answer reached through questioning",
+        "A type of logical proof",
+        "A formal debate conclusion"
+      ],
+      "correct": 0,
+      "explanation": "Aporia is the confusion that results from elenchus—the recognition that your confident beliefs contain contradictions. Socrates considered this confusion valuable because it opens space for genuine inquiry.",
+      "hints": [
+        "What feeling does good Socratic questioning produce?",
+        "Why might confusion be productive?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Why did Socrates compare himself to a midwife?",
+      "options": [
+        "Because he helped others give birth to ideas they already carried, rather than implanting his own",
+        "Because his mother was a midwife",
+        "Because he delivered speeches",
+        "Because he worked in healthcare"
+      ],
+      "correct": 0,
+      "explanation": "The maieutic method means helping others discover knowledge through questioning—like a midwife helping with birth. Socrates didn't claim to give people ideas; he helped them bring forth ideas they already had but hadn't fully formed.",
+      "hints": [
+        "What does the midwife metaphor suggest about teaching?",
+        "Does the questioner provide answers or help others find them?"
+      ]
+    },
+    {
       "type": "true-false",
-      "question": "The goal of Socratic questioning is always to prove the other person wrong.",
+      "question": "According to the chapter, Socratic questioning always leads to clear, definitive answers.",
       "correct": false,
-      "explanation": "The goal is truth-seeking and mutual understanding, not 'winning.' Socrates was as willing to discover his own errors as those of his interlocutors. The method aims at clarity, not defeat."
+      "explanation": "The chapter notes that many Socratic dialogues end in aporia—productive puzzlement without definitive resolution. The value isn't always reaching answers but recognizing the complexity of questions and the limits of what we know.",
+      "hints": [
+        "How do many of Plato's dialogues end?",
+        "Is uncertainty always a failure?"
+      ]
     },
     {
-      "id": "ch14-q7",
       "type": "multiple-choice",
-      "question": "Which is an example of a good Socratic question?",
+      "question": "What is the 'torpedo fish' comparison Socrates made about himself?",
       "options": [
-        "'Don't you think that's obviously wrong?'",
-        "'What do you mean by that term?'",
-        "'Why would anyone believe that?'",
-        "'Have you even read the research?'"
+        "Like the fish that numbs what it touches, he makes people feel numb with confusion—but he too is confused",
+        "He's dangerous to opponents",
+        "He moves quickly through arguments",
+        "He has shocking ideas"
       ],
-      "correct": 1,
-      "explanation": "Good Socratic questions are genuinely curious, non-judgmental, and seek clarification. 'What do you mean by that?' invites the person to examine and articulate their thinking."
-    },
-    {
-      "id": "ch14-q8",
-      "type": "multiple-choice",
-      "question": "The 'Socratic irony' refers to:",
-      "options": [
-        "Using sarcasm to win arguments",
-        "Pretending not to know in order to help others discover their own ignorance",
-        "Making fun of opponents' logical errors",
-        "Refusing to answer any questions directly"
-      ],
-      "correct": 1,
-      "explanation": "Socratic irony is the feigned ignorance Socrates employed when questioning others. By claiming not to know, he encouraged his interlocutors to explain their beliefs fully, often revealing contradictions in the process."
-    },
-    {
-      "id": "ch14-q9",
-      "type": "true-false",
-      "question": "The Socratic method works best when used to embarrass opponents in front of an audience.",
-      "correct": false,
-      "explanation": "Using Socratic questioning to humiliate people misses its purpose entirely. The method is meant to be a collaborative search for truth, not a weapon. When used aggressively, it damages relationships and closes minds rather than opening them."
-    },
-    {
-      "id": "ch14-q10",
-      "type": "multiple-choice",
-      "question": "In a Socratic dialogue, what role does 'following the argument wherever it leads' play?",
-      "options": [
-        "It's a way to avoid reaching conclusions",
-        "It demonstrates commitment to truth over winning",
-        "It allows the questioner to control the conversation",
-        "It's used to confuse the other person"
-      ],
-      "correct": 1,
-      "explanation": "This principle means being willing to accept conclusions you didn't expect or even wanted to avoid. It demonstrates intellectual honesty and makes the dialogue a genuine search for truth rather than a debate to win."
+      "correct": 0,
+      "explanation": "Socrates compared himself to the torpedo fish (electric ray) that numbs what it touches. His questioning makes others confused—but he emphasized he too is confused: 'I myself do not have the answer when I perplex others.'",
+      "hints": [
+        "What does the torpedo fish do to its prey?",
+        "Is Socrates claiming to have answers others lack?"
+      ]
     }
   ]
 }
