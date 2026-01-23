@@ -6,7 +6,7 @@
       "type": "multiple-choice",
       "question": "According to Quintilian, what is refutation's role in a speech?",
       "options": [
-        "It is 'the very life and soul of a speech'",
+        "It is 'the very life and soul of a speech'—all the rest is mere preparation",
         "It should be avoided whenever possible",
         "It's only necessary when your case is weak",
         "It should come at the very beginning"
@@ -77,7 +77,7 @@
     },
     {
       "type": "scenario",
-      "question": "Based on the chapter's 'five refutation moves,' which approach would be most effective here?",
+      "question": "Based on the chapter's teaching, which approach would be most effective here?",
       "scenario": "Your opponent argues: 'We should cut the marketing budget because sales have been declining.' You know sales declined due to supply chain issues, not marketing effectiveness.",
       "options": [
         "Expose the missing link: 'How does sales decline prove marketing caused it?'",
@@ -86,10 +86,68 @@
         "Change the subject to a different budget item"
       ],
       "correct": 0,
-      "explanation": "The chapter's 'Five Refutation Moves' include: deny the claim, minimize impact, turn the argument, expose the missing link, or outweigh. Here, the logical connection between evidence (sales decline) and conclusion (cut marketing) is broken—supply chain, not marketing, caused the decline.",
+      "explanation": "The logical connection between evidence (sales decline) and conclusion (cut marketing) is broken—supply chain, not marketing, caused the decline. Exposing this missing link shows the evidence doesn't support the conclusion.",
       "hints": [
         "Is the evidence actually supporting the conclusion?",
         "What's the gap between the sales data and the marketing budget decision?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "How did Socrates refute Thrasymachus in the Republic?",
+      "options": [
+        "Through careful questioning that revealed internal contradictions in Thrasymachus's position",
+        "By shouting louder",
+        "By attacking Thrasymachus's character",
+        "By simply asserting the opposite"
+      ],
+      "correct": 0,
+      "explanation": "Socrates didn't raise his voice or counterattack. 'Through careful questioning, Socrates revealed that Thrasymachus couldn't consistently define \"the stronger\" or \"advantage.\" The position that had seemed so unassailable began to crumble from within.'",
+      "hints": [
+        "What technique did Socrates use?",
+        "Did Socrates overwhelm with counterarguments or reveal existing weakness?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the difference between attacking evidence and attacking reasoning?",
+      "options": [
+        "Evidence attacks challenge the facts; reasoning attacks accept the facts but challenge the conclusion drawn from them",
+        "They are the same thing",
+        "Evidence attacks are stronger than reasoning attacks",
+        "Reasoning attacks focus on emotional appeal"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Evidence-based refutation challenges the facts: the statistics are outdated, the study was flawed. Reasoning-based refutation accepts the facts but challenges the conclusion drawn from them.'",
+      "hints": [
+        "Can facts be true but the conclusion still be wrong?",
+        "What different targets do these attacks have?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What example does the chapter use to show devastating evidence-based refutation?",
+      "options": [
+        "Cicero's prosecution of Verres—meticulously documenting every instance of plunder with specific witnesses and details",
+        "A social media argument",
+        "A casual dinner conversation",
+        "An academic paper"
+      ],
+      "correct": 0,
+      "explanation": "The chapter describes: 'Cicero didn't just call Verres a thief—he meticulously documented every instance of plunder, every bribe, every act of extortion. He named witnesses, described stolen artifacts in detail... The case was so overwhelming that Verres fled Rome.'",
+      "hints": [
+        "What made this refutation irresistible?",
+        "Why did Verres flee before the trial ended?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the stock issues only apply to formal debate competitions, not real-world arguments.",
+      "correct": false,
+      "explanation": "The chapter explicitly applies stock issues to real-world contexts: 'A startup pitch lives or dies by the same four issues, even if the founders have never heard the terms... VCs who've never studied debate intuitively probe these exact questions.'",
+      "hints": [
+        "How does the chapter apply stock issues to startup pitches?",
+        "Are these issues about debate rules or practical reasoning?"
       ]
     }
   ]

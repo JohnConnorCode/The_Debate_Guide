@@ -12,7 +12,7 @@
         "A type of social media account"
       ],
       "correct": 0,
-      "explanation": "Filter bubbles occur when algorithms curate content based on your past behavior, creating an echo chamber that reinforces existing beliefs. This makes online discourse particularly challenging—people may never encounter strong versions of opposing arguments.",
+      "explanation": "Filter bubbles occur when algorithms curate content based on your past behavior, creating an echo chamber that reinforces existing beliefs. This makes your views seem more universal and your opponents' views more extreme than they actually are.",
       "hints": [
         "How do social media algorithms choose what to show you?",
         "What happens when you only see views you already agree with?"
@@ -22,7 +22,7 @@
       "type": "true-false",
       "question": "According to the chapter, the attention economy rewards nuanced, carefully reasoned arguments.",
       "correct": false,
-      "explanation": "The chapter argues the opposite: the attention economy rewards outrage, simplification, and emotional provocation. Algorithms optimize for engagement, and inflammatory content generates more engagement than nuanced analysis. This creates structural pressure against good rhetoric online.",
+      "explanation": "The opposite is true: the attention economy rewards outrage, simplification, and emotional provocation. Algorithms optimize for engagement, and inflammatory content generates more engagement than nuanced analysis. This creates structural pressure against good rhetoric online.",
       "hints": [
         "What kind of content gets the most clicks and shares?",
         "Do algorithms reward nuance or provocation?"
@@ -38,7 +38,7 @@
         "Persuasion that only works in person"
       ],
       "correct": 0,
-      "explanation": "Viral rhetoric prioritizes shareability over soundness. It uses emotional triggers, oversimplification, and tribal signaling to spread rapidly—often sacrificing accuracy and nuance. Understanding this helps you recognize and resist manipulative online content.",
+      "explanation": "Viral rhetoric prioritizes shareability over soundness. It uses emotional triggers, oversimplification, and tribal signaling to spread rapidly—often sacrificing accuracy and nuance. Understanding this helps you recognize when you're being manipulated.",
       "hints": [
         "What makes content spread quickly online?",
         "Is viral content usually nuanced or simplified?"
@@ -52,7 +52,7 @@
         {"left": "Permanence", "right": "Online statements can be screenshot and resurface years later"},
         {"left": "Asynchronous communication", "right": "Time gaps between messages allow misunderstandings to escalate"}
       ],
-      "explanation": "Digital platforms create unique challenges for discourse. Context collapse means you can't tailor arguments to specific audiences. Permanence means careless words haunt you. Asynchronous communication removes the real-time feedback that helps in-person conversation self-correct.",
+      "explanation": "Digital platforms create unique challenges. Context collapse means you can't tailor arguments to specific audiences. Permanence means careless words haunt you. Asynchronous communication removes the real-time feedback that helps in-person conversation self-correct.",
       "hints": [
         "How is arguing online different from arguing in person?",
         "What happens when your tweet reaches very different audiences?"
@@ -60,7 +60,7 @@
     },
     {
       "type": "multiple-choice",
-      "question": "What is the 'two-hour rule' suggested in the chapter?",
+      "question": "What does the Quick Tactic 'Two-Hour Rule' recommend?",
       "options": [
         "Wait at least two hours before responding to something that angered you online",
         "Spend no more than two hours per day on social media",
@@ -68,10 +68,26 @@
         "Block users who take more than two hours to respond"
       ],
       "correct": 0,
-      "explanation": "The two-hour rule is a practical tactic for digital discourse: when something online makes you angry, wait at least two hours before responding. This cooling-off period helps you craft a more thoughtful response rather than reacting emotionally—which usually makes things worse.",
+      "explanation": "The Two-Hour Rule is a practical tactic: when something online makes you angry, wait at least two hours before responding. This cooling-off period helps you craft a more thoughtful response rather than reacting emotionally—which usually makes things worse.",
       "hints": [
         "Why might immediate responses to inflammatory content be problematic?",
         "What's the benefit of delaying your response?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, why should you 'write for the lurkers, not your opponent'?",
+      "options": [
+        "Because the person you're arguing with is least likely to change their mind, but observers might",
+        "Because lurkers will share your posts more widely",
+        "Because opponents are always arguing in bad faith",
+        "Because lurkers have more followers"
+      ],
+      "correct": 0,
+      "explanation": "In any online exchange, your direct opponent is probably the least likely to change their mind. But dozens or hundreds of lurkers may be following the thread, genuinely uncertain. When you stay calm while your opponent escalates, when you address evidence while they name-call—the lurkers notice.",
+      "hints": [
+        "Who is actually watching online arguments?",
+        "What do observers conclude when they see different arguing styles?"
       ]
     },
     {
@@ -89,6 +105,48 @@
       "hints": [
         "Do public argument threads usually change anyone's mind?",
         "What are the alternatives to public engagement?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does Marshall McLuhan's phrase 'The medium is the message' mean for digital discourse?",
+      "options": [
+        "The format of social media shapes and constrains what kinds of arguments can thrive within it",
+        "Social media messages should be as short as possible",
+        "The technology you use doesn't affect your arguments",
+        "Online and offline arguments are essentially the same"
+      ],
+      "correct": 0,
+      "explanation": "McLuhan's insight is that the medium shapes the messages that can thrive within it. Twitter's character limit forces compression that strips nuance. Instagram privileges images over text. Each format creates pressure toward certain kinds of expression—and sustained argument is not what these formats are built for.",
+      "hints": [
+        "How does a 280-character limit affect complex arguments?",
+        "Can you fit Aristotle's Rhetoric in a tweet?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter recommend about rebuilding capacity for productive disagreement?",
+      "options": [
+        "Start practicing face-to-face before deploying skills online, where every structural feature works against you",
+        "Practice only on social media to build thick skin",
+        "Avoid all disagreement until you're an expert",
+        "Use anonymous accounts to practice without consequences"
+      ],
+      "correct": 0,
+      "explanation": "The chapter advises: 'A person who learns to argue only on Twitter is like a swimmer who learns only in a riptide. You need calmer waters first.' Practice disagreeing with actual humans in real time, where you can read expressions and adjust. Only then deploy those skills online.",
+      "hints": [
+        "Why is learning to argue face-to-face important?",
+        "What does the 'riptide' metaphor suggest?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, research shows that false information spreads more slowly than true information online.",
+      "correct": false,
+      "explanation": "Research consistently shows the opposite: false information spreads faster than true information online. This isn't because people prefer lies—it's because false information is often more novel, more surprising, more emotionally provocative than the truth. Misinformation optimizes for attention.",
+      "hints": [
+        "What kind of information is more 'engaging'?",
+        "Why might lies spread faster than facts?"
       ]
     }
   ]

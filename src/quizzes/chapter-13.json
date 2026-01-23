@@ -6,7 +6,7 @@
       "type": "multiple-choice",
       "question": "What is the key difference between formal and informal fallacies?",
       "options": [
-        "Formal fallacies have broken structure; informal fallacies have flawed content",
+        "Formal fallacies have broken logical structure; informal fallacies have flawed content or reasoning",
         "Formal fallacies are more serious; informal fallacies are minor",
         "Formal fallacies are intentional; informal fallacies are accidental",
         "They are the same thing with different names"
@@ -27,7 +27,7 @@
         {"left": "False dilemma", "right": "Presenting only two options when more exist"},
         {"left": "Slippery slope", "right": "Claiming one step will inevitably lead to extreme consequences"}
       ],
-      "explanation": "These are the 'greatest hits' of fallacies that appear frequently in everyday argument. Ad hominem attacks the person, straw man distorts the position, false dilemma limits options artificially, and slippery slope assumes an inevitable chain of consequences.",
+      "explanation": "These are the 'greatest hits' of fallacies that appear frequently in everyday argument. Ad hominem attacks the person, straw man distorts the position, false dilemma limits options artificially, and slippery slope assumes an inevitable chain.",
       "hints": [
         "Which fallacy involves misrepresenting what someone said?",
         "Which one presents a false 'either/or' choice?"
@@ -37,7 +37,7 @@
       "type": "true-false",
       "question": "According to the chapter, citing an expert in their field of expertise is always a fallacy.",
       "correct": false,
-      "explanation": "The chapter distinguishes between legitimate and illegitimate appeals to authority. Citing a climate scientist on climate change is reasonable; citing that same scientist on unrelated topics isn't. The fallacy occurs when authority is used to shut down inquiry rather than inform it.",
+      "explanation": "The chapter distinguishes legitimate from illegitimate appeals to authority. Citing a climate scientist on climate change is reasonable; citing that same scientist on unrelated topics isn't. The fallacy occurs when authority is used to shut down inquiry rather than inform it.",
       "hints": [
         "What makes an appeal to authority legitimate?",
         "When does the chapter say expert citation is appropriate?"
@@ -53,7 +53,7 @@
         "Using fallacies intentionally"
       ],
       "correct": 0,
-      "explanation": "The chapter warns that a weak argument can still have a correct conclusion. 'Smoking is bad because my grandfather smoked and died young' is a hasty generalization, but smoking IS bad—we have mountains of evidence to prove it. The conclusion might be true even if the argument is flawed.",
+      "explanation": "The chapter warns that a weak argument can still have a correct conclusion. 'Smoking is bad because my grandfather smoked and died young' is a hasty generalization, but smoking IS bad—we have mountains of evidence to prove it.",
       "hints": [
         "Can a conclusion be correct even if the argument for it is weak?",
         "Why is fallacy-hunting not enough?"
@@ -90,6 +90,64 @@
       "hints": [
         "What does the chapter say about self-scrutiny?",
         "Is the goal to win or to understand?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is a 'red herring' fallacy?",
+      "options": [
+        "Introducing an irrelevant topic to divert attention from the actual argument",
+        "Attacking someone's character",
+        "Claiming something is true because it's traditional",
+        "Making an argument based on fear"
+      ],
+      "correct": 0,
+      "explanation": "A red herring diverts attention by introducing an irrelevant issue. The term comes from the practice of using smoked herring to throw hunting dogs off a scent. In argument, it distracts from the actual point being debated.",
+      "hints": [
+        "What does changing the subject accomplish?",
+        "How does this relate to the image of throwing dogs off a scent?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "When is an ad hominem attack NOT a fallacy according to the chapter?",
+      "options": [
+        "When the person's character or qualifications are directly relevant to the argument being made",
+        "It's always a fallacy",
+        "When you're winning the argument",
+        "When the opponent deserves it"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that character can be relevant: if someone's credibility or expertise matters to the argument, questioning it isn't fallacious. 'This financial advisor has been convicted of fraud' is relevant when evaluating their investment advice.",
+      "hints": [
+        "When does character matter to an argument?",
+        "What makes an ad hominem legitimate vs. fallacious?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the appeal to tradition ('We've always done it this way') is always fallacious.",
+      "correct": false,
+      "explanation": "The chapter notes that tradition can carry real information—practices that have survived may have survived for good reasons. The fallacy occurs when tradition is used to shut down discussion rather than as evidence worth considering. 'Long survival can be evidence of value.'",
+      "hints": [
+        "Can tradition carry useful information?",
+        "When does appeal to tradition become fallacious?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter recommend instead of calling out fallacies by name?",
+      "options": [
+        "Use redirects—reframe, ask questions, or restate your position to make the fallacy unsustainable",
+        "Always name the fallacy loudly",
+        "Ignore all fallacies",
+        "Respond with your own fallacy"
+      ],
+      "correct": 0,
+      "explanation": "The chapter's Quick Tactic advises: 'Don't name the fallacy. Instead, use redirects.' For straw man: restate your actual position. For ad hominem: 'That's interesting, but let's focus on the argument.' For false dilemma: 'Are those really the only two options?'",
+      "hints": [
+        "Why does naming fallacies often backfire?",
+        "What do the suggested redirects accomplish?"
       ]
     }
   ]

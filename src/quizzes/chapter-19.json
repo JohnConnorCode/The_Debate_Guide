@@ -12,17 +12,23 @@
         "A religious ritual"
       ],
       "correct": 0,
-      "explanation": "Isegoria was a foundational principle of Athenian democracy: every citizen had an equal right to address the assembly. This wasn't just permission to speak—it was a recognition that democracy requires citizens to participate in public deliberation.",
+      "explanation": "Isegoria was a foundational principle of Athenian democracy: every citizen had an equal right to address the assembly, regardless of wealth, birth, or status. The marketplace of ideas meant nothing without equal access to the marketplace.",
       "hints": [
         "What made Athenian democracy participatory?",
         "Think about the root 'iso-' meaning equal."
       ]
     },
     {
-      "type": "true-false",
-      "question": "According to the chapter, 'parrhesia' means speaking only when you're certain you're right.",
-      "correct": false,
-      "explanation": "Parrhesia means frank, fearless speech—saying what you believe to be true even when it's unpopular or risky. It's about courage in speaking, not certainty. The parrhesiast speaks their honest view and takes responsibility for it, even without guarantees of being correct.",
+      "type": "multiple-choice",
+      "question": "What is 'parrhesia' in Greek political thought?",
+      "options": [
+        "Frank, fearless speech—the courage to speak truth even when it's dangerous or unwelcome",
+        "Speaking only when you're certain you're right",
+        "The art of flattering powerful people",
+        "A formal debate format"
+      ],
+      "correct": 0,
+      "explanation": "Parrhesia means frank or fearless speech—saying what you believe to be true even when it's unpopular or risky. It's about courage in speaking, not certainty. The parrhesiast speaks their honest view and takes responsibility for it.",
       "hints": [
         "Does parrhesia require certainty or courage?",
         "What's the relationship between honesty and popularity in parrhesia?"
@@ -59,19 +65,29 @@
       ]
     },
     {
+      "type": "true-false",
+      "question": "According to the chapter, Athenian democracy was a perfect model that we should replicate exactly.",
+      "correct": false,
+      "explanation": "The chapter explicitly acknowledges Athens was 'deeply flawed.' Women couldn't participate, slaves had no standing, decisions were sometimes swayed by demagogues, and Socrates was executed by democratic vote. The model deserves criticism, not nostalgia—but its core insight about debate and democracy remains powerful.",
+      "hints": [
+        "Who was excluded from Athenian democracy?",
+        "What does the chapter say about Socrates's execution?"
+      ]
+    },
+    {
       "type": "multiple-choice",
-      "question": "Why does the chapter argue that debate skills are a 'civic duty'?",
+      "question": "According to the Quick Tactic 'Town Hall Preparation,' what should you do before speaking at a public forum?",
       "options": [
-        "Because democracy depends on citizens who can reason together, not just vote their preferences",
-        "Because everyone should win arguments",
-        "Because the government requires it",
-        "Because debate competitions need participants"
+        "Know your one point, speak to the undecided, name a specific action, and acknowledge complexity",
+        "Prepare a 30-minute speech covering all your concerns",
+        "Target your comments only to those who already agree",
+        "Avoid acknowledging any opposing viewpoints"
       ],
       "correct": 0,
-      "explanation": "The chapter argues that democracy isn't just about voting—it's about deliberation. Citizens who can articulate positions, understand opposing views, and reason toward common ground are essential to democratic health. Debate skills aren't optional extras; they're civic necessities.",
+      "explanation": "The Town Hall Preparation advises: you'll have 2-3 minutes at most, so make one clear argument. Speak to the undecided—reasonable, specific, measured voices stand out. Name a specific action you want. And acknowledge complexity to show you've listened.",
       "hints": [
-        "What does democracy require beyond just voting?",
-        "How does citizen discourse affect democratic outcomes?"
+        "How much time do you typically get at a town hall?",
+        "Why speak to the undecided rather than allies?"
       ]
     },
     {
@@ -85,10 +101,52 @@
         "Speak only to those who already agree with you"
       ],
       "correct": 0,
-      "explanation": "The chapter emphasizes that civic discourse requires both parrhesia (courage to speak your view) and respect for fellow citizens. Effective civic participation means advocating your position while treating opponents as people with legitimate interests, not enemies to be defeated.",
+      "explanation": "Civic discourse requires both parrhesia (courage to speak your view) and respect for fellow citizens. Effective civic participation means advocating your position while treating opponents as people with legitimate interests, not enemies to be defeated.",
       "hints": [
         "How can you advocate strongly while remaining constructive?",
         "What's the difference between civic opponents and enemies?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What made the Maria and Tom dialogue in the chapter (mostly) work?",
+      "options": [
+        "They had met before, had coffee, and built a relationship beyond the disagreement itself",
+        "They were both professional debaters",
+        "They agreed on all the fundamentals",
+        "A moderator forced them to reach consensus"
+      ],
+      "correct": 0,
+      "explanation": "The chapter reveals that Maria and Tom had been introduced by a mutual friend and had coffee before the public conversation. This relationship allowed them to be more candid, not less—they could attack positions because they had a relationship to fall back on.",
+      "hints": [
+        "What context made their public disagreement possible?",
+        "Why do relationships matter before difficult conversations?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, why does civic engagement feel exhausting?",
+      "options": [
+        "Because staying informed, engaging across difference, and speaking up all take real energy, and results are often invisible",
+        "Because democracy is fundamentally broken",
+        "Because most people are unreasonable",
+        "Because civic engagement serves no purpose"
+      ],
+      "correct": 0,
+      "explanation": "The chapter acknowledges the emotional toll: 'Staying informed takes time. Engaging across difference takes emotional energy. Speaking up risks relationships. And the results are often invisible.' Sustainable engagement requires realistic expectations and pacing yourself.",
+      "hints": [
+        "What costs does the chapter identify?",
+        "Why is sustainable engagement important?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to J. William Fulbright, quoted in the chapter, 'In a democracy, dissent is an act of faith.'",
+      "correct": true,
+      "explanation": "The chapter quotes Senator Fulbright: 'In a democracy, dissent is an act of faith.' This captures the idea that speaking up when you disagree—practicing parrhesia—is fundamental to democratic health, not a disruption of it.",
+      "hints": [
+        "What does the quote suggest about the role of disagreement?",
+        "Is dissent destructive or essential to democracy?"
       ]
     }
   ]

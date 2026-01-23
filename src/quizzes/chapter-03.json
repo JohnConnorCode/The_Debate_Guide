@@ -4,91 +4,149 @@
   "questions": [
     {
       "type": "multiple-choice",
-      "question": "What are the three appeals of Aristotle's rhetorical triangle?",
+      "question": "According to Aristotle, what are the three means of persuasion?",
       "options": [
-        "Ethos (credibility), Pathos (emotion), Logos (logic)",
-        "Introduction, Body, Conclusion",
-        "Speaker, Audience, Message",
-        "Truth, Beauty, Goodness"
+        "Ethos (character), Pathos (emotion), Logos (reason)",
+        "Introduction, body, conclusion",
+        "Facts, opinions, values",
+        "Speaker, audience, message"
       ],
       "correct": 0,
-      "explanation": "Aristotle identified three fundamental modes of persuasion: ethos (the speaker's character and credibility), pathos (emotional appeal to the audience), and logos (logical reasoning and evidence).",
+      "explanation": "Aristotle identified: 'The first kind depends on the personal character of the speaker; the second on putting the audience into a certain frame of mind; the third on the proof, or apparent proof, provided by the words of the speech itself.' These became known as ethos, pathos, and logos.",
       "hints": [
-        "These are Greek terms you'll see throughout the book.",
-        "Think about what makes an argument convincing."
-      ]
-    },
-    {
-      "type": "true-false",
-      "question": "Effective persuasion requires all three appeals working together in balance.",
-      "correct": true,
-      "explanation": "The chapter emphasizes that the three appeals are not alternatives but work in harmony. An argument relying on only one appeal will be weaker than one that integrates ethos, pathos, and logos appropriately.",
-      "hints": [
-        "Think about the 'triangle' metaphor.",
-        "What happens when a three-legged stool loses a leg?"
+        "These are Greek terms for types of appeal.",
+        "One relates to who you are, one to feelings, one to reasoning."
       ]
     },
     {
       "type": "matching",
-      "question": "Match each appeal with its primary function:",
+      "question": "Match each appeal with its function:",
       "pairs": [
         {"left": "Ethos", "right": "Establishes why the audience should trust the speaker"},
-        {"left": "Pathos", "right": "Engages the audience's feelings and values"},
-        {"left": "Logos", "right": "Provides reasoning and evidence for the claim"}
+        {"left": "Pathos", "right": "Puts the audience into a frame of mind to receive the argument"},
+        {"left": "Logos", "right": "Provides the evidence and logical structure of the argument"}
       ],
-      "explanation": "Ethos answers 'Why should I listen to you?' Pathos answers 'Why should I care?' Logos answers 'Why should I believe this is true?'",
+      "explanation": "Ethos addresses 'Do I trust this person?' Pathos addresses 'Why should I care?' Logos addresses 'What's the reasoning?' All three work together—neglecting any one creates structural weakness.",
       "hints": [
-        "Think about what question each appeal answers for the audience.",
-        "Consider the Greek roots of each word."
+        "Which appeal makes you feel something?",
+        "Which appeal provides evidence?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the three appeals should always be used in equal proportions.",
+      "correct": false,
+      "explanation": "The chapter states: 'Balance doesn't mean equal portions. Different situations call for different emphasis. A scientific paper relies heavily on logos... A eulogy is mostly pathos... A character witness at trial is almost pure ethos. The skilled speaker reads the situation and adjusts accordingly.'",
+      "hints": [
+        "Does a scientific paper need the same emotional content as a eulogy?",
+        "What determines the right balance?"
       ]
     },
     {
       "type": "multiple-choice",
-      "question": "What is an 'enthymeme' according to the chapter?",
+      "question": "What does the chapter say about Aristotle's three components of ethos?",
       "options": [
-        "A rhetorical syllogism with an unstated premise the audience fills in",
-        "A logical fallacy to be avoided",
-        "A type of emotional appeal",
-        "A Greek word for credibility"
+        "Phronesis (practical wisdom), Arete (virtue), and Eunoia (goodwill)",
+        "Logic, emotion, and timing",
+        "Past, present, and future credibility",
+        "Speaking, listening, and responding skills"
       ],
       "correct": 0,
-      "explanation": "An enthymeme is a powerful rhetorical tool—a logical argument where one premise is left unstated because the audience already accepts it. This creates a sense of shared understanding and participation.",
+      "explanation": "The chapter explains: 'Aristotle broke ethos into three components. Phronesis, or practical wisdom: Does this person know what they're talking about? Arete, or virtue: Does this person have good character? Eunoia, or goodwill: Does this person have my interests at heart?'",
       "hints": [
-        "It's related to logos but involves the audience actively.",
-        "Think about what makes an argument feel like common ground."
+        "These are Greek terms for aspects of credibility.",
+        "One relates to expertise, one to character, one to caring about the audience."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, why did Aristotle believe emotions are legitimate tools of persuasion?",
+      "options": [
+        "Because emotions carry information—fear, anger, and pity are judgments about the world",
+        "Because audiences are too stupid for logic",
+        "Because ancient Greeks didn't understand reason",
+        "Because Plato told him to"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Emotions carry information. Fear tells you something is dangerous. Anger tells you an injustice has occurred. Pity tells you someone is suffering undeservedly. These aren't random noise interfering with clear thinking. They're judgments about the world.'",
+      "hints": [
+        "What do emotions tell us according to the chapter?",
+        "Are emotions random or meaningful?"
       ]
     },
     {
       "type": "scenario",
-      "question": "Which appeal is this speaker primarily using?",
-      "scenario": "A climate scientist begins her presentation: 'I've spent 25 years studying Arctic ice patterns, published over 100 peer-reviewed papers, and led three international research expeditions.'",
+      "question": "Based on the Quick Tactic '30-Second Triangle Check,' which question tests logos?",
+      "scenario": "You're preparing to email your manager about getting approval for a new project.",
       "options": [
-        "Ethos — establishing credibility and expertise",
-        "Pathos — creating an emotional connection",
-        "Logos — presenting logical evidence",
-        "None of the above"
+        "'What's my because?'—the core reason stated simply",
+        "'Why should they trust me on this?'—your relevant credibility",
+        "'Why should they care?'—what's at stake for them emotionally",
+        "'When should I send this?'—optimal timing"
       ],
       "correct": 0,
-      "explanation": "This is a classic ethos appeal. By establishing her qualifications, experience, and track record, the scientist is building credibility so the audience will trust her subsequent claims.",
+      "explanation": "The Quick Tactic lists three questions mapping to each appeal: 'Ethos: Why should they trust me on this? Pathos: Why should they care? Logos: What's my because?' If you can't answer all three, 'your argument isn't ready.'",
       "hints": [
-        "What is the speaker trying to establish about herself?",
-        "Which appeal deals with the speaker's character?"
+        "Which appeal is about reasoning and evidence?",
+        "What word does the tactic use for the logical core?"
       ]
     },
     {
       "type": "multiple-choice",
-      "question": "Why does the chapter describe the rhetorical triangle as a 'framework' rather than a 'formula'?",
+      "question": "According to the chapter, what's wrong with propaganda?",
       "options": [
-        "Because skilled rhetoricians adapt the balance of appeals to each situation",
-        "Because the appeals must always be used in a specific order",
-        "Because only one appeal should be used at a time",
-        "Because the framework is outdated for modern use"
+        "It typically overweights ethos and pathos while starving logos",
+        "It uses too much logical evidence",
+        "It lacks emotional appeal",
+        "It relies entirely on neutral information"
       ],
       "correct": 0,
-      "explanation": "The triangle is a framework for analysis and adaptation, not a rigid formula. Different situations call for different emphases—a eulogy emphasizes pathos, a legal brief emphasizes logos, a recommendation letter emphasizes ethos.",
+      "explanation": "The chapter states: 'Propaganda typically overweights ethos and pathos while starving logos. The charismatic leader, the emotionally charged imagery, but no actual argument.' Academic writing often has the opposite problem—'plenty of logos, but the author's character vanishes.'",
       "hints": [
-        "Think about how different contexts might require different approaches.",
-        "Does one size fit all in persuasion?"
+        "Which appeals does propaganda emphasize?",
+        "What does propaganda typically lack?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What example does the chapter use to show how Cicero balanced the three appeals?",
+      "options": [
+        "His First Catilinarian Oration—establishing ethos, building pathos, then presenting logos",
+        "His defense of Socrates",
+        "His debate with Aristotle",
+        "His TED talk"
+      ],
+      "correct": 0,
+      "explanation": "The chapter analyzes Cicero accusing Catiline of conspiracy: 'He opens with ethos. He reminds the Senate of his position as consul... Then he moves to pathos. He evokes the fear that the conspiracy should inspire... Only then does he present the logos: the evidence of the conspiracy.'",
+      "hints": [
+        "Which Roman orator does the chapter feature?",
+        "What was Cicero trying to prove to the Senate?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, social media breaks the rhetorical triangle by allowing full development of all three appeals.",
+      "correct": false,
+      "explanation": "The chapter argues the opposite: 'Social media breaks the triangle in a different way. Character is impossible to establish in 280 characters. Logical argument requires more space than the medium allows. What's left is pure pathos: emotional reaction without the tempering influence of credibility or reason.'",
+      "hints": [
+        "Can you establish credibility in a tweet?",
+        "What's left when ethos and logos are constrained?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter mean by saying logos functions as 'architecture'?",
+      "options": [
+        "The logical structure determines which unstated premises you're asking the audience to accept",
+        "Arguments should look like buildings",
+        "Logic should be beautiful",
+        "Syllogisms have three floors"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Logic in rhetoric isn't about proving things with mathematical certainty. It's about building arguments that fit what your audience already believes while extending those beliefs in the direction you want them to go.' The structure shapes which enthymemes work.",
+      "hints": [
+        "What role do unstated premises play?",
+        "How does structure relate to audience beliefs?"
       ]
     }
   ]

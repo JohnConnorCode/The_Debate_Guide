@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "question": "What is 'stasis' in rhetoric?",
       "options": [
-        "The central point of clash—the key issue on which a dispute turns",
+        "The point of clash—the central issue on which a dispute turns",
         "The opening statement of a speech",
         "A technique for calming an angry audience",
         "The conclusion of an argument"
       ],
       "correct": 0,
-      "explanation": "Stasis theory identifies where disagreements actually lie. There are four possible stasis points: fact (did it happen?), definition (what should we call it?), quality (was it justified?), and procedure (are we handling it correctly?).",
+      "explanation": "Stasis theory, developed by Hermagoras, identifies where disagreements actually lie. There are four possible stasis points: fact (did it happen?), definition (what should we call it?), quality (was it justified?), and procedure (are we handling it correctly?).",
       "hints": [
         "The chapter says many debates fail because participants 'argue past each other.'",
         "Think about the Greek meaning—it refers to a 'standing point.'"
@@ -37,7 +37,7 @@
       "type": "multiple-choice",
       "question": "In the Toulmin model, what is a 'warrant'?",
       "options": [
-        "The logical bridge between evidence and conclusion",
+        "The logical bridge between evidence and conclusion—why this evidence supports this claim",
         "The main claim being made",
         "The evidence supporting a claim",
         "The qualification showing degree of certainty"
@@ -47,6 +47,22 @@
       "hints": [
         "Think about what connects grounds to claims.",
         "The chapter says warrants are like 'unstated premises.'"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What are the six components of the Toulmin model?",
+      "options": [
+        "Claim, grounds, warrant, backing, qualifier, and rebuttal",
+        "Introduction, body, and conclusion",
+        "Ethos, pathos, and logos",
+        "Fact, definition, quality, and procedure"
+      ],
+      "correct": 0,
+      "explanation": "The Toulmin model includes: claim (what you're asserting), grounds (evidence), warrant (logical connection), backing (support for the warrant), qualifier (degree of certainty), and rebuttal (conditions under which the claim might not hold).",
+      "hints": [
+        "This is Stephen Toulmin's model of practical argument.",
+        "How does the model handle complexity and uncertainty?"
       ]
     },
     {
@@ -69,7 +85,7 @@
         "Introductions should be limited to one sentence"
       ],
       "correct": 0,
-      "explanation": "The one-sentence test forces precision. 'If you can't do this, your case isn't clear enough yet.' This core sentence becomes your thesis—the organizing principle for everything else.",
+      "explanation": "The one-sentence test forces precision: 'If you can't do this, your case isn't clear enough yet.' This core sentence becomes your thesis—the organizing principle for everything else.",
       "hints": [
         "Think about what clarifies your argument for yourself and the audience.",
         "The chapter quotes Einstein on simplicity."
@@ -78,7 +94,7 @@
     {
       "type": "scenario",
       "question": "Based on the chapter's teaching about stasis, what should you do first?",
-      "scenario": "You're preparing to argue against a new company policy requiring return-to-office. Before building your case, you realize people disagree about different aspects: some dispute that remote work hurts productivity (fact), some argue about what counts as 'collaboration' (definition), some debate whether any productivity gain justifies the employee burden (quality).",
+      "scenario": "You're preparing to argue against a new company policy. Some colleagues dispute the facts behind it, others argue about what it should be called, and others debate whether any productivity gain justifies the employee burden.",
       "options": [
         "Identify which stasis is the real point of disagreement before building your case",
         "Address all three points equally in your presentation",
@@ -86,10 +102,57 @@
         "Ignore the disagreement and focus only on your preferred argument"
       ],
       "correct": 0,
-      "explanation": "The chapter emphasizes that 'building a great case about the wrong stasis is worse than useless.' You must first identify where the real disagreement lies—then build a case that addresses that specific stasis.",
+      "explanation": "The chapter emphasizes: 'building a great case about the wrong stasis is worse than useless.' You must first identify where the real disagreement lies—then build a case that addresses that specific stasis.",
       "hints": [
         "What happens when participants argue about different questions?",
         "Why does stasis matter before case construction?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the 'Nestorian order' refer to?",
+      "options": [
+        "Strong-weak-strong arrangement—bury weaker arguments in the middle, open and close strong",
+        "Strongest arguments first",
+        "Weakest arguments first",
+        "Random ordering of arguments"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Strong-weak-strong (the Nestorian order) buries weaker arguments in the middle where they're less noticeable. Open strong to capture attention, let middle arguments do necessary but less exciting work, close strong to leave a lasting impression.'",
+      "hints": [
+        "What do audiences remember most—beginnings and endings, or middles?",
+        "How can you minimize the impact of weaker arguments?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What example does the chapter use to show effective case structure?",
+      "options": [
+        "Johnnie Cochran's 'If it doesn't fit, you must acquit'—compressing complex debates into a memorable principle",
+        "A scientific research paper",
+        "A political debate",
+        "A social media post"
+      ],
+      "correct": 0,
+      "explanation": "The chapter opens: '\"If it doesn't fit, you must acquit\"—Johnnie Cochran's famous line worked because it compressed complex forensic debates into a memorable principle. Structure gave his argument staying power.'",
+      "hints": [
+        "What made this legal argument memorable?",
+        "How does compression aid persuasion?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each classical speech component with its function:",
+      "pairs": [
+        {"left": "Exordium", "right": "Introduction—capturing attention"},
+        {"left": "Narratio", "right": "Background and statement of facts"},
+        {"left": "Confirmatio", "right": "Arguments for your position"},
+        {"left": "Refutatio", "right": "Responses to counterarguments"}
+      ],
+      "explanation": "Classical rhetoric recommended a structure that still works today: exordium (introduction), narratio (background), divisio (outline), confirmatio (your arguments), refutatio (addressing opposition), and peroratio (conclusion).",
+      "hints": [
+        "This Latin structure has survived for centuries.",
+        "What order do these components naturally follow?"
       ]
     }
   ]

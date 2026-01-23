@@ -32,7 +32,7 @@
       "type": "matching",
       "question": "Match each Greek term with its meaning:",
       "pairs": [
-        {"left": "Elenchus", "right": "Cross-examination through questioning"},
+        {"left": "Elenchus", "right": "Cross-examination through questioning to reveal contradictions"},
         {"left": "Aporia", "right": "A state of productive puzzlement or perplexity"},
         {"left": "Maieutic", "right": "Like midwifery—helping others give birth to ideas"}
       ],
@@ -52,7 +52,7 @@
         "Revealing questions are easier to answer"
       ],
       "correct": 0,
-      "explanation": "Questions that reveal are open-ended and genuinely seek information. Questions that trap are leading and designed to produce a specific answer that damages the respondent's position—they're 'accusations disguised as questions.'",
+      "explanation": "Questions that reveal are open-ended and genuinely seek information. Questions that trap are leading and designed to produce a specific answer that damages the respondent—they're 'accusations disguised as questions.'",
       "hints": [
         "What's the difference in intention behind each type?",
         "Which type closes down thought rather than opening it up?"
@@ -69,7 +69,7 @@
         "Stay silent to avoid confrontation"
       ],
       "correct": 0,
-      "explanation": "The chapter distinguishes good-faith questioning from rhetorical weapons. Open questions like 'What's the strongest evidence for your view?' genuinely seek understanding and give the other person room to think, while leading questions like the second option are 'accusations disguised as questions.'",
+      "explanation": "The chapter distinguishes good-faith questioning from rhetorical weapons. Open questions like 'What's the strongest evidence for your view?' genuinely seek understanding, while leading questions like the second option are 'accusations disguised as questions.'",
       "hints": [
         "What kind of questions advance understanding?",
         "Which response sounds like it's genuinely curious?"
@@ -89,6 +89,64 @@
       "hints": [
         "Is questioning appropriate in every situation?",
         "What happens when power dynamics are unequal?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'aporia' in the Socratic method?",
+      "options": [
+        "The state of productive puzzlement when you realize you don't know what you thought you knew",
+        "The final answer reached through questioning",
+        "A type of logical proof",
+        "A formal debate conclusion"
+      ],
+      "correct": 0,
+      "explanation": "Aporia is the confusion that results from elenchus—the recognition that your confident beliefs contain contradictions. Socrates considered this confusion valuable because it opens space for genuine inquiry.",
+      "hints": [
+        "What feeling does good Socratic questioning produce?",
+        "Why might confusion be productive?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Why did Socrates compare himself to a midwife?",
+      "options": [
+        "Because he helped others give birth to ideas they already carried, rather than implanting his own",
+        "Because his mother was a midwife",
+        "Because he delivered speeches",
+        "Because he worked in healthcare"
+      ],
+      "correct": 0,
+      "explanation": "The maieutic method means helping others discover knowledge through questioning—like a midwife helping with birth. Socrates didn't claim to give people ideas; he helped them bring forth ideas they already had but hadn't fully formed.",
+      "hints": [
+        "What does the midwife metaphor suggest about teaching?",
+        "Does the questioner provide answers or help others find them?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, Socratic questioning always leads to clear, definitive answers.",
+      "correct": false,
+      "explanation": "The chapter notes that many Socratic dialogues end in aporia—productive puzzlement without definitive resolution. The value isn't always reaching answers but recognizing the complexity of questions and the limits of what we know.",
+      "hints": [
+        "How do many of Plato's dialogues end?",
+        "Is uncertainty always a failure?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'torpedo fish' comparison Socrates made about himself?",
+      "options": [
+        "Like the fish that numbs what it touches, he makes people feel numb with confusion—but he too is confused",
+        "He's dangerous to opponents",
+        "He moves quickly through arguments",
+        "He has shocking ideas"
+      ],
+      "correct": 0,
+      "explanation": "Socrates compared himself to the torpedo fish (electric ray) that numbs what it touches. His questioning makes others confused—but he emphasized he too is confused: 'I myself do not have the answer when I perplex others.'",
+      "hints": [
+        "What does the torpedo fish do to its prey?",
+        "Is Socrates claiming to have answers others lack?"
       ]
     }
   ]

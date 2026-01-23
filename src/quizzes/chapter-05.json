@@ -1,5 +1,5 @@
 {
-  "title": "Ethos: The Art of Credibility",
+  "title": "Ethos: Building Credibility",
   "passingScore": 70,
   "questions": [
     {
@@ -12,7 +12,7 @@
         "Speaking, listening, and responding"
       ],
       "correct": 0,
-      "explanation": "Aristotle identified three pillars of credibility: phronesis (demonstrating practical wisdom and competence), arete (displaying moral virtue and character), and eunoia (showing goodwill toward the audience).",
+      "explanation": "Aristotle identified three pillars of credibility: phronesis (demonstrating practical wisdom and competence), arete (displaying moral virtue and character), and eunoia (showing goodwill toward the audience). Each addresses a different question the audience asks about the speaker.",
       "hints": [
         "These are Greek terms specific to ethos.",
         "Think about what makes someone trustworthy."
@@ -20,26 +20,32 @@
     },
     {
       "type": "matching",
-      "question": "Match each component of ethos with what it demonstrates:",
+      "question": "Match each component of ethos with the doubt it addresses:",
       "pairs": [
-        {"left": "Phronesis", "right": "The speaker knows what they're talking about"},
-        {"left": "Arete", "right": "The speaker is a person of good character"},
-        {"left": "Eunoia", "right": "The speaker has the audience's best interests at heart"}
+        {"left": "Phronesis", "right": "Does this speaker know what they're talking about?"},
+        {"left": "Arete", "right": "Is this speaker honest and moral?"},
+        {"left": "Eunoia", "right": "Does this speaker care about my interests?"}
       ],
-      "explanation": "Phronesis establishes expertise and competence. Arete establishes moral standing. Eunoia establishes that the speaker genuinely cares about the audience, not just their own agenda.",
+      "explanation": "Phronesis addresses doubts about competence—does the speaker understand the subject? Arete addresses doubts about character—is the speaker honest? Eunoia addresses doubts about goodwill—does the speaker care about the audience or just themselves?",
       "hints": [
         "Think about the questions an audience asks about a speaker.",
         "Which quality relates to caring about the listener?"
       ]
     },
     {
-      "type": "true-false",
-      "question": "Ethos is established once at the beginning of a speech and cannot be gained or lost afterward.",
-      "correct": false,
-      "explanation": "The chapter emphasizes that ethos is dynamic—it can be built, damaged, or repaired throughout a speech or over time. Every word and action either adds to or subtracts from your credibility.",
+      "type": "multiple-choice",
+      "question": "What is the difference between 'earned' and 'borrowed' credibility?",
+      "options": [
+        "Earned credibility comes from your own demonstrated expertise; borrowed credibility comes from credentials, affiliations, and endorsements",
+        "Earned credibility is permanent; borrowed credibility is temporary",
+        "Earned credibility requires education; borrowed credibility does not",
+        "They are different names for the same concept"
+      ],
+      "correct": 0,
+      "explanation": "The chapter distinguishes between credibility you build yourself through demonstrated expertise, consistent character, and track record (earned) versus credibility from external validation like credentials, affiliations, and endorsements (borrowed). Both are legitimate but have different vulnerabilities.",
       "hints": [
-        "Think about speakers who lost credibility during a speech.",
-        "Can a single mistake damage years of built-up trust?"
+        "Consider Frederick Douglass's credibility vs. a doctor's credentials.",
+        "Which type depends on institutions maintaining their reputation?"
       ]
     },
     {
@@ -52,7 +58,7 @@
         "Through formal education at an elite academy"
       ],
       "correct": 0,
-      "explanation": "Demosthenes famously overcame a speech impediment through rigorous self-training—speaking with pebbles in his mouth, practicing against the sound of waves. His ethos came from demonstrated perseverance, not natural gifts.",
+      "explanation": "The chapter describes how Demosthenes was 'sickly, stammering, weak-voiced' and was 'laughed off the stage' as a young man. The famous legend of practicing with pebbles in his mouth captures 'something true about earned credibility'—his transformation through 'almost inhuman discipline.'",
       "hints": [
         "The chapter presents Demosthenes as an example of earned credibility.",
         "What did he have to overcome?"
@@ -60,35 +66,94 @@
     },
     {
       "type": "scenario",
-      "question": "Which component of ethos is this speaker primarily trying to establish?",
-      "scenario": "A financial advisor begins a client meeting by saying: 'I'm not going to recommend anything I wouldn't put in my own portfolio. My goal is your long-term financial health, even if that means I earn less in commissions today.'",
+      "question": "Based on the chapter's teaching, what is being demonstrated here?",
+      "scenario": "Frederick Douglass said: 'I appear before the immense assembly this evening as a thief and a robber. I stole this head, these limbs, this body from my master, and ran off with them.'",
       "options": [
-        "Eunoia — demonstrating goodwill toward the audience",
-        "Phronesis — demonstrating expertise",
-        "Arete — demonstrating moral virtue",
-        "None of the above"
+        "Earned credibility through lived experience and rhetorical intelligence",
+        "Borrowed credibility from abolitionist institutions",
+        "An appeal to pity for his circumstances",
+        "A logical argument against property rights"
       ],
       "correct": 0,
-      "explanation": "By emphasizing that they prioritize the client's interests over their own profit, the advisor is establishing eunoia—genuine care for the audience. This addresses the audience's natural question: 'Are you looking out for me or yourself?'",
+      "explanation": "The chapter analyzes this sentence in detail: Douglass adopts his opponents' legal framework (slavery as property), exposes its absurdity (how can a person steal themselves?), and forces the audience to see his humanity. 'His ethos wasn't borrowed from institutions or credentials. It was earned through suffering—and through the rhetorical intelligence to make that suffering illuminate the truth.'",
       "hints": [
-        "What concern is the advisor addressing?",
-        "Which component relates to the audience's well-being?"
+        "Consider what made Douglass uniquely qualified to speak on slavery.",
+        "The chapter says his credibility was 'earned through suffering.'"
       ]
     },
     {
       "type": "multiple-choice",
-      "question": "How did Frederick Douglass establish ethos according to the chapter?",
+      "question": "How does the chapter explain Greta Thunberg's credibility despite lacking traditional credentials?",
       "options": [
-        "Through the power of his self-education and moral authority as one who experienced slavery",
-        "By citing his formal university credentials",
-        "By avoiding emotional appeals and using only logic",
-        "By speaking only to audiences who already agreed with him"
+        "Her youth and inexperience became assets because adults with credentials had failed to act",
+        "She had secret scientific training",
+        "She borrowed credibility from her famous parents",
+        "She avoided making any claims about science"
       ],
       "correct": 0,
-      "explanation": "Douglass's credibility came from his lived experience and his remarkable self-education despite being denied formal schooling. His moral authority as someone who had experienced slavery firsthand was unassailable.",
+      "explanation": "The chapter explains: 'Sometimes credibility comes from lacking traditional credentials.' Thunberg's youth worked because 'adults had failed to act on climate change for decades.' Her inexperience became eunoia—'she genuinely cares about the future she'll inherit.' Crucially, 'she wasn't claiming expertise she lacked'—she deferred to scientists while adding moral authority.",
       "hints": [
-        "Consider what made Douglass uniquely qualified to speak on slavery.",
-        "His ethos combined arete with personal witness."
+        "Consider the context of decades of inaction by credentialed adults.",
+        "What kind of credibility could she claim that scientists couldn't?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, proclaiming 'trust me, I'm honest' is an effective way to establish arete.",
+      "correct": false,
+      "explanation": "The chapter identifies 'The Paradox of Appearing Trustworthy': 'Proclaiming \"trust me, I'm honest\" makes audiences more suspicious, not less.' Instead, 'arete emerges from conduct: fairness to opponents, willingness to acknowledge mistakes, refusal to use cheap tactics.' Ethos works best when demonstrated rather than stated.",
+      "hints": [
+        "What does the chapter say about the 'paradox' of trustworthiness?",
+        "Can you claim to be honest, or must you show it?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter say about Elizabeth Holmes and Theranos?",
+      "options": [
+        "She built ethos on borrowed credibility that collapsed when her claims couldn't be verified",
+        "She is an example of successfully building earned credibility",
+        "Her scientific expertise was genuine but misunderstood",
+        "She demonstrates how credentials can overcome poor character"
+      ],
+      "correct": 0,
+      "explanation": "The chapter uses Holmes as a warning: 'She built Theranos on a foundation of borrowed credibility—Stanford dropout mystique, powerful board members, magazine covers.' But 'her phronesis was performed, not real; the technology didn't work. Her arete was fabricated; she lied systematically.' The lesson: 'ethos built on performance rather than substance is always fragile.'",
+      "hints": [
+        "Consider what happened when her claims were investigated.",
+        "Was her credibility earned or manufactured?"
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the Quick Tactic 'Digital Credibility Audit,' what should you check when Googling yourself?",
+      "scenario": "You're preparing for a job interview and want to assess what strangers will find about you online.",
+      "options": [
+        "Phronesis (do results show expertise?), Arete (anything suggesting poor character?), Eunoia (do contributions help others?), and Consistency across platforms",
+        "Only your LinkedIn profile and recent posts",
+        "Whether you have more followers than competitors",
+        "How many times your name appears in search results"
+      ],
+      "correct": 0,
+      "explanation": "The chapter's Quick Tactic lists four checks: Phronesis (do first results demonstrate expertise?), Arete (anything suggesting poor character?), Eunoia (do your public contributions help others or only promote yourself?), and Consistency (do your LinkedIn, Twitter, and published work show the same person?).",
+      "hints": [
+        "The audit maps to the three components of ethos plus one additional check.",
+        "What would inconsistency across platforms suggest?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, when does ethos fail?",
+      "options": [
+        "Against closed systems where credibility is tribal, against structural power, and when interests overwhelm reason",
+        "Only when the speaker lacks credentials",
+        "Only in digital environments",
+        "Ethos never truly fails if properly established"
+      ],
+      "correct": 0,
+      "explanation": "The chapter identifies three situations where ethos fails: 'Closed systems' where audiences have already categorized you as 'the enemy'; 'structural power' where hierarchy trumps being right; and when 'interests overwhelm reason'—someone's material interests conflict with your message. 'Recognizing when ethos won't work is as important as building it.'",
+      "hints": [
+        "The chapter has a section called 'When Ethos Isn't Enough.'",
+        "Consider what happens when someone's income depends on disbelief."
       ]
     }
   ]

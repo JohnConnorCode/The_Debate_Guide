@@ -1193,18 +1193,18 @@
 
 @media (max-width: 600px) {
     .chapter-hero {
-        padding: calc(var(--header-height) + var(--space-md)) var(--space-sm) var(--space-md);
+        padding: calc(var(--header-height) + var(--space-md)) var(--space-md) var(--space-lg);
     }
 
     .chapter-part {
-        font-size: 0.625rem;
+        font-size: var(--text-xs);
         letter-spacing: var(--tracking-widest);
         margin-bottom: var(--space-xs);
     }
 
     .chapter-number {
         font-size: var(--text-5xl);
-        margin-bottom: var(--space-2);
+        margin-bottom: var(--space-sm);
         opacity: var(--opacity-20);
     }
 

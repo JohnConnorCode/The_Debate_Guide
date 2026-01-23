@@ -4,6 +4,22 @@
   "questions": [
     {
       "type": "multiple-choice",
+      "question": "What was 'disputatio' in medieval universities?",
+      "options": [
+        "A formal debate where students defended theses against all challengers to earn their degrees",
+        "A type of final written examination",
+        "A punishment for academic misconduct",
+        "A student social club"
+      ],
+      "correct": 0,
+      "explanation": "Disputatio was central to medieval university education. Students like Thomas Aquinas had to defend their ideas against structured objections, sometimes for hours. No degree was awarded without surviving this trial—knowledge that couldn't withstand scrutiny wasn't knowledge at all.",
+      "hints": [
+        "How did medieval students prove they could think?",
+        "What happened if you couldn't defend your thesis?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
       "question": "What is the 'trivium' in classical education?",
       "options": [
         "The three foundational arts: grammar, logic, and rhetoric",
@@ -12,7 +28,7 @@
         "A Roman teaching certificate"
       ],
       "correct": 0,
-      "explanation": "The trivium was the foundation of classical education: grammar (understanding language), logic (understanding reasoning), and rhetoric (understanding persuasion). These three arts built upon each other to create educated citizens capable of public discourse.",
+      "explanation": "The trivium was the foundation of classical education: grammar (understanding language), logic (reasoning correctly), and rhetoric (persuading effectively). These weren't separate subjects but stages of development—you learned to understand, then to analyze, then to communicate.",
       "hints": [
         "What subjects did classical education prioritize?",
         "Think about the root 'tri-' meaning three."
@@ -20,47 +36,17 @@
     },
     {
       "type": "true-false",
-      "question": "According to the chapter, debate should only be introduced to students at the college level.",
+      "question": "According to the chapter, teaching children to argue makes them more combative and damages their relationships.",
       "correct": false,
-      "explanation": "The chapter argues that debate skills can and should be taught from an early age. Children can learn to disagree respectfully, support claims with reasons, and consider other viewpoints—these are foundational skills that grow more sophisticated over time.",
+      "explanation": "The opposite is true. Children who learn to disagree well are actually less likely to escalate conflicts because they have tools others lack. They can articulate positions, listen to opposing views, and seek solutions. Kids without these skills have only two options: capitulate or fight.",
       "hints": [
-        "What does the chapter say about teaching children to disagree?",
-        "Are debate skills only for advanced students?"
+        "What options do children have when they lack debate skills?",
+        "How does learning to argue give children a third option?"
       ]
     },
     {
       "type": "multiple-choice",
-      "question": "What was 'disputatio' in medieval universities?",
-      "options": [
-        "A formal debate practice where students argued both sides of theological or philosophical questions",
-        "A type of final examination",
-        "A punishment for academic misconduct",
-        "A student social club"
-      ],
-      "correct": 0,
-      "explanation": "Disputatio was central to medieval university education. Students were required to argue positions—often positions they disagreed with—and respond to objections. This practice built intellectual flexibility and deep understanding of complex issues.",
-      "hints": [
-        "How did medieval students learn to think critically?",
-        "What's the educational value of arguing positions you disagree with?"
-      ]
-    },
-    {
-      "type": "matching",
-      "question": "Match each educational debate format with its description:",
-      "pairs": [
-        {"left": "Lincoln-Douglas", "right": "One-on-one debate focused on values and philosophical questions"},
-        {"left": "Policy debate", "right": "Two-on-two debate examining proposed changes to current systems"},
-        {"left": "Parliamentary debate", "right": "Format modeled on British Parliament with government and opposition sides"}
-      ],
-      "explanation": "Different debate formats serve different educational purposes. Lincoln-Douglas emphasizes philosophical reasoning, policy debate develops research and evidence skills, and parliamentary debate builds quick thinking and adaptability.",
-      "hints": [
-        "Which format involves teams of two?",
-        "Which is named after a famous series of American debates?"
-      ]
-    },
-    {
-      "type": "multiple-choice",
-      "question": "What is the difference between 'critical thinking' and 'critical argument' as the chapter describes them?",
+      "question": "What is the difference between 'critical thinking' and 'critical argument'?",
       "options": [
         "Critical thinking analyzes claims; critical argument also constructs and defends positions",
         "They are identical concepts",
@@ -68,10 +54,41 @@
         "Critical thinking is only for experts"
       ],
       "correct": 0,
-      "explanation": "The chapter distinguishes between critical thinking (analyzing and evaluating claims) and critical argument (the additional skill of constructing, defending, and responding to arguments). Debate education develops both—you learn to analyze others' arguments AND build your own.",
+      "explanation": "Critical thinking (evaluating information, detecting fallacies) is passive and defensive. Critical argument goes further—it's the ability to construct sound reasoning yourself, not just spot problems in others'. Real-world challenges require building and defending positions, not just identifying fallacies.",
       "hints": [
         "What skills does debate add beyond analysis?",
         "Is evaluating an argument the same as making one?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each educational debate format with its focus:",
+      "pairs": [
+        {"left": "Lincoln-Douglas", "right": "One-on-one debate focused on values and philosophical questions"},
+        {"left": "Policy debate", "right": "Two-on-two debate examining proposed changes to current systems"},
+        {"left": "Parliamentary debate", "right": "Improvisation and quick thinking with minimal preparation time"},
+        {"left": "Public Forum", "right": "Arguments judged by what ordinary citizens would find persuasive"}
+      ],
+      "explanation": "Different formats serve different educational purposes. Lincoln-Douglas emphasizes philosophical reasoning, Policy develops research skills, Parliamentary builds quick thinking, and Public Forum teaches communicating with real audiences.",
+      "hints": [
+        "Which format involves teams of two researching one topic for months?",
+        "Which emphasizes improvisation over research?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the Quick Tactic 'Five-Minute Debrief' recommend asking first after a classroom debate?",
+      "options": [
+        "'What was the strongest argument you heard from the side you disagreed with?'",
+        "'Who won the debate?'",
+        "'What mistakes did the losing team make?'",
+        "'What grade does each speaker deserve?'"
+      ],
+      "correct": 0,
+      "explanation": "The Five-Minute Debrief asks students to identify strong arguments from the opposing side first. This forces them to listen to opponents, not just wait for their turn. The tactic also emphasizes never announcing a winner—the goal is thinking, not victory.",
+      "hints": [
+        "What skill does this question develop?",
+        "Why not ask who won?"
       ]
     },
     {
@@ -85,10 +102,52 @@
         "Tell them to start over from scratch"
       ],
       "correct": 0,
-      "explanation": "The chapter emphasizes that good debate pedagogy balances rigor with encouragement. Acknowledging effort builds confidence, while using questions (Socratic method) helps students discover errors themselves—leading to deeper learning than simply being told what's wrong.",
+      "explanation": "Good debate pedagogy balances rigor with encouragement. Acknowledging effort builds confidence, while using questions (Socratic method) helps students discover errors themselves—leading to deeper learning than simply being told what's wrong.",
       "hints": [
         "How does the Socratic method apply to teaching?",
         "What's the balance between rigor and encouragement?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, why is it essential that students argue BOTH sides of an issue?",
+      "options": [
+        "Because arguing both sides builds intellectual flexibility and genuine understanding",
+        "Because it's faster than researching one side thoroughly",
+        "Because teachers can't decide which side is correct",
+        "Because it reduces the amount of preparation needed"
+      ],
+      "correct": 0,
+      "explanation": "The chapter insists that arguing both sides isn't wishy-washy—it's essential for genuine understanding. When you have to argue positions you disagree with, you discover that reasonable people can hold different views, and you understand the issue more deeply.",
+      "hints": [
+        "What happens when students only prepare one side?",
+        "What does the chapter say about intellectual flexibility?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "How did Abraham Lincoln educate himself in argument, according to the chapter?",
+      "options": [
+        "He studied grammar until he could parse any sentence, studied Euclid for logical proof, and practiced rhetoric constantly",
+        "He attended the best debate schools in Illinois",
+        "He memorized famous speeches without understanding them",
+        "He avoided all formal study and relied on natural talent"
+      ],
+      "correct": 0,
+      "explanation": "Lincoln had perhaps eighteen months of formal schooling but educated himself through a method resembling the classical trivium. He mastered grammar, studied Euclid's logical structure, and practiced rhetoric in courtrooms, debates, and speeches—developing 'arguments of devastating clarity.'",
+      "hints": [
+        "What three areas did Lincoln study?",
+        "How does this relate to the trivium?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the goal of classroom debates is to produce clear winners and losers.",
+      "correct": false,
+      "explanation": "The chapter explicitly states: 'Never announce a winner in classroom debates. The goal is thinking, not victory. Students who \"lost\" may have learned more.' The debrief matters more than declaring victory—it's where learning consolidates.",
+      "hints": [
+        "What does the Quick Tactic say about announcing winners?",
+        "What's the actual goal of classroom debates?"
       ]
     }
   ]

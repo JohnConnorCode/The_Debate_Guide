@@ -4,91 +4,149 @@
   "questions": [
     {
       "type": "multiple-choice",
-      "question": "According to Aristotle, what is the legitimate role of emotional appeal in argument?",
+      "question": "How did Aristotle view emotional appeal in rhetoric?",
       "options": [
-        "Emotions carry information about values and help surface what the audience already believes",
-        "Emotions should replace logical reasoning entirely",
-        "Emotions are contaminants that should be eliminated from argument",
-        "Emotions are only useful for manipulating unintelligent audiences"
+        "As a legitimate tool of persuasion on equal footing with character and logic, because emotions carry information",
+        "As a necessary evil to be used sparingly",
+        "As a contaminant that should be eliminated from serious argument",
+        "As something only for manipulating unintelligent audiences"
       ],
       "correct": 0,
-      "explanation": "The chapter explains that emotions 'carry information' — fear tells you something is dangerous, anger signals injustice, pity recognizes undeserved suffering. Emotional appeal surfaces value judgments the audience already holds.",
+      "explanation": "The chapter explains: 'Aristotle analyzed emotion as one of three coordinate means of persuasion, on equal footing with character and logic.' His reasoning: 'emotions carry information. Fear tells you something is dangerous. Anger signals injustice. Pity recognizes undeserved suffering.'",
       "hints": [
-        "How did Aristotle view emotions compared to Plato?",
-        "The chapter asks: 'Is it manipulation to make people feel?'"
+        "How did Aristotle's view differ from Plato's concerns about rhetoric?",
+        "What did Aristotle devote an entire book of his Rhetoric to?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the difference between 'evoking' and 'exploiting' emotion according to the chapter?",
+      "options": [
+        "Evoking makes people feel what the situation genuinely warrants; exploiting makes them feel things that distort their judgment",
+        "Evoking is weaker than exploiting",
+        "Exploiting is always more effective",
+        "There is no meaningful difference"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'Evoking emotion means making people feel what the situation genuinely warrants. Exploiting emotion means making people feel things that distort their judgment—fear of dangers that aren't real, pity for those who don't deserve it, hatred directed at innocent targets.'",
+      "hints": [
+        "What determines whether emotional appeal is ethical?",
+        "Does the emotion depend on ignorance or truth?"
       ]
     },
     {
       "type": "true-false",
-      "question": "The chapter argues that the ethics of pathos depend entirely on whether the emotions fit the facts.",
+      "question": "According to the chapter's test for ethical emotional appeal, if an emotion would survive full knowledge of the facts, it's legitimate.",
       "correct": true,
-      "explanation": "The chapter distinguishes between 'evoking' (making people feel what the situation genuinely warrants) and 'exploiting' (making people feel things that distort their judgment). The ethical standard is whether emotions reflect reality.",
+      "explanation": "The chapter provides this test: 'If the emotion depends on ignorance, distortion, or misdirection, it's exploitation. If the emotion would survive full knowledge of the facts, it's legitimate evocation.'",
       "hints": [
-        "Think about the evoking vs. exploiting distinction.",
-        "What test does the chapter propose for ethical emotional appeal?"
+        "What distinguishes evoking from exploiting?",
+        "What role does information play in ethical pathos?"
       ]
     },
     {
       "type": "multiple-choice",
-      "question": "What is 'narrative' in the context of pathos?",
+      "question": "What does the chapter identify as the 'delivery system' for pathos?",
       "options": [
-        "The delivery system through which emotional content reaches audiences",
-        "A type of logical fallacy to be avoided",
-        "A technique for hiding weak arguments",
-        "Another word for manipulation"
+        "Narrative—story and concrete detail, not abstract statements",
+        "Statistics and data charts",
+        "Formal logical proofs",
+        "Credentials and authority"
       ],
       "correct": 0,
-      "explanation": "The chapter explains that 'Emotion rarely arrives through abstract statement' — narrative, story, and concrete detail are how pathos is delivered. The story of Maria with cancer moves people in ways statistics about healthcare cannot.",
+      "explanation": "The chapter explains: 'Emotion rarely arrives through abstract statement... Narrative is the delivery system that carries pathos from speaker to audience.' The example of Maria's story moves people in ways that 'Thousands of people die each year' cannot.",
       "hints": [
-        "Why do specific stories move us more than statistics?",
-        "How do effective speakers deliver emotional content?"
+        "How do effective speakers deliver emotional content?",
+        "Why do specific stories move us more than statistics?"
       ]
     },
     {
       "type": "scenario",
-      "question": "Based on the chapter's teaching, which approach is more ethically sound?",
-      "scenario": "You're preparing a presentation about a genuine problem in your community. You have both statistics showing the scope of the problem AND a personal story from someone affected.",
+      "question": "Based on the chapter's analysis of Mark Antony's speech, when is his emotional appeal ethical?",
+      "scenario": "In Shakespeare's Julius Caesar, Mark Antony makes the crowd feel grief and rage about Caesar's death without directly blaming the conspirators.",
       "options": [
-        "Use both — the story creates emotional engagement, the statistics provide intellectual justification",
-        "Use only statistics to appear more rational",
-        "Use only the story to maximize emotional impact",
-        "Avoid both and stick to abstract principles"
+        "It depends on whether Caesar deserved grief and the conspirators deserved anger—ethics depends on relationship to truth",
+        "It's always manipulation because it uses emotion",
+        "It's always ethical because the crowd freely chose to feel",
+        "It's always unethical because Antony promised not to blame the conspirators"
       ],
       "correct": 0,
-      "explanation": "The chapter emphasizes integration: 'Pathos works best when it's woven together with ethos and logos.' The pattern that works is 'lead with narrative, follow with data' — the story creates engagement, the statistics prevent dismissing the story as an anomaly.",
+      "explanation": "The chapter explains: 'Is Antony manipulating? It depends on whether Caesar deserved grief and the conspirators deserved anger. If Caesar was a tyrant... the appeal is exploitation. If Caesar was a benefactor... the appeal is evocation. The ethics of pathos depend entirely on its relationship to truth.'",
       "hints": [
-        "What does the chapter say about combining emotional and logical appeal?",
-        "Think about the dual-process theory discussed in the chapter."
+        "What determines whether emotional appeal is ethical?",
+        "Does truth or falsity of the underlying situation matter?"
       ]
     },
     {
       "type": "multiple-choice",
-      "question": "What is the test the chapter proposes for distinguishing ethical emotional appeal from manipulation?",
+      "question": "According to Daniel Kahneman's dual-process theory as described in the chapter, what is System 1?",
       "options": [
-        "Would someone with complete information still feel this emotion?",
-        "Does the emotion make people agree with me?",
-        "Is the emotion as intense as possible?",
-        "Does the appeal avoid any use of facts?"
+        "Fast, automatic, emotional—a pattern-recognition engine that often reaches correct conclusions quickly",
+        "Slow, deliberate, logical",
+        "A primitive holdover from evolution that should be ignored",
+        "The part of the brain that processes only language"
       ],
       "correct": 0,
-      "explanation": "The chapter states: 'If the emotion depends on ignorance, distortion, or misdirection, it's exploitation. If the emotion would survive full knowledge of the facts, it's legitimate evocation.'",
+      "explanation": "The chapter explains: 'System 1 is fast, automatic, emotional—it generates impressions and feelings without conscious effort... The key insight: System 1 isn't some primitive holdover from our evolutionary past. It's a sophisticated pattern-recognition engine.'",
       "hints": [
-        "What distinguishes evoking from exploiting?",
-        "Think about what manipulation requires."
+        "What does modern cognitive science say about emotion and reason?",
+        "Is emotional response a failure of rationality?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What example does the chapter use to show how MLK used emotional appeal as argument?",
+      "options": [
+        "'The Negro lives on a lonely island of poverty in the midst of a vast ocean of material prosperity'—making a claim about injustice through imagery",
+        "A list of statistics about economic inequality",
+        "A formal logical syllogism",
+        "An attack on his opponents' character"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'When he spoke of \"the Negro lives on a lonely island of poverty in the midst of a vast ocean of material prosperity,\" he was making a claim about injustice. The shame and indignation the image provoked weren't distractions from the argument—they were the audience's recognition that yes, this is unjust.'",
+      "hints": [
+        "How did King make arguments in emotional form?",
+        "What does the imagery about 'lonely island' communicate?"
       ]
     },
     {
       "type": "matching",
       "question": "Match each technique with its function in emotional appeal:",
       "pairs": [
-        {"left": "Specificity", "right": "Makes situations vivid and imaginable"},
+        {"left": "Specificity", "right": "Makes situations vivid and imaginable with concrete details"},
         {"left": "Identification", "right": "Helps audience see themselves in the situation"},
-        {"left": "Contrast", "right": "Heightens emotion by juxtaposition"}
+        {"left": "Contrast", "right": "Heightens emotion by juxtaposition of opposites"}
       ],
       "explanation": "The chapter identifies these as key techniques: specificity makes things concrete ('a six-year-old girl with braids'), identification creates personal connection ('imagine this happened to your daughter'), and contrast heightens emotion (King's 'promissory note' vs. 'bad check').",
       "hints": [
         "Why does 'a child' move us less than 'a six-year-old girl with braids'?",
-        "How did MLK use contrast in his 'I Have a Dream' speech?"
+        "How did MLK use contrast in his speeches?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to research by Antonio Damasio mentioned in the chapter, patients with damage to emotional brain regions made better decisions because they weren't distracted by feelings.",
+      "correct": false,
+      "explanation": "The chapter describes the opposite: 'These patients could reason logically—they performed normally on IQ tests—but they made disastrous life decisions. Without emotional signals to guide them, they couldn't prioritize among options or sense when something was wrong.'",
+      "hints": [
+        "What happened to patients who lost emotional processing?",
+        "Is emotion an obstacle to good decisions?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter say about the relationship between emotion and reason?",
+      "options": [
+        "Emotion isn't the enemy of reason but its partner—both are needed for good judgment",
+        "Emotion should always override reason",
+        "Reason should always override emotion",
+        "They operate completely independently"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'Modern cognitive science has confirmed what Aristotle intuited: emotion isn't the enemy of reason but its partner.' The chapter argues for integration: 'Pathos works best when it's woven together with ethos and logos.'",
+      "hints": [
+        "How does the chapter resolve the tension between feeling and thinking?",
+        "What does dual-process theory reveal about cognition?"
       ]
     }
   ]

@@ -12,7 +12,7 @@
         "That philosophy is impractical"
       ],
       "correct": 0,
-      "explanation": "Socrates could have escaped or argued merely for acquittal, but chose instead to defend philosophy itself. He lost the trial but won something larger—demonstrating that some commitments are worth more than winning. This redefines what 'victory' means.",
+      "explanation": "Socrates could have begged for mercy or moderated his positions. Instead, he reaffirmed everything his accusers held against him. He lost the trial but won something larger—demonstrating that some commitments are worth more than winning.",
       "hints": [
         "Did Socrates prioritize winning his case or something else?",
         "What did Socrates preserve by not compromising?"
@@ -22,7 +22,7 @@
       "type": "true-false",
       "question": "According to the chapter, the ultimate goal of learning debate is to win every argument you enter.",
       "correct": false,
-      "explanation": "The chapter concludes that the true purpose of debate mastery is wisdom (eudaimonia), not victory. The philosopher's victory comes from thinking more clearly, understanding more deeply, and holding beliefs that are genuinely well-supported—even when that means changing your mind.",
+      "explanation": "The chapter concludes that the true purpose of debate mastery is wisdom and flourishing (eudaimonia), not victory. The philosopher's victory comes from thinking more clearly, understanding more deeply, and holding beliefs that are genuinely well-supported—even when that means changing your mind.",
       "hints": [
         "What does the chapter say about the relationship between debate and wisdom?",
         "Is changing your mind a defeat or can it be a victory?"
@@ -50,28 +50,44 @@
       "pairs": [
         {"left": "The examined life", "right": "A life spent questioning assumptions and pursuing truth"},
         {"left": "Changing your mind", "right": "A sign of intellectual growth, not defeat"},
-        {"left": "Winning vs. being right", "right": "You can win an argument while being wrong, or lose while being right"}
+        {"left": "Aporia", "right": "Productive confusion—recognizing you don't know what you thought you knew"}
       ],
-      "explanation": "The philosopher's victory reconceives success. The examined life is worth living precisely because it pursues truth. Changing your mind through good argument is growth. And the relationship between winning and being right is more complex than it appears.",
+      "explanation": "The philosopher's victory reconceives success. The examined life pursues truth. Changing your mind through good argument is growth. And aporia—the discomfort of having beliefs challenged—is the sensation of intellectual growth.",
       "hints": [
         "What did Socrates say about the unexamined life?",
-        "Is winning the same as being correct?"
+        "Is confusion always bad?"
       ]
     },
     {
       "type": "multiple-choice",
-      "question": "What is the 'four-dimensional scorecard' for evaluating debate success?",
+      "question": "According to the Quick Tactic 'Four-Dimensional Scorecard,' how should you weight 'Outcome' compared to other measures?",
       "options": [
-        "Measuring outcomes across argument quality, relationship preservation, truth discovery, and personal growth",
-        "A judging system for formal debate tournaments",
-        "A technique for tracking opponent weaknesses",
-        "A method for scoring points in parliamentary debate"
+        "Outcome matters least—weight it 1 while Understanding, Relationship, and Character each get 3",
+        "Outcome is most important—it should get the highest weight",
+        "All four dimensions should be weighted equally",
+        "Outcome is the only dimension that matters"
       ],
       "correct": 0,
-      "explanation": "The chapter suggests evaluating debate success on multiple dimensions: Did you argue well? Did you preserve the relationship? Did you get closer to truth? Did you grow? A 'loss' on one dimension can be a 'win' on others—and vice versa.",
+      "explanation": "The Four-Dimensional Scorecard suggests weighting roughly 1-3-3-3 for Outcome, Understanding, Relationship, and Character. A loss where you learned, preserved the relationship, and argued with integrity beats a win that cost you all three.",
       "hints": [
         "What matters besides who 'won' the argument?",
         "Can you lose an argument but still succeed overall?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What example does the chapter use to show how dissents can become future victories?",
+      "options": [
+        "Ruth Bader Ginsburg's dissent in Ledbetter v. Goodyear, which Congress later enacted as the Lilly Ledbetter Fair Pay Act",
+        "A Supreme Court majority opinion",
+        "A corporate boardroom debate",
+        "An ancient Greek philosophical dialogue"
+      ],
+      "correct": 0,
+      "explanation": "Ginsburg's dissenting opinion laid out why the majority's interpretation failed working women. She lost the case. Congress agreed with her reasoning and passed the Lilly Ledbetter Fair Pay Act two years later. The dissent—the formal admission of losing—became the foundation for legislative victory.",
+      "hints": [
+        "What happened after Ginsburg lost the case?",
+        "How can losing arguments become winning ones over time?"
       ]
     },
     {
@@ -85,10 +101,52 @@
         "Resolve to never admit being wrong again"
       ],
       "correct": 0,
-      "explanation": "The philosopher's victory means recognizing that changing your mind through good argument is winning, not losing. You've gained truth. Your previous error has been corrected. This is exactly what debate at its best should accomplish—moving everyone closer to understanding.",
+      "explanation": "The philosopher's victory means recognizing that changing your mind through good argument is winning, not losing. You've gained truth. Your previous error has been corrected. This is exactly what debate at its best should accomplish.",
       "hints": [
         "Is holding onto a wrong belief 'winning'?",
         "What's the purpose of debate according to this chapter?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What warning does the chapter give about feeling like a 'misunderstood genius'?",
+      "options": [
+        "The feeling is identical whether you're actually right or just wrong—you need to look for warning signs of being the crank",
+        "If you feel misunderstood, you're definitely right",
+        "Only experts can feel misunderstood",
+        "Feeling misunderstood means you should argue more loudly"
+      ],
+      "correct": 0,
+      "explanation": "The chapter warns that for every Semmelweis who was right but rejected, there are dozens of cranks who were wrong and rejected. Both groups feel the same way. The chapter suggests checking: Do field experts reject your view? Have you engaged with counterarguments? Has your position updated at all?",
+      "hints": [
+        "How can you tell if you're a prophet or a crank?",
+        "What questions should you ask yourself?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the philosopher's victory means avoiding all strong opinions to stay flexible.",
+      "correct": false,
+      "explanation": "The chapter advocates 'strong opinions, weakly held' (quoting Paul Saffo). The philosopher's victory doesn't mean being passive—Socrates argued strenuously. It means fighting for truth rather than ego, defending positions fiercely while remaining willing to abandon them when evidence demands.",
+      "hints": [
+        "Did Socrates avoid strong opinions?",
+        "What does 'strong opinions, weakly held' mean?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter say about why the jury that condemned Socrates is forgotten?",
+      "options": [
+        "Because Socrates endured by embodying a way of arguing—seeking truth relentlessly—while those who defeated him didn't stand for anything lasting",
+        "Because the trial records were lost",
+        "Because Socrates was more famous at the time",
+        "Because the jury members had short lifespans"
+      ],
+      "correct": 0,
+      "explanation": "Socrates's accusers are remembered only for their infamy, while Socrates endures. The chapter explains: 'He showed what it looks like to seek truth relentlessly, to question everything including yourself, to hold beliefs accountable to reason. He showed that you can lose the debate and win the larger struggle for meaning.'",
+      "hints": [
+        "What made Socrates memorable?",
+        "What larger struggle did Socrates win?"
       ]
     }
   ]

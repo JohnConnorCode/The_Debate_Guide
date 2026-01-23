@@ -4,6 +4,22 @@
   "questions": [
     {
       "type": "multiple-choice",
+      "question": "What question did Andy Grove ask at Intel that changed the company's direction?",
+      "options": [
+        "'If we got kicked out and the board brought in a new CEO, what would he do?'",
+        "'How can we cut costs to compete with Japan?'",
+        "'What new products should we develop?'",
+        "'Who should we fire to improve performance?'"
+      ],
+      "correct": 0,
+      "explanation": "Grove's question forced him and Gordon Moore to argue with themselves—to see their situation from an outsider's perspective. This led Intel to abandon memory chips and bet on microprocessors, transforming the company.",
+      "hints": [
+        "The question involved imagining a change in leadership.",
+        "It was about seeing the problem from a fresh perspective."
+      ]
+    },
+    {
+      "type": "multiple-choice",
       "question": "What is 'stakeholder analysis' in workplace persuasion?",
       "options": [
         "Mapping out who has decision power, who will implement, and who will be affected by a proposal",
@@ -16,16 +32,6 @@
       "hints": [
         "Think about the different roles people play in organizational decisions.",
         "Why might different people need different versions of the same argument?"
-      ]
-    },
-    {
-      "type": "true-false",
-      "question": "According to the chapter, disagreeing with your boss is always inappropriate in professional settings.",
-      "correct": false,
-      "explanation": "The chapter provides specific guidance on how to disagree with authority productively—framing disagreement as seeking understanding, using hedging language appropriately, and choosing private settings. The key is how you disagree, not whether you do.",
-      "hints": [
-        "Does the chapter suggest never disagreeing, or does it offer strategies?",
-        "What role does 'how' play versus 'whether'?"
       ]
     },
     {
@@ -42,6 +48,30 @@
       "hints": [
         "This is an Aristotelian virtue about practical judgment.",
         "How does context affect persuasion?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, Jeff Bezos banned PowerPoint at Amazon because he preferred oral presentations.",
+      "correct": false,
+      "explanation": "Bezos banned PowerPoint and required six-page narrative memos instead. His reasoning: slides encourage superficial thinking, while prose forces rigor. You can't hide behind bullet points when you have to write coherent paragraphs.",
+      "hints": [
+        "What did Bezos require instead of slides?",
+        "What was his concern about PowerPoint?"
+      ]
+    },
+    {
+      "type": "matching",
+      "question": "Match each workplace principle with its application:",
+      "pairs": [
+        {"left": "Anchor effect", "right": "Arguments made early in meetings disproportionately shape discussion"},
+        {"left": "Recency effect", "right": "Arguments made last stay freshest in memory when decisions are made"},
+        {"left": "Build alliances before the meeting", "right": "Gather support from key stakeholders before the formal decision"}
+      ],
+      "explanation": "Effective meeting rhetoric requires understanding these dynamics. Speaking order matters: anchoring the discussion versus having the final word involves different trade-offs. And the best time to persuade is often before the meeting, not during it.",
+      "hints": [
+        "When in a meeting does each effect matter most?",
+        "Why talk to stakeholders before the big meeting?"
       ]
     },
     {
@@ -78,17 +108,45 @@
       ]
     },
     {
-      "type": "matching",
-      "question": "Match each workplace persuasion principle with its application:",
-      "pairs": [
-        {"left": "Written vs. verbal persuasion", "right": "Complex arguments may need documentation; simple asks work better in person"},
-        {"left": "Timing your pitch", "right": "The same proposal can succeed or fail based on when you present it"},
-        {"left": "Building coalitions", "right": "Gather support from key stakeholders before the formal decision"}
+      "type": "multiple-choice",
+      "question": "According to the Quick Tactic 'Pre-Meeting Check,' what four questions should you answer before making a significant argument?",
+      "options": [
+        "Who decides? Who influences? Who fears? What's the ask?",
+        "What's the budget? Who's presenting? When's lunch? Who's taking notes?",
+        "Is this legal? Is this ethical? Is this profitable? Is this popular?",
+        "Who's oldest? Who's loudest? Who's newest? Who's smartest?"
       ],
-      "explanation": "Effective workplace persuasion requires strategic thinking about medium (written vs. spoken), timing (organizational readiness), and coalition-building (pre-meeting alignment). These practical skills turn good arguments into successful outcomes.",
+      "correct": 0,
+      "explanation": "The Pre-Meeting Check advises: identify who has authority to approve (who decides), whose opinion the decider trusts (who influences), whose territory might feel threatened (who fears), and what specific action you want (what's the ask).",
       "hints": [
-        "When might you choose email over a meeting?",
-        "Why talk to stakeholders before the big meeting?"
+        "The questions focus on understanding stakeholders and your own goal.",
+        "Why is knowing 'who fears' important?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is Ed Catmull's 'Braintrust' at Pixar designed to accomplish?",
+      "options": [
+        "Allow frank feedback on films with the crucial rule that the director doesn't have to follow any of it",
+        "Make all creative decisions by committee vote",
+        "Replace directors who receive negative feedback",
+        "Keep feedback anonymous to prevent hurt feelings"
+      ],
+      "correct": 0,
+      "explanation": "The Braintrust separates feedback from authority. Directors receive frank feedback from peers, but they're not required to follow it. This allows genuine disagreement—people can speak honestly because they're not fighting for control, and directors can listen openly because they're not defending territory.",
+      "hints": [
+        "What makes people willing to give honest feedback?",
+        "What makes people willing to receive it?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the workplace is a meritocracy where the best arguments always win.",
+      "correct": false,
+      "explanation": "The chapter explicitly states: 'The workplace is not a meritocracy where the best arguments automatically win.' Sometimes power trumps argument—the CEO's pet project gets funded even when analysis shows it will fail. Recognizing when you're in a real argument versus a power ritual is a survival skill.",
+      "hints": [
+        "What does the chapter say about when 'power trumps argument'?",
+        "What are signs you're facing power, not persuasion?"
       ]
     }
   ]

@@ -4,77 +4,109 @@
   "questions": [
     {
       "type": "multiple-choice",
-      "question": "According to the chapter, what is the most counterintuitive technique for building ethos?",
+      "question": "According to the chapter, why is your opponent your 'greatest ally'?",
       "options": [
-        "Concession — admitting when your opponent has a valid point",
-        "Asserting your credentials at the start of every argument",
-        "Never acknowledging uncertainty about anything",
-        "Attacking your opponent's character directly"
-      ],
-      "correct": 0,
-      "explanation": "The chapter emphasizes that concession—admitting that your opponent has a point—builds trust because it demonstrates that you care more about truth than victory. This costs something, and audiences recognize that cost.",
-      "hints": [
-        "What rhetorical move requires you to 'give ground'?",
-        "The chapter says this technique 'works precisely because it costs something.'"
-      ]
-    },
-    {
-      "type": "true-false",
-      "question": "The chapter argues that character in argument is built in a single powerful exchange.",
-      "correct": false,
-      "explanation": "The chapter explicitly states that 'Character in argument isn't built in a single exchange. It's the accumulation of choices over time.' Character compounds through repeated demonstrations of fairness and intellectual honesty.",
-      "hints": [
-        "Think about the chapter's discussion of the 'long game.'",
-        "How did Demosthenes build his ethos?"
-      ]
-    },
-    {
-      "type": "multiple-choice",
-      "question": "What is the 'principle of charity' as described in the chapter?",
-      "options": [
-        "Interpreting your opponent's words in the most favorable light",
-        "Donating to your opponent's cause before debating them",
-        "Always letting your opponent speak first",
-        "Never disagreeing with anyone publicly"
-      ],
-      "correct": 0,
-      "explanation": "The principle of charity means interpreting ambiguous statements in the most favorable way and focusing on the strongest version of opposing arguments rather than the weakest. It's about being effective, not just being nice.",
-      "hints": [
-        "How should you treat an opponent's ambiguous claims?",
-        "This principle relates to steelmanning, discussed in Chapter 15."
-      ]
-    },
-    {
-      "type": "scenario",
-      "question": "Based on the chapter's teaching about character, what would be the most effective response?",
-      "scenario": "In a team meeting, a colleague challenges your proposal with a criticism that's actually valid. You realize they've identified a real weakness in your plan.",
-      "options": [
-        "Acknowledge the valid point openly, then explain how you plan to address it",
-        "Deflect by changing the subject to something else",
-        "Defend your original position without acknowledging the criticism",
-        "Attack your colleague's qualifications to make the criticism"
-      ],
-      "correct": 0,
-      "explanation": "The chapter emphasizes that conceding valid points builds credibility. 'When someone concedes a point you consider valid, something shifts. They've shown they're listening. They've shown they can see what you see.'",
-      "hints": [
-        "What does the chapter say about how concession affects the dynamic of a discussion?",
-        "Think about how intellectual honesty is demonstrated, not just claimed."
-      ]
-    },
-    {
-      "type": "multiple-choice",
-      "question": "Why does the chapter say 'Your opponent is your greatest ally'?",
-      "options": [
-        "Because how you treat your opponent reveals your character to the audience",
+        "Because how you treat your opponent reveals your character to the audience more clearly than what you say about yourself",
         "Because opponents always have better arguments than you",
         "Because debates should end in complete agreement",
         "Because opponents can help you avoid making arguments"
       ],
       "correct": 0,
-      "explanation": "The chapter opens with this paradox and explains: 'An audience watches how you handle opposition, and they draw conclusions. Dismiss your opponent unfairly, and you look arrogant. Misrepresent their views, and you look dishonest.'",
+      "explanation": "The chapter opens: 'Your opponent is your greatest ally... the way you treat your opponent reveals your character more clearly than anything you say about yourself. An audience watches how you handle opposition, and they draw conclusions.'",
       "hints": [
         "What does the audience learn by watching how you treat opponents?",
         "The chapter emphasizes showing character rather than claiming it."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is concession in rhetoric?",
+      "options": [
+        "The rhetorical move of acknowledging the validity of an opponent's point or the weakness of your own",
+        "Surrendering the entire debate",
+        "Agreeing with everything your opponent says",
+        "A formal apology before arguing"
+      ],
+      "correct": 0,
+      "explanation": "The vocabulary box defines concession as: 'The rhetorical move of acknowledging the validity of an opponent's point or the weakness of your own. Counterintuitively, strategic concession often strengthens your overall position by demonstrating fairness and intellectual honesty.'",
+      "hints": [
+        "The chapter says this technique 'works precisely because it costs something.'",
+        "What's the difference between strategic concession and wholesale surrender?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, acknowledging uncertainty in your argument makes you sound weak and should be avoided.",
+      "correct": false,
+      "explanation": "The chapter argues the opposite: 'A speaker who pretends to certainty they don't actually have sounds like a salesperson. A speaker who honestly acknowledges what they don't know sounds like someone searching for truth.' Scientists routinely include limitations sections, which 'far from weakening the work... strengthen it.'",
+      "hints": [
+        "What does calibrating confidence to evidence signal?",
+        "Consider what scientists do in their papers."
+      ]
+    },
+    {
+      "type": "scenario",
+      "question": "Based on the Quick Tactic 'The Character Signal,' which behavior is recommended?",
+      "scenario": "You're in a meeting and realize you were wrong about something you said confidently last month. The topic comes up again.",
+      "options": [
+        "'Return to past errors': 'Remember when I said X? I've updated my thinking because...'",
+        "Pretend you never said the original thing",
+        "Double down on your original position to avoid looking weak",
+        "Change the subject quickly"
+      ],
+      "correct": 0,
+      "explanation": "The Quick Tactic lists four character-building moves, including: 'Return to past errors: \"Remember when I said X? I've updated my thinking because...\"' The chapter notes: 'None of these cost you anything. All of them compound into reputation.'",
+      "hints": [
+        "What does intellectual honesty look like when you've been wrong?",
+        "How does the Quick Tactic describe handling past mistakes?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What example does the chapter use to show how ethos is demonstrated through argument rather than assertion?",
+      "options": [
+        "Lincoln's Cooper Union address—where his meticulous historical analysis let the audience experience his character through his reasoning",
+        "A TED talk about presentation skills",
+        "A corporate press release",
+        "A social media debate"
+      ],
+      "correct": 0,
+      "explanation": "The chapter describes Lincoln facing 'a sophisticated New York audience skeptical of the prairie lawyer from Illinois.' Rather than listing credentials, 'he launched into a meticulous historical analysis... building his case brick by careful brick. By the time he finished, the audience had experienced his character through his reasoning.'",
+      "hints": [
+        "Who demonstrated character by showing rather than telling?",
+        "What famous address is mentioned as an example?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the 'principle of charity' according to the chapter?",
+      "options": [
+        "When someone's words are ambiguous, interpret them in the most favorable light and focus on the strongest version of their argument",
+        "Donating to your opponent's cause before debating them",
+        "Always letting your opponent speak first",
+        "Never disagreeing with anyone publicly"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'When someone's words are ambiguous, interpret them in the most favorable light. When their argument has weaknesses, focus on the strongest version rather than the weakest. The principle isn't about being nice; it's about being effective.'",
+      "hints": [
+        "How should you treat ambiguous statements?",
+        "This principle connects to steelmanning in Chapter 15."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to Daniel Dennett's standard quoted in the chapter, how well should you be able to express your opponent's position?",
+      "options": [
+        "So clearly and fairly that your opponent says 'Thanks, I wish I'd thought of putting it that way'",
+        "Just well enough to identify their weakest points",
+        "Only in your own words, never theirs",
+        "As briefly as possible to minimize their platform"
+      ],
+      "correct": 0,
+      "explanation": "The chapter quotes Dennett: 'You should attempt to re-express your target's position so clearly, vividly, and fairly that your target says, \"Thanks, I wish I'd thought of putting it that way.\"' This demonstrates both expertise and fairness.",
+      "hints": [
+        "What's the high standard the chapter sets for understanding opponents?",
+        "What would achieving this demonstrate?"
       ]
     },
     {
@@ -85,10 +117,36 @@
         {"left": "Conceding valid points to opponents", "right": "Demonstrates you care more about truth than winning"},
         {"left": "Strawmanning opponent's arguments", "right": "Damages your integrity in the audience's eyes"}
       ],
-      "explanation": "The chapter argues that calibrating confidence to evidence, conceding valid points, and treating opponents fairly all contribute to building long-term credibility. Misrepresenting opponents does the opposite.",
+      "explanation": "The chapter argues that calibrating confidence to evidence and conceding valid points builds long-term credibility. Misrepresenting opponents—strawmanning—does the opposite. 'Audiences notice when you're fighting a caricature instead of the real position.'",
       "hints": [
-        "Think about which behaviors build trust and which erode it.",
+        "Which behaviors build trust and which erode it?",
         "What does the audience conclude from each behavior?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does Barbara Jordan's Watergate statement demonstrate according to the chapter?",
+      "options": [
+        "How character can BE the argument itself—her personal history and constitutional commitment made her case",
+        "How to avoid controversy in political speeches",
+        "How to attack opponents without seeming partisan",
+        "How to cite legal precedents effectively"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that Jordan 'began by acknowledging what she found impressive in Nixon's record, what legitimate concerns his defenders might have, and how seriously she took her constitutional oath.' Her statement showed 'character as argument'—her credibility rested entirely on who she was.",
+      "hints": [
+        "What made Jordan's statement about impeachment persuasive?",
+        "When is character itself the argument, not just support for it?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to Bertrand Russell's quote in the chapter, intelligent people tend to be more confident than foolish people.",
+      "correct": false,
+      "explanation": "Russell's quote states the opposite: 'The fundamental cause of the trouble is that in the modern world the stupid are cocksure while the intelligent are full of doubt.' The chapter uses this to argue that 'intellectual humility stands out' and 'honesty about uncertainty can cut through suspicion.'",
+      "hints": [
+        "What does Russell say about the relationship between intelligence and doubt?",
+        "How does this connect to acknowledging uncertainty?"
       ]
     }
   ]

@@ -32,7 +32,7 @@
       "type": "multiple-choice",
       "question": "What is the 'principle of charity' in argumentation?",
       "options": [
-        "Interpreting others' statements in the most reasonable way possible",
+        "Interpreting others' statements in the most reasonable way possible, filling gaps generously",
         "Donating to philosophical causes",
         "Being kind to your opponent regardless of their argument",
         "Avoiding all criticism"
@@ -54,7 +54,7 @@
         "A formal debate scoring system"
       ],
       "correct": 0,
-      "explanation": "Bryan Caplan's Ideological Turing Test asks: can you articulate your opponent's position well enough that a neutral observer couldn't tell whether you believe it or not? If you pass, you understand the view. If your summary is obviously hostile, you haven't done the intellectual work.",
+      "explanation": "Bryan Caplan's Ideological Turing Test asks: can you articulate your opponent's position well enough that a neutral observer couldn't tell whether you believe it? If your summary is obviously hostile, you haven't done the intellectual work.",
       "hints": [
         "What would passing this test prove?",
         "How can you tell if your summary is hostile?"
@@ -85,10 +85,68 @@
         {"left": "Demonstrating you understand the opposition", "right": "Builds credibility and earns respect"},
         {"left": "Looking for ways you might be wrong", "right": "Protects against self-deception"}
       ],
-      "explanation": "The chapter gives three reasons to steelman: (1) defeating the strongest version proves the position itself is flawed, (2) understanding opponents builds ethos and earns respect, (3) actively seeking flaws in your own reasoning protects against self-deception.",
+      "explanation": "The chapter gives three reasons: (1) defeating the strongest version proves the position itself is flawed, (2) understanding opponents builds ethos and earns respect, (3) actively seeking flaws in your own reasoning protects against self-deception.",
       "hints": [
         "What happens when you only beat a weak argument?",
         "How does steelmanning relate to intellectual honesty?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to Daniel Dennett's rules quoted in the chapter, what should you do before criticizing?",
+      "options": [
+        "Re-express your target's position so clearly that they say 'Thanks, I wish I'd thought of putting it that way'",
+        "Find their weakest point immediately",
+        "Ignore their strongest arguments",
+        "Focus only on what you disagree with"
+      ],
+      "correct": 0,
+      "explanation": "Dennett's first rule: 'You should attempt to re-express your target's position so clearly, vividly, and fairly that your target says, \"Thanks, I wish I'd thought of putting it that way.\"' Only then are you prepared to criticize.",
+      "hints": [
+        "What standard does Dennett set for understanding opponents?",
+        "How do you know you've understood well enough?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, steelmanning means you must agree with your opponent's conclusion.",
+      "correct": false,
+      "explanation": "Steelmanning doesn't require agreement—it requires understanding. You articulate the strongest version of their argument, then respond to that version. You may still disagree, but your disagreement will be with their actual position, not a caricature.",
+      "hints": [
+        "What's the difference between understanding and agreeing?",
+        "Can you steelman something you ultimately reject?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter say about people who only engage with weak versions of opposing arguments?",
+      "options": [
+        "They may be signaling tribal loyalty rather than seeking truth",
+        "They are always acting in bad faith",
+        "They have superior debate skills",
+        "They are more efficient debaters"
+      ],
+      "correct": 0,
+      "explanation": "The chapter notes that attacking strawmen often signals tribal loyalty—showing your side you're on their team—rather than genuine truth-seeking. This may win social approval but doesn't advance understanding.",
+      "hints": [
+        "What social function might strawmanning serve?",
+        "What's the difference between truth-seeking and signaling?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, what happens when you successfully steelman an opponent?",
+      "options": [
+        "They're more likely to listen to your response because you've shown you understand them",
+        "They immediately agree with you",
+        "The debate ends",
+        "You lose the argument"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains that demonstrating understanding earns goodwill: 'When you've shown you can argue their side as well as they can, they know you're not dismissing them out of ignorance. That makes them more willing to consider your actual response.'",
+      "hints": [
+        "How does understanding affect the other person's receptivity?",
+        "Why does showing you've listened matter?"
       ]
     }
   ]

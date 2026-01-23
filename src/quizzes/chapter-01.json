@@ -12,7 +12,7 @@
         "Social media algorithms"
       ],
       "correct": 0,
-      "explanation": "The chapter argues that argument is an art requiring training. Without that training, people fight, avoid, or talk past each other. The failures are failures of skill, not intelligence or goodwill.",
+      "explanation": "The chapter opens with: 'The ability to argue well is the most undervalued skill in modern life.' It argues that argument is an art requiring training—without it, people fight, avoid, or talk past each other. The failures are failures of skill, not intelligence or goodwill.",
       "hints": [
         "Think about whether the chapter treats arguing as natural or learned.",
         "The chapter compares argument to something that requires training."
@@ -22,7 +22,7 @@
       "type": "true-false",
       "question": "The Greeks believed that exposure to opposing views was a problem to be solved.",
       "correct": false,
-      "explanation": "The opposite is true. The chapter states that 'for the Greeks, exposure to opposing views wasn't a bug but a feature.' The Athenian Assembly deliberately gathered citizens who disagreed, viewing this as the heart of democracy.",
+      "explanation": "The chapter states: 'For the Greeks, exposure to opposing views wasn't a bug but a feature.' The Athenian Assembly deliberately gathered six thousand citizens who disagreed about nearly everything, viewing argument as the heart of democracy, not a problem to eliminate.",
       "hints": [
         "Consider how the Athenian Assembly functioned.",
         "Did they expect consensus or argument?"
@@ -38,7 +38,7 @@
         "Having a clear winner declared at the end"
       ],
       "correct": 0,
-      "explanation": "The chapter explains that debate 'takes the intensity of fighting and the goodwill of discussion and combines them through structure.' Formal rules, time limits, and required responses create safety that allows genuine engagement.",
+      "explanation": "The chapter explains: 'Debate takes the intensity of fighting and the goodwill of discussion and combines them through structure. Formal rules. Time limits. Required responses.' These constraints 'create safety' that allows genuine engagement.",
       "hints": [
         "The chapter describes debate as sitting 'between extremes.'",
         "What makes the constraints 'liberating' rather than limiting?"
@@ -50,29 +50,88 @@
       "pairs": [
         {"left": "Rhetoric", "right": "The art of persuasion through language"},
         {"left": "Dialectic", "right": "A method of argument through dialogue and questioning"},
-        {"left": "Paideia", "right": "The formation of a citizen capable of self-governance"}
+        {"left": "Paideia", "right": "The formation of a citizen capable of self-governance"},
+        {"left": "Elenchus", "right": "Socrates's method of cross-examination through questions"}
       ],
-      "explanation": "Rhetoric is the art of persuasion that Aristotle called the counterpart of logic. Dialectic is the Socratic method of question and answer that seeks truth. Paideia is the broader Greek concept of citizen education.",
+      "explanation": "Rhetoric is the art of persuasion that Aristotle called the counterpart of logic. Dialectic seeks truth through direct exchange between minds. Paideia is the broader Greek concept of citizen education. Elenchus is the Socratic method of probing beliefs through questioning until contradictions emerge.",
       "hints": [
         "Rhetoric relates to persuading audiences.",
-        "Dialectic involves back-and-forth exchange."
+        "Dialectic involves back-and-forth exchange seeking truth."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter identify as the three personal benefits of debate?",
+      "options": [
+        "Clarity of thought, empathy, and persuasion",
+        "Winning arguments, impressing others, and career advancement",
+        "Speaking louder, thinking faster, and reading more",
+        "Intelligence, confidence, and popularity"
+      ],
+      "correct": 0,
+      "explanation": "The chapter dedicates a section to personal benefits: 'First: clarity of thought... Second: empathy... Third: persuasion.' It emphasizes that persuasion without the other two is dangerous—you'd spread bad ideas or manipulate rather than convince.",
+      "hints": [
+        "The chapter has a section titled 'The Personal Benefits.'",
+        "One benefit involves understanding how others see the world."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What role does the chapter assign to debate as 'inoculation'?",
+      "options": [
+        "It protects you from manipulation by helping you recognize rhetorical techniques",
+        "It prevents you from getting emotionally invested in arguments",
+        "It stops you from ever changing your mind",
+        "It makes you immune to all persuasion"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'Debate inoculates you against manipulation... When a politician uses a straw man argument, debaters see it. When an advertiser appeals to emotion instead of evidence, debaters notice.' This pattern recognition makes you 'much harder to fool.'",
+      "hints": [
+        "Consider who the chapter says is trying to change your mind.",
+        "What does knowing rhetorical techniques help you recognize?"
       ]
     },
     {
       "type": "scenario",
-      "question": "Based on the chapter's framework, what would be the most effective response?",
-      "scenario": "Your team at work is debating whether to adopt a new project management tool. One colleague dismisses the idea entirely, saying 'We've always done it this way.' Another responds with 'You just don't like change.' The discussion is getting personal.",
+      "question": "According to the chapter's 'Pre-Argument Check,' what should you ask yourself before engaging in any disagreement?",
+      "scenario": "You're about to respond to a colleague who just said something you strongly disagree with in a meeting.",
       "options": [
-        "Suggest each person get two minutes to make their case without interruption, then respond",
-        "Change the subject to avoid further conflict",
-        "Side with whoever has more authority in the room",
-        "Let them argue it out until someone wins"
+        "What do I want to be true when this is over? What does the other person probably want? What's the strongest version of their position? Am I willing to change my mind?",
+        "How can I win this argument? What are their weakest points? How can I look good to others watching?",
+        "Should I respond now or later? Is this worth my time? Can I avoid this conversation?",
+        "What credentials do I have? How can I establish authority? What facts support my position?"
       ],
       "correct": 0,
-      "explanation": "The chapter's 'Quick Tactic' and discussion of structure both point to introducing formal rules when disagreements become unproductive. Structure creates safety and channels conflict toward resolution.",
+      "explanation": "The chapter's Quick Tactic 'Pre-Argument Check' lists four questions: What do I want to be true when this is over? What does the other person probably want? What's the strongest version of their position? Am I willing to change my mind? 'Ten seconds of reflection prevents an hour of unproductive conflict.'",
       "hints": [
-        "Remember what the chapter says about how structure changes conflict.",
-        "The exercises suggest a specific technique for this situation."
+        "The Quick Tactic focuses on self-reflection before engaging.",
+        "One question asks about your willingness to be wrong."
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter say about the Lincoln-Douglas debates of 1858?",
+      "options": [
+        "They lasted three hours each, with audiences of thousands standing to listen without moderators",
+        "They were the first debates ever broadcast on radio",
+        "They were short exchanges designed for newspaper coverage",
+        "They were considered failures at the time but appreciated later"
+      ],
+      "correct": 0,
+      "explanation": "The chapter describes: 'Seven debates across Illinois, each lasting three hours, with audiences that sometimes reached fifteen thousand people. No moderators. No soundbites. Just two men arguing about slavery and democracy while citizens stood in the summer heat, listening.'",
+      "hints": [
+        "The chapter uses these debates as an example of what we've lost.",
+        "Consider the chapter's point about 'sustained argument.'"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to John Stuart Mill, quoted in the chapter, knowing only your own side of a case means you know it well.",
+      "correct": false,
+      "explanation": "Mill's quote states: 'He who knows only his own side of the case knows little of that.' The chapter uses this to argue that your beliefs become stronger when you understand the opposition—'A belief you've never had to defend is fragile.'",
+      "hints": [
+        "Consider what Mill says about knowing 'little.'",
+        "Why would understanding opposition strengthen your own position?"
       ]
     },
     {
@@ -85,7 +144,7 @@
         "Gaining social approval from observers"
       ],
       "correct": 0,
-      "explanation": "The chapter concludes that 'the deepest victory in argument isn't defeating your opponent. It's getting closer to truth.' This reflects the Greek understanding that Socrates 'won' even though he lost his trial.",
+      "explanation": "The chapter concludes: 'The deepest victory in argument isn't defeating your opponent. It's getting closer to truth.' It notes that Socrates 'lost his trial and drank the hemlock. But no one remembers his accusers.'",
       "hints": [
         "Consider what the chapter says about Socrates and his trial.",
         "The title promises to teach you to 'win like the Greeks.'"

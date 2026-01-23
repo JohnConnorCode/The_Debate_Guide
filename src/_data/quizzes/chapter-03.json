@@ -163,18 +163,20 @@
     },
     {
       "id": "ch3-q12",
-      "type": "matching",
-      "question": "Match each rhetorical technique to its primary appeal:",
-      "pairs": [
-        {"left": "Citing statistics", "right": "Logos"},
-        {"left": "Sharing personal experience", "right": "Pathos"},
-        {"left": "Mentioning credentials", "right": "Ethos"},
-        {"left": "Using deductive reasoning", "right": "Logos"}
+      "type": "scenario",
+      "scenario": "A tech startup CEO is pitching to investors. She opens by showing her Stanford degree and previous successful exit. She then describes how her grandmother struggled with the problem their product solves. Finally, she presents market research and financial projections.",
+      "question": "In what order did the CEO deploy the three appeals?",
+      "options": [
+        "Logos, Pathos, Ethos",
+        "Ethos, Pathos, Logos",
+        "Pathos, Logos, Ethos",
+        "Ethos, Logos, Pathos"
       ],
-      "explanation": "Different techniques serve different appeals. Statistics and deductive reasoning support logical arguments (logos). Personal stories evoke emotional responses (pathos). Credentials establish trustworthiness (ethos). Recognizing these connections helps you craft balanced persuasion.",
+      "correct": 1,
+      "explanation": "The CEO established credibility first (ethos with credentials), then created emotional connection (pathos with the grandmother story), and finally presented rational evidence (logos with data). This sequence builds trust before asking for investment.",
       "hints": [
-        "Think about what each technique is primarily designed to accomplish.",
-        "Ask: does this make me feel, think, or trust?"
+        "Credentials and past success establish which appeal?",
+        "Personal stories typically evoke which response?"
       ]
     }
   ]

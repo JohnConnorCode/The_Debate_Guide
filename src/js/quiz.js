@@ -576,7 +576,12 @@
 
     function renderOrderingQuestion(question, originalIndex, userAnswer) {
         // If user has ordered items, use that; otherwise show shuffled
-        const items = userAnswer || createShuffledIndices(question.items.length);
+        let items = userAnswer;
+        if (!items) {
+            items = createShuffledIndices(question.items.length);
+            // Store the initial shuffled order as the answer so button enables
+            userAnswers[currentQuestion] = items;
+        }
 
         let itemsHtml = '<div class="quiz-ordering" role="list" aria-label="Drag to reorder items">';
 
@@ -838,7 +843,13 @@
             input.addEventListener('input', handleFillBlankInput);
             input.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' && input.value.trim()) {
-                    handleNext();
+                    e.preventDefault();
+                    const isLast = currentQuestion === quizData.questions.length - 1;
+                    if (isLast) {
+                        handleSubmit();
+                    } else {
+                        handleNext();
+                    }
                 }
             });
             // Focus the input

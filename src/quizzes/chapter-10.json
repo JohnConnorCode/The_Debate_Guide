@@ -6,7 +6,7 @@
       "type": "multiple-choice",
       "question": "What is Aristotle's distinction between 'artistic' and 'inartistic' proofs?",
       "options": [
-        "Artistic proofs are created by the speaker; inartistic proofs exist independently (documents, statistics, witnesses)",
+        "Artistic proofs are created by the speaker through rhetoric; inartistic proofs exist independently (documents, statistics, witnesses)",
         "Artistic proofs use creativity; inartistic proofs are boring",
         "Artistic proofs are for artists; inartistic proofs are for scientists",
         "Artistic proofs are ethical; inartistic proofs are manipulative"
@@ -22,7 +22,7 @@
       "type": "true-false",
       "question": "According to the chapter, presenting facts to someone who disagrees always changes their mind.",
       "correct": false,
-      "explanation": "The chapter opens by noting that 'studies show something different. Present someone with facts that contradict their existing views, and they often dig in harder.' This is known as the backfire effect.",
+      "explanation": "The chapter opens: 'Present someone with facts that contradict their existing views, and they often dig in harder. The evidence doesn't persuade; it provokes. People experience factual challenges to their beliefs as personal attacks.'",
       "hints": [
         "What is the 'backfire effect'?",
         "Why do facts sometimes 'provoke' rather than persuade?"
@@ -38,16 +38,30 @@
         "An emotional appeal"
       ],
       "correct": 0,
-      "explanation": "The chapter explains that 'tekmerion' is 'an infallible sign—evidence so strong it amounts to proof.' The example given is that if a woman has given birth, that's tekmerion she's had intercourse. Most evidence is weaker (semeion, fallible signs).",
+      "explanation": "The chapter explains that tekmerion is 'an infallible sign—evidence so strong it amounts to proof.' The example: if a woman has given birth, that's tekmerion she's had intercourse. Most evidence is weaker (semeion, fallible signs).",
       "hints": [
         "What's the difference between tekmerion and semeion?",
         "How rare are truly infallible signs?"
       ]
     },
     {
+      "type": "matching",
+      "question": "Match each evidence type with its primary characteristic:",
+      "pairs": [
+        {"left": "Statistics", "right": "Summarize many cases and seem authoritative, but can be manipulated"},
+        {"left": "Testimony", "right": "Depends on witness credibility and directness"},
+        {"left": "Examples", "right": "Memorable and emotionally engaging, but can be dismissed as atypical"}
+      ],
+      "explanation": "Each evidence type has distinct properties. Statistics feel authoritative but can be cherry-picked. Testimony relies on credibility. Examples are vivid but critics can dismiss them. The best arguments combine multiple types.",
+      "hints": [
+        "Why does 'Eighty percent of doctors recommend this' sound compelling?",
+        "What makes a single example insufficient proof?"
+      ]
+    },
+    {
       "type": "scenario",
       "question": "Based on the chapter's teaching about choosing evidence, what would be most effective?",
-      "scenario": "You're presenting a proposal to two different groups: a group of data-driven executives and a group of frontline employees who distrust corporate statistics.",
+      "scenario": "You're presenting a proposal to two different groups: data-driven executives and frontline employees who distrust corporate statistics.",
       "options": [
         "Use data and methodology for executives; use stories and personal testimony for employees",
         "Use the same evidence for both groups to be consistent",
@@ -55,10 +69,10 @@
         "Avoid evidence entirely and rely on your authority"
       ],
       "correct": 0,
-      "explanation": "The chapter emphasizes that 'Different audiences respond to different types of evidence.' Experts want data; laypeople want stories. Choosing 'evidence that connects truth to action' means matching evidence type to your specific audience.",
+      "explanation": "The chapter emphasizes: 'Different audiences respond to different types of evidence.' Experts want data and methodology; laypeople want stories. 'Understanding what counts as evidence for your audience is as important as knowing the hierarchy itself.'",
       "hints": [
-        "What does the chapter say about why experts and laypeople respond differently?",
-        "Why might frontline employees distrust corporate statistics?"
+        "Why might frontline employees distrust corporate statistics?",
+        "What does the chapter say about matching evidence to audience?"
       ]
     },
     {
@@ -78,17 +92,61 @@
       ]
     },
     {
-      "type": "matching",
-      "question": "Match each evidence type with its primary strength:",
-      "pairs": [
-        {"left": "Statistics", "right": "Summarize many cases and seem authoritative"},
-        {"left": "Testimony", "right": "Depends on witness credibility and directness"},
-        {"left": "Examples", "right": "Memorable and emotionally engaging"}
+      "type": "multiple-choice",
+      "question": "What does the chapter say about social media and evidence hierarchies?",
+      "options": [
+        "Social media inverts hierarchies—a viral personal story routinely outperforms peer-reviewed studies in persuasive power",
+        "Social media makes people more respectful of scientific evidence",
+        "Social media has eliminated the need for evidence",
+        "Social media only shares high-quality evidence"
       ],
-      "explanation": "Each evidence type has distinct properties. Statistics feel authoritative but can be manipulated. Testimony relies on credibility. Examples are vivid but can be dismissed as atypical. The best arguments use multiple types together.",
+      "correct": 0,
+      "explanation": "The chapter notes: 'Social media inverts these hierarchies. A viral personal story—lowest tier in scientific terms—routinely outperforms peer-reviewed meta-analyses in persuasive power... narrative stickiness and emotional resonance operate on different channels than epistemic rigor.'",
       "hints": [
-        "Why does 'Eighty percent of doctors recommend this' sound compelling?",
-        "What makes a single example insufficient proof?"
+        "Why does a nurse's TikTok spread further than a JAMA study?",
+        "What determines persuasive power on social media?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, inartistic proofs (like documents and statistics) are completely objective.",
+      "correct": false,
+      "explanation": "The chapter states: 'This appearance of objectivity gives inartistic proofs rhetorical power—they feel independent of the speaker's bias. But that objectivity is partly illusion. Someone chose which statistics to cite, which documents to present, which witnesses to call. The selection itself is rhetorical.'",
+      "hints": [
+        "Who decides which evidence to present?",
+        "Is selection itself a rhetorical act?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 'motivated reasoning' according to the chapter?",
+      "options": [
+        "Accepting confirming evidence with minimal scrutiny while subjecting disconfirming evidence to intense criticism",
+        "Being motivated to find the truth",
+        "Using evidence to motivate others",
+        "A technique for building better arguments"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'We accept evidence that confirms our beliefs with minimal scrutiny. We subject disconfirming evidence to intense criticism, looking for any flaw that would let us dismiss it. The same evidence encounters different standards depending on whether it supports or challenges what we already think.'",
+      "hints": [
+        "Do people apply equal scrutiny to all evidence?",
+        "What determines how critically we evaluate evidence?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the chapter recommend as the best approach to using evidence?",
+      "options": [
+        "Combine inartistic proofs (raw evidence) with artistic proofs (structure and interpretation) to create persuasive arguments",
+        "Use only statistics for maximum credibility",
+        "Avoid evidence and rely solely on emotional appeals",
+        "Present evidence without any interpretation"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'The best arguments combine both types. Inartistic proofs provide the raw material; artistic proofs shape that material into persuasive form. A lawyer doesn't just dump documents on a jury. She explains what they mean, why they matter, how they connect.'",
+      "hints": [
+        "What does a lawyer do beyond presenting documents?",
+        "What roles do evidence and argument each play?"
       ]
     }
   ]

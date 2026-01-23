@@ -6,13 +6,13 @@
       "type": "multiple-choice",
       "question": "What is an enthymeme?",
       "options": [
-        "A rhetorical syllogism with an unstated premise the audience fills in",
+        "A rhetorical syllogism with an unstated premise the audience fills in from their own beliefs",
         "A type of logical fallacy",
-        "A complete three-part syllogism",
+        "A complete three-part syllogism with all premises stated",
         "An emotional appeal disguised as logic"
       ],
       "correct": 0,
-      "explanation": "The chapter explains that an enthymeme is 'a syllogism with one premise left unstated—usually because the audience already believes it.' This compression is powerful because it makes the audience participants in the reasoning.",
+      "explanation": "The chapter explains: 'An enthymeme is a syllogism with one premise left unstated—usually because the audience already believes it.' This compression makes audiences participants in the reasoning, investing them in the conclusion.",
       "hints": [
         "Why doesn't Aristotle recommend using full formal syllogisms in rhetoric?",
         "What role does the audience play in completing an enthymeme?"
@@ -22,7 +22,7 @@
       "type": "true-false",
       "question": "According to the chapter, inductive arguments provide the same level of certainty as deductive arguments.",
       "correct": false,
-      "explanation": "The chapter clearly distinguishes them: deductive arguments 'lock shut' — if premises are true and form is valid, the conclusion is forced. Inductive arguments only provide probability: 'the next observation might break the pattern.'",
+      "explanation": "The chapter clearly distinguishes them: deductive arguments 'lock shut'—if premises are true and form is valid, the conclusion is forced. Inductive arguments only provide probability: 'the next observation might break the pattern' (as black swans did).",
       "hints": [
         "What happened to the conclusion 'all swans are white'?",
         "What word does the chapter say is 'doing crucial work' in inductive reasoning?"
@@ -32,13 +32,13 @@
       "type": "multiple-choice",
       "question": "What is the difference between a 'valid' argument and a 'sound' argument?",
       "options": [
-        "Valid means the conclusion follows from premises; sound means it's also built on true premises",
+        "Valid means the conclusion follows from premises; sound means it's valid AND built on true premises",
         "Valid means the argument is ethical; sound means it's persuasive",
         "They mean the same thing",
         "Valid is for spoken arguments; sound is for written arguments"
       ],
       "correct": 0,
-      "explanation": "The chapter explains: 'Validity is purely structural. It asks: if the premises were true, would the conclusion have to follow?' Soundness 'combines structure and content'—a sound argument is valid AND built on true premises.",
+      "explanation": "The chapter explains: 'Validity is purely structural. It asks: if the premises were true, would the conclusion have to follow?' Soundness 'combines structure and content'—a sound argument is valid AND has true premises.",
       "hints": [
         "Can an argument be valid but have false premises?",
         "Think about the 'all fish are mammals' example."
@@ -63,12 +63,12 @@
     },
     {
       "type": "multiple-choice",
-      "question": "What does the chapter recommend when audiences don't share your unstated premises?",
+      "question": "What three strategies does the chapter recommend when audiences don't share your unstated premises?",
       "options": [
-        "Find deeper premises where you converge, make your assumptions explicit, or choose your audience",
-        "Use more emotional appeals instead",
-        "Abandon logical argument entirely",
-        "Simply assert your conclusion more forcefully"
+        "Find deeper premises where you converge, make your premises explicit, or choose your audience",
+        "Use more emotional appeals, repeat yourself, or speak louder",
+        "Abandon logical argument, attack their premises, or give up",
+        "Use simpler words, add more data, or change the topic"
       ],
       "correct": 0,
       "explanation": "The chapter offers three strategies: 'Find deeper premises' (almost everyone agrees on some level), 'Make your premises explicit' (show your work), or 'Choose your audience' (focus on people who share relevant assumptions).",
@@ -82,13 +82,71 @@
       "question": "Match each concept with its definition:",
       "pairs": [
         {"left": "Syllogism", "right": "A deductive argument with two premises and a conclusion"},
-        {"left": "Enthymeme", "right": "A compressed argument with an unstated premise"},
+        {"left": "Enthymeme", "right": "A compressed argument with an unstated premise the audience supplies"},
         {"left": "Maxim", "right": "A general statement of principle audiences already accept"}
       ],
-      "explanation": "A syllogism is the formal logical structure. An enthymeme compresses it by leaving out what the audience already believes. A maxim represents shared wisdom that can serve as an unstated premise.",
+      "explanation": "A syllogism is the formal logical structure. An enthymeme compresses it by leaving out what the audience already believes. A maxim represents shared wisdom that can serve as an unstated premise (like proverbs).",
       "hints": [
         "Which form is 'rhetoric's syllogism'?",
         "What do proverbs like 'You reap what you sow' function as?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Why are enthymemes rhetorically powerful according to the chapter?",
+      "options": [
+        "When audiences supply premises themselves, they become invested in the conclusion as co-constructors",
+        "Because they're longer than syllogisms",
+        "Because they hide weak arguments",
+        "Because they eliminate the need for evidence"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'When audiences supply premises themselves, they become invested in the conclusion. They've participated in the reasoning. They're not just hearing your argument; they're co-constructing it. This makes the conclusion feel like their own discovery.'",
+      "hints": [
+        "What role does the audience play in an enthymeme?",
+        "Why does participation increase persuasion?"
+      ]
+    },
+    {
+      "type": "true-false",
+      "question": "According to the chapter, the person who announces 'I'm just being logical here' is frequently about to make a strong argument.",
+      "correct": false,
+      "explanation": "The chapter opens: 'Most \"logical\" arguments are nothing of the sort. People claim to be reasoning when they're actually rationalizing... The person who announces \"I'm just being logical here\" is frequently about to commit a howler.'",
+      "hints": [
+        "What's the difference between reasoning and rationalizing?",
+        "Does claiming to be logical make you logical?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What problem does the chapter identify with using enthymemes in modern fragmented audiences?",
+      "options": [
+        "Different audience members hold contradictory unstated premises, so the same words become different arguments",
+        "Modern audiences are too logical for enthymemes",
+        "Enthymemes only work in written form",
+        "Social media has eliminated all shared premises"
+      ],
+      "correct": 0,
+      "explanation": "The chapter explains: 'Your Thanksgiving table might include people whose unstated premises contradict each other absolutely... The same words, received by different unstated premises, become different arguments. One half hears an obvious truth; the other half hears a dogmatic assertion.'",
+      "hints": [
+        "How did Aristotle's audience differ from modern audiences?",
+        "What happens when premises aren't shared?"
+      ]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the chapter, what is the difference between how mathematicians and lawyers use logic?",
+      "options": [
+        "Mathematicians prove theorems with certainty; lawyers argue cases with probability",
+        "Mathematicians use induction; lawyers use deduction",
+        "There is no difference",
+        "Mathematicians avoid logic; lawyers require it"
+      ],
+      "correct": 0,
+      "explanation": "The chapter states: 'Mathematicians prove theorems with certainty. Lawyers argue cases with probability. The rhetorical syllogism isn't a watered-down version of the real thing. It's a different tool for a different job.'",
+      "hints": [
+        "What level of certainty can rhetoric achieve?",
+        "Why is rhetorical logic different from formal logic?"
       ]
     }
   ]
