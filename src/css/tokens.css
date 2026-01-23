@@ -40,7 +40,7 @@
     --bg-tertiary: var(--color-cream);
     --text-primary: var(--color-paper);
     --text-secondary: var(--color-ink);
-    --text-muted: var(--color-muted);
+    --text-muted: #a3a3a3;  /* Improved contrast from #737373 */
     --accent: var(--color-gold);
     --accent-hover: var(--color-gold-light);
     --accent-dark: var(--color-gold-dark);
@@ -251,7 +251,7 @@
     --bg-tertiary: var(--color-warm-white);
     --text-primary: var(--color-ink);
     --text-secondary: var(--color-paper);
-    --text-muted: #666666;
+    --text-muted: #525252;  /* Improved contrast for light mode */
 }
 
 /* Auto light mode for system preference */

@@ -271,7 +271,7 @@ button {
     text-transform: uppercase;
     color: var(--text-primary);
     text-decoration: none;
-    opacity: var(--opacity-60);
+    opacity: var(--opacity-80);
     transition: opacity var(--transition-fast);
 }
 
@@ -587,7 +587,7 @@ h1, h2, h3, h4 {
     font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
     color: var(--text-primary);
-    opacity: var(--opacity-70);
+    opacity: var(--opacity-90);
     margin: var(--space-md) auto;
     max-width: 50ch;
 }
@@ -686,7 +686,7 @@ h1, h2, h3, h4 {
 .footer-tagline {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    opacity: var(--opacity-40);
+    opacity: var(--opacity-70);
     max-width: 32ch;
     margin-bottom: var(--space-sm);
 }
@@ -704,7 +704,7 @@ h1, h2, h3, h4 {
     font-weight: var(--font-semibold);
     letter-spacing: var(--tracking-caps);
     text-transform: uppercase;
-    opacity: var(--opacity-30);
+    opacity: var(--opacity-60);
     margin-bottom: var(--space-sm);
 }
 
@@ -714,7 +714,7 @@ h1, h2, h3, h4 {
     text-decoration: none;
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    opacity: var(--opacity-50);
+    opacity: var(--opacity-80);
     margin-bottom: var(--space-2);
     transition: opacity var(--transition-fast);
 }
@@ -736,7 +736,7 @@ h1, h2, h3, h4 {
 .footer-copyright {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    opacity: var(--opacity-30);
+    opacity: var(--opacity-60);
 }
 
 .footer-legal {
@@ -748,13 +748,13 @@ h1, h2, h3, h4 {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     color: var(--text-primary);
-    opacity: var(--opacity-30);
+    opacity: var(--opacity-60);
     text-decoration: none;
     transition: opacity var(--transition-fast);
 }
 
 .footer-legal a:hover {
-    opacity: var(--opacity-60);
+    opacity: var(--opacity-100);
 }
 
 /* ==========================================
