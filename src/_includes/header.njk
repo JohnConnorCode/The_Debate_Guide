@@ -1,8 +1,8 @@
 {# Header component - configurable nav based on page type #}
-<header class="header">
+<header class="header" role="banner">
     <div class="header-inner">
-        <a href="{{ '/' | url }}" class="logo"{% if pageType == "home" %} aria-current="page"{% endif %}>
-            <div class="logo-mark"><span>D</span></div>
+        <a href="{{ '/' | url }}" class="logo"{% if pageType == "home" %} aria-current="page"{% endif %} aria-label="The Debate Guide - Home">
+            <div class="logo-mark" aria-hidden="true"><span>D</span></div>
             <span class="logo-text">THE DEBATE GUIDE</span>
         </a>
 
@@ -17,21 +17,23 @@
             {% else %}
                 <a href="{{ '/' | url }}">Contents</a>
                 <a href="{{ '/introduction/' | url }}">Introduction</a>
+                <a href="{{ '/about/' | url }}">About</a>
             {% endif %}
-            <button class="search-trigger" id="search-trigger" aria-label="Search" title="Search (Press /)">
+            <button class="search-trigger" id="search-trigger" aria-label="Search (Press / or Ctrl+K)" title="Search">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
+                <kbd class="search-shortcut-hint">/</kbd>
             </button>
             <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer" class="nav-cta">Join SuperDebate</a>
         </nav>
 
         {# Mobile hamburger button #}
-        <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
+        <button class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
         </button>
     </div>
     <div class="header-line"></div>
@@ -39,12 +41,12 @@
 
 {# Mobile navigation drawer #}
 <div class="mobile-nav-overlay" aria-hidden="true"></div>
-<nav class="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="mobile-nav-header">
-        <span class="mobile-nav-title">Navigate</span>
-        <button class="mobile-nav-close" aria-label="Close menu">
-            <span></span>
-            <span></span>
+        <span class="mobile-nav-title" id="mobile-nav-title">Navigate</span>
+        <button class="mobile-nav-close" aria-label="Close navigation menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </button>
     </div>
     <button class="mobile-nav-search" id="mobile-search-trigger" aria-label="Search">
@@ -64,6 +66,7 @@
         {% else %}
             <a href="{{ '/' | url }}">Contents</a>
             <a href="{{ '/introduction/' | url }}">Introduction</a>
+            <a href="{{ '/about/' | url }}">About</a>
         {% endif %}
     </div>
     <div class="mobile-nav-cta">

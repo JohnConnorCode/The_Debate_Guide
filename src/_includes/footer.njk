@@ -1,17 +1,17 @@
 {# Footer component #}
-<footer class="footer">
+<footer class="footer" role="contentinfo">
     <div class="footer-main">
         <div>
             <div class="footer-brand-wrap">
-                <div class="footer-logo-mark"><span>D</span></div>
+                <div class="footer-logo-mark" aria-hidden="true"><span>D</span></div>
                 <span class="footer-brand">THE DEBATE GUIDE</span>
             </div>
             <p class="footer-tagline">Master the timeless art of persuasion.{% if pageType == "home" %} A companion guide to SuperDebate.{% endif %}</p>
         </div>
-        <div>
+        <nav aria-label="Footer navigation">
             <div class="footer-links">
-                <div class="footer-col">
-                    <span class="footer-heading">The Book</span>
+                <div class="footer-col" role="group" aria-labelledby="footer-book-heading">
+                    <span class="footer-heading" id="footer-book-heading">The Book</span>
                     {% if pageType == "home" %}
                         <a href="{{ '/introduction/' | url }}">Introduction</a>
                     {% else %}
@@ -23,21 +23,22 @@
                     <a href="{{ '/' | url }}#part-4">Part IV: Applications</a>
                     <a href="{{ '/' | url }}#part-5">Part V: Mastery</a>
                 </div>
-                <div class="footer-col">
-                    <span class="footer-heading">Reference</span>
+                <div class="footer-col" role="group" aria-labelledby="footer-reference-heading">
+                    <span class="footer-heading" id="footer-reference-heading">Reference</span>
                     <a href="{{ '/quick-tactics/' | url }}">Quick Tactics</a>
                     <a href="{{ '/glossary/' | url }}">Glossary</a>
                     <a href="{{ '/resources/' | url }}">Further Reading</a>
-                    <a href="{{ '/progress/' | url }}">Your Progress</a>
+                    <a href="{{ '/faq/' | url }}">FAQ</a>
+                    <a href="{{ '/about/' | url }}">About</a>
                 </div>
-                <div class="footer-col">
-                    <span class="footer-heading">SuperDebate</span>
-                    <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer">Find Clubs</a>
-                    <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer">Events</a>
-                    <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer">Join Free</a>
+                <div class="footer-col" role="group" aria-labelledby="footer-superdebate-heading">
+                    <span class="footer-heading" id="footer-superdebate-heading">SuperDebate</span>
+                    <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer">Find Clubs<span class="visually-hidden"> (opens in new tab)</span></a>
+                    <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer">Events<span class="visually-hidden"> (opens in new tab)</span></a>
+                    <a href="https://superdebate.org/contact" target="_blank" rel="noopener noreferrer">Contact<span class="visually-hidden"> (opens in new tab)</span></a>
                 </div>
             </div>
-        </div>
+        </nav>
     </div>
     <div class="footer-bottom">
         <span class="footer-copyright">© {{ site.currentYear }} The Debate Guide{% if pageType == "home" %}. Part of the SuperDebate project.{% endif %}</span>

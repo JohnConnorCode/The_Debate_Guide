@@ -1,0 +1,320 @@
+---
+layout: base.njk
+title: "FAQ — The Debate Guide"
+description: "Frequently asked questions about The Debate Guide, debate formats, starting a club, and the connection to SuperDebate."
+permalink: /faq/
+---
+{% block styles %}
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<style>
+    .faq-section {
+        margin-bottom: var(--space-lg);
+    }
+    .faq-section-title {
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        letter-spacing: var(--tracking-wider);
+        color: var(--accent);
+        margin-bottom: var(--space-md);
+        padding-bottom: var(--space-xs);
+        border-bottom: 1px solid rgba(var(--color-gold-rgb), 0.3);
+    }
+    .faq-item {
+        margin-bottom: var(--space-md);
+    }
+    .faq-question {
+        font-family: var(--font-display);
+        font-size: var(--text-lg);
+        letter-spacing: var(--tracking-wide);
+        color: var(--text-primary);
+        margin-bottom: var(--space-xs);
+    }
+    .faq-answer {
+        font-family: var(--font-body);
+        font-size: var(--text-md);
+        line-height: var(--leading-relaxed);
+        color: var(--text-primary);
+        opacity: 0.9;
+    }
+    .faq-answer p {
+        margin-bottom: var(--space-sm);
+    }
+    .faq-answer p:last-child {
+        margin-bottom: 0;
+    }
+    .faq-answer ul, .faq-answer ol {
+        margin: var(--space-xs) 0 var(--space-sm) var(--space-md);
+    }
+    .faq-answer li {
+        margin-bottom: var(--space-1);
+    }
+    .faq-answer a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+</style>
+{% endblock %}
+
+{# Page Hero #}
+<section class="chapter-hero section-dark">
+    {% include "sunburst.njk" %}
+    <p class="chapter-part">Reference</p>
+    <div class="chapter-number" style="opacity: 0.05;">?</div>
+    <h1 class="chapter-title">FREQUENTLY ASKED QUESTIONS</h1>
+    <p class="chapter-subtitle">Everything you need to know</p>
+</section>
+
+<div class="deco-border"></div>
+
+<main class="section section-dark">
+    <article class="chapter-content">
+
+        {# ABOUT THE GUIDE #}
+        <section class="faq-section">
+            <h2 class="faq-section-title">About the Guide</h2>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Who is this guide for?</h3>
+                <div class="faq-answer">
+                    <p>Anyone who wants to argue better. That includes:</p>
+                    <ul>
+                        <li>Adults curious about debate who never had formal training</li>
+                        <li>Former competitive debaters looking to refresh their skills</li>
+                        <li>Professionals who need to persuade colleagues, clients, or stakeholders</li>
+                        <li>Educators teaching critical thinking or communication</li>
+                        <li>Citizens who want to engage more productively in civic discourse</li>
+                        <li>Anyone tired of unproductive arguments who wants a better way</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Do I need debate experience to use this guide?</h3>
+                <div class="faq-answer">
+                    <p>No. The guide assumes no prior knowledge. We introduce Greek rhetorical terms because they name concepts English lacks good words for, but every term is defined when it first appears. Start with the Introduction and Chapter 1, and everything will build from there.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">How long does it take to read?</h3>
+                <div class="faq-answer">
+                    <p>The complete guide is about 8-10 hours of reading. But you don't have to read it straight through. Each chapter stands alone, so you can jump to topics that interest you. See the Introduction for suggested reading paths based on your goals.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Is there a print or PDF version?</h3>
+                <div class="faq-answer">
+                    <p>The web version is the primary format, optimized for reading on any device. You can use your browser's print function to create PDFs of individual chapters. A complete downloadable version may be available in the future.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Is the guide free?</h3>
+                <div class="faq-answer">
+                    <p>Yes. The Debate Guide is free and always will be. It's part of SuperDebate's mission to make debate education accessible to everyone.</p>
+                </div>
+            </div>
+        </section>
+
+        {# DEBATE BASICS #}
+        <section class="faq-section">
+            <h2 class="faq-section-title">Debate Basics</h2>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What's the difference between debate and argument?</h3>
+                <div class="faq-answer">
+                    <p>An argument is any attempt to support a claim with reasons. Debate is structured argument—a format with rules, time limits, and often judges. Think of it like the difference between playing catch and playing baseball. Both involve throwing, but one has structure that makes it a sport.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What are the main debate formats?</h3>
+                <div class="faq-answer">
+                    <p><strong>Oxford-Style:</strong> Two teams argue for and against a motion before an audience that votes before and after. The team that changes more minds wins. Popular at Intelligence Squared events.</p>
+                    <p><strong>Parliamentary:</strong> Based on British Parliament traditions. Two teams (Government and Opposition) debate a motion with defined speaking roles. Common in universities worldwide.</p>
+                    <p><strong>Lincoln-Douglas:</strong> One-on-one format focused on values and philosophy. Named after the famous 1858 debates. Common in American high school competition.</p>
+                    <p><strong>Policy:</strong> Team format with extensive research and evidence. Debates specific policy proposals. Known for fast speaking ("spreading").</p>
+                    <p><strong>Public Forum:</strong> Accessible team format on current events. Designed to be understandable to general audiences.</p>
+                    <p>Most adult debate clubs use Oxford-Style or Parliamentary formats because they're accessible and engaging for audiences.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Do I have to argue for positions I disagree with?</h3>
+                <div class="faq-answer">
+                    <p>Often, yes—and that's one of debate's greatest benefits. Arguing for positions you disagree with forces you to understand them deeply. You'll discover that most positions have stronger arguments than you assumed. This builds intellectual empathy and guards against blind spots in your own thinking.</p>
+                    <p>The Greeks called this practice <em>dissoi logoi</em>—arguing both sides. It's not about being dishonest; it's about being thorough.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What's the difference between ethos, pathos, and logos?</h3>
+                <div class="faq-answer">
+                    <p>These are Aristotle's three modes of persuasion:</p>
+                    <ul>
+                        <li><strong>Ethos</strong> (character): Persuasion through credibility and trustworthiness</li>
+                        <li><strong>Pathos</strong> (emotion): Persuasion through emotional connection</li>
+                        <li><strong>Logos</strong> (logic): Persuasion through reasoning and evidence</li>
+                    </ul>
+                    <p>Effective persuasion usually combines all three. Chapters 5-10 explore each in depth.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What is "steelmanning"?</h3>
+                <div class="faq-answer">
+                    <p>Steelmanning means presenting the strongest possible version of an opposing argument before responding to it. It's the opposite of strawmanning (attacking a weak or distorted version). When you steelman, you show intellectual honesty and make your own counterarguments more credible. Chapter 15 covers this technique in detail.</p>
+                </div>
+            </div>
+        </section>
+
+        {# STARTING A CLUB #}
+        <section class="faq-section">
+            <h2 class="faq-section-title">Starting a Debate Club</h2>
+
+            <div class="faq-item">
+                <h3 class="faq-question">How do I start a debate club?</h3>
+                <div class="faq-answer">
+                    <p>You need less than you think:</p>
+                    <ol>
+                        <li><strong>Find 3-5 interested people.</strong> Colleagues, friends, neighbors—anyone curious about arguing better.</li>
+                        <li><strong>Pick a regular time and place.</strong> Weekly or biweekly works best. A living room, coffee shop, or library meeting room is fine.</li>
+                        <li><strong>Start simple.</strong> Your first meetings can be informal discussions. Add structure gradually.</li>
+                        <li><strong>Register with <a href="https://superdebate.org" target="_blank" rel="noopener">SuperDebate</a></strong> to connect with the broader community, find resources, and eventually participate in tournaments.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What topics should we debate?</h3>
+                <div class="faq-answer">
+                    <p>Good debate topics are:</p>
+                    <ul>
+                        <li><strong>Debatable:</strong> Reasonable people can disagree</li>
+                        <li><strong>Specific:</strong> Clear enough to argue meaningfully</li>
+                        <li><strong>Balanced:</strong> Both sides have strong arguments</li>
+                    </ul>
+                    <p>Start with topics your group finds interesting. Current events work well, as do perennial questions about policy, ethics, and society. Avoid topics where the group unanimously agrees—there's no debate if everyone's on the same side.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">How do we judge debates?</h3>
+                <div class="faq-answer">
+                    <p>For casual club debates, you can simply vote on which side was more persuasive. As you get more formal, consider judging on:</p>
+                    <ul>
+                        <li><strong>Argument quality:</strong> Were claims supported with reasoning and evidence?</li>
+                        <li><strong>Refutation:</strong> Did speakers engage with opposing arguments?</li>
+                        <li><strong>Delivery:</strong> Was the presentation clear and engaging?</li>
+                        <li><strong>Strategy:</strong> Did the team structure its case effectively?</li>
+                    </ul>
+                    <p>SuperDebate provides judging rubrics and training for clubs that want more structured evaluation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What if I'm not an experienced debater?</h3>
+                <div class="faq-answer">
+                    <p>You don't need to be. Adult debate clubs are learning communities, not elite competitions. Everyone improves together. The exercises in this guide give you plenty of material to structure meetings around. And SuperDebate connects new organizers with experienced mentors.</p>
+                </div>
+            </div>
+        </section>
+
+        {# SUPERDEBATE #}
+        <section class="faq-section">
+            <h2 class="faq-section-title">SuperDebate</h2>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What is SuperDebate?</h3>
+                <div class="faq-answer">
+                    <p>SuperDebate is the platform for adult debate clubs. It connects organizers who want to start clubs, debaters looking for intellectual community, and judges who mentor speakers. The platform provides infrastructure for everything from local meetups to global championships.</p>
+                    <p>The Debate Guide is SuperDebate's educational foundation—the shared understanding of good argument that makes productive debate possible.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Is SuperDebate free?</h3>
+                <div class="faq-answer">
+                    <p>Yes, joining SuperDebate is free. You can find clubs, connect with debaters, and access basic resources at no cost. Premium features for serious competitors and large organizations may have fees, but the core platform is free.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">How do I find a debate club near me?</h3>
+                <div class="faq-answer">
+                    <p>Visit <a href="https://superdebate.org" target="_blank" rel="noopener">superdebate.org</a> and search for clubs in your area. If there isn't one nearby, consider starting one—SuperDebate provides resources to help you launch.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">How do I contact SuperDebate?</h3>
+                <div class="faq-answer">
+                    <p>Visit the <a href="https://superdebate.org/contact" target="_blank" rel="noopener">SuperDebate contact page</a> or email john@superdebate.org. The team typically responds within 24 hours.</p>
+                </div>
+            </div>
+        </section>
+
+        {# USING THE GUIDE #}
+        <section class="faq-section">
+            <h2 class="faq-section-title">Using the Guide</h2>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What order should I read the chapters?</h3>
+                <div class="faq-answer">
+                    <p>The chapters build on each other, so reading straight through works well. But if you're short on time, the Introduction offers four reading paths based on your goals: The Complete Journey, The Busy Professional, The Digital Debater, and The Philosophical Reader.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Should I do the exercises?</h3>
+                <div class="faq-answer">
+                    <p>Yes. Reading about debate is like reading about swimming—useful, but not the same as getting wet. The exercises move knowledge from understanding to ability. Even doing one exercise per chapter will dramatically increase how much you retain and can apply.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Can I use this guide for teaching?</h3>
+                <div class="faq-answer">
+                    <p>Absolutely. Educators are welcome to use The Debate Guide in classrooms, workshops, and training programs. The chapter structure, exercises, and vocabulary boxes are designed to support instruction. If you're building a curriculum around the guide, <a href="https://superdebate.org/contact" target="_blank" rel="noopener">reach out</a>—we may be able to provide additional resources.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">I found an error. How do I report it?</h3>
+                <div class="faq-answer">
+                    <p>We appreciate corrections. Please <a href="https://superdebate.org/contact" target="_blank" rel="noopener">contact us</a> with the chapter, the error, and the suggested correction. We'll review and update the guide as needed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">How do I track my progress?</h3>
+                <div class="faq-answer">
+                    <p>The guide automatically tracks which chapters you've read using your browser's local storage. Visit the <a href="/progress/">Progress page</a> to see your reading history. Your data stays on your device—we don't track your reading on our servers.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="insight-box">
+            <p>Still have questions? <a href="https://superdebate.org/contact" target="_blank" rel="noopener">Contact us</a> and we'll get back to you within 24 hours.</p>
+        </div>
+
+    </article>
+
+    {# Navigation #}
+    <nav class="chapter-nav">
+        <a href="{{ '/about/' | url }}" class="chapter-nav-prev">
+            <span class="chapter-nav-label">&larr; Previous</span>
+            <span class="chapter-nav-title">About</span>
+        </a>
+        <div class="chapter-nav-contents">
+            <a href="/">Contents</a>
+        </div>
+        <div class="chapter-nav-next" style="visibility: hidden;">
+            {# No next page #}
+        </div>
+    </nav>
+</main>
+
+<div class="deco-border"></div>

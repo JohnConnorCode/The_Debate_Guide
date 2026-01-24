@@ -148,10 +148,11 @@
     /* ==========================================
        SHADOWS
        ========================================== */
-    --shadow-sm: 0 1px 2px rgba(var(--color-black-rgb), 0.05);
-    --shadow-md: 0 4px 6px rgba(var(--color-black-rgb), 0.1);
-    --shadow-lg: 0 10px 15px rgba(var(--color-black-rgb), 0.1);
-    --shadow-xl: 0 20px 25px rgba(var(--color-black-rgb), 0.15);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --shadow-glow: 0 0 20px rgba(201, 162, 39, 0.15);
 
     /* ==========================================
        Z-INDEX SCALE
@@ -251,7 +252,10 @@
     --bg-tertiary: var(--color-warm-white);
     --text-primary: var(--color-ink);
     --text-secondary: var(--color-paper);
-    --text-muted: #525252;  /* Improved contrast for light mode */
+    --text-muted: #4a4a4a;  /* Improved contrast for light mode */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Auto light mode for system preference */
@@ -262,7 +266,10 @@
         --bg-tertiary: var(--color-warm-white);
         --text-primary: var(--color-ink);
         --text-secondary: var(--color-paper);
-        --text-muted: #666666;
+        --text-muted: #4a4a4a;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 }
 
