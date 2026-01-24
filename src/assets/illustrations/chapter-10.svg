@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Scales of evidence/proof -->
+  <g stroke="url(#gold10)" stroke-width="2" fill="none">
+    <!-- Center beam -->
+    <line x1="200" y1="40" x2="200" y2="70"/>
+    <line x1="120" y1="90" x2="280" y2="90"/>
+    <circle cx="200" cy="35" r="8" fill="url(#gold10)" opacity="0.5"/>
+
+    <!-- Left pan (heavier - more evidence) -->
+    <line x1="120" y1="90" x2="120" y2="130"/>
+    <ellipse cx="120" cy="140" rx="40" ry="15"/>
+
+    <!-- Right pan (lighter) -->
+    <line x1="280" y1="90" x2="280" y2="110"/>
+    <ellipse cx="280" cy="120" rx="40" ry="15"/>
+  </g>
+
+  <!-- Evidence documents stacked -->
+  <g fill="url(#gold10)" opacity="0.6">
+    <rect x="100" y="145" width="40" height="5" rx="1"/>
+    <rect x="102" y="152" width="36" height="5" rx="1"/>
+    <rect x="104" y="159" width="32" height="5" rx="1"/>
+  </g>
+
+  <!-- Magnifying glass -->
+  <g stroke="url(#gold10)" stroke-width="2" fill="none" opacity="0.7">
+    <circle cx="70" cy="200" r="25"/>
+    <line x1="88" y1="218" x2="105" y2="235"/>
+  </g>
+
+  <!-- Data points / proof markers -->
+  <g fill="url(#gold10)" opacity="0.5">
+    <circle cx="310" cy="170" r="4"/>
+    <circle cx="330" cy="185" r="4"/>
+    <circle cx="320" cy="200" r="4"/>
+    <circle cx="350" cy="175" r="4"/>
+    <circle cx="340" cy="210" r="4"/>
+  </g>
+
+  <!-- Trend line through data -->
+  <path d="M305 175 Q330 180 355 170" stroke="url(#gold10)" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+  <!-- Checkmark (verified) -->
+  <path d="M200 180 L210 195 L235 160" stroke="url(#gold10)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold10)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

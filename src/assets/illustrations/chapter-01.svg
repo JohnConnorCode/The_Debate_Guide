@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background pattern -->
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Radiating lines from center bottom -->
+  <g stroke="url(#gold1)" stroke-width="1" opacity="0.3">
+    <line x1="200" y1="250" x2="50" y2="50"/>
+    <line x1="200" y1="250" x2="100" y2="30"/>
+    <line x1="200" y1="250" x2="150" y2="20"/>
+    <line x1="200" y1="250" x2="200" y2="10"/>
+    <line x1="200" y1="250" x2="250" y2="20"/>
+    <line x1="200" y1="250" x2="300" y2="30"/>
+    <line x1="200" y1="250" x2="350" y2="50"/>
+  </g>
+
+  <!-- Assembly platform (semicircle of seats) -->
+  <g fill="none" stroke="url(#gold1)" stroke-width="1.5">
+    <ellipse cx="200" cy="220" rx="150" ry="40" opacity="0.4"/>
+    <ellipse cx="200" cy="200" rx="120" ry="32" opacity="0.5"/>
+    <ellipse cx="200" cy="180" rx="90" ry="24" opacity="0.6"/>
+  </g>
+
+  <!-- Central speaker platform -->
+  <rect x="175" y="140" width="50" height="60" fill="url(#gold1)" opacity="0.8"/>
+  <rect x="180" y="135" width="40" height="5" fill="url(#gold1)"/>
+
+  <!-- Speaker figure (geometric) -->
+  <circle cx="200" cy="115" r="12" fill="url(#gold1)"/>
+  <rect x="193" y="127" width="14" height="25" fill="url(#gold1)" opacity="0.9"/>
+  <line x1="185" y1="135" x2="175" y2="145" stroke="url(#gold1)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="215" y1="135" x2="225" y2="125" stroke="url(#gold1)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Columns framing -->
+  <g fill="url(#gold1)" opacity="0.6">
+    <rect x="30" y="40" width="12" height="180"/>
+    <rect x="26" y="35" width="20" height="8"/>
+    <rect x="26" y="220" width="20" height="8"/>
+
+    <rect x="358" y="40" width="12" height="180"/>
+    <rect x="354" y="35" width="20" height="8"/>
+    <rect x="354" y="220" width="20" height="8"/>
+  </g>
+
+  <!-- Geometric citizens (simplified figures) -->
+  <g fill="url(#gold1)" opacity="0.5">
+    <circle cx="80" cy="190" r="6"/><rect x="77" y="196" width="6" height="12"/>
+    <circle cx="110" cy="175" r="6"/><rect x="107" y="181" width="6" height="12"/>
+    <circle cx="140" cy="165" r="6"/><rect x="137" y="171" width="6" height="12"/>
+    <circle cx="260" cy="165" r="6"/><rect x="257" y="171" width="6" height="12"/>
+    <circle cx="290" cy="175" r="6"/><rect x="287" y="181" width="6" height="12"/>
+    <circle cx="320" cy="190" r="6"/><rect x="317" y="196" width="6" height="12"/>
+  </g>
+
+  <!-- Art Deco corner accents -->
+  <g stroke="url(#gold1)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 40 M10 10 L40 10"/>
+    <path d="M390 10 L390 40 M390 10 L360 10"/>
+    <path d="M10 240 L10 210 M10 240 L40 240"/>
+    <path d="M390 240 L390 210 M390 240 L360 240"/>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold20" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+    <linearGradient id="glow20" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Laurel wreath (victory) -->
+  <g stroke="url(#gold20)" stroke-width="2" fill="none">
+    <path d="M120 125 Q100 80 140 50 Q160 70 150 100"/>
+    <path d="M125 130 Q110 95 145 70"/>
+    <path d="M130 135 Q120 110 150 90"/>
+
+    <path d="M280 125 Q300 80 260 50 Q240 70 250 100"/>
+    <path d="M275 130 Q290 95 255 70"/>
+    <path d="M270 135 Q280 110 250 90"/>
+  </g>
+
+  <!-- Central light / wisdom -->
+  <circle cx="200" cy="100" r="50" fill="url(#glow20)"/>
+  <circle cx="200" cy="100" r="30" stroke="url(#gold20)" stroke-width="2" fill="none"/>
+  <circle cx="200" cy="100" r="20" stroke="url(#gold20)" stroke-width="1" fill="none" opacity="0.5"/>
+  <circle cx="200" cy="100" r="8" fill="url(#gold20)"/>
+
+  <!-- Radiating wisdom rays -->
+  <g stroke="url(#gold20)" stroke-width="1" opacity="0.4">
+    <line x1="200" y1="40" x2="200" y2="25"/>
+    <line x1="230" y1="50" x2="245" y2="35"/>
+    <line x1="250" y1="80" x2="270" y2="70"/>
+    <line x1="170" y1="50" x2="155" y2="35"/>
+    <line x1="150" y1="80" x2="130" y2="70"/>
+  </g>
+
+  <!-- Owl of wisdom (Athena's symbol) -->
+  <g stroke="url(#gold20)" stroke-width="1.5" fill="none" opacity="0.6">
+    <ellipse cx="200" cy="190" rx="25" ry="30"/>
+    <circle cx="190" cy="180" r="8"/>
+    <circle cx="210" cy="180" r="8"/>
+    <circle cx="190" cy="180" r="3" fill="url(#gold20)"/>
+    <circle cx="210" cy="180" r="3" fill="url(#gold20)"/>
+    <path d="M195 195 L200 200 L205 195"/>
+    <!-- Ear tufts -->
+    <line x1="180" y1="165" x2="175" y2="155"/>
+    <line x1="220" y1="165" x2="225" y2="155"/>
+  </g>
+
+  <!-- Greek text: SOPHIA (wisdom) -->
+  <text x="200" y="240" text-anchor="middle" fill="#c9a227" font-family="serif" font-size="14" letter-spacing="6" opacity="0.6">ΣΟΦΙΑ</text>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold20)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

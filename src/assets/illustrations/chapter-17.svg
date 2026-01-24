@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold17" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Chalkboard -->
+  <rect x="80" y="40" width="240" height="140" stroke="url(#gold17)" stroke-width="2" fill="none"/>
+  <rect x="85" y="45" width="230" height="130" stroke="url(#gold17)" stroke-width="1" fill="none" opacity="0.3"/>
+
+  <!-- Writing on board -->
+  <g stroke="url(#gold17)" stroke-width="1.5" opacity="0.6">
+    <text x="100" y="75" fill="#c9a227" font-family="monospace" font-size="12">CLAIM</text>
+    <line x1="100" y1="85" x2="200" y2="85"/>
+    <text x="100" y="105" fill="#c9a227" font-family="monospace" font-size="10">+ EVIDENCE</text>
+    <line x1="100" y1="115" x2="180" y2="115"/>
+    <text x="100" y="135" fill="#c9a227" font-family="monospace" font-size="10">= ARGUMENT</text>
+  </g>
+
+  <!-- Teacher figure -->
+  <g stroke="url(#gold17)" stroke-width="2" fill="none" opacity="0.7">
+    <circle cx="60" cy="120" r="15"/>
+    <line x1="60" y1="135" x2="60" y2="180"/>
+    <line x1="60" y1="145" x2="75" y2="155"/>
+    <line x1="60" y1="180" x2="50" y2="220"/>
+    <line x1="60" y1="180" x2="70" y2="220"/>
+  </g>
+
+  <!-- Students (simplified) -->
+  <g fill="url(#gold17)" opacity="0.5">
+    <circle cx="150" cy="210" r="10"/>
+    <circle cx="200" cy="210" r="10"/>
+    <circle cx="250" cy="210" r="10"/>
+    <circle cx="300" cy="210" r="10"/>
+  </g>
+
+  <!-- Raised hand -->
+  <g stroke="url(#gold17)" stroke-width="1.5" fill="none" opacity="0.6">
+    <line x1="250" y1="200" x2="250" y2="185"/>
+    <line x1="245" y1="185" x2="250" y2="180"/>
+    <line x1="250" y1="185" x2="255" y2="180"/>
+  </g>
+
+  <!-- Books stack -->
+  <g fill="url(#gold17)" opacity="0.4">
+    <rect x="340" y="180" width="30" height="8"/>
+    <rect x="342" y="170" width="28" height="8"/>
+    <rect x="344" y="160" width="26" height="8"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold17)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

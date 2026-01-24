@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold13" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Trap / pitfall -->
+  <g stroke="url(#gold13)" stroke-width="2" fill="none">
+    <!-- Pit opening -->
+    <ellipse cx="200" cy="180" rx="80" ry="25"/>
+    <!-- Depth lines -->
+    <line x1="120" y1="180" x2="130" y2="220" opacity="0.5"/>
+    <line x1="280" y1="180" x2="270" y2="220" opacity="0.5"/>
+    <ellipse cx="200" cy="220" rx="70" ry="20" opacity="0.3"/>
+  </g>
+
+  <!-- Warning signs / X marks -->
+  <g stroke="url(#gold13)" stroke-width="3" opacity="0.7">
+    <line x1="60" y1="60" x2="90" y2="90"/>
+    <line x1="90" y1="60" x2="60" y2="90"/>
+
+    <line x1="310" y1="60" x2="340" y2="90"/>
+    <line x1="340" y1="60" x2="310" y2="90"/>
+  </g>
+
+  <!-- Broken logic chain -->
+  <g stroke="url(#gold13)" stroke-width="2" fill="none" opacity="0.6">
+    <ellipse cx="80" cy="150" rx="15" ry="10"/>
+    <ellipse cx="120" cy="150" rx="15" ry="10"/>
+    <!-- Break -->
+    <line x1="135" y1="150" x2="155" y2="145" stroke-dasharray="3 3"/>
+    <line x1="165" y1="155" x2="185" y2="150" stroke-dasharray="3 3"/>
+    <!-- Continue -->
+    <ellipse cx="280" cy="150" rx="15" ry="10"/>
+    <ellipse cx="320" cy="150" rx="15" ry="10"/>
+  </g>
+
+  <!-- Tangled web (fallacy complexity) -->
+  <g stroke="url(#gold13)" stroke-width="1" fill="none" opacity="0.4">
+    <path d="M180 60 Q200 80 220 60 Q240 80 200 100 Q160 80 180 60"/>
+    <path d="M190 70 Q200 90 210 70"/>
+    <line x1="200" y1="100" x2="200" y2="130"/>
+  </g>
+
+  <!-- Question marks -->
+  <g fill="url(#gold13)" opacity="0.5">
+    <text x="150" y="130" font-family="serif" font-size="24">?</text>
+    <text x="240" y="130" font-family="serif" font-size="24">?</text>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold13)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

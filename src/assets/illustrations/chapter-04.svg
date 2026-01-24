@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Clock/sundial elements -->
+  <circle cx="200" cy="125" r="80" stroke="url(#gold4)" stroke-width="2" fill="none"/>
+  <circle cx="200" cy="125" r="75" stroke="url(#gold4)" stroke-width="1" fill="none" opacity="0.3"/>
+  <circle cx="200" cy="125" r="5" fill="url(#gold4)"/>
+
+  <!-- Clock marks -->
+  <g stroke="url(#gold4)" stroke-width="2">
+    <line x1="200" y1="50" x2="200" y2="60"/>
+    <line x1="200" y1="190" x2="200" y2="200"/>
+    <line x1="125" y1="125" x2="135" y2="125"/>
+    <line x1="265" y1="125" x2="275" y2="125"/>
+  </g>
+  <g stroke="url(#gold4)" stroke-width="1" opacity="0.5">
+    <line x1="155" y1="65" x2="160" y2="73"/>
+    <line x1="245" y1="65" x2="240" y2="73"/>
+    <line x1="155" y1="185" x2="160" y2="177"/>
+    <line x1="245" y1="185" x2="240" y2="177"/>
+  </g>
+
+  <!-- Clock hands pointing to "opportune moment" -->
+  <line x1="200" y1="125" x2="200" y2="70" stroke="url(#gold4)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="200" y1="125" x2="245" y2="100" stroke="url(#gold4)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Kairos figure (winged feet, forelock) -->
+  <g transform="translate(200, 125)">
+    <!-- Forelock of hair flowing forward -->
+    <path d="M-5 -15 Q5 -25 15 -15 Q10 -20 5 -18" stroke="url(#gold4)" stroke-width="2" fill="none"/>
+    <!-- Bald back of head -->
+    <circle cx="0" cy="-10" r="8" stroke="url(#gold4)" stroke-width="1.5" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Winged feet elements at corners -->
+  <g stroke="url(#gold4)" stroke-width="1.5" fill="none" opacity="0.5">
+    <path d="M50 200 L60 190 L55 195 L65 188"/>
+    <path d="M350 200 L340 190 L345 195 L335 188"/>
+  </g>
+
+  <!-- Crossroads at bottom -->
+  <g stroke="url(#gold4)" stroke-width="2" opacity="0.6">
+    <line x1="150" y1="220" x2="200" y2="235"/>
+    <line x1="250" y1="220" x2="200" y2="235"/>
+    <line x1="200" y1="235" x2="200" y2="245"/>
+  </g>
+
+  <!-- Gear elements -->
+  <g stroke="url(#gold4)" stroke-width="1" fill="none" opacity="0.3">
+    <circle cx="60" cy="60" r="25"/>
+    <circle cx="60" cy="60" r="20"/>
+    <circle cx="340" cy="60" r="25"/>
+    <circle cx="340" cy="60" r="20"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold4)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

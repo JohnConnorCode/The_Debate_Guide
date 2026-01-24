@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold16" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Conference table (top view) -->
+  <ellipse cx="200" cy="130" rx="120" ry="60" stroke="url(#gold16)" stroke-width="2" fill="none"/>
+  <ellipse cx="200" cy="130" rx="100" ry="50" stroke="url(#gold16)" stroke-width="1" fill="none" opacity="0.3"/>
+
+  <!-- People around table -->
+  <g fill="url(#gold16)" opacity="0.7">
+    <circle cx="200" cy="60" r="10"/>
+    <circle cx="280" cy="85" r="10"/>
+    <circle cx="310" cy="130" r="10"/>
+    <circle cx="280" cy="175" r="10"/>
+    <circle cx="200" cy="200" r="10"/>
+    <circle cx="120" cy="175" r="10"/>
+    <circle cx="90" cy="130" r="10"/>
+    <circle cx="120" cy="85" r="10"/>
+  </g>
+
+  <!-- Speech/debate lines connecting people -->
+  <g stroke="url(#gold16)" stroke-width="1" opacity="0.3">
+    <line x1="200" y1="70" x2="200" y2="190"/>
+    <line x1="130" y1="90" x2="270" y2="170"/>
+    <line x1="100" y1="130" x2="300" y2="130"/>
+    <line x1="130" y1="170" x2="270" y2="90"/>
+  </g>
+
+  <!-- Briefcase -->
+  <g stroke="url(#gold16)" stroke-width="1.5" fill="none" opacity="0.5">
+    <rect x="40" y="200" width="40" height="30"/>
+    <line x1="50" y1="200" x2="50" y2="195"/>
+    <line x1="70" y1="200" x2="70" y2="195"/>
+    <line x1="50" y1="195" x2="70" y2="195"/>
+  </g>
+
+  <!-- Chart/presentation -->
+  <g stroke="url(#gold16)" stroke-width="1.5" fill="none" opacity="0.5">
+    <rect x="320" y="195" width="50" height="35"/>
+    <polyline points="325,220 335,210 345,215 355,200 365,205"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold16)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Brain/logic symbol (geometric) -->
+  <g stroke="url(#gold9)" stroke-width="1.5" fill="none">
+    <ellipse cx="200" cy="100" rx="60" ry="50"/>
+    <path d="M160 80 Q180 60 200 80 Q220 60 240 80" opacity="0.6"/>
+    <path d="M155 100 Q175 120 200 100 Q225 120 245 100" opacity="0.6"/>
+    <line x1="200" y1="50" x2="200" y2="150"/>
+  </g>
+
+  <!-- Logic gates / circuit elements -->
+  <g stroke="url(#gold9)" stroke-width="1.5" fill="none" opacity="0.7">
+    <!-- AND gate left -->
+    <path d="M50 100 L70 100 L70 80 Q90 90 70 100 L70 120 L50 120"/>
+    <line x1="90" y1="100" x2="110" y2="100"/>
+    <!-- OR gate right -->
+    <path d="M290 80 Q310 100 290 120 Q320 100 290 80"/>
+    <line x1="320" y1="100" x2="350" y2="100"/>
+  </g>
+
+  <!-- Syllogism structure (A -> B -> C) -->
+  <g fill="url(#gold9)" opacity="0.8">
+    <circle cx="120" cy="190" r="15"/>
+    <circle cx="200" cy="190" r="15"/>
+    <circle cx="280" cy="190" r="15"/>
+  </g>
+  <g stroke="url(#gold9)" stroke-width="2">
+    <line x1="138" y1="190" x2="182" y2="190"/>
+    <line x1="218" y1="190" x2="262" y2="190"/>
+    <polygon points="180,185 190,190 180,195" fill="url(#gold9)"/>
+    <polygon points="260,185 270,190 260,195" fill="url(#gold9)"/>
+  </g>
+  <text x="120" y="194" text-anchor="middle" fill="#0d0d0d" font-family="monospace" font-size="10">A</text>
+  <text x="200" y="194" text-anchor="middle" fill="#0d0d0d" font-family="monospace" font-size="10">B</text>
+  <text x="280" y="194" text-anchor="middle" fill="#0d0d0d" font-family="monospace" font-size="10">C</text>
+
+  <!-- LOGOS text -->
+  <text x="200" y="235" text-anchor="middle" fill="#c9a227" font-family="monospace" font-size="12" letter-spacing="4" opacity="0.7">LOGOS</text>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold9)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

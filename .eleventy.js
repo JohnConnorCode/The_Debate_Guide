@@ -126,10 +126,16 @@ module.exports = function(eleventyConfig) {
       }
     }
 
-    // Minify service worker
+    // Inject build timestamp and minify service worker
     const swPath = path.join(dir.output, 'service-worker.js');
     if (fs.existsSync(swPath)) {
-      const content = fs.readFileSync(swPath, 'utf8');
+      let content = fs.readFileSync(swPath, 'utf8');
+
+      // Inject build timestamp for cache versioning
+      const buildTimestamp = Date.now().toString(36);
+      content = content.replace('%%BUILD_TIMESTAMP%%', buildTimestamp);
+      console.log(`  SW: Injected build timestamp ${buildTimestamp}`);
+
       try {
         const minified = await minify(content, { compress: true, mangle: true });
         if (minified.code) {
@@ -138,6 +144,8 @@ module.exports = function(eleventyConfig) {
           console.log(`  JS: service-worker.js (${savings}% reduction)`);
         }
       } catch (e) {
+        // Even if minification fails, write the timestamped version
+        fs.writeFileSync(swPath, content);
         console.warn(`  JS: service-worker.js - minification failed:`, e.message);
       }
     }

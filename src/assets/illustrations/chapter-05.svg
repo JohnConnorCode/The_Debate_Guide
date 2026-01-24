@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Pillar representing character/credibility -->
+  <rect x="175" y="60" width="50" height="150" stroke="url(#gold5)" stroke-width="2" fill="none"/>
+  <rect x="170" y="50" width="60" height="15" fill="url(#gold5)" opacity="0.7"/>
+  <rect x="170" y="205" width="60" height="15" fill="url(#gold5)" opacity="0.7"/>
+
+  <!-- Pillar fluting -->
+  <g stroke="url(#gold5)" stroke-width="1" opacity="0.3">
+    <line x1="185" y1="65" x2="185" y2="205"/>
+    <line x1="195" y1="65" x2="195" y2="205"/>
+    <line x1="205" y1="65" x2="205" y2="205"/>
+    <line x1="215" y1="65" x2="215" y2="205"/>
+  </g>
+
+  <!-- Laurel wreath around pillar top -->
+  <g stroke="url(#gold5)" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M155 45 Q170 25 200 35 Q230 25 245 45"/>
+    <path d="M160 42 Q175 30 200 38"/>
+    <path d="M240 42 Q225 30 200 38"/>
+  </g>
+
+  <!-- Trust/credibility symbols (scales) -->
+  <g stroke="url(#gold5)" stroke-width="1.5" fill="none">
+    <!-- Left scale -->
+    <line x1="80" y1="100" x2="80" y2="180"/>
+    <line x1="60" y1="120" x2="100" y2="120"/>
+    <path d="M55 125 Q60 140 65 125" opacity="0.7"/>
+    <path d="M95 125 Q100 140 105 125" opacity="0.7"/>
+    <!-- Right scale -->
+    <line x1="320" y1="100" x2="320" y2="180"/>
+    <line x1="300" y1="120" x2="340" y2="120"/>
+    <path d="M295 125 Q300 140 305 125" opacity="0.7"/>
+    <path d="M335 125 Q340 140 345 125" opacity="0.7"/>
+  </g>
+
+  <!-- Radiating lines of influence -->
+  <g stroke="url(#gold5)" stroke-width="1" opacity="0.2">
+    <line x1="200" y1="125" x2="50" y2="80"/>
+    <line x1="200" y1="125" x2="50" y2="170"/>
+    <line x1="200" y1="125" x2="350" y2="80"/>
+    <line x1="200" y1="125" x2="350" y2="170"/>
+  </g>
+
+  <!-- ETHOS text -->
+  <text x="200" y="240" text-anchor="middle" fill="#c9a227" font-family="monospace" font-size="12" letter-spacing="4" opacity="0.7">ETHOS</text>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold5)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

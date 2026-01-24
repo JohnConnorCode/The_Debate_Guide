@@ -6,6 +6,136 @@ permalink: /resources/
 ---
 {% block styles %}
 <link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<style>
+/* Resources Page Styles */
+.resource-category {
+    margin: var(--space-lg) 0;
+    padding: var(--space-md);
+    background: rgba(var(--color-gold-rgb), 0.03);
+    border-left: 3px solid var(--accent);
+}
+
+.resource-category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.resource-category-icon {
+    font-size: var(--text-2xl);
+}
+
+.resource-category-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    letter-spacing: var(--tracking-wider);
+    color: var(--accent);
+    margin: 0;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.resource-card {
+    display: block;
+    padding: var(--space-sm);
+    background: rgba(var(--color-white-rgb), 0.03);
+    border: 1px solid rgba(var(--color-white-rgb), 0.1);
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+}
+
+[data-theme="light"] .resource-card {
+    background: rgba(var(--color-black-rgb), 0.02);
+    border-color: rgba(var(--color-black-rgb), 0.1);
+}
+
+.resource-card:hover {
+    border-color: var(--accent);
+    background: rgba(var(--color-gold-rgb), 0.05);
+    transform: translateY(-2px);
+}
+
+.resource-card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.resource-card-author {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent);
+    margin-bottom: var(--space-2);
+}
+
+.resource-card-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: var(--leading-snug);
+    margin: 0;
+}
+
+.resource-card-tag {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    padding: var(--space-1) var(--space-2);
+    background: rgba(var(--color-gold-rgb), 0.15);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent);
+}
+
+.external-link-icon {
+    display: inline-block;
+    margin-left: var(--space-1);
+    opacity: 0.5;
+}
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+}
+
+.quick-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid rgba(var(--color-white-rgb), 0.15);
+    transition: all 0.2s ease-out;
+}
+
+.quick-link:hover {
+    border-color: var(--accent);
+    background: rgba(var(--color-gold-rgb), 0.1);
+    color: var(--accent);
+}
+
+[data-theme="light"] .quick-link {
+    border-color: rgba(var(--color-black-rgb), 0.15);
+}
+
+@media (max-width: 600px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 {% endblock %}
 
 {# Page Hero #}
@@ -26,145 +156,240 @@ permalink: /resources/
             You've finished The Debate Guide. But finishing a book about debate is like finishing a book about swimming—you've learned the concepts, but you haven't gotten wet yet. The real work begins now: practice, application, and continued learning. This page points you toward what comes next.
         </p>
 
+        {# Primary CTA #}
+        <div class="resource-category" style="text-align: center; background: rgba(var(--color-gold-rgb), 0.08);">
+            <div class="resource-category-header" style="justify-content: center;">
+                <span class="resource-category-icon">🏛️</span>
+                <h2 class="resource-category-title">Start Practicing Today</h2>
+            </div>
+            <p style="max-width: 50ch; margin: 0 auto var(--space-md);">The Debate Guide taught you the theory. SuperDebate is where you practice. Join thousands of debaters worldwide.</p>
+            <a href="https://superdebate.org" target="_blank" rel="noopener" class="quick-link" style="display: inline-flex; font-size: var(--text-md); padding: var(--space-sm) var(--space-lg); background: var(--accent); color: var(--color-ink); border-color: var(--accent);">
+                Join SuperDebate Free <span class="external-link-icon">↗</span>
+            </a>
+            <div class="quick-links" style="justify-content: center; margin-top: var(--space-md);">
+                <a href="{{ '/progress/' | url }}" class="quick-link">
+                    Track Your Progress
+                </a>
+                <a href="{{ '/quick-tactics/' | url }}" class="quick-link">
+                    Review Quick Tactics
+                </a>
+                <a href="{{ '/glossary/' | url }}" class="quick-link">
+                    Study the Glossary
+                </a>
+            </div>
+        </div>
+
         <h2>START PRACTICING</h2>
 
         <p>
-            Reading about rhetoric improves your understanding. Practicing rhetoric improves your ability. Here's how to start.
+            Reading about rhetoric improves your understanding. Practicing rhetoric improves your ability. <a href="https://superdebate.org" target="_blank" rel="noopener">SuperDebate</a> is where theory becomes skill.
         </p>
 
         <p>
-            <strong>Find a debate partner.</strong> One willing friend or colleague is enough. Meet weekly. Take turns choosing topics. Argue both sides. Debrief afterward using the Five-Minute Debrief from Chapter 17. Consistency matters more than duration—thirty minutes a week beats three hours once a month.
+            <strong>Find debate partners instantly.</strong> SuperDebate connects you with practice partners at your skill level. No need to recruit friends or coordinate schedules—just log in and debate. Weekly practice sessions, structured formats, and real feedback.
         </p>
 
         <p>
-            <strong>Join a debate club.</strong> Organizations like <a href="https://superdebate.org" target="_blank" rel="noopener">SuperDebate</a> connect adult debaters across the world. Many cities have local clubs—search for "debate club" plus your city name. If you can't find one, consider starting one. Three people and a coffee shop are enough to begin.
+            <strong>Join a global community.</strong> <a href="https://superdebate.org" target="_blank" rel="noopener">SuperDebate</a> brings together adult debaters from around the world. Participate in tournaments, join discussion groups, and learn from debaters at every level—from beginners to champions.
         </p>
 
         <p>
-            <strong>Practice in low-stakes environments.</strong> Family dinners. Book clubs. Work meetings where you're not the decision-maker. Use these as opportunities to try techniques from the book. Steelman someone's position. Ask Socratic questions. Notice when you're tempted to use fallacies. The goal isn't winning these conversations—it's building skills.
+            <strong>Track your improvement.</strong> SuperDebate provides structured feedback and progress tracking. See how your skills develop over time. Identify strengths and areas for growth. Celebrate your wins.
         </p>
 
         <p>
-            <strong>Record yourself.</strong> Use your phone to record practice debates, then watch them. You'll notice verbal tics, unclear arguments, and missed opportunities you never caught in the moment. Uncomfortable? Yes. Valuable? Extremely.
+            <strong>Practice in low-stakes environments.</strong> Between SuperDebate sessions, apply your skills everywhere: family dinners, book clubs, work meetings. Steelman positions, ask Socratic questions, notice fallacies. The goal isn't winning—it's building skills you can sharpen at <a href="https://superdebate.org" target="_blank" rel="noopener">SuperDebate</a>.
         </p>
 
-        <h2>THE CLASSIC TEXTS</h2>
+        {# Classic Texts Section #}
+        <div class="resource-category">
+            <div class="resource-category-header">
+                <span class="resource-category-icon">📚</span>
+                <h2 class="resource-category-title">Classic Texts</h2>
+            </div>
+            <p>The ideas in this book have been developing for over two thousand years. Go to the sources.</p>
+            <div class="resource-grid">
+                <a href="https://classics.mit.edu/Aristotle/rhetoric.html" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-card-title">Rhetoric <span class="external-link-icon">↗</span></div>
+                    <div class="resource-card-author">Aristotle</div>
+                    <p class="resource-card-desc">The foundational text. Books I and II cover ethos, pathos, and logos in depth.</p>
+                    <span class="resource-card-tag">Free Online</span>
+                </a>
+                <a href="https://www.gutenberg.org/ebooks/1672" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-card-title">Apology <span class="external-link-icon">↗</span></div>
+                    <div class="resource-card-author">Plato</div>
+                    <p class="resource-card-desc">Socrates's defense speech at his trial. Short, powerful, and a masterclass in ethos.</p>
+                    <span class="resource-card-tag">Free Online</span>
+                </a>
+                <a href="https://www.gutenberg.org/ebooks/1744" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-card-title">Gorgias <span class="external-link-icon">↗</span></div>
+                    <div class="resource-card-author">Plato</div>
+                    <p class="resource-card-desc">Socrates dismantles the Sophists' claims. The prosecution of rhetoric.</p>
+                    <span class="resource-card-tag">Free Online</span>
+                </a>
+                <div class="resource-card">
+                    <div class="resource-card-title">De Oratore</div>
+                    <div class="resource-card-author">Cicero</div>
+                    <p class="resource-card-desc">The Roman synthesis. Greek theory meets Roman practice, covering argument structure to delivery.</p>
+                    <span class="resource-card-tag">Library</span>
+                </div>
+            </div>
+        </div>
+
+        {# Modern Classics Section #}
+        <div class="resource-category">
+            <div class="resource-category-header">
+                <span class="resource-category-icon">🎓</span>
+                <h2 class="resource-category-title">Modern Classics</h2>
+            </div>
+            <p>Twentieth and twenty-first century advances in argumentation theory.</p>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-card-title">The New Rhetoric</div>
+                    <div class="resource-card-author">Perelman & Olbrechts-Tyteca</div>
+                    <p class="resource-card-desc">The twentieth-century revival of rhetorical theory. Dense but essential.</p>
+                    <span class="resource-card-tag">Academic</span>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-card-title">The Uses of Argument</div>
+                    <div class="resource-card-author">Stephen Toulmin</div>
+                    <p class="resource-card-desc">Source of the Toulmin model (claims, grounds, warrants). Changed practical reasoning.</p>
+                    <span class="resource-card-tag">Academic</span>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-card-title">Informal Logic</div>
+                    <div class="resource-card-author">Douglas Walton</div>
+                    <p class="resource-card-desc">Rigorous but accessible treatment of fallacies and argument evaluation.</p>
+                    <span class="resource-card-tag">Academic</span>
+                </div>
+            </div>
+        </div>
+
+        {# Practical Guides Section #}
+        <div class="resource-category">
+            <div class="resource-category-header">
+                <span class="resource-category-icon">📖</span>
+                <h2 class="resource-category-title">Practical Guides</h2>
+            </div>
+            <p>Accessible books that complement The Debate Guide's approach.</p>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-card-title">Thank You for Arguing</div>
+                    <div class="resource-card-author">Jay Heinrichs</div>
+                    <p class="resource-card-desc">Entertaining introduction to classical rhetoric for modern readers.</p>
+                    <span class="resource-card-tag">Beginner-Friendly</span>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-card-title">Words Like Loaded Pistols</div>
+                    <div class="resource-card-author">Sam Leith</div>
+                    <p class="resource-card-desc">Witty tour through rhetorical history. Excellent political speech examples.</p>
+                    <span class="resource-card-tag">Entertaining</span>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-card-title">Good Arguments</div>
+                    <div class="resource-card-author">Bo Seo</div>
+                    <p class="resource-card-desc">Memoir and guide from a two-time world debate champion.</p>
+                    <span class="resource-card-tag">Competition Focus</span>
+                </div>
+            </div>
+        </div>
+
+        {# Watch and Listen Section #}
+        <div class="resource-category">
+            <div class="resource-category-header">
+                <span class="resource-category-icon">🎬</span>
+                <h2 class="resource-category-title">Watch & Listen</h2>
+            </div>
+            <p>Study rhetoric in action. These resources show skilled debaters at work.</p>
+            <div class="resource-grid">
+                <a href="https://www.intelligencesquaredus.org/" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-card-title">Intelligence Squared <span class="external-link-icon">↗</span></div>
+                    <div class="resource-card-author">Podcast & Video</div>
+                    <p class="resource-card-desc">Oxford-style debates on current issues. Watch how skilled debaters structure arguments.</p>
+                    <span class="resource-card-tag">Ongoing Series</span>
+                </a>
+                <a href="https://www.nps.gov/liho/learn/historyculture/debates.htm" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-card-title">Lincoln-Douglas Debates <span class="external-link-icon">↗</span></div>
+                    <div class="resource-card-author">1858 Transcripts</div>
+                    <p class="resource-card-desc">Seven debates, three hours each. Study how Lincoln and Douglas built their cases.</p>
+                    <span class="resource-card-tag">Free Online</span>
+                </a>
+                <a href="https://www.ted.com/topics/communication" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-card-title">TED Talks <span class="external-link-icon">↗</span></div>
+                    <div class="resource-card-author">Communication Topics</div>
+                    <p class="resource-card-desc">Analyze using the rhetorical triangle: ethos, pathos, and logos in action.</p>
+                    <span class="resource-card-tag">Free Video</span>
+                </a>
+                <a href="https://www.c-span.org/congress/" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-card-title">C-SPAN Hearings <span class="external-link-icon">↗</span></div>
+                    <div class="resource-card-author">Congressional Archives</div>
+                    <p class="resource-card-desc">Watch skilled questioners use Socratic techniques to expose contradictions.</p>
+                    <span class="resource-card-tag">Free Archive</span>
+                </a>
+            </div>
+        </div>
+
+        {# Start a Debate Club Section #}
+        <div class="resource-category">
+            <div class="resource-category-header">
+                <span class="resource-category-icon">👥</span>
+                <h2 class="resource-category-title">Start or Join a Debate Club</h2>
+            </div>
+            <p>SuperDebate makes starting and joining debate clubs easy—online or in-person.</p>
+        </div>
 
         <p>
-            The ideas in this book have been developing for over two thousand years. If you want to go deeper, start with the sources.
+            <strong>Join an existing club.</strong> <a href="https://superdebate.org" target="_blank" rel="noopener">SuperDebate</a> hosts debate clubs worldwide. Find one that fits your schedule, interests, and skill level. No recruiting required—just show up and debate.
         </p>
 
-        <h3>Essential Reading</h3>
-
         <p>
-            <strong>Aristotle, <em>Rhetoric</em></strong> — The foundational text. Dry in places, but worth the effort. Books I and II cover ethos, pathos, and logos in depth. Book II's analysis of emotions remains remarkably relevant. The Kennedy translation is most accessible; the Rhys Roberts translation is free online.
+            <strong>Start your own club.</strong> SuperDebate provides everything you need: topic suggestions, format guidelines, timing tools, and a platform to organize members. Invite colleagues, friends, or neighbors—SuperDebate handles the logistics.
         </p>
 
         <p>
-            <strong>Plato, <em>Gorgias</em> and <em>Phaedrus</em></strong> — Plato's dialogues on rhetoric. <em>Gorgias</em> is the prosecution—Socrates dismantles the Sophists' claims. <em>Phaedrus</em> is more sympathetic, exploring how rhetoric might serve truth rather than undermine it. Together they frame the central tension in rhetorical ethics.
+            <strong>Get structured support.</strong> New club leaders receive resources from SuperDebate: session plans, judging criteria, facilitation tips, and exercises drawn from this guide. You don't need debate experience to lead—just willingness to learn alongside your members.
         </p>
 
         <p>
-            <strong>Plato, <em>Apology</em></strong> — Socrates's defense speech at his trial. Short, powerful, and a masterclass in ethos. Available free in many translations.
+            <strong>Connect to the global community.</strong> Your local club can participate in SuperDebate tournaments, inter-club debates, and community events. What starts as three friends at a coffee shop can become part of something much larger.
+        </p>
+
+        <div style="text-align: center; margin: var(--space-md) 0;">
+            <a href="https://superdebate.org" target="_blank" rel="noopener" class="quick-link" style="display: inline-flex;">
+                Start or Join a Club at SuperDebate <span class="external-link-icon">↗</span>
+            </a>
+        </div>
+
+        {# Workplace Section #}
+        <div class="resource-category">
+            <div class="resource-category-header">
+                <span class="resource-category-icon">💼</span>
+                <h2 class="resource-category-title">Bring Debate to Work</h2>
+            </div>
+            <p>Organizations benefit from structured disagreement. SuperDebate offers corporate programs.</p>
+        </div>
+
+        <p>
+            <strong>Team debate training.</strong> <a href="https://superdebate.org/contact" target="_blank" rel="noopener">SuperDebate's corporate programs</a> bring argumentation skills to your workplace. Train teams in structured disagreement, evidence evaluation, and constructive conflict.
         </p>
 
         <p>
-            <strong>Cicero, <em>De Oratore</em></strong> — The Roman synthesis. Cicero combines Greek theory with Roman practice, covering everything from argument structure to delivery. The dialogue format makes it more readable than Aristotle.
-        </p>
-
-        <h3>Modern Classics</h3>
-
-        <p>
-            <strong>Chaïm Perelman and Lucie Olbrechts-Tyteca, <em>The New Rhetoric</em></strong> — The twentieth-century revival of rhetorical theory. Dense but essential for understanding how argumentation works in practice rather than abstract logic.
+            <strong>Devil's advocate roles</strong> — Assign someone to argue against proposals before decisions are made. Rotate the role so it's not always the same "negative" person. SuperDebate training teaches how to do this effectively.
         </p>
 
         <p>
-            <strong>Stephen Toulmin, <em>The Uses of Argument</em></strong> — The source of the Toulmin model (claims, grounds, warrants) used throughout this book. Changed how we think about practical reasoning.
-        </p>
-
-        <p>
-            <strong>Douglas Walton, various works</strong> — The leading contemporary scholar of argumentation. Start with <em>Informal Logic: A Pragmatic Approach</em> for a rigorous but accessible treatment of fallacies and argument evaluation.
-        </p>
-
-        <h3>Practical Guides</h3>
-
-        <p>
-            <strong>Jay Heinrichs, <em>Thank You for Arguing</em></strong> — An entertaining introduction to classical rhetoric for modern readers. Good complement to this book's approach.
-        </p>
-
-        <p>
-            <strong>Sam Leith, <em>Words Like Loaded Pistols</em></strong> — A witty tour through rhetorical history and technique. Excellent examples from political speeches.
-        </p>
-
-        <p>
-            <strong>Bo Seo, <em>Good Arguments</em></strong> — A memoir and guide from a two-time world debate champion. Focuses on competitive debate but applicable broadly.
-        </p>
-
-        <h2>WATCH AND LISTEN</h2>
-
-        <p>
-            <strong>Intelligence Squared debates</strong> — Oxford-style debates on current issues. Available as podcasts and videos. Watch how skilled debaters structure arguments and handle cross-examination.
-        </p>
-
-        <p>
-            <strong>The Lincoln-Douglas debates (1858)</strong> — Transcripts available free online. Each debate ran three hours. Notice how Lincoln and Douglas build cases, respond to attacks, and address the same audience with very different approaches.
-        </p>
-
-        <p>
-            <strong>TED talks on communication</strong> — Search for talks by communication experts. Analyze them using the rhetorical triangle—how do they establish ethos, deploy pathos, and structure logos?
-        </p>
-
-        <p>
-            <strong>Congressional hearings</strong> — Watch skilled questioners (and identify less skilled ones). Notice how the best use Socratic techniques to expose contradictions and build toward conclusions.
-        </p>
-
-        <h2>START A DEBATE CLUB</h2>
-
-        <p>
-            If no club exists in your area, start one. Here's how:
-        </p>
-
-        <p>
-            <strong>Find 3-5 interested people.</strong> Colleagues, friends, neighbors—anyone curious about arguing better. You don't need debate experience; you just need willingness to practice.
-        </p>
-
-        <p>
-            <strong>Set a regular time and place.</strong> Weekly or biweekly works best. Evening at someone's home, lunch at work, Saturday morning at a coffee shop. Consistency builds habit.
-        </p>
-
-        <p>
-            <strong>Start simple.</strong> First meetings can be informal discussions of controversial topics. As the group develops, add structure: timed speeches, designated sides, judging criteria. Use the exercises from this book as session plans.
-        </p>
-
-        <p>
-            <strong>Rotate roles.</strong> Everyone should argue both sides of issues over time. Assign a moderator each session to keep time and ensure fair engagement. Debrief at the end: What worked? What could improve?
-        </p>
-
-        <p>
-            <strong>Keep it fun.</strong> Debate clubs die when they become chores. Include social time. Celebrate good arguments regardless of which side won. Remember that the goal is growth, not victory.
-        </p>
-
-        <h2>BRING DEBATE TO YOUR WORKPLACE</h2>
-
-        <p>
-            Organizations benefit from structured disagreement. Consider proposing:
-        </p>
-
-        <p>
-            <strong>Devil's advocate roles</strong> — Assign someone to argue against proposals before decisions are made. Rotate the role so it's not always the same "negative" person.
-        </p>
-
-        <p>
-            <strong>Pre-mortems</strong> — Before launching a project, debate what could go wrong. This surfaces risks that optimism bias might hide.
+            <strong>Pre-mortems</strong> — Before launching a project, debate what could go wrong. This surfaces risks that optimism bias might hide. SuperDebate formats work perfectly for this.
         </p>
 
         <p>
             <strong>Structured decision meetings</strong> — Dedicate time to hearing cases for and against major decisions. No interruptions, equal time, explicit criteria for judgment.
         </p>
 
-        <p>
-            <strong>Argumentation training</strong> — Suggest that your organization invest in communication training that includes debate skills, not just presentation skills.
-        </p>
+        <div style="text-align: center; margin: var(--space-md) 0;">
+            <a href="https://superdebate.org/contact" target="_blank" rel="noopener" class="quick-link" style="display: inline-flex;">
+                Inquire About Corporate Training <span class="external-link-icon">↗</span>
+            </a>
+        </div>
 
         <h2>THE ONGOING PRACTICE</h2>
 
@@ -181,7 +406,19 @@ permalink: /resources/
         </p>
 
         <div class="insight-box">
-            <p>The conversation has been going for twenty-five hundred years. Your voice is now part of it.</p>
+            <p>The conversation has been going for twenty-five hundred years. Your voice is now part of it—at <a href="https://superdebate.org" target="_blank" rel="noopener" style="color: var(--accent);">SuperDebate</a>.</p>
+        </div>
+
+        {# Final CTA #}
+        <div class="resource-category" style="text-align: center; background: rgba(var(--color-gold-rgb), 0.08);">
+            <div class="resource-category-header" style="justify-content: center;">
+                <span class="resource-category-icon">🏛️</span>
+                <h2 class="resource-category-title">Your Next Step</h2>
+            </div>
+            <p style="max-width: 50ch; margin: 0 auto var(--space-md);">You've read the guide. You know the techniques. Now it's time to practice. SuperDebate is waiting.</p>
+            <a href="https://superdebate.org" target="_blank" rel="noopener" class="quick-link" style="display: inline-flex; font-size: var(--text-md); padding: var(--space-sm) var(--space-lg); background: var(--accent); color: var(--color-ink); border-color: var(--accent);">
+                Join SuperDebate Free <span class="external-link-icon">↗</span>
+            </a>
         </div>
 
     </article>

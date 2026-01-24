@@ -59,6 +59,41 @@ permalink: /
             <div class="continue-reading-progress">0 of 20 chapters read</div>
         </div>
 
+        {# Reading Paths #}
+        <div class="reading-paths">
+            <div class="reading-paths-header">
+                <span class="reading-paths-icon">◇</span>
+                <span class="reading-paths-label">Choose Your Path</span>
+            </div>
+            <p class="reading-paths-intro">Not sure where to start? Pick a path based on your goals.</p>
+            <div class="reading-paths-grid">
+                <a href="{{ '/chapters/part-1/chapter-01-why-debate-matters/' | url }}" class="reading-path">
+                    <span class="path-icon">🏛️</span>
+                    <span class="path-title">The Complete Journey</span>
+                    <span class="path-desc">Start from Chapter 1 and master everything</span>
+                    <span class="path-chapters">All 20 chapters</span>
+                </a>
+                <a href="{{ '/chapters/part-2/chapter-05-ethos-building-credibility/' | url }}" class="reading-path">
+                    <span class="path-icon">💼</span>
+                    <span class="path-title">Workplace Persuasion</span>
+                    <span class="path-desc">Convince colleagues and lead meetings</span>
+                    <span class="path-chapters">Ch 5, 6, 9, 15, 16</span>
+                </a>
+                <a href="{{ '/chapters/part-2/chapter-09-logos-power-of-reason/' | url }}" class="reading-path">
+                    <span class="path-icon">🎓</span>
+                    <span class="path-title">Logic & Arguments</span>
+                    <span class="path-desc">Build bulletproof cases and spot fallacies</span>
+                    <span class="path-chapters">Ch 9, 10, 11, 12, 13</span>
+                </a>
+                <a href="https://superdebate.org" target="_blank" rel="noopener" class="reading-path" style="background: rgba(var(--color-gold-rgb), 0.1); border-color: var(--accent);">
+                    <span class="path-icon">⚔️</span>
+                    <span class="path-title">Start Practicing Now</span>
+                    <span class="path-desc">Join SuperDebate and debate with real partners</span>
+                    <span class="path-chapters">Free to join ↗</span>
+                </a>
+            </div>
+        </div>
+
         {# Dynamic Parts and Chapters from Data #}
         {% for part in chapters.parts %}
         <div id="{{ part.id }}" class="toc-part">

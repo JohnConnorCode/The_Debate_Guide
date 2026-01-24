@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Greek temple (Parthenon style) -->
+  <g stroke="url(#gold2)" fill="none" stroke-width="1.5">
+    <!-- Pediment -->
+    <polygon points="200,30 100,80 300,80" stroke-width="2"/>
+    <polygon points="200,40 120,75 280,75" opacity="0.5"/>
+
+    <!-- Columns -->
+    <rect x="110" y="80" width="15" height="120" fill="url(#gold2)" opacity="0.7"/>
+    <rect x="150" y="80" width="15" height="120" fill="url(#gold2)" opacity="0.7"/>
+    <rect x="190" y="80" width="15" height="120" fill="url(#gold2)" opacity="0.7"/>
+    <rect x="235" y="80" width="15" height="120" fill="url(#gold2)" opacity="0.7"/>
+    <rect x="275" y="80" width="15" height="120" fill="url(#gold2)" opacity="0.7"/>
+
+    <!-- Base steps -->
+    <rect x="90" y="200" width="220" height="10" fill="url(#gold2)" opacity="0.5"/>
+    <rect x="80" y="210" width="240" height="10" fill="url(#gold2)" opacity="0.4"/>
+    <rect x="70" y="220" width="260" height="10" fill="url(#gold2)" opacity="0.3"/>
+  </g>
+
+  <!-- Greek key pattern border -->
+  <g stroke="url(#gold2)" stroke-width="1.5" fill="none" opacity="0.4">
+    <path d="M20 235 h10 v-10 h10 v10 h10 v-10 h10 v10 h10 v-10 h10 v10 h10"/>
+    <path d="M310 235 h10 v-10 h10 v10 h10 v-10 h10 v10 h10 v-10 h10 v10 h10"/>
+  </g>
+
+  <!-- Timeline dots (representing legacy through time) -->
+  <g fill="url(#gold2)">
+    <circle cx="50" cy="125" r="4" opacity="0.3"/>
+    <circle cx="50" cy="125" r="8" opacity="0.1"/>
+    <circle cx="350" cy="125" r="4" opacity="0.9"/>
+    <circle cx="350" cy="125" r="8" opacity="0.3"/>
+  </g>
+  <line x1="58" y1="125" x2="342" y2="125" stroke="url(#gold2)" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+
+  <!-- Laurel wreath above temple -->
+  <g stroke="url(#gold2)" stroke-width="1" fill="none" opacity="0.5">
+    <path d="M170 25 Q185 15 200 25 Q215 15 230 25"/>
+    <path d="M175 22 Q185 10 200 20"/>
+    <path d="M225 22 Q215 10 200 20"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold2)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 35 M10 10 L35 10"/>
+    <path d="M390 10 L390 35 M390 10 L365 10"/>
+    <path d="M10 240 L10 215 M10 240 L35 240"/>
+    <path d="M390 240 L390 215 M390 240 L365 240"/>
+  </g>
+</svg>

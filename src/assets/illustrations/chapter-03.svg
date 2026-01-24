@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Central triangle -->
+  <polygon points="200,35 100,200 300,200" stroke="url(#gold3)" stroke-width="3" fill="none"/>
+  <polygon points="200,50 115,190 285,190" stroke="url(#gold3)" stroke-width="1" fill="none" opacity="0.4"/>
+
+  <!-- Radiating pattern from center -->
+  <g stroke="url(#gold3)" stroke-width="1" opacity="0.2">
+    <line x1="200" y1="125" x2="200" y2="35"/>
+    <line x1="200" y1="125" x2="100" y2="200"/>
+    <line x1="200" y1="125" x2="300" y2="200"/>
+    <circle cx="200" cy="125" r="30" fill="none" opacity="0.5"/>
+    <circle cx="200" cy="125" r="50" fill="none" opacity="0.3"/>
+    <circle cx="200" cy="125" r="70" fill="none" opacity="0.2"/>
+  </g>
+
+  <!-- Vertex labels with geometric markers -->
+  <!-- ETHOS - top -->
+  <circle cx="200" cy="35" r="8" fill="url(#gold3)"/>
+  <text x="200" y="22" text-anchor="middle" fill="#c9a227" font-family="monospace" font-size="10" letter-spacing="2">ETHOS</text>
+
+  <!-- PATHOS - bottom left -->
+  <circle cx="100" cy="200" r="8" fill="url(#gold3)"/>
+  <text x="70" y="220" text-anchor="middle" fill="#c9a227" font-family="monospace" font-size="10" letter-spacing="2">PATHOS</text>
+
+  <!-- LOGOS - bottom right -->
+  <circle cx="300" cy="200" r="8" fill="url(#gold3)"/>
+  <text x="330" y="220" text-anchor="middle" fill="#c9a227" font-family="monospace" font-size="10" letter-spacing="2">LOGOS</text>
+
+  <!-- Center point -->
+  <circle cx="200" cy="125" r="5" fill="url(#gold3)"/>
+
+  <!-- Greek key border -->
+  <g stroke="url(#gold3)" stroke-width="1" fill="none" opacity="0.3">
+    <rect x="15" y="15" width="370" height="220" rx="2"/>
+    <rect x="20" y="20" width="360" height="210" rx="2"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g fill="url(#gold3)" opacity="0.6">
+    <rect x="10" y="10" width="20" height="3"/>
+    <rect x="10" y="10" width="3" height="20"/>
+    <rect x="370" y="10" width="20" height="3"/>
+    <rect x="387" y="10" width="3" height="20"/>
+    <rect x="10" y="237" width="20" height="3"/>
+    <rect x="10" y="220" width="3" height="20"/>
+    <rect x="370" y="237" width="20" height="3"/>
+    <rect x="387" y="220" width="3" height="20"/>
+  </g>
+</svg>

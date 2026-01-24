@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Heart symbol (geometric/art deco style) -->
+  <path d="M200 80 L160 50 Q120 50 120 90 Q120 130 200 180 Q280 130 280 90 Q280 50 240 50 Z"
+        stroke="url(#gold7)" stroke-width="2" fill="none"/>
+  <path d="M200 95 L170 70 Q145 70 145 95 Q145 120 200 155 Q255 120 255 95 Q255 70 230 70 Z"
+        stroke="url(#gold7)" stroke-width="1" fill="none" opacity="0.4"/>
+
+  <!-- Radiating emotional waves -->
+  <g stroke="url(#gold7)" stroke-width="1" opacity="0.3">
+    <ellipse cx="200" cy="125" rx="120" ry="70" fill="none"/>
+    <ellipse cx="200" cy="125" rx="150" ry="85" fill="none"/>
+    <ellipse cx="200" cy="125" rx="180" ry="100" fill="none"/>
+  </g>
+
+  <!-- Theatrical masks (comedy/tragedy) -->
+  <g stroke="url(#gold7)" stroke-width="1.5" fill="none" opacity="0.6">
+    <!-- Happy mask -->
+    <circle cx="60" cy="180" r="25"/>
+    <circle cx="50" cy="175" r="4"/>
+    <circle cx="70" cy="175" r="4"/>
+    <path d="M50 190 Q60 200 70 190"/>
+    <!-- Sad mask -->
+    <circle cx="340" cy="180" r="25"/>
+    <circle cx="330" cy="175" r="4"/>
+    <circle cx="350" cy="175" r="4"/>
+    <path d="M330 195 Q340 185 350 195"/>
+  </g>
+
+  <!-- PATHOS text -->
+  <text x="200" y="235" text-anchor="middle" fill="#c9a227" font-family="monospace" font-size="12" letter-spacing="4" opacity="0.7">PATHOS</text>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold7)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

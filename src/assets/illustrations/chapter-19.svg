@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold19" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Ballot box / voting urn -->
+  <g stroke="url(#gold19)" stroke-width="2" fill="none">
+    <rect x="160" y="100" width="80" height="100" rx="3"/>
+    <rect x="185" y="95" width="30" height="10"/>
+    <line x1="175" y1="115" x2="225" y2="115" opacity="0.5"/>
+  </g>
+
+  <!-- Ballot being inserted -->
+  <g fill="url(#gold19)" opacity="0.7">
+    <rect x="190" y="70" width="20" height="35" rx="1"/>
+  </g>
+
+  <!-- Citizens / community -->
+  <g fill="url(#gold19)" opacity="0.5">
+    <circle cx="60" cy="130" r="12"/>
+    <circle cx="90" cy="145" r="12"/>
+    <circle cx="70" cy="170" r="12"/>
+
+    <circle cx="340" cy="130" r="12"/>
+    <circle cx="310" cy="145" r="12"/>
+    <circle cx="330" cy="170" r="12"/>
+  </g>
+
+  <!-- Arrows showing participation -->
+  <g stroke="url(#gold19)" stroke-width="1.5" fill="url(#gold19)" opacity="0.4">
+    <line x1="100" y1="140" x2="155" y2="140"/>
+    <polygon points="150,135 160,140 150,145"/>
+    <line x1="300" y1="140" x2="245" y2="140"/>
+    <polygon points="250,135 240,140 250,145"/>
+  </g>
+
+  <!-- Civic building (columns) -->
+  <g stroke="url(#gold19)" stroke-width="1.5" fill="none" opacity="0.4">
+    <polygon points="200,30 140,55 260,55"/>
+    <rect x="150" y="55" width="10" height="35"/>
+    <rect x="175" y="55" width="10" height="35"/>
+    <rect x="215" y="55" width="10" height="35"/>
+    <rect x="240" y="55" width="10" height="35"/>
+  </g>
+
+  <!-- Stars (civic ideals) -->
+  <g fill="url(#gold19)" opacity="0.3">
+    <polygon points="50,50 52,56 58,56 53,60 55,66 50,62 45,66 47,60 42,56 48,56"/>
+    <polygon points="350,50 352,56 358,56 353,60 355,66 350,62 345,66 347,60 342,56 348,56"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold19)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

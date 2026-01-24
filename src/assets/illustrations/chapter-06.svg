@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Figure in action pose -->
+  <g stroke="url(#gold6)" stroke-width="2" fill="none">
+    <!-- Head -->
+    <circle cx="200" cy="60" r="20"/>
+    <!-- Body -->
+    <line x1="200" y1="80" x2="200" y2="140"/>
+    <!-- Arms extended (action) -->
+    <line x1="200" y1="95" x2="150" y2="85"/>
+    <line x1="200" y1="95" x2="250" y2="110"/>
+    <!-- Legs in motion -->
+    <line x1="200" y1="140" x2="170" y2="200"/>
+    <line x1="200" y1="140" x2="230" y2="190"/>
+  </g>
+
+  <!-- Motion lines -->
+  <g stroke="url(#gold6)" stroke-width="1" opacity="0.3">
+    <line x1="140" y1="90" x2="120" y2="85"/>
+    <line x1="145" y1="100" x2="125" y2="98"/>
+    <line x1="260" y1="105" x2="280" y2="108"/>
+    <line x1="255" y1="115" x2="275" y2="120"/>
+  </g>
+
+  <!-- Character building blocks (ascending) -->
+  <g fill="url(#gold6)" opacity="0.5">
+    <rect x="300" y="180" width="40" height="30"/>
+    <rect x="305" y="145" width="35" height="30" opacity="0.7"/>
+    <rect x="310" y="115" width="30" height="25" opacity="0.5"/>
+    <rect x="315" y="90" width="25" height="20" opacity="0.3"/>
+  </g>
+
+  <!-- Mirror/reflection element -->
+  <ellipse cx="80" cy="130" rx="35" ry="50" stroke="url(#gold6)" stroke-width="2" fill="none" opacity="0.6"/>
+  <ellipse cx="80" cy="130" rx="28" ry="42" stroke="url(#gold6)" stroke-width="1" fill="none" opacity="0.3"/>
+
+  <!-- Small figure reflection in mirror -->
+  <g stroke="url(#gold6)" stroke-width="1" opacity="0.4" transform="translate(80, 130) scale(0.4)">
+    <circle cx="0" cy="-30" r="12"/>
+    <line x1="0" y1="-18" x2="0" y2="20"/>
+    <line x1="0" y1="-5" x2="-20" y2="-15"/>
+    <line x1="0" y1="-5" x2="20" y2="5"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold6)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

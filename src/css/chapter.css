@@ -288,6 +288,46 @@
     font-size: var(--text-xs);
 }
 
+/* TOC Hint - shows briefly when toolbar appears */
+.toc-hint {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: var(--space-xs);
+    padding: var(--space-1) var(--space-2);
+    background: rgba(var(--color-ink-rgb), 0.95);
+    border: 1px solid rgba(var(--color-gold-rgb), 0.3);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+    pointer-events: none;
+}
+
+[data-theme="light"] .toc-hint {
+    background: rgba(var(--color-paper-rgb), 0.95);
+}
+
+.toc-hint::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: rgba(var(--color-gold-rgb), 0.3);
+}
+
+.toc-hint.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (max-width: 1200px) {
     .reading-toolbar {
         right: var(--space-sm);
@@ -296,6 +336,10 @@
     .chapter-toc-sidebar {
         width: 260px;
         right: var(--space-sm);
+    }
+
+    .toc-hint {
+        display: none;
     }
 }
 
@@ -418,63 +462,52 @@
     padding: 0 var(--space-md);
 }
 
-.image-placeholder {
+.image-container {
     position: relative;
-    min-height: 280px;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
     background: linear-gradient(
         135deg,
         rgba(var(--color-gold-rgb), 0.08) 0%,
         rgba(var(--color-gold-rgb), 0.03) 50%,
         rgba(var(--color-gold-rgb), 0.08) 100%
     );
-    border: var(--border-width) solid rgba(var(--color-gold-rgb), 0.2);
+    border: var(--border-width) solid rgba(var(--color-gold-rgb), 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 /* Art Deco corner accents */
-.image-placeholder::before,
-.image-placeholder::after {
+.image-container::before,
+.image-container::after {
     content: '';
     position: absolute;
     width: 40px;
     height: 40px;
     border: var(--border-width-2) solid var(--accent);
-    opacity: var(--opacity-30);
+    opacity: 0.4;
+    z-index: 1;
 }
 
-.image-placeholder::before {
+.image-container::before {
     top: var(--space-sm);
     left: var(--space-sm);
     border-right: none;
     border-bottom: none;
 }
 
-.image-placeholder::after {
+.image-container::after {
     bottom: var(--space-sm);
     right: var(--space-sm);
     border-left: none;
     border-top: none;
-}
-
-/* Central decorative element */
-.image-placeholder[data-chapter]::before {
-    content: '';
-}
-
-/* Inner geometric pattern */
-.chapter-image .image-placeholder {
-    background-image:
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 20px,
-            rgba(var(--color-gold-rgb), 0.03) 20px,
-            rgba(var(--color-gold-rgb), 0.03) 40px
-        );
 }
 
 @media (max-width: 600px) {

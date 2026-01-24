@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="gold18" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4b44a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68521"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#0d0d0d"/>
+
+  <!-- Computer/phone screens -->
+  <g stroke="url(#gold18)" stroke-width="2" fill="none">
+    <!-- Left screen -->
+    <rect x="50" y="60" width="80" height="120" rx="5"/>
+    <rect x="55" y="70" width="70" height="90" opacity="0.3"/>
+    <!-- Right screen -->
+    <rect x="270" y="60" width="80" height="120" rx="5"/>
+    <rect x="275" y="70" width="70" height="90" opacity="0.3"/>
+  </g>
+
+  <!-- Connection lines (digital discourse) -->
+  <g stroke="url(#gold18)" stroke-width="1.5" opacity="0.5">
+    <path d="M130 100 Q200 80 270 100"/>
+    <path d="M130 120 Q200 140 270 120"/>
+    <path d="M130 140 Q200 120 270 140"/>
+  </g>
+
+  <!-- Data packets / messages -->
+  <g fill="url(#gold18)" opacity="0.6">
+    <rect x="170" y="85" width="20" height="10" rx="2"/>
+    <rect x="210" y="115" width="20" height="10" rx="2"/>
+    <rect x="180" y="135" width="20" height="10" rx="2"/>
+  </g>
+
+  <!-- Speech bubbles on screens -->
+  <g stroke="url(#gold18)" stroke-width="1" fill="none" opacity="0.5">
+    <rect x="60" y="80" width="30" height="15" rx="3"/>
+    <rect x="65" y="100" width="25" height="15" rx="3"/>
+    <rect x="280" y="85" width="30" height="15" rx="3"/>
+    <rect x="285" y="105" width="25" height="15" rx="3"/>
+  </g>
+
+  <!-- Globe (worldwide connection) -->
+  <g stroke="url(#gold18)" stroke-width="1.5" fill="none" opacity="0.6">
+    <circle cx="200" cy="200" r="35"/>
+    <ellipse cx="200" cy="200" rx="35" ry="15"/>
+    <ellipse cx="200" cy="200" rx="15" ry="35"/>
+    <line x1="165" y1="200" x2="235" y2="200" opacity="0.5"/>
+  </g>
+
+  <!-- Wifi/signal waves -->
+  <g stroke="url(#gold18)" stroke-width="1" fill="none" opacity="0.4">
+    <path d="M195 160 Q200 155 205 160"/>
+    <path d="M190 155 Q200 145 210 155"/>
+    <path d="M185 150 Q200 135 215 150"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="url(#gold18)" stroke-width="2" fill="none">
+    <path d="M10 10 L10 30 M10 10 L30 10"/>
+    <path d="M390 10 L390 30 M390 10 L370 10"/>
+    <path d="M10 240 L10 220 M10 240 L30 240"/>
+    <path d="M390 240 L390 220 M390 240 L370 240"/>
+  </g>
+</svg>

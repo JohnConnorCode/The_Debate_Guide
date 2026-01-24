@@ -2,11 +2,12 @@
  * The Debate Guide - Service Worker
  * Enables offline reading and improved performance
  *
- * Cache versioning: Update the version number when making changes
- * that should invalidate the cache.
+ * Cache versioning: BUILD_TIMESTAMP is replaced at build time
+ * with the current timestamp to auto-invalidate cache on deploy.
  */
 
-const CACHE_VERSION = '3';
+const BUILD_TIMESTAMP = '%%BUILD_TIMESTAMP%%';
+const CACHE_VERSION = BUILD_TIMESTAMP || '1';
 const CACHE_NAME = `debate-guide-v${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline/';
 
