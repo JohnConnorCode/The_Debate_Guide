@@ -351,6 +351,9 @@
     // ==========================================
 
     async function loadQuizData(chapterId) {
+        // Show loading state
+        showLoadingState();
+
         try {
             // Pad chapter ID to match file naming
             const paddedId = String(chapterId).padStart(2, '0');
@@ -358,14 +361,48 @@
 
             if (!response.ok) {
                 console.log(`No quiz available for chapter ${chapterId}`);
+                hideLoadingState();
                 return null;
             }
 
+            hideLoadingState();
             return await response.json();
         } catch (e) {
             console.error('Failed to load quiz data:', e);
+            showErrorState('Unable to load quiz. Please check your connection and refresh the page.');
             return null;
         }
+    }
+
+    function showLoadingState() {
+        if (!elements.startState) return;
+        elements.startState.innerHTML = `
+            <div class="quiz-loading" role="status" aria-live="polite">
+                <div class="quiz-loading-spinner"></div>
+                <p>Loading quiz...</p>
+            </div>
+        `;
+    }
+
+    function hideLoadingState() {
+        // Will be replaced by renderStartState
+    }
+
+    function showErrorState(message) {
+        if (!elements.startState) return;
+        elements.startState.innerHTML = `
+            <div class="quiz-error" role="alert">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <p>${message}</p>
+                <button class="quiz-btn quiz-btn-primary" onclick="window.location.reload()">
+                    Retry
+                </button>
+            </div>
+        `;
     }
 
     function randomizeQuiz() {

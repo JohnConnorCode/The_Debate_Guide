@@ -6,7 +6,7 @@
  * that should invalidate the cache.
  */
 
-const CACHE_VERSION = '2';
+const CACHE_VERSION = '3';
 const CACHE_NAME = `debate-guide-v${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline/';
 
@@ -23,8 +23,30 @@ const PRECACHE_ASSETS = [
     '/js/navigation.js',
     '/js/search.js',
     '/js/quiz.js',
+    '/js/toast.js',
     '/search-index.json',
-    '/manifest.json'
+    '/manifest.json',
+    // Quiz data files for offline functionality
+    '/quizzes/chapter-01.json',
+    '/quizzes/chapter-02.json',
+    '/quizzes/chapter-03.json',
+    '/quizzes/chapter-04.json',
+    '/quizzes/chapter-05.json',
+    '/quizzes/chapter-06.json',
+    '/quizzes/chapter-07.json',
+    '/quizzes/chapter-08.json',
+    '/quizzes/chapter-09.json',
+    '/quizzes/chapter-10.json',
+    '/quizzes/chapter-11.json',
+    '/quizzes/chapter-12.json',
+    '/quizzes/chapter-13.json',
+    '/quizzes/chapter-14.json',
+    '/quizzes/chapter-15.json',
+    '/quizzes/chapter-16.json',
+    '/quizzes/chapter-17.json',
+    '/quizzes/chapter-18.json',
+    '/quizzes/chapter-19.json',
+    '/quizzes/chapter-20.json'
 ];
 
 // Install event - precache essential assets

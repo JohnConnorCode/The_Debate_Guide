@@ -2,8 +2,13 @@
  * 11ty Configuration for The Debate Guide
  */
 
+const CleanCSS = require('clean-css');
+const { minify } = require('terser');
+const fs = require('fs');
+const path = require('path');
+
 module.exports = function(eleventyConfig) {
-  // Pass through static assets
+  // Pass through static assets (will be minified in production)
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/assets");
@@ -57,6 +62,87 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => {
         return (a.data.chapterNumber || 0) - (b.data.chapterNumber || 0);
       });
+  });
+
+  // Minify CSS and JS in production builds
+  eleventyConfig.on('eleventy.after', async ({ dir }) => {
+    const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL;
+
+    if (!isProduction) {
+      console.log('[Build] Skipping minification (development mode)');
+      return;
+    }
+
+    console.log('[Build] Minifying CSS and JS files...');
+
+    // Minify CSS files
+    const cssDir = path.join(dir.output, 'css');
+    if (fs.existsSync(cssDir)) {
+      const cssFiles = fs.readdirSync(cssDir).filter(f => f.endsWith('.css'));
+      // Don't process @import statements, just minify the CSS content
+      const cleanCss = new CleanCSS({
+        level: 2,
+        inline: false  // Don't inline @import statements
+      });
+
+      for (const file of cssFiles) {
+        const filePath = path.join(cssDir, file);
+        const content = fs.readFileSync(filePath, 'utf8');
+        const minified = cleanCss.minify(content);
+
+        if (minified.errors.length === 0) {
+          fs.writeFileSync(filePath, minified.styles);
+          const savings = ((1 - minified.styles.length / content.length) * 100).toFixed(1);
+          console.log(`  CSS: ${file} (${savings}% reduction)`);
+        } else {
+          console.warn(`  CSS: ${file} - minification failed:`, minified.errors);
+        }
+      }
+    }
+
+    // Minify JS files
+    const jsDir = path.join(dir.output, 'js');
+    if (fs.existsSync(jsDir)) {
+      const jsFiles = fs.readdirSync(jsDir).filter(f => f.endsWith('.js'));
+
+      for (const file of jsFiles) {
+        const filePath = path.join(jsDir, file);
+        const content = fs.readFileSync(filePath, 'utf8');
+
+        try {
+          const minified = await minify(content, {
+            compress: true,
+            mangle: true
+          });
+
+          if (minified.code) {
+            fs.writeFileSync(filePath, minified.code);
+            const savings = ((1 - minified.code.length / content.length) * 100).toFixed(1);
+            console.log(`  JS: ${file} (${savings}% reduction)`);
+          }
+        } catch (e) {
+          console.warn(`  JS: ${file} - minification failed:`, e.message);
+        }
+      }
+    }
+
+    // Minify service worker
+    const swPath = path.join(dir.output, 'service-worker.js');
+    if (fs.existsSync(swPath)) {
+      const content = fs.readFileSync(swPath, 'utf8');
+      try {
+        const minified = await minify(content, { compress: true, mangle: true });
+        if (minified.code) {
+          fs.writeFileSync(swPath, minified.code);
+          const savings = ((1 - minified.code.length / content.length) * 100).toFixed(1);
+          console.log(`  JS: service-worker.js (${savings}% reduction)`);
+        }
+      } catch (e) {
+        console.warn(`  JS: service-worker.js - minification failed:`, e.message);
+      }
+    }
+
+    console.log('[Build] Minification complete');
   });
 
   return {

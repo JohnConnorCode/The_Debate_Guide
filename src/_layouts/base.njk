@@ -90,6 +90,7 @@
     <script src="{{ '/js/navigation.js' | url }}"></script>
     <script src="{{ '/js/search.js' | url }}" defer></script>
     <script src="{{ '/js/quiz.js' | url }}" defer></script>
+    <script src="{{ '/js/toast.js' | url }}" defer></script>
 
     {# Analytics - Privacy-conscious, no cookies, GDPR compliant #}
     {# Replace YOUR_DOMAIN with your Plausible domain or remove if not using analytics #}
@@ -117,18 +118,16 @@
             // Listen for SW update messages
             navigator.serviceWorker.addEventListener('message', function(event) {
                 if (event.data && event.data.type === 'SW_UPDATED') {
-                    // Show subtle update notification
-                    var toast = document.createElement('div');
-                    toast.className = 'sw-update-toast';
-                    toast.innerHTML = '<span>New content available.</span><button onclick="window.location.reload()">Refresh</button>';
-                    toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:12px 20px;border:1px solid #c9a227;display:flex;align-items:center;gap:12px;z-index:9999;font-size:14px;';
-                    toast.querySelector('button').style.cssText = 'background:#c9a227;color:#0d0d0d;border:none;padding:6px 12px;cursor:pointer;font-weight:600;';
-                    document.body.appendChild(toast);
-
-                    // Auto-dismiss after 10 seconds
-                    setTimeout(function() {
-                        toast.remove();
-                    }, 10000);
+                    // Use toast notification if available, fallback to inline
+                    if (window.Toast) {
+                        window.Toast.info('New content available', {
+                            duration: 10000,
+                            action: {
+                                label: 'Refresh',
+                                onClick: function() { window.location.reload(); }
+                            }
+                        });
+                    }
                 }
             });
         });

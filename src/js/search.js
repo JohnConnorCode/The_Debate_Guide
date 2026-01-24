@@ -123,16 +123,36 @@
                 // Combine chapter data with vocabulary
                 searchData = [...chapterData, ...vocabularyData];
                 isLoaded = true;
+                hideSearchLoading();
                 return searchData;
             })
             .catch(err => {
                 console.warn('Search index load failed, using vocabulary only:', err);
                 searchData = vocabularyData;
                 isLoaded = true;
+                hideSearchLoading();
                 return searchData;
             });
 
         return loadPromise;
+    }
+
+    function showSearchLoading() {
+        if (!results) return;
+        results.innerHTML = `
+            <div class="search-loading" role="status" aria-live="polite">
+                <div class="search-loading-spinner"></div>
+                <span>Loading search index...</span>
+            </div>
+        `;
+    }
+
+    function hideSearchLoading() {
+        if (!results) return;
+        const loader = results.querySelector('.search-loading');
+        if (loader) {
+            results.innerHTML = '<div class="search-empty"><p>Start typing to search...</p></div>';
+        }
     }
 
     // ==========================================
@@ -189,14 +209,15 @@
     function openSearch() {
         if (!modal) return;
 
-        // Load search index if not already loaded
-        if (!isLoaded) {
-            loadSearchIndex();
-        }
-
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+
+        // Show loading state if search index not loaded
+        if (!isLoaded) {
+            showSearchLoading();
+            loadSearchIndex();
+        }
 
         setTimeout(() => {
             input.focus();

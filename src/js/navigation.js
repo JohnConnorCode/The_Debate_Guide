@@ -46,13 +46,40 @@
             return;
         }
 
+        // Track pending animations to stagger them
+        let pendingAnimations = [];
+        let animationTimeout = null;
+        const STAGGER_DELAY = 60; // ms between each element
+
+        function processPendingAnimations() {
+            // Sort by vertical position for natural top-to-bottom reveal
+            pendingAnimations.sort((a, b) => {
+                const aRect = a.getBoundingClientRect();
+                const bRect = b.getBoundingClientRect();
+                return aRect.top - bRect.top;
+            });
+
+            // Stagger the animations
+            pendingAnimations.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('is-visible');
+                }, index * STAGGER_DELAY);
+            });
+
+            pendingAnimations = [];
+        }
+
         // Create observer for individual elements
         const elementObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    // Optionally unobserve after animation (performance)
+                    // Queue this element for animation
+                    pendingAnimations.push(entry.target);
                     elementObserver.unobserve(entry.target);
+
+                    // Debounce: process all visible elements together
+                    clearTimeout(animationTimeout);
+                    animationTimeout = setTimeout(processPendingAnimations, 10);
                 }
             });
         }, {
@@ -65,9 +92,12 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    // Trigger children animations
-                    entry.target.querySelectorAll('[data-animate]').forEach(child => {
-                        child.classList.add('is-visible');
+                    // Stagger children animations
+                    const children = entry.target.querySelectorAll('[data-animate]');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('is-visible');
+                        }, index * STAGGER_DELAY);
                     });
                     groupObserver.unobserve(entry.target);
                 }
@@ -77,8 +107,8 @@
             rootMargin: CONFIG.animation.rootMargin
         });
 
-        // Observe all animated elements
-        document.querySelectorAll('[data-animate]:not([data-animate-group] [data-animate])').forEach(el => {
+        // Observe all animated elements (excluding hero elements which are handled separately)
+        document.querySelectorAll('[data-animate]:not([data-animate-group] [data-animate]):not(.chapter-hero [data-animate]):not(.toc-hero [data-animate])').forEach(el => {
             elementObserver.observe(el);
         });
 
@@ -136,7 +166,7 @@
     // AUTO-ANIMATE HERO ELEMENTS
     // ==========================================
 
-    function initAutoAnimateHero() {
+    function initAutoAnimateHero(skipAnimations) {
         const hero = document.querySelector('.chapter-hero, .toc-hero');
         if (!hero) return;
 
@@ -149,14 +179,21 @@
         heroElements.forEach((el, index) => {
             if (!el.hasAttribute('data-animate')) {
                 el.setAttribute('data-animate', 'fade-up');
-                el.setAttribute('data-stagger', String(Math.min(index + 1, 5)));
             }
         });
 
-        // Mark hero as visible immediately (above fold)
-        requestAnimationFrame(() => {
+        if (skipAnimations) {
+            // Show immediately on back navigation
             heroElements.forEach(el => el.classList.add('is-visible'));
-        });
+        } else {
+            // Stagger hero elements with actual delays (not CSS delays)
+            // This ensures true sequential animation
+            heroElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('is-visible');
+                }, index * 100); // 100ms between each element
+            });
+        }
     }
 
     // ==========================================
@@ -1021,38 +1058,22 @@
     // ==========================================
 
     function initPageTransitions() {
-        // Add entrance animation on page load (skip for back/forward navigation)
-        if (performance.navigation && performance.navigation.type !== 2) {
-            document.body.classList.add('page-transition-enter');
-        } else if (performance.getEntriesByType) {
-            const navEntry = performance.getEntriesByType('navigation')[0];
-            if (navEntry && navEntry.type !== 'back_forward') {
-                document.body.classList.add('page-transition-enter');
+        // Always ensure page is visible (fixes back button black screen)
+        document.body.classList.remove('page-transition-exit');
+        document.body.classList.remove('page-transition-enter');
+        document.body.style.opacity = '1';
+
+        // Handle page restore from bfcache (back/forward cache)
+        window.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                // Page was restored from bfcache - ensure it's visible
+                document.body.classList.remove('page-transition-exit');
+                document.body.style.opacity = '1';
             }
-        }
-
-        // Handle internal navigation with fade-out effect
-        document.addEventListener('click', function(e) {
-            const link = e.target.closest('a');
-            if (!link) return;
-
-            // Only handle internal links
-            const href = link.getAttribute('href');
-            if (!href) return;
-            if (href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
-            if (link.hasAttribute('target')) return;
-            if (e.ctrlKey || e.metaKey || e.shiftKey) return;
-
-            e.preventDefault();
-
-            // CSS-based exit transition
-            document.body.classList.remove('page-transition-enter');
-            document.body.classList.add('page-transition-exit');
-
-            setTimeout(function() {
-                window.location.href = href;
-            }, 180);
         });
+
+        // NOTE: We no longer use body-level fade transitions
+        // Element-level animations via IntersectionObserver provide better UX
     }
 
     // ==========================================
@@ -1189,19 +1210,46 @@
     }
 
     // ==========================================
+    // CHECK IF RETURNING VIA BACK/FORWARD
+    // ==========================================
+
+    function isBackForwardNavigation() {
+        if (performance.navigation && performance.navigation.type === 2) {
+            return true;
+        }
+        if (performance.getEntriesByType) {
+            const navEntry = performance.getEntriesByType('navigation')[0];
+            if (navEntry && navEntry.type === 'back_forward') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // ==========================================
     // INITIALIZE ALL FEATURES
     // ==========================================
 
     function init() {
+        // Check if this is a back/forward navigation
+        const skipAnimations = isBackForwardNavigation();
+
         // Auto-add animation attributes (before observer init)
-        initAutoAnimateHero();
+        initAutoAnimateHero(skipAnimations);
         initAutoAnimateContent();
         initAutoAnimateExercises();
         initDecoBorders();
         initTocAnimations();
 
-        // Initialize animation observer
-        initScrollAnimations();
+        // If returning via back button, show everything immediately
+        if (skipAnimations) {
+            document.querySelectorAll('[data-animate]').forEach(el => {
+                el.classList.add('is-visible');
+            });
+        } else {
+            // Initialize animation observer for fresh page loads
+            initScrollAnimations();
+        }
 
         // Initialize unified scroll handler (handles progress bar, header, scroll-to-top, toolbar)
         initUnifiedScrollHandler();
