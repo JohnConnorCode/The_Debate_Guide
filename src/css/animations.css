@@ -130,7 +130,7 @@
 /* When element becomes visible */
 [data-animate].is-visible {
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); /* Smooth decelerate */
 }
 
 /* ==========================================
@@ -145,7 +145,7 @@
 
 [data-animate="fade-up"].is-visible {
     animation-name: fadeInUp;
-    animation-duration: 0.5s;
+    animation-duration: 0.6s;
 }
 
 [data-animate="fade-down"].is-visible {
@@ -516,15 +516,28 @@
 }
 
 @media (max-width: 480px) {
-    /* Even faster on small phones */
+    /* Slightly faster animations on small phones, but still visible */
     [data-animate].is-visible {
-        animation-duration: 0.25s !important;
+        animation-duration: 0.35s !important;
     }
 
-    /* Remove stagger on very small screens - animate immediately */
-    [data-stagger].is-visible {
-        animation-delay: 0ms !important;
+    /* Reduce transform distance for subtlety on small screens */
+    @keyframes fadeInUpSmall {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
+
+    [data-animate="fade-up"].is-visible {
+        animation-name: fadeInUpSmall;
+    }
+
+    /* JS handles stagger on mobile - no CSS override needed */
 
     /* Hide sunburst on small phones */
     .sunburst-hero {

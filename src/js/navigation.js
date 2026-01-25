@@ -49,7 +49,7 @@
         // Track pending animations to stagger them
         let pendingAnimations = [];
         let animationTimeout = null;
-        const STAGGER_DELAY = 60; // ms between each element
+        const STAGGER_DELAY = 100; // ms between each element (increased from 60ms)
 
         function processPendingAnimations() {
             // Sort by vertical position for natural top-to-bottom reveal
@@ -59,11 +59,16 @@
                 return aRect.top - bRect.top;
             });
 
+            // Cap stagger so long lists don't take forever
+            const effectiveDelay = pendingAnimations.length > 5
+                ? Math.min(STAGGER_DELAY, 400 / pendingAnimations.length)
+                : STAGGER_DELAY;
+
             // Stagger the animations
             pendingAnimations.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add('is-visible');
-                }, index * STAGGER_DELAY);
+                }, index * effectiveDelay);
             });
 
             pendingAnimations = [];
@@ -184,8 +189,9 @@
             }
         });
 
-        // Use consistent 120ms stagger (smooth but not too slow)
-        const STAGGER_DELAY = 120;
+        // Deliberate timing for hero reveal
+        const INITIAL_DELAY = 150;   // Let page/sunburst settle
+        const STAGGER_DELAY = 180;   // Graceful sequential reveal
 
         if (skipAnimations) {
             // Show immediately on back navigation
@@ -196,7 +202,7 @@
             heroElements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add('is-visible');
-                }, index * STAGGER_DELAY);
+                }, INITIAL_DELAY + (index * STAGGER_DELAY));
             });
         }
     }
@@ -671,6 +677,46 @@
         initContinueReading(visited);
     }
 
+    // Valid chapter URL patterns - used to validate stored URLs
+    const VALID_CHAPTER_SLUGS = {
+        1: 'why-debate-matters',
+        2: 'the-greek-legacy',
+        3: 'the-rhetorical-triangle',
+        4: 'kairos',
+        5: 'ethos',
+        6: 'character-in-action',
+        7: 'pathos',
+        8: 'the-emotions-catalog',
+        9: 'logos',
+        10: 'evidence-and-proof',
+        11: 'building-your-case',
+        12: 'the-art-of-refutation',
+        13: 'fallacies-and-traps',
+        14: 'the-socratic-method',
+        15: 'steelmanning',
+        16: 'debate-in-the-workplace',
+        17: 'debate-in-education',
+        18: 'digital-discourse',
+        19: 'debate-as-civic-duty',
+        20: 'the-philosophers-victory'
+    };
+
+    const CHAPTER_PARTS = {
+        1: 1, 2: 1, 3: 1, 4: 1,
+        5: 2, 6: 2, 7: 2, 8: 2, 9: 2, 10: 2,
+        11: 3, 12: 3, 13: 3, 14: 3, 15: 3,
+        16: 4, 17: 4, 18: 4, 19: 4,
+        20: 5
+    };
+
+    function getValidChapterUrl(chapterNum) {
+        const num = parseInt(chapterNum, 10);
+        if (!VALID_CHAPTER_SLUGS[num]) return null;
+        const part = CHAPTER_PARTS[num];
+        const paddedNum = String(num).padStart(2, '0');
+        return '/chapters/part-' + part + '/chapter-' + paddedNum + '-' + VALID_CHAPTER_SLUGS[num] + '/';
+    }
+
     function initContinueReading(visited) {
         const continueSection = document.getElementById('continue-reading');
         if (!continueSection) return;
@@ -682,13 +728,20 @@
             lastRead = null;
         }
 
-        if (lastRead && lastRead.url) {
+        if (lastRead && lastRead.number) {
             const link = continueSection.querySelector('.continue-reading-link');
             const title = continueSection.querySelector('.continue-reading-title');
             const chapter = continueSection.querySelector('.continue-reading-chapter');
             const progress = continueSection.querySelector('.continue-reading-progress');
 
-            if (link) link.href = lastRead.url;
+            // Always rebuild URL from chapter number to ensure it's valid
+            const validUrl = getValidChapterUrl(lastRead.number);
+            if (!validUrl) {
+                continueSection.style.display = 'none';
+                return;
+            }
+
+            if (link) link.href = validUrl;
             if (title) title.textContent = lastRead.title;
             if (chapter) chapter.textContent = 'Chapter ' + lastRead.number;
 
