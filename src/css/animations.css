@@ -68,18 +68,18 @@
 }
 
 /* ==========================================
-   HERO ANIMATIONS (Pure CSS - no JS needed)
+   HERO ANIMATIONS (JS-triggered for reliable timing)
+   Elements start hidden; JS adds is-visible class to trigger animation
    ========================================== */
 
 .hero-animate {
-    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     opacity: 0;
+    transform: translateY(20px);
 }
 
-.hero-animate-1 { animation-delay: 0ms; }
-.hero-animate-2 { animation-delay: 100ms; }
-.hero-animate-3 { animation-delay: 200ms; }
-.hero-animate-4 { animation-delay: 300ms; }
+.hero-animate.is-visible {
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
 
 /* ==========================================
    HERO STAGGER (for other heroes using data-animate)

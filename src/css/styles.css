@@ -2,9 +2,8 @@
    THE DEBATE GUIDE - MAIN STYLESHEET
    ========================================== */
 
-/* Import design tokens and animations */
+/* Import design tokens */
 @import url('tokens.css');
-@import url('animations.css');
 
 /* ==========================================
    RESET & BASE
