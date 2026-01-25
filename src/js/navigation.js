@@ -167,16 +167,19 @@
     // ==========================================
 
     function initAutoAnimateHero(skipAnimations) {
-        // Include main hero, chapter hero, and TOC hero
+        // Hero elements with .hero-animate class use pure CSS animations
+        // This function only handles elements WITHOUT that class
         const hero = document.querySelector('.hero, .chapter-hero, .toc-hero');
         if (!hero) return;
 
-        // Elements to animate - includes main hero, chapter hero, and TOC hero elements
+        // Skip elements that have hero-animate class - CSS handles those
         const heroElements = hero.querySelectorAll(
-            '.hero-badge, .hero-headline, .hero-sub, .hero-ctas, ' +  // main hero
-            '.chapter-part, .chapter-number, .chapter-title, .chapter-subtitle, ' +  // chapter hero
-            '.toc-badge, .toc-title, .toc-tagline, .toc-subtitle'  // TOC hero
+            '.hero-badge:not(.hero-animate), .hero-headline:not(.hero-animate), .hero-sub:not(.hero-animate), .hero-ctas:not(.hero-animate), ' +
+            '.chapter-part:not(.hero-animate), .chapter-number:not(.hero-animate), .chapter-title:not(.hero-animate), .chapter-subtitle:not(.hero-animate), ' +
+            '.toc-badge:not(.hero-animate), .toc-title:not(.hero-animate), .toc-tagline:not(.hero-animate), .toc-subtitle:not(.hero-animate), .toc-audience:not(.hero-animate)'
         );
+
+        if (heroElements.length === 0) return;
 
         heroElements.forEach((el) => {
             if (!el.hasAttribute('data-animate')) {
@@ -184,15 +187,11 @@
             }
         });
 
-        // Use consistent 120ms stagger (smooth but not too slow)
         const STAGGER_DELAY = 120;
 
         if (skipAnimations) {
-            // Show immediately on back navigation
             heroElements.forEach(el => el.classList.add('is-visible'));
         } else {
-            // Stagger hero elements with actual delays (not CSS delays)
-            // This ensures true sequential animation
             heroElements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add('is-visible');
@@ -1293,6 +1292,9 @@
     // ==========================================
 
     function init() {
+        // Remove no-js class to enable CSS animations
+        document.documentElement.classList.remove('no-js');
+
         // Check if this is a back/forward navigation
         const skipAnimations = isBackForwardNavigation();
 
