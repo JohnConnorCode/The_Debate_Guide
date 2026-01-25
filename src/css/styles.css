@@ -72,7 +72,7 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.035;
+    opacity: 0.08;
 }
 
 .sunburst-section {
@@ -82,69 +82,40 @@ button {
 }
 
 .deco-border {
-    height: 16px;
-    background:
-        repeating-linear-gradient(
-            90deg,
-            var(--accent) 0px,
-            var(--accent) 8px,
-            transparent 8px,
-            transparent 16px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent 0px,
-            transparent 8px,
-            var(--accent) 8px,
-            var(--accent) 16px
-        );
-    background-size: 32px 4px, 32px 4px;
-    background-position: 0 0, 16px 6px;
-    background-repeat: repeat-x;
+    height: 14px;
     position: relative;
+    /* Zigzag triangles - art deco chevron pattern */
+    background:
+        linear-gradient(135deg, var(--accent) 25%, transparent 25%) -7px 0,
+        linear-gradient(225deg, var(--accent) 25%, transparent 25%) -7px 0,
+        linear-gradient(315deg, var(--accent) 25%, transparent 25%),
+        linear-gradient(45deg, var(--accent) 25%, transparent 25%);
+    background-size: 14px 14px;
+    background-color: var(--color-dark-bg);
+    opacity: 0.6;
 }
 
-.deco-border::before,
-.deco-border::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: var(--border-width);
-    background: var(--accent);
+[data-theme="light"] .deco-border {
+    background-color: var(--color-cream);
 }
-
-.deco-border::before { top: 0; }
-.deco-border::after { bottom: 0; }
 
 .deco-border-thin {
     height: 8px;
-    background:
-        repeating-linear-gradient(
-            90deg,
-            var(--accent) 0px,
-            var(--accent) 4px,
-            transparent 4px,
-            transparent 8px
-        );
-    background-size: 16px 2px;
-    background-position: 0 3px;
-    background-repeat: repeat-x;
     position: relative;
+    /* Smaller zigzag triangles */
+    background:
+        linear-gradient(135deg, var(--accent) 25%, transparent 25%) -4px 0,
+        linear-gradient(225deg, var(--accent) 25%, transparent 25%) -4px 0,
+        linear-gradient(315deg, var(--accent) 25%, transparent 25%),
+        linear-gradient(45deg, var(--accent) 25%, transparent 25%);
+    background-size: 8px 8px;
+    background-color: var(--color-dark-bg);
+    opacity: 0.5;
 }
 
-.deco-border-thin::before,
-.deco-border-thin::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: var(--border-width);
-    background: var(--accent);
+[data-theme="light"] .deco-border-thin {
+    background-color: var(--color-cream);
 }
-
-.deco-border-thin::before { top: 0; }
-.deco-border-thin::after { bottom: 0; }
 
 .corner-ornament {
     position: absolute;
@@ -2051,12 +2022,12 @@ body.mobile-nav-open {
     .sunburst-hero {
         width: 400px;
         height: 400px;
-        opacity: 0.03;
+        opacity: 0.06;
     }
 
     .deco-border {
-        height: 8px;
-        background-size: 20px 2px, 20px 2px;
+        height: 10px;
+        background-size: 10px 10px;
     }
 }
 

@@ -68,6 +68,11 @@
       "source": "/chapters/part-4/chapter-19-debate-in-democracy/:path*",
       "destination": "/chapters/part-4/chapter-19-debate-as-civic-duty/",
       "permanent": true
+    },
+    {
+      "source": "/chapters/introduction/:path*",
+      "destination": "/introduction/",
+      "permanent": true
     }
   ],
   "headers": [
@@ -88,7 +93,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://plausible.io; manifest-src 'self'; worker-src 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://plausible.io; manifest-src 'self'; worker-src 'self'"
         },
         {
           "key": "Referrer-Policy",

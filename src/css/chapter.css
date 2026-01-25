@@ -948,6 +948,44 @@
 }
 
 /* ==========================================
+   SUPERDEBATE NOTES
+   Subtle callouts connecting chapter content
+   to practice opportunities
+   ========================================== */
+
+.superdebate-note {
+    background: linear-gradient(135deg, rgba(var(--color-gold-rgb), 0.06), rgba(var(--color-gold-rgb), 0.02));
+    border-left: 2px solid rgba(var(--color-gold-rgb), 0.4);
+    border-radius: 0 4px 4px 0;
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-lg) 0;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+.superdebate-note p {
+    margin: 0;
+}
+
+.superdebate-note a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    transition: border-color var(--transition-fast);
+}
+
+.superdebate-note a:hover {
+    border-bottom-style: solid;
+}
+
+@media print {
+    .superdebate-note {
+        display: none;
+    }
+}
+
+/* ==========================================
    CROSS REFERENCES
    ========================================== */
 

@@ -2,5 +2,12 @@
 User-agent: *
 Allow: /
 
+# Disallow user-specific and utility pages
+Disallow: /progress/
+Disallow: /offline/
+
+# Crawl rate (be polite to the server)
+Crawl-delay: 1
+
 # Sitemap
-Sitemap: https://thedebateguide.com/sitemap.xml
+Sitemap: https://the-debate-guide.vercel.app/sitemap.xml

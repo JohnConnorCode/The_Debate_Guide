@@ -33,6 +33,7 @@
     <meta name="apple-mobile-web-app-title" content="Debate Guide">
 
     {# Favicon #}
+    <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/icon-32x32.png' | url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icons/icon-16x16.png' | url }}">
@@ -96,6 +97,20 @@
     {# Replace YOUR_DOMAIN with your Plausible domain or remove if not using analytics #}
     {% if site.analyticsEnabled %}
     <script defer data-domain="{{ site.domain }}" src="https://plausible.io/js/script.js"></script>
+    {# Web Vitals - Core performance metrics #}
+    <script type="module">
+    import {onCLS, onFID, onLCP, onFCP, onTTFB} from 'https://unpkg.com/web-vitals@3/dist/web-vitals.attribution.js?module';
+    function sendToAnalytics({name, delta, rating}) {
+        if (window.plausible) {
+            window.plausible('Web Vitals', {props: {metric: name, value: Math.round(delta), rating: rating}});
+        }
+    }
+    onCLS(sendToAnalytics);
+    onFID(sendToAnalytics);
+    onLCP(sendToAnalytics);
+    onFCP(sendToAnalytics);
+    onTTFB(sendToAnalytics);
+    </script>
     {% endif %}
 
     {# Service Worker Registration with Update Handling #}
