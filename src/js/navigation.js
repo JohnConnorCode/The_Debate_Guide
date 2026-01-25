@@ -32,13 +32,6 @@
         // Remove no-js class now that JS is running
         document.documentElement.classList.remove('no-js');
 
-        // Hero elements animate immediately on load (no IntersectionObserver)
-        // This prevents the double-animation flash effect
-        const heroElements = document.querySelectorAll('.toc-hero-inner [data-animate]');
-        heroElements.forEach(el => {
-            el.classList.add('is-visible');
-        });
-
         if (!('IntersectionObserver' in window)) {
             // Old browsers: show everything immediately
             document.querySelectorAll('[data-animate]').forEach(el => {
@@ -59,11 +52,9 @@
             rootMargin: '0px 0px -50px 0px'
         });
 
-        // Observe all animated elements EXCEPT hero elements (already animated above)
+        // Observe all animated elements
         document.querySelectorAll('[data-animate]').forEach(el => {
-            if (!el.closest('.toc-hero-inner')) {
-                observer.observe(el);
-            }
+            observer.observe(el);
         });
     }
 

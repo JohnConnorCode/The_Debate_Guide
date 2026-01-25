@@ -68,7 +68,21 @@
 }
 
 /* ==========================================
-   HERO STAGGER (CSS-controlled)
+   HERO ANIMATIONS (Pure CSS - no JS needed)
+   ========================================== */
+
+.hero-animate {
+    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+.hero-animate-1 { animation-delay: 0ms; }
+.hero-animate-2 { animation-delay: 100ms; }
+.hero-animate-3 { animation-delay: 200ms; }
+.hero-animate-4 { animation-delay: 300ms; }
+
+/* ==========================================
+   HERO STAGGER (for other heroes using data-animate)
    ========================================== */
 
 .hero [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
@@ -81,16 +95,6 @@
 .chapter-hero [data-animate]:nth-child(3).is-visible { animation-delay: 200ms; }
 .chapter-hero [data-animate]:nth-child(4).is-visible { animation-delay: 300ms; }
 .chapter-hero [data-animate]:nth-child(5).is-visible { animation-delay: 400ms; }
-
-.toc-hero [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
-.toc-hero [data-animate]:nth-child(2).is-visible { animation-delay: 100ms; }
-.toc-hero [data-animate]:nth-child(3).is-visible { animation-delay: 200ms; }
-.toc-hero [data-animate]:nth-child(4).is-visible { animation-delay: 300ms; }
-
-.toc-hero-inner [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
-.toc-hero-inner [data-animate]:nth-child(2).is-visible { animation-delay: 100ms; }
-.toc-hero-inner [data-animate]:nth-child(3).is-visible { animation-delay: 200ms; }
-.toc-hero-inner [data-animate]:nth-child(4).is-visible { animation-delay: 300ms; }
 
 /* ==========================================
    TOC CHAPTER LIST STAGGER
@@ -303,7 +307,8 @@
    ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-    [data-animate] {
+    [data-animate],
+    .hero-animate {
         opacity: 1;
         animation: none;
     }
