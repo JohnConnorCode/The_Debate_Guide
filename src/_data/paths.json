@@ -1,0 +1,52 @@
+{
+  "paths": [
+    {
+      "id": "complete-journey",
+      "title": "The Complete Journey",
+      "icon": "scroll",
+      "description": "Read sequentially from Chapter 1. The intended path for mastering classical rhetoric.",
+      "chapters": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+      "time": "8-10 hours"
+    },
+    {
+      "id": "workplace",
+      "title": "Workplace Persuasion",
+      "icon": "briefcase",
+      "description": "Lead meetings, convince colleagues, handle professional disagreement with confidence.",
+      "chapters": [5, 6, 9, 15, 16],
+      "time": "2-3 hours"
+    },
+    {
+      "id": "logic",
+      "title": "Logic & Arguments",
+      "icon": "target",
+      "description": "Build bulletproof cases, spot fallacies, and master the art of evidence.",
+      "chapters": [9, 10, 11, 12, 13],
+      "time": "2-3 hours"
+    },
+    {
+      "id": "socratic",
+      "title": "The Socratic Method",
+      "icon": "question",
+      "description": "Guide discovery through strategic questioning and productive dialogue.",
+      "chapters": [2, 14, 15],
+      "time": "1.5-2 hours"
+    },
+    {
+      "id": "digital",
+      "title": "Digital & Civic Discourse",
+      "icon": "globe",
+      "description": "Navigate online debates and civic conversations with ancient wisdom.",
+      "chapters": [18, 19, 13],
+      "time": "1.5-2 hours"
+    },
+    {
+      "id": "philosophy",
+      "title": "The Philosophy of Debate",
+      "icon": "book",
+      "description": "Origins, ethics, and the deeper meaning of argument.",
+      "chapters": [1, 2, 20],
+      "time": "1.5-2 hours"
+    }
+  ]
+}

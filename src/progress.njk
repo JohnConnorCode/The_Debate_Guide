@@ -518,28 +518,28 @@ permalink: /progress/
 (function() {
     'use strict';
 
-    // Chapter data
+    // Chapter data - must match chapters.json slugs and titles
     const chapters = [
-        { id: 1, title: "Why Debate Matters", part: "Part I" },
-        { id: 2, title: "The Greek Inheritance", part: "Part I" },
-        { id: 3, title: "The Rhetoric Triangle", part: "Part I" },
-        { id: 4, title: "Kairos: The Right Moment", part: "Part I" },
-        { id: 5, title: "Ethos: Building Credibility", part: "Part II" },
-        { id: 6, title: "Ethos in Action", part: "Part II" },
-        { id: 7, title: "Pathos: Emotional Appeal", part: "Part II" },
-        { id: 8, title: "The Ethics of Emotion", part: "Part II" },
-        { id: 9, title: "Logos: The Power of Reason", part: "Part II" },
-        { id: 10, title: "Evidence and Proof", part: "Part II" },
-        { id: 11, title: "Argument Construction", part: "Part II" },
-        { id: 12, title: "Refutation and Rebuttal", part: "Part II" },
-        { id: 13, title: "Common Fallacies", part: "Part II" },
-        { id: 14, title: "The Socratic Method", part: "Part III" },
-        { id: 15, title: "Steelmanning", part: "Part III" },
-        { id: 16, title: "Debate in the Workplace", part: "Part IV" },
-        { id: 17, title: "Debate in the Classroom", part: "Part IV" },
-        { id: 18, title: "Online Discourse", part: "Part IV" },
-        { id: 19, title: "Debate in Democracy", part: "Part IV" },
-        { id: 20, title: "The Philosopher's Victory", part: "Part V" }
+        { id: 1, title: "Why Debate Matters", slug: "why-debate-matters", partNum: 1, part: "Part I" },
+        { id: 2, title: "The Greek Legacy", slug: "the-greek-legacy", partNum: 1, part: "Part I" },
+        { id: 3, title: "The Rhetorical Triangle", slug: "the-rhetorical-triangle", partNum: 1, part: "Part I" },
+        { id: 4, title: "Kairos", slug: "kairos", partNum: 1, part: "Part I" },
+        { id: 5, title: "Ethos: Building Credibility", slug: "ethos", partNum: 2, part: "Part II" },
+        { id: 6, title: "Character in Action", slug: "character-in-action", partNum: 2, part: "Part II" },
+        { id: 7, title: "Pathos: Moving Hearts", slug: "pathos", partNum: 2, part: "Part II" },
+        { id: 8, title: "The Emotions Catalog", slug: "the-emotions-catalog", partNum: 2, part: "Part II" },
+        { id: 9, title: "Logos: Constructing Reason", slug: "logos", partNum: 2, part: "Part II" },
+        { id: 10, title: "Evidence and Proof", slug: "evidence-and-proof", partNum: 2, part: "Part II" },
+        { id: 11, title: "Building Your Case", slug: "building-your-case", partNum: 3, part: "Part III" },
+        { id: 12, title: "The Art of Refutation", slug: "the-art-of-refutation", partNum: 3, part: "Part III" },
+        { id: 13, title: "Fallacies and Traps", slug: "fallacies-and-traps", partNum: 3, part: "Part III" },
+        { id: 14, title: "The Socratic Method", slug: "the-socratic-method", partNum: 3, part: "Part III" },
+        { id: 15, title: "Steelmanning", slug: "steelmanning", partNum: 3, part: "Part III" },
+        { id: 16, title: "Debate in the Workplace", slug: "debate-in-the-workplace", partNum: 4, part: "Part IV" },
+        { id: 17, title: "Debate in Education", slug: "debate-in-education", partNum: 4, part: "Part IV" },
+        { id: 18, title: "Digital Discourse", slug: "digital-discourse", partNum: 4, part: "Part IV" },
+        { id: 19, title: "Debate as Civic Duty", slug: "debate-as-civic-duty", partNum: 4, part: "Part IV" },
+        { id: 20, title: "The Philosopher's Victory", slug: "the-philosophers-victory", partNum: 5, part: "Part V" }
     ];
 
     // Achievement definitions
@@ -612,7 +612,7 @@ permalink: /progress/
                     <p>Due for review based on spaced repetition</p>
                 </div>
                 <div class="due-review-action">
-                    <a href="/chapters/part-${chapter.part.split(' ')[1].toLowerCase()}/chapter-${paddedId}/#chapter-quiz" class="quiz-btn quiz-btn-primary">
+                    <a href="/chapters/part-${chapter.partNum}/chapter-${paddedId}-${chapter.slug}/#chapter-quiz" class="quiz-btn quiz-btn-primary">
                         Review Now
                     </a>
                 </div>
@@ -651,7 +651,6 @@ permalink: /progress/
     chapters.forEach(chapter => {
         const data = progress[chapter.id];
         const paddedId = String(chapter.id).padStart(2, '0');
-        const partNum = chapter.part.split(' ')[1].toLowerCase();
 
         let status = 'not-started';
         let scoreText = '—';
@@ -668,7 +667,7 @@ permalink: /progress/
         }
 
         const item = document.createElement('a');
-        item.href = `/chapters/part-${partNum}/chapter-${paddedId}/`;
+        item.href = `/chapters/part-${chapter.partNum}/chapter-${paddedId}-${chapter.slug}/`;
         item.className = `chapter-progress-item ${status}`;
         item.innerHTML = `
             <div class="chapter-number">${chapter.id}</div>

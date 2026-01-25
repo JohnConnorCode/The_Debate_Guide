@@ -1206,6 +1206,20 @@
     font-size: var(--text-xs);
     color: var(--text-muted);
     margin-top: var(--space-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.quiz-hints-note .hints-count {
+    color: var(--text-muted);
+}
+
+.quiz-hints-note .hints-penalty {
+    color: var(--color-error);
+    cursor: help;
+    border-bottom: 1px dotted var(--color-error);
 }
 
 /* ==========================================

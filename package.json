@@ -27,5 +27,8 @@
     "clean-css": "^5.3.3",
     "sharp": "^0.33.5",
     "terser": "^5.36.0"
+  },
+  "dependencies": {
+    "claude-flow": "^3.0.0-alpha.179"
   }
 }

@@ -2464,3 +2464,77 @@ body.mobile-nav-open {
         opacity: 0;
     }
 }
+
+/* ==========================================
+   GLOBAL REDUCED MOTION
+   Disables all non-essential motion for
+   users who prefer reduced motion
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    /* Disable smooth scrolling */
+    html {
+        scroll-behavior: auto;
+    }
+
+    /* Disable all transitions */
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    /* Disable button hover transforms */
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-outline-dark:hover,
+    .btn-outline-gold:hover {
+        transform: none;
+    }
+
+    .btn-primary:active,
+    .btn-secondary:active,
+    .btn-outline-dark:active,
+    .btn-outline-gold:active {
+        transform: none;
+    }
+
+    /* Disable card hover effects */
+    .card:hover,
+    .card-dark:hover {
+        transform: none;
+    }
+
+    /* Disable scroll-to-top animations */
+    .scroll-to-top {
+        transition: none;
+    }
+
+    .scroll-to-top:hover {
+        transform: none;
+    }
+
+    /* Disable header hide/show animation */
+    .header {
+        transition: none;
+    }
+
+    /* Disable mobile nav animations */
+    .mobile-nav {
+        transition: none;
+    }
+
+    /* Disable search modal animations */
+    .search-modal,
+    .search-container {
+        transition: none;
+    }
+
+    /* Disable keyboard help modal animations */
+    .keyboard-help-modal,
+    .keyboard-help-content {
+        transition: none;
+    }
+}

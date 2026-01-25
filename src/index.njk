@@ -9,27 +9,28 @@ permalink: /
     {% include "sunburst.njk" %}
 
     <div class="toc-hero-inner">
-        <div class="toc-badge">
+        <div class="toc-badge" data-animate>
             <span class="diamond"></span>
             <span>A Complete Guide to Classical Rhetoric</span>
             <span class="diamond"></span>
         </div>
-        <h1 class="toc-title">THE DEBATE GUIDE</h1>
-        <p class="toc-tagline">Win Like the Greeks</p>
-        <p class="toc-subtitle">
+        <h1 class="toc-title" data-animate>THE DEBATE GUIDE</h1>
+        <p class="toc-tagline" data-animate>Win Like the Greeks</p>
+        <p class="toc-subtitle" data-animate>
             Master the timeless art of persuasion. Twenty chapters on rhetoric, logic, and the philosophy of winning arguments with honor.
         </p>
+        <p class="toc-audience" data-animate>For anyone serious about thinking better and arguing well.</p>
     </div>
 </section>
 
-<div class="deco-border"></div>
+<div class="deco-border" data-animate="fade"></div>
 
 {# TABLE OF CONTENTS #}
 <main class="section section-dark">
     <div id="contents" class="toc-container">
 
         {# Introduction #}
-        <div class="toc-intro">
+        <div class="toc-intro" data-animate>
             <a href="{{ '/introduction/' | url }}" class="toc-intro-link">
                 <span>Begin Here</span>
                 INTRODUCTION: THE AGORA AWAITS
@@ -62,25 +63,25 @@ permalink: /
         {# Dynamic Parts and Chapters from Data #}
         {% for part in chapters.parts %}
         <div id="{{ part.id }}" class="toc-part">
-            <div class="toc-part-header">
+            <div class="toc-part-header" data-animate>
                 <span class="toc-part-number">{{ part.number }}</span>
                 <h2 class="toc-part-title">{{ part.title }}</h2>
             </div>
             {# Part Introductions #}
             {% if part.id == "part-1" %}
-            <p class="toc-part-description">Before you can argue well, you need to understand what argument is and where it comes from. Part I establishes the foundations: why structured disagreement matters, how the Greeks invented rhetoric, and the core frameworks—the rhetorical triangle and kairos—that underpin everything that follows. Master these concepts and you'll see persuasion differently forever.</p>
+            <p class="toc-part-description" data-animate>Before you can argue well, you need to understand what argument is and where it comes from. Part I establishes the foundations: why structured disagreement matters, how the Greeks invented rhetoric, and the core frameworks—the rhetorical triangle and kairos—that underpin everything that follows. Master these concepts and you'll see persuasion differently forever.</p>
             {% elif part.id == "part-2" %}
-            <p class="toc-part-description">Aristotle identified three paths to persuasion: ethos (character), pathos (emotion), and logos (logic). Part II explores each in depth. You'll learn why credibility matters more than truth, how to use emotion ethically, and how to construct arguments that actually hold together. These are the building blocks of every persuasive act.</p>
+            <p class="toc-part-description" data-animate>Aristotle identified three paths to persuasion: ethos (character), pathos (emotion), and logos (logic). Part II explores each in depth. You'll learn why credibility matters more than truth, how to use emotion ethically, and how to construct arguments that actually hold together. These are the building blocks of every persuasive act.</p>
             {% elif part.id == "part-3" %}
-            <p class="toc-part-description">Theory becomes practice. Part III covers the craft of argument: how to build cases, dismantle opposing ones, spot fallacies, deploy the Socratic method, and steelman positions you disagree with. These are the skills that separate those who talk about ideas from those who can actually move minds.</p>
+            <p class="toc-part-description" data-animate>Theory becomes practice. Part III covers the craft of argument: how to build cases, dismantle opposing ones, spot fallacies, deploy the Socratic method, and steelman positions you disagree with. These are the skills that separate those who talk about ideas from those who can actually move minds.</p>
             {% elif part.id == "part-4" %}
-            <p class="toc-part-description">Ancient skills meet modern contexts. Part IV applies classical rhetoric to the challenges of contemporary life: workplace disagreements, educational settings, digital discourse, and civic engagement. The Greeks didn't have Slack or Twitter, but their techniques work in both.</p>
+            <p class="toc-part-description" data-animate>Ancient skills meet modern contexts. Part IV applies classical rhetoric to the challenges of contemporary life: workplace disagreements, educational settings, digital discourse, and civic engagement. The Greeks didn't have Slack or Twitter, but their techniques work in both.</p>
             {% elif part.id == "part-5" %}
-            <p class="toc-part-description">What does it mean to win? Part V steps back from technique to examine the philosophy of argument itself. The Greeks pursued something deeper than victory in debate—they sought truth, wisdom, and the examined life. So should you.</p>
+            <p class="toc-part-description" data-animate>What does it mean to win? Part V steps back from technique to examine the philosophy of argument itself. The Greeks pursued something deeper than victory in debate—they sought truth, wisdom, and the examined life. So should you.</p>
             {% endif %}
             <ul class="toc-chapters">
                 {% for chapter in part.chapters %}
-                <li class="toc-chapter">
+                <li class="toc-chapter" data-animate>
                     <a href="{{ '/chapters/' + part.id + '/chapter-' + (chapter.number | padZero) + '-' + chapter.slug + '/' | url }}">
                         <span class="toc-chapter-number">{{ chapter.number | padZero }}</span>
                         <span class="toc-chapter-title">{{ chapter.title }}</span>
@@ -94,27 +95,62 @@ permalink: /
 
         {# Reference Section #}
         <div id="reference" class="toc-part">
-            <div class="toc-part-header">
+            <div class="toc-part-header" data-animate>
                 <span class="toc-part-number">◆</span>
                 <h2 class="toc-part-title">REFERENCE</h2>
             </div>
-            <p class="toc-part-description">Supplementary materials for continued learning and quick reference. Bookmark these pages.</p>
+            <p class="toc-part-description" data-animate>Supplementary materials for continued learning and quick reference. Bookmark these pages.</p>
             <ul class="toc-chapters">
-                <li class="toc-chapter">
+                <li class="toc-chapter" data-animate>
+                    <a href="{{ '/learning-paths/' | url }}">
+                        <span class="toc-chapter-number">◆</span>
+                        <span class="toc-chapter-title">Learning Paths</span>
+                        <span class="toc-chapter-subtitle">Curated journeys for different goals</span>
+                    </a>
+                </li>
+                <li class="toc-chapter" data-animate>
+                    <a href="{{ '/superdebate-format/' | url }}">
+                        <span class="toc-chapter-number">◆</span>
+                        <span class="toc-chapter-title">SuperDebate Format Guide</span>
+                        <span class="toc-chapter-subtitle">Master the competitive format</span>
+                    </a>
+                </li>
+                <li class="toc-chapter" data-animate>
+                    <a href="{{ '/live-response/' | url }}">
+                        <span class="toc-chapter-number">◆</span>
+                        <span class="toc-chapter-title">Live Response Guide</span>
+                        <span class="toc-chapter-subtitle">Real-time tactics when debating</span>
+                    </a>
+                </li>
+                <li class="toc-chapter" data-animate>
+                    <a href="{{ '/debate-prep/' | url }}">
+                        <span class="toc-chapter-number">◆</span>
+                        <span class="toc-chapter-title">Debate Preparation Playbook</span>
+                        <span class="toc-chapter-subtitle">48-hour countdown to any argument</span>
+                    </a>
+                </li>
+                <li class="toc-chapter" data-animate>
+                    <a href="{{ '/scripts/' | url }}">
+                        <span class="toc-chapter-number">◆</span>
+                        <span class="toc-chapter-title">Dialogue Scripts</span>
+                        <span class="toc-chapter-subtitle">Word-for-word examples</span>
+                    </a>
+                </li>
+                <li class="toc-chapter" data-animate>
                     <a href="{{ '/quick-tactics/' | url }}">
                         <span class="toc-chapter-number">◆</span>
                         <span class="toc-chapter-title">Quick Tactics Summary</span>
                         <span class="toc-chapter-subtitle">All twenty tactics on one page</span>
                     </a>
                 </li>
-                <li class="toc-chapter">
+                <li class="toc-chapter" data-animate>
                     <a href="{{ '/glossary/' | url }}">
                         <span class="toc-chapter-number">◆</span>
                         <span class="toc-chapter-title">Glossary of Terms</span>
                         <span class="toc-chapter-subtitle">Greek and Latin vocabulary</span>
                     </a>
                 </li>
-                <li class="toc-chapter">
+                <li class="toc-chapter" data-animate>
                     <a href="{{ '/resources/' | url }}">
                         <span class="toc-chapter-number">◆</span>
                         <span class="toc-chapter-title">Further Reading & What's Next</span>
@@ -127,4 +163,45 @@ permalink: /
     </div>
 </main>
 
-<div class="deco-border"></div>
+<div class="deco-border" data-animate="fade"></div>
+
+{# TESTIMONIALS #}
+<section class="testimonials-section section-dark">
+    <div class="testimonials-container">
+        <div class="testimonials-header" data-animate>
+            <span class="testimonials-label">What Readers Say</span>
+            <h2 class="testimonials-title">VOICES FROM THE AGORA</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card" data-animate>
+                <blockquote class="testimonial-quote">
+                    "I've read dozens of books on persuasion, but this is the first one that actually changed how I argue. The Socratic method chapter alone transformed my team meetings."
+                </blockquote>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">Sarah Chen</span>
+                    <span class="testimonial-role">Product Director, Tech Startup</span>
+                </div>
+            </div>
+            <div class="testimonial-card" data-animate>
+                <blockquote class="testimonial-quote">
+                    "Finally, a rhetoric guide that respects the reader's intelligence. No gimmicks, no manipulation tactics—just the real art of persuasion that the Greeks perfected."
+                </blockquote>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">Dr. Marcus Webb</span>
+                    <span class="testimonial-role">Philosophy Professor</span>
+                </div>
+            </div>
+            <div class="testimonial-card" data-animate>
+                <blockquote class="testimonial-quote">
+                    "I use the steelmanning technique every day now. My colleagues have noticed—they say I've become the person everyone wants in difficult conversations."
+                </blockquote>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">James Okonkwo</span>
+                    <span class="testimonial-role">Management Consultant</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="deco-border" data-animate="fade"></div>

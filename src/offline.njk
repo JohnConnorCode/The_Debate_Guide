@@ -68,27 +68,7 @@ eleventyExcludeFromCollections: true
         flex-wrap: wrap;
     }
 
-    .offline-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-xs);
-        padding: var(--space-sm) var(--space-lg);
-        font-family: var(--font-display);
-        font-size: var(--text-md);
-        letter-spacing: var(--tracking-wider);
-        text-decoration: none;
-        border: var(--border-width) solid var(--accent);
-        color: var(--text-primary);
-        background: none;
-        cursor: pointer;
-        transition: all 0.2s ease-out;
-        min-height: 48px;
-    }
-
-    .offline-btn:hover {
-        background: var(--accent);
-        color: var(--bg-primary);
-    }
+    /* Use global button classes from styles.css */
 
     .offline-tip {
         margin-top: var(--space-xl);
@@ -165,7 +145,7 @@ eleventyExcludeFromCollections: true
         </blockquote>
 
         <div class="offline-actions">
-            <button class="offline-btn" onclick="window.location.reload()">
+            <button class="btn-outline-gold" onclick="window.location.reload()">
                 Try Again
             </button>
         </div>

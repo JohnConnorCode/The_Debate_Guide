@@ -69,35 +69,7 @@ eleventyExcludeFromCollections: true
         flex-wrap: wrap;
     }
 
-    .error-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-xs);
-        padding: var(--space-sm) var(--space-lg);
-        font-family: var(--font-display);
-        font-size: var(--text-md);
-        letter-spacing: var(--tracking-wider);
-        text-decoration: none;
-        border: var(--border-width) solid var(--accent);
-        color: var(--text-primary);
-        transition: all 0.2s ease-out;
-        min-height: 48px;
-    }
-
-    .error-btn:hover {
-        background: var(--accent);
-        color: var(--bg-primary);
-    }
-
-    .error-btn--secondary {
-        border-color: rgba(var(--color-white-rgb), 0.2);
-    }
-
-    .error-btn--secondary:hover {
-        border-color: var(--accent);
-        background: rgba(var(--color-gold-rgb), 0.1);
-        color: var(--text-primary);
-    }
+    /* Use global button classes from styles.css */
 
     .error-search {
         margin-top: var(--space-lg);
@@ -140,8 +112,8 @@ eleventyExcludeFromCollections: true
         </blockquote>
 
         <div class="error-actions">
-            <a href="/" class="error-btn">Return Home</a>
-            <a href="/chapters/introduction/" class="error-btn error-btn--secondary">Start Reading</a>
+            <a href="/" class="btn-outline-gold">Return Home</a>
+            <a href="/chapters/introduction/" class="btn-secondary">Start Reading</a>
         </div>
 
         <div class="error-search">

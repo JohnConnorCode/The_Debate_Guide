@@ -16,15 +16,6 @@
     // ==========================================
 
     const CONFIG = {
-        // Animation settings
-        animation: {
-            threshold: 0.15,        // How much of element must be visible (0-1)
-            rootMargin: '0px 0px -50px 0px',  // Trigger slightly before fully in view
-        },
-        // Progress bar
-        progress: {
-            throttleMs: 16,         // ~60fps
-        },
         // Keyboard hint
         keyboardHint: {
             showDelay: 2000,        // ms before showing hint
@@ -33,203 +24,37 @@
     };
 
     // ==========================================
-    // SCROLL-TRIGGERED ANIMATIONS
+    // SCROLL-TRIGGERED ANIMATIONS (Simplified)
+    // CSS handles timing/stagger. JS just adds .is-visible
     // ==========================================
 
-    function initScrollAnimations() {
-        // Check for Intersection Observer support
+    function initAnimations() {
+        // Remove no-js class now that JS is running
+        document.documentElement.classList.remove('no-js');
+
         if (!('IntersectionObserver' in window)) {
-            // Fallback: show all elements immediately
+            // Old browsers: show everything immediately
             document.querySelectorAll('[data-animate]').forEach(el => {
                 el.classList.add('is-visible');
             });
             return;
         }
 
-        // Track pending animations to stagger them
-        let pendingAnimations = [];
-        let animationTimeout = null;
-        const STAGGER_DELAY = 100; // ms between each element (increased from 60ms)
-
-        function processPendingAnimations() {
-            // Sort by vertical position for natural top-to-bottom reveal
-            pendingAnimations.sort((a, b) => {
-                const aRect = a.getBoundingClientRect();
-                const bRect = b.getBoundingClientRect();
-                return aRect.top - bRect.top;
-            });
-
-            // Cap stagger so long lists don't take forever
-            const effectiveDelay = pendingAnimations.length > 5
-                ? Math.min(STAGGER_DELAY, 400 / pendingAnimations.length)
-                : STAGGER_DELAY;
-
-            // Stagger the animations
-            pendingAnimations.forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add('is-visible');
-                }, index * effectiveDelay);
-            });
-
-            pendingAnimations = [];
-        }
-
-        // Create observer for individual elements
-        const elementObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Queue this element for animation
-                    pendingAnimations.push(entry.target);
-                    elementObserver.unobserve(entry.target);
-
-                    // Debounce: process all visible elements together
-                    clearTimeout(animationTimeout);
-                    animationTimeout = setTimeout(processPendingAnimations, 10);
-                }
-            });
-        }, {
-            threshold: CONFIG.animation.threshold,
-            rootMargin: CONFIG.animation.rootMargin
-        });
-
-        // Create observer for animation groups
-        const groupObserver = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    // Stagger children animations
-                    const children = entry.target.querySelectorAll('[data-animate]');
-                    children.forEach((child, index) => {
-                        setTimeout(() => {
-                            child.classList.add('is-visible');
-                        }, index * STAGGER_DELAY);
-                    });
-                    groupObserver.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: CONFIG.animation.threshold,
-            rootMargin: CONFIG.animation.rootMargin
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         });
 
-        // Observe all animated elements (excluding hero elements which are handled separately)
-        document.querySelectorAll('[data-animate]:not([data-animate-group] [data-animate]):not(.chapter-hero [data-animate]):not(.toc-hero [data-animate])').forEach(el => {
-            elementObserver.observe(el);
-        });
-
-        // Observe animation groups
-        document.querySelectorAll('[data-animate-group]').forEach(el => {
-            groupObserver.observe(el);
-        });
-    }
-
-    // ==========================================
-    // AUTO-ANIMATE CHAPTER CONTENT
-    // Automatically adds animation attributes to
-    // chapter content elements for sequential reveal
-    // ==========================================
-
-    function initAutoAnimateContent() {
-        const chapterContent = document.querySelector('.chapter-content');
-        if (!chapterContent) return;
-
-        // Elements to auto-animate
-        const animatableSelectors = [
-            'p',
-            'h2',
-            'h3',
-            '.vocabulary-box',
-            '.featured-quote',
-            'ul',
-            'ol',
-            '.section-divider'
-        ];
-
-        let staggerIndex = 0;
-        const maxStagger = 3; // Reset stagger after this many elements
-
-        animatableSelectors.forEach(selector => {
-            chapterContent.querySelectorAll(`:scope > ${selector}`).forEach(el => {
-                // Skip if already has animation attribute
-                if (el.hasAttribute('data-animate')) return;
-
-                // Add animation attribute
-                el.setAttribute('data-animate', 'fade-up');
-
-                // Headings reset the stagger
-                if (el.tagName === 'H2' || el.tagName === 'H3') {
-                    staggerIndex = 0;
-                }
-
-                staggerIndex++;
-                if (staggerIndex > maxStagger) staggerIndex = 1;
-            });
-        });
-    }
-
-    // ==========================================
-    // AUTO-ANIMATE HERO ELEMENTS
-    // ==========================================
-
-    function initAutoAnimateHero(skipAnimations) {
-        // Include main hero, chapter hero, and TOC hero
-        const hero = document.querySelector('.hero, .chapter-hero, .toc-hero');
-        if (!hero) return;
-
-        // Elements to animate - includes main hero, chapter hero, and TOC hero elements
-        const heroElements = hero.querySelectorAll(
-            '.hero-badge, .hero-headline, .hero-sub, .hero-ctas, ' +  // main hero
-            '.chapter-part, .chapter-number, .chapter-title, .chapter-subtitle, ' +  // chapter hero
-            '.toc-badge, .toc-title, .toc-tagline, .toc-subtitle'  // TOC hero
-        );
-
-        heroElements.forEach((el) => {
-            if (!el.hasAttribute('data-animate')) {
-                el.setAttribute('data-animate', 'fade-up');
-            }
-        });
-
-        // Deliberate timing for hero reveal
-        const INITIAL_DELAY = 150;   // Let page/sunburst settle
-        const STAGGER_DELAY = 180;   // Graceful sequential reveal
-
-        if (skipAnimations) {
-            // Show immediately on back navigation
-            heroElements.forEach(el => el.classList.add('is-visible'));
-        } else {
-            // Stagger hero elements with actual delays (not CSS delays)
-            // This ensures true sequential animation
-            heroElements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add('is-visible');
-                }, INITIAL_DELAY + (index * STAGGER_DELAY));
-            });
-        }
-    }
-
-    // ==========================================
-    // AUTO-ANIMATE EXERCISES
-    // ==========================================
-
-    function initAutoAnimateExercises() {
-        const exercises = document.querySelector('.exercises');
-        if (!exercises) return;
-
-        // Add group animation
-        if (!exercises.hasAttribute('data-animate-group')) {
-            exercises.setAttribute('data-animate-group', 'stagger');
-        }
-
-        // Animate title and each exercise
-        const title = exercises.querySelector('h3');
-        if (title && !title.hasAttribute('data-animate')) {
-            title.setAttribute('data-animate', 'fade-up');
-        }
-
-        exercises.querySelectorAll('.exercise').forEach((ex, index) => {
-            if (!ex.hasAttribute('data-animate')) {
-                ex.setAttribute('data-animate', 'fade-up');
-            }
+        // Observe all animated elements
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            observer.observe(el);
         });
     }
 
@@ -562,53 +387,6 @@
         });
     }
 
-    // ==========================================
-    // DECO BORDER ANIMATION
-    // ==========================================
-
-    function initDecoBorders() {
-        document.querySelectorAll('.deco-border').forEach(border => {
-            if (!border.hasAttribute('data-animate')) {
-                border.setAttribute('data-animate', 'fade');
-            }
-        });
-    }
-
-    // ==========================================
-    // TABLE OF CONTENTS ANIMATIONS
-    // ==========================================
-
-    function initTocAnimations() {
-        // Animate introduction link
-        const tocIntro = document.querySelector('.toc-intro');
-        if (tocIntro && !tocIntro.hasAttribute('data-animate')) {
-            tocIntro.setAttribute('data-animate', 'fade-up');
-        }
-
-        const tocParts = document.querySelectorAll('.toc-part');
-        tocParts.forEach((part, partIndex) => {
-            // Animate part header
-            const header = part.querySelector('.toc-part-header');
-            if (header && !header.hasAttribute('data-animate')) {
-                header.setAttribute('data-animate', 'fade-up');
-            }
-
-            // Animate chapters
-            const chapters = part.querySelectorAll('.toc-chapter');
-            chapters.forEach((chapter, chapterIndex) => {
-                if (!chapter.hasAttribute('data-animate')) {
-                    chapter.setAttribute('data-animate', 'fade-up');
-                    chapter.setAttribute('data-stagger', String(Math.min(chapterIndex + 1, 10)));
-                }
-            });
-
-            // Make part a stagger group
-            const chapterList = part.querySelector('.toc-chapters');
-            if (chapterList && !chapterList.hasAttribute('data-animate-group')) {
-                chapterList.setAttribute('data-animate-group', 'stagger');
-            }
-        });
-    }
 
     // ==========================================
     // SCROLL TO TOP BUTTON
@@ -1278,46 +1056,13 @@
     }
 
     // ==========================================
-    // CHECK IF RETURNING VIA BACK/FORWARD
-    // ==========================================
-
-    function isBackForwardNavigation() {
-        if (performance.navigation && performance.navigation.type === 2) {
-            return true;
-        }
-        if (performance.getEntriesByType) {
-            const navEntry = performance.getEntriesByType('navigation')[0];
-            if (navEntry && navEntry.type === 'back_forward') {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // ==========================================
     // INITIALIZE ALL FEATURES
     // ==========================================
 
     function init() {
-        // Check if this is a back/forward navigation
-        const skipAnimations = isBackForwardNavigation();
-
-        // Auto-add animation attributes (before observer init)
-        initAutoAnimateHero(skipAnimations);
-        initAutoAnimateContent();
-        initAutoAnimateExercises();
-        initDecoBorders();
-        initTocAnimations();
-
-        // If returning via back button, show everything immediately
-        if (skipAnimations) {
-            document.querySelectorAll('[data-animate]').forEach(el => {
-                el.classList.add('is-visible');
-            });
-        } else {
-            // Initialize animation observer for fresh page loads
-            initScrollAnimations();
-        }
+        // Initialize simplified animation system
+        // CSS handles all stagger timing, JS just adds .is-visible
+        initAnimations();
 
         // Initialize unified scroll handler (handles progress bar, header, scroll-to-top, toolbar)
         initUnifiedScrollHandler();

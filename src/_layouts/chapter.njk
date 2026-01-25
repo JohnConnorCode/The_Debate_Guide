@@ -60,22 +60,22 @@ pageType: chapter
 <section class="chapter-hero section-dark">
     {% include "sunburst.njk" %}
 
-    <p class="chapter-part">{{ partTitle }}</p>
-    <div class="chapter-number">{{ chapterNumber | padZero }}</div>
-    <h1 class="chapter-title">{{ chapterTitle | upper }}</h1>
-    <p class="chapter-subtitle">{{ subtitle }}</p>
-    {% if readingTime %}<p class="reading-time">{{ readingTime }}</p>{% endif %}
+    <p class="chapter-part" data-animate>{{ partTitle }}</p>
+    <div class="chapter-number" data-animate>{{ chapterNumber | padZero }}</div>
+    <h1 class="chapter-title" data-animate>{{ chapterTitle | upper }}</h1>
+    <p class="chapter-subtitle" data-animate>{{ subtitle }}</p>
+    {% if readingTime %}<p class="reading-time" data-animate>{{ readingTime }}</p>{% endif %}
 </section>
 
 {% if chapterImage %}
 <div class="chapter-image">
-    <div class="image-container" role="img" aria-label="{{ chapterImageAlt or 'Decorative illustration for Chapter ' + chapterNumber }}">
+    <div class="image-container">
         <img src="{{ '/assets/illustrations/chapter-' + (chapterNumber | padZero) + '.svg' | url }}" alt="{{ chapterImageAlt or 'Art Deco illustration for Chapter ' + chapterNumber }}" loading="lazy" />
     </div>
 </div>
 {% endif %}
 
-<div class="deco-border"></div>
+<div class="deco-border" data-animate="fade"></div>
 
 {# Chapter Content - includes article, exercises, and navigation #}
 <article class="section section-dark">
@@ -88,7 +88,7 @@ pageType: chapter
 {# Chapter Quiz #}
 {% include "quiz.njk" %}
 
-<div class="deco-border"></div>
+<div class="deco-border" data-animate="fade"></div>
 {% endblock %}
 
 {% block extras %}

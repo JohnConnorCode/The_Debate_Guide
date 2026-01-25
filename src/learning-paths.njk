@@ -1,0 +1,336 @@
+---
+layout: base.njk
+title: "Learning Paths — The Debate Guide"
+description: "Curated reading paths for different goals: workplace persuasion, logic mastery, Socratic questioning, and more."
+permalink: /learning-paths/
+---
+{% block styles %}
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<style>
+/* Learning Paths Page Styles */
+.paths-intro {
+    max-width: 680px;
+    margin: 0 auto var(--space-lg);
+    text-align: center;
+}
+
+.paths-intro p {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+.paths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.path-card {
+    background: rgba(var(--color-white-rgb), 0.03);
+    border: 1px solid rgba(var(--color-white-rgb), 0.1);
+    padding: var(--space-md);
+    transition: all 0.2s ease-out;
+}
+
+[data-theme="light"] .path-card {
+    background: rgba(var(--color-black-rgb), 0.02);
+    border-color: rgba(var(--color-black-rgb), 0.1);
+}
+
+.path-card:hover {
+    border-color: var(--accent);
+    background: rgba(var(--color-gold-rgb), 0.03);
+}
+
+.path-card.featured {
+    border-color: var(--accent);
+    background: rgba(var(--color-gold-rgb), 0.05);
+    grid-column: 1 / -1;
+}
+
+.path-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.path-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--color-gold-rgb), 0.1);
+    border: 1px solid rgba(var(--color-gold-rgb), 0.3);
+    flex-shrink: 0;
+}
+
+.path-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.path-title-group {
+    flex: 1;
+}
+
+.path-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-1);
+}
+
+.path-time {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent);
+}
+
+.path-description {
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+    line-height: var(--leading-snug);
+    margin-bottom: var(--space-sm);
+}
+
+.path-chapters {
+    border-top: 1px solid rgba(var(--color-white-rgb), 0.1);
+    padding-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+[data-theme="light"] .path-chapters {
+    border-color: rgba(var(--color-black-rgb), 0.1);
+}
+
+.path-chapters-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    margin-bottom: var(--space-xs);
+}
+
+.path-chapter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.path-chapter-item {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-xs);
+}
+
+.path-chapter-item a {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.path-chapter-item a:hover {
+    color: var(--accent);
+}
+
+.path-chapter-number {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    min-width: 1.5em;
+}
+
+.path-start {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-2) var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    transition: all 0.2s ease-out;
+}
+
+.path-start:hover {
+    background: var(--accent);
+    color: var(--color-dark-bg);
+}
+
+.path-start svg {
+    width: 16px;
+    height: 16px;
+}
+
+.paths-footer {
+    text-align: center;
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(var(--color-white-rgb), 0.1);
+}
+
+[data-theme="light"] .paths-footer {
+    border-color: rgba(var(--color-black-rgb), 0.1);
+}
+
+.paths-footer p {
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    color: var(--text-muted);
+}
+
+.paths-footer a {
+    color: var(--accent);
+}
+
+@media (max-width: 720px) {
+    .paths-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .path-card.featured {
+        grid-column: 1;
+    }
+}
+</style>
+{% endblock %}
+
+{# Page Hero #}
+<section class="chapter-hero section-dark">
+    {% include "sunburst.njk" %}
+    <p class="chapter-part">Reference</p>
+    <div class="chapter-number" style="opacity: 0.05;">&#9670;</div>
+    <h1 class="chapter-title">LEARNING PATHS</h1>
+    <p class="chapter-subtitle">Curated journeys through classical rhetoric</p>
+</section>
+
+<div class="deco-border"></div>
+
+<main class="section section-dark">
+    <article class="chapter-content" style="max-width: 960px;">
+
+        <div class="paths-intro">
+            <p>
+                The Debate Guide is designed to be read sequentially, but sometimes you have a specific goal. These curated paths group chapters by theme, letting you focus on what matters most to you right now.
+            </p>
+        </div>
+
+        {# Helper macro for chapter URL lookup #}
+        {%- macro getChapterUrl(chapterNum) -%}
+            {%- for part in chapters.parts -%}
+                {%- for chapter in part.chapters -%}
+                    {%- if chapter.number == chapterNum -%}
+                        {{ '/chapters/' + part.id + '/chapter-' + (chapter.number | padZero) + '-' + chapter.slug + '/' | url }}
+                    {%- endif -%}
+                {%- endfor -%}
+            {%- endfor -%}
+        {%- endmacro -%}
+
+        {# Helper macro for chapter title lookup #}
+        {%- macro getChapterTitle(chapterNum) -%}
+            {%- for part in chapters.parts -%}
+                {%- for chapter in part.chapters -%}
+                    {%- if chapter.number == chapterNum -%}
+                        {{ chapter.title }}
+                    {%- endif -%}
+                {%- endfor -%}
+            {%- endfor -%}
+        {%- endmacro -%}
+
+        {# Icon SVGs #}
+        {%- macro pathIcon(icon) -%}
+            {%- if icon == "scroll" -%}
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>
+            {%- elif icon == "briefcase" -%}
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            {%- elif icon == "target" -%}
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            {%- elif icon == "question" -%}
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg>
+            {%- elif icon == "globe" -%}
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            {%- elif icon == "book" -%}
+            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            {%- else -%}
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            {%- endif -%}
+        {%- endmacro -%}
+
+        <div class="paths-grid">
+            {%- for path in paths.paths -%}
+            <div class="path-card{% if path.id == 'complete-journey' %} featured{% endif %}">
+                <div class="path-header">
+                    <div class="path-icon">
+                        {{ pathIcon(path.icon) }}
+                    </div>
+                    <div class="path-title-group">
+                        <h2 class="path-title">{{ path.title }}</h2>
+                        <span class="path-time">{{ path.time }}</span>
+                    </div>
+                </div>
+
+                <p class="path-description">{{ path.description }}</p>
+
+                <div class="path-chapters">
+                    <div class="path-chapters-label">{{ path.chapters | length }} Chapters</div>
+                    <ul class="path-chapter-list">
+                        {%- for chapterNum in path.chapters -%}
+                        <li class="path-chapter-item">
+                            <span class="path-chapter-number">{{ chapterNum }}.</span>
+                            <a href="{{ getChapterUrl(chapterNum) | trim }}">{{ getChapterTitle(chapterNum) | trim }}</a>
+                        </li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+
+                <a href="{{ getChapterUrl(path.chapters[0]) | trim }}" class="path-start">
+                    Start Path
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            {%- endfor -%}
+        </div>
+
+        <div class="paths-footer">
+            <p>
+                All paths draw from the same twenty chapters. For the complete experience, start with <a href="{{ '/chapters/part-1/chapter-01-why-debate-matters/' | url }}">Chapter 1: Why Debate Matters</a>.
+            </p>
+        </div>
+
+    </article>
+
+    {# Navigation #}
+    <nav class="chapter-nav">
+        <a href="{{ '/' | url }}" class="chapter-nav-prev">
+            <span class="chapter-nav-label">&larr; Back</span>
+            <span class="chapter-nav-title">Table of Contents</span>
+        </a>
+        <div class="chapter-nav-contents">
+            <a href="/">Contents</a>
+        </div>
+        <a href="{{ '/quick-tactics/' | url }}" class="chapter-nav-next">
+            <span class="chapter-nav-label">Next &rarr;</span>
+            <span class="chapter-nav-title">Quick Tactics</span>
+        </a>
+    </nav>
+</main>
+
+<div class="deco-border"></div>

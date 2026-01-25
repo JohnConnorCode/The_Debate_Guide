@@ -1089,9 +1089,10 @@
 
         // Show hints used info if applicable
         if (totalHintsUsed > 0) {
+            const hintPenalty = Math.min(totalHintsUsed * 5, 25);
             const hintsNote = document.createElement('p');
             hintsNote.className = 'quiz-hints-note';
-            hintsNote.textContent = `(${totalHintsUsed} hint${totalHintsUsed > 1 ? 's' : ''} used)`;
+            hintsNote.innerHTML = `<span class="hints-count">${totalHintsUsed} hint${totalHintsUsed > 1 ? 's' : ''} used</span> <span class="hints-penalty" title="Each hint reduces your score by 5%, up to 25% maximum">(-${hintPenalty}% penalty)</span>`;
             elements.resultMessage.insertAdjacentElement('afterend', hintsNote);
         }
 

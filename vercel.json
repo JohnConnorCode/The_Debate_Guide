@@ -3,6 +3,73 @@
   "buildCommand": "npx @11ty/eleventy",
   "outputDirectory": "_site",
   "framework": "eleventy",
+  "redirects": [
+    {
+      "source": "/chapters/part-2/chapter-09-logos-power-of-reason/:path*",
+      "destination": "/chapters/part-2/chapter-09-logos/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-1/chapter-02-greek-inheritance/:path*",
+      "destination": "/chapters/part-1/chapter-02-the-greek-legacy/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-1/chapter-03-rhetoric-triangle/:path*",
+      "destination": "/chapters/part-1/chapter-03-the-rhetorical-triangle/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-1/chapter-04-kairos-right-moment/:path*",
+      "destination": "/chapters/part-1/chapter-04-kairos/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-2/chapter-06-ethos-in-action/:path*",
+      "destination": "/chapters/part-2/chapter-06-character-in-action/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-2/chapter-07-pathos-emotional-appeal/:path*",
+      "destination": "/chapters/part-2/chapter-07-pathos/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-2/chapter-08-ethics-of-emotion/:path*",
+      "destination": "/chapters/part-2/chapter-08-the-emotions-catalog/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-2/chapter-11-argument-construction/:path*",
+      "destination": "/chapters/part-3/chapter-11-building-your-case/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-2/chapter-12-refutation-and-rebuttal/:path*",
+      "destination": "/chapters/part-3/chapter-12-the-art-of-refutation/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-2/chapter-13-common-fallacies/:path*",
+      "destination": "/chapters/part-3/chapter-13-fallacies-and-traps/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-4/chapter-17-debate-in-classroom/:path*",
+      "destination": "/chapters/part-4/chapter-17-debate-in-education/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-4/chapter-18-online-discourse/:path*",
+      "destination": "/chapters/part-4/chapter-18-digital-discourse/",
+      "permanent": true
+    },
+    {
+      "source": "/chapters/part-4/chapter-19-debate-in-democracy/:path*",
+      "destination": "/chapters/part-4/chapter-19-debate-as-civic-duty/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

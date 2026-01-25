@@ -6,6 +6,13 @@
             <span class="logo-text">THE DEBATE GUIDE</span>
         </a>
 
+        {# Reading position indicator - shown on chapter pages #}
+        {% if pageType == "chapter" and chapterNumber %}
+        <div class="reading-position" aria-live="polite" aria-label="Reading progress">
+            <span class="reading-position-text">Chapter <span class="reading-position-current">{{ chapterNumber }}</span> of 20</span>
+        </div>
+        {% endif %}
+
         {# Desktop navigation #}
         <nav class="nav nav-desktop" aria-label="Main navigation">
             {% if pageType == "home" %}
