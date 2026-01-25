@@ -129,12 +129,11 @@
    ========================================== */
 
 .sunburst-hero {
-    opacity: 0;
-    animation: fadeIn 1s ease-out 0.2s forwards;
+    /* Static opacity - no fadeIn animation to reduce visual noise */
 }
 
 .sunburst-hero svg {
-    animation: rotate 240s linear infinite;
+    animation: rotate 600s linear infinite;
 }
 
 /* Chapter sunbursts - slower rotation */
