@@ -233,11 +233,12 @@
    SPECIAL COMPONENT ANIMATIONS
    ========================================== */
 
-/* Hero elements stagger */
-.chapter-hero [data-animate="fade-up"]:nth-child(1).is-visible { animation-delay: 0ms; }
-.chapter-hero [data-animate="fade-up"]:nth-child(2).is-visible { animation-delay: 80ms; }
-.chapter-hero [data-animate="fade-up"]:nth-child(3).is-visible { animation-delay: 160ms; }
-.chapter-hero [data-animate="fade-up"]:nth-child(4).is-visible { animation-delay: 240ms; }
+/* Hero animations - JS controls stagger via setTimeout, CSS just provides base timing */
+.hero [data-animate].is-visible,
+.chapter-hero [data-animate].is-visible,
+.toc-hero [data-animate].is-visible {
+    animation-delay: 0ms; /* JS handles stagger */
+}
 
 /* Vocabulary box */
 .vocabulary-box[data-animate].is-visible {
@@ -498,12 +499,7 @@
     [data-stagger="4"].is-visible { animation-delay: 90ms; }
     [data-stagger="5"].is-visible { animation-delay: 120ms; }
 
-    /* Simplify hero animations */
-    .chapter-hero [data-animate="fade-up"]:nth-child(1).is-visible { animation-delay: 0ms; }
-    .chapter-hero [data-animate="fade-up"]:nth-child(2).is-visible { animation-delay: 50ms; }
-    .chapter-hero [data-animate="fade-up"]:nth-child(3).is-visible { animation-delay: 100ms; }
-    .chapter-hero [data-animate="fade-up"]:nth-child(4).is-visible { animation-delay: 150ms; }
-    .chapter-hero [data-animate="fade-up"]:nth-child(5).is-visible { animation-delay: 200ms; }
+    /* Hero animations simplified - JS controls stagger */
 
     /* Disable sunburst rotation on mobile for performance */
     .sunburst-hero svg,

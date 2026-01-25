@@ -167,20 +167,25 @@
     // ==========================================
 
     function initAutoAnimateHero(skipAnimations) {
-        const hero = document.querySelector('.chapter-hero, .toc-hero');
+        // Include main hero, chapter hero, and TOC hero
+        const hero = document.querySelector('.hero, .chapter-hero, .toc-hero');
         if (!hero) return;
 
-        // Elements to animate in hero
+        // Elements to animate - includes main hero, chapter hero, and TOC hero elements
         const heroElements = hero.querySelectorAll(
-            '.chapter-part, .chapter-number, .chapter-title, .chapter-subtitle, ' +
-            '.toc-badge, .toc-title, .toc-subtitle'
+            '.hero-badge, .hero-headline, .hero-sub, .hero-ctas, ' +  // main hero
+            '.chapter-part, .chapter-number, .chapter-title, .chapter-subtitle, ' +  // chapter hero
+            '.toc-badge, .toc-title, .toc-tagline, .toc-subtitle'  // TOC hero
         );
 
-        heroElements.forEach((el, index) => {
+        heroElements.forEach((el) => {
             if (!el.hasAttribute('data-animate')) {
                 el.setAttribute('data-animate', 'fade-up');
             }
         });
+
+        // Use consistent 120ms stagger (smooth but not too slow)
+        const STAGGER_DELAY = 120;
 
         if (skipAnimations) {
             // Show immediately on back navigation
@@ -191,7 +196,7 @@
             heroElements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add('is-visible');
-                }, index * 100); // 100ms between each element
+                }, index * STAGGER_DELAY);
             });
         }
     }
@@ -234,7 +239,8 @@
             header: document.querySelector('.header'),
             scrollToTop: document.querySelector('.scroll-to-top'),
             toolbar: document.querySelector('.reading-toolbar'),
-            keyboardHint: document.querySelector('.keyboard-hint')
+            keyboardHint: document.querySelector('.keyboard-hint'),
+            readingPosition: document.querySelector('.reading-position')
         };
 
         let ticking = false;
@@ -288,7 +294,16 @@
                 }
             }
 
-            // 5. Keyboard hint at bottom
+            // 5. Reading position indicator (Chapter X of 20)
+            if (elements.readingPosition) {
+                if (scrollTop > 150) {
+                    elements.readingPosition.classList.add('is-visible');
+                } else {
+                    elements.readingPosition.classList.remove('is-visible');
+                }
+            }
+
+            // 6. Keyboard hint at bottom
             if (elements.keyboardHint && scrollTop + windowHeight > documentHeight - 200) {
                 elements.keyboardHint.classList.add('visible');
                 clearTimeout(keyboardHintTimeout);

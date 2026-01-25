@@ -45,6 +45,11 @@
     --accent-hover: var(--color-gold-light);
     --accent-dark: var(--color-gold-dark);
 
+    /* Toast/notification tokens - always readable (dark mode: light text on dark bg) */
+    --toast-bg: var(--color-ink);
+    --toast-text: var(--color-paper);
+    --toast-border: rgba(var(--color-gold-rgb), 0.3);
+
     /* ==========================================
        TYPOGRAPHY
        ========================================== */
@@ -256,6 +261,11 @@
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+    /* Toast tokens for light mode - dark text on light bg */
+    --toast-bg: var(--color-paper);
+    --toast-text: var(--color-ink);
+    --toast-border: rgba(var(--color-ink-rgb), 0.15);
 }
 
 /* Auto light mode for system preference */
@@ -270,6 +280,11 @@
         --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
         --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
         --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+        /* Toast tokens for auto light mode */
+        --toast-bg: var(--color-paper);
+        --toast-text: var(--color-ink);
+        --toast-border: rgba(var(--color-ink-rgb), 0.15);
     }
 }
 
