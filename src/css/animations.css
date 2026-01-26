@@ -15,7 +15,7 @@
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -56,7 +56,7 @@
    ========================================== */
 
 [data-animate].is-visible {
-    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 [data-animate="fade"].is-visible {
@@ -74,11 +74,12 @@
 
 .hero-animate {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
+    transition: none;
 }
 
 .hero-animate.is-visible {
-    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ==========================================

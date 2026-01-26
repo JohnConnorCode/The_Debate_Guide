@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    {# CRITICAL: Inline styles to hide animated elements IMMEDIATELY - before any external resources load #}
+    <style>
+        .hero-animate, [data-animate] {
+            opacity: 0 !important;
+        }
+        .hero-animate.is-visible, [data-animate].is-visible {
+            opacity: 1 !important;
+        }
+    </style>
+    <script>document.documentElement.classList.remove('no-js');</script>
+
     <meta name="view-transition" content="same-origin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ title }}{% if title != site.title %} — {{ site.title }}{% endif %}</title>
@@ -40,12 +52,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icons/icon-16x16.png' | url }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icons/apple-touch-icon.png' | url }}">
 
-    {# Prevent theme/font flash AND enable animations - runs before render #}
+    {# Prevent theme/font flash #}
     <script>
     (function() {
-        // Remove no-js class IMMEDIATELY to enable CSS animations
-        document.documentElement.classList.remove('no-js');
-
         try {
             var theme = localStorage.getItem('theme');
             if (!theme) {

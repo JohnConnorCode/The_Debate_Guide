@@ -49,7 +49,7 @@
         // Track pending animations to stagger them
         let pendingAnimations = [];
         let animationTimeout = null;
-        const STAGGER_DELAY = 60; // ms between each element
+        const STAGGER_DELAY = 100; // ms between each element
 
         function processPendingAnimations() {
             // Sort by vertical position for natural top-to-bottom reveal
@@ -193,8 +193,8 @@
 
         if (allHeroElements.length === 0) return;
 
-        const STAGGER_DELAY = 130; // ms between each element
-        const INITIAL_DELAY = 100; // ms delay before first animation
+        const STAGGER_DELAY = 220; // ms between each element - slow cascade
+        const INITIAL_DELAY = 150; // ms delay before first animation
 
         if (skipAnimations) {
             allHeroElements.forEach(el => el.classList.add('is-visible'));
