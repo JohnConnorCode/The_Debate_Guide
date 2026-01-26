@@ -193,8 +193,8 @@
 
         if (allHeroElements.length === 0) return;
 
-        const STAGGER_DELAY = 220; // ms between each element - slow cascade
-        const INITIAL_DELAY = 150; // ms delay before first animation
+        const STAGGER_DELAY = 120; // ms between each element (matches superdebate)
+        const INITIAL_DELAY = 100; // ms delay before first animation
 
         if (skipAnimations) {
             allHeroElements.forEach(el => el.classList.add('is-visible'));
