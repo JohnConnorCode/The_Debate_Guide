@@ -380,23 +380,29 @@ pageType: home
     /* Tablet breakpoint */
     @media (max-width: 768px) {
         .toc-hero {
-            padding: calc(var(--header-height) + var(--space-lg)) var(--space-md) var(--space-lg);
-            min-height: auto;
+            min-height: 50vh;
+            min-height: 50dvh;
+            padding: calc(var(--header-height) + var(--space-xl)) var(--space-md) var(--space-xl);
         }
 
         .toc-title {
             font-size: clamp(var(--text-3xl), 10vw, var(--text-5xl));
-            margin-bottom: var(--space-2);
+            margin-bottom: var(--space-sm);
         }
 
         .toc-tagline {
             font-size: clamp(var(--text-lg), 3.5vw, var(--text-2xl));
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--space-md);
         }
 
         .toc-subtitle {
             font-size: var(--text-md);
             line-height: var(--leading-relaxed);
+            margin-top: var(--space-sm);
+        }
+
+        .toc-audience {
+            margin-top: var(--space-md);
         }
 
         .toc-badge {
@@ -435,20 +441,21 @@ pageType: home
     /* Mobile breakpoint */
     @media (max-width: 600px) {
         .toc-hero {
-            padding: calc(var(--header-height) + var(--space-md)) var(--space-md) var(--space-lg);
-            min-height: auto;
+            min-height: 50vh;
+            min-height: 50dvh;
+            padding: calc(var(--header-height) + var(--space-lg)) var(--space-md) var(--space-lg);
         }
 
         .toc-title {
             font-size: clamp(var(--text-2xl), 11vw, var(--text-4xl));
-            margin-bottom: var(--space-1);
+            margin-bottom: var(--space-xs);
             line-height: var(--leading-none);
         }
 
         .toc-tagline {
             font-size: clamp(var(--text-base), 4vw, var(--text-lg));
             letter-spacing: var(--tracking-caps);
-            margin-bottom: var(--space-xs);
+            margin-bottom: var(--space-sm);
         }
 
         .toc-subtitle {
@@ -459,7 +466,7 @@ pageType: home
 
         .toc-audience {
             font-size: var(--text-xs);
-            margin-top: var(--space-xs);
+            margin-top: var(--space-sm);
         }
 
         .toc-badge {
@@ -537,7 +544,9 @@ pageType: home
     /* Extra small screens */
     @media (max-width: 380px) {
         .toc-hero {
-            padding: calc(var(--header-height) + var(--space-sm)) var(--space-sm) var(--space-md);
+            min-height: 50vh;
+            min-height: 50dvh;
+            padding: calc(var(--header-height) + var(--space-md)) var(--space-sm) var(--space-md);
         }
 
         .toc-title {

@@ -1578,6 +1578,167 @@ body.mobile-nav-open {
 }
 
 /* ==========================================
+   MOBILE NAV ACCORDION SECTIONS
+   Collapsible part/chapter navigation
+   ========================================== */
+
+.mobile-nav-section {
+    border-bottom: 1px solid rgba(var(--color-white-rgb), 0.08);
+}
+
+.mobile-nav-section:last-of-type {
+    border-bottom: none;
+}
+
+.mobile-nav-section-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-sm) var(--space-sm);
+    min-height: 56px;
+    background: transparent;
+    border: none;
+    border-left: 2px solid transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+}
+
+.mobile-nav-section-toggle:hover,
+.mobile-nav-section-toggle:active {
+    background: rgba(var(--color-gold-rgb), 0.05);
+    border-left-color: rgba(var(--color-gold-rgb), 0.3);
+}
+
+.mobile-nav-section-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+.mobile-nav-section-number {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    color: var(--accent);
+    opacity: 0.5;
+    min-width: 2rem;
+}
+
+.mobile-nav-section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.mobile-nav-chevron {
+    color: var(--text-muted);
+    transition: transform 0.2s ease-out;
+    flex-shrink: 0;
+}
+
+.mobile-nav-section-toggle[aria-expanded="true"] .mobile-nav-chevron {
+    transform: rotate(180deg);
+}
+
+.mobile-nav-section-toggle[aria-expanded="true"] {
+    background: rgba(var(--color-gold-rgb), 0.08);
+    border-left-color: var(--accent);
+}
+
+.mobile-nav-chapters {
+    display: none;
+    padding: 0 var(--space-sm) var(--space-sm) var(--space-lg);
+    background: rgba(var(--color-ink-rgb), 0.3);
+}
+
+.mobile-nav-chapters.is-open {
+    display: block;
+}
+
+.mobile-nav-chapter {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+    min-height: 44px;
+    text-decoration: none;
+    color: var(--text-primary);
+    border-radius: 2px;
+    transition: background 0.15s ease-out;
+}
+
+.mobile-nav-chapter:hover,
+.mobile-nav-chapter:active {
+    background: rgba(var(--color-gold-rgb), 0.1);
+}
+
+.mobile-nav-chapter:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+.mobile-nav-chapter-num {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent);
+    min-width: 1.75rem;
+}
+
+.mobile-nav-chapter-title {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+}
+
+/* Standalone links in mobile nav (not inside accordion) */
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    letter-spacing: var(--tracking-wider);
+    color: var(--text-primary);
+    padding: var(--space-sm) var(--space-sm);
+    min-height: 56px;
+    border-left: 2px solid transparent;
+    border-bottom: var(--border-width) solid rgba(var(--color-white-rgb), 0.08);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    position: relative;
+}
+
+.mobile-nav-link::after {
+    content: '→';
+    position: absolute;
+    right: var(--space-sm);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all var(--transition-fast);
+    color: var(--accent);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+    color: var(--accent);
+    background: rgba(var(--color-gold-rgb), 0.08);
+    border-left-color: var(--accent);
+    padding-left: var(--space-md);
+}
+
+.mobile-nav-link:hover::after,
+.mobile-nav-link:active::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-nav-link:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================
    KEYBOARD SHORTCUTS HELP MODAL
    ========================================== */
 

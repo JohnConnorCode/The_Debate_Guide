@@ -2,9 +2,9 @@
    ANIMATION SYSTEM
 
    How it works:
-   1. Elements with [data-animate] start hidden (opacity: 0)
+   1. Elements with [data-animate] or .hero-animate start hidden (opacity: 0)
    2. JS adds .is-visible class to trigger animation
-   3. CSS animation-delay on nth-child creates stagger
+   3. CSS animation-delay creates stagger effect
    4. Animation uses forwards fill-mode to keep final state
    ========================================== */
 
@@ -15,7 +15,7 @@
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -55,7 +55,12 @@
 
 [data-animate] {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
+}
+
+.hero-animate {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 [data-animate="fade"] {
@@ -68,10 +73,15 @@
 
 /* ==========================================
    VISIBLE STATE - ANIMATION TRIGGERS
+   Using original timing: 0.5s, cubic-bezier(0.43, 0.13, 0.23, 0.96)
    ========================================== */
 
 [data-animate].is-visible {
-    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: fadeInUp 0.5s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+}
+
+.hero-animate.is-visible {
+    animation: fadeInUp 0.5s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
 }
 
 [data-animate="fade"].is-visible {
@@ -83,36 +93,39 @@
 }
 
 /* ==========================================
+   HOMEPAGE HERO STAGGER (numbered classes)
+   Uses .hero-animate-1, .hero-animate-2, etc.
+   ========================================== */
+
+.hero-animate-1.is-visible { animation-delay: 0ms; }
+.hero-animate-2.is-visible { animation-delay: 120ms; }
+.hero-animate-3.is-visible { animation-delay: 240ms; }
+.hero-animate-4.is-visible { animation-delay: 360ms; }
+.hero-animate-5.is-visible { animation-delay: 480ms; }
+
+/* ==========================================
    CHAPTER HERO STAGGER
+   Uses direct child selector for nth-child to work
    Sunburst is child 1 (no data-animate)
    Content elements are children 2-6
    ========================================== */
 
-.chapter-hero [data-animate]:nth-child(2).is-visible { animation-delay: 0ms; }
-.chapter-hero [data-animate]:nth-child(3).is-visible { animation-delay: 120ms; }
-.chapter-hero [data-animate]:nth-child(4).is-visible { animation-delay: 240ms; }
-.chapter-hero [data-animate]:nth-child(5).is-visible { animation-delay: 360ms; }
-.chapter-hero [data-animate]:nth-child(6).is-visible { animation-delay: 480ms; }
-
-/* ==========================================
-   HOMEPAGE HERO STAGGER
-   ========================================== */
-
-.hero [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
-.hero [data-animate]:nth-child(2).is-visible { animation-delay: 120ms; }
-.hero [data-animate]:nth-child(3).is-visible { animation-delay: 240ms; }
-.hero [data-animate]:nth-child(4).is-visible { animation-delay: 360ms; }
-.hero [data-animate]:nth-child(5).is-visible { animation-delay: 480ms; }
+.chapter-hero > [data-animate]:nth-child(2).is-visible { animation-delay: 0ms; }
+.chapter-hero > [data-animate]:nth-child(3).is-visible { animation-delay: 120ms; }
+.chapter-hero > [data-animate]:nth-child(4).is-visible { animation-delay: 240ms; }
+.chapter-hero > [data-animate]:nth-child(5).is-visible { animation-delay: 360ms; }
+.chapter-hero > [data-animate]:nth-child(6).is-visible { animation-delay: 480ms; }
 
 /* ==========================================
    TOC HERO STAGGER
+   Homepage uses .hero-animate classes, not [data-animate]
    ========================================== */
 
-.toc-hero [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
-.toc-hero [data-animate]:nth-child(2).is-visible { animation-delay: 100ms; }
-.toc-hero [data-animate]:nth-child(3).is-visible { animation-delay: 200ms; }
-.toc-hero [data-animate]:nth-child(4).is-visible { animation-delay: 300ms; }
-.toc-hero [data-animate]:nth-child(5).is-visible { animation-delay: 400ms; }
+.toc-hero .hero-animate-1.is-visible { animation-delay: 0ms; }
+.toc-hero .hero-animate-2.is-visible { animation-delay: 120ms; }
+.toc-hero .hero-animate-3.is-visible { animation-delay: 240ms; }
+.toc-hero .hero-animate-4.is-visible { animation-delay: 360ms; }
+.toc-hero .hero-animate-5.is-visible { animation-delay: 480ms; }
 
 /* ==========================================
    TOC CHAPTER LIST STAGGER
@@ -264,14 +277,15 @@
    ========================================== */
 
 @media (max-width: 768px) {
-    [data-animate].is-visible {
-        animation-duration: 0.5s;
+    [data-animate].is-visible,
+    .hero-animate.is-visible {
+        animation-duration: 0.4s;
     }
 
-    .chapter-hero [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
-    .chapter-hero [data-animate]:nth-child(4).is-visible { animation-delay: 200ms; }
-    .chapter-hero [data-animate]:nth-child(5).is-visible { animation-delay: 300ms; }
-    .chapter-hero [data-animate]:nth-child(6).is-visible { animation-delay: 400ms; }
+    .chapter-hero > [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
+    .chapter-hero > [data-animate]:nth-child(4).is-visible { animation-delay: 200ms; }
+    .chapter-hero > [data-animate]:nth-child(5).is-visible { animation-delay: 300ms; }
+    .chapter-hero > [data-animate]:nth-child(6).is-visible { animation-delay: 400ms; }
 
     .sunburst-hero svg,
     .chapter-hero .sunburst svg {
@@ -286,8 +300,9 @@
 }
 
 @media (max-width: 480px) {
-    [data-animate].is-visible {
-        animation-duration: 0.4s;
+    [data-animate].is-visible,
+    .hero-animate.is-visible {
+        animation-duration: 0.35s;
     }
 
     @keyframes fadeInUpSmall {
@@ -301,7 +316,8 @@
         }
     }
 
-    [data-animate].is-visible {
+    [data-animate].is-visible,
+    .hero-animate.is-visible {
         animation-name: fadeInUpSmall;
     }
 
@@ -320,12 +336,14 @@
    ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-    [data-animate] {
+    [data-animate],
+    .hero-animate {
         opacity: 1;
         transform: none;
     }
 
-    [data-animate].is-visible {
+    [data-animate].is-visible,
+    .hero-animate.is-visible {
         animation: none;
     }
 
@@ -348,7 +366,8 @@
    NO-JS FALLBACK
    ========================================== */
 
-.no-js [data-animate] {
+.no-js [data-animate],
+.no-js .hero-animate {
     opacity: 1;
     transform: none;
 }
@@ -358,7 +377,8 @@
    ========================================== */
 
 @media print {
-    [data-animate] {
+    [data-animate],
+    .hero-animate {
         opacity: 1;
         transform: none;
         animation: none;

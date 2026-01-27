@@ -172,20 +172,26 @@
         const hero = document.querySelector('.hero, .chapter-hero, .toc-hero');
         if (!hero) return;
 
-        // Get all hero elements with data-animate attribute
-        const heroElements = hero.querySelectorAll('[data-animate]');
+        // Get BOTH types of animated elements:
+        // 1. Elements with .hero-animate class (used on homepage)
+        // 2. Elements with [data-animate] attribute (used on chapter pages)
+        const heroAnimateElements = hero.querySelectorAll('.hero-animate');
+        const dataAnimateElements = hero.querySelectorAll('[data-animate]');
 
-        if (heroElements.length === 0) return;
+        // Combine both collections into single array
+        const allElements = [...heroAnimateElements, ...dataAnimateElements];
+
+        if (allElements.length === 0) return;
 
         if (skipAnimations) {
             // Skip animations (e.g., back/forward navigation)
-            heroElements.forEach(el => el.classList.add('is-visible'));
+            allElements.forEach(el => el.classList.add('is-visible'));
         } else {
             // Small delay to ensure CSS has parsed, then add is-visible to ALL at once
             // CSS animation-delay handles the stagger timing
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
-                    heroElements.forEach(el => el.classList.add('is-visible'));
+                    allElements.forEach(el => el.classList.add('is-visible'));
                 });
             });
         }
@@ -543,6 +549,41 @@
                 e.preventDefault();
                 firstElement.focus();
             }
+        });
+
+        // Section accordion toggles
+        var sectionToggles = mobileNav.querySelectorAll('.mobile-nav-section-toggle');
+        sectionToggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                var isExpanded = this.getAttribute('aria-expanded') === 'true';
+                var chapters = this.nextElementSibling;
+
+                // Close other sections (accordion behavior - only one open at a time)
+                sectionToggles.forEach(function(otherToggle) {
+                    if (otherToggle !== toggle) {
+                        otherToggle.setAttribute('aria-expanded', 'false');
+                        var otherChapters = otherToggle.nextElementSibling;
+                        if (otherChapters) {
+                            otherChapters.classList.remove('is-open');
+                            otherChapters.setAttribute('aria-hidden', 'true');
+                        }
+                    }
+                });
+
+                // Toggle this section
+                this.setAttribute('aria-expanded', !isExpanded);
+                if (chapters) {
+                    chapters.classList.toggle('is-open', !isExpanded);
+                    chapters.setAttribute('aria-hidden', isExpanded);
+                }
+            });
+        });
+
+        // Close menu on chapter link click
+        mobileNav.querySelectorAll('.mobile-nav-chapter').forEach(function(link) {
+            link.addEventListener('click', function() {
+                setTimeout(closeMenu, 100);
+            });
         });
     }
 

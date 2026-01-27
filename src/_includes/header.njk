@@ -64,17 +64,30 @@
         <span>Search chapters...</span>
     </button>
     <div class="mobile-nav-links">
-        {% if pageType == "home" %}
-            <a href="{{ '/introduction/' | url }}">Introduction</a>
-            <a href="#contents" class="mobile-nav-anchor" aria-current="true">Contents</a>
-        {% elif pageType == "introduction" %}
-            <a href="{{ '/' | url }}">Contents</a>
-            <a href="#part-1" class="mobile-nav-anchor">Begin Reading</a>
-        {% else %}
-            <a href="{{ '/' | url }}">Contents</a>
-            <a href="{{ '/introduction/' | url }}">Introduction</a>
-            <a href="{{ '/about/' | url }}">About</a>
-        {% endif %}
+        <a href="{{ '/' | url }}" class="mobile-nav-link">Contents</a>
+        <a href="{{ '/introduction/' | url }}" class="mobile-nav-link">Introduction</a>
+
+        {% for part in chapters.parts %}
+        <div class="mobile-nav-section">
+            <button class="mobile-nav-section-toggle" aria-expanded="false">
+                <span class="mobile-nav-section-number">{{ part.number }}</span>
+                <span class="mobile-nav-section-title">{{ part.title }}</span>
+                <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+            </button>
+            <div class="mobile-nav-chapters" aria-hidden="true">
+                {% for chapter in part.chapters %}
+                <a href="{{ '/chapters/' + part.id + '/chapter-' + (chapter.number | padZero) + '-' + chapter.slug + '/' | url }}" class="mobile-nav-chapter">
+                    <span class="mobile-nav-chapter-num">{{ chapter.number | padZero }}</span>
+                    <span class="mobile-nav-chapter-title">{{ chapter.title }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        <a href="{{ '/about/' | url }}" class="mobile-nav-link">About</a>
     </div>
     <div class="mobile-nav-cta">
         <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer" class="btn-primary">Join SuperDebate</a>
