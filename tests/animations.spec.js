@@ -80,44 +80,57 @@ test.describe('Animation System - Progressive Enhancement', () => {
   test.describe('Mobile (<=768px)', () => {
     test.use({ viewport: { width: 375, height: 667 } });
 
-    test('content is immediately visible on mobile', async ({ page }) => {
+    test('homepage hero content animates on mobile', async ({ page }) => {
       await page.goto('/');
       await page.waitForLoadState('domcontentloaded');
 
-      // Content should be visible immediately - no waiting for animations
+      // Hero elements should become visible (same as desktop - animations enabled)
       const heroTitle = page.locator('.toc-hero h1, .hero h1').first();
-      await expect(heroTitle).toBeVisible({ timeout: 2000 });
+      await expect(heroTitle).toBeVisible({ timeout: 5000 });
 
+      // Wait for animation to complete (animation is 0.5s + delays up to 0.4s)
+      await page.waitForTimeout(1500);
+
+      // Check opacity is 1 (visible) after animation completes
       const opacity = await heroTitle.evaluate(el =>
         window.getComputedStyle(el).opacity
       );
-      expect(parseFloat(opacity)).toBe(1);
+      expect(parseFloat(opacity)).toBeGreaterThan(0.9);
     });
 
-    test('js-ready class is NOT added on mobile', async ({ page }) => {
+    test('js-ready class IS added on mobile', async ({ page }) => {
       await page.goto('/');
       await page.waitForLoadState('domcontentloaded');
-      await page.waitForTimeout(500);
+
+      // Wait for JS to initialize
+      await page.waitForFunction(() =>
+        document.documentElement.classList.contains('js-ready') ||
+        document.documentElement.classList.contains('no-js')
+      , { timeout: 5000 });
 
       const hasJsReady = await page.evaluate(() =>
         document.documentElement.classList.contains('js-ready')
       );
-      expect(hasJsReady).toBe(false);
+      expect(hasJsReady).toBe(true);
     });
 
-    test('no transform applied on mobile', async ({ page }) => {
+    test('animated elements get is-visible class on mobile', async ({ page }) => {
       await page.goto('/');
       await page.waitForLoadState('domcontentloaded');
+
+      // Wait for animations to trigger
+      await page.waitForTimeout(1000);
 
       const heroAnimateElements = page.locator('.hero-animate');
       const count = await heroAnimateElements.count();
 
       if (count > 0) {
-        const transform = await heroAnimateElements.first().evaluate(el =>
-          window.getComputedStyle(el).transform
-        );
-        // Should be 'none' or 'matrix(1, 0, 0, 1, 0, 0)' (identity)
-        expect(transform === 'none' || transform === 'matrix(1, 0, 0, 1, 0, 0)').toBe(true);
+        for (let i = 0; i < Math.min(count, 3); i++) {
+          const hasIsVisible = await heroAnimateElements.nth(i).evaluate(el =>
+            el.classList.contains('is-visible')
+          );
+          expect(hasIsVisible).toBe(true);
+        }
       }
     });
 
@@ -125,13 +138,17 @@ test.describe('Animation System - Progressive Enhancement', () => {
       await page.goto('/chapters/part-1/chapter-01-why-debate-matters/');
       await page.waitForLoadState('domcontentloaded');
 
+      // Chapter title should be visible
       const chapterTitle = page.locator('.chapter-hero h1, .chapter-title').first();
-      await expect(chapterTitle).toBeVisible({ timeout: 2000 });
+      await expect(chapterTitle).toBeVisible({ timeout: 5000 });
+
+      // Wait for animation to complete (delay up to 400ms + 500ms animation)
+      await page.waitForTimeout(1500);
 
       const opacity = await chapterTitle.evaluate(el =>
         window.getComputedStyle(el).opacity
       );
-      expect(parseFloat(opacity)).toBe(1);
+      expect(parseFloat(opacity)).toBeGreaterThan(0.9);
     });
   });
 

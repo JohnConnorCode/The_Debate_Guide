@@ -39,9 +39,9 @@
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = window.innerWidth <= 768;
 
-    // Signal that JS is ready for animations (desktop only)
+    // Signal that JS is ready for animations
     function enableAnimations() {
-        if (!isMobile && !prefersReducedMotion) {
+        if (!prefersReducedMotion) {
             document.documentElement.classList.add('js-ready');
             document.documentElement.classList.remove('js-loading');
         }
@@ -52,8 +52,8 @@
     // ==========================================
 
     function initScrollAnimations() {
-        // On mobile: no scroll animations, content is already visible
-        if (isMobile || prefersReducedMotion) {
+        // If reduced motion is preferred, show all content immediately
+        if (prefersReducedMotion) {
             document.querySelectorAll('[data-animate]').forEach(el => {
                 el.classList.add('is-visible');
             });
@@ -209,8 +209,8 @@
 
         if (allElements.length === 0) return;
 
-        // On mobile or reduced motion: content is already visible via CSS, just add class for consistency
-        if (isMobile || prefersReducedMotion || skipAnimations) {
+        // On reduced motion or skip: content is already visible via CSS, just add class for consistency
+        if (prefersReducedMotion || skipAnimations) {
             allElements.forEach(el => el.classList.add('is-visible'));
             return;
         }

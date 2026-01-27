@@ -5,7 +5,6 @@
    Animations only apply when:
    1. JS has loaded and is ready (.js-ready on html)
    2. User hasn't requested reduced motion
-   3. Screen is large enough (no animations on mobile)
    ========================================== */
 
 /* ==========================================
@@ -60,86 +59,67 @@
 }
 
 /* ==========================================
-   DESKTOP ONLY: Enable animations
+   ANIMATION STATES: Enable animations on ALL devices
    Only hide content when JS is ready to animate
-   AND screen is large enough
    ========================================== */
 
-@media (min-width: 769px) {
-    /* When JS signals it's ready, THEN hide elements for animation */
-    .js-ready .hero-animate:not(.is-visible),
-    .js-ready [data-animate]:not(.is-visible) {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-
-    .js-ready [data-animate="fade"]:not(.is-visible) {
-        transform: none;
-    }
-
-    .js-ready [data-animate="scale"]:not(.is-visible) {
-        transform: scale(0.95);
-    }
-
-    /* Animate in when visible */
-    /* fill-mode: both = backwards (apply initial during delay) + forwards (keep final after) */
-    .js-ready .hero-animate.is-visible,
-    .js-ready [data-animate].is-visible {
-        animation: fadeInUp 0.5s ease-out both;
-    }
-
-    .js-ready [data-animate="fade"].is-visible {
-        animation-name: fadeIn;
-    }
-
-    .js-ready [data-animate="scale"].is-visible {
-        animation-name: scaleIn;
-    }
-
-    /* Hero stagger delays */
-    .js-ready .hero-animate-1.is-visible { animation-delay: 0ms; }
-    .js-ready .hero-animate-2.is-visible { animation-delay: 100ms; }
-    .js-ready .hero-animate-3.is-visible { animation-delay: 200ms; }
-    .js-ready .hero-animate-4.is-visible { animation-delay: 300ms; }
-    .js-ready .hero-animate-5.is-visible { animation-delay: 400ms; }
-
-    /* Chapter hero stagger */
-    .js-ready .chapter-hero > [data-animate]:nth-child(2).is-visible { animation-delay: 0ms; }
-    .js-ready .chapter-hero > [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
-    .js-ready .chapter-hero > [data-animate]:nth-child(4).is-visible { animation-delay: 200ms; }
-    .js-ready .chapter-hero > [data-animate]:nth-child(5).is-visible { animation-delay: 300ms; }
-    .js-ready .chapter-hero > [data-animate]:nth-child(6).is-visible { animation-delay: 400ms; }
-
-    /* TOC hero stagger */
-    .js-ready .toc-hero .hero-animate-1.is-visible { animation-delay: 0ms; }
-    .js-ready .toc-hero .hero-animate-2.is-visible { animation-delay: 100ms; }
-    .js-ready .toc-hero .hero-animate-3.is-visible { animation-delay: 200ms; }
-    .js-ready .toc-hero .hero-animate-4.is-visible { animation-delay: 300ms; }
-
-    /* TOC chapter list stagger */
-    .js-ready .toc-chapters [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
-    .js-ready .toc-chapters [data-animate]:nth-child(2).is-visible { animation-delay: 50ms; }
-    .js-ready .toc-chapters [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
-    .js-ready .toc-chapters [data-animate]:nth-child(4).is-visible { animation-delay: 150ms; }
-    .js-ready .toc-chapters [data-animate]:nth-child(5).is-visible { animation-delay: 200ms; }
-    .js-ready .toc-chapters [data-animate]:nth-child(n+6).is-visible { animation-delay: 250ms; }
+/* When JS signals it's ready, THEN hide elements for animation */
+.js-ready .hero-animate:not(.is-visible),
+.js-ready [data-animate]:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(16px);
 }
 
-/* ==========================================
-   MOBILE: NO ANIMATIONS AT ALL
-   Content is always visible, no transforms
-   ========================================== */
-
-@media (max-width: 768px) {
-    .hero-animate,
-    [data-animate],
-    .hero-animate.is-visible,
-    [data-animate].is-visible {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
-    }
+.js-ready [data-animate="fade"]:not(.is-visible) {
+    transform: none;
 }
+
+.js-ready [data-animate="scale"]:not(.is-visible) {
+    transform: scale(0.95);
+}
+
+/* Animate in when visible */
+/* fill-mode: both = backwards (apply initial during delay) + forwards (keep final after) */
+.js-ready .hero-animate.is-visible,
+.js-ready [data-animate].is-visible {
+    animation: fadeInUp 0.5s ease-out both;
+}
+
+.js-ready [data-animate="fade"].is-visible {
+    animation-name: fadeIn;
+}
+
+.js-ready [data-animate="scale"].is-visible {
+    animation-name: scaleIn;
+}
+
+/* Hero stagger delays */
+.js-ready .hero-animate-1.is-visible { animation-delay: 0ms; }
+.js-ready .hero-animate-2.is-visible { animation-delay: 100ms; }
+.js-ready .hero-animate-3.is-visible { animation-delay: 200ms; }
+.js-ready .hero-animate-4.is-visible { animation-delay: 300ms; }
+.js-ready .hero-animate-5.is-visible { animation-delay: 400ms; }
+
+/* Chapter hero stagger */
+.js-ready .chapter-hero > [data-animate]:nth-child(2).is-visible { animation-delay: 0ms; }
+.js-ready .chapter-hero > [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
+.js-ready .chapter-hero > [data-animate]:nth-child(4).is-visible { animation-delay: 200ms; }
+.js-ready .chapter-hero > [data-animate]:nth-child(5).is-visible { animation-delay: 300ms; }
+.js-ready .chapter-hero > [data-animate]:nth-child(6).is-visible { animation-delay: 400ms; }
+
+/* TOC hero stagger */
+.js-ready .toc-hero .hero-animate-1.is-visible { animation-delay: 0ms; }
+.js-ready .toc-hero .hero-animate-2.is-visible { animation-delay: 100ms; }
+.js-ready .toc-hero .hero-animate-3.is-visible { animation-delay: 200ms; }
+.js-ready .toc-hero .hero-animate-4.is-visible { animation-delay: 300ms; }
+
+/* TOC chapter list stagger */
+.js-ready .toc-chapters [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
+.js-ready .toc-chapters [data-animate]:nth-child(2).is-visible { animation-delay: 50ms; }
+.js-ready .toc-chapters [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
+.js-ready .toc-chapters [data-animate]:nth-child(4).is-visible { animation-delay: 150ms; }
+.js-ready .toc-chapters [data-animate]:nth-child(5).is-visible { animation-delay: 200ms; }
+.js-ready .toc-chapters [data-animate]:nth-child(n+6).is-visible { animation-delay: 250ms; }
 
 /* ==========================================
    SUNBURST - decorative rotation (desktop only)
