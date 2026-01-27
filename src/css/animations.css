@@ -1,21 +1,21 @@
 /* ==========================================
-   ANIMATION SYSTEM - Clean Rewrite
-   Single source of truth for all animations
+   ANIMATION SYSTEM
+
+   How it works:
+   1. Elements with [data-animate] start hidden (opacity: 0)
+   2. JS adds .is-visible class to trigger animation
+   3. CSS animation-delay on nth-child creates stagger
+   4. Animation uses forwards fill-mode to keep final state
    ========================================== */
 
 /* ==========================================
    KEYFRAMES
    ========================================== */
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(24px);
     }
     to {
         opacity: 1;
@@ -23,9 +23,9 @@
     }
 }
 
-@keyframes expandWidth {
-    from { width: 0; }
-    to { width: 100%; }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes scaleIn {
@@ -39,24 +39,39 @@
     }
 }
 
+@keyframes expandWidth {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
 @keyframes rotate {
     to { transform: rotate(360deg); }
 }
 
 /* ==========================================
-   BASE: Hidden until visible
+   HIDDEN STATE
+   No !important - animations need to override this
    ========================================== */
 
 [data-animate] {
     opacity: 0;
+    transform: translateY(24px);
+}
+
+[data-animate="fade"] {
+    transform: none;
+}
+
+[data-animate="scale"] {
+    transform: scale(0.95);
 }
 
 /* ==========================================
-   VISIBLE STATE: Animate in
+   VISIBLE STATE - ANIMATION TRIGGERS
    ========================================== */
 
 [data-animate].is-visible {
-    animation: fadeInUp 0.5s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 [data-animate="fade"].is-visible {
@@ -68,44 +83,47 @@
 }
 
 /* ==========================================
-   HERO ANIMATIONS (JS-triggered for reliable timing)
-   Elements start hidden; JS adds is-visible class to trigger animation
+   CHAPTER HERO STAGGER
+   Sunburst is child 1 (no data-animate)
+   Content elements are children 2-6
    ========================================== */
 
-.hero-animate {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.hero-animate.is-visible {
-    animation: fadeInUp 0.5s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
-}
+.chapter-hero [data-animate]:nth-child(2).is-visible { animation-delay: 0ms; }
+.chapter-hero [data-animate]:nth-child(3).is-visible { animation-delay: 120ms; }
+.chapter-hero [data-animate]:nth-child(4).is-visible { animation-delay: 240ms; }
+.chapter-hero [data-animate]:nth-child(5).is-visible { animation-delay: 360ms; }
+.chapter-hero [data-animate]:nth-child(6).is-visible { animation-delay: 480ms; }
 
 /* ==========================================
-   HERO STAGGER (for other heroes using data-animate)
+   HOMEPAGE HERO STAGGER
    ========================================== */
 
 .hero [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
 .hero [data-animate]:nth-child(2).is-visible { animation-delay: 120ms; }
 .hero [data-animate]:nth-child(3).is-visible { animation-delay: 240ms; }
 .hero [data-animate]:nth-child(4).is-visible { animation-delay: 360ms; }
+.hero [data-animate]:nth-child(5).is-visible { animation-delay: 480ms; }
 
-.chapter-hero [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
-.chapter-hero [data-animate]:nth-child(2).is-visible { animation-delay: 100ms; }
-.chapter-hero [data-animate]:nth-child(3).is-visible { animation-delay: 200ms; }
-.chapter-hero [data-animate]:nth-child(4).is-visible { animation-delay: 300ms; }
-.chapter-hero [data-animate]:nth-child(5).is-visible { animation-delay: 400ms; }
+/* ==========================================
+   TOC HERO STAGGER
+   ========================================== */
+
+.toc-hero [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
+.toc-hero [data-animate]:nth-child(2).is-visible { animation-delay: 100ms; }
+.toc-hero [data-animate]:nth-child(3).is-visible { animation-delay: 200ms; }
+.toc-hero [data-animate]:nth-child(4).is-visible { animation-delay: 300ms; }
+.toc-hero [data-animate]:nth-child(5).is-visible { animation-delay: 400ms; }
 
 /* ==========================================
    TOC CHAPTER LIST STAGGER
    ========================================== */
 
 .toc-chapters [data-animate]:nth-child(1).is-visible { animation-delay: 0ms; }
-.toc-chapters [data-animate]:nth-child(2).is-visible { animation-delay: 50ms; }
-.toc-chapters [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
-.toc-chapters [data-animate]:nth-child(4).is-visible { animation-delay: 150ms; }
-.toc-chapters [data-animate]:nth-child(5).is-visible { animation-delay: 200ms; }
-.toc-chapters [data-animate]:nth-child(n+6).is-visible { animation-delay: 250ms; }
+.toc-chapters [data-animate]:nth-child(2).is-visible { animation-delay: 60ms; }
+.toc-chapters [data-animate]:nth-child(3).is-visible { animation-delay: 120ms; }
+.toc-chapters [data-animate]:nth-child(4).is-visible { animation-delay: 180ms; }
+.toc-chapters [data-animate]:nth-child(5).is-visible { animation-delay: 240ms; }
+.toc-chapters [data-animate]:nth-child(n+6).is-visible { animation-delay: 300ms; }
 
 /* ==========================================
    SECTION DIVIDERS
@@ -116,7 +134,7 @@
 }
 
 .section-divider[data-animate].is-visible .diamond {
-    animation: scaleIn 0.4s ease-out 0.1s forwards;
+    animation: scaleIn 0.4s ease-out 0.15s forwards;
 }
 
 /* ==========================================
@@ -125,28 +143,23 @@
 
 .deco-border[data-animate].is-visible {
     animation-name: fadeIn;
-    animation-duration: 0.4s;
+    animation-duration: 0.5s;
 }
 
 /* ==========================================
-   SUNBURST
+   SUNBURST - decorative only
    ========================================== */
-
-.sunburst-hero {
-    /* Static opacity - no fadeIn animation to reduce visual noise */
-}
 
 .sunburst-hero svg {
     animation: rotate 600s linear infinite;
 }
 
-/* Chapter sunbursts - slower rotation */
 .chapter-hero .sunburst svg {
     animation: rotate 360s linear infinite;
 }
 
 /* ==========================================
-   HOVER ANIMATIONS (always active)
+   HOVER EFFECTS
    ========================================== */
 
 .hover-lift {
@@ -234,7 +247,6 @@
     pointer-events: none;
 }
 
-/* View Transitions API (for browsers that support it) */
 @view-transition {
     navigation: auto;
 }
@@ -248,30 +260,24 @@
 }
 
 /* ==========================================
-   MOBILE OPTIMIZATIONS
+   MOBILE - faster animations
    ========================================== */
 
 @media (max-width: 768px) {
     [data-animate].is-visible {
-        animation-duration: 0.4s;
+        animation-duration: 0.5s;
     }
 
-    /* Faster stagger on mobile */
-    .hero [data-animate]:nth-child(2).is-visible { animation-delay: 80ms; }
-    .hero [data-animate]:nth-child(3).is-visible { animation-delay: 160ms; }
-    .hero [data-animate]:nth-child(4).is-visible { animation-delay: 240ms; }
+    .chapter-hero [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
+    .chapter-hero [data-animate]:nth-child(4).is-visible { animation-delay: 200ms; }
+    .chapter-hero [data-animate]:nth-child(5).is-visible { animation-delay: 300ms; }
+    .chapter-hero [data-animate]:nth-child(6).is-visible { animation-delay: 400ms; }
 
-    .toc-hero-inner [data-animate]:nth-child(2).is-visible { animation-delay: 80ms; }
-    .toc-hero-inner [data-animate]:nth-child(3).is-visible { animation-delay: 160ms; }
-    .toc-hero-inner [data-animate]:nth-child(4).is-visible { animation-delay: 240ms; }
-
-    /* Disable sunburst rotation on mobile for performance */
     .sunburst-hero svg,
     .chapter-hero .sunburst svg {
         animation: none;
     }
 
-    /* Scale down sunburst */
     .sunburst-hero {
         width: 500px;
         height: 500px;
@@ -281,12 +287,18 @@
 
 @media (max-width: 480px) {
     [data-animate].is-visible {
-        animation-duration: 0.3s;
+        animation-duration: 0.4s;
     }
 
     @keyframes fadeInUpSmall {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     [data-animate].is-visible {
@@ -304,29 +316,31 @@
 
 /* ==========================================
    REDUCED MOTION
+   Show content immediately, no animations
    ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-    [data-animate],
-    .hero-animate {
+    [data-animate] {
         opacity: 1;
-        animation: none;
+        transform: none;
     }
 
     [data-animate].is-visible {
         animation: none;
-        opacity: 1;
     }
 
-    .sunburst-hero,
     .sunburst-hero svg,
     .chapter-hero .sunburst svg {
         animation: none;
-        opacity: 0.05;
     }
 
     .hover-lift:hover {
         transform: none;
+    }
+
+    .section-divider[data-animate].is-visible .line,
+    .section-divider[data-animate].is-visible .diamond {
+        animation: none;
     }
 }
 
@@ -336,10 +350,11 @@
 
 .no-js [data-animate] {
     opacity: 1;
+    transform: none;
 }
 
 /* ==========================================
-   PRINT - Disable all animations
+   PRINT
    ========================================== */
 
 @media print {

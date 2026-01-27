@@ -6,8 +6,9 @@
 
     {# CRITICAL: Hide animated elements IMMEDIATELY - before any external resources load #}
     <style>
-        .hero-animate, [data-animate] {
+        [data-animate] {
             opacity: 0;
+            transform: translateY(24px);
         }
     </style>
     <script>document.documentElement.classList.remove('no-js');</script>

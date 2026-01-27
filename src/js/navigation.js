@@ -164,49 +164,28 @@
 
     // ==========================================
     // AUTO-ANIMATE HERO ELEMENTS
+    // CSS handles stagger via animation-delay
+    // JS just adds is-visible class to trigger animations
     // ==========================================
 
     function initAutoAnimateHero(skipAnimations) {
-        // Handle ALL hero elements - both .hero-animate and data-animate elements
         const hero = document.querySelector('.hero, .chapter-hero, .toc-hero');
         if (!hero) return;
 
-        // Get elements with .hero-animate class (need JS trigger)
-        const heroAnimateElements = hero.querySelectorAll('.hero-animate');
+        // Get all hero elements with data-animate attribute
+        const heroElements = hero.querySelectorAll('[data-animate]');
 
-        // Get other hero elements that need data-animate added
-        const otherHeroElements = hero.querySelectorAll(
-            '.hero-badge:not(.hero-animate), .hero-headline:not(.hero-animate), .hero-sub:not(.hero-animate), .hero-ctas:not(.hero-animate), ' +
-            '.chapter-part:not(.hero-animate), .chapter-number:not(.hero-animate), .chapter-title:not(.hero-animate), .chapter-subtitle:not(.hero-animate), ' +
-            '.toc-badge:not(.hero-animate), .toc-title:not(.hero-animate), .toc-tagline:not(.hero-animate), .toc-subtitle:not(.hero-animate), .toc-audience:not(.hero-animate)'
-        );
-
-        // Add data-animate to elements that don't have it
-        otherHeroElements.forEach((el) => {
-            if (!el.hasAttribute('data-animate')) {
-                el.setAttribute('data-animate', 'fade-up');
-            }
-        });
-
-        // Combine all hero elements and sort by their position in DOM for proper stagger
-        const allHeroElements = [...heroAnimateElements, ...otherHeroElements];
-
-        if (allHeroElements.length === 0) return;
-
-        const STAGGER_DELAY = 120; // ms between each element (matches superdebate)
-        const INITIAL_DELAY = 100; // ms delay before first animation
+        if (heroElements.length === 0) return;
 
         if (skipAnimations) {
-            allHeroElements.forEach(el => el.classList.add('is-visible'));
+            // Skip animations (e.g., back/forward navigation)
+            heroElements.forEach(el => el.classList.add('is-visible'));
         } else {
-            // Use requestAnimationFrame to ensure browser has painted
+            // Small delay to ensure CSS has parsed, then add is-visible to ALL at once
+            // CSS animation-delay handles the stagger timing
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
-                    allHeroElements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('is-visible');
-                        }, INITIAL_DELAY + (index * STAGGER_DELAY));
-                    });
+                    heroElements.forEach(el => el.classList.add('is-visible'));
                 });
             });
         }
