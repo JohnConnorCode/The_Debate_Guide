@@ -187,13 +187,11 @@
             // Skip animations (e.g., back/forward navigation)
             allElements.forEach(el => el.classList.add('is-visible'));
         } else {
-            // Small delay to ensure CSS has parsed, then add is-visible to ALL at once
-            // CSS animation-delay handles the stagger timing
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    allElements.forEach(el => el.classList.add('is-visible'));
-                });
-            });
+            // CRITICAL: Use setTimeout to ensure browser has painted the hidden state first
+            // Without this delay, the browser batches render + JS so user never sees "before"
+            setTimeout(function() {
+                allElements.forEach(el => el.classList.add('is-visible'));
+            }, 150);
         }
     }
 
