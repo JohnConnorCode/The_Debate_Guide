@@ -4,17 +4,21 @@
         <a href="{{ '/' | url }}" class="logo"{% if pageType == "home" %} aria-current="page"{% endif %} aria-label="The Debate Guide - Home">
             <div class="logo-mark" aria-hidden="true">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-                    <!-- Outer diamond frame -->
-                    <rect x="24" y="4" width="28.28" height="28.28" rx="2" transform="rotate(45 24 4)" stroke="currentColor" stroke-width="2" fill="none" class="logo-frame"/>
-                    <!-- Left speech element (thesis) -->
-                    <path d="M14 18 L14 26 L11 24 L14 26 L20 26 L20 18 Z" fill="currentColor" class="logo-thesis" opacity="0.7"/>
-                    <!-- Right speech element (antithesis) -->
-                    <path d="M34 22 L34 30 L37 28 L34 30 L28 30 L28 22 Z" fill="currentColor" class="logo-antithesis" opacity="0.7"/>
-                    <!-- Central balance point / synthesis -->
-                    <circle cx="24" cy="24" r="3" fill="currentColor" class="logo-synthesis"/>
-                    <!-- Connecting diagonal lines suggesting dialogue -->
-                    <line x1="18" y1="24" x2="21" y2="24" stroke="currentColor" stroke-width="1.5" class="logo-connector"/>
-                    <line x1="27" y1="24" x2="30" y2="24" stroke="currentColor" stroke-width="1.5" class="logo-connector"/>
+                    <!-- Laurel wreath - symbol of victory -->
+                    <!-- Left branch -->
+                    <path d="M24 8 Q14 14 12 24 Q14 34 24 40" stroke="currentColor" stroke-width="2" fill="none" class="logo-laurel"/>
+                    <!-- Right branch -->
+                    <path d="M24 8 Q34 14 36 24 Q34 34 24 40" stroke="currentColor" stroke-width="2" fill="none" class="logo-laurel"/>
+                    <!-- Left leaves -->
+                    <path d="M16 13 Q19 16 16 20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+                    <path d="M14 21 Q17 24 14 28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+                    <path d="M15 30 Q18 33 16 36" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+                    <!-- Right leaves -->
+                    <path d="M32 13 Q29 16 32 20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+                    <path d="M34 21 Q31 24 34 28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+                    <path d="M33 30 Q30 33 32 36" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+                    <!-- Delta (Δ) - Greek letter, change/discourse -->
+                    <path d="M24 16 L30 32 L18 32 Z" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linejoin="round" class="logo-delta"/>
                 </svg>
             </div>
             <span class="logo-text">THE DEBATE GUIDE</span>
