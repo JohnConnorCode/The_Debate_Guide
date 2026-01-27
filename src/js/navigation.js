@@ -189,15 +189,17 @@
 
         if (allElements.length === 0) return;
 
-        if (skipAnimations) {
-            // Skip animations (e.g., back/forward navigation)
+        if (skipAnimations || prefersReducedMotion) {
+            // Skip animations (e.g., back/forward navigation or reduced motion preference)
             allElements.forEach(el => el.classList.add('is-visible'));
         } else {
-            // CRITICAL: Use setTimeout to ensure browser has painted the hidden state first
-            // Without this delay, the browser batches render + JS so user never sees "before"
-            setTimeout(function() {
-                allElements.forEach(el => el.classList.add('is-visible'));
-            }, 150);
+            // Use requestAnimationFrame to ensure the hidden state is painted first
+            // Then trigger the animation on the next frame
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    allElements.forEach(el => el.classList.add('is-visible'));
+                });
+            });
         }
     }
 
