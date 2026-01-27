@@ -2,15 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npx @11ty/eleventy",
   "outputDirectory": "_site",
-  "framework": "eleventy",
   "functions": {
     "api/**/*.js": {
       "runtime": "nodejs18.x"
     }
   },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" }
-  ],
   "redirects": [
     {
       "source": "/chapters/part-2/chapter-09-logos-power-of-reason/:path*",
