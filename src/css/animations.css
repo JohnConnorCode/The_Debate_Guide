@@ -136,21 +136,23 @@
 }
 
 @media (max-width: 768px) {
-    .sunburst-hero svg,
-    .chapter-hero .sunburst svg {
-        animation: none;
+    .sunburst-hero {
+        width: 700px;
+        height: 700px;
+        opacity: 0.12;
     }
 
-    .sunburst-hero {
-        width: 400px;
-        height: 400px;
-        opacity: 0.05;
+    .sunburst-hero svg,
+    .chapter-hero .sunburst svg {
+        animation: rotate 300s linear infinite;
     }
 }
 
 @media (max-width: 480px) {
     .sunburst-hero {
-        display: none;
+        width: 600px;
+        height: 600px;
+        opacity: 0.1;
     }
 }
 

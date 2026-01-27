@@ -2113,11 +2113,14 @@ body.mobile-nav-open {
         height: 36px;
     }
 
-    /* Improved hero spacing */
+    /* Improved hero spacing - MOBILE FIRST: Make it impactful */
     .hero {
-        min-height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
         padding-top: var(--header-height);
         padding-bottom: var(--space-lg);
+        display: flex;
+        align-items: center;
     }
 
     .hero-inner {
@@ -2125,18 +2128,20 @@ body.mobile-nav-open {
     }
 
     .hero-badge {
-        margin-bottom: var(--space-sm);
+        margin-bottom: var(--space-md);
     }
 
     .hero-headline {
-        font-size: clamp(var(--text-4xl), 10vw, var(--text-6xl));
-        margin-bottom: var(--space-sm);
+        font-size: clamp(3.5rem, 14vw, 5rem);
+        line-height: 0.95;
+        margin-bottom: var(--space-md);
     }
 
     .hero-sub {
-        font-size: var(--text-md);
-        max-width: 45ch;
-        margin: var(--space-sm) auto;
+        font-size: var(--text-lg);
+        max-width: 40ch;
+        margin: var(--space-md) auto;
+        line-height: var(--leading-relaxed);
     }
 
     /* Better button sizing for touch */
@@ -2201,29 +2206,32 @@ body.mobile-nav-open {
         padding: 0 var(--space-sm);
     }
 
-    /* Hero - proper spacing */
+    /* Hero - BOLD mobile design */
     .hero {
-        padding-bottom: var(--space-md);
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding-bottom: var(--space-lg);
     }
 
     .hero-inner {
-        padding: var(--space-lg) var(--space-md);
+        padding: var(--space-md) var(--space-sm);
     }
 
     .hero-headline {
-        font-size: clamp(var(--text-3xl), 11vw, var(--text-5xl));
-        line-height: var(--leading-tight);
+        font-size: clamp(3rem, 15vw, 4.5rem);
+        line-height: 0.9;
+        letter-spacing: 0.02em;
     }
 
     .hero-sub {
-        font-size: var(--text-base);
+        font-size: var(--text-md);
         line-height: var(--leading-relaxed);
-        margin: var(--space-sm) auto;
+        margin: var(--space-md) auto;
     }
 
     .hero-badge {
-        padding: var(--space-2) var(--space-3);
-        margin-bottom: var(--space-xs);
+        padding: var(--space-2) var(--space-sm);
+        margin-bottom: var(--space-sm);
     }
 
     .hero-badge span {
