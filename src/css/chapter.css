@@ -118,7 +118,10 @@
     border-radius: var(--radius-sm);
     color: var(--text-primary);
     cursor: pointer;
-    transition: background 0.2s ease-out, border-color 0.2s ease-out;
+    transition: background 0.25s ease-out,
+                border-color 0.25s ease-out,
+                transform 0.25s var(--ease-spring),
+                box-shadow 0.25s ease-out;
 }
 
 [data-theme="light"] .toolbar-btn {
@@ -128,6 +131,13 @@
 .toolbar-btn:hover {
     background: rgba(var(--color-gold-rgb), 0.15);
     border-color: var(--accent);
+    transform: scale(1.08);
+    box-shadow: var(--shadow-gold-glow-sm);
+}
+
+.toolbar-btn:active {
+    transform: scale(0.95);
+    transition-duration: 0.1s;
 }
 
 .toolbar-btn:focus-visible {
@@ -139,6 +149,7 @@
     background: var(--accent);
     color: var(--color-ink);
     border-color: var(--accent);
+    box-shadow: var(--shadow-gold-glow-sm);
 }
 
 /* Theme toggle icons */
@@ -428,7 +439,7 @@
     font-family: var(--font-display);
     font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl));
     letter-spacing: var(--tracking-wider);
-    line-height: var(--leading-tight);
+    line-height: var(--leading-display);
     margin-bottom: var(--space-xs);
 }
 
@@ -547,12 +558,14 @@
     padding-right: var(--space-2);
     color: var(--accent);
     margin-top: 0.1em;
+    text-shadow: 2px 2px 0 rgba(201, 162, 39, 0.15);
 }
 
 .chapter-content h2 {
     font-family: var(--font-display);
     font-size: calc(var(--text-2xl) * 1.1);
     letter-spacing: var(--tracking-wider);
+    line-height: var(--leading-display);
     margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
     color: var(--text-primary);
@@ -633,11 +646,20 @@
    ========================================== */
 
 .vocabulary-box {
-    background: rgba(var(--color-gold-rgb), 0.08);
+    background: linear-gradient(135deg, rgba(var(--color-gold-rgb), 0.1), rgba(var(--color-gold-rgb), 0.04));
     border-left: var(--border-width-3) solid var(--accent);
     padding: var(--space-sm) var(--space-md);
     margin: var(--space-md) 0;
     position: relative;
+    transition: transform 0.25s var(--ease-spring),
+                box-shadow 0.25s ease-out,
+                border-color 0.25s ease-out;
+}
+
+.vocabulary-box:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elevation-2);
+    border-left-color: var(--accent-hover);
 }
 
 .vocabulary-box::before {
@@ -665,6 +687,11 @@
     border-top: 2px solid var(--accent);
     border-right: 2px solid var(--accent);
     opacity: 0.3;
+    transition: opacity 0.25s ease-out;
+}
+
+.vocabulary-box:hover::after {
+    opacity: 0.5;
 }
 
 .vocab-term {
@@ -700,8 +727,17 @@
     position: relative;
     margin: var(--space-lg) 0;
     padding: var(--space-md) var(--space-lg);
-    border-top: var(--border-width) solid rgba(var(--color-gold-rgb), 0.4);
-    border-bottom: var(--border-width) solid rgba(var(--color-gold-rgb), 0.4);
+    border-left: 3px solid var(--accent);
+    background: linear-gradient(135deg, rgba(var(--color-gold-rgb), 0.06), transparent);
+    transition: transform 0.25s var(--ease-spring),
+                box-shadow 0.25s ease-out,
+                border-color 0.25s ease-out;
+}
+
+.featured-quote:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevation-2), var(--shadow-gold-glow-sm);
+    border-left-color: var(--accent-hover);
 }
 
 /* Corner ornament for featured quote */
@@ -715,18 +751,29 @@
     border-bottom: 2px solid var(--accent);
     border-right: 2px solid var(--accent);
     opacity: 0.25;
+    transition: opacity 0.25s ease-out;
+}
+
+.featured-quote:hover::after {
+    opacity: 0.4;
 }
 
 .featured-quote::before {
     content: '"';
     position: absolute;
     top: var(--space-sm);
-    left: 0;
+    left: var(--space-sm);
     font-family: var(--font-display);
-    font-size: var(--text-6xl);
+    font-size: clamp(var(--text-5xl), 8vw, var(--text-7xl));
     color: var(--accent);
-    opacity: 0.25;
+    opacity: 0.2;
     line-height: var(--leading-none);
+    transition: opacity 0.25s ease-out, transform 0.25s var(--ease-spring);
+}
+
+.featured-quote:hover::before {
+    opacity: 0.35;
+    transform: scale(1.05);
 }
 
 .featured-quote blockquote {
@@ -792,6 +839,15 @@
     padding: var(--space-md);
     margin-bottom: var(--space-sm);
     position: relative;
+    transition: transform 0.25s var(--ease-spring),
+                box-shadow 0.25s ease-out,
+                border-color 0.25s ease-out;
+}
+
+.exercise:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elevation-2);
+    border-color: rgba(var(--color-black-rgb), 0.2);
 }
 
 .exercise:last-child {
@@ -809,6 +865,11 @@
     color: var(--color-paper);
     padding: var(--space-1) var(--space-3);
     margin-bottom: var(--space-xs);
+    transition: transform 0.2s var(--ease-spring);
+}
+
+.exercise:hover .exercise-type {
+    transform: translateX(2px);
 }
 
 .exercise-type.reflection {
@@ -864,11 +925,20 @@
    ========================================== */
 
 .quick-tactic {
-    background: rgba(var(--color-gold-rgb), 0.08);
+    background: linear-gradient(135deg, rgba(var(--color-gold-rgb), 0.1), rgba(var(--color-gold-rgb), 0.04));
     border-left: 3px solid var(--accent);
     padding: var(--space-md);
     margin: var(--space-md) 0;
     position: relative;
+    transition: transform 0.25s var(--ease-spring),
+                box-shadow 0.25s ease-out,
+                border-color 0.25s ease-out;
+}
+
+.quick-tactic:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elevation-2);
+    border-left-color: var(--accent-hover);
 }
 
 .quick-tactic .tactic-header {
@@ -925,6 +995,15 @@
     margin: var(--space-lg) 0;
     text-align: center;
     position: relative;
+    transition: transform 0.25s var(--ease-spring),
+                box-shadow 0.25s ease-out,
+                border-color 0.25s ease-out;
+}
+
+.insight-box:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elevation-2), var(--shadow-gold-glow-sm);
+    border-color: var(--accent);
 }
 
 .insight-box::before {
@@ -1031,13 +1110,18 @@
     text-decoration: none;
     padding: var(--space-sm);
     border: var(--border-width) solid rgba(var(--color-white-rgb), 0.1);
-    transition: var(--transition-colors), background var(--transition-fast);
+    transition: border-color 0.25s ease-out,
+                background 0.25s ease-out,
+                transform 0.25s var(--ease-spring),
+                box-shadow 0.25s ease-out;
 }
 
 .chapter-nav-prev:hover,
 .chapter-nav-next:hover {
-    border-color: var(--accent);
-    background: rgba(var(--color-gold-rgb), 0.05);
+    border-color: var(--color-gold-border);
+    background: rgba(var(--color-gold-rgb), 0.08);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elevation-2), var(--shadow-gold-glow-sm);
 }
 
 .chapter-nav-prev {

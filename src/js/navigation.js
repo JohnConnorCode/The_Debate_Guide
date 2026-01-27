@@ -33,6 +33,12 @@
     };
 
     // ==========================================
+    // REDUCED MOTION DETECTION
+    // ==========================================
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ==========================================
     // SCROLL-TRIGGERED ANIMATIONS
     // ==========================================
 
@@ -1318,6 +1324,75 @@
     }
 
     // ==========================================
+    // BUTTON MICRO-INTERACTIONS
+    // ==========================================
+
+    function initButtonMicroInteractions() {
+        // Skip if user prefers reduced motion
+        if (prefersReducedMotion) return;
+
+        // Select all interactive buttons
+        const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-outline-gold, .btn-outline-dark, .scroll-to-top, .toolbar-btn');
+
+        buttons.forEach(button => {
+            // Add press effect on mousedown
+            button.addEventListener('mousedown', function() {
+                this.style.transform = 'translateY(-1px) scale(0.98)';
+            });
+
+            // Restore on mouseup/mouseleave
+            button.addEventListener('mouseup', function() {
+                this.style.transform = '';
+            });
+
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+
+            // Touch support
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'translateY(-1px) scale(0.98)';
+            }, { passive: true });
+
+            button.addEventListener('touchend', function() {
+                this.style.transform = '';
+            }, { passive: true });
+        });
+    }
+
+    // ==========================================
+    // CARD HOVER ENHANCEMENTS
+    // ==========================================
+
+    function initCardHoverEffects() {
+        // Skip if user prefers reduced motion
+        if (prefersReducedMotion) return;
+
+        // Add subtle parallax effect to cards on mouse move
+        const cards = document.querySelectorAll('.card, .card-dark, .vocabulary-box, .exercise, .featured-quote');
+
+        cards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                // Calculate rotation (max 2 degrees)
+                const rotateX = ((y - centerY) / centerY) * -1;
+                const rotateY = ((x - centerX) / centerX) * 1;
+
+                this.style.transform = `translateY(-4px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    }
+
+    // ==========================================
     // INITIALIZE ALL FEATURES
     // ==========================================
 
@@ -1366,6 +1441,8 @@
         initChapterToc();
         initPageTransitions();
         initKeyboardHelp();
+        initButtonMicroInteractions();
+        initCardHoverEffects();
     }
 
     // Run when DOM is ready
