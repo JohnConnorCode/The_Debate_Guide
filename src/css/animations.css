@@ -82,9 +82,10 @@
     }
 
     /* Animate in when visible */
+    /* fill-mode: both = backwards (apply initial during delay) + forwards (keep final after) */
     .js-ready .hero-animate.is-visible,
     .js-ready [data-animate].is-visible {
-        animation: fadeInUp 0.5s ease-out forwards;
+        animation: fadeInUp 0.5s ease-out both;
     }
 
     .js-ready [data-animate="fade"].is-visible {

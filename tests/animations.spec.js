@@ -67,6 +67,9 @@ test.describe('Animation System - Progressive Enhancement', () => {
       const chapterTitle = page.locator('.chapter-hero h1, .chapter-title').first();
       await expect(chapterTitle).toBeVisible({ timeout: 5000 });
 
+      // Wait for animation to complete (delay up to 400ms + 500ms animation)
+      await page.waitForTimeout(1500);
+
       const opacity = await chapterTitle.evaluate(el =>
         window.getComputedStyle(el).opacity
       );
