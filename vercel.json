@@ -8,6 +8,9 @@
       "runtime": "nodejs18.x"
     }
   },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" }
+  ],
   "redirects": [
     {
       "source": "/chapters/part-2/chapter-09-logos-power-of-reason/:path*",
@@ -98,7 +101,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://plausible.io; manifest-src 'self'; worker-src 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://plausible.io https://*.supabase.co; manifest-src 'self'; worker-src 'self'"
         },
         {
           "key": "Referrer-Policy",
