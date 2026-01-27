@@ -4,28 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    {# CRITICAL: Hide animated elements IMMEDIATELY - before any external resources load #}
-    <style>
-        /* Initial hidden state - will be animated when JS adds .is-visible */
-        .hero-animate:not(.is-visible),
-        [data-animate]:not(.is-visible) {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        /* Ensure visible elements are actually visible */
-        .hero-animate.is-visible,
-        [data-animate].is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* No-JS fallback: show everything immediately */
-        .no-js .hero-animate,
-        .no-js [data-animate] {
-            opacity: 1;
-            transform: none;
-        }
-    </style>
-    <script>document.documentElement.classList.remove('no-js');</script>
+    {# Content visible by default - animations are progressive enhancement only #}
+    <script>
+        // Mark as JS-enabled, but DON'T hide content yet
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js-loading');
+    </script>
 
     <meta name="view-transition" content="same-origin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

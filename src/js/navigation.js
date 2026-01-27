@@ -33,16 +33,33 @@
     };
 
     // ==========================================
-    // REDUCED MOTION DETECTION
+    // DEVICE & MOTION DETECTION
     // ==========================================
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth <= 768;
+
+    // Signal that JS is ready for animations (desktop only)
+    function enableAnimations() {
+        if (!isMobile && !prefersReducedMotion) {
+            document.documentElement.classList.add('js-ready');
+            document.documentElement.classList.remove('js-loading');
+        }
+    }
 
     // ==========================================
     // SCROLL-TRIGGERED ANIMATIONS
     // ==========================================
 
     function initScrollAnimations() {
+        // On mobile: no scroll animations, content is already visible
+        if (isMobile || prefersReducedMotion) {
+            document.querySelectorAll('[data-animate]').forEach(el => {
+                el.classList.add('is-visible');
+            });
+            return;
+        }
+
         // Check for Intersection Observer support
         if (!('IntersectionObserver' in window)) {
             // Fallback: show all elements immediately
@@ -51,6 +68,9 @@
             });
             return;
         }
+
+        // Enable animations for desktop
+        enableAnimations();
 
         // Track pending animations to stagger them
         let pendingAnimations = [];
@@ -189,18 +209,19 @@
 
         if (allElements.length === 0) return;
 
-        if (skipAnimations || prefersReducedMotion) {
-            // Skip animations (e.g., back/forward navigation or reduced motion preference)
+        // On mobile or reduced motion: content is already visible via CSS, just add class for consistency
+        if (isMobile || prefersReducedMotion || skipAnimations) {
             allElements.forEach(el => el.classList.add('is-visible'));
-        } else {
-            // Use requestAnimationFrame to ensure the hidden state is painted first
-            // Then trigger the animation on the next frame
-            requestAnimationFrame(function() {
-                requestAnimationFrame(function() {
-                    allElements.forEach(el => el.classList.add('is-visible'));
-                });
-            });
+            return;
         }
+
+        // Desktop with animations: enable animations, then trigger
+        enableAnimations();
+
+        // Small delay to let CSS apply the hidden state, then trigger animations
+        requestAnimationFrame(function() {
+            allElements.forEach(el => el.classList.add('is-visible'));
+        });
     }
 
     // ==========================================
