@@ -3,6 +3,11 @@
   "buildCommand": "npx @11ty/eleventy",
   "outputDirectory": "_site",
   "framework": "eleventy",
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "redirects": [
     {
       "source": "/chapters/part-2/chapter-09-logos-power-of-reason/:path*",

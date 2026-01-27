@@ -25,3 +25,6 @@ npm-debug.log*
 
 # Reports
 lighthouse-report.json
+
+# Claude Flow daemon files
+.claude-flow/

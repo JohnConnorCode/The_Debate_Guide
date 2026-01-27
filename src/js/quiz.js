@@ -22,6 +22,84 @@
     const STORAGE_KEY = 'debateGuideQuizProgress';
     const ACHIEVEMENTS_KEY = 'debateGuideAchievements';
     const SPACED_REP_KEY = 'debateGuideSpacedRep';
+    const USER_ID_KEY = 'debateGuideUserId';
+
+    // ==========================================
+    // SERVER SYNC (fire-and-forget)
+    // ==========================================
+
+    /**
+     * Get or create anonymous user ID for server tracking
+     */
+    function getAnonymousUserId() {
+        let userId = localStorage.getItem(USER_ID_KEY);
+        if (!userId) {
+            // Generate a unique anonymous ID
+            userId = 'anon_' + Date.now().toString(36) + '_' + Math.random().toString(36).substring(2, 10);
+            localStorage.setItem(USER_ID_KEY, userId);
+        }
+        return userId;
+    }
+
+    /**
+     * Sync quiz results to server (fire-and-forget, non-blocking)
+     */
+    async function syncToServer(chapterId, results, questionResponses = []) {
+        try {
+            const anonymousId = getAnonymousUserId();
+
+            const payload = {
+                anonymousId,
+                chapterNumber: parseInt(chapterId, 10),
+                score: results.bestScore,
+                totalQuestions: results.total,
+                percentage: results.percentage,
+                hintsUsed: results.hintsUsed || 0,
+                responses: questionResponses
+            };
+
+            // Fire-and-forget - don't await, don't block
+            fetch('/api/quiz/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(() => {
+                // Silently fail - localStorage is the primary store
+                console.debug('Server sync failed (offline mode)');
+            });
+        } catch (e) {
+            // Silently fail - we don't want to break the quiz experience
+            console.debug('Server sync error:', e);
+        }
+    }
+
+    /**
+     * Sync all localStorage progress to server on page load (one-time)
+     */
+    function syncAllProgressToServer() {
+        try {
+            const progress = getProgress();
+            const achievements = getAchievements();
+
+            if (Object.keys(progress).length === 0) return;
+
+            const anonymousId = getAnonymousUserId();
+
+            fetch('/api/quiz/sync', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    anonymousId,
+                    progress,
+                    achievements
+                })
+            }).catch(() => {
+                // Silently fail
+            });
+        } catch (e) {
+            // Silently fail
+        }
+    }
 
     // ==========================================
     // STATE
@@ -118,7 +196,7 @@
         }
     }
 
-    function saveProgress(chapterId, score, total, hintsUsedCount = 0) {
+    function saveProgress(chapterId, score, total, hintsUsedCount = 0, questionResponses = []) {
         try {
             const progress = getProgress();
             const existing = progress[chapterId];
@@ -151,6 +229,9 @@
             }
 
             localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+
+            // Sync to server (fire-and-forget)
+            syncToServer(chapterId, progress[chapterId], questionResponses);
 
             // Check and award achievements
             checkAchievements(chapterId, percentage, progress);
@@ -1042,15 +1123,52 @@
     function renderResults() {
         const total = quizData.questions.length;
         let correct = 0;
+        const questionResponses = [];
 
         quizData.questions.forEach((question, originalIndex) => {
             // Find the display index for this original question
             const displayIndex = questionOrder.indexOf(originalIndex);
             const userAnswer = userAnswers[displayIndex];
+            const isCorrect = checkAnswer(question, originalIndex, userAnswer);
 
-            if (checkAnswer(question, originalIndex, userAnswer)) {
+            if (isCorrect) {
                 correct++;
             }
+
+            // Collect response data for analytics
+            let correctAnswer;
+            let formattedUserAnswer = userAnswer;
+
+            switch (question.type) {
+                case 'true-false':
+                    correctAnswer = question.correct;
+                    formattedUserAnswer = userAnswer === 0;
+                    break;
+                case 'multiple-choice':
+                case 'scenario':
+                    correctAnswer = question.options[question.correct];
+                    formattedUserAnswer = question.options[getOriginalAnswerIndex(originalIndex, userAnswer)];
+                    break;
+                case 'matching':
+                    correctAnswer = 'all-matched';
+                    break;
+                case 'ordering':
+                    correctAnswer = question.correctOrder;
+                    break;
+                case 'fill-blank':
+                    correctAnswer = question.answer;
+                    break;
+            }
+
+            questionResponses.push({
+                questionIndex: originalIndex,
+                questionType: question.type,
+                questionText: question.question,
+                userAnswer: formattedUserAnswer,
+                correctAnswer: correctAnswer,
+                isCorrect: isCorrect,
+                hintsUsedForQuestion: hintsUsed[originalIndex] || 0
+            });
         });
 
         const percentage = Math.round((correct / total) * 100);
@@ -1059,9 +1177,9 @@
         // Count total hints used
         const totalHintsUsed = Object.values(hintsUsed).reduce((sum, count) => sum + count, 0);
 
-        // Save progress
+        // Save progress (with question responses for server analytics)
         const chapterId = elements.section.dataset.chapter;
-        saveProgress(chapterId, correct, total, totalHintsUsed);
+        saveProgress(chapterId, correct, total, totalHintsUsed, questionResponses);
 
         // Update UI
         elements.scoreValue.textContent = percentage + '%';
@@ -1500,6 +1618,12 @@
         init();
     }
 
+    // Sync existing progress to server once on page load (if any exists)
+    // This ensures offline progress eventually reaches the server
+    if (typeof window !== 'undefined') {
+        setTimeout(syncAllProgressToServer, 2000); // Delay to not block page load
+    }
+
     // ==========================================
     // GLOBAL EXPORTS
     // ==========================================
@@ -1509,7 +1633,8 @@
         getChapterProgress: getChapterProgress,
         getAchievements: getAchievements,
         getDueReviews: getDueReviews,
-        getSpacedRepetitionData: getSpacedRepetitionData
+        getSpacedRepetitionData: getSpacedRepetitionData,
+        getAnonymousUserId: getAnonymousUserId
     };
 
 })();
