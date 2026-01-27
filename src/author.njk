@@ -1,0 +1,338 @@
+---
+layout: base.njk
+title: "John Connor — Author of The Debate Guide"
+description: "Meet John Connor, founder of SuperDebate and author of The Debate Guide. From Chicago's South Side to building the world's first large-scale adult debate ecosystem."
+permalink: /author/
+---
+{% block styles %}
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<style>
+.author-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+}
+
+.author-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 60px rgba(var(--color-gold-rgb), 0.3);
+    object-fit: cover;
+}
+
+.author-name {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    letter-spacing: var(--tracking-wider);
+    margin: 0;
+}
+
+.author-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+}
+
+.author-links {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
+}
+
+.author-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    text-decoration: none;
+    border: var(--border-width) solid rgba(var(--color-white-rgb), 0.2);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.author-link:hover {
+    border-color: var(--accent);
+    background: rgba(var(--color-gold-rgb), 0.1);
+}
+
+.author-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.career-timeline {
+    margin: var(--space-xl) 0;
+    padding-left: var(--space-lg);
+    border-left: 2px solid rgba(var(--color-gold-rgb), 0.3);
+}
+
+.career-item {
+    position: relative;
+    padding-bottom: var(--space-lg);
+}
+
+.career-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--space-lg) - 5px);
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.career-date {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent);
+    margin-bottom: var(--space-1);
+}
+
+.career-role {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    letter-spacing: var(--tracking-wide);
+    margin: 0 0 var(--space-1) 0;
+}
+
+.career-company {
+    font-family: var(--font-body);
+    color: var(--text-muted);
+    margin: 0 0 var(--space-xs) 0;
+}
+
+.career-desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .author-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .author-name {
+        font-size: var(--text-3xl);
+    }
+
+    .author-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .author-link {
+        justify-content: center;
+    }
+}
+</style>
+{% endblock %}
+
+{# Page Hero #}
+<section class="chapter-hero section-dark">
+    {% include "sunburst.njk" %}
+    <div class="author-hero">
+        <img
+            src="{{ '/assets/images/john-connor.jpg' | url }}"
+            alt="John Connor, founder of SuperDebate"
+            class="author-image"
+            width="200"
+            height="200"
+        >
+        <div>
+            <h1 class="author-name">JOHN CONNOR</h1>
+            <p class="author-title">Founder & CEO, SuperDebate</p>
+        </div>
+        <div class="author-links">
+            <a href="https://superdebate.org" target="_blank" rel="noopener" class="author-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                SuperDebate.org
+            </a>
+            <a href="https://linkedin.com/in/johntconnor" target="_blank" rel="noopener" class="author-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                LinkedIn
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="deco-border"></div>
+
+<main class="section section-dark">
+    <article class="chapter-content">
+
+        <h2>FROM CHICAGO'S SOUTH SIDE TO THE GLOBAL STAGE</h2>
+
+        <p>
+            John Connor grew up on Chicago's South Side in a working-class family. Neither parent attended college. The conventional paths seemed clear: military service, trade work, maybe firefighting like his uncles. But at fifteen, while captaining his high school football team and spending nights alone reading Nietzsche and Plato, a history teacher noticed something: Connor argued. A lot. And not badly.
+        </p>
+
+        <p>
+            She sent him to debate coach Scott Dodsworth, who saw potential in all that argumentative energy. What happened next would reshape Connor's entire trajectory.
+        </p>
+
+        <div class="featured-quote">
+            <blockquote>
+                My first varsity tournament felt like arriving on an alien planet. Competitors spoke at impossible speeds, deployed terminology I'd never heard, discussed ideas with a precision that seemed beyond reach. I placed third speaker in the novice division anyway. Something clicked.
+            </blockquote>
+            <cite>John Connor</cite>
+        </div>
+
+        <p>
+            For two years, Connor considered quitting before every tournament. The intellectual world of debate still felt foreign, a place where he didn't quite belong. The breakthrough came when he stopped trying to prove he was smart and started genuinely engaging with ideas. Senior year, he won the city-wide varsity championship.
+        </p>
+
+        <p>
+            A full debate scholarship followed. Then another championship in college. The kid from the South Side who'd never expected to attend university was now winning arguments against students from prep schools and Ivy League families.
+        </p>
+
+        <h2>WHAT DEBATE TAUGHT HIM</h2>
+
+        <p>
+            Connor credits debate with three gifts that shaped everything that followed:
+        </p>
+
+        <p>
+            <strong>Confidence.</strong> Not the false kind that comes from never being challenged, but the genuine kind that comes from knowing you can think under pressure. From knowing you've been wrong before and survived it. From knowing that your ideas can hold up against opposition.
+        </p>
+
+        <p>
+            <strong>Analytical rigor.</strong> The ability to break complex problems into components. To identify assumptions. To follow arguments to their logical conclusions. To spot the weak points in any position, including your own.
+        </p>
+
+        <p>
+            <strong>Empathy—the hard kind.</strong> Not just feeling for others, but genuinely understanding viewpoints you disagree with. Debate forces you to argue positions you find wrong. That practice builds something rare: the ability to steelman your opponents, to make their case better than they can, before you try to refute it.
+        </p>
+
+        <div class="featured-quote">
+            <blockquote>
+                Debate gave me confidence, analytical rigor, and empathy—particularly the hard kind, where you have to genuinely consider viewpoints you disagree with. I use those skills every single day.
+            </blockquote>
+            <cite>John Connor</cite>
+        </div>
+
+        <h2>BUILDING COMPANIES, NOTICING PROBLEMS</h2>
+
+        <p>
+            After college, Connor channeled those skills into entrepreneurship and technology.
+        </p>
+
+        <div class="career-timeline">
+            <div class="career-item">
+                <div class="career-date">2013 - 2018</div>
+                <h3 class="career-role">Founder</h3>
+                <p class="career-company">HelpWith.co</p>
+                <p class="career-desc">Built a peer-to-peer marketplace reaching over 3,000 service providers. Learned to build products people actually use.</p>
+            </div>
+            <div class="career-item">
+                <div class="career-date">2019 - 2020</div>
+                <h3 class="career-role">Technical Product Manager</h3>
+                <p class="career-company">ModeMobile</p>
+                <p class="career-desc">Led AI-powered opportunity suggestion features. Discovered the intersection of technology and human behavior.</p>
+            </div>
+            <div class="career-item">
+                <div class="career-date">2020 - 2021</div>
+                <h3 class="career-role">Director of Product</h3>
+                <p class="career-company">Upland.me</p>
+                <p class="career-desc">Scaled revenue 15x to over 300,000 monthly active users. Learned what makes communities thrive.</p>
+            </div>
+            <div class="career-item">
+                <div class="career-date">2021 - 2024</div>
+                <h3 class="career-role">Founder & CEO</h3>
+                <p class="career-company">Sparkblox</p>
+                <p class="career-desc">NFT infrastructure company. Raised over $1M and partnered with major blockchain platforms including Polygon, Immutable, and Flow.</p>
+            </div>
+            <div class="career-item">
+                <div class="career-date">2024 - Present</div>
+                <h3 class="career-role">Founder & CEO</h3>
+                <p class="career-company">SuperDebate</p>
+                <p class="career-desc">Building the world's first large-scale adult debate ecosystem. Bringing structured disagreement back to public life.</p>
+            </div>
+        </div>
+
+        <p>
+            Throughout his career, Connor kept noticing the same problem: public discourse was collapsing. Social media optimized for engagement over understanding. The basic human skill of arguing well—really arguing, with evidence and empathy and willingness to change your mind—had been lost.
+        </p>
+
+        <p>
+            Smart people he knew had nowhere to practice the skills that mattered most. High school and university debate programs produce sharper thinkers, better listeners, and more persuasive communicators. Then graduates enter adult life and... nothing. No infrastructure. No community. No way to keep practicing.
+        </p>
+
+        <h2>THE SUPERDEBATE MISSION</h2>
+
+        <p>
+            SuperDebate emerged from that observation. Connor set out to build what he calls "the first large-scale adult debate ecosystem since ancient times"—infrastructure for communities where rigorous intellectual exchange can flourish, where the best arguments win rather than the loudest voices.
+        </p>
+
+        <p>
+            The platform connects organizers who want to start clubs, debaters looking for intellectual community, and judges who mentor the next generation of speakers. From local meetups in coffee shops to global championships, the goal is simple: make arguing fun again.
+        </p>
+
+        <p>
+            Not arguing in the toxic sense. Arguing in the ancient sense—the collaborative pursuit of truth through structured disagreement. The kind of arguing that makes you smarter even when you lose. <em>Especially</em> when you lose.
+        </p>
+
+        <div class="insight-box">
+            <p>The point of debate isn't to win. It's to get better at thinking. Winning is just how you keep score.</p>
+        </div>
+
+        <h2>WHY THIS GUIDE</h2>
+
+        <p>
+            The Debate Guide is the educational foundation of SuperDebate. Before building platforms and organizing championships, there needed to be a shared understanding of what good argument looks like.
+        </p>
+
+        <p>
+            The Greeks spent centuries developing that understanding. This guide translates it for anyone willing to learn—not just academics or competitive debaters, but the kid reading philosophy alone at night, wondering if there's anyone out there who wants to think together.
+        </p>
+
+        <p>
+            There is. And now there's somewhere to go.
+        </p>
+
+        <p class="text-center" style="margin-top: var(--space-xl);">
+            <a href="https://superdebate.org" target="_blank" rel="noopener" class="btn-primary">
+                Join SuperDebate
+            </a>
+        </p>
+
+    </article>
+
+    {# Navigation #}
+    <nav class="chapter-nav">
+        <a href="{{ '/about/' | url }}" class="chapter-nav-prev">
+            <span class="chapter-nav-label">&larr; Previous</span>
+            <span class="chapter-nav-title">About This Guide</span>
+        </a>
+        <div class="chapter-nav-contents">
+            <a href="/">Contents</a>
+        </div>
+        <a href="{{ '/' | url }}" class="chapter-nav-next">
+            <span class="chapter-nav-label">Next &rarr;</span>
+            <span class="chapter-nav-title">Start Reading</span>
+        </a>
+    </nav>
+</main>
+
+<div class="deco-border"></div>

@@ -36,9 +36,11 @@
             {% if pageType == "home" %}
                 <a href="{{ '/introduction/' | url }}">Introduction</a>
                 <a href="#contents" aria-current="true">Contents</a>
+                <a href="{{ '/about/' | url }}">About</a>
             {% elif pageType == "introduction" %}
                 <a href="{{ '/' | url }}">Contents</a>
                 <a href="#part-1">Begin Reading</a>
+                <a href="{{ '/about/' | url }}">About</a>
             {% else %}
                 <a href="{{ '/' | url }}">Contents</a>
                 <a href="{{ '/introduction/' | url }}">Introduction</a>
@@ -106,6 +108,7 @@
         {% endfor %}
 
         <a href="{{ '/about/' | url }}" class="mobile-nav-link">About</a>
+        <a href="{{ '/author/' | url }}" class="mobile-nav-link">Author</a>
     </div>
     <div class="mobile-nav-cta">
         <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer" class="btn-primary">Join SuperDebate</a>
