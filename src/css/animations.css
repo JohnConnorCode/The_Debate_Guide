@@ -122,9 +122,10 @@
 .js-ready .toc-chapters [data-animate]:nth-child(n+6).is-visible { animation-delay: 250ms; }
 
 /* ==========================================
-   SUNBURST - decorative rotation (desktop only)
+   SUNBURST - decorative rotation (all devices)
    ========================================== */
 
+/* Desktop */
 @media (min-width: 769px) {
     .sunburst-hero svg {
         animation: rotate 600s linear infinite;
@@ -135,11 +136,12 @@
     }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
     .sunburst-hero {
         width: 700px;
         height: 700px;
-        opacity: 0.12;
+        opacity: 0.15;
     }
 
     .sunburst-hero svg,
@@ -148,10 +150,25 @@
     }
 }
 
+/* Mobile */
+@media (max-width: 600px) {
+    .sunburst-hero {
+        width: 550px;
+        height: 550px;
+        opacity: 0.12;
+    }
+
+    .sunburst-hero svg,
+    .chapter-hero .sunburst svg {
+        animation: rotate 240s linear infinite;
+    }
+}
+
+/* Small mobile */
 @media (max-width: 480px) {
     .sunburst-hero {
-        width: 600px;
-        height: 600px;
+        width: 450px;
+        height: 450px;
         opacity: 0.1;
     }
 }

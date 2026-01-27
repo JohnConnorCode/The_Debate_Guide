@@ -215,13 +215,11 @@
             return;
         }
 
-        // Desktop with animations: enable animations, then trigger
+        // Desktop with animations: add is-visible BEFORE js-ready
+        // This ensures elements are never hidden (flash-free)
+        // CSS will trigger animation on elements that have both .js-ready ancestor and .is-visible
+        allElements.forEach(el => el.classList.add('is-visible'));
         enableAnimations();
-
-        // Small delay to let CSS apply the hidden state, then trigger animations
-        requestAnimationFrame(function() {
-            allElements.forEach(el => el.classList.add('is-visible'));
-        });
     }
 
     // ==========================================
@@ -353,15 +351,6 @@
     }
 
     // ==========================================
-    // PROGRESS BAR (legacy - now handled by unified handler)
-    // ==========================================
-
-    function initProgressBar() {
-        // Progress bar is now handled by initUnifiedScrollHandler
-        // This function is kept for backwards compatibility
-    }
-
-    // ==========================================
     // KEYBOARD NAVIGATION
     // ==========================================
 
@@ -457,15 +446,6 @@
                 link.setAttribute('rel', 'noopener noreferrer');
             }
         });
-    }
-
-    // ==========================================
-    // HEADER SCROLL BEHAVIOR
-    // ==========================================
-
-    function initHeaderScroll() {
-        // Header scroll behavior is now handled by initUnifiedScrollHandler
-        // This function is kept for backwards compatibility
     }
 
     // ==========================================
@@ -1003,15 +983,6 @@
     }
 
     // ==========================================
-    // READING TOOLBAR VISIBILITY
-    // ==========================================
-
-    function initReadingToolbar() {
-        // Visibility is now handled by initUnifiedScrollHandler
-        // This function is kept for backwards compatibility
-    }
-
-    // ==========================================
     // CHAPTER TABLE OF CONTENTS SIDEBAR
     // ==========================================
 
@@ -1447,12 +1418,10 @@
         initUnifiedScrollHandler();
 
         // Initialize other features
-        initProgressBar();      // Legacy - now handled by unified handler
         initKeyboardNav();
         initKeyboardHint();
         initSmoothScroll();
         initExternalLinks();
-        initHeaderScroll();     // Legacy - now handled by unified handler
         initMobileNav();
         initScrollToTop();
         initChapterProgress();
@@ -1460,7 +1429,6 @@
         initSwipeNavigation();
         initThemeToggle();
         initFontSizeControls();
-        initReadingToolbar();   // Legacy - now handled by unified handler
         initChapterToc();
         initPageTransitions();
         initKeyboardHelp();
