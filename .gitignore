@@ -28,3 +28,4 @@ lighthouse-report.json
 
 # Claude Flow daemon files
 .claude-flow/
+.env*.local

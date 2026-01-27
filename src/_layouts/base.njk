@@ -27,8 +27,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
 
     {# Stylesheets - animations.css loaded first to ensure elements start hidden #}
-    <link rel="stylesheet" href="{{ '/css/animations.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/animations.css' | url }}?v={{ build.timestamp }}">
+    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}?v={{ build.timestamp }}">
     {% block styles %}{% endblock %}
 
     {# SEO Meta Tags #}
@@ -99,10 +99,10 @@
     {# Keyboard Shortcuts Help Modal #}
     {% include "keyboard-help.njk" %}
 
-    <script src="{{ '/js/navigation.js' | url }}"></script>
-    <script src="{{ '/js/search.js' | url }}" defer></script>
-    <script src="{{ '/js/quiz.js' | url }}" defer></script>
-    <script src="{{ '/js/toast.js' | url }}" defer></script>
+    <script src="{{ '/js/navigation.js' | url }}?v={{ build.timestamp }}"></script>
+    <script src="{{ '/js/search.js' | url }}?v={{ build.timestamp }}" defer></script>
+    <script src="{{ '/js/quiz.js' | url }}?v={{ build.timestamp }}" defer></script>
+    <script src="{{ '/js/toast.js' | url }}?v={{ build.timestamp }}" defer></script>
 
     {# Analytics - Privacy-conscious, no cookies, GDPR compliant #}
     {# Replace YOUR_DOMAIN with your Plausible domain or remove if not using analytics #}

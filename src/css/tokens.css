@@ -315,6 +315,8 @@
    ========================================== */
 
 [data-font-size="small"] {
+    --text-xs: 0.6rem;        /* 9.6px */
+    --text-sm: 0.75rem;       /* 12px */
     --text-base: 0.875rem;    /* 14px */
     --text-md: 1rem;          /* 16px */
     --text-lg: 1.125rem;      /* 18px */
@@ -323,6 +325,8 @@
 }
 
 [data-font-size="large"] {
+    --text-xs: 0.75rem;       /* 12px */
+    --text-sm: 0.9375rem;     /* 15px */
     --text-base: 1.125rem;    /* 18px */
     --text-md: 1.25rem;       /* 20px */
     --text-lg: 1.375rem;      /* 22px */

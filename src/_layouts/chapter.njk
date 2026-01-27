@@ -3,9 +3,9 @@ layout: base.njk
 pageType: chapter
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
-<link rel="stylesheet" href="{{ '/css/chapter-illustrations.css' | url }}">
-<link rel="stylesheet" href="{{ '/css/quiz.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
+<link rel="stylesheet" href="{{ '/css/chapter-illustrations.css' | url }}?v={{ build.timestamp }}">
+<link rel="stylesheet" href="{{ '/css/quiz.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {% block progressBar %}
@@ -63,7 +63,7 @@ pageType: chapter
 </div>
 
 {# Chapter Illustrations #}
-<script src="{{ '/js/chapter-illustrations.js' | url }}"></script>
+<script src="{{ '/js/chapter-illustrations.js' | url }}?v={{ build.timestamp }}"></script>
 
 {# TOC Discovery Hint #}
 <script>
