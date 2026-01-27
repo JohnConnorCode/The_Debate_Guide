@@ -53,7 +53,7 @@ module.exports = async function handler(req, res) {
 
         // First try to find existing user
         const { data: existingUser } = await supabase
-            .from('users')
+            .from('dg_users')
             .select('id')
             .eq('anonymous_id', anonymousId)
             .single();
@@ -63,13 +63,13 @@ module.exports = async function handler(req, res) {
 
             // Update last_seen_at
             await supabase
-                .from('users')
+                .from('dg_users')
                 .update({ last_seen_at: new Date().toISOString() })
                 .eq('id', userId);
         } else {
             // Create new user
             const { data: newUser, error: userError } = await supabase
-                .from('users')
+                .from('dg_users')
                 .insert({ anonymous_id: anonymousId })
                 .select('id')
                 .single();
@@ -84,7 +84,7 @@ module.exports = async function handler(req, res) {
 
         // Insert quiz attempt
         const { data: attempt, error: attemptError } = await supabase
-            .from('quiz_attempts')
+            .from('dg_quiz_attempts')
             .insert({
                 user_id: userId,
                 chapter_number: chapterNumber,
@@ -116,7 +116,7 @@ module.exports = async function handler(req, res) {
             }));
 
             const { error: responsesError } = await supabase
-                .from('question_responses')
+                .from('dg_question_responses')
                 .insert(responseRecords);
 
             if (responsesError) {

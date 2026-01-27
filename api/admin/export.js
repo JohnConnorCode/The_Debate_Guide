@@ -46,7 +46,7 @@ module.exports = async function handler(req, res) {
         switch (type) {
             case 'attempts': {
                 let query = supabase
-                    .from('quiz_attempts')
+                    .from('dg_quiz_attempts')
                     .select(`
                         id,
                         chapter_number,
@@ -56,7 +56,7 @@ module.exports = async function handler(req, res) {
                         hints_used,
                         time_taken_seconds,
                         completed_at,
-                        user:users(anonymous_id)
+                        user:dg_users(anonymous_id)
                     `)
                     .order('completed_at', { ascending: false });
 
@@ -87,7 +87,7 @@ module.exports = async function handler(req, res) {
 
             case 'users': {
                 const { data: users, error } = await supabase
-                    .from('users')
+                    .from('dg_users')
                     .select('id, anonymous_id, email, created_at, last_seen_at')
                     .order('created_at', { ascending: false });
 
@@ -95,7 +95,7 @@ module.exports = async function handler(req, res) {
 
                 // Get attempt counts per user
                 const { data: attemptCounts } = await supabase
-                    .from('quiz_attempts')
+                    .from('dg_quiz_attempts')
                     .select('user_id')
                     .then(res => {
                         const counts = {};
@@ -121,7 +121,7 @@ module.exports = async function handler(req, res) {
 
             case 'questions': {
                 let query = supabase
-                    .from('question_responses')
+                    .from('dg_question_responses')
                     .select(`
                         id,
                         question_index,
@@ -131,7 +131,7 @@ module.exports = async function handler(req, res) {
                         correct_answer,
                         is_correct,
                         hints_used_for_question,
-                        attempt:quiz_attempts(chapter_number, completed_at)
+                        attempt:dg_quiz_attempts(chapter_number, completed_at)
                     `)
                     .order('id', { ascending: false })
                     .limit(5000);

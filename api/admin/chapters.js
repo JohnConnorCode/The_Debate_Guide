@@ -31,7 +31,7 @@ module.exports = async function handler(req, res) {
         const supabase = getSupabaseAdminClient();
 
         // Call the stored function
-        const { data, error } = await supabase.rpc('get_chapter_stats');
+        const { data, error } = await supabase.rpc('dg_get_chapter_stats');
 
         if (error) {
             console.error('Error fetching chapter stats:', error);

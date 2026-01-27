@@ -39,7 +39,7 @@ module.exports = async function handler(req, res) {
 
         // Get question analytics
         const { data: questionData, error: questionError } = await supabase
-            .rpc('get_question_analytics', { p_chapter: chapter });
+            .rpc('dg_get_question_analytics', { p_chapter: chapter });
 
         if (questionError) {
             console.error('Error fetching question analytics:', questionError);
@@ -47,7 +47,7 @@ module.exports = async function handler(req, res) {
 
         // Get wrong answer patterns
         const { data: patternData, error: patternError } = await supabase
-            .rpc('get_wrong_answer_patterns', { p_chapter: chapter, p_limit: limit });
+            .rpc('dg_get_wrong_answer_patterns', { p_chapter: chapter, p_limit: limit });
 
         if (patternError) {
             console.error('Error fetching wrong answer patterns:', patternError);

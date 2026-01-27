@@ -31,7 +31,7 @@ module.exports = async function handler(req, res) {
         const supabase = getSupabaseAdminClient();
 
         // Call the stored function
-        const { data, error } = await supabase.rpc('get_quiz_stats');
+        const { data, error } = await supabase.rpc('dg_get_quiz_stats');
 
         if (error) {
             console.error('Error fetching stats:', error);
@@ -40,7 +40,7 @@ module.exports = async function handler(req, res) {
 
         // Get additional time-series data for charts
         const { data: dailyData, error: dailyError } = await supabase
-            .from('quiz_attempts')
+            .from('dg_quiz_attempts')
             .select('completed_at, percentage')
             .gte('completed_at', new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString())
             .order('completed_at', { ascending: true });

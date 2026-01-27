@@ -39,7 +39,7 @@ module.exports = async function handler(req, res) {
         let userId;
 
         const { data: existingUser } = await supabase
-            .from('users')
+            .from('dg_users')
             .select('id')
             .eq('anonymous_id', anonymousId)
             .single();
@@ -49,13 +49,13 @@ module.exports = async function handler(req, res) {
 
             // Update last_seen_at
             await supabase
-                .from('users')
+                .from('dg_users')
                 .update({ last_seen_at: new Date().toISOString() })
                 .eq('id', userId);
         } else {
             // Create new user
             const { data: newUser, error: userError } = await supabase
-                .from('users')
+                .from('dg_users')
                 .insert({ anonymous_id: anonymousId })
                 .select('id')
                 .single();
@@ -70,7 +70,7 @@ module.exports = async function handler(req, res) {
 
         // Get existing server attempts to avoid duplicates
         const { data: existingAttempts } = await supabase
-            .from('quiz_attempts')
+            .from('dg_quiz_attempts')
             .select('chapter_number, percentage, completed_at')
             .eq('user_id', userId);
 
@@ -104,7 +104,7 @@ module.exports = async function handler(req, res) {
 
                 // Insert the attempt (we're syncing the best score from localStorage)
                 const { error } = await supabase
-                    .from('quiz_attempts')
+                    .from('dg_quiz_attempts')
                     .insert({
                         user_id: userId,
                         chapter_number: chapterNum,

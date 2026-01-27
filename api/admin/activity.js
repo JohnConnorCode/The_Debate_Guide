@@ -35,7 +35,7 @@ module.exports = async function handler(req, res) {
         const limit = Math.min(parseInt(req.query.limit, 10) || 50, 200);
 
         // Call the stored function
-        const { data, error } = await supabase.rpc('get_recent_activity', { p_limit: limit });
+        const { data, error } = await supabase.rpc('dg_get_recent_activity', { p_limit: limit });
 
         if (error) {
             console.error('Error fetching activity:', error);
