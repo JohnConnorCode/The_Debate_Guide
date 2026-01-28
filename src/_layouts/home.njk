@@ -133,258 +133,71 @@ pageType: home
         color: var(--accent);
     }
 
-    /* Continue Reading Section */
+    /* Continue Reading - simple inline link */
     .continue-reading {
-        max-width: 500px;
-        margin: 0 auto var(--space-lg);
-        padding: var(--space-md);
-        background: rgba(var(--color-gold-rgb), 0.08);
-        border: 1px solid rgba(var(--color-gold-rgb), 0.2);
-        border-radius: 2px;
-    }
-
-    .continue-reading-header {
-        display: flex;
-        align-items: center;
-        gap: var(--space-xs);
-        margin-bottom: var(--space-sm);
-    }
-
-    .continue-reading-icon {
-        color: var(--accent);
-        display: flex;
-        align-items: center;
-    }
-
-    .continue-reading-label {
-        font-family: var(--font-mono);
-        font-size: var(--text-xs);
-        letter-spacing: var(--tracking-caps);
-        text-transform: uppercase;
-        color: var(--accent);
-    }
-
-    .continue-reading-link {
-        display: flex;
-        align-items: center;
-        gap: var(--space-sm);
-        padding: var(--space-sm);
-        margin: 0 calc(-1 * var(--space-sm));
-        text-decoration: none;
-        transition: background 0.2s ease-out;
-        border-radius: 2px;
-    }
-
-    .continue-reading-link:hover {
-        background: rgba(var(--color-gold-rgb), 0.1);
-    }
-
-    .continue-reading-link:hover .continue-reading-arrow {
-        transform: translateX(4px);
-    }
-
-    .continue-reading-chapter {
-        font-family: var(--font-mono);
-        font-size: var(--text-sm);
-        font-weight: var(--font-medium);
-        color: var(--accent);
-        min-width: 5rem;
-    }
-
-    .continue-reading-title {
-        font-family: var(--font-display);
-        font-size: var(--text-lg);
-        letter-spacing: var(--tracking-wide);
-        color: var(--text-primary);
-        flex: 1;
-    }
-
-    .continue-reading-arrow {
-        color: var(--accent);
-        display: flex;
-        align-items: center;
-        transition: transform 0.2s ease-out;
-    }
-
-    .continue-reading-progress {
-        font-family: var(--font-mono);
-        font-size: var(--text-xs);
-        color: var(--text-muted);
-        margin-top: var(--space-sm);
-        padding-top: var(--space-sm);
-        border-top: 1px solid rgba(var(--color-gold-rgb), 0.15);
-    }
-
-    @media (max-width: 600px) {
-        .continue-reading {
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        .continue-reading-title {
-            font-size: var(--text-md);
-        }
-    }
-
-    /* Quiz Progress CTA Section */
-    .quiz-progress-cta {
-        max-width: 500px;
-        margin: 0 auto var(--space-lg);
-        padding: var(--space-md);
-        background: rgba(var(--color-white-rgb), 0.03);
-        border: 1px solid rgba(var(--color-white-rgb), 0.1);
-        border-radius: 2px;
+        display: block;
         text-align: center;
-    }
-
-    [data-theme="light"] .quiz-progress-cta {
-        background: rgba(var(--color-black-rgb), 0.02);
-        border-color: rgba(var(--color-black-rgb), 0.1);
-    }
-
-    .quiz-cta-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--space-xs);
-        margin-bottom: var(--space-sm);
-    }
-
-    .quiz-cta-icon {
-        color: var(--accent);
-        display: flex;
-        align-items: center;
-    }
-
-    .quiz-cta-label {
+        margin-bottom: var(--space-md);
         font-family: var(--font-mono);
-        font-size: var(--text-xs);
-        letter-spacing: var(--tracking-caps);
-        text-transform: uppercase;
-        color: var(--accent);
-    }
-
-    .quiz-cta-description {
-        font-family: var(--font-body);
         font-size: var(--text-sm);
         color: var(--text-muted);
-        margin: 0 0 var(--space-md) 0;
-        line-height: var(--leading-relaxed);
-    }
-
-    .quiz-cta-help-link {
-        color: var(--accent);
         text-decoration: none;
-        white-space: nowrap;
+        padding: var(--space-sm) var(--space-md);
+        border: 1px solid rgba(var(--color-gold-rgb), 0.2);
+        transition: border-color 0.2s, color 0.2s;
     }
 
-    .quiz-cta-help-link:hover {
-        text-decoration: underline;
+    .continue-reading:hover {
+        border-color: var(--accent);
+        color: var(--text-primary);
     }
 
-    .quiz-cta-stats {
+    .continue-reading .continue-chapter {
+        color: var(--accent);
+        font-weight: var(--font-medium);
+    }
+
+    /* Sticky Part Navigation */
+    .part-nav {
+        position: sticky;
+        top: var(--header-height);
+        z-index: var(--z-sticky);
         display: flex;
         justify-content: center;
-        gap: var(--space-lg);
-        margin-bottom: var(--space-md);
-        padding: var(--space-sm) 0;
-        border-top: 1px solid rgba(var(--color-white-rgb), 0.1);
+        gap: var(--space-1);
+        padding: var(--space-sm) var(--space-md);
+        background: var(--bg-primary);
         border-bottom: 1px solid rgba(var(--color-white-rgb), 0.1);
     }
 
-    [data-theme="light"] .quiz-cta-stats {
+    [data-theme="light"] .part-nav {
         border-color: rgba(var(--color-black-rgb), 0.1);
     }
 
-    .quiz-cta-stat {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--space-1);
-    }
-
-    .quiz-cta-stat-value {
+    .part-nav-link {
         font-family: var(--font-display);
-        font-size: var(--text-2xl);
-        color: var(--accent);
-        line-height: 1;
-    }
-
-    .quiz-cta-stat-label {
-        font-family: var(--font-mono);
-        font-size: var(--text-xs);
-        letter-spacing: var(--tracking-wide);
+        font-size: var(--text-md);
         color: var(--text-muted);
-    }
-
-    .quiz-cta-link {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-2);
-        padding: var(--space-sm) var(--space-md);
-        font-family: var(--font-mono);
-        font-size: var(--text-sm);
-        font-weight: var(--font-medium);
-        letter-spacing: var(--tracking-wider);
-        text-transform: uppercase;
-        color: var(--color-ink);
-        background: var(--accent);
-        border: 1px solid var(--accent);
         text-decoration: none;
-        transition: all 0.2s ease-out;
+        padding: var(--space-xs) var(--space-sm);
+        transition: color 0.2s;
     }
 
-    .quiz-cta-link:hover {
-        background: var(--accent-hover);
-        border-color: var(--accent-hover);
-    }
-
-    .quiz-cta-link svg {
-        transition: transform 0.2s ease-out;
-    }
-
-    .quiz-cta-link:hover svg {
-        transform: translateX(4px);
+    .part-nav-link:hover,
+    .part-nav-link.is-active {
+        color: var(--accent);
     }
 
     @media (max-width: 600px) {
-        .quiz-progress-cta {
-            margin-left: 0;
-            margin-right: 0;
+        .part-nav {
+            gap: 0;
+            padding: var(--space-xs) var(--space-sm);
         }
 
-        .quiz-cta-stats {
-            gap: var(--space-md);
+        .part-nav-link {
+            font-size: var(--text-sm);
+            padding: var(--space-xs);
         }
-
-        .quiz-cta-stat-value {
-            font-size: var(--text-xl);
-        }
-    }
-
-    /* Chapter Status Indicator */
-    .toc-chapter-status {
-        flex-shrink: 0;
-        width: 18px;
-        font-family: var(--font-mono);
-        font-size: var(--text-sm);
-        color: var(--text-muted);
-        opacity: 0.5;
-    }
-
-    .toc-chapter[data-status="attempted"] .toc-chapter-status {
-        color: var(--accent);
-        opacity: 0.8;
-    }
-
-    .toc-chapter[data-status="passed"] .toc-chapter-status {
-        color: var(--accent);
-        opacity: 1;
-    }
-
-    .toc-chapter[data-status="mastered"] .toc-chapter-status {
-        color: #2d7a4f;
-        opacity: 1;
     }
 
     .toc-part {
@@ -866,161 +679,49 @@ pageType: home
 {% endblock %}
 
 {% block extras %}
-{# Quiz progress badges for TOC #}
 <script>
 (function() {
     'use strict';
 
-    function updateTocProgress() {
-        try {
-            var progressData = localStorage.getItem('debateGuideQuizProgress');
-            var spacedRepData = localStorage.getItem('debateGuideSpacedRep');
-
-            var progress = progressData ? JSON.parse(progressData) : {};
-            var spacedRep = spacedRepData ? JSON.parse(spacedRepData) : {};
-
-            var completedCount = 0;
-            var masteredCount = 0;
-            var dueCount = 0;
-            var now = new Date();
-
-            // Count stats and due reviews
-            for (var chapterId in progress) {
-                var p = progress[chapterId];
-                if (p.percentage >= 70) {
-                    completedCount++;
-                    if (p.percentage >= 90 && p.attempts >= 2) {
-                        masteredCount++;
-                    }
-                }
+    // Continue Reading - populate from localStorage
+    try {
+        var lastChapter = localStorage.getItem('lastReadChapter');
+        if (lastChapter) {
+            var data = JSON.parse(lastChapter);
+            var link = document.getElementById('continue-reading');
+            if (link && data.url && data.number && data.title) {
+                link.href = data.url;
+                link.querySelector('.continue-chapter').textContent = 'Chapter ' + data.number;
+                link.querySelector('.continue-title').textContent = data.title;
+                link.style.display = '';
             }
+        }
+    } catch (e) {}
 
-            // Count due reviews
-            for (var chapterId in spacedRep) {
-                var sr = spacedRep[chapterId];
-                if (sr.nextReview && new Date(sr.nextReview) <= now) {
-                    dueCount++;
-                }
-            }
+    // Part Navigation - highlight active section on scroll
+    var partNav = document.getElementById('part-nav');
+    if (partNav) {
+        var parts = document.querySelectorAll('.toc-part[id]');
+        var links = partNav.querySelectorAll('.part-nav-link');
 
-            // Update quiz CTA stats
-            var ctaCompleted = document.getElementById('quiz-cta-completed');
-            var ctaMastered = document.getElementById('quiz-cta-mastered');
-            var ctaDue = document.getElementById('quiz-cta-due');
-            var ctaStats = document.getElementById('quiz-cta-stats');
-            var ctaDescription = document.getElementById('quiz-cta-description');
-            var ctaLink = document.getElementById('quiz-cta-link');
+        function updateActiveLink() {
+            var scrollY = window.scrollY + 150;
+            var current = '';
 
-            if (ctaCompleted) ctaCompleted.textContent = completedCount;
-            if (ctaMastered) ctaMastered.textContent = masteredCount;
-            if (ctaDue) ctaDue.textContent = dueCount;
-
-            // Show stats and update text for returning users
-            if (completedCount > 0 && ctaStats) {
-                ctaStats.style.display = '';
-                if (ctaDescription) {
-                    ctaDescription.innerHTML = 'Track your progress across all 20 chapters. Master each quiz to unlock achievements. <a href="/how-quizzes-work/" class="quiz-cta-help-link">How it works →</a>';
-                }
-                if (ctaLink) {
-                    ctaLink.href = '/progress/';
-                    ctaLink.querySelector('span').textContent = 'View Your Progress';
-                }
-            }
-
-            // Populate due-for-review widget
-            var dueReviewWidget = document.getElementById('due-review-widget');
-            var dueReviewList = document.getElementById('due-review-list');
-            if (dueReviewWidget && dueReviewList && dueCount > 0) {
-                var dueChapters = [];
-                for (var cid in spacedRep) {
-                    var sr = spacedRep[cid];
-                    if (sr.nextReview && new Date(sr.nextReview) <= now) {
-                        dueChapters.push({
-                            id: cid,
-                            title: sr.chapterTitle || ('Chapter ' + cid)
-                        });
-                    }
-                }
-
-                // Show up to 3 due chapters
-                var maxShown = Math.min(dueChapters.length, 3);
-                var listHtml = '';
-                for (var i = 0; i < maxShown; i++) {
-                    var dc = dueChapters[i];
-                    listHtml += '<a href="#chapter-' + dc.id + '" class="due-review-item">' + dc.title + '</a>';
-                }
-                if (dueChapters.length > 3) {
-                    listHtml += '<a href="/progress/" class="due-review-item">+ ' + (dueChapters.length - 3) + ' more</a>';
-                }
-                dueReviewList.innerHTML = listHtml;
-                dueReviewWidget.style.display = '';
-            }
-
-            // Update chapter status indicators
-            document.querySelectorAll('.toc-chapter[data-chapter]').forEach(function(chapter) {
-                var chapterId = chapter.dataset.chapter;
-                var chapterProgress = progress[chapterId];
-                var statusEl = chapter.querySelector('.toc-chapter-status');
-                var link = chapter.querySelector('a');
-
-                if (chapterProgress) {
-                    var pct = chapterProgress.percentage;
-                    var attempts = chapterProgress.attempts || 1;
-
-                    if (pct >= 90 && attempts >= 2) {
-                        // Mastered
-                        chapter.dataset.status = 'mastered';
-                        if (statusEl) {
-                            statusEl.textContent = '★';
-                            statusEl.title = 'Quiz mastered (' + pct + '%)';
-                            statusEl.setAttribute('aria-label', 'Quiz mastered, score ' + pct + ' percent');
-                        }
-                    } else if (pct >= 70) {
-                        // Passed
-                        chapter.dataset.status = 'passed';
-                        if (statusEl) {
-                            statusEl.textContent = '●';
-                            statusEl.title = 'Quiz passed (' + pct + '%)';
-                            statusEl.setAttribute('aria-label', 'Quiz passed, score ' + pct + ' percent');
-                        }
-                    } else {
-                        // Attempted but not passed
-                        chapter.dataset.status = 'attempted';
-                        if (statusEl) {
-                            statusEl.textContent = '◐';
-                            statusEl.title = 'Quiz attempted (' + pct + '%)';
-                            statusEl.setAttribute('aria-label', 'Quiz attempted, score ' + pct + ' percent');
-                        }
-                    }
-
-                    // Add score badge if not already present
-                    var existingBadge = link.querySelector('.quiz-score-badge');
-                    if (!existingBadge) {
-                        var badge = document.createElement('span');
-                        badge.className = 'quiz-score-badge';
-                        badge.textContent = pct + '%';
-                        badge.title = 'Quiz score: ' + pct + '%';
-                        link.appendChild(badge);
-                    }
+            parts.forEach(function(part) {
+                if (part.offsetTop <= scrollY) {
+                    current = part.id;
                 }
             });
 
-        } catch (e) {
-            console.debug('Error updating TOC progress:', e);
+            links.forEach(function(link) {
+                link.classList.toggle('is-active', link.getAttribute('href') === '#' + current);
+            });
         }
-    }
 
-    // Run on load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(updateTocProgress, 100);
-        });
-    } else {
-        setTimeout(updateTocProgress, 100);
+        window.addEventListener('scroll', updateActiveLink, { passive: true });
+        updateActiveLink();
     }
-
-    // Update when quiz is completed
-    window.addEventListener('quizCompleted', updateTocProgress);
 })();
 </script>
 {% endblock %}
