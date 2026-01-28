@@ -168,6 +168,11 @@ pageType: home
         padding: var(--space-sm) var(--space-md);
         background: var(--bg-primary);
         border-bottom: 1px solid rgba(var(--color-white-rgb), 0.1);
+        transition: top 0.3s ease-out;
+    }
+
+    .part-nav.header-hidden {
+        top: 0;
     }
 
     [data-theme="light"] .part-nav {
@@ -698,13 +703,15 @@ pageType: home
         }
     } catch (e) {}
 
-    // Part Navigation - highlight active section on scroll
+    // Part Navigation - highlight active section and sync with header visibility
     var partNav = document.getElementById('part-nav');
+    var header = document.querySelector('.header');
     if (partNav) {
         var parts = document.querySelectorAll('.toc-part[id]');
         var links = partNav.querySelectorAll('.part-nav-link');
 
-        function updateActiveLink() {
+        function updatePartNav() {
+            // Highlight active section
             var scrollY = window.scrollY + 150;
             var current = '';
 
@@ -717,10 +724,15 @@ pageType: home
             links.forEach(function(link) {
                 link.classList.toggle('is-active', link.getAttribute('href') === '#' + current);
             });
+
+            // Sync with header hidden state
+            if (header) {
+                partNav.classList.toggle('header-hidden', header.classList.contains('header-hidden'));
+            }
         }
 
-        window.addEventListener('scroll', updateActiveLink, { passive: true });
-        updateActiveLink();
+        window.addEventListener('scroll', updatePartNav, { passive: true });
+        updatePartNav();
     }
 })();
 </script>
