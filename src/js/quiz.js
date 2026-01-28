@@ -23,6 +23,7 @@
     const ACHIEVEMENTS_KEY = 'debateGuideAchievements';
     const SPACED_REP_KEY = 'debateGuideSpacedRep';
     const USER_ID_KEY = 'debateGuideUserId';
+    const USER_EMAIL_KEY = 'debateGuideUserEmail';
 
     // ==========================================
     // SERVER SYNC (fire-and-forget)
@@ -42,14 +43,39 @@
     }
 
     /**
+     * Get stored user email
+     */
+    function getUserEmail() {
+        return localStorage.getItem(USER_EMAIL_KEY) || null;
+    }
+
+    /**
+     * Set user email
+     */
+    function setUserEmail(email) {
+        if (email && typeof email === 'string') {
+            localStorage.setItem(USER_EMAIL_KEY, email.trim().toLowerCase());
+        }
+    }
+
+    /**
+     * Validate email format
+     */
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    /**
      * Sync quiz results to server (fire-and-forget, non-blocking)
      */
     async function syncToServer(chapterId, results, questionResponses = []) {
         try {
             const anonymousId = getAnonymousUserId();
+            const email = getUserEmail();
 
             const payload = {
                 anonymousId,
+                email,
                 chapterNumber: parseInt(chapterId, 10),
                 score: results.bestScore,
                 totalQuestions: results.total,
@@ -1493,8 +1519,20 @@
     }
 
     function handleStart() {
-        // Show onboarding for first-time users
-        if (shouldShowOnboarding()) {
+        // First, collect email if we don't have it
+        if (shouldCollectEmail()) {
+            showEmailModal(function() {
+                // After email, show onboarding if needed
+                if (shouldShowOnboarding()) {
+                    showOnboarding(function() {
+                        beginQuiz();
+                    });
+                } else {
+                    beginQuiz();
+                }
+            });
+        } else if (shouldShowOnboarding()) {
+            // Have email, but show onboarding for first-time users
             showOnboarding(function() {
                 beginQuiz();
             });
@@ -1889,6 +1927,88 @@
     }
 
     // ==========================================
+    // EMAIL COLLECTION MODAL
+    // ==========================================
+
+    /**
+     * Check if we need to collect email
+     */
+    function shouldCollectEmail() {
+        return !getUserEmail();
+    }
+
+    /**
+     * Show email collection modal
+     */
+    function showEmailModal(callback) {
+        const overlay = document.createElement('div');
+        overlay.className = 'quiz-email-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-label', 'Enter your email');
+        overlay.innerHTML = `
+            <div class="quiz-email-content">
+                <h3 class="quiz-email-title">Before you begin</h3>
+                <p class="quiz-email-desc">Enter your email to track your progress across all quizzes and chapters.</p>
+                <form class="quiz-email-form" id="quiz-email-form">
+                    <input type="email"
+                           id="quiz-email-input"
+                           class="quiz-email-input"
+                           placeholder="your@email.com"
+                           autocomplete="email"
+                           required>
+                    <p class="quiz-email-error" id="quiz-email-error" hidden>Please enter a valid email address</p>
+                    <button type="submit" class="quiz-btn quiz-btn-primary quiz-email-submit">
+                        <span>Continue to Quiz</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </form>
+                <p class="quiz-email-privacy">We'll never share your email or send spam. It's just for tracking your learning progress.</p>
+            </div>
+        `;
+
+        document.body.appendChild(overlay);
+
+        const input = overlay.querySelector('#quiz-email-input');
+        const form = overlay.querySelector('#quiz-email-form');
+        const errorEl = overlay.querySelector('#quiz-email-error');
+
+        requestAnimationFrame(function() {
+            overlay.classList.add('is-visible');
+            input.focus();
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = input.value.trim();
+
+            if (!isValidEmail(email)) {
+                errorEl.hidden = false;
+                input.classList.add('is-error');
+                input.focus();
+                return;
+            }
+
+            // Save email
+            setUserEmail(email);
+
+            // Close modal
+            overlay.classList.remove('is-visible');
+            setTimeout(function() {
+                if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+                if (callback) callback();
+            }, 200);
+        });
+
+        // Clear error on input
+        input.addEventListener('input', function() {
+            errorEl.hidden = true;
+            input.classList.remove('is-error');
+        });
+    }
+
+    // ==========================================
     // FIRST-TIME QUIZ ONBOARDING (Fix #4)
     // ==========================================
 
@@ -1962,7 +2082,8 @@
         getAchievements: getAchievements,
         getDueReviews: getDueReviews,
         getSpacedRepetitionData: getSpacedRepetitionData,
-        getAnonymousUserId: getAnonymousUserId
+        getAnonymousUserId: getAnonymousUserId,
+        getUserEmail: getUserEmail
     };
 
 })();

@@ -360,6 +360,7 @@ permalink: /admin/
         {# Tabs #}
         <div class="admin-tabs">
             <button class="admin-tab active" data-tab="chapters">Chapters</button>
+            <button class="admin-tab" data-tab="users">Users</button>
             <button class="admin-tab" data-tab="questions">Questions</button>
             <button class="admin-tab" data-tab="activity">Activity</button>
             <button class="admin-tab" data-tab="export">Export</button>
@@ -381,6 +382,36 @@ permalink: /admin/
                 </thead>
                 <tbody id="chapters-tbody"></tbody>
             </table>
+        </div>
+
+        {# Users Panel #}
+        <div class="admin-panel" id="panel-users">
+            <div class="admin-loading" id="users-loading">Loading user data...</div>
+            <div id="users-list-view" style="display: none;">
+                <table class="admin-table" id="users-table">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Attempts</th>
+                            <th>Passed</th>
+                            <th>Mastered</th>
+                            <th>Avg Score</th>
+                            <th>Last Active</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-tbody"></tbody>
+                </table>
+            </div>
+            <div id="user-detail-view" style="display: none;">
+                <button class="admin-btn" id="user-back-btn" style="margin-bottom: var(--space-md);">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    Back to Users
+                </button>
+                <div id="user-detail-content"></div>
+            </div>
         </div>
 
         {# Questions Panel #}
@@ -530,6 +561,7 @@ permalink: /admin/
         // Load all data
         loadStats();
         loadChapters();
+        loadUsers();
         loadQuestions();
         loadActivity();
         setupExport();
@@ -647,6 +679,116 @@ permalink: /admin/
         } catch (err) {
             document.getElementById('activity-loading').innerHTML = '<div class="admin-error">Failed to load activity</div>';
         }
+    }
+
+    async function loadUsers() {
+        try {
+            const data = await fetchWithAuth('/api/admin/users');
+            const tbody = document.getElementById('users-tbody');
+            tbody.innerHTML = '';
+
+            (data.users || []).forEach(u => {
+                const lastActive = u.last_seen_at ? new Date(u.last_seen_at).toLocaleDateString() : '—';
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${u.email || '<span style="color: var(--text-muted);">' + u.anonymous_id.substring(0, 12) + '...</span>'}</td>
+                    <td>${u.attempts || 0}</td>
+                    <td>${u.chaptersPassed || 0}/20</td>
+                    <td>${u.chaptersMastered || 0}/20</td>
+                    <td class="score ${u.avgScore >= 70 ? 'pass' : 'fail'}">${u.avgScore !== null ? u.avgScore + '%' : '—'}</td>
+                    <td>${lastActive}</td>
+                    <td><button class="admin-btn view-user-btn" data-user-id="${u.id}">View</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Setup view buttons
+            document.querySelectorAll('.view-user-btn').forEach(btn => {
+                btn.addEventListener('click', () => showUserDetail(btn.dataset.userId));
+            });
+
+            document.getElementById('users-loading').style.display = 'none';
+            document.getElementById('users-list-view').style.display = 'block';
+        } catch (err) {
+            document.getElementById('users-loading').innerHTML = '<div class="admin-error">Failed to load user data</div>';
+        }
+    }
+
+    async function showUserDetail(userId) {
+        const listView = document.getElementById('users-list-view');
+        const detailView = document.getElementById('user-detail-view');
+        const content = document.getElementById('user-detail-content');
+
+        listView.style.display = 'none';
+        detailView.style.display = 'block';
+        content.innerHTML = '<div class="admin-loading">Loading user details...</div>';
+
+        try {
+            const data = await fetchWithAuth(`/api/admin/users?userId=${userId}`);
+            const user = data.user;
+            const attempts = data.attempts || [];
+
+            content.innerHTML = `
+                <div class="pattern-card" style="margin-bottom: var(--space-lg);">
+                    <h3 style="color: var(--accent); margin-bottom: var(--space-sm);">${user.email || 'Anonymous User'}</h3>
+                    <div class="pattern-meta" style="margin-bottom: var(--space-md);">
+                        ID: ${user.anonymous_id}<br>
+                        Joined: ${new Date(user.created_at).toLocaleDateString()}<br>
+                        Last active: ${user.last_seen_at ? new Date(user.last_seen_at).toLocaleString() : 'Never'}
+                    </div>
+                    <div class="admin-stats" style="margin: 0;">
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-value">${user.stats.totalAttempts}</div>
+                            <div class="admin-stat-label">Attempts</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-value">${user.stats.chaptersPassed}/20</div>
+                            <div class="admin-stat-label">Passed</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-value">${user.stats.chaptersMastered}/20</div>
+                            <div class="admin-stat-label">Mastered</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-value">${user.stats.averageScore}%</div>
+                            <div class="admin-stat-label">Avg Score</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-bottom: var(--space-sm);">Quiz History</h4>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Chapter</th>
+                            <th>Score</th>
+                            <th>Hints</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${attempts.map(a => `
+                            <tr>
+                                <td>${new Date(a.completed_at).toLocaleString()}</td>
+                                <td>Chapter ${a.chapter_number}</td>
+                                <td class="score ${a.percentage >= 70 ? 'pass' : 'fail'}">${a.score}/${a.total_questions} (${a.percentage}%)</td>
+                                <td>${a.hints_used}</td>
+                                <td>${a.time_taken_seconds ? Math.round(a.time_taken_seconds / 60) + ' min' : '—'}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        } catch (err) {
+            content.innerHTML = '<div class="admin-error">Failed to load user details</div>';
+        }
+
+        // Setup back button
+        document.getElementById('user-back-btn').addEventListener('click', () => {
+            detailView.style.display = 'none';
+            listView.style.display = 'block';
+        });
     }
 
     function setupExport() {

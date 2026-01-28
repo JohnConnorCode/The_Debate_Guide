@@ -24,6 +24,7 @@ module.exports = async function handler(req, res) {
     try {
         const {
             anonymousId,
+            email,
             chapterNumber,
             score,
             totalQuestions,
@@ -61,16 +62,24 @@ module.exports = async function handler(req, res) {
         if (existingUser) {
             userId = existingUser.id;
 
-            // Update last_seen_at
+            // Update last_seen_at and email (if provided)
+            const updateData = { last_seen_at: new Date().toISOString() };
+            if (email && typeof email === 'string' && email.includes('@')) {
+                updateData.email = email.trim().toLowerCase();
+            }
             await supabase
                 .from('dg_users')
-                .update({ last_seen_at: new Date().toISOString() })
+                .update(updateData)
                 .eq('id', userId);
         } else {
-            // Create new user
+            // Create new user with email if provided
+            const insertData = { anonymous_id: anonymousId };
+            if (email && typeof email === 'string' && email.includes('@')) {
+                insertData.email = email.trim().toLowerCase();
+            }
             const { data: newUser, error: userError } = await supabase
                 .from('dg_users')
-                .insert({ anonymous_id: anonymousId })
+                .insert(insertData)
                 .select('id')
                 .single();
 

@@ -1779,6 +1779,128 @@
 }
 
 /* ==========================================
+   EMAIL COLLECTION MODAL
+   ========================================== */
+
+.quiz-email-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.quiz-email-overlay.is-visible {
+    opacity: 1;
+}
+
+.quiz-email-content {
+    text-align: center;
+    max-width: 420px;
+    padding: var(--space-xl);
+    background: rgba(var(--color-ink-rgb), 0.98);
+    border: 1px solid rgba(var(--color-gold-rgb), 0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .quiz-email-content {
+    background: rgba(var(--color-paper-rgb), 0.98);
+}
+
+.quiz-email-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    letter-spacing: var(--tracking-wider);
+    color: var(--accent);
+    margin-bottom: var(--space-sm);
+}
+
+.quiz-email-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+    line-height: var(--leading-relaxed);
+}
+
+.quiz-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.quiz-email-input {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    background: rgba(var(--color-white-rgb), 0.05);
+    border: 1px solid rgba(var(--color-white-rgb), 0.2);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.quiz-email-input::placeholder {
+    color: var(--text-muted);
+}
+
+.quiz-email-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(var(--color-gold-rgb), 0.15);
+}
+
+.quiz-email-input.is-error {
+    border-color: #f44336;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.15);
+}
+
+[data-theme="light"] .quiz-email-input {
+    background: rgba(var(--color-black-rgb), 0.03);
+    border-color: rgba(var(--color-black-rgb), 0.15);
+}
+
+.quiz-email-error {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: #f44336;
+    margin: 0;
+}
+
+.quiz-email-submit {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-lg);
+    margin-top: var(--space-xs);
+}
+
+.quiz-email-privacy {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-top: var(--space-md);
+    margin-bottom: 0;
+    line-height: var(--leading-relaxed);
+}
+
+@media (max-width: 600px) {
+    .quiz-email-content {
+        margin: var(--space-md);
+        padding: var(--space-lg);
+    }
+
+    .quiz-email-title {
+        font-size: var(--text-xl);
+    }
+}
+
+/* ==========================================
    DUE FOR REVIEW WIDGET
    ========================================== */
 
