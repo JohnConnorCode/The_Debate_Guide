@@ -1358,6 +1358,56 @@
     transition: transform var(--transition-fast);
 }
 
+/* Next Quiz link - primary action after passing */
+.quiz-cta-next-quiz {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: rgba(var(--color-gold-rgb), 0.15);
+    border: var(--border-width) solid var(--accent);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.quiz-cta-next-quiz:hover {
+    background: rgba(var(--color-gold-rgb), 0.25);
+}
+
+.quiz-cta-next-quiz:hover svg {
+    transform: translateX(4px);
+}
+
+.quiz-cta-next-quiz .quiz-cta-next-label {
+    color: var(--accent);
+    font-weight: var(--font-semibold);
+}
+
+.quiz-cta-next-quiz .quiz-cta-next-title {
+    color: var(--text-primary);
+}
+
+.quiz-cta-next-quiz svg {
+    flex-shrink: 0;
+    color: var(--accent);
+    transition: transform var(--transition-fast);
+}
+
+/* Attempt badge in result message */
+.attempt-badge {
+    display: inline-block;
+    padding: 2px var(--space-xs);
+    margin-right: var(--space-xs);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-wide);
+    background: rgba(var(--color-gold-rgb), 0.15);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+}
+
 .quiz-cta-progress {
     display: inline-flex;
     align-items: center;
@@ -1384,13 +1434,15 @@
 }
 
 @media (max-width: 600px) {
-    .quiz-cta-next {
+    .quiz-cta-next,
+    .quiz-cta-next-quiz {
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
     }
 
-    .quiz-cta-next svg {
+    .quiz-cta-next svg,
+    .quiz-cta-next-quiz svg {
         align-self: flex-end;
     }
 

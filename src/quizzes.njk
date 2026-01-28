@@ -282,19 +282,23 @@ permalink: /quizzes/
         <div class="quiz-hub-stats" id="quiz-hub-stats">
             <div class="quiz-hub-stat">
                 <div class="quiz-hub-stat-value" id="hub-stat-completed">0</div>
-                <div class="quiz-hub-stat-label">Completed</div>
+                <div class="quiz-hub-stat-label">Passed</div>
             </div>
             <div class="quiz-hub-stat">
                 <div class="quiz-hub-stat-value" id="hub-stat-mastered">0</div>
                 <div class="quiz-hub-stat-label">Mastered</div>
             </div>
             <div class="quiz-hub-stat">
-                <div class="quiz-hub-stat-value" id="hub-stat-due">0</div>
-                <div class="quiz-hub-stat-label">Due Review</div>
+                <div class="quiz-hub-stat-value" id="hub-stat-attempts">0</div>
+                <div class="quiz-hub-stat-label">Attempts</div>
             </div>
             <div class="quiz-hub-stat">
                 <div class="quiz-hub-stat-value" id="hub-stat-avg">—</div>
                 <div class="quiz-hub-stat-label">Avg Score</div>
+            </div>
+            <div class="quiz-hub-stat">
+                <div class="quiz-hub-stat-value" id="hub-stat-due">0</div>
+                <div class="quiz-hub-stat-label">Due Review</div>
             </div>
         </div>
 
@@ -354,6 +358,7 @@ permalink: /quizzes/
         var dueCount = 0;
         var totalScore = 0;
         var scoreCount = 0;
+        var totalAttempts = 0;
         var now = new Date();
 
         // Update each quiz card
@@ -369,6 +374,9 @@ permalink: /quizzes/
                 var attempts = chapterProgress.attempts || 1;
                 totalScore += pct;
                 scoreCount++;
+                totalAttempts += attempts;
+
+                var attemptsText = attempts === 1 ? '1 attempt' : attempts + ' attempts';
 
                 if (pct >= 90 && attempts >= 2) {
                     // Mastered
@@ -380,7 +388,7 @@ permalink: /quizzes/
                         statusEl.setAttribute('aria-label', 'Quiz mastered');
                     }
                     if (scoreEl) {
-                        scoreEl.textContent = 'Mastered • ' + pct + '%';
+                        scoreEl.textContent = 'Mastered • ' + pct + '% • ' + attemptsText;
                         scoreEl.className = 'quiz-card-score mastered';
                     }
                 } else if (pct >= 70) {
@@ -392,7 +400,7 @@ permalink: /quizzes/
                         statusEl.setAttribute('aria-label', 'Quiz passed');
                     }
                     if (scoreEl) {
-                        scoreEl.textContent = 'Passed • ' + pct + '%';
+                        scoreEl.textContent = 'Passed • ' + pct + '% • ' + attemptsText;
                         scoreEl.className = 'quiz-card-score passed';
                     }
                 } else {
@@ -403,7 +411,7 @@ permalink: /quizzes/
                         statusEl.setAttribute('aria-label', 'Quiz attempted');
                     }
                     if (scoreEl) {
-                        scoreEl.textContent = 'Best: ' + pct + '% (need 70%)';
+                        scoreEl.textContent = 'Best: ' + pct + '% • ' + attemptsText;
                     }
                 }
 
@@ -423,6 +431,7 @@ permalink: /quizzes/
         // Update stats
         document.getElementById('hub-stat-completed').textContent = completedCount;
         document.getElementById('hub-stat-mastered').textContent = masteredCount;
+        document.getElementById('hub-stat-attempts').textContent = totalAttempts;
         document.getElementById('hub-stat-due').textContent = dueCount;
         if (scoreCount > 0) {
             document.getElementById('hub-stat-avg').textContent = Math.round(totalScore / scoreCount) + '%';

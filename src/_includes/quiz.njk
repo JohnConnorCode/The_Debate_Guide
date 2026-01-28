@@ -27,6 +27,10 @@
                     <span class="quiz-stat-value" id="quiz-best-score">—</span>
                     <span class="quiz-stat-label">Your Best</span>
                 </div>
+                <div class="quiz-stat">
+                    <span class="quiz-stat-value" id="quiz-attempts">0</span>
+                    <span class="quiz-stat-label">Attempts</span>
+                </div>
             </div>
             <button class="quiz-btn quiz-btn-start" id="quiz-start-btn">
                 <span>Start Quiz</span>
@@ -105,14 +109,33 @@
 
             {# Navigation CTAs - populated by JS #}
             <div class="quiz-navigation-ctas" id="quiz-navigation-ctas" style="display: none;">
+                {# Next quiz link (goes directly to next chapter's quiz) #}
+                <a href="#" class="quiz-cta-next-quiz" id="quiz-cta-next-quiz" style="display: none;">
+                    <span class="quiz-cta-next-label">Next Quiz</span>
+                    <span class="quiz-cta-next-title" id="quiz-cta-next-quiz-title"></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
                 {# Next chapter link #}
                 <a href="#" class="quiz-cta-next" id="quiz-cta-next" style="display: none;">
-                    <span class="quiz-cta-next-label">Continue to Next Chapter</span>
+                    <span class="quiz-cta-next-label">Read Next Chapter</span>
                     <span class="quiz-cta-next-title" id="quiz-cta-next-title"></span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
+                </a>
+                {# All quizzes link #}
+                <a href="/quizzes/" class="quiz-cta-progress" id="quiz-cta-all-quizzes">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>All Quizzes</span>
                 </a>
                 {# Progress link #}
                 <a href="/progress/" class="quiz-cta-progress" id="quiz-cta-progress">
@@ -120,7 +143,7 @@
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
-                    <span>View Your Overall Progress</span>
+                    <span>Your Progress</span>
                 </a>
             </div>
         </div>

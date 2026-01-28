@@ -133,6 +133,7 @@
         elements.questionCount = document.getElementById('quiz-question-count');
         elements.passingScore = document.getElementById('quiz-passing-score');
         elements.bestScore = document.getElementById('quiz-best-score');
+        elements.attemptsCount = document.getElementById('quiz-attempts');
         elements.startBtn = document.getElementById('quiz-start-btn');
 
         elements.progressFill = document.getElementById('quiz-progress-fill');
@@ -151,6 +152,8 @@
 
         // Navigation CTAs
         elements.navigationCtas = document.getElementById('quiz-navigation-ctas');
+        elements.ctaNextQuiz = document.getElementById('quiz-cta-next-quiz');
+        elements.ctaNextQuizTitle = document.getElementById('quiz-cta-next-quiz-title');
         elements.ctaNext = document.getElementById('quiz-cta-next');
         elements.ctaNextTitle = document.getElementById('quiz-cta-next-title');
         elements.ctaProgress = document.getElementById('quiz-cta-progress');
@@ -536,10 +539,28 @@
     function renderStartState() {
         const chapterId = elements.section.dataset.chapter;
         const progress = getChapterProgress(chapterId);
+        const attempts = progress ? (progress.attempts || 1) : 0;
 
         elements.questionCount.textContent = quizData.questions.length;
         elements.passingScore.textContent = quizData.passingScore + '%';
         elements.bestScore.textContent = progress ? progress.percentage + '%' : '—';
+        if (elements.attemptsCount) {
+            elements.attemptsCount.textContent = attempts;
+        }
+
+        // Update start button text based on attempts
+        if (elements.startBtn) {
+            const btnText = elements.startBtn.querySelector('span');
+            if (btnText) {
+                if (attempts === 0) {
+                    btnText.textContent = 'Start Quiz';
+                } else if (progress && progress.percentage >= 70) {
+                    btnText.textContent = 'Retake Quiz';
+                } else {
+                    btnText.textContent = 'Try Again';
+                }
+            }
+        }
 
         showState('start');
     }
@@ -1187,8 +1208,20 @@
         const chapterId = elements.section.dataset.chapter;
         saveProgress(chapterId, correct, total, totalHintsUsed, questionResponses);
 
+        // Get updated progress to show attempt count
+        const progress = getChapterProgress(chapterId);
+        const attemptCount = progress ? (progress.attempts || 1) : 1;
+
         // Update UI
         elements.scoreValue.textContent = percentage + '%';
+
+        // Update retry button with attempt number
+        if (elements.retryBtn) {
+            const retryText = elements.retryBtn.querySelector('span');
+            if (retryText) {
+                retryText.textContent = `Try Again (Attempt ${attemptCount + 1})`;
+            }
+        }
 
         if (passed) {
             elements.resultIcon.innerHTML = `
@@ -1197,7 +1230,7 @@
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
             `;
-            elements.resultMessage.textContent = `Excellent work! You've passed the quiz with ${correct} out of ${total} correct.`;
+            elements.resultMessage.innerHTML = `<span class="attempt-badge">Attempt ${attemptCount}</span> Excellent work! You've passed with ${correct} out of ${total} correct.`;
             elements.section.classList.add('quiz-passed');
         } else {
             elements.resultIcon.innerHTML = `
@@ -1207,7 +1240,7 @@
                     <line x1="9" y1="9" x2="15" y2="15"></line>
                 </svg>
             `;
-            elements.resultMessage.textContent = `You scored ${correct} out of ${total}. Review the chapter and try again!`;
+            elements.resultMessage.innerHTML = `<span class="attempt-badge">Attempt ${attemptCount}</span> You scored ${correct} out of ${total}. Need ${quizData.passingScore}% to pass.`;
             elements.section.classList.remove('quiz-passed');
         }
 
@@ -1239,16 +1272,24 @@
         // Show navigation CTAs container
         elements.navigationCtas.style.display = 'flex';
 
-        // Show next chapter link if not the last chapter and user passed
-        if (passed && nextChapter <= 20 && elements.ctaNext) {
-            // Try to find the next chapter URL from the page
+        // Show next quiz link if not the last chapter and user passed
+        if (passed && nextChapter <= 20) {
             const nextChapterUrl = getNextChapterUrl(currentChapter);
             const nextChapterTitle = getNextChapterTitle(currentChapter);
 
-            if (nextChapterUrl) {
+            // Next Quiz link (goes directly to quiz section)
+            if (elements.ctaNextQuiz && nextChapterUrl) {
+                elements.ctaNextQuiz.href = nextChapterUrl + '#chapter-quiz';
+                elements.ctaNextQuiz.style.display = 'flex';
+                if (elements.ctaNextQuizTitle && nextChapterTitle) {
+                    elements.ctaNextQuizTitle.textContent = nextChapterTitle;
+                }
+            }
+
+            // Next Chapter link (goes to chapter content)
+            if (elements.ctaNext && nextChapterUrl) {
                 elements.ctaNext.href = nextChapterUrl;
                 elements.ctaNext.style.display = 'flex';
-
                 if (elements.ctaNextTitle && nextChapterTitle) {
                     elements.ctaNextTitle.textContent = nextChapterTitle;
                 }
