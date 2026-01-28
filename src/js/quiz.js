@@ -149,6 +149,12 @@
         elements.reviewToggle = document.getElementById('quiz-review-toggle');
         elements.retryBtn = document.getElementById('quiz-retry-btn');
 
+        // Navigation CTAs
+        elements.navigationCtas = document.getElementById('quiz-navigation-ctas');
+        elements.ctaNext = document.getElementById('quiz-cta-next');
+        elements.ctaNextTitle = document.getElementById('quiz-cta-next-title');
+        elements.ctaProgress = document.getElementById('quiz-cta-progress');
+
         return true;
     }
 
@@ -1218,7 +1224,68 @@
         renderReview();
         elements.reviewContainer.hidden = true;
 
+        // Render navigation CTAs
+        renderNavigationCtas(passed, chapterId);
+
         showState('complete');
+    }
+
+    function renderNavigationCtas(passed, chapterId) {
+        if (!elements.navigationCtas) return;
+
+        const currentChapter = parseInt(chapterId, 10);
+        const nextChapter = currentChapter + 1;
+
+        // Show navigation CTAs container
+        elements.navigationCtas.style.display = 'flex';
+
+        // Show next chapter link if not the last chapter and user passed
+        if (passed && nextChapter <= 20 && elements.ctaNext) {
+            // Try to find the next chapter URL from the page
+            const nextChapterUrl = getNextChapterUrl(currentChapter);
+            const nextChapterTitle = getNextChapterTitle(currentChapter);
+
+            if (nextChapterUrl) {
+                elements.ctaNext.href = nextChapterUrl;
+                elements.ctaNext.style.display = 'flex';
+
+                if (elements.ctaNextTitle && nextChapterTitle) {
+                    elements.ctaNextTitle.textContent = nextChapterTitle;
+                }
+            }
+        }
+    }
+
+    function getNextChapterUrl(currentChapter) {
+        // Primary: use data attribute from Nunjucks template
+        if (elements.section && elements.section.dataset.nextChapterUrl) {
+            return elements.section.dataset.nextChapterUrl;
+        }
+
+        // Fallback: look for chapter navigation links on the page
+        const nextLink = document.querySelector('.chapter-nav-next');
+        if (nextLink) {
+            return nextLink.href;
+        }
+
+        return null;
+    }
+
+    function getNextChapterTitle(currentChapter) {
+        // Primary: use data attribute from Nunjucks template
+        if (elements.section && elements.section.dataset.nextChapterTitle) {
+            return elements.section.dataset.nextChapterTitle;
+        }
+
+        // Fallback: look for chapter navigation on the page
+        const nextLink = document.querySelector('.chapter-nav-next');
+        if (nextLink) {
+            const titleEl = nextLink.querySelector('.chapter-nav-title');
+            if (titleEl) {
+                return titleEl.textContent.trim();
+            }
+        }
+        return `Chapter ${currentChapter + 1}`;
     }
 
     function renderReview() {
@@ -1385,6 +1452,17 @@
     }
 
     function handleStart() {
+        // Show onboarding for first-time users
+        if (shouldShowOnboarding()) {
+            showOnboarding(function() {
+                beginQuiz();
+            });
+        } else {
+            beginQuiz();
+        }
+    }
+
+    function beginQuiz() {
         currentQuestion = 0;
         userAnswers = [];
         quizStarted = true;
@@ -1622,6 +1700,214 @@
     // This ensures offline progress eventually reaches the server
     if (typeof window !== 'undefined') {
         setTimeout(syncAllProgressToServer, 2000); // Delay to not block page load
+    }
+
+    // ==========================================
+    // ACHIEVEMENT TOAST NOTIFICATIONS (Fix #3)
+    // ==========================================
+
+    const ACHIEVEMENT_INFO = {
+        'first-steps': {
+            title: 'First Steps',
+            description: 'You completed your first quiz!',
+            icon: '🎯'
+        },
+        'perfect-score': {
+            title: 'Perfect Score',
+            description: '100% on a chapter quiz — flawless.',
+            icon: '💯'
+        },
+        'scholar': {
+            title: 'Scholar',
+            description: 'You\'ve mastered 10 chapters.',
+            icon: '📚'
+        },
+        'philosopher': {
+            title: 'Philosopher',
+            description: 'All 20 chapters mastered. You\'ve earned the philosopher\'s crown.',
+            icon: '🏛️'
+        },
+        'streak-master': {
+            title: 'Streak Master',
+            description: '7-day study streak!',
+            icon: '🔥'
+        }
+    };
+
+    function showAchievementToast(achievementId) {
+        const info = ACHIEVEMENT_INFO[achievementId];
+        if (!info) return;
+
+        // Check if this is the philosopher achievement — show celebration instead
+        if (achievementId === 'philosopher') {
+            showCompletionCelebration();
+            return;
+        }
+
+        const toast = document.createElement('div');
+        toast.className = 'achievement-toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        toast.innerHTML = `
+            <span class="achievement-toast-icon">${info.icon}</span>
+            <div class="achievement-toast-content">
+                <span class="achievement-toast-label">Achievement Unlocked</span>
+                <span class="achievement-toast-title">${info.title}</span>
+                <span class="achievement-toast-desc">${info.description}</span>
+            </div>
+            <button class="achievement-toast-close" aria-label="Dismiss">&times;</button>
+        `;
+
+        document.body.appendChild(toast);
+
+        // Trigger animation
+        requestAnimationFrame(function() {
+            toast.classList.add('is-visible');
+        });
+
+        // Dismiss on click
+        toast.querySelector('.achievement-toast-close').addEventListener('click', function() {
+            dismissToast(toast);
+        });
+
+        // Auto-dismiss after 5 seconds
+        setTimeout(function() {
+            dismissToast(toast);
+        }, 5000);
+    }
+
+    function dismissToast(toast) {
+        if (!toast || !toast.parentNode) return;
+        toast.classList.remove('is-visible');
+        toast.classList.add('is-dismissing');
+        setTimeout(function() {
+            if (toast.parentNode) toast.parentNode.removeChild(toast);
+        }, 300);
+    }
+
+    // Listen for achievement events
+    window.addEventListener('achievementUnlocked', function(e) {
+        if (e.detail && e.detail.achievementId) {
+            showAchievementToast(e.detail.achievementId);
+        }
+    });
+
+    // ==========================================
+    // COMPLETION CELEBRATION (Fix #8)
+    // ==========================================
+
+    function showCompletionCelebration() {
+        const overlay = document.createElement('div');
+        overlay.className = 'completion-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-label', 'Congratulations');
+        overlay.innerHTML = `
+            <div class="completion-content">
+                <div class="completion-icon">🏛️</div>
+                <h2 class="completion-title">THE PHILOSOPHER'S CROWN</h2>
+                <p class="completion-subtitle">You've mastered all 20 chapters.</p>
+                <p class="completion-message">
+                    Socrates spent a lifetime examining ideas. Aristotle catalogued the art of persuasion.
+                    Cicero practiced until his words could move empires. You've walked the same path they walked
+                    — and earned the right to call yourself a student of rhetoric.
+                </p>
+                <p class="completion-quote">
+                    <em>"The unexamined life is not worth living."</em> — Socrates
+                </p>
+                <div class="completion-actions">
+                    <a href="/progress/" class="quiz-btn quiz-btn-primary">View Your Record</a>
+                    <button class="quiz-btn quiz-btn-secondary completion-close">Continue</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(overlay);
+
+        requestAnimationFrame(function() {
+            overlay.classList.add('is-visible');
+        });
+
+        overlay.querySelector('.completion-close').addEventListener('click', function() {
+            overlay.classList.remove('is-visible');
+            setTimeout(function() {
+                if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+            }, 300);
+        });
+
+        // Close on Escape
+        function handleEscape(e) {
+            if (e.key === 'Escape') {
+                overlay.classList.remove('is-visible');
+                setTimeout(function() {
+                    if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+                }, 300);
+                document.removeEventListener('keydown', handleEscape);
+            }
+        }
+        document.addEventListener('keydown', handleEscape);
+    }
+
+    // ==========================================
+    // FIRST-TIME QUIZ ONBOARDING (Fix #4)
+    // ==========================================
+
+    const ONBOARDING_KEY = 'debateGuideOnboardingSeen';
+
+    function shouldShowOnboarding() {
+        try {
+            return !localStorage.getItem(ONBOARDING_KEY);
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function showOnboarding(callback) {
+        const overlay = document.createElement('div');
+        overlay.className = 'quiz-onboarding-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-label', 'Quiz tips');
+        overlay.innerHTML = `
+            <div class="quiz-onboarding-content">
+                <h3 class="quiz-onboarding-title">Quick tips before you start</h3>
+                <ul class="quiz-onboarding-tips">
+                    <li>
+                        <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd>
+                        <span>Select answers with number keys</span>
+                    </li>
+                    <li>
+                        <kbd>?</kbd>
+                        <span>Press for hints (small score penalty)</span>
+                    </li>
+                    <li>
+                        <kbd>Enter</kbd>
+                        <span>Continue to the next question</span>
+                    </li>
+                    <li>
+                        <span class="onboarding-tip-icon">💾</span>
+                        <span>Your progress saves automatically</span>
+                    </li>
+                </ul>
+                <button class="quiz-btn quiz-btn-primary quiz-onboarding-start">Got it — Start Quiz</button>
+            </div>
+        `;
+
+        document.body.appendChild(overlay);
+
+        requestAnimationFrame(function() {
+            overlay.classList.add('is-visible');
+        });
+
+        overlay.querySelector('.quiz-onboarding-start').addEventListener('click', function() {
+            try {
+                localStorage.setItem(ONBOARDING_KEY, '1');
+            } catch (e) {}
+
+            overlay.classList.remove('is-visible');
+            setTimeout(function() {
+                if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+                if (callback) callback();
+            }, 200);
+        });
     }
 
     // ==========================================

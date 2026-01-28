@@ -36,14 +36,26 @@
             {% if pageType == "home" %}
                 <a href="{{ '/introduction/' | url }}">Introduction</a>
                 <a href="#contents" aria-current="true">Contents</a>
+                <a href="{{ '/progress/' | url }}" class="nav-progress-link">
+                    <span>Your Progress</span>
+                    <span class="nav-progress-badge" id="nav-progress-badge" style="display: none;">0/20</span>
+                </a>
                 <a href="{{ '/about/' | url }}">About</a>
             {% elif pageType == "introduction" %}
                 <a href="{{ '/' | url }}">Contents</a>
                 <a href="#part-1">Begin Reading</a>
+                <a href="{{ '/progress/' | url }}" class="nav-progress-link">
+                    <span>Your Progress</span>
+                    <span class="nav-progress-badge" id="nav-progress-badge" style="display: none;">0/20</span>
+                </a>
                 <a href="{{ '/about/' | url }}">About</a>
             {% else %}
                 <a href="{{ '/' | url }}">Contents</a>
                 <a href="{{ '/introduction/' | url }}">Introduction</a>
+                <a href="{{ '/progress/' | url }}" class="nav-progress-link">
+                    <span>Your Progress</span>
+                    <span class="nav-progress-badge" id="nav-progress-badge" style="display: none;">0/20</span>
+                </a>
                 <a href="{{ '/about/' | url }}">About</a>
             {% endif %}
             <button class="search-trigger" id="search-trigger" aria-label="Search (Press / or Ctrl+K)" title="Search">
@@ -86,6 +98,10 @@
     <div class="mobile-nav-links">
         <a href="{{ '/' | url }}" class="mobile-nav-link">Contents</a>
         <a href="{{ '/introduction/' | url }}" class="mobile-nav-link">Introduction</a>
+        <a href="{{ '/progress/' | url }}" class="mobile-nav-link mobile-progress-link">
+            <span>Your Progress</span>
+            <span class="mobile-progress-badge" id="mobile-progress-badge" style="display: none;">0/20</span>
+        </a>
 
         {% for part in chapters.parts %}
         <div class="mobile-nav-section">
@@ -114,3 +130,36 @@
         <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer" class="btn-primary">Join SuperDebate</a>
     </div>
 </nav>
+
+{# Progress badge updater script #}
+<script>
+(function() {
+    'use strict';
+    try {
+        var progress = localStorage.getItem('debateGuideQuizProgress');
+        if (!progress) return;
+
+        var data;
+        try {
+            data = JSON.parse(progress);
+        } catch (parseErr) {
+            console.debug('Invalid quiz progress data in localStorage');
+            return;
+        }
+
+        var passedCount = Object.values(data).filter(function(p) {
+            return p && p.percentage >= 70;
+        }).length;
+
+        if (passedCount > 0) {
+            var badges = document.querySelectorAll('#nav-progress-badge, #mobile-progress-badge');
+            badges.forEach(function(badge) {
+                badge.textContent = passedCount + '/20';
+                badge.style.display = 'inline-flex';
+            });
+        }
+    } catch (e) {
+        console.debug('Error updating progress badge:', e);
+    }
+})();
+</script>

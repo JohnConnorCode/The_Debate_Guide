@@ -1874,6 +1874,42 @@ body.mobile-nav-open {
 }
 
 /* ==========================================
+   NAVIGATION PROGRESS BADGES
+   ========================================== */
+
+.nav-progress-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.nav-progress-badge,
+.mobile-progress-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    padding: 2px 6px;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    background: rgba(var(--color-gold-rgb), 0.2);
+    color: var(--accent);
+    border-radius: var(--radius-full);
+    letter-spacing: var(--tracking-normal);
+}
+
+.mobile-progress-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-progress-badge {
+    margin-left: auto;
+}
+
+/* ==========================================
    KEYBOARD SHORTCUTS HELP MODAL
    ========================================== */
 

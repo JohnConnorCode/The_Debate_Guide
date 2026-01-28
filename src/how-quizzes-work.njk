@@ -1,0 +1,460 @@
+---
+layout: base.njk
+title: "How Quizzes Work — The Debate Guide"
+description: "Learn how the quiz system works, including scoring, hints, spaced repetition, and achievements."
+permalink: /how-quizzes-work/
+---
+{% block styles %}
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<style>
+.quiz-guide {
+    max-width: var(--max-w-reading);
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+.quiz-guide-section {
+    margin-bottom: var(--space-xl);
+}
+
+.quiz-guide-section h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    letter-spacing: var(--tracking-wider);
+    color: var(--accent);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+    border-bottom: var(--border-width) solid rgba(var(--color-white-rgb), 0.1);
+}
+
+[data-theme="light"] .quiz-guide-section h2 {
+    border-color: rgba(var(--color-black-rgb), 0.1);
+}
+
+.quiz-guide-section p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+}
+
+.quiz-guide-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-md) 0;
+}
+
+.quiz-guide-section li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(var(--color-white-rgb), 0.05);
+}
+
+[data-theme="light"] .quiz-guide-section li {
+    border-color: rgba(var(--color-black-rgb), 0.05);
+}
+
+.quiz-guide-section li:last-child {
+    border-bottom: none;
+}
+
+.quiz-guide-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--color-gold-rgb), 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    font-size: var(--text-sm);
+}
+
+.quiz-guide-item-content {
+    flex: 1;
+}
+
+.quiz-guide-item-title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.quiz-guide-item-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.info-box {
+    background: rgba(var(--color-gold-rgb), 0.08);
+    border: 1px solid rgba(var(--color-gold-rgb), 0.2);
+    border-left: 3px solid var(--accent);
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.info-box-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: var(--space-xs);
+}
+
+.info-box p {
+    margin: 0;
+    font-size: var(--text-sm);
+}
+
+.keyboard-shortcuts {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xs) var(--space-md);
+    margin: var(--space-md) 0;
+}
+
+.keyboard-shortcuts kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    padding: var(--space-1) var(--space-2);
+    background: rgba(var(--color-white-rgb), 0.1);
+    border: 1px solid rgba(var(--color-white-rgb), 0.2);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--accent);
+}
+
+[data-theme="light"] .keyboard-shortcuts kbd {
+    background: rgba(var(--color-black-rgb), 0.05);
+    border-color: rgba(var(--color-black-rgb), 0.15);
+}
+
+.keyboard-shortcuts span {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.achievement-preview {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    background: rgba(var(--color-white-rgb), 0.03);
+    border: 1px solid rgba(var(--color-white-rgb), 0.1);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-sm);
+}
+
+[data-theme="light"] .achievement-preview {
+    background: rgba(var(--color-black-rgb), 0.02);
+    border-color: rgba(var(--color-black-rgb), 0.1);
+}
+
+.achievement-preview-icon {
+    font-size: var(--text-2xl);
+}
+
+.achievement-preview-info {
+    flex: 1;
+}
+
+.achievement-preview-title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    letter-spacing: var(--tracking-wide);
+}
+
+.achievement-preview-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease-out;
+}
+
+.cta-btn-primary {
+    background: var(--accent);
+    color: var(--color-ink);
+    border: 1px solid var(--accent);
+}
+
+.cta-btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.cta-btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(var(--color-white-rgb), 0.2);
+}
+
+[data-theme="light"] .cta-btn-secondary {
+    border-color: rgba(var(--color-black-rgb), 0.2);
+}
+
+.cta-btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .quiz-guide {
+        padding: var(--space-md);
+    }
+
+    .quiz-guide-section h2 {
+        font-size: var(--text-xl);
+    }
+
+    .keyboard-shortcuts {
+        grid-template-columns: 1fr;
+    }
+
+    .keyboard-shortcuts kbd {
+        justify-self: start;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        justify-content: center;
+    }
+}
+</style>
+{% endblock %}
+
+{# Page Hero #}
+<section class="chapter-hero section-dark">
+    {% include "sunburst.njk" %}
+    <p class="chapter-part">Understanding Your Learning</p>
+    <div class="chapter-number" style="opacity: 0.05;">?</div>
+    <h1 class="chapter-title">HOW QUIZZES WORK</h1>
+    <p class="chapter-subtitle">Everything you need to know about the quiz system</p>
+</section>
+
+<div class="deco-border"></div>
+
+<main class="section section-dark">
+    <div class="quiz-guide">
+
+        <section class="quiz-guide-section">
+            <h2>What Quizzes Measure</h2>
+            <p>Each chapter includes a quiz designed to reinforce key concepts from the reading. These aren't memory tests—they're comprehension checks that help you internalize the principles of effective argument.</p>
+            <p>Questions cover vocabulary, application of techniques, and scenario-based reasoning. You'll encounter multiple choice, true/false, matching, ordering, and fill-in-the-blank questions.</p>
+        </section>
+
+        <section class="quiz-guide-section">
+            <h2>Scoring & Passing</h2>
+            <ul>
+                <li>
+                    <span class="quiz-guide-icon">70%</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">Passing Threshold</div>
+                        <div class="quiz-guide-item-desc">Score 70% or higher to pass a chapter quiz. This ensures you've grasped the core concepts before moving on.</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="quiz-guide-icon">90%</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">Mastery Level</div>
+                        <div class="quiz-guide-item-desc">Score 90% or higher twice to achieve mastery. Mastered chapters are marked with a star in your progress.</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="quiz-guide-icon">∞</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">Unlimited Retakes</div>
+                        <div class="quiz-guide-item-desc">You can retake any quiz as many times as you like. Questions and answers are randomized each time.</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="quiz-guide-section">
+            <h2>The Hint System</h2>
+            <p>Stuck on a question? Each question offers up to two hints to help guide your thinking.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">Hint Penalty</div>
+                <p>Using a hint reduces your final score by 5%. Two hints on one question means a 10% penalty for that attempt. The maximum penalty is capped at 25% per quiz. Use hints strategically!</p>
+            </div>
+
+            <p>Hints are designed to nudge you toward the answer without giving it away. They might remind you of a key concept, suggest elimination strategies, or point you to the relevant part of the chapter.</p>
+        </section>
+
+        <section class="quiz-guide-section">
+            <h2>Spaced Repetition</h2>
+            <p>The quiz system uses spaced repetition—a learning technique backed by cognitive science—to help you retain what you've learned.</p>
+
+            <ul>
+                <li>
+                    <span class="quiz-guide-icon">1</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">After You Pass</div>
+                        <div class="quiz-guide-item-desc">Your first review is scheduled for 1 day after passing. Score well again and the interval grows.</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="quiz-guide-icon">6</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">Growing Intervals</div>
+                        <div class="quiz-guide-item-desc">After your second success, the review interval jumps to 6 days, then continues to grow with each review.</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="quiz-guide-icon">↻</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">Adaptive System</div>
+                        <div class="quiz-guide-item-desc">Score poorly on a review? The interval shortens. Score well? It lengthens. The system adapts to your retention.</div>
+                    </div>
+                </li>
+            </ul>
+
+            <p>Check your Progress page to see which chapters are due for review. Staying on top of reviews is key to long-term retention.</p>
+        </section>
+
+        <section class="quiz-guide-section">
+            <h2>Achievements</h2>
+            <p>Earn achievements as you progress through the book. These aren't just badges—they mark genuine milestones in your rhetorical education.</p>
+
+            <div class="achievement-preview">
+                <span class="achievement-preview-icon">🏆</span>
+                <div class="achievement-preview-info">
+                    <div class="achievement-preview-title">First Steps</div>
+                    <div class="achievement-preview-desc">Complete your first quiz</div>
+                </div>
+            </div>
+
+            <div class="achievement-preview">
+                <span class="achievement-preview-icon">⭐</span>
+                <div class="achievement-preview-info">
+                    <div class="achievement-preview-title">Perfect Score</div>
+                    <div class="achievement-preview-desc">Score 100% on any quiz</div>
+                </div>
+            </div>
+
+            <div class="achievement-preview">
+                <span class="achievement-preview-icon">📚</span>
+                <div class="achievement-preview-info">
+                    <div class="achievement-preview-title">Scholar</div>
+                    <div class="achievement-preview-desc">Master 10 chapters (90%+ twice)</div>
+                </div>
+            </div>
+
+            <div class="achievement-preview">
+                <span class="achievement-preview-icon">🧠</span>
+                <div class="achievement-preview-info">
+                    <div class="achievement-preview-title">Philosopher</div>
+                    <div class="achievement-preview-desc">Master all 20 chapters</div>
+                </div>
+            </div>
+
+            <div class="achievement-preview">
+                <span class="achievement-preview-icon">🔥</span>
+                <div class="achievement-preview-info">
+                    <div class="achievement-preview-title">Streak Master</div>
+                    <div class="achievement-preview-desc">Maintain a 7-day study streak</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-guide-section">
+            <h2>Keyboard Shortcuts</h2>
+            <p>Power through quizzes efficiently with these keyboard shortcuts:</p>
+
+            <div class="keyboard-shortcuts">
+                <kbd>1</kbd><span>Select first answer</span>
+                <kbd>2</kbd><span>Select second answer</span>
+                <kbd>3</kbd><span>Select third answer</span>
+                <kbd>4</kbd><span>Select fourth answer</span>
+                <kbd>Enter</kbd><span>Confirm and continue</span>
+                <kbd>?</kbd><span>Show hint (if available)</span>
+                <kbd>←</kbd><span>Previous question</span>
+                <kbd>→</kbd><span>Next question</span>
+            </div>
+
+            <p class="quiz-guide-item-desc">On mobile devices, tap answers directly. Drag-and-drop ordering questions also support tap-and-button controls.</p>
+        </section>
+
+        <section class="quiz-guide-section">
+            <h2>Your Data</h2>
+            <p>Your quiz progress is stored locally in your browser. This means:</p>
+
+            <ul>
+                <li>
+                    <span class="quiz-guide-icon">🔒</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">Private by Default</div>
+                        <div class="quiz-guide-item-desc">Your progress stays on your device. No account required.</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="quiz-guide-icon">📤</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">Export & Import</div>
+                        <div class="quiz-guide-item-desc">Back up your progress or transfer it to another device via the Progress page.</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="quiz-guide-icon">📊</span>
+                    <div class="quiz-guide-item-content">
+                        <div class="quiz-guide-item-title">Anonymous Analytics</div>
+                        <div class="quiz-guide-item-desc">We collect anonymous aggregate data to improve quiz quality. No personal information is stored.</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <div class="cta-buttons">
+            <a href="{{ '/progress/' | url }}" class="cta-btn cta-btn-primary">
+                <span>View Your Progress</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            <a href="{{ '/' | url }}" class="cta-btn cta-btn-secondary">
+                <span>Back to Contents</span>
+            </a>
+        </div>
+
+    </div>
+</main>
+
+<div class="deco-border"></div>

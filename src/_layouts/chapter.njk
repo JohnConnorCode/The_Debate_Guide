@@ -19,6 +19,16 @@ pageType: chapter
 {# Breadcrumb Navigation #}
 {% include "breadcrumbs.njk" %}
 
+{# Chapter Progress Indicator #}
+<div class="chapter-progress-indicator" id="chapter-progress-indicator" data-chapter="{{ chapterNumber }}" style="display: none;">
+    <div class="chapter-progress-inner">
+        <span class="chapter-progress-text" id="chapter-progress-text">Chapter {{ chapterNumber }} of 20</span>
+        <a href="{{ '/progress/' | url }}" class="chapter-progress-link">
+            <span id="chapter-progress-status"></span>
+        </a>
+    </div>
+</div>
+
 {# Chapter Hero #}
 <section class="chapter-hero section-dark">
     {% include "sunburst.njk" %}
@@ -62,8 +72,77 @@ pageType: chapter
     <kbd>Esc</kbd> Contents
 </div>
 
+{# Quiz Sticky Footer - shown on scroll past article, hidden near quiz #}
+<div class="quiz-sticky-footer" id="quiz-sticky-footer" hidden>
+    <div class="quiz-sticky-inner">
+        <span class="quiz-sticky-text">Ready to test your knowledge?</span>
+        <a href="#chapter-quiz" class="quiz-sticky-btn">Take Quiz</a>
+    </div>
+</div>
+
 {# Chapter Illustrations #}
 <script src="{{ '/js/chapter-illustrations.js' | url }}?v={{ build.timestamp }}"></script>
+
+{# Quiz Sticky Footer visibility #}
+<script>
+(function() {
+    'use strict';
+    var footer = document.getElementById('quiz-sticky-footer');
+    var quizSection = document.getElementById('chapter-quiz');
+    if (!footer || !quizSection) return;
+
+    // Remove hidden attribute so transitions work
+    footer.removeAttribute('hidden');
+
+    var articleEl = document.querySelector('article.section');
+    var showThreshold = 0.4; // Show after reading 40% of article
+    var isVisible = false;
+
+    function checkVisibility() {
+        if (!articleEl) return;
+
+        var articleRect = articleEl.getBoundingClientRect();
+        var quizRect = quizSection.getBoundingClientRect();
+        var viewportHeight = window.innerHeight;
+
+        // Show: user has scrolled past 40% of article
+        var denominator = articleRect.height - viewportHeight;
+        if (denominator <= 0) return; // Article shorter than viewport — don't show
+        var articleProgress = -articleRect.top / denominator;
+        var shouldShow = articleProgress > showThreshold;
+
+        // Hide: quiz section is in viewport
+        var quizVisible = quizRect.top < viewportHeight && quizRect.bottom > 0;
+        if (quizVisible) shouldShow = false;
+
+        if (shouldShow && !isVisible) {
+            footer.classList.add('is-visible');
+            isVisible = true;
+        } else if (!shouldShow && isVisible) {
+            footer.classList.remove('is-visible');
+            isVisible = false;
+        }
+    }
+
+    // Throttled scroll handler
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                checkVisibility();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Hide when clicking the quiz link (smooth scroll)
+    footer.querySelector('.quiz-sticky-btn').addEventListener('click', function() {
+        footer.classList.remove('is-visible');
+        isVisible = false;
+    });
+})();
+</script>
 
 {# TOC Discovery Hint #}
 <script>
@@ -95,6 +174,55 @@ pageType: chapter
     });
 
     observer.observe(toolbar, { attributes: true, attributeFilter: ['class'] });
+})();
+</script>
+
+{# Chapter progress indicator updater #}
+<script>
+(function() {
+    'use strict';
+    try {
+        var indicator = document.getElementById('chapter-progress-indicator');
+        var statusEl = document.getElementById('chapter-progress-status');
+        if (!indicator || !statusEl) return;
+
+        var chapterId = indicator.dataset.chapter;
+        var progressData = localStorage.getItem('debateGuideQuizProgress');
+        var spacedRepData = localStorage.getItem('debateGuideSpacedRep');
+        var progress = progressData ? JSON.parse(progressData) : {};
+        var spacedRep = spacedRepData ? JSON.parse(spacedRepData) : {};
+
+        var completedCount = Object.values(progress).filter(function(p) {
+            return p && p.percentage >= 70;
+        }).length;
+
+        var statusText = "You've completed " + completedCount + " chapter" + (completedCount !== 1 ? 's' : '');
+        var chapterProgress = progress[chapterId];
+
+        if (chapterProgress) {
+            var pct = chapterProgress.percentage;
+            if (pct >= 90 && chapterProgress.attempts >= 2) {
+                statusText += ' — This chapter: mastered';
+            } else if (pct >= 70) {
+                statusText += ' — This chapter: passed (' + pct + '%)';
+            } else {
+                statusText += ' — This chapter: ' + pct + '% (needs 70%)';
+            }
+        }
+
+        // Check if this chapter is due for review
+        var chapterSpacedRep = spacedRep[chapterId];
+        if (chapterSpacedRep && chapterSpacedRep.nextReview) {
+            var now = new Date();
+            var nextReview = new Date(chapterSpacedRep.nextReview);
+            if (nextReview <= now) {
+                statusText += ' <span class="chapter-review-badge">↻ Due for review</span>';
+            }
+        }
+
+        statusEl.innerHTML = statusText;
+        indicator.style.display = 'block';
+    } catch (e) {}
 })();
 </script>
 {% endblock %}

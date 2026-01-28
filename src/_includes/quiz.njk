@@ -1,6 +1,6 @@
 {# Chapter Quiz Component #}
 {% if chapterNumber %}
-<section class="quiz-section" id="chapter-quiz" data-chapter="{{ chapterNumber }}">
+<section class="quiz-section" id="chapter-quiz" data-chapter="{{ chapterNumber }}"{% if nextChapter %} data-next-chapter-url="{{ nextChapter.url | url }}" data-next-chapter-title="{{ nextChapter.title }}"{% endif %}>
     <div class="quiz-header">
         <div class="quiz-badge">
             <span class="diamond"></span>
@@ -101,6 +101,27 @@
                     </svg>
                     <span>Try Again</span>
                 </button>
+            </div>
+
+            {# Navigation CTAs - populated by JS #}
+            <div class="quiz-navigation-ctas" id="quiz-navigation-ctas" style="display: none;">
+                {# Next chapter link #}
+                <a href="#" class="quiz-cta-next" id="quiz-cta-next" style="display: none;">
+                    <span class="quiz-cta-next-label">Continue to Next Chapter</span>
+                    <span class="quiz-cta-next-title" id="quiz-cta-next-title"></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                {# Progress link #}
+                <a href="/progress/" class="quiz-cta-progress" id="quiz-cta-progress">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>View Your Overall Progress</span>
+                </a>
             </div>
         </div>
     </div>

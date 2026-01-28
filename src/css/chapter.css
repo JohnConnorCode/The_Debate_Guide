@@ -71,6 +71,58 @@
 }
 
 /* ==========================================
+   CHAPTER PROGRESS INDICATOR
+   ========================================== */
+
+.chapter-progress-indicator {
+    max-width: var(--max-w-reading);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.chapter-progress-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(var(--color-gold-rgb), 0.06);
+    border: 1px solid rgba(var(--color-gold-rgb), 0.12);
+    border-radius: var(--radius-sm);
+}
+
+.chapter-progress-text {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wider);
+    color: var(--accent);
+    font-weight: var(--font-medium);
+}
+
+.chapter-progress-link {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+}
+
+.chapter-progress-link:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .chapter-progress-indicator {
+        padding: 0 var(--space-sm);
+    }
+
+    .chapter-progress-inner {
+        flex-direction: column;
+        gap: var(--space-1);
+        text-align: center;
+    }
+}
+
+/* ==========================================
    CHAPTER TOC SIDEBAR
    (Toolbar styles are in styles.css for site-wide use)
    ========================================== */
@@ -1027,6 +1079,88 @@
     border-radius: var(--radius-sm);
     padding: var(--space-1) var(--space-2);
     margin: 0 var(--space-1);
+}
+
+/* ==========================================
+   QUIZ STICKY FOOTER
+   ========================================== */
+
+.quiz-sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky, 40);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.quiz-sticky-footer.is-visible {
+    transform: translateY(0);
+}
+
+.quiz-sticky-inner {
+    max-width: var(--max-w-reading);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(var(--color-ink-rgb), 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(var(--color-gold-rgb), 0.2);
+}
+
+[data-theme="light"] .quiz-sticky-inner {
+    background: rgba(var(--color-paper-rgb, 255, 255, 255), 0.95);
+    border-color: rgba(var(--color-gold-rgb), 0.3);
+}
+
+.quiz-sticky-text {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.quiz-sticky-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-md);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-ink);
+    background: var(--accent);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background 0.2s ease-out;
+    white-space: nowrap;
+}
+
+.quiz-sticky-btn:hover {
+    background: var(--accent-hover);
+}
+
+@media (max-width: 600px) {
+    .quiz-sticky-inner {
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .quiz-sticky-text {
+        font-size: var(--text-xs);
+    }
+
+    .quiz-sticky-btn {
+        padding: var(--space-2) var(--space-sm);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quiz-sticky-footer {
+        transition: none;
+    }
 }
 
 /* ==========================================
