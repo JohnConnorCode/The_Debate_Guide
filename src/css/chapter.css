@@ -71,6 +71,68 @@
 }
 
 /* ==========================================
+   QUIZ TEASER BANNER
+   ========================================== */
+
+.quiz-teaser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(var(--color-gold-rgb), 0.06);
+    border-bottom: 1px solid rgba(var(--color-gold-rgb), 0.12);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.quiz-teaser-icon {
+    font-size: var(--text-base);
+}
+
+.quiz-teaser-text {
+    color: var(--text-primary);
+}
+
+.quiz-teaser-text strong {
+    color: var(--accent);
+    font-weight: var(--font-medium);
+}
+
+.quiz-teaser-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1) var(--space-xs);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    color: var(--accent);
+    background: rgba(var(--color-gold-rgb), 0.1);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background 0.2s ease-out;
+}
+
+.quiz-teaser-link:hover {
+    background: rgba(var(--color-gold-rgb), 0.2);
+}
+
+@media (max-width: 600px) {
+    .quiz-teaser {
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        text-align: center;
+    }
+
+    .quiz-teaser-link {
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--space-1);
+    }
+}
+
+/* ==========================================
    CHAPTER PROGRESS INDICATOR
    ========================================== */
 

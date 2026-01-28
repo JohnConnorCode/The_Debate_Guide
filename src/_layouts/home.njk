@@ -272,6 +272,16 @@ pageType: home
         line-height: var(--leading-relaxed);
     }
 
+    .quiz-cta-help-link {
+        color: var(--accent);
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .quiz-cta-help-link:hover {
+        text-decoration: underline;
+    }
+
     .quiz-cta-stats {
         display: flex;
         justify-content: center;
@@ -909,9 +919,10 @@ pageType: home
             if (completedCount > 0 && ctaStats) {
                 ctaStats.style.display = '';
                 if (ctaDescription) {
-                    ctaDescription.textContent = 'Track your progress across all 20 chapters. Master each quiz to unlock achievements.';
+                    ctaDescription.innerHTML = 'Track your progress across all 20 chapters. Master each quiz to unlock achievements. <a href="/how-quizzes-work/" class="quiz-cta-help-link">How it works →</a>';
                 }
                 if (ctaLink) {
+                    ctaLink.href = '/progress/';
                     ctaLink.querySelector('span').textContent = 'View Your Progress';
                 }
             }

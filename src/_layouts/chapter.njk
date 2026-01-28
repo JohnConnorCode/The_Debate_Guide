@@ -50,6 +50,15 @@ pageType: chapter
 
 <div class="deco-border" data-animate="fade"></div>
 
+{# Quiz Teaser Banner #}
+{% if chapterNumber %}
+<div class="quiz-teaser" data-animate>
+    <span class="quiz-teaser-icon">📝</span>
+    <span class="quiz-teaser-text">This chapter has a <strong>10-question quiz</strong></span>
+    <a href="#chapter-quiz" class="quiz-teaser-link">Jump to quiz ↓</a>
+</div>
+{% endif %}
+
 {# Chapter Content - includes article, exercises, and navigation #}
 <article class="section section-dark">
     {{ content | safe }}

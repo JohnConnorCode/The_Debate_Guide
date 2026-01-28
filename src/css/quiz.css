@@ -1699,6 +1699,20 @@
     font-size: var(--text-base);
 }
 
+.quiz-onboarding-help {
+    display: block;
+    text-align: center;
+    margin-bottom: var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.quiz-onboarding-help:hover {
+    text-decoration: underline;
+}
+
 .quiz-onboarding-start {
     width: 100%;
     justify-content: center;

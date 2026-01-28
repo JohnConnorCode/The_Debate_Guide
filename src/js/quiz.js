@@ -1887,6 +1887,7 @@
                         <span>Your progress saves automatically</span>
                     </li>
                 </ul>
+                <a href="/how-quizzes-work/" class="quiz-onboarding-help">Learn more about quizzes →</a>
                 <button class="quiz-btn quiz-btn-primary quiz-onboarding-start">Got it — Start Quiz</button>
             </div>
         `;
