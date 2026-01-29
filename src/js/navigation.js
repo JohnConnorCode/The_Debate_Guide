@@ -1124,24 +1124,67 @@
         });
 
         // Highlight current section
-        const observerOptions = {
-            rootMargin: '-20% 0px -70% 0px'
+        // Use different rootMargin for mobile vs desktop
+        // Mobile needs a larger detection zone since viewport is smaller
+        var isMobile = window.innerWidth < 768;
+        var observerOptions = {
+            // Desktop: 10% zone near top (20% from top, 70% from bottom)
+            // Mobile: 30% zone (10% from top, 60% from bottom) - more forgiving
+            rootMargin: isMobile ? '-10% 0px -60% 0px' : '-20% 0px -70% 0px'
         };
 
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    sidebar.querySelectorAll('.chapter-toc-link').forEach(link => {
-                        link.classList.remove('is-active');
-                        if (link.getAttribute('href') === '#' + entry.target.id) {
-                            link.classList.add('is-active');
-                        }
-                    });
+        var sectionObserver = new IntersectionObserver(function(entries) {
+            // Find the topmost visible heading
+            var visibleEntries = entries.filter(function(e) { return e.isIntersecting; });
+            if (visibleEntries.length === 0) return;
+
+            // Sort by position on page (top of bounding rect)
+            visibleEntries.sort(function(a, b) {
+                return a.boundingClientRect.top - b.boundingClientRect.top;
+            });
+
+            // Use the topmost visible heading
+            var activeEntry = visibleEntries[0];
+
+            sidebar.querySelectorAll('.chapter-toc-link').forEach(function(link) {
+                link.classList.remove('is-active');
+                if (link.getAttribute('href') === '#' + activeEntry.target.id) {
+                    link.classList.add('is-active');
                 }
             });
         }, observerOptions);
 
-        headings.forEach(heading => sectionObserver.observe(heading));
+        headings.forEach(function(heading) { sectionObserver.observe(heading); });
+
+        // Update observer on resize (mobile <-> desktop transition)
+        var resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                var nowMobile = window.innerWidth < 768;
+                if (nowMobile !== isMobile) {
+                    isMobile = nowMobile;
+                    // Disconnect old observer and create new one with updated rootMargin
+                    sectionObserver.disconnect();
+                    observerOptions.rootMargin = isMobile ? '-10% 0px -60% 0px' : '-20% 0px -70% 0px';
+                    sectionObserver = new IntersectionObserver(function(entries) {
+                        var visibleEntries = entries.filter(function(e) { return e.isIntersecting; });
+                        if (visibleEntries.length === 0) return;
+                        visibleEntries.sort(function(a, b) {
+                            return a.boundingClientRect.top - b.boundingClientRect.top;
+                        });
+                        var activeEntry = visibleEntries[0];
+                        sidebar.querySelectorAll('.chapter-toc-link').forEach(function(link) {
+                            link.classList.remove('is-active');
+                            if (link.getAttribute('href') === '#' + activeEntry.target.id) {
+                                link.classList.add('is-active');
+                            }
+                        });
+                    }, observerOptions);
+                    headings.forEach(function(heading) { sectionObserver.observe(heading); });
+                }
+            }, 250);
+        });
     }
 
     // ==========================================
