@@ -491,17 +491,13 @@
     }
 
     function showLoadingState() {
-        if (!elements.startState) return;
-        elements.startState.innerHTML = `
-            <div class="quiz-loading" role="status" aria-live="polite">
-                <div class="quiz-loading-spinner"></div>
-                <p>Loading quiz...</p>
-            </div>
-        `;
+        if (!elements.section) return;
+        elements.section.classList.add('is-loading');
     }
 
     function hideLoadingState() {
-        // Will be replaced by renderStartState
+        if (!elements.section) return;
+        elements.section.classList.remove('is-loading');
     }
 
     function showErrorState(message) {
