@@ -1945,13 +1945,12 @@
             <div class="quiz-email-content">
                 <h3 class="quiz-email-title">Before you begin</h3>
                 <p class="quiz-email-desc">Enter your email to track your progress across all quizzes and chapters.</p>
-                <form class="quiz-email-form" id="quiz-email-form">
+                <form class="quiz-email-form" id="quiz-email-form" novalidate>
                     <input type="email"
                            id="quiz-email-input"
                            class="quiz-email-input"
                            placeholder="your@email.com"
-                           autocomplete="email"
-                           required>
+                           autocomplete="email">
                     <p class="quiz-email-error" id="quiz-email-error" hidden>Please enter a valid email address</p>
                     <button type="submit" class="quiz-btn quiz-btn-primary quiz-email-submit">
                         <span>Continue to Quiz</span>

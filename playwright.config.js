@@ -13,4 +13,11 @@ module.exports = defineConfig({
       use: { browserName: 'chromium' },
     },
   ],
+  // Let Playwright manage the server lifecycle
+  webServer: {
+    command: 'npx serve _site -l 8080',
+    url: 'http://localhost:8080',
+    reuseExistingServer: !process.env.CI,
+    timeout: 60000,
+  },
 });
