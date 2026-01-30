@@ -676,6 +676,161 @@ pageType: home
             font-size: var(--text-sm);
         }
     }
+
+    /* ==========================================
+       QUIZ PROGRESS CTA
+       ========================================== */
+
+    .quiz-progress-cta {
+        margin-bottom: var(--space-lg);
+        padding: var(--space-md);
+        background: rgba(var(--color-gold-rgb), 0.06);
+        border: 1px solid rgba(var(--color-gold-rgb), 0.15);
+        border-radius: var(--radius-md);
+    }
+
+    .quiz-cta-inner {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    .quiz-cta-icon {
+        font-size: var(--text-2xl);
+        flex-shrink: 0;
+    }
+
+    .quiz-cta-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    .quiz-cta-label {
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        letter-spacing: var(--tracking-caps);
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: var(--font-semibold);
+    }
+
+    .quiz-cta-text {
+        font-family: var(--font-body);
+        font-size: var(--text-sm);
+        color: var(--text-primary);
+        line-height: var(--leading-normal);
+    }
+
+    .quiz-cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-xs);
+        padding: var(--space-xs) var(--space-sm);
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        letter-spacing: var(--tracking-wide);
+        color: var(--accent);
+        text-decoration: none;
+        border: 1px solid rgba(var(--color-gold-rgb), 0.3);
+        border-radius: var(--radius-sm);
+        transition: background 0.2s, border-color 0.2s;
+        white-space: nowrap;
+    }
+
+    .quiz-cta-link:hover {
+        background: rgba(var(--color-gold-rgb), 0.15);
+        border-color: var(--accent);
+    }
+
+    .quiz-cta-link svg {
+        transition: transform 0.2s;
+    }
+
+    .quiz-cta-link:hover svg {
+        transform: translateX(3px);
+    }
+
+    @media (max-width: 600px) {
+        .quiz-cta-inner {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-sm);
+        }
+
+        .quiz-cta-link {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* ==========================================
+       TOC CHAPTER STATUS SYMBOLS
+       ========================================== */
+
+    .toc-chapter-status {
+        font-size: var(--text-sm);
+        margin-left: auto;
+        padding-left: var(--space-xs);
+        flex-shrink: 0;
+    }
+
+    .toc-chapter-status[title] {
+        cursor: help;
+    }
+
+    /* ==========================================
+       DUE FOR REVIEW WIDGET
+       ========================================== */
+
+    .due-review-widget {
+        margin-top: var(--space-sm);
+        padding-top: var(--space-sm);
+        border-top: 1px dashed rgba(var(--color-gold-rgb), 0.2);
+    }
+
+    .due-review-title {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        letter-spacing: var(--tracking-caps);
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: var(--space-xs);
+    }
+
+    .due-review-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+    }
+
+    .due-review-item {
+        display: inline-block;
+        padding: var(--space-1) var(--space-xs);
+        font-family: var(--font-body);
+        font-size: var(--text-xs);
+        color: var(--accent);
+        background: rgba(var(--color-gold-rgb), 0.1);
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+
+    .due-review-item:hover {
+        background: rgba(var(--color-gold-rgb), 0.2);
+    }
+
+    @media (max-width: 600px) {
+        .due-review-list {
+            flex-direction: column;
+        }
+
+        .due-review-item {
+            text-align: center;
+        }
+    }
 </style>
 {% endblock %}
 
@@ -702,6 +857,155 @@ pageType: home
             }
         }
     } catch (e) {}
+
+    // Quiz Progress CTA - update based on user progress
+    try {
+        var progressData = localStorage.getItem('debateGuideQuizProgress');
+        var spacedRepData = localStorage.getItem('debateGuideSpacedRep');
+        var progress = progressData ? JSON.parse(progressData) : {};
+        var spacedRep = spacedRepData ? JSON.parse(spacedRepData) : {};
+
+        var ctaLabel = document.getElementById('quiz-cta-label');
+        var ctaText = document.getElementById('quiz-cta-text');
+        var ctaLinkText = document.getElementById('quiz-cta-link-text');
+
+        // Count passed quizzes
+        var passedCount = Object.values(progress).filter(function(p) {
+            return p && p.percentage >= 70;
+        }).length;
+
+        // Count mastered quizzes (90%+ on 2+ attempts)
+        var masteredCount = Object.values(progress).filter(function(p) {
+            return p && p.percentage >= 90 && p.attempts >= 2;
+        }).length;
+
+        // Update CTA based on progress
+        if (passedCount === 0) {
+            ctaLabel.textContent = 'Test Your Knowledge';
+            ctaText.textContent = 'Each chapter ends with a 10-question quiz. Pass 70% to advance.';
+            ctaLinkText.textContent = 'How It Works';
+            document.getElementById('quiz-cta-link').href = '/how-quizzes-work/';
+        } else if (passedCount === 20) {
+            ctaLabel.textContent = 'All Quizzes Complete!';
+            ctaText.textContent = 'Congratulations! You\'ve passed all 20 chapter quizzes. ' + masteredCount + ' mastered.';
+            ctaLinkText.textContent = 'View Progress';
+        } else {
+            ctaLabel.textContent = passedCount + ' of 20 Quizzes Passed';
+            ctaText.textContent = masteredCount > 0
+                ? masteredCount + ' mastered. Keep going!'
+                : 'Need 70% to pass. Review missed questions after each attempt.';
+            ctaLinkText.textContent = 'View Progress';
+        }
+
+        // Due for Review widget
+        var dueWidget = document.getElementById('due-review-widget');
+        var dueList = document.getElementById('due-review-list');
+        var now = new Date();
+        var dueChapters = [];
+
+        // Chapter title lookup (simplified - could be enhanced with full data)
+        var chapterTitles = {
+            '1': 'Why Debate Matters', '2': 'The Greek Legacy', '3': 'The Rhetorical Triangle',
+            '4': 'Kairos', '5': 'Ethos', '6': 'Character in Action', '7': 'Pathos',
+            '8': 'The Emotions Catalog', '9': 'Logos', '10': 'Evidence and Proof',
+            '11': 'Building Your Case', '12': 'The Art of Refutation', '13': 'Fallacies and Traps',
+            '14': 'The Socratic Method', '15': 'Steelmanning', '16': 'Debate in the Workplace',
+            '17': 'Debate in Education', '18': 'Digital Discourse', '19': 'Debate as Civic Duty',
+            '20': 'The Philosopher\'s Victory'
+        };
+
+        // Part lookup for chapter URLs
+        var chapterParts = {
+            '1': 'part-1', '2': 'part-1', '3': 'part-1', '4': 'part-1',
+            '5': 'part-2', '6': 'part-2', '7': 'part-2', '8': 'part-2', '9': 'part-2', '10': 'part-2',
+            '11': 'part-3', '12': 'part-3', '13': 'part-3', '14': 'part-3', '15': 'part-3',
+            '16': 'part-4', '17': 'part-4', '18': 'part-4', '19': 'part-4',
+            '20': 'part-5'
+        };
+
+        var chapterSlugs = {
+            '1': 'why-debate-matters', '2': 'the-greek-legacy', '3': 'the-rhetorical-triangle',
+            '4': 'kairos', '5': 'ethos', '6': 'character-in-action', '7': 'pathos',
+            '8': 'the-emotions-catalog', '9': 'logos', '10': 'evidence-and-proof',
+            '11': 'building-your-case', '12': 'the-art-of-refutation', '13': 'fallacies-and-traps',
+            '14': 'the-socratic-method', '15': 'steelmanning', '16': 'debate-in-the-workplace',
+            '17': 'debate-in-education', '18': 'digital-discourse', '19': 'debate-as-civic-duty',
+            '20': 'the-philosophers-victory'
+        };
+
+        Object.keys(spacedRep).forEach(function(chapterId) {
+            var rep = spacedRep[chapterId];
+            if (rep && rep.nextReview) {
+                var nextReview = new Date(rep.nextReview);
+                if (nextReview <= now) {
+                    dueChapters.push(chapterId);
+                }
+            }
+        });
+
+        if (dueChapters.length > 0 && dueWidget && dueList) {
+            dueWidget.style.display = '';
+            dueList.innerHTML = dueChapters.slice(0, 3).map(function(id) {
+                var num = id.toString().padStart(2, '0');
+                var part = chapterParts[id] || 'part-1';
+                var slug = chapterSlugs[id] || 'chapter';
+                var url = '/chapters/' + part + '/chapter-' + num + '-' + slug + '/#chapter-quiz';
+                return '<a href="' + url + '" class="due-review-item">Ch. ' + id + ': ' + (chapterTitles[id] || 'Chapter ' + id) + '</a>';
+            }).join('');
+            if (dueChapters.length > 3) {
+                dueList.innerHTML += '<a href="/progress/" class="due-review-item">+' + (dueChapters.length - 3) + ' more...</a>';
+            }
+        }
+
+        // TOC Status Symbols - add to each chapter with accessibility
+        var tocChapters = document.querySelectorAll('.toc-chapter[data-chapter]');
+        tocChapters.forEach(function(chapter) {
+            var chapterId = chapter.dataset.chapter;
+            var chapterProgress = progress[chapterId];
+            var chapterSpacedRep = spacedRep[chapterId];
+
+            // Determine status
+            var symbol = '○'; // Not started
+            var title = 'Quiz not started';
+
+            if (chapterProgress) {
+                var pct = chapterProgress.percentage;
+                var attempts = chapterProgress.attempts || 1;
+
+                if (pct >= 90 && attempts >= 2) {
+                    symbol = '★';
+                    title = 'Quiz mastered (' + pct + '%)';
+                } else if (pct >= 70) {
+                    symbol = '●';
+                    title = 'Quiz passed (' + pct + '%)';
+                } else {
+                    symbol = '◐';
+                    title = 'Quiz attempted (' + pct + '%, needs 70%)';
+                }
+
+                // Check if due for review
+                if (chapterSpacedRep && chapterSpacedRep.nextReview) {
+                    var nextReview = new Date(chapterSpacedRep.nextReview);
+                    if (nextReview <= now) {
+                        title += ' - Due for review';
+                    }
+                }
+            }
+
+            // Add status span to chapter link
+            var link = chapter.querySelector('a');
+            if (link) {
+                var statusSpan = document.createElement('span');
+                statusSpan.className = 'toc-chapter-status';
+                statusSpan.textContent = symbol;
+                statusSpan.setAttribute('title', title);
+                statusSpan.setAttribute('aria-label', title);
+                link.appendChild(statusSpan);
+            }
+        });
+    } catch (e) {
+        console.debug('Error updating quiz progress:', e);
+    }
 
     // Part Navigation - highlight active section and sync with header visibility
     var partNav = document.getElementById('part-nav');

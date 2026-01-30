@@ -96,6 +96,61 @@ test.describe('Quiz Discovery', () => {
         const navLink = page.locator('nav a[href="/quizzes/"]').first();
         await expect(navLink).toBeVisible();
     });
+
+    test('home page shows quiz CTA to all users (including new users)', async ({ page }) => {
+        await page.goto('/');
+        await clearStorage(page);
+        await page.reload();
+        // Quiz CTA should be visible to new users
+        const quizCta = page.locator('#quiz-progress-cta');
+        await expect(quizCta).toBeVisible();
+        await expect(page.locator('#quiz-cta-label')).toContainText('Test Your Knowledge');
+    });
+
+    test('home page shows quiz progress for returning users', async ({ page }) => {
+        await page.goto('/');
+        // Set up some progress
+        await page.evaluate(() => {
+            localStorage.setItem('debateGuideQuizProgress', JSON.stringify({
+                '1': { percentage: 80, attempts: 1 },
+                '2': { percentage: 90, attempts: 2 }
+            }));
+        });
+        await page.reload();
+        // Quiz CTA should show progress stats
+        const quizCta = page.locator('#quiz-progress-cta');
+        await expect(quizCta).toBeVisible();
+        await expect(page.locator('#quiz-cta-label')).toContainText('2 of 20');
+    });
+
+    test('TOC chapters show status symbols with accessibility', async ({ page }) => {
+        await page.goto('/');
+        // Set up some progress
+        await page.evaluate(() => {
+            localStorage.setItem('debateGuideQuizProgress', JSON.stringify({
+                '1': { percentage: 80, attempts: 1 },
+                '2': { percentage: 90, attempts: 2 },
+                '3': { percentage: 50, attempts: 1 }
+            }));
+        });
+        await page.reload();
+        // Check for status symbols
+        const chapter1Status = page.locator('.toc-chapter[data-chapter="1"] .toc-chapter-status');
+        const chapter2Status = page.locator('.toc-chapter[data-chapter="2"] .toc-chapter-status');
+        const chapter3Status = page.locator('.toc-chapter[data-chapter="3"] .toc-chapter-status');
+        const chapter4Status = page.locator('.toc-chapter[data-chapter="4"] .toc-chapter-status');
+
+        await expect(chapter1Status).toHaveText('●'); // passed
+        await expect(chapter2Status).toHaveText('★'); // mastered
+        await expect(chapter3Status).toHaveText('◐'); // attempted but not passed
+        await expect(chapter4Status).toHaveText('○'); // not started
+
+        // Check accessibility titles
+        await expect(chapter1Status).toHaveAttribute('title', /Quiz passed/);
+        await expect(chapter2Status).toHaveAttribute('title', /Quiz mastered/);
+        await expect(chapter3Status).toHaveAttribute('title', /Quiz attempted/);
+        await expect(chapter4Status).toHaveAttribute('title', /Quiz not started/);
+    });
 });
 
 // ==========================================
