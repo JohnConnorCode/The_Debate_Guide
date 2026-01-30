@@ -976,12 +976,14 @@ pageType: home
         var links = partNav.querySelectorAll('.part-nav-link');
 
         function updatePartNav() {
-            // Highlight active section
-            var scrollY = window.scrollY + 150;
+            // Highlight section when its header reaches top of viewport
+            // Small offset for sticky header only
+            var scrollPos = window.scrollY + 60;
             var current = '';
 
+            // Find the last section whose top we've scrolled past
             parts.forEach(function(part) {
-                if (part.offsetTop <= scrollY) {
+                if (part.offsetTop <= scrollPos) {
                     current = part.id;
                 }
             });
