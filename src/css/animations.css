@@ -224,10 +224,6 @@
     transform: translate(-50%, -50%) scale(0.95);
 }
 
-.js-ready .toc-hero .hero-laurel {
-    opacity: 0;
-}
-
 .js-ready .toc-hero .hero-bottom-accent {
     opacity: 0;
 }
@@ -339,12 +335,6 @@
 .js-ready .toc-hero .hero-greek-key {
     --target-opacity: 0.06;
     animation: heroDecorationReveal 1s ease-out 0.1s both;
-}
-
-.js-ready .toc-hero .hero-laurel {
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    animation: heroStrokeDraw 0.8s ease-out 0.3s both;
 }
 
 .js-ready .toc-hero .hero-bottom-accent {
@@ -599,7 +589,6 @@
     .toc-hero .hero-decoration,
     .toc-hero .hero-rays,
     .toc-hero .hero-greek-key,
-    .toc-hero .hero-laurel,
     .toc-hero .hero-bottom-accent {
         opacity: 1 !important;
         transform: none !important;
@@ -611,11 +600,6 @@
 
     .toc-hero .hero-greek-key {
         opacity: 0.06 !important;
-    }
-
-    .toc-hero .hero-laurel {
-        opacity: 0.25 !important;
-        stroke-dashoffset: 0 !important;
     }
 }
 
@@ -634,7 +618,6 @@
 .no-js .toc-hero .hero-decoration,
 .no-js .toc-hero .hero-rays,
 .no-js .toc-hero .hero-greek-key,
-.no-js .toc-hero .hero-laurel,
 .no-js .toc-hero .hero-bottom-accent {
     opacity: 1;
 }
@@ -645,10 +628,6 @@
 
 .no-js .toc-hero .hero-greek-key {
     opacity: 0.06;
-}
-
-.no-js .toc-hero .hero-laurel {
-    opacity: 0.25;
 }
 
 /* ==========================================

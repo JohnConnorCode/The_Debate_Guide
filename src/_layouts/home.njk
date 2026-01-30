@@ -42,22 +42,6 @@ pageType: home
         to { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    .hero-laurel {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-    }
-
-    .hero-laurel-tl {
-        top: calc(var(--header-height) + var(--space-md));
-        left: var(--space-lg);
-    }
-
-    .hero-laurel-tr {
-        top: calc(var(--header-height) + var(--space-md));
-        right: var(--space-lg);
-    }
-
     .hero-bottom-accent {
         position: absolute;
         bottom: var(--space-xl);
@@ -70,7 +54,6 @@ pageType: home
     /* No-JS fallback: show decorations at final state */
     .no-js .hero-greek-key { opacity: 0.06; }
     .no-js .hero-rays { opacity: 0.15; transform: translate(-50%, -50%); }
-    .no-js .hero-laurel { opacity: 0.25; }
     .no-js .hero-bottom-accent { opacity: 0.3; }
 
     /* Hero CTA Button */
@@ -116,29 +99,12 @@ pageType: home
     }
 
     @media (max-width: 768px) {
-        .hero-laurel {
-            width: 80px;
-            height: 80px;
-        }
-
-        .hero-laurel-tl {
-            left: var(--space-sm);
-        }
-
-        .hero-laurel-tr {
-            right: var(--space-sm);
-        }
-
         .hero-bottom-accent {
             display: none;
         }
     }
 
     @media (max-width: 600px) {
-        .hero-laurel {
-            display: none;
-        }
-
         .hero-cta {
             padding: var(--space-sm) var(--space-md);
             font-size: var(--text-xs);
