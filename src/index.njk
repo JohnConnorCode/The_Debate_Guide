@@ -14,7 +14,13 @@ permalink: /
         <p class="toc-subtitle hero-animate hero-animate-3">
             Master the timeless art of persuasion. Twenty chapters on rhetoric, logic, and the philosophy of argument.
         </p>
-        <p class="toc-audience hero-animate hero-animate-4">For anyone serious about thinking better and arguing well.</p>
+        <a href="#contents" class="hero-cta hero-animate hero-animate-4">
+            <span class="hero-cta-text">Enter the Agora</span>
+            <svg class="hero-cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </a>
     </div>
 </section>
 
@@ -47,28 +53,10 @@ permalink: /
             Continue: <span class="continue-chapter">Chapter 1</span> — <span class="continue-title">Title</span> →
         </a>
 
-        {# Quiz Progress CTA - visible to ALL users #}
-        <div id="quiz-progress-cta" class="quiz-progress-cta" data-animate>
-            <div class="quiz-cta-inner">
-                <span class="quiz-cta-icon">📝</span>
-                <div class="quiz-cta-content">
-                    <span class="quiz-cta-label" id="quiz-cta-label">Test Your Knowledge</span>
-                    <span class="quiz-cta-text" id="quiz-cta-text">Each chapter has a quiz. Start with Chapter 1.</span>
-                </div>
-                <a href="{{ '/progress/' | url }}" class="quiz-cta-link" id="quiz-cta-link">
-                    <span id="quiz-cta-link-text">View Progress</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
-            </div>
-            {# Due for Review widget - shown when there are chapters due #}
-            <div id="due-review-widget" class="due-review-widget" style="display: none;">
-                <span class="due-review-title">Due for Review</span>
-                <div id="due-review-list" class="due-review-list"></div>
-            </div>
-        </div>
+        {# Quiz Progress - simple inline link, only shown when user has progress #}
+        <a id="quiz-progress-link" class="quiz-progress-link" href="{{ '/progress/' | url }}" style="display: none;">
+            <span id="quiz-progress-text">0 of 20 quizzes passed</span> →
+        </a>
 
         {# Dynamic Parts and Chapters from Data #}
         {% for part in chapters.parts %}

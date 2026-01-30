@@ -65,39 +65,7 @@ button {
     height: 100%;
 }
 
-.sunburst-hero {
-    width: 1000px;
-    height: 1000px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.08;
-}
-
-/* Mobile sunburst - must be here to override base styles */
-@media (max-width: 768px) {
-    .sunburst-hero {
-        width: 700px;
-        height: 700px;
-        opacity: 0.15;
-    }
-}
-
-@media (max-width: 600px) {
-    .sunburst-hero {
-        width: 550px;
-        height: 550px;
-        opacity: 0.12;
-    }
-}
-
-@media (max-width: 480px) {
-    .sunburst-hero {
-        width: 450px;
-        height: 450px;
-        opacity: 0.1;
-    }
-}
+/* Note: .hero-decoration styles are in home.njk layout */
 
 .sunburst-section {
     width: 700px;
@@ -2359,7 +2327,7 @@ body.mobile-nav-open {
     }
 
     /* Art deco elements scale down */
-    /* NOTE: sunburst-hero mobile styles are in animations.css */
+    /* NOTE: Home hero uses hero-decoration (styles in home.njk) */
 
     .deco-border {
         height: 10px;

@@ -97,17 +97,16 @@ test.describe('Quiz Discovery', () => {
         await expect(navLink).toBeVisible();
     });
 
-    test('home page shows quiz CTA to all users (including new users)', async ({ page }) => {
+    test('home page hides quiz progress link for new users (clean UX)', async ({ page }) => {
         await page.goto('/');
         await clearStorage(page);
         await page.reload();
-        // Quiz CTA should be visible to new users
-        const quizCta = page.locator('#quiz-progress-cta');
-        await expect(quizCta).toBeVisible();
-        await expect(page.locator('#quiz-cta-label')).toContainText('Test Your Knowledge');
+        // Quiz progress link should be hidden for new users
+        const progressLink = page.locator('#quiz-progress-link');
+        await expect(progressLink).toBeHidden();
     });
 
-    test('home page shows quiz progress for returning users', async ({ page }) => {
+    test('home page shows quiz progress link for returning users', async ({ page }) => {
         await page.goto('/');
         // Set up some progress
         await page.evaluate(() => {
@@ -117,10 +116,10 @@ test.describe('Quiz Discovery', () => {
             }));
         });
         await page.reload();
-        // Quiz CTA should show progress stats
-        const quizCta = page.locator('#quiz-progress-cta');
-        await expect(quizCta).toBeVisible();
-        await expect(page.locator('#quiz-cta-label')).toContainText('2 of 20');
+        // Quiz progress link should show progress
+        const progressLink = page.locator('#quiz-progress-link');
+        await expect(progressLink).toBeVisible();
+        await expect(page.locator('#quiz-progress-text')).toContainText('2 of 20');
     });
 
     test('TOC chapters show status symbols with accessibility', async ({ page }) => {
