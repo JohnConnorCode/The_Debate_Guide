@@ -307,8 +307,11 @@
             }
 
             // 4. Reading toolbar visibility
+            // Use percentage-based threshold for better mobile UX
+            // Show after scrolling 15% of viewport OR 200px, whichever is smaller
             if (elements.toolbar) {
-                if (scrollTop > 200) {
+                const toolbarThreshold = Math.min(windowHeight * 0.15, 200);
+                if (scrollTop > toolbarThreshold) {
                     elements.toolbar.classList.add('is-visible');
                 } else {
                     elements.toolbar.classList.remove('is-visible');
@@ -316,8 +319,10 @@
             }
 
             // 5. Reading position indicator (Chapter X of 20)
+            // Same adaptive threshold logic
             if (elements.readingPosition) {
-                if (scrollTop > 150) {
+                const positionThreshold = Math.min(windowHeight * 0.12, 150);
+                if (scrollTop > positionThreshold) {
                     elements.readingPosition.classList.add('is-visible');
                 } else {
                     elements.readingPosition.classList.remove('is-visible');

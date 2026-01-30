@@ -1,18 +1,22 @@
 /**
  * Community Popup
- * Shows a SuperDebate promotion after 30 seconds
+ * Shows a SuperDebate promotion after 60 seconds of cumulative session time
  * Only displays once every 5 days per user
  */
 
 (function() {
     'use strict';
 
-    const POPUP_DELAY = 30000; // 30 seconds
+    const POPUP_DELAY = 60000; // 60 seconds
     const SUPPRESS_DURATION = 5 * 24 * 60 * 60 * 1000; // 5 days in ms
     const STORAGE_KEY = 'community_popup_last_shown';
+    const SESSION_TIME_KEY = 'community_popup_session_time';
+    const SESSION_START_KEY = 'community_popup_session_start';
 
     let popup = null;
     let timeoutId = null;
+    let previouslyFocused = null;
+    let focusTrapHandler = null;
 
     /**
      * Check if popup should be shown
@@ -42,13 +46,87 @@
     }
 
     /**
+     * Get cumulative session time across page navigations
+     */
+    function getSessionTime() {
+        try {
+            const accumulated = parseInt(sessionStorage.getItem(SESSION_TIME_KEY) || '0', 10);
+            return accumulated;
+        } catch (e) {
+            return 0;
+        }
+    }
+
+    /**
+     * Save accumulated time when leaving page
+     */
+    function saveSessionTime(startTime) {
+        try {
+            const accumulated = parseInt(sessionStorage.getItem(SESSION_TIME_KEY) || '0', 10);
+            const currentPageTime = Date.now() - startTime;
+            sessionStorage.setItem(SESSION_TIME_KEY, (accumulated + currentPageTime).toString());
+        } catch (e) {
+            // sessionStorage not available
+        }
+    }
+
+    /**
+     * Create focus trap within popup
+     */
+    function trapFocus() {
+        const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        const focusableElements = popup.querySelectorAll(focusableSelectors);
+
+        if (focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        focusTrapHandler = function(e) {
+            if (e.key !== 'Tab') return;
+
+            if (e.shiftKey) {
+                // Shift + Tab
+                if (document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                // Tab
+                if (document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        };
+
+        popup.addEventListener('keydown', focusTrapHandler);
+    }
+
+    /**
+     * Remove focus trap
+     */
+    function removeFocusTrap() {
+        if (focusTrapHandler) {
+            popup.removeEventListener('keydown', focusTrapHandler);
+            focusTrapHandler = null;
+        }
+    }
+
+    /**
      * Show the popup with animation
      */
     function showPopup() {
         if (!popup) return;
 
+        // Store the element that had focus before opening
+        previouslyFocused = document.activeElement;
+
         popup.classList.add('is-visible');
         document.body.classList.add('popup-open');
+
+        // Set up focus trap
+        trapFocus();
 
         // Focus the close button for accessibility
         const closeBtn = popup.querySelector('.community-popup-close');
@@ -68,6 +146,15 @@
 
         popup.classList.remove('is-visible');
         document.body.classList.remove('popup-open');
+
+        // Remove focus trap
+        removeFocusTrap();
+
+        // Return focus to previously focused element
+        if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
+            previouslyFocused.focus();
+        }
+        previouslyFocused = null;
     }
 
     /**
@@ -81,6 +168,9 @@
         if (!shouldShowPopup()) {
             return;
         }
+
+        // Track page start time for session accumulation
+        const pageStartTime = Date.now();
 
         // Set up event listeners
         const closeBtn = popup.querySelector('.community-popup-close');
@@ -114,13 +204,25 @@
             }
         });
 
-        // Schedule popup to appear after delay
-        timeoutId = setTimeout(showPopup, POPUP_DELAY);
+        // Calculate remaining time based on session accumulation
+        const elapsedSessionTime = getSessionTime();
+        const remainingTime = Math.max(0, POPUP_DELAY - elapsedSessionTime);
 
-        // Cancel if user navigates away
+        // Schedule popup to appear after remaining delay
+        timeoutId = setTimeout(showPopup, remainingTime);
+
+        // Save session time when user navigates away
         window.addEventListener('beforeunload', function() {
             if (timeoutId) {
                 clearTimeout(timeoutId);
+            }
+            saveSessionTime(pageStartTime);
+        });
+
+        // Also save on visibility change (mobile tab switching)
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                saveSessionTime(pageStartTime);
             }
         });
     }

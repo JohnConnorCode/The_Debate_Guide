@@ -16,6 +16,10 @@
     // DOM elements
     let modal, input, results, backdrop, closeBtn;
 
+    // Focus management
+    let previouslyFocused = null;
+    let focusTrapHandler = null;
+
     // ==========================================
     // SEARCH INDEX LOADING
     // ==========================================
@@ -209,6 +213,9 @@
     function openSearch() {
         if (!modal) return;
 
+        // Store the element that had focus before opening
+        previouslyFocused = document.activeElement;
+
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -218,6 +225,9 @@
             showSearchLoading();
             loadSearchIndex();
         }
+
+        // Set up focus trap
+        setupFocusTrap();
 
         setTimeout(() => {
             input.focus();
@@ -232,6 +242,57 @@
         document.body.style.overflow = '';
         input.value = '';
         renderResults([]);
+
+        // Remove focus trap
+        removeFocusTrap();
+
+        // Restore focus to previously focused element
+        if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
+            previouslyFocused.focus();
+        }
+        previouslyFocused = null;
+    }
+
+    function setupFocusTrap() {
+        const focusableSelectors = 'input, button, [href], [tabindex]:not([tabindex="-1"])';
+        const container = modal.querySelector('.search-container');
+
+        focusTrapHandler = function(e) {
+            if (e.key !== 'Tab') return;
+
+            const focusableElements = container.querySelectorAll(focusableSelectors);
+            const visibleElements = Array.from(focusableElements).filter(el => {
+                return el.offsetParent !== null && !el.disabled;
+            });
+
+            if (visibleElements.length === 0) return;
+
+            const firstElement = visibleElements[0];
+            const lastElement = visibleElements[visibleElements.length - 1];
+
+            if (e.shiftKey) {
+                // Shift + Tab
+                if (document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                // Tab
+                if (document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        };
+
+        modal.addEventListener('keydown', focusTrapHandler);
+    }
+
+    function removeFocusTrap() {
+        if (focusTrapHandler) {
+            modal.removeEventListener('keydown', focusTrapHandler);
+            focusTrapHandler = null;
+        }
     }
 
     function renderResults(items) {

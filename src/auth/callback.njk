@@ -1,0 +1,98 @@
+---
+layout: base.njk
+title: "Signing in..."
+description: "Completing authentication"
+permalink: /auth/callback/
+---
+
+<section class="chapter-hero section-dark" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+    <div style="text-align: center;">
+        <div class="auth-loading-spinner"></div>
+        <h1 style="font-family: var(--font-display); font-size: var(--text-2xl); margin-top: var(--space-md);">Signing you in...</h1>
+        <p style="color: var(--text-muted); margin-top: var(--space-sm);" id="auth-status">Please wait while we complete authentication.</p>
+    </div>
+</section>
+
+<style>
+.auth-loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(var(--color-gold-rgb), 0.2);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+(function() {
+    'use strict';
+
+    const statusEl = document.getElementById('auth-status');
+
+    // Handle the OAuth callback
+    async function handleCallback() {
+        // Supabase handles the hash fragment automatically
+        // We just need to wait for the session to be established
+
+        // Check for error in URL
+        const hashParams = new URLSearchParams(window.location.hash.substring(1));
+        const error = hashParams.get('error');
+        const errorDescription = hashParams.get('error_description');
+
+        if (error) {
+            statusEl.textContent = errorDescription || 'Authentication failed. Please try again.';
+            statusEl.style.color = '#e57373';
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 3000);
+            return;
+        }
+
+        // Wait for Supabase to process the callback
+        // The auth.js module will handle session establishment
+        let attempts = 0;
+        const maxAttempts = 20;
+
+        const checkSession = setInterval(async () => {
+            attempts++;
+
+            if (window.DebateGuideAuth) {
+                const user = await window.DebateGuideAuth.getUser();
+                if (user) {
+                    clearInterval(checkSession);
+                    statusEl.textContent = 'Success! Redirecting...';
+                    statusEl.style.color = '#4caf50';
+
+                    // Redirect to progress page or previous page
+                    const returnTo = sessionStorage.getItem('authReturnTo') || '/progress/';
+                    sessionStorage.removeItem('authReturnTo');
+                    setTimeout(() => {
+                        window.location.href = returnTo;
+                    }, 1000);
+                    return;
+                }
+            }
+
+            if (attempts >= maxAttempts) {
+                clearInterval(checkSession);
+                statusEl.textContent = 'Taking longer than expected. Redirecting to home...';
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 2000);
+            }
+        }, 500);
+    }
+
+    // Run on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', handleCallback);
+    } else {
+        handleCallback();
+    }
+})();
+</script>

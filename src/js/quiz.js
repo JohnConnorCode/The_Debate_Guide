@@ -127,6 +127,77 @@
         }
     }
 
+    /**
+     * Fetch progress from server for cross-device sync
+     * Returns server progress or null if unavailable
+     */
+    async function fetchServerProgress() {
+        try {
+            const anonymousId = getAnonymousUserId();
+            const response = await fetch(`/api/quiz/progress?anonymousId=${encodeURIComponent(anonymousId)}`);
+
+            if (!response.ok) return null;
+
+            const data = await response.json();
+            return data.found ? data.progress : null;
+        } catch (e) {
+            console.debug('Server progress fetch failed (offline mode)');
+            return null;
+        }
+    }
+
+    /**
+     * Merge server progress with localStorage, keeping best scores
+     * This enables cross-device sync
+     */
+    async function syncFromServer() {
+        try {
+            const serverProgress = await fetchServerProgress();
+            if (!serverProgress || Object.keys(serverProgress).length === 0) return false;
+
+            const localProgress = getProgress();
+            let merged = false;
+
+            for (const [chapterId, serverData] of Object.entries(serverProgress)) {
+                const localData = localProgress[chapterId];
+
+                // If server has better score or local doesn't have this chapter
+                if (!localData || serverData.percentage > localData.percentage) {
+                    localProgress[chapterId] = {
+                        bestScore: serverData.bestScore,
+                        total: serverData.total,
+                        percentage: serverData.percentage,
+                        completedAt: serverData.completedAt,
+                        attempts: Math.max(serverData.attempts || 1, localData?.attempts || 0),
+                        hintsUsed: serverData.hintsUsed || 0,
+                        averageScore: serverData.percentage, // Use percentage as initial average
+                        syncedFromServer: true
+                    };
+                    merged = true;
+                } else if (localData && serverData.attempts > localData.attempts) {
+                    // Server has more attempts, update that
+                    localProgress[chapterId].attempts = serverData.attempts;
+                    merged = true;
+                }
+            }
+
+            if (merged) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(localProgress));
+                console.debug('Merged server progress with localStorage');
+
+                // Dispatch event so UI can update
+                window.dispatchEvent(new CustomEvent('progressSynced', {
+                    detail: { progress: localProgress }
+                }));
+            }
+
+            return merged;
+        } catch (e) {
+            console.debug('Server sync error:', e);
+            return false;
+        }
+    }
+
     // ==========================================
     // STATE
     // ==========================================
@@ -1771,10 +1842,15 @@
         init();
     }
 
-    // Sync existing progress to server once on page load (if any exists)
-    // This ensures offline progress eventually reaches the server
+    // Cross-device sync: fetch server progress first, then push local progress
+    // This ensures progress syncs both ways across browsers/devices
     if (typeof window !== 'undefined') {
-        setTimeout(syncAllProgressToServer, 2000); // Delay to not block page load
+        // First, pull any server progress (cross-device sync)
+        setTimeout(async () => {
+            await syncFromServer();
+            // Then push local progress to server
+            syncAllProgressToServer();
+        }, 1500); // Delay to not block page load
     }
 
     // ==========================================

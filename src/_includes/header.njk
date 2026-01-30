@@ -68,6 +68,19 @@
                 </svg>
                 <kbd class="search-shortcut-hint">/</kbd>
             </button>
+            {# Auth button - shown when Supabase is configured #}
+            <button class="auth-login-btn" id="auth-login-btn" title="Sign in to sync progress">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Sign In</span>
+            </button>
+            <div class="auth-user-menu" id="auth-user-menu">
+                <img class="auth-user-avatar" id="auth-user-avatar" alt="" />
+                <span class="auth-user-name" id="auth-user-name"></span>
+                <button class="auth-logout-btn" id="auth-logout-btn">Log out</button>
+            </div>
             <a href="https://superdebate.org" target="_blank" rel="noopener noreferrer" class="nav-cta">Join SuperDebate</a>
         </nav>
 

@@ -70,6 +70,14 @@
     {# Skip link for keyboard navigation #}
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    {# Noscript fallback for users with JavaScript disabled #}
+    <noscript>
+        <div style="background: #c9a227; color: #0d0d0d; padding: 1rem; text-align: center; font-family: sans-serif;">
+            <strong>JavaScript Required:</strong> Some features (search, quizzes, progress tracking) require JavaScript.
+            The main content is still readable without it.
+        </div>
+    </noscript>
+
     {% block progressBar %}{% endblock %}
 
     {% include "reading-toolbar.njk" %}
@@ -107,6 +115,16 @@
     <script src="{{ '/js/search.js' | url }}?v={{ build.timestamp }}" defer></script>
     <script src="{{ '/js/quiz.js' | url }}?v={{ build.timestamp }}" defer></script>
     <script src="{{ '/js/toast.js' | url }}?v={{ build.timestamp }}" defer></script>
+
+    {# Supabase Auth - Cross-device sync with superdebate.org #}
+    {% if site.supabaseUrl and site.supabaseAnonKey %}
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script>
+        window.SUPABASE_URL = '{{ site.supabaseUrl }}';
+        window.SUPABASE_ANON_KEY = '{{ site.supabaseAnonKey }}';
+    </script>
+    <script src="{{ '/js/auth.js' | url }}?v={{ build.timestamp }}" defer></script>
+    {% endif %}
 
     {# Analytics - Privacy-conscious, no cookies, GDPR compliant #}
     {# Replace YOUR_DOMAIN with your Plausible domain or remove if not using analytics #}

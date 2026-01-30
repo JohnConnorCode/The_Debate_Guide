@@ -402,6 +402,18 @@ permalink: /progress/
     display: none;
 }
 
+.data-storage-note {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin: 0 0 var(--space-sm) 0;
+    padding: var(--space-sm);
+    background: rgba(var(--color-gold-rgb), 0.05);
+    border-left: 2px solid var(--accent);
+    border-radius: var(--radius-sm);
+}
+
 /* Streak Display */
 .streak-display {
     display: flex;
@@ -552,6 +564,7 @@ permalink: /progress/
         {# Data Management #}
         <div class="data-management">
             <div class="data-management-title">Data Management</div>
+            <p class="data-storage-note">Your progress syncs automatically across devices using the same browser ID. For a new device, use Export/Import below to transfer your data.</p>
             <button class="data-btn" id="export-data-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
