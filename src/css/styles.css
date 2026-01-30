@@ -363,7 +363,7 @@ button {
 .nav {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-sm);
 }
 
 .nav a {
@@ -1287,6 +1287,7 @@ h1, h2, h3, h4 {
     justify-content: center;
     width: 36px;
     height: 36px;
+    margin-left: var(--space-sm);
     background: transparent;
     border: var(--border-width) solid rgba(var(--color-white-rgb), 0.2);
     border-radius: var(--radius-sm);
