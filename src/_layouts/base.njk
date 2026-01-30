@@ -140,22 +140,8 @@
                 .catch(function(error) {
                     console.log('SW registration failed:', error);
                 });
-
-            // Listen for SW update messages
-            navigator.serviceWorker.addEventListener('message', function(event) {
-                if (event.data && event.data.type === 'SW_UPDATED') {
-                    // Use toast notification if available, fallback to inline
-                    if (window.Toast) {
-                        window.Toast.info('New content available', {
-                            duration: 10000,
-                            action: {
-                                label: 'Refresh',
-                                onClick: function() { window.location.reload(); }
-                            }
-                        });
-                    }
-                }
-            });
+            // Service worker updates content silently in background
+            // No notification needed - avoids unnecessary UX interruption
         });
     }
     </script>
