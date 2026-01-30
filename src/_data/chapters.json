@@ -175,5 +175,11 @@
         }
       ]
     }
-  ]
+  ],
+  "appendix": {
+    "slug": "superdebate-appendix",
+    "title": "Competing on SuperDebate",
+    "subtitle": "Classical rhetoric meets competitive online debate",
+    "description": "A focused guide for applying classical rhetoric to competitive online debate. Master time-pressure tactics, written debate rhetoric, and platform-specific strategies."
+  }
 }
