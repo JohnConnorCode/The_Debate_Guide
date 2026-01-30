@@ -99,7 +99,11 @@
     {# Keyboard Shortcuts Help Modal #}
     {% include "keyboard-help.njk" %}
 
+    {# SuperDebate Community Popup #}
+    {% include "community-popup.njk" %}
+
     <script src="{{ '/js/navigation.js' | url }}?v={{ build.timestamp }}"></script>
+    <script src="{{ '/js/community-popup.js' | url }}?v={{ build.timestamp }}" defer></script>
     <script src="{{ '/js/search.js' | url }}?v={{ build.timestamp }}" defer></script>
     <script src="{{ '/js/quiz.js' | url }}?v={{ build.timestamp }}" defer></script>
     <script src="{{ '/js/toast.js' | url }}?v={{ build.timestamp }}" defer></script>
