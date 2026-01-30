@@ -1,0 +1,16 @@
+{# Chapter Sunburst - simple radiating decoration #}
+<div class="sunburst">
+    <svg viewBox="0 0 400 400">
+        <g transform="translate(200,200)">
+            <g fill="none" stroke="#c9a227" stroke-width="1">
+                {% for i in range(0, 360, 10) %}
+                <line x1="0" y1="0" x2="0" y2="-200"{% if i > 0 %} transform="rotate({{ i }})"{% endif %} />
+                {% endfor %}
+                <circle r="50" />
+                <circle r="100" />
+                <circle r="150" />
+                <circle r="200" />
+            </g>
+        </g>
+    </svg>
+</div>

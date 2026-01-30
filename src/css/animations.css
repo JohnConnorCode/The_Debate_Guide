@@ -262,18 +262,9 @@
 .js-ready .chapter-hero > [data-animate]:nth-child(6).is-visible { animation-delay: 400ms; }
 
 /* ==========================================
-   SHARED HERO ANIMATION SYSTEM (DRY)
+   TOC HERO ANIMATION SYSTEM
 
-   Apply these classes to any hero element:
-   - .hero-anim-title    → clip-path reveal from center
-   - .hero-anim-number   → scale + fade (for chapter numbers)
-   - .hero-anim-tagline  → letter-spacing contract
-   - .hero-anim-subtitle → fade up
-   - .hero-anim-meta     → simple fade
-   - .hero-anim-cta      → bounce entrance
-
-   Timing controlled by CSS custom properties:
-   --hero-delay-1 through --hero-delay-6
+   Timing controlled by CSS custom properties
    ========================================== */
 
 /* Shared easing */
@@ -283,74 +274,12 @@
 }
 
 /* Default timing (desktop) */
-.toc-hero, .chapter-hero {
-    --hero-delay-1: 150ms;  /* Title/Number */
-    --hero-delay-2: 450ms;  /* Tagline/Part */
+.toc-hero {
+    --hero-delay-1: 150ms;  /* Title */
+    --hero-delay-2: 450ms;  /* Tagline */
     --hero-delay-3: 650ms;  /* Subtitle */
-    --hero-delay-4: 850ms;  /* Meta/Reading time */
     --hero-delay-5: 1000ms; /* CTA */
     --hero-delay-6: 1200ms; /* Flourish */
-}
-
-/* Initial states - hidden until animated */
-.js-ready .toc-hero .hero-anim-title:not(.is-visible),
-.js-ready .chapter-hero .hero-anim-title:not(.is-visible) {
-    opacity: 1;
-    clip-path: inset(0 50% 0 50%);
-}
-
-.js-ready .toc-hero .hero-anim-number:not(.is-visible),
-.js-ready .chapter-hero .hero-anim-number:not(.is-visible) {
-    opacity: 0;
-    transform: scale(0.8);
-}
-
-.js-ready .toc-hero .hero-anim-tagline:not(.is-visible),
-.js-ready .chapter-hero .hero-anim-tagline:not(.is-visible) {
-    opacity: 0;
-    letter-spacing: 0.4em;
-    transform: scaleX(0.9);
-}
-
-.js-ready .toc-hero .hero-anim-subtitle:not(.is-visible),
-.js-ready .chapter-hero .hero-anim-subtitle:not(.is-visible),
-.js-ready .toc-hero .hero-anim-meta:not(.is-visible),
-.js-ready .chapter-hero .hero-anim-meta:not(.is-visible),
-.js-ready .toc-hero .hero-anim-cta:not(.is-visible),
-.js-ready .chapter-hero .hero-anim-cta:not(.is-visible) {
-    opacity: 0;
-    transform: translateY(16px);
-}
-
-/* Animated states */
-.js-ready .toc-hero .hero-anim-title.is-visible,
-.js-ready .chapter-hero .hero-anim-title.is-visible {
-    animation: heroTitleReveal 0.5s var(--hero-ease) var(--hero-delay-1) both;
-}
-
-.js-ready .toc-hero .hero-anim-number.is-visible,
-.js-ready .chapter-hero .hero-anim-number.is-visible {
-    animation: heroNumberReveal 0.4s var(--hero-ease) var(--hero-delay-1) both;
-}
-
-.js-ready .toc-hero .hero-anim-tagline.is-visible,
-.js-ready .chapter-hero .hero-anim-tagline.is-visible {
-    animation: heroTaglineReveal 0.4s var(--hero-ease) var(--hero-delay-2) both;
-}
-
-.js-ready .toc-hero .hero-anim-subtitle.is-visible,
-.js-ready .chapter-hero .hero-anim-subtitle.is-visible {
-    animation: heroSubtitleReveal 0.45s var(--hero-ease) var(--hero-delay-3) both;
-}
-
-.js-ready .toc-hero .hero-anim-meta.is-visible,
-.js-ready .chapter-hero .hero-anim-meta.is-visible {
-    animation: heroMetaReveal 0.4s var(--hero-ease) var(--hero-delay-4) both;
-}
-
-.js-ready .toc-hero .hero-anim-cta.is-visible,
-.js-ready .chapter-hero .hero-anim-cta.is-visible {
-    animation: heroCTAReveal 0.4s var(--hero-ease-bounce) var(--hero-delay-5) both;
 }
 
 /* ==========================================
@@ -423,64 +352,23 @@
 }
 
 /* ==========================================
-   CHAPTER HERO - Specific overrides
+   CHAPTER HERO - Keep existing data-animate system
+   Chapter heroes use the standard fadeInUp animation
    ========================================== */
 
-/* Chapter hero uses data-animate, map to hero animations */
-.js-ready .chapter-hero .chapter-part[data-animate].is-visible {
-    --hero-tagline-spacing: 0.2em;
-    animation: heroTaglineReveal 0.35s var(--hero-ease) 100ms both;
-}
-
-.js-ready .chapter-hero .chapter-part[data-animate]:not(.is-visible) {
-    opacity: 0;
-    letter-spacing: 0.4em;
-    transform: scaleX(0.9);
-}
-
-.js-ready .chapter-hero .chapter-number[data-animate].is-visible {
-    animation: heroNumberReveal 0.5s var(--hero-ease) 250ms both;
-}
-
-.js-ready .chapter-hero .chapter-number[data-animate]:not(.is-visible) {
-    opacity: 0;
-    transform: scale(0.8);
-}
-
-.js-ready .chapter-hero .chapter-title[data-animate].is-visible {
-    animation: heroTitleReveal 0.5s var(--hero-ease) 500ms both;
-}
-
-.js-ready .chapter-hero .chapter-title[data-animate]:not(.is-visible) {
-    opacity: 1;
-    clip-path: inset(0 50% 0 50%);
-}
-
-.js-ready .chapter-hero .chapter-subtitle[data-animate].is-visible {
-    --hero-subtitle-opacity: 0.85;
-    animation: heroSubtitleReveal 0.4s var(--hero-ease) 750ms both;
-}
-
-.js-ready .chapter-hero .chapter-subtitle[data-animate]:not(.is-visible) {
-    opacity: 0;
-    transform: translateY(16px);
-}
-
-.js-ready .chapter-hero .reading-time[data-animate].is-visible {
-    --hero-meta-opacity: 0.6;
-    animation: heroMetaReveal 0.35s var(--hero-ease) 900ms both;
-}
-
-.js-ready .chapter-hero .reading-time[data-animate]:not(.is-visible) {
-    opacity: 0;
-}
+/* Chapter hero stagger timing */
+.js-ready .chapter-hero > [data-animate]:nth-child(2).is-visible { animation-delay: 0ms; }
+.js-ready .chapter-hero > [data-animate]:nth-child(3).is-visible { animation-delay: 100ms; }
+.js-ready .chapter-hero > [data-animate]:nth-child(4).is-visible { animation-delay: 200ms; }
+.js-ready .chapter-hero > [data-animate]:nth-child(5).is-visible { animation-delay: 300ms; }
+.js-ready .chapter-hero > [data-animate]:nth-child(6).is-visible { animation-delay: 400ms; }
 
 /* ==========================================
    RESPONSIVE - Faster on mobile
    ========================================== */
 
 @media (max-width: 768px) {
-    .toc-hero, .chapter-hero {
+    .toc-hero {
         --hero-delay-1: 100ms;
         --hero-delay-2: 350ms;
         --hero-delay-3: 550ms;
@@ -496,17 +384,10 @@
     .js-ready .toc-hero .hero-greek-key {
         --target-opacity: 0.04;
     }
-
-    /* Chapter hero faster on tablet */
-    .js-ready .chapter-hero .chapter-part[data-animate].is-visible { animation-delay: 50ms; }
-    .js-ready .chapter-hero .chapter-number[data-animate].is-visible { animation-delay: 150ms; }
-    .js-ready .chapter-hero .chapter-title[data-animate].is-visible { animation-delay: 350ms; }
-    .js-ready .chapter-hero .chapter-subtitle[data-animate].is-visible { animation-delay: 550ms; }
-    .js-ready .chapter-hero .reading-time[data-animate].is-visible { animation-delay: 700ms; }
 }
 
 @media (max-width: 600px) {
-    .toc-hero, .chapter-hero {
+    .toc-hero {
         --hero-delay-1: 50ms;
         --hero-delay-2: 250ms;
         --hero-delay-3: 400ms;
@@ -518,13 +399,6 @@
     .js-ready .toc-hero .hero-rays {
         --target-opacity: 0.1;
     }
-
-    /* Chapter hero snappier on mobile */
-    .js-ready .chapter-hero .chapter-part[data-animate].is-visible { animation-delay: 0ms; }
-    .js-ready .chapter-hero .chapter-number[data-animate].is-visible { animation-delay: 100ms; }
-    .js-ready .chapter-hero .chapter-title[data-animate].is-visible { animation-delay: 250ms; }
-    .js-ready .chapter-hero .chapter-subtitle[data-animate].is-visible { animation-delay: 400ms; }
-    .js-ready .chapter-hero .reading-time[data-animate].is-visible { animation-delay: 500ms; }
 }
 
 /* TOC chapter list stagger */
@@ -706,44 +580,18 @@
         transition-duration: 0.01ms !important;
     }
 
-    /* All hero elements - show at final state */
+    /* All animated elements - show at final state */
     .hero-animate,
-    [data-animate],
-    .hero-anim-title,
-    .hero-anim-number,
-    .hero-anim-tagline,
-    .hero-anim-subtitle,
-    .hero-anim-meta,
-    .hero-anim-cta {
+    [data-animate] {
         opacity: 1 !important;
         transform: none !important;
         clip-path: none !important;
         letter-spacing: inherit !important;
-    }
-
-    /* Chapter hero elements */
-    .chapter-hero .chapter-part,
-    .chapter-hero .chapter-number,
-    .chapter-hero .chapter-title,
-    .chapter-hero .chapter-subtitle,
-    .chapter-hero .reading-time {
-        opacity: 1 !important;
-        transform: none !important;
-        clip-path: none !important;
-        letter-spacing: inherit !important;
-    }
-
-    .chapter-hero .chapter-subtitle {
-        opacity: 0.85 !important;
-    }
-
-    .chapter-hero .reading-time {
-        opacity: 0.6 !important;
     }
 
     /* Disable rotating elements */
     .hero-rays,
-    .chapter-hero .sunburst svg {
+    .sunburst svg {
         animation: none !important;
     }
 
@@ -776,25 +624,10 @@
    ========================================== */
 
 .no-js .hero-animate,
-.no-js [data-animate],
-.no-js .hero-anim-title,
-.no-js .hero-anim-number,
-.no-js .hero-anim-tagline,
-.no-js .hero-anim-subtitle,
-.no-js .hero-anim-meta,
-.no-js .hero-anim-cta {
+.no-js [data-animate] {
     opacity: 1;
     transform: none;
     clip-path: none;
-}
-
-/* No-JS: Chapter hero at final state */
-.no-js .chapter-hero .chapter-subtitle {
-    opacity: 0.85;
-}
-
-.no-js .chapter-hero .reading-time {
-    opacity: 0.6;
 }
 
 /* No-JS: TOC hero decorations at final state */
