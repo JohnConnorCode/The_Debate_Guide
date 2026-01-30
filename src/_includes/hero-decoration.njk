@@ -1,0 +1,60 @@
+{# Hero decorative elements - Art Deco + Greek classical fusion (TOC only) #}
+<div class="hero-decoration">
+    {# Outer Greek key border #}
+    <svg class="hero-greek-key" viewBox="0 0 800 800" preserveAspectRatio="none">
+        <defs>
+            <pattern id="greekKey" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M0 20 L10 20 L10 10 L20 10 L20 0 L30 0 L30 10 L40 10 L40 20 L30 20 L30 30 L20 30 L20 40 L10 40 L10 30 L0 30 Z"
+                      fill="none" stroke="currentColor" stroke-width="1.5"/>
+            </pattern>
+        </defs>
+        <rect x="50" y="50" width="700" height="700" fill="none" stroke="url(#greekKey)" stroke-width="40"/>
+    </svg>
+
+    {# Radiating lines - more prominent than before #}
+    <svg class="hero-rays" viewBox="0 0 400 400">
+        <g transform="translate(200,200)">
+            <g fill="none" stroke="currentColor" stroke-width="0.5">
+                {% for i in range(0, 360, 15) %}
+                <line x1="0" y1="-60" x2="0" y2="-200"{% if i > 0 %} transform="rotate({{ i }})"{% endif %} opacity="{{ 0.3 + (i % 30) * 0.02 }}"/>
+                {% endfor %}
+            </g>
+            {# Concentric circles #}
+            <circle r="60" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+            <circle r="120" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
+            <circle r="180" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+        </g>
+    </svg>
+
+    {# Corner laurel accents #}
+    <svg class="hero-laurel hero-laurel-tl" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M90 10 Q50 20 20 60" opacity="0.6"/>
+            <path d="M85 5 Q45 15 15 55" opacity="0.4"/>
+            <path d="M80 0 Q40 10 10 50" opacity="0.2"/>
+            {# Leaf shapes #}
+            <ellipse cx="55" cy="35" rx="8" ry="4" transform="rotate(-30 55 35)" opacity="0.5"/>
+            <ellipse cx="40" cy="50" rx="8" ry="4" transform="rotate(-45 40 50)" opacity="0.4"/>
+            <ellipse cx="70" cy="22" rx="8" ry="4" transform="rotate(-15 70 22)" opacity="0.5"/>
+        </g>
+    </svg>
+    <svg class="hero-laurel hero-laurel-tr" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M10 10 Q50 20 80 60" opacity="0.6"/>
+            <path d="M15 5 Q55 15 85 55" opacity="0.4"/>
+            <path d="M20 0 Q60 10 90 50" opacity="0.2"/>
+            <ellipse cx="45" cy="35" rx="8" ry="4" transform="rotate(30 45 35)" opacity="0.5"/>
+            <ellipse cx="60" cy="50" rx="8" ry="4" transform="rotate(45 60 50)" opacity="0.4"/>
+            <ellipse cx="30" cy="22" rx="8" ry="4" transform="rotate(15 30 22)" opacity="0.5"/>
+        </g>
+    </svg>
+
+    {# Bottom decorative line with diamond #}
+    <svg class="hero-bottom-accent" viewBox="0 0 400 30">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+            <line x1="0" y1="15" x2="170" y2="15" opacity="0.3"/>
+            <rect x="185" y="7" width="16" height="16" transform="rotate(45 193 15)" opacity="0.5"/>
+            <line x1="216" y1="15" x2="400" y2="15" opacity="0.3"/>
+        </g>
+    </svg>
+</div>
