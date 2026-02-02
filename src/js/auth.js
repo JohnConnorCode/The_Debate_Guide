@@ -194,6 +194,7 @@
         const userMenu = document.getElementById('auth-user-menu');
         const userName = document.getElementById('auth-user-name');
         const userAvatar = document.getElementById('auth-user-avatar');
+        const mobileAuthText = document.getElementById('mobile-auth-text');
 
         if (!loginBtn) return; // Auth UI not on this page
 
@@ -206,10 +207,18 @@
                 userAvatar.src = user.user_metadata.avatar_url;
                 userAvatar.style.display = 'block';
             }
+            // Update mobile auth button text
+            if (mobileAuthText) {
+                mobileAuthText.textContent = user.email?.split('@')[0] || 'Account';
+            }
         } else {
             // Logged out
             loginBtn.style.display = 'flex';
             if (userMenu) userMenu.style.display = 'none';
+            // Reset mobile auth button text
+            if (mobileAuthText) {
+                mobileAuthText.textContent = 'Sign In';
+            }
         }
     }
 
@@ -367,13 +376,14 @@
     // ==========================================
 
     async function init() {
-        if (!initSupabase()) {
+        const supabaseAvailable = initSupabase();
+
+        if (!supabaseAvailable) {
             console.debug('Auth: Supabase not available, running in anonymous mode');
-            return;
         }
 
-        // Check for existing session
-        const user = await getUser();
+        // Check for existing session (only if Supabase available)
+        const user = supabaseAvailable ? await getUser() : null;
         updateAuthUI(user);
 
         if (user) {
@@ -381,17 +391,19 @@
             await linkAnonymousProgress(user);
         }
 
-        // Listen for auth state changes
-        supabase.auth.onAuthStateChange((event, session) => {
-            const user = session?.user || null;
-            updateAuthUI(user);
+        // Listen for auth state changes (only if Supabase available)
+        if (supabaseAvailable && supabase) {
+            supabase.auth.onAuthStateChange((event, session) => {
+                const user = session?.user || null;
+                updateAuthUI(user);
 
-            if (event === 'SIGNED_IN' && user) {
-                linkAnonymousProgress(user);
-            }
+                if (event === 'SIGNED_IN' && user) {
+                    linkAnonymousProgress(user);
+                }
 
-            window.dispatchEvent(new CustomEvent('authStateChanged', { detail: { user, event } }));
-        });
+                window.dispatchEvent(new CustomEvent('authStateChanged', { detail: { user, event } }));
+            });
+        }
 
         // Bind login button (if exists)
         const loginBtn = document.getElementById('auth-login-btn');
@@ -403,6 +415,19 @@
         const logoutBtn = document.getElementById('auth-logout-btn');
         if (logoutBtn) {
             logoutBtn.addEventListener('click', signOut);
+        }
+
+        // Mobile auth button
+        const mobileAuthBtn = document.getElementById('mobile-auth-btn');
+        if (mobileAuthBtn) {
+            mobileAuthBtn.addEventListener('click', () => {
+                // Close mobile nav first
+                document.querySelector('.mobile-nav')?.classList.remove('is-active');
+                document.querySelector('.mobile-nav-overlay')?.classList.remove('is-active');
+                document.body.classList.remove('mobile-nav-open');
+                // Then show auth modal
+                openAuthModal();
+            });
         }
     }
 
