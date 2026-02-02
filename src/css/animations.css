@@ -162,6 +162,24 @@
     transform: none;
 }
 
+/* Hero TEXT content should never animate - show immediately to prevent flash */
+.toc-hero .hero-animate,
+.chapter-hero [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    letter-spacing: inherit !important;
+    animation: none !important;
+}
+
+/* Hero decorations can stay visible (no flash), allow rotation animation */
+.hero-decoration,
+.hero-rays,
+.hero-greek-key,
+.hero-bottom-accent {
+    opacity: 1;
+}
+
 /* ==========================================
    ANIMATION STATES: Enable animations on ALL devices
    Only hide content when JS is ready to animate

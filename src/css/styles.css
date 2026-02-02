@@ -2167,7 +2167,7 @@ body.mobile-nav-open {
    RESPONSIVE
    ========================================== */
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .footer-main {
         grid-template-columns: 1fr;
     }
@@ -2180,7 +2180,7 @@ body.mobile-nav-open {
         padding: 0 var(--space-md);
     }
 
-    /* Switch to mobile nav at 1000px - no cramped intermediate state */
+    /* Switch to mobile nav at 1200px - no cramped intermediate state */
     .mobile-menu-btn {
         display: flex;
     }
