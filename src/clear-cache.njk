@@ -1,0 +1,64 @@
+---
+layout: base.njk
+title: "Clear Cache"
+description: "Clear all cached data and reload with fresh content"
+permalink: /clear-cache/
+---
+<section class="section section-dark" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+    <div style="text-align: center; max-width: 500px; padding: 2rem;">
+        <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Clearing Cache...</h1>
+        <p id="status" style="color: var(--text-muted);">Unregistering service worker and clearing all caches.</p>
+        <div id="spinner" style="margin: 2rem 0; font-size: 2rem;">⏳</div>
+        <p id="result" style="display: none; color: var(--accent);"></p>
+    </div>
+</section>
+
+<script>
+(async function() {
+    const status = document.getElementById('status');
+    const spinner = document.getElementById('spinner');
+    const result = document.getElementById('result');
+
+    try {
+        // 1. Unregister all service workers
+        status.textContent = 'Unregistering service workers...';
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        for (const registration of registrations) {
+            await registration.unregister();
+        }
+
+        // 2. Clear all caches
+        status.textContent = 'Clearing caches...';
+        const cacheNames = await caches.keys();
+        for (const name of cacheNames) {
+            await caches.delete(name);
+        }
+
+        // 3. Clear localStorage (except user preferences)
+        status.textContent = 'Clearing storage...';
+        const theme = localStorage.getItem('theme');
+        const fontSize = localStorage.getItem('fontSize');
+        localStorage.clear();
+        if (theme) localStorage.setItem('theme', theme);
+        if (fontSize) localStorage.setItem('fontSize', fontSize);
+
+        // Success
+        spinner.textContent = '✓';
+        spinner.style.color = 'var(--accent)';
+        status.textContent = 'Cache cleared successfully!';
+        result.style.display = 'block';
+        result.textContent = 'Redirecting to home page in 2 seconds...';
+
+        setTimeout(() => {
+            window.location.href = '/?cache_cleared=' + Date.now();
+        }, 2000);
+
+    } catch (error) {
+        spinner.textContent = '✗';
+        spinner.style.color = '#c44';
+        status.textContent = 'Error: ' + error.message;
+        result.style.display = 'block';
+        result.innerHTML = '<a href="/" style="color: var(--accent);">Go to home page</a>';
+    }
+})();
+</script>
