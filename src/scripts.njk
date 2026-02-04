@@ -5,7 +5,7 @@ description: "Word-for-word examples of effective debate across 12 scenarios: co
 permalink: /scripts/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <style>
     .script-box {
         background: var(--card-bg);
@@ -98,7 +98,7 @@ permalink: /scripts/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -1131,6 +1131,6 @@ permalink: /scripts/
             <span class="chapter-nav-title">Quick Tactics</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

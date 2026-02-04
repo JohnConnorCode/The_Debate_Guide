@@ -5,7 +5,7 @@ description: "Curated reading paths for different goals: workplace persuasion, l
 permalink: /learning-paths/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <style>
 /* Learning Paths Page Styles */
 .paths-intro {
@@ -222,7 +222,7 @@ permalink: /learning-paths/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content" style="max-width: 960px;">
 
         <div class="paths-intro">
@@ -331,6 +331,6 @@ permalink: /learning-paths/
             <span class="chapter-nav-title">Quick Tactics</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

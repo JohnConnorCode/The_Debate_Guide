@@ -5,7 +5,7 @@ description: "Learn how the quiz system works, including scoring, hints, spaced 
 permalink: /how-quizzes-work/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <style>
 .quiz-guide {
     max-width: var(--max-w-reading);
@@ -270,7 +270,7 @@ permalink: /how-quizzes-work/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <div class="quiz-guide">
 
         <section class="quiz-guide-section">
@@ -455,6 +455,6 @@ permalink: /how-quizzes-work/
         </div>
 
     </div>
-</main>
+</section>
 
 <div class="deco-border"></div>

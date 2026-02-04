@@ -5,7 +5,7 @@ description: "Learn about The Debate Guide, its connection to SuperDebate, and t
 permalink: /about/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Page Hero #}
@@ -19,7 +19,7 @@ permalink: /about/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -172,6 +172,6 @@ permalink: /about/
             <span class="chapter-nav-title">Meet the Author</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

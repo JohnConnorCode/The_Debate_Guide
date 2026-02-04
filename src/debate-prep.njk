@@ -5,7 +5,7 @@ description: "The complete preparation system for competitive debate: 48-hour co
 permalink: /debate-prep/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Page Hero #}
@@ -19,7 +19,7 @@ permalink: /debate-prep/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -631,6 +631,6 @@ that matters."
             <span class="chapter-nav-title">Dialogue Scripts</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

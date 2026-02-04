@@ -5,7 +5,7 @@ description: "Continue your rhetorical education with classic texts, modern reso
 permalink: /resources/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <style>
 /* Resources Page Styles */
 .resource-category {
@@ -149,7 +149,7 @@ permalink: /resources/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -395,6 +395,6 @@ permalink: /resources/
             {# No next page #}
         </div>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

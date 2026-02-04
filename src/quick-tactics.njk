@@ -5,7 +5,7 @@ description: "A one-page reference of all 20 actionable tactics from The Debate 
 permalink: /quick-tactics/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Page Hero #}
@@ -19,7 +19,7 @@ permalink: /quick-tactics/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -356,6 +356,6 @@ permalink: /quick-tactics/
             <span class="chapter-nav-title">Glossary</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

@@ -2,8 +2,7 @@
    THE DEBATE GUIDE - MAIN STYLESHEET
    ========================================== */
 
-/* Import design tokens */
-@import url('tokens.css');
+/* NOTE: tokens.css is loaded via <link> tag in base.njk to prevent FOUC */
 
 /* ==========================================
    RESET & BASE

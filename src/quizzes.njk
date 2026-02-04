@@ -5,7 +5,7 @@ description: "Test your knowledge across all 20 chapters. Track your progress, s
 permalink: /quizzes/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <style>
 .quiz-hub {
     max-width: var(--max-w-content);
@@ -271,7 +271,7 @@ permalink: /quizzes/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <div class="quiz-hub">
 
         <div class="quiz-hub-intro">
@@ -338,7 +338,7 @@ permalink: /quizzes/
         </div>
 
     </div>
-</main>
+</section>
 
 <div class="deco-border"></div>
 

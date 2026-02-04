@@ -5,7 +5,7 @@ description: "Real-time decision trees for debate situations. Know exactly what 
 permalink: /live-response/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Page Hero #}
@@ -19,7 +19,7 @@ permalink: /live-response/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -851,6 +851,6 @@ permalink: /live-response/
             <span class="chapter-nav-title">Debate Preparation</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

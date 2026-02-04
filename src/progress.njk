@@ -5,7 +5,7 @@ description: "Track your quiz progress, view achievements, and see which chapter
 permalink: /progress/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <link rel="stylesheet" href="{{ '/css/quiz.css' | url }}">
 <style>
 /* Progress Dashboard Styles */
@@ -485,7 +485,7 @@ permalink: /progress/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <div class="progress-dashboard">
 
         {# How It Works Link #}
@@ -592,7 +592,7 @@ permalink: /progress/
         </div>
 
     </div>
-</main>
+</section>
 
 <div class="deco-border"></div>
 

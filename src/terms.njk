@@ -5,7 +5,7 @@ description: "Terms of use for The Debate Guide. Simple, fair terms for using th
 permalink: /terms/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Page Hero #}
@@ -19,7 +19,7 @@ permalink: /terms/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p><strong>Last updated:</strong> January 2025</p>
@@ -118,6 +118,6 @@ permalink: /terms/
             {# No next page #}
         </div>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

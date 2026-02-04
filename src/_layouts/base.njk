@@ -26,7 +26,8 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
 
-    {# Stylesheets - animations.css loaded first to ensure elements start hidden #}
+    {# Stylesheets - tokens first (CSS variables), then animations, then main styles #}
+    <link rel="stylesheet" href="{{ '/css/tokens.css' | url }}?v={{ build.timestamp }}">
     <link rel="stylesheet" href="{{ '/css/animations.css' | url }}?v={{ build.timestamp }}">
     <link rel="stylesheet" href="{{ '/css/styles.css' | url }}?v={{ build.timestamp }}">
     {% block styles %}{% endblock %}
@@ -154,6 +155,21 @@
                 .then(function(registration) {
                     console.log('SW registered:', registration.scope);
 
+                    // Check for updates on page load
+                    registration.update();
+
+                    // When a new SW is waiting, activate it immediately
+                    registration.addEventListener('updatefound', function() {
+                        var newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', function() {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New content available - reload to get fresh assets
+                                console.log('New version available, reloading...');
+                                window.location.reload();
+                            }
+                        });
+                    });
+
                     // Check for updates periodically
                     setInterval(function() {
                         registration.update();
@@ -162,8 +178,11 @@
                 .catch(function(error) {
                     console.log('SW registration failed:', error);
                 });
-            // Service worker updates content silently in background
-            // No notification needed - avoids unnecessary UX interruption
+        });
+
+        // Handle controller change (when new SW takes over)
+        navigator.serviceWorker.addEventListener('controllerchange', function() {
+            console.log('New service worker activated');
         });
     }
     </script>

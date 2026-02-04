@@ -5,7 +5,7 @@ description: "Frequently asked questions about The Debate Guide, debate formats,
 permalink: /faq/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <style>
     .faq-section {
         margin-bottom: var(--space-lg);
@@ -67,7 +67,7 @@ permalink: /faq/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         {# ABOUT THE GUIDE #}
@@ -315,6 +315,6 @@ permalink: /faq/
             {# No next page #}
         </div>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

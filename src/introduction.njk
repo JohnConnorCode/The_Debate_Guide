@@ -13,7 +13,7 @@ nextChapter:
 permalink: /introduction/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Reading Progress Bar #}
@@ -34,7 +34,7 @@ permalink: /introduction/
 <div class="deco-border"></div>
 
 {# Chapter Content #}
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -209,7 +209,7 @@ permalink: /introduction/
             <span class="chapter-nav-title">{{ nextChapter.title }}</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>
 

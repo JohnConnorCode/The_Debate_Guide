@@ -5,7 +5,7 @@ description: "How The Debate Guide handles your data. We respect your privacy an
 permalink: /privacy/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Page Hero #}
@@ -19,7 +19,7 @@ permalink: /privacy/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p><strong>Last updated:</strong> January 2025</p>
@@ -124,6 +124,6 @@ permalink: /privacy/
             <span class="chapter-nav-title">Terms of Service</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

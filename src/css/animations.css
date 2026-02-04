@@ -541,38 +541,39 @@
 }
 
 /* ==========================================
-   PAGE TRANSITIONS
+   PAGE TRANSITIONS - View Transition API
+
+   Uses crossfade (150ms) instead of sequential fade (450ms)
+   for perceived-instant navigation. Gracefully degrades
+   to instant navigation in unsupported browsers.
    ========================================== */
-
-@keyframes pageEnter {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes pageExit {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-.page-transition-enter {
-    animation: pageEnter 0.25s ease-out forwards;
-}
-
-.page-transition-exit {
-    animation: pageExit 0.2s ease-in forwards;
-    pointer-events: none;
-}
 
 @view-transition {
     navigation: auto;
 }
 
+/* Crossfade: both animations run simultaneously */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 150ms;
+    animation-timing-function: ease-out;
+    mix-blend-mode: normal;
+}
+
 ::view-transition-old(root) {
-    animation: pageExit 0.2s ease-in;
+    animation-name: vt-fade-out;
 }
 
 ::view-transition-new(root) {
-    animation: pageEnter 0.25s ease-out;
+    animation-name: vt-fade-in;
+}
+
+@keyframes vt-fade-out {
+    to { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+    from { opacity: 0; }
 }
 
 /* ==========================================

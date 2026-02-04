@@ -71,7 +71,7 @@ permalink: /glossary/
 }
 </script>
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Page Hero #}
@@ -85,7 +85,7 @@ permalink: /glossary/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -288,6 +288,6 @@ permalink: /glossary/
             <span class="chapter-nav-title">Further Reading</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

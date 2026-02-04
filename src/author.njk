@@ -5,7 +5,7 @@ description: "Meet John Connor, founder of SuperDebate and author of The Debate 
 permalink: /author/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <style>
 .author-hero {
     display: flex;
@@ -179,7 +179,7 @@ permalink: /author/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <h2>FROM CHICAGO'S SOUTH SIDE TO THE GLOBAL STAGE</h2>
@@ -333,6 +333,6 @@ permalink: /author/
             <span class="chapter-nav-title">Start Reading</span>
         </a>
     </nav>
-</main>
+</section>
 
 <div class="deco-border"></div>

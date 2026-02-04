@@ -5,7 +5,7 @@ description: "View quiz analytics, user progress, and wrong answer patterns."
 permalink: /admin/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 <style>
 /* Admin Dashboard Styles */
 .admin-login {
@@ -315,7 +315,7 @@ permalink: /admin/
 
 <div class="deco-border"></div>
 
-<main class="section section-dark">
+<section class="section section-dark">
     {# Login Form #}
     <div class="admin-login" id="admin-login">
         <h2>Admin Access</h2>
@@ -483,7 +483,7 @@ permalink: /admin/
             <a href="#" class="admin-btn" id="export-chapter-btn">Export Chapter Data</a>
         </div>
     </div>
-</main>
+</section>
 
 <div class="deco-border"></div>
 

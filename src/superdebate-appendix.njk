@@ -13,7 +13,7 @@ prevChapter:
 permalink: /superdebate-appendix/
 ---
 {% block styles %}
-<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/chapter.css' | url }}?v={{ build.timestamp }}">
 {% endblock %}
 
 {# Reading Progress Bar #}
@@ -34,7 +34,7 @@ permalink: /superdebate-appendix/
 <div class="deco-border"></div>
 
 {# Content #}
-<main class="section section-dark">
+<section class="section section-dark">
     <article class="chapter-content">
 
         <p>
@@ -417,7 +417,7 @@ permalink: /superdebate-appendix/
         </div>
 
     </article>
-</main>
+</section>
 
 {# Chapter Navigation #}
 <nav class="chapter-nav">
