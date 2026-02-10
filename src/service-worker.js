@@ -13,7 +13,10 @@ const OFFLINE_URL = '/offline/';
 // Assets to cache for offline use
 const PRECACHE_ASSETS = [
     '/offline/',
-    '/manifest.json'
+    '/manifest.json',
+    '/css/styles.css',
+    '/css/tokens.css',
+    '/js/navigation.js'
 ];
 
 // Install - precache minimal assets, skip waiting immediately

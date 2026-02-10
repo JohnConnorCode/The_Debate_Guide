@@ -27,6 +27,8 @@
 {% if pageType == 'chapter' or pageType == 'introduction' %}
 <meta property="article:author" content="{{ site.author }}">
 <meta property="article:section" content="{{ partTitle or 'Education' }}">
+<meta property="article:published_time" content="{{ datePublished or site.publishDate or '2025-01-01' }}">
+<meta property="article:modified_time" content="{{ dateModified or site.lastModified or '2025-01-22' }}">
 <meta property="article:tag" content="rhetoric">
 <meta property="article:tag" content="debate">
 <meta property="article:tag" content="persuasion">
@@ -185,6 +187,36 @@
         "name": "{{ site.title }}",
         "description": "{{ site.description }}"
     }
+}
+</script>
+
+{# Breadcrumb Schema for chapter pages #}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site.url }}/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ partTitle or 'Contents' }}",
+            "item": "{{ site.url }}/#contents"
+        }
+        {% if chapterNumber %},
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ chapterTitle or title }}",
+            "item": "{{ site.url }}{{ page.url }}"
+        }
+        {% endif %}
+    ]
 }
 </script>
 {% endif %}

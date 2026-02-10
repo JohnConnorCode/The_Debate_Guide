@@ -91,9 +91,11 @@ test.describe('Quiz Discovery', () => {
     });
 
     test('navigation has quizzes link (desktop)', async ({ page }) => {
+        // Set a wider viewport so desktop nav is visible (breakpoint is 1350px)
+        await page.setViewportSize({ width: 1400, height: 720 });
         await page.goto('/');
-        // Use first() since there are multiple (desktop and mobile)
-        const navLink = page.locator('nav a[href="/quizzes/"]').first();
+        // Use the desktop nav selector
+        const navLink = page.locator('.nav-desktop a[href="/quizzes/"]');
         await expect(navLink).toBeVisible();
     });
 
@@ -211,9 +213,11 @@ test.describe('Email Collection', () => {
     });
 
     test('email modal does not appear if email already stored', async ({ page }) => {
-        // Pre-set email
+        // Pre-set email - wait for page to stabilize first
+        await page.waitForLoadState('networkidle');
         await setStorage(page, 'debateGuideUserEmail', 'existing@example.com');
         await page.reload();
+        await page.waitForLoadState('networkidle');
 
         await page.locator('#quiz-start-btn').click();
 
@@ -229,10 +233,12 @@ test.describe('Email Collection', () => {
 test.describe('Onboarding Modal', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('/chapters/part-1/chapter-01-why-debate-matters/');
+        await page.waitForLoadState('networkidle');
         await clearStorage(page);
         // Pre-set email so we skip email modal
         await setStorage(page, 'debateGuideUserEmail', 'test@example.com');
         await page.reload();
+        await page.waitForLoadState('networkidle');
     });
 
     test('onboarding appears for first-time users', async ({ page }) => {
@@ -254,9 +260,11 @@ test.describe('Onboarding Modal', () => {
     });
 
     test('onboarding does not appear on subsequent visits', async ({ page }) => {
-        // Pre-set onboarding seen flag
+        // Pre-set onboarding seen flag - wait for page to stabilize first
+        await page.waitForLoadState('networkidle');
         await setStorage(page, 'debateGuideOnboardingSeen', '1');
         await page.reload();
+        await page.waitForLoadState('networkidle');
 
         await page.locator('#quiz-start-btn').click();
 
@@ -429,11 +437,13 @@ test.describe('Quiz Progression', () => {
 
     test('attempts counter increments', async ({ page }) => {
         await page.goto('/chapters/part-1/chapter-01-why-debate-matters/');
+        await page.waitForLoadState('networkidle');
         await clearStorage(page);
         await setStorage(page, 'debateGuideUserEmail', 'test@example.com');
         await setStorage(page, 'debateGuideOnboardingSeen', '1');
         await setStorage(page, 'debateGuideQuizProgress', { '1': { percentage: 50, bestScore: 5, total: 10, attempts: 3 }});
         await page.reload();
+        await page.waitForLoadState('networkidle');
 
         // Should show attempt count
         await expect(page.locator('#quiz-attempts')).toHaveText('3');

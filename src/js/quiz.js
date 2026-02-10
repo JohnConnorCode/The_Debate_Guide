@@ -547,7 +547,6 @@
             const response = await fetch(`/quizzes/chapter-${paddedId}.json`);
 
             if (!response.ok) {
-                console.log(`No quiz available for chapter ${chapterId}`);
                 hideLoadingState();
                 return null;
             }
