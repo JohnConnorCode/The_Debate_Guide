@@ -48,4 +48,144 @@ eleventyExcludeFromCollections: true
   "type": "reference"
 } -%}
 {%- set searchData = (searchData.push(resourcesItem), searchData) -%}
+{%- set aboutItem = {
+  "title": "About The Debate Guide",
+  "subtitle": "The story behind the guide, the SuperDebate mission, and why this book exists",
+  "url": "/about/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "About",
+  "type": "page"
+} -%}
+{%- set searchData = (searchData.push(aboutItem), searchData) -%}
+{%- set authorItem = {
+  "title": "John Connor — Author",
+  "subtitle": "Founder of SuperDebate. From Chicago's South Side to building the world's first adult debate ecosystem",
+  "url": "/author/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "About",
+  "type": "page"
+} -%}
+{%- set searchData = (searchData.push(authorItem), searchData) -%}
+{%- set faqItem = {
+  "title": "Frequently Asked Questions",
+  "subtitle": "Common questions about The Debate Guide and how to use it",
+  "url": "/faq/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Help",
+  "type": "page"
+} -%}
+{%- set searchData = (searchData.push(faqItem), searchData) -%}
+{%- set learningPathsItem = {
+  "title": "Learning Paths",
+  "subtitle": "Guided reading paths tailored to your goals and experience level",
+  "url": "/learning-paths/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Features",
+  "type": "feature"
+} -%}
+{%- set searchData = (searchData.push(learningPathsItem), searchData) -%}
+{%- set quizzesItem = {
+  "title": "Chapter Quizzes",
+  "subtitle": "Test your understanding with quizzes for each chapter",
+  "url": "/quizzes/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Features",
+  "type": "feature"
+} -%}
+{%- set searchData = (searchData.push(quizzesItem), searchData) -%}
+{%- set howQuizzesItem = {
+  "title": "How Quizzes Work",
+  "subtitle": "Learn how the quiz system works and how to get the most from it",
+  "url": "/how-quizzes-work/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Help",
+  "type": "page"
+} -%}
+{%- set searchData = (searchData.push(howQuizzesItem), searchData) -%}
+{%- set quickTacticsItem = {
+  "title": "Quick Tactics",
+  "subtitle": "Immediately actionable debate techniques and strategies",
+  "url": "/quick-tactics/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Features",
+  "type": "feature"
+} -%}
+{%- set searchData = (searchData.push(quickTacticsItem), searchData) -%}
+{%- set debatePrepItem = {
+  "title": "Debate Prep",
+  "subtitle": "Tools and resources to prepare for your next debate",
+  "url": "/debate-prep/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Features",
+  "type": "feature"
+} -%}
+{%- set searchData = (searchData.push(debatePrepItem), searchData) -%}
+{%- set liveResponseItem = {
+  "title": "Live Response",
+  "subtitle": "Real-time debate response practice and training",
+  "url": "/live-response/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Features",
+  "type": "feature"
+} -%}
+{%- set searchData = (searchData.push(liveResponseItem), searchData) -%}
+{%- set progressItem = {
+  "title": "Reading Progress",
+  "subtitle": "Track your progress through The Debate Guide chapters",
+  "url": "/progress/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Features",
+  "type": "feature"
+} -%}
+{%- set searchData = (searchData.push(progressItem), searchData) -%}
+{%- set sdAppendixItem = {
+  "title": "SuperDebate Appendix",
+  "subtitle": "Supplementary materials about the SuperDebate platform",
+  "url": "/superdebate-appendix/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Reference",
+  "type": "reference"
+} -%}
+{%- set searchData = (searchData.push(sdAppendixItem), searchData) -%}
+{%- set sdFormatItem = {
+  "title": "SuperDebate Format",
+  "subtitle": "Rules, structure, and format of SuperDebate competitions",
+  "url": "/superdebate-format/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Reference",
+  "type": "reference"
+} -%}
+{%- set searchData = (searchData.push(sdFormatItem), searchData) -%}
+{%- set privacyItem = {
+  "title": "Privacy Policy",
+  "subtitle": "How we handle your data and protect your privacy",
+  "url": "/privacy/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Legal",
+  "type": "page"
+} -%}
+{%- set searchData = (searchData.push(privacyItem), searchData) -%}
+{%- set termsItem = {
+  "title": "Terms of Service",
+  "subtitle": "Terms and conditions for using The Debate Guide",
+  "url": "/terms/",
+  "chapter": null,
+  "part": null,
+  "partTitle": "Legal",
+  "type": "page"
+} -%}
+{%- set searchData = (searchData.push(termsItem), searchData) -%}
 {{ searchData | dump | safe }}

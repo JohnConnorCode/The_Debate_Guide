@@ -24,6 +24,27 @@
     // SEARCH INDEX LOADING
     // ==========================================
 
+    // Additional keywords for pages (enables finding pages by related terms)
+    const pageKeywords = {
+        '/author/': 'John Connor founder CEO SuperDebate Chicago debate coach South Side biography author',
+        '/about/': 'SuperDebate mission story about community civic discourse debate club founder John Connor',
+        '/faq/': 'questions help how frequently asked FAQ support',
+        '/learning-paths/': 'beginner advanced intermediate path track curriculum guided',
+        '/quizzes/': 'quiz test knowledge assessment score practice',
+        '/how-quizzes-work/': 'quiz scoring rules how to help',
+        '/quick-tactics/': 'tactics tips techniques strategies quick actionable',
+        '/debate-prep/': 'preparation practice debate tournament ready',
+        '/live-response/': 'live practice real-time response training',
+        '/progress/': 'reading progress track chapters completion',
+        '/glossary/': 'vocabulary terms definitions Greek rhetoric glossary',
+        '/resources/': 'books reading list bibliography materials further study',
+        '/superdebate-appendix/': 'SuperDebate platform appendix supplementary',
+        '/superdebate-format/': 'SuperDebate format rules structure competition tournament',
+        '/introduction/': 'introduction beginning start agora rhetoric persuasion',
+        '/privacy/': 'privacy data policy personal information',
+        '/terms/': 'terms service conditions legal agreement'
+    };
+
     // Vocabulary terms (static, always available)
     const vocabularyData = [
         {
@@ -31,77 +52,88 @@
             url: "/glossary/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "The art of persuasive speaking and writing."
+            excerpt: "The art of persuasive speaking and writing.",
+            keywords: "persuasion language communication Greek Aristotle"
         },
         {
             title: "Ethos",
             url: "/chapters/part-2/chapter-05-ethos/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "Appeal based on the credibility and character of the speaker."
+            excerpt: "Appeal based on the credibility and character of the speaker.",
+            keywords: "credibility character trust authority speaker"
         },
         {
             title: "Pathos",
             url: "/chapters/part-2/chapter-07-pathos/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "Appeal to the audience's emotions."
+            excerpt: "Appeal to the audience's emotions.",
+            keywords: "emotion feeling audience empathy passion"
         },
         {
             title: "Logos",
             url: "/chapters/part-2/chapter-09-logos/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "Appeal based on logic and reason."
+            excerpt: "Appeal based on logic and reason.",
+            keywords: "logic reason evidence proof argument rational"
         },
         {
             title: "Kairos",
             url: "/chapters/part-1/chapter-04-kairos/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "The opportune moment for speech or action."
+            excerpt: "The opportune moment for speech or action.",
+            keywords: "timing opportunity moment context situational"
         },
         {
             title: "Enthymeme",
             url: "/chapters/part-2/chapter-11-argument-structures/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "A rhetorical syllogism with an implied premise."
+            excerpt: "A rhetorical syllogism with an implied premise.",
+            keywords: "syllogism premise implied assumption argument structure"
         },
         {
             title: "Elenchus",
             url: "/chapters/part-3/chapter-14-the-socratic-method/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "Socratic method of refutation through questioning."
+            excerpt: "Socratic method of refutation through questioning.",
+            keywords: "Socrates questioning cross-examination refutation dialectic"
         },
         {
             title: "Aporia",
             url: "/chapters/part-3/chapter-14-the-socratic-method/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "A state of puzzlement or impasse in argument."
+            excerpt: "A state of puzzlement or impasse in argument.",
+            keywords: "puzzlement impasse confusion doubt Socrates"
         },
         {
             title: "Prolepsis",
             url: "/chapters/part-3/chapter-12-refutation/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "Anticipating and addressing objections before they're raised."
+            excerpt: "Anticipating and addressing objections before they're raised.",
+            keywords: "anticipate objection preempt counterargument"
         },
         {
             title: "Stasis",
             url: "/glossary/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "The central point of disagreement in an argument."
+            excerpt: "The central point of disagreement in an argument.",
+            keywords: "disagreement issue point contention conflict"
         },
         {
             title: "Topos",
             url: "/glossary/",
             type: "vocabulary",
             part: "Glossary",
-            excerpt: "A commonplace or standard argument pattern."
+            excerpt: "A commonplace or standard argument pattern.",
+            keywords: "commonplace pattern template strategy topoi"
         }
     ];
 
@@ -120,8 +152,9 @@
                     title: item.title,
                     url: item.url,
                     type: item.type || 'chapter',
-                    part: item.partTitle ? 'Part ' + item.part + ': ' + item.partTitle : item.partTitle,
-                    excerpt: item.subtitle || ''
+                    part: item.partTitle ? (item.part ? 'Part ' + item.part + ': ' + item.partTitle : item.partTitle) : '',
+                    excerpt: item.subtitle || '',
+                    keywords: pageKeywords[item.url] || ''
                 }));
 
                 // Combine chapter data with vocabulary
@@ -155,7 +188,14 @@
         if (!results) return;
         const loader = results.querySelector('.search-loading');
         if (loader) {
-            results.innerHTML = '<div class="search-empty"><p>Start typing to search...</p></div>';
+            results.innerHTML = `
+                <div class="search-empty">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.4; margin-bottom: 8px;">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <p>Search chapters, vocabulary, pages & more</p>
+                </div>`;
         }
     }
 
@@ -177,33 +217,37 @@
 
         return searchData
             .map(item => {
-                const titleMatch = normalizeText(item.title).includes(normalizedQuery);
-                const excerptMatch = normalizeText(item.excerpt).includes(normalizedQuery);
-                const partMatch = item.part && normalizeText(item.part).includes(normalizedQuery);
+                const normalTitle = normalizeText(item.title);
+                const normalExcerpt = normalizeText(item.excerpt);
+                const normalPart = item.part ? normalizeText(item.part) : '';
+                const normalKeywords = item.keywords ? normalizeText(item.keywords) : '';
+
+                const titleMatch = normalTitle.includes(normalizedQuery);
+                const excerptMatch = normalExcerpt.includes(normalizedQuery);
+                const partMatch = normalPart.includes(normalizedQuery);
+                const keywordMatch = normalKeywords.includes(normalizedQuery);
 
                 // Word-based matching for better relevance
                 const wordMatches = queryWords.filter(word =>
-                    normalizeText(item.title).includes(word) ||
-                    normalizeText(item.excerpt).includes(word)
+                    normalTitle.includes(word) ||
+                    normalExcerpt.includes(word) ||
+                    normalKeywords.includes(word)
                 ).length;
 
                 // Calculate score
                 let score = 0;
+                if (normalTitle === normalizedQuery) score += 20;
                 if (titleMatch) score += 10;
+                if (keywordMatch) score += 5;
                 if (excerptMatch) score += 3;
                 if (partMatch) score += 2;
                 score += wordMatches * 2;
-
-                // Exact title match gets highest priority
-                if (normalizeText(item.title) === normalizedQuery) {
-                    score += 20;
-                }
 
                 return { ...item, score };
             })
             .filter(item => item.score > 0)
             .sort((a, b) => b.score - a.score)
-            .slice(0, 10);
+            .slice(0, 12);
     }
 
     // ==========================================
@@ -295,28 +339,68 @@
         }
     }
 
+    // Human-readable type labels
+    const typeLabels = {
+        'chapter': 'Chapter',
+        'introduction': 'Introduction',
+        'vocabulary': 'Vocabulary',
+        'reference': 'Reference',
+        'feature': 'Feature',
+        'page': 'Page'
+    };
+
+    function getTypeLabel(type) {
+        return typeLabels[type] || type;
+    }
+
     function renderResults(items) {
         if (!results) return;
 
         if (items.length === 0) {
             if (input.value.length >= 2) {
-                results.innerHTML = '<div class="search-empty"><p>No results found</p></div>';
+                results.innerHTML = `
+                    <div class="search-empty search-no-results">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.3; margin-bottom: 8px;">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="8" y1="8" x2="14" y2="14" stroke-width="2"></line>
+                        </svg>
+                        <p>No results for "<strong>${escapeHtml(input.value)}</strong>"</p>
+                        <p class="search-empty-hint">Try different keywords or browse the table of contents</p>
+                    </div>`;
             } else {
-                results.innerHTML = '<div class="search-empty"><p>Start typing to search...</p></div>';
+                results.innerHTML = `
+                    <div class="search-empty">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.4; margin-bottom: 8px;">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <p>Search chapters, vocabulary, pages & more</p>
+                    </div>`;
             }
             return;
         }
 
-        const html = items.map((item, index) => `
+        const html = items.map((item, index) => {
+            const label = getTypeLabel(item.type);
+            return `
             <a href="${item.url}" class="search-result${index === 0 ? ' is-active' : ''}" data-index="${index}">
-                <span class="search-result-type">${item.type}</span>
+                <div class="search-result-meta">
+                    <span class="search-result-type search-type-${item.type}">${label}</span>
+                    ${item.part ? `<span class="search-result-part">${item.part}</span>` : ''}
+                </div>
                 <span class="search-result-title">${highlightMatch(item.title, input.value)}</span>
-                ${item.part ? `<span class="search-result-part">${item.part}</span>` : ''}
                 <p class="search-result-excerpt">${highlightMatch(item.excerpt, input.value)}</p>
-            </a>
-        `).join('');
+            </a>`;
+        }).join('');
 
         results.innerHTML = html;
+    }
+
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     }
 
     function highlightMatch(text, query) {
