@@ -635,7 +635,7 @@
 
         elements.questionCount.textContent = quizData.questions.length;
         elements.passingScore.textContent = quizData.passingScore + '%';
-        elements.bestScore.textContent = progress ? progress.percentage + '%' : '—';
+        elements.bestScore.textContent = progress ? progress.percentage + '%' : 'N/A';
         if (elements.attemptsCount) {
             elements.attemptsCount.textContent = attempts;
         }
