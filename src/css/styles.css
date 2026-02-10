@@ -208,6 +208,7 @@ button {
 
 .header-inner {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     padding: var(--space-sm) var(--space-lg);
@@ -216,6 +217,7 @@ button {
 }
 
 .logo {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: var(--space-3);
@@ -362,11 +364,14 @@ button {
 
 .nav {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     gap: var(--space-sm);
+    white-space: nowrap;
 }
 
 .nav a {
+    flex-shrink: 0;
     font-family: var(--font-mono);
     font-size: var(--text-sm);
     letter-spacing: var(--tracking-widest);
@@ -404,6 +409,7 @@ button {
 }
 
 .nav-cta {
+    flex-shrink: 0;
     background: var(--accent);
     color: var(--color-ink) !important;
     opacity: var(--opacity-100) !important;
@@ -2166,7 +2172,30 @@ body.mobile-nav-open {
    RESPONSIVE
    ========================================== */
 
-@media (max-width: 1300px) {
+/* Condense nav slightly before mobile switch */
+@media (max-width: 1450px) {
+    .nav {
+        gap: var(--space-xs);
+    }
+
+    .nav a {
+        padding: var(--space-2) var(--space-2);
+    }
+
+    .nav-cta {
+        padding: var(--space-2) var(--space-4);
+    }
+
+    .auth-login-btn span {
+        display: none;
+    }
+
+    .search-shortcut-hint {
+        display: none;
+    }
+}
+
+@media (max-width: 1350px) {
     .footer-main {
         grid-template-columns: 1fr;
     }
@@ -3794,6 +3823,7 @@ body.popup-open {
 
 /* Header auth button */
 .auth-login-btn {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: var(--space-2);

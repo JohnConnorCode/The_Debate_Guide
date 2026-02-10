@@ -69,6 +69,15 @@
             return;
         }
 
+        // Mark above-fold elements visible BEFORE adding .js-ready (prevents FOUC)
+        var viewportHeight = window.innerHeight;
+        document.querySelectorAll('[data-animate]:not(.chapter-hero [data-animate]):not(.toc-hero [data-animate])').forEach(function(el) {
+            var rect = el.getBoundingClientRect();
+            if (rect.top < viewportHeight) {
+                el.classList.add('is-visible');
+            }
+        });
+
         // Enable animations for desktop
         enableAnimations();
 
