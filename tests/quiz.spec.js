@@ -281,11 +281,13 @@ test.describe('Onboarding Modal', () => {
 test.describe('Quiz Flow', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('/chapters/part-1/chapter-01-why-debate-matters/');
+        await page.waitForLoadState('networkidle');
         await clearStorage(page);
         // Skip email and onboarding
         await setStorage(page, 'debateGuideUserEmail', 'test@example.com');
         await setStorage(page, 'debateGuideOnboardingSeen', '1');
         await page.reload();
+        await page.waitForLoadState('networkidle');
     });
 
     test('quiz start screen shows correct info', async ({ page }) => {
@@ -381,10 +383,12 @@ test.describe('Quiz Flow', () => {
 test.describe('Quiz Results', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('/chapters/part-1/chapter-01-why-debate-matters/');
+        await page.waitForLoadState('networkidle');
         await clearStorage(page);
         await setStorage(page, 'debateGuideUserEmail', 'test@example.com');
         await setStorage(page, 'debateGuideOnboardingSeen', '1');
         await page.reload();
+        await page.waitForLoadState('networkidle');
     });
 
     test('results screen shows score', async ({ page }) => {
@@ -424,12 +428,14 @@ test.describe('Quiz Results', () => {
 test.describe('Quiz Progression', () => {
     test('next quiz link appears after passing', async ({ page }) => {
         await page.goto('/chapters/part-1/chapter-01-why-debate-matters/');
+        await page.waitForLoadState('networkidle');
         await clearStorage(page);
         await setStorage(page, 'debateGuideUserEmail', 'test@example.com');
         await setStorage(page, 'debateGuideOnboardingSeen', '1');
         // Pre-set a passing score
         await setStorage(page, 'debateGuideQuizProgress', { '1': { percentage: 80, bestScore: 8, total: 10, attempts: 1 }});
         await page.reload();
+        await page.waitForLoadState('networkidle');
 
         // The quiz should show "Retake Quiz" since already passed
         await expect(page.locator('#quiz-start-btn')).toContainText(/Retake/i);

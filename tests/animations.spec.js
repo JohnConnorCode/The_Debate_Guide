@@ -25,7 +25,7 @@ test.describe('Animation System - Progressive Enhancement', () => {
 
     test('js-ready class is added on desktop', async ({ page }) => {
       await page.goto('/');
-      await page.waitForLoadState('domcontentloaded');
+      await page.waitForLoadState('networkidle');
 
       // Wait for JS to initialize
       await page.waitForFunction(() =>
@@ -100,7 +100,7 @@ test.describe('Animation System - Progressive Enhancement', () => {
 
     test('js-ready class IS added on mobile', async ({ page }) => {
       await page.goto('/');
-      await page.waitForLoadState('domcontentloaded');
+      await page.waitForLoadState('networkidle');
 
       // Wait for JS to initialize
       await page.waitForFunction(() =>
@@ -161,7 +161,7 @@ test.describe('Animation System - Progressive Enhancement', () => {
       // Emulate reduced motion preference
       await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto('/');
-      await page.waitForLoadState('domcontentloaded');
+      await page.waitForLoadState('networkidle');
 
       const heroTitle = page.locator('.toc-hero h1, .hero h1').first();
       await expect(heroTitle).toBeVisible({ timeout: 2000 });

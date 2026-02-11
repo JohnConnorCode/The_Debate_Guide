@@ -13,7 +13,7 @@
 .breadcrumbs {
     max-width: var(--max-w-reading);
     margin: 0 auto;
-    padding: var(--space-sm) var(--space-md);
+    padding: calc(var(--header-height) + var(--space-sm)) var(--space-md) var(--space-sm);
 }
 
 .breadcrumb-list {
@@ -355,7 +355,7 @@
 
 .chapter-hero {
     position: relative;
-    padding: calc(var(--header-height) + var(--space-xl)) var(--space-lg) var(--space-lg);
+    padding: var(--space-xl) var(--space-lg) var(--space-lg);
     text-align: center;
     overflow: hidden;
 }
