@@ -540,6 +540,15 @@
     animation: shimmer 2s infinite;
 }
 
+[data-theme="light"] .loading::after {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(var(--color-black-rgb), 0.06),
+        transparent
+    );
+}
+
 /* ==========================================
    PAGE TRANSITIONS - View Transition API
 

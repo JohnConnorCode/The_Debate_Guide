@@ -267,6 +267,15 @@
     --breakpoint-lg: 1000px;
     --breakpoint-xl: 1200px;
     --breakpoint-2xl: 1400px;
+
+    /* Theme-aware border & overlay tokens */
+    --border-subtle: rgba(var(--color-white-rgb), 0.08);
+    --border-medium: rgba(var(--color-white-rgb), 0.1);
+    --border-strong: rgba(var(--color-white-rgb), 0.15);
+    --border-prominent: rgba(var(--color-white-rgb), 0.2);
+    --bg-overlay-subtle: rgba(var(--color-white-rgb), 0.05);
+    --bg-overlay: rgba(var(--color-white-rgb), 0.1);
+    --bg-surface-elevated: rgba(var(--color-ink-rgb), 0.95);
 }
 
 /* ==========================================
@@ -288,6 +297,14 @@
     --toast-bg: var(--color-paper);
     --toast-text: var(--color-ink);
     --toast-border: rgba(var(--color-ink-rgb), 0.15);
+
+    --border-subtle: rgba(var(--color-black-rgb), 0.06);
+    --border-medium: rgba(var(--color-black-rgb), 0.1);
+    --border-strong: rgba(var(--color-black-rgb), 0.12);
+    --border-prominent: rgba(var(--color-black-rgb), 0.18);
+    --bg-overlay-subtle: rgba(var(--color-black-rgb), 0.03);
+    --bg-overlay: rgba(var(--color-black-rgb), 0.08);
+    --bg-surface-elevated: rgba(var(--color-paper-rgb), 0.97);
 }
 
 /* Auto light mode for system preference */
@@ -307,6 +324,14 @@
         --toast-bg: var(--color-paper);
         --toast-text: var(--color-ink);
         --toast-border: rgba(var(--color-ink-rgb), 0.15);
+
+        --border-subtle: rgba(var(--color-black-rgb), 0.06);
+        --border-medium: rgba(var(--color-black-rgb), 0.1);
+        --border-strong: rgba(var(--color-black-rgb), 0.12);
+        --border-prominent: rgba(var(--color-black-rgb), 0.18);
+        --bg-overlay-subtle: rgba(var(--color-black-rgb), 0.03);
+        --bg-overlay: rgba(var(--color-black-rgb), 0.08);
+        --bg-surface-elevated: rgba(var(--color-paper-rgb), 0.97);
     }
 }
 
